@@ -1,0 +1,50 @@
+name: Unity CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Unity Builder
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Git LFS
+        run: |
+          sudo apt-get update
+          sudo apt-get install git-lfs -y
+          git lfs install
+
+      - name: Cache Unity packages (optional)
+        uses: actions/cache@v4
+        with:
+          path: Library/PackageCache
+          key: ${{ runner.os }}-unity-packages-${{ hashFiles('Packages/manifest.json') }}
+
+      - name: Run Unity Builder (GameCI)
+        uses: game-ci/unity-builder@v3
+        with:
+          projectPath: .
+          unityVersion: 2020.3.0f1 # <-- change to your Unity version
+          targetPlatform: StandaloneWindows64
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+
+      - name: Upload build artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-build
+          path: build/**
+
+  # Notes:
+  # - To run real Unity builds you must provide license credentials via repository secrets
+  #   (UNITY_EMAIL, UNITY_PASSWORD, UNITY_SERIAL) or use Unity's license actions.
+  # - Adjust `unityVersion` to match your project's Unity Editor version.

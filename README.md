@@ -73,3 +73,22 @@ Actions performed by automation on 2025-09-18
 - Scaffolded a basic GitHub Actions workflow at `.github/workflows/unity-check.yml` (scaffold; no Unity build configured).
 - Added `.github/CODEOWNERS` and a `LICENSE` (MIT) file.
 
+Migration performed
+- Ran: `git lfs migrate import --include="Assets/Sounds/**/*.mp3" --include-ref=refs/heads/main` to move `Assets/Sounds/*.mp3` into LFS (history rewritten on `main`).
+- After migration, LFS tracking patterns include `Assets/Sounds/**/*.mp3` and common binary patterns. Contributors will need to re-clone or follow Git LFS migration instructions.
+
+Push and verification
+- Pushed rewritten `main` to `origin` and pushed LFS objects.
+- To verify locally:
+```
+git lfs ls-files -l
+git rev-list --objects --all | Select-String -Pattern "\.mp3"
+```
+
+CI / Unity build notes
+- I scaffolded a full Unity CI workflow at `.github/workflows/unity-ci.yml` using `game-ci/unity-builder`.
+- You must set repository secrets:
+	- `UNITY_EMAIL`, `UNITY_PASSWORD`, and `UNITY_SERIAL` (or use a different licensing approach).
+- Edit `unityVersion` in the workflow to match the project's Unity Editor version before relying on it.
+
+
