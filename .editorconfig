@@ -1,0 +1,22 @@
+# EditorConfig helps maintain consistent coding styles for multiple editors
+root = true
+
+[*.{cs,shader,cginc,asmdef}]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.cs]
+dotnet_sort_system_directives_first = true
+csharp_new_line_before_open_brace = all
+csharp_indent_case_contents = true
+csharp_preserve_single_line_statements = false
+
+[*.unity]
+end_of_line = lf
+
+[*.md]
+trim_trailing_whitespace = false

@@ -1,0 +1,22 @@
+name: Unity - basic checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  checkout-and-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Print project info
+        run: |
+          echo "Files in repo:"
+          ls -la
+
+      # Note: To run Unity build/test you must configure Unity and use GameCI or setup licensing.
+      # This workflow is a scaffold; tell me if you want a full Unity build workflow.
