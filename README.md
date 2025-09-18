@@ -91,4 +91,15 @@ CI / Unity build notes
 	- `UNITY_EMAIL`, `UNITY_PASSWORD`, and `UNITY_SERIAL` (or use a different licensing approach).
 - Edit `unityVersion` in the workflow to match the project's Unity Editor version before relying on it.
 
+Final scan (files > 1 MB in `Assets/`)
+- `Assets/Sounds/Music songs/gaming-game-minecraft-background-music-372242.mp3` — 6.4 MB
+- `Assets/Sounds/Music songs/Piece by Piece.mp3` — 5.2 MB
+- `Assets/Textures/Sci Fi/colony (1)-1.png.png` — 4.77 MB
+- `Assets/Settings/Lit2DSceneTemplate.scenetemplate` — 3.76 MB
+- `Assets/Others/TextMesh Pro/.../LiberationSans SDF.asset` — 2.15 MB
+- `Assets/Others/TextMesh Pro/.../Unity SDF.asset` — 2.01 MB
+- a handful of `.png`, `.prefab`, and `.unity` files between 1–1.6 MB
+
+CI update: I updated `.github/workflows/unity-ci.yml` to use the detected editor version from `ProjectSettings/ProjectVersion.txt` and a matrix of `StandaloneWindows64` and `StandaloneLinux64`. The workflow expects a `UNITY_LICENSE` secret containing your license file content (or use GameCI's preferred license setup). If you'd like, I can change the workflow to use email/password/serial activation or a different publishing target.
+
 
