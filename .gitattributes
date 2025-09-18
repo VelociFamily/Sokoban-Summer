@@ -12,23 +12,16 @@
 *.asset  text merge=unityyamlmerge eol=lf
 # Binary assets - recommended to track with Git LFS
 *.png filter=lfs diff=lfs merge=lfs -text
-*.jpg  binary
-*.jpeg binary
-*.tga  binary
-*.psd filter=lfs diff=lfs merge=lfs -text
-*.fbx filter=lfs diff=lfs merge=lfs -text
-*.wav filter=lfs diff=lfs merge=lfs -text
-*.mp3  binary
-*.ogg  binary
-*.mp4  binary
-*.mov  binary
-*.zip  binary
-# Git LFS pointer files should be tracked as normal files; use `git lfs track` to manage them
-Assets/Sounds/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
 *.jpg filter=lfs diff=lfs merge=lfs -text
 *.jpeg filter=lfs diff=lfs merge=lfs -text
 *.tga filter=lfs diff=lfs merge=lfs -text
+*.psd filter=lfs diff=lfs merge=lfs -text
+*.fbx filter=lfs diff=lfs merge=lfs -text
+*.wav filter=lfs diff=lfs merge=lfs -text
 *.mp3 filter=lfs diff=lfs merge=lfs -text
 *.ogg filter=lfs diff=lfs merge=lfs -text
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.mov filter=lfs diff=lfs merge=lfs -text
+*.zip  binary
+# Git LFS pointer files should be tracked as normal files; use `git lfs track` to manage them
+Assets/Sounds/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
