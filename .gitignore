@@ -1,10 +1,11 @@
 # Unity generated files
-/Library/
-/Temp/
-/Obj/
-/Build/
-/Builds/
-/MemoryCaptures/
+**/Library/
+**/Temp/
+**/Obj/
+**/Build/
+**/Builds/
+**/MemoryCaptures/
+**/Logs/
 
 # User-specific files
 /*.userprefs
@@ -70,5 +71,3 @@ node_modules/
 # Ignore object and binary directories inside Assets (if present)
 Assets/**/bin/
 Assets/**/obj/
-
-# NOTE: Keep *.meta files tracked. Use Git LFS to track large binary assets instead of ignoring them here.
