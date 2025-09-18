@@ -1,0 +1,1274 @@
+fileFormatVersion: 2
+guid: 7afd943115381304eb3cb1247ee07a9f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6289932112198921483
+    second: colony (1)-1.png_0
+  - first:
+      213: -1988992848287347573
+    second: colony (1)-1.png_1
+  - first:
+      213: -1976952499228238859
+    second: colony (1)-1.png_2
+  - first:
+      213: -5253749182050113778
+    second: colony (1)-1.png_3
+  - first:
+      213: -8981147325850296089
+    second: colony (1)-1.png_4
+  - first:
+      213: -1929365807019168617
+    second: colony (1)-1.png_5
+  - first:
+      213: -6930973000610773432
+    second: colony (1)-1.png_6
+  - first:
+      213: -2242865363697581680
+    second: colony (1)-1.png_7
+  - first:
+      213: -7738970239695697493
+    second: colony (1)-1.png_8
+  - first:
+      213: 8422071151508508718
+    second: colony (1)-1.png_9
+  - first:
+      213: 7666436097391213058
+    second: colony (1)-1.png_10
+  - first:
+      213: 8874096357345580815
+    second: colony (1)-1.png_11
+  - first:
+      213: 2368127935281181805
+    second: colony (1)-1.png_12
+  - first:
+      213: 5013554566785982862
+    second: colony (1)-1.png_13
+  - first:
+      213: -2291051259283849198
+    second: colony (1)-1.png_14
+  - first:
+      213: -4400348653487512186
+    second: colony (1)-1.png_15
+  - first:
+      213: 1526587105145902829
+    second: colony (1)-1.png_16
+  - first:
+      213: 166025245065323404
+    second: colony (1)-1.png_17
+  - first:
+      213: 568423281064263250
+    second: colony (1)-1.png_18
+  - first:
+      213: -8545171731545739426
+    second: colony (1)-1.png_19
+  - first:
+      213: -105848296362673981
+    second: colony (1)-1.png_20
+  - first:
+      213: -9131142277144038430
+    second: colony (1)-1.png_21
+  - first:
+      213: 7204162797736942558
+    second: colony (1)-1.png_22
+  - first:
+      213: 1272523941310769090
+    second: colony (1)-1.png_23
+  - first:
+      213: -5142414855485856572
+    second: colony (1)-1.png_24
+  - first:
+      213: -7045562272743090666
+    second: colony (1)-1.png_25
+  - first:
+      213: -154579077373094719
+    second: colony (1)-1.png_26
+  - first:
+      213: 5319866245946888370
+    second: colony (1)-1.png_27
+  - first:
+      213: -8597451352288273032
+    second: colony (1)-1.png_28
+  - first:
+      213: 2936136363281614497
+    second: colony (1)-1.png_29
+  - first:
+      213: 8415604561923832176
+    second: colony (1)-1.png_30
+  - first:
+      213: 1656590988134650424
+    second: colony (1)-1.png_31
+  - first:
+      213: 1921473138546373019
+    second: colony (1)-1.png_32
+  - first:
+      213: 1095610823588794648
+    second: colony (1)-1.png_33
+  - first:
+      213: 8490036882387873168
+    second: colony (1)-1.png_34
+  - first:
+      213: -8371082323060971588
+    second: colony (1)-1.png_35
+  - first:
+      213: 53942287598859182
+    second: colony (1)-1.png_36
+  - first:
+      213: -7923143305949142013
+    second: colony (1)-1.png_37
+  - first:
+      213: 4825303419690328586
+    second: colony (1)-1.png_38
+  - first:
+      213: -332164074727406570
+    second: colony (1)-1.png_39
+  - first:
+      213: 5318565577643292014
+    second: colony (1)-1.png_40
+  - first:
+      213: -1558656693732342310
+    second: colony (1)-1.png_41
+  - first:
+      213: 1802786206109389266
+    second: colony (1)-1.png_42
+  - first:
+      213: 8161151263992200842
+    second: colony (1)-1.png_43
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: colony (1)-1.png_0
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 8186
+        width: 2579
+        height: 2065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9987e175f842e2640b55c135b82b79da
+      internalID: 772291777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_1
+      rect:
+        serializedVersion: 2
+        x: 3066
+        y: 8186
+        width: 3088
+        height: 2065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ad823773546e74b91040bef99d70ea
+      internalID: 2017692006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_2
+      rect:
+        serializedVersion: 2
+        x: 10487
+        y: 7157
+        width: 1296
+        height: 2065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26e38fb6e2019f345b821a2e236f27a9
+      internalID: 317481487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_3
+      rect:
+        serializedVersion: 2
+        x: 12025
+        y: 7157
+        width: 1042
+        height: 1524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4749f87e712f7574a9db928e44e97206
+      internalID: 1363244333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_4
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 7157
+        width: 1042
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132f389ef2411284dbc4022ed8f334ec
+      internalID: -1508272602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_5
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 7157
+        width: 528
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d0289d3e1c65642b4dd202b639328d
+      internalID: -404234016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_6
+      rect:
+        serializedVersion: 2
+        x: 2297
+        y: 7157
+        width: 1550
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d4deff20066e9844b7a20432100e97f
+      internalID: -200427507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_7
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 7157
+        width: 527
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f329325f45d5e4dba10304854622e7
+      internalID: 531212698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_8
+      rect:
+        serializedVersion: 2
+        x: 4857
+        y: 7157
+        width: 1551
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f120532657ad124bb3492099e266c15
+      internalID: 1953401726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_9
+      rect:
+        serializedVersion: 2
+        x: 6903
+        y: 6134
+        width: 1551
+        height: 1557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b640910e7fb1a149b59600784fda316
+      internalID: -160053190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_10
+      rect:
+        serializedVersion: 2
+        x: 8695
+        y: 6134
+        width: 1551
+        height: 1557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4dd9170adaa4de44b1074f7752421cd
+      internalID: 1502848182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_11
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 6134
+        width: 1042
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a193aeda9ae4268469d32d7ca8b75dcc
+      internalID: -329033569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_12
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 6134
+        width: 528
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dc76802629421a4a8223ba791c7b626
+      internalID: -833371257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_13
+      rect:
+        serializedVersion: 2
+        x: 2297
+        y: 6134
+        width: 1550
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315e53a72138fd64da078c59b05a61da
+      internalID: -190105961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_14
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 6134
+        width: 527
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6203ed6c7b7e44ba6a95494b49fd3b
+      internalID: 506539794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_15
+      rect:
+        serializedVersion: 2
+        x: 4857
+        y: 6134
+        width: 1551
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9793a66bfc692c1488462d4239cecf14
+      internalID: -450440079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_16
+      rect:
+        serializedVersion: 2
+        x: 10487
+        y: 4857
+        width: 1296
+        height: 2065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579a00da483398948919bea5bc2cd5a0
+      internalID: 851991838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_17
+      rect:
+        serializedVersion: 2
+        x: 12025
+        y: 5366
+        width: 1042
+        height: 1524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e08d1a7c61c87347a2202f17e417af3
+      internalID: -1782537583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_18
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 5111
+        width: 1042
+        height: 847
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7ec8f045f8f4b43a0089b14e4d9824
+      internalID: -418122241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_19
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 5111
+        width: 528
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ff34a358ea77df41b8f6f4f1552d662
+      internalID: 1527396533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_20
+      rect:
+        serializedVersion: 2
+        x: 2297
+        y: 5111
+        width: 1550
+        height: 691
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7649cd4362ebd42bc67a052944e5c0
+      internalID: -1134994694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_21
+      rect:
+        serializedVersion: 2
+        x: 4089
+        y: 5111
+        width: 527
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddc67e47fc456c4387e35ede3415b9e
+      internalID: -1617049262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_22
+      rect:
+        serializedVersion: 2
+        x: 4857
+        y: 5111
+        width: 1551
+        height: 756
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dd7ea8374504894f996a583559bbc4a
+      internalID: -1709453422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_23
+      rect:
+        serializedVersion: 2
+        x: 6903
+        y: 4342
+        width: 1551
+        height: 1557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab4659486253b2f4f836e1d41cc524cc
+      internalID: 1247603214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_24
+      rect:
+        serializedVersion: 2
+        x: 8695
+        y: 4342
+        width: 1551
+        height: 1557
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49eb965d0cba5a04fabbe4db605cc575
+      internalID: 1692833945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_25
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 3574
+        width: 1556
+        height: 1296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1a452a22fcd0348a062d85941f59e8
+      internalID: 1090167936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_26
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 3574
+        width: 1040
+        height: 1491
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5220ce5cad73f0442bd32ac0ede7142c
+      internalID: 1055105463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_27
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 3574
+        width: 1042
+        height: 1237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5485afa7959d2c4290992367b1d4724
+      internalID: -2035400204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_28
+      rect:
+        serializedVersion: 2
+        x: 4597
+        y: 2551
+        width: 534
+        height: 2384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304c56ff45bc1cb4f8b884ccb55252cc
+      internalID: -1744660189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_29
+      rect:
+        serializedVersion: 2
+        x: 5366
+        y: 2551
+        width: 531
+        height: 2384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8e46c0795bb9343b6c8f6c54b3ec8d
+      internalID: 1234811617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_30
+      rect:
+        serializedVersion: 2
+        x: 6135
+        y: 2551
+        width: 527
+        height: 2384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de35bb3fb821ee4db4e0f08c3012dbb
+      internalID: 274423399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_31
+      rect:
+        serializedVersion: 2
+        x: 6903
+        y: 2551
+        width: 1551
+        height: 1555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6bba4a54ddaf624f9ee9028bf852e94
+      internalID: -908208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_32
+      rect:
+        serializedVersion: 2
+        x: 8695
+        y: 2551
+        width: 1551
+        height: 1555
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300f36b68830c2442b148dad7a23849d
+      internalID: -80341702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_33
+      rect:
+        serializedVersion: 2
+        x: 10487
+        y: 2551
+        width: 1296
+        height: 2065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 403b24dac53d7d549beb9730c37d9b40
+      internalID: 695262593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_34
+      rect:
+        serializedVersion: 2
+        x: 12025
+        y: 3574
+        width: 1042
+        height: 1524
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f93ba997ed21d479d28e7c626248fa
+      internalID: -1333348799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_35
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2039
+        width: 1556
+        height: 1300
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20357ce1ccd59f459a68fa7ddd0f273
+      internalID: -619797631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_36
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 2039
+        width: 1040
+        height: 1489
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44a6757193d15942a3510b5b170116a
+      internalID: -748415778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_37
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 2039
+        width: 1042
+        height: 1235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38fde73017f457b459b2407516ede7cd
+      internalID: 1357672878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_38
+      rect:
+        serializedVersion: 2
+        x: 4597
+        y: 245
+        width: 2065
+        height: 2065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f5a57d3cb7513469e53d88f2846bd5
+      internalID: -380451816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_39
+      rect:
+        serializedVersion: 2
+        x: 6903
+        y: 245
+        width: 2066
+        height: 2065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c59fb452a205e41a6f0e2df57d8d15
+      internalID: -242234840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_40
+      rect:
+        serializedVersion: 2
+        x: 9210
+        y: 245
+        width: 2065
+        height: 2065
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fde579b8f5250949bc68797291c6cc0
+      internalID: -77262258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_41
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 505
+        width: 1556
+        height: 1296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cdd6efc492de246a6d0d084e09f822
+      internalID: 2075043824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_42
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 505
+        width: 1040
+        height: 1485
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3a8024765176848b7ca66b8734e528
+      internalID: -588367107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colony (1)-1.png_43
+      rect:
+        serializedVersion: 2
+        x: 3320
+        y: 505
+        width: 1042
+        height: 1231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d59e9e6e0a68e49baea163e79a125b
+      internalID: -382793560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b7c3f41b4dd144b4d80bb00542dfb519
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      colony (1)-1.png_0: 772291777
+      colony (1)-1.png_1: 2017692006
+      colony (1)-1.png_10: 1502848182
+      colony (1)-1.png_11: -329033569
+      colony (1)-1.png_12: -833371257
+      colony (1)-1.png_13: -190105961
+      colony (1)-1.png_14: 506539794
+      colony (1)-1.png_15: -450440079
+      colony (1)-1.png_16: 851991838
+      colony (1)-1.png_17: -1782537583
+      colony (1)-1.png_18: -418122241
+      colony (1)-1.png_19: 1527396533
+      colony (1)-1.png_2: 317481487
+      colony (1)-1.png_20: -1134994694
+      colony (1)-1.png_21: -1617049262
+      colony (1)-1.png_22: -1709453422
+      colony (1)-1.png_23: 1247603214
+      colony (1)-1.png_24: 1692833945
+      colony (1)-1.png_25: 1090167936
+      colony (1)-1.png_26: 1055105463
+      colony (1)-1.png_27: -2035400204
+      colony (1)-1.png_28: -1744660189
+      colony (1)-1.png_29: 1234811617
+      colony (1)-1.png_3: 1363244333
+      colony (1)-1.png_30: 274423399
+      colony (1)-1.png_31: -908208
+      colony (1)-1.png_32: -80341702
+      colony (1)-1.png_33: 695262593
+      colony (1)-1.png_34: -1333348799
+      colony (1)-1.png_35: -619797631
+      colony (1)-1.png_36: -748415778
+      colony (1)-1.png_37: 1357672878
+      colony (1)-1.png_38: -380451816
+      colony (1)-1.png_39: -242234840
+      colony (1)-1.png_4: -1508272602
+      colony (1)-1.png_40: -77262258
+      colony (1)-1.png_41: 2075043824
+      colony (1)-1.png_42: -588367107
+      colony (1)-1.png_43: -382793560
+      colony (1)-1.png_5: -404234016
+      colony (1)-1.png_6: -200427507
+      colony (1)-1.png_7: 531212698
+      colony (1)-1.png_8: 1953401726
+      colony (1)-1.png_9: -160053190
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

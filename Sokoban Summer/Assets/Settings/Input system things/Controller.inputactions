@@ -1,0 +1,93 @@
+{
+    "name": "Controller",
+    "maps": [
+        {
+            "name": "click",
+            "id": "9fc9d835-b632-4896-a637-4194ac86444e",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "4e1672fb-7c10-42d3-a809-29f1e9b00bf3",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "b911201d-8de8-4ccc-8de4-2373627aadb6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b3472015-83ce-42ed-a730-3782a023db72",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9582c8ec-8210-4aae-812a-6a0b2012a797",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ce17f278-526d-433b-868c-cec0dd8712b8",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI interaction",
+            "id": "20c566db-022e-4ffb-9b4b-299a1b4a45d5",
+            "actions": [
+                {
+                    "name": "New action",
+                    "type": "Value",
+                    "id": "a69529c3-5ca9-4849-a3b2-796081d949e0",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "865cd124-6103-47a2-a85e-b659e3aa0135",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
