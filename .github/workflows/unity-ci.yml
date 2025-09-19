@@ -1,53 +1,36 @@
 name: Unity CI
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
   build:
     name: Unity Builder
-    # ⬇️ MODIFIED: Target your self-hosted runner
-    # This tells the workflow to only run on a machine that you have configured
-    # with the labels "self-hosted" and "unity".
     runs-on: [self-hosted, unity]
-    
-    strategy:
-      matrix:
-        target: [StandaloneWindows64, StandaloneLinux64]
-        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          lfs: true # This automatically handles Git LFS checkout
-
-      # ⬇️ REMOVED: The Git LFS installation step.
-      # This should be pre-installed on your runner machine.
-
+          lfs: true
       - name: Cache Unity packages
         uses: actions/cache@v4
         with:
           path: Library/PackageCache
           key: ${{ runner.os }}-unity-packages-${{ hashFiles('Packages/manifest.json') }}
-
       - name: Run Unity Builder (GameCI)
-        # ⬇️ MODIFIED: Updated to the latest version (v4)
         uses: game-ci/unity-builder@v4
         with:
           projectPath: .
           unityVersion: 6000.2.5f1
-          targetPlatform: ${{ matrix.target }}
+          targetPlatform: StandaloneWindows64
         env:
-          # This part is correct! It uses your secrets to activate Unity.
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
       - name: Upload build artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: unity-build-${{ matrix.target }} # Added target to artifact name
-          path: build/${{ matrix.target }}
+          name: unity-build-StandaloneWindows64
+          path: build/StandaloneWindows64
