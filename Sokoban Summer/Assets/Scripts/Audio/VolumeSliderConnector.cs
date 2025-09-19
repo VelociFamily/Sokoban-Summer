@@ -10,18 +10,22 @@ public class VolumeSliderConnector : MonoBehaviour
     private VolumeControl volumeControl;
     private SfxVolumeControl sfxVolumeControl;
 
+    // Public property to allow SFXVolumeControl to access the slider
+    public Slider SfxSlider => sfxSlider;
+
     private void Start()
     {
         volumeControl = VolumeControl.instance;
         sfxVolumeControl = SfxVolumeControl.Instance;
 
+        // Handle VolumeControl setup
         if (volumeControl == null)
         {
-            Debug.LogError("[VolumeSliderConnector]: VolumeControl instance not found in scene");
+            Debug.LogWarning("[VolumeSliderConnector]: VolumeControl instance not found in scene - volume control disabled");
         }
         else if (volumeSlider == null)
         {
-            Debug.LogError("[VolumeSliderConnector]: Volume slider component not assigned in inspector");
+            Debug.LogWarning("[VolumeSliderConnector]: Volume slider component not assigned in inspector - volume control disabled");
         }
         else
         {
@@ -30,13 +34,14 @@ public class VolumeSliderConnector : MonoBehaviour
             volumeSlider.onValueChanged.AddListener(OnVolumeSliderValueChanged);
         }
 
+        // Handle SFXVolumeControl setup
         if (sfxVolumeControl == null)
         {
-            Debug.LogError("[VolumeSliderConnector]: SFXVolumeControl instance not found in scene");
+            Debug.LogWarning("[VolumeSliderConnector]: SFXVolumeControl instance not found in scene - SFX control disabled");
         }
         else if (sfxSlider == null)
         {
-            Debug.LogError("[VolumeSliderConnector]: SFX slider component not assigned in inspector");
+            Debug.LogWarning("[VolumeSliderConnector]: SFX slider component not assigned in inspector - SFX control disabled");
         }
         else
         {

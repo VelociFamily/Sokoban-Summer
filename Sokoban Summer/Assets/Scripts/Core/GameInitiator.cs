@@ -17,6 +17,9 @@ public class GameInitiator : MonoBehaviour
     {
         try
         {
+            // Ensure there's an AudioListener in the scene before doing anything else
+            EnsureAudioListenerExists();
+            
             backgroundClone = Instantiate(Background);
             if (!backgroundClone.CompareTag("background"))
                 backgroundClone.tag = "background";
@@ -29,7 +32,7 @@ public class GameInitiator : MonoBehaviour
         }
         catch (Exception exception)
         {
-            Debug.LogError(exception);
+            Debug.LogError($"[GameInitiator]: Error during game initialization: {exception}");
         }
     }
 
@@ -47,5 +50,29 @@ public class GameInitiator : MonoBehaviour
                     backgroundClone.SetActive(true);
                     break;
             }
+    }
+
+    /// <summary>
+    /// Ensures there's always an AudioListener in the scene to prevent Unity warnings.
+    /// Creates a minimal AudioListener if none exists.
+    /// </summary>
+    private void EnsureAudioListenerExists()
+    {
+        var audioListeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
+        
+        if (audioListeners.Length == 0)
+        {
+            Debug.LogWarning("[GameInitiator]: No AudioListener found in scene - creating temporary one");
+            
+            // Create a temporary GameObject with AudioListener to prevent Unity warnings
+            var tempAudioListenerObject = new GameObject("TempAudioListener");
+            tempAudioListenerObject.AddComponent<AudioListener>();
+            
+            Debug.Log("[GameInitiator]: Temporary AudioListener created - will be managed by scene loading system");
+        }
+        else
+        {
+            Debug.Log($"[GameInitiator]: Found {audioListeners.Length} AudioListener(s) in scene");
+        }
     }
 }

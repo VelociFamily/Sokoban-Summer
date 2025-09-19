@@ -24,8 +24,20 @@ public class SfxVolumeControl : MonoBehaviour
     {
         if (sfxSlider == null)
         {
-            Debug.LogWarning("SFXVolumeControl: No SFX slider assigned!");
-            return;
+            Debug.LogWarning("[SFXVolumeControl]: SFX slider component not assigned in inspector - attempting to find it automatically");
+            
+            // Try to find SFX slider automatically
+            var sliderConnector = FindFirstObjectByType<VolumeSliderConnector>();
+            if (sliderConnector != null && sliderConnector.SfxSlider != null)
+            {
+                sfxSlider = sliderConnector.SfxSlider;
+                Debug.Log("[SFXVolumeControl]: Found SFX slider reference via VolumeSliderConnector");
+            }
+            else
+            {
+                Debug.LogWarning("[SFXVolumeControl]: Could not find SFX slider - SFX volume control disabled");
+                return;
+            }
         }
 
         var savedVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
