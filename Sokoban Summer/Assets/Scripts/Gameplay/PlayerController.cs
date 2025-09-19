@@ -69,16 +69,23 @@ public class PlayerController : MonoBehaviour
         if (isConfused)
         {
             if (confuseEffect != null && !confuseEffect.isPlaying)
+            {
                 confuseEffect.Play();
+                Debug.Log($"PlayerController: Player confused! Turns remaining: {ConfusePowerDown.confuseTurns}");
+            }
 
+            var originalDirection = inputDirection;
             if (inputDirection == Vector2.up) inputDirection = Vector2.right;
             else if (inputDirection == Vector2.right) inputDirection = Vector2.up;
             else if (inputDirection == Vector2.down) inputDirection = Vector2.left;
             else if (inputDirection == Vector2.left) inputDirection = Vector2.down;
+            
+            Debug.Log($"PlayerController: Confusion effect - {originalDirection} redirected to {inputDirection}");
         }
         else if (confuseEffect != null && confuseEffect.isPlaying)
         {
             confuseEffect.Stop();
+            Debug.Log("PlayerController: Confusion effect ended");
         }
 
         // Teleport handling
@@ -89,19 +96,28 @@ public class PlayerController : MonoBehaviour
         {
             case true when teleportEffect != null && !teleportEffect.isPlaying:
                 teleportEffect.Play();
+                Debug.Log($"PlayerController: Teleport mode activated! Remaining uses: {TeleportPowerUp.teleportTimes}");
                 break;
             case false when teleportEffect != null && teleportEffect.isPlaying:
                 teleportEffect.Stop();
+                Debug.Log("PlayerController: Teleport mode deactivated");
                 break;
         }
 
         if (!TryMove(inputDirection)) return;
-        if (isConfused) ConfusePowerDown.confuseTurns--;
+        if (isConfused) 
+        {
+            ConfusePowerDown.confuseTurns--;
+            Debug.Log($"PlayerController: Confusion turns decremented to {ConfusePowerDown.confuseTurns}");
+        }
         if (!teleporting) return;
 
         TeleportPowerUp.teleportTimes--;
+        Debug.Log($"PlayerController: Teleport used! Remaining: {TeleportPowerUp.teleportTimes}");
         if (audioSource != null && teleportSound != null)
             audioSource.PlayOneShot(teleportSound);
+        else if (teleportSound == null)
+            Debug.LogWarning("PlayerController: Teleport sound not assigned!");
     }
 
     private static void OnMoveCanceled(InputAction.CallbackContext context)
@@ -115,12 +131,22 @@ public class PlayerController : MonoBehaviour
 
     private bool TryMove(Vector2 dir)
     {
-        if (IsTouchingWall(dir)) return false;
+        if (IsTouchingWall(dir))
+        {
+            Debug.Log($"PlayerController: Movement blocked by wall in direction {dir}");
+            return false;
+        }
 
         var hit = Physics2D.Raycast(transform.position, dir, 0.4f, wallLayer);
-        if (hit.collider != null) return false;
+        if (hit.collider != null)
+        {
+            Debug.Log($"PlayerController: Movement blocked by obstacle '{hit.collider.name}'");
+            return false;
+        }
+        
         moveDirection = dir;
         canChangeDirection = false;
+        Debug.Log($"PlayerController: Moving in direction {dir}");
 
         MoveCounter.Instance?.IncrementMove();
 

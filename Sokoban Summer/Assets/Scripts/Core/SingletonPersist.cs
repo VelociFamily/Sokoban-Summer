@@ -2,17 +2,29 @@ using UnityEngine;
 
 public class SingletonPersist : MonoBehaviour
 {
-    private static SingletonPersist instance;
+    public static SingletonPersist Instance { get; private set; }
 
     private void Awake()
     {
-        var objs = GameObject.FindGameObjectsWithTag(gameObject.tag);
-        if (objs.Length > 1)
+        if (Instance == null)
         {
-            Destroy(gameObject);
-            return;
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            Debug.Log($"SingletonPersist: Instance created on {gameObject.name}");
         }
+        else
+        {
+            Debug.LogWarning($"SingletonPersist: Duplicate instance found on {gameObject.name}, destroying");
+            Destroy(gameObject);
+        }
+    }
 
-        DontDestroyOnLoad(gameObject);
+    private void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Debug.Log("SingletonPersist: Main instance destroyed");
+            Instance = null;
+        }
     }
 }

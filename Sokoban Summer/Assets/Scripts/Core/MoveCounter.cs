@@ -19,9 +19,15 @@ public class MoveCounter : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+            Debug.Log("MoveCounter: Singleton instance created");
+        }
         else
+        {
+            Debug.LogWarning($"MoveCounter: Duplicate instance found on {gameObject.name}, destroying");
             Destroy(gameObject);
+        }
     }
 
     private void Start()
@@ -57,20 +63,31 @@ public class MoveCounter : MonoBehaviour
     public void IncrementMove()
     {
         moveCount++;
+        Debug.Log($"MoveCounter: Move count incremented to {moveCount}");
+        
         if (moveText != null)
             moveText.text = "Moves: " + moveCount;
+        else
+            Debug.LogWarning("MoveCounter: Move text UI component is not assigned!");
     }
 
     public void ResetCounter()
     {
         moveCount = 0;
-        if (moveText != null)
-            moveText.text = "Moves: 0";
-
         timer = 0f;
         timerRunning = true;
+        
+        Debug.Log("MoveCounter: Counter and timer reset");
+        
+        if (moveText != null)
+            moveText.text = "Moves: 0";
+        else
+            Debug.LogWarning("MoveCounter: Move text UI component is not assigned!");
+
         if (timerText != null)
             timerText.text = "Time: 00:00.00";
+        else
+            Debug.LogWarning("MoveCounter: Timer text UI component is not assigned!");
     }
     public float GetElapsedTime()
     {
