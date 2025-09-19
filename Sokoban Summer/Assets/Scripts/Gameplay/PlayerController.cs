@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             if (confuseEffect != null && !confuseEffect.isPlaying)
             {
                 confuseEffect.Play();
-                Debug.Log($"PlayerController: Player confused! Turns remaining: {ConfusePowerDown.confuseTurns}");
+                Debug.Log($"[PlayerController]: Confusion effect activated - {ConfusePowerDown.confuseTurns} turns remaining");
             }
 
             var originalDirection = inputDirection;
@@ -79,13 +79,11 @@ public class PlayerController : MonoBehaviour
             else if (inputDirection == Vector2.right) inputDirection = Vector2.up;
             else if (inputDirection == Vector2.down) inputDirection = Vector2.left;
             else if (inputDirection == Vector2.left) inputDirection = Vector2.down;
-            
-            Debug.Log($"PlayerController: Confusion effect - {originalDirection} redirected to {inputDirection}");
         }
         else if (confuseEffect != null && confuseEffect.isPlaying)
         {
             confuseEffect.Stop();
-            Debug.Log("PlayerController: Confusion effect ended");
+            Debug.Log("[PlayerController]: Confusion effect ended");
         }
 
         // Teleport handling
@@ -96,11 +94,11 @@ public class PlayerController : MonoBehaviour
         {
             case true when teleportEffect != null && !teleportEffect.isPlaying:
                 teleportEffect.Play();
-                Debug.Log($"PlayerController: Teleport mode activated! Remaining uses: {TeleportPowerUp.teleportTimes}");
+                Debug.Log($"[PlayerController]: Teleport mode activated - {TeleportPowerUp.teleportTimes} uses remaining");
                 break;
             case false when teleportEffect != null && teleportEffect.isPlaying:
                 teleportEffect.Stop();
-                Debug.Log("PlayerController: Teleport mode deactivated");
+                Debug.Log("[PlayerController]: Teleport mode deactivated");
                 break;
         }
 
@@ -108,16 +106,17 @@ public class PlayerController : MonoBehaviour
         if (isConfused) 
         {
             ConfusePowerDown.confuseTurns--;
-            Debug.Log($"PlayerController: Confusion turns decremented to {ConfusePowerDown.confuseTurns}");
         }
         if (!teleporting) return;
 
         TeleportPowerUp.teleportTimes--;
-        Debug.Log($"PlayerController: Teleport used! Remaining: {TeleportPowerUp.teleportTimes}");
+        if (TeleportPowerUp.teleportTimes == 0)
+            Debug.Log("[PlayerController]: All teleport uses consumed");
+            
         if (audioSource != null && teleportSound != null)
             audioSource.PlayOneShot(teleportSound);
         else if (teleportSound == null)
-            Debug.LogWarning("PlayerController: Teleport sound not assigned!");
+            Debug.LogWarning("[PlayerController]: Teleport sound not assigned - cannot play audio feedback");
     }
 
     private static void OnMoveCanceled(InputAction.CallbackContext context)
@@ -132,21 +131,14 @@ public class PlayerController : MonoBehaviour
     private bool TryMove(Vector2 dir)
     {
         if (IsTouchingWall(dir))
-        {
-            Debug.Log($"PlayerController: Movement blocked by wall in direction {dir}");
             return false;
-        }
 
         var hit = Physics2D.Raycast(transform.position, dir, 0.4f, wallLayer);
         if (hit.collider != null)
-        {
-            Debug.Log($"PlayerController: Movement blocked by obstacle '{hit.collider.name}'");
             return false;
-        }
         
         moveDirection = dir;
         canChangeDirection = false;
-        Debug.Log($"PlayerController: Moving in direction {dir}");
 
         MoveCounter.Instance?.IncrementMove();
 
@@ -161,7 +153,7 @@ public class PlayerController : MonoBehaviour
         var boxCol = col as BoxCollider2D;
         if (boxCol == null)
         {
-            Debug.LogError("Player must have a BoxCollider2D.");
+            Debug.LogError("[PlayerController]: Player must have a BoxCollider2D component for collision detection");
             return true;
         }
 

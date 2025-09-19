@@ -10,12 +10,13 @@ public class ObjectDestroyer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log($"ObjectDestroyer: Player triggered destruction of {objectsToDestroy.Count} objects");
+            if (objectsToDestroy.Count > 0)
+                Debug.Log($"[ObjectDestroyer]: Player triggered destruction of {objectsToDestroy.Count} objects");
             
             if (smokeexplosion != null)
                 smokeexplosion.Play();
             else
-                Debug.LogWarning("ObjectDestroyer: Smoke explosion effect is not assigned!");
+                Debug.LogWarning("[ObjectDestroyer]: Smoke explosion effect not assigned - visual feedback disabled");
                 
             DestroyAllObjects();
         }
@@ -27,15 +28,15 @@ public class ObjectDestroyer : MonoBehaviour
         {
             if (obj != null)
             {
-                Debug.Log($"ObjectDestroyer: Destroying object '{obj.name}'");
                 Destroy(obj);
                 destroyedCount++;
             }
         }
         
-        Debug.Log($"ObjectDestroyer: Successfully destroyed {destroyedCount} objects");
+        if (destroyedCount > 0)
+            Debug.Log($"[ObjectDestroyer]: Successfully destroyed {destroyedCount} objects");
 
-        // Optionally clear the list afterwards
+        // Clear the list afterwards
         objectsToDestroy.Clear();
     }
 }

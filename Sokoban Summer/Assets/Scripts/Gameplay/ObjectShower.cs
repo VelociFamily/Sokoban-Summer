@@ -11,11 +11,11 @@ public class ObjectShower : MonoBehaviour
             if (objectToShow != null)
             {
                 objectToShow.SetActive(true);
-                Debug.Log($"ObjectShower: Player triggered showing of object '{objectToShow.name}'");
+                Debug.Log($"[ObjectShower]: Player revealed object '{objectToShow.name}'");
             }
             else
             {
-                Debug.LogWarning("ObjectShower: objectToShow is not assigned!");
+                Debug.LogWarning("[ObjectShower]: Object to show not assigned - trigger has no effect");
             }
         }
     }
@@ -24,21 +24,20 @@ public class ObjectShower : MonoBehaviour
         if (objectToShow != null)
         {
             objectToShow.SetActive(true);
-            Debug.Log($"ObjectShower: Manually showing object '{objectToShow.name}'");
+            Debug.Log($"[ObjectShower]: Manually activated object '{objectToShow.name}'");
         }
         else
         {
-            Debug.LogWarning("ObjectShower: objectToShow is not assigned!");
+            Debug.LogWarning("[ObjectShower]: Object to show not assigned - manual activation failed");
         }
         
         if (menu != null)
         {
             menu.SetActive(false);
-            Debug.Log($"ObjectShower: Hiding menu '{menu.name}'");
         }
         else
         {
-            Debug.LogWarning("ObjectShower: menu is not assigned!");
+            Debug.LogWarning("[ObjectShower]: Menu reference not assigned - cannot hide menu");
         }
     }
 }

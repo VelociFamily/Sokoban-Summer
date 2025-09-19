@@ -12,41 +12,38 @@ public class PortalTrigger : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Debug.Log("PortalTrigger: Player entered portal - Level complete!");
+            Debug.Log("[PortalTrigger]: Level completed - Player reached portal");
             
             if (audioSource != null && portalSound != null)
             {
                 audioSource.PlayOneShot(portalSound);
-                Debug.Log("PortalTrigger: Playing portal sound effect");
             }
             else
             {
-                Debug.LogWarning("PortalTrigger: Audio source or portal sound not assigned");
+                Debug.LogWarning("[PortalTrigger]: Audio source or portal sound not assigned - no completion sound");
             }
 
             if (portalEffect != null)
             {
                 portalEffect.Play();
-                Debug.Log("PortalTrigger: Playing portal particle effect");
             }
             else
             {
-                Debug.LogWarning("PortalTrigger: Portal effect not assigned");
+                Debug.LogWarning("[PortalTrigger]: Portal effect not assigned - no visual feedback");
             }
 
             if (player != null)
             {
                 player.SetActive(false);
-                Debug.Log("PortalTrigger: Player disabled");
             }
             else
             {
-                Debug.LogWarning("PortalTrigger: Player reference not assigned");
+                Debug.LogWarning("[PortalTrigger]: Player reference not assigned - cannot disable player");
             }
 
             var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneSelector.MarkSceneCompleted(currentSceneIndex);
-            Debug.Log($"PortalTrigger: Scene {currentSceneIndex} marked as completed");
+            Debug.Log($"[PortalTrigger]: Scene {currentSceneIndex} marked as completed and unlocked for progression");
 
             // (Optional) Automatically go to the main menu or next scene
             // SceneManager.LoadScene("MainMenu");

@@ -16,7 +16,7 @@ public class ArrowClick : MonoBehaviour
         if (mainCamera == null)
         {
             mainCamera = FindFirstObjectByType<Camera>();
-            Debug.LogWarning("ArrowClick: Main camera not found, using first available camera");
+            Debug.LogWarning("[ArrowClick]: Main camera not tagged - using first available camera as fallback");
         }
     }
 
@@ -55,7 +55,7 @@ public class ArrowClick : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            Debug.Log($"ArrowClick: {(isRightArrow ? "Right" : "Left")} arrow clicked");
+            Debug.Log($"[ArrowClick]: {(isRightArrow ? "Next" : "Previous")} hat selection triggered");
             
             // This object was clicked!
             if (isRightArrow)

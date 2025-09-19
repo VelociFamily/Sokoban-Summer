@@ -13,7 +13,7 @@ public class SliderMusicConnector : MonoBehaviour
 
         if (slider == null)
         {
-            Debug.LogError("No Slider component found on " + gameObject.name);
+            Debug.LogError($"[SliderMusicConnector]: No Slider component found on '{gameObject.name}'");
             return;
         }
 
@@ -26,7 +26,7 @@ public class SliderMusicConnector : MonoBehaviour
 
         if (musicPlayer == null)
         {
-            Debug.LogError("No AudioSource with tag 'Music Looper' found in the scene!");
+            Debug.LogError("[SliderMusicConnector]: No AudioSource with tag 'Music Looper' found in scene");
             return;
         }
 

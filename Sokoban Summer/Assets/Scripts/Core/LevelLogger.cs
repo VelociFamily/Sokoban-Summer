@@ -60,13 +60,15 @@ public class LevelLogger : MonoBehaviour
             newBest = true;
         }
 
-        Debug.Log($"--- Completed: {GetLevelName(sceneIndex)} ---");
-        Debug.Log($"Moves: {moves} | Time: {FormatTime(time)} {(newBest ? "(New Best!)" : "")}");
+        Debug.Log($"[LevelLogger]: Level '{GetLevelName(sceneIndex)}' completed - Moves: {moves}, Time: {FormatTime(time)}{(newBest ? " (New Best!)" : "")}");
 
-        Debug.Log("--- Previous Level Results ---");
-        foreach (var kvp in bestResults)
+        if (bestResults.Count > 1)
         {
-            Debug.Log($"{GetLevelName(kvp.Key)} - Best Moves: {kvp.Value.bestMoves}, Best Time: {FormatTime(kvp.Value.bestTime)}");
+            Debug.Log("[LevelLogger]: Updated level progress summary:");
+            foreach (var kvp in bestResults)
+            {
+                Debug.Log($"  • {GetLevelName(kvp.Key)}: Best Moves: {kvp.Value.bestMoves}, Best Time: {FormatTime(kvp.Value.bestTime)}");
+            }
         }
     }
 

@@ -21,11 +21,11 @@ public class MoveCounter : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            Debug.Log("MoveCounter: Singleton instance created");
+            Debug.Log("[MoveCounter]: Instance initialized");
         }
         else
         {
-            Debug.LogWarning($"MoveCounter: Duplicate instance found on {gameObject.name}, destroying");
+            Debug.LogWarning($"[MoveCounter]: Duplicate instance detected on '{gameObject.name}' - destroying");
             Destroy(gameObject);
         }
     }
@@ -63,12 +63,11 @@ public class MoveCounter : MonoBehaviour
     public void IncrementMove()
     {
         moveCount++;
-        Debug.Log($"MoveCounter: Move count incremented to {moveCount}");
         
         if (moveText != null)
             moveText.text = "Moves: " + moveCount;
         else
-            Debug.LogWarning("MoveCounter: Move text UI component is not assigned!");
+            Debug.LogWarning("[MoveCounter]: Move text UI component not assigned - cannot update display");
     }
 
     public void ResetCounter()
@@ -77,17 +76,17 @@ public class MoveCounter : MonoBehaviour
         timer = 0f;
         timerRunning = true;
         
-        Debug.Log("MoveCounter: Counter and timer reset");
+        Debug.Log("[MoveCounter]: Game counters reset for new attempt");
         
         if (moveText != null)
             moveText.text = "Moves: 0";
         else
-            Debug.LogWarning("MoveCounter: Move text UI component is not assigned!");
+            Debug.LogWarning("[MoveCounter]: Move text UI component not assigned - cannot update display");
 
         if (timerText != null)
             timerText.text = "Time: 00:00.00";
         else
-            Debug.LogWarning("MoveCounter: Timer text UI component is not assigned!");
+            Debug.LogWarning("[MoveCounter]: Timer text UI component not assigned - cannot update display");
     }
     public float GetElapsedTime()
     {

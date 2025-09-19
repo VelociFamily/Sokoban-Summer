@@ -19,7 +19,7 @@ public class RestartLevel : MonoBehaviour
             if (mainCamera == null)
             {
                 mainCamera = FindFirstObjectByType<Camera>();
-                Debug.LogWarning("RestartLevel: Main camera not found, using first available camera");
+                Debug.LogWarning("[RestartLevel]: Main camera not tagged - using first available camera as fallback");
             }
         }
     }
@@ -63,14 +63,14 @@ public class RestartLevel : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            Debug.Log("RestartLevel: Restart button clicked via InputSystem");
+            Debug.Log("[RestartLevel]: Level restart triggered by user input");
             Restart();
         }
     }
 
     public void Restart()
     {
-        Debug.Log("RestartLevel: Restarting current level");
+        Debug.Log("[RestartLevel]: Reloading current level for new attempt");
         // Reload current active scene
         var currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.buildIndex);

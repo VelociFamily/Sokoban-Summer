@@ -114,19 +114,19 @@ public class AchievementManager : MonoBehaviour
     public void UnlockConfuseAndSpeed()
     {
         _confuseAndSpeed = true;
-        Debug.Log("AchievementManager: Confuse and Speed unlocked!");
+        Debug.Log("[AchievementManager]: Achievement unlocked - 'Confuse and Speed' (used both power-ups simultaneously)");
     }
 
     public void UnlockTutorial()
     {
         _completeTutorial = true;
-        Debug.Log("AchievementManager: Tutorial completed!");
+        Debug.Log("[AchievementManager]: Achievement unlocked - 'Tutorial Complete' (finished all tutorial levels)");
     }
 
     public void UnlockLevelTwo()
     {
         _completeLevelTwo = true;
-        Debug.Log("AchievementManager: Level Two completed!");
+        Debug.Log("[AchievementManager]: Achievement unlocked - 'Level Two Complete' (completed second main level)");
     }
 
     // ======================
@@ -136,7 +136,7 @@ public class AchievementManager : MonoBehaviour
     public void SetSelectedHat(string hatName)
     {
         selectedHatName = hatName;
-        Debug.Log("AchievementManager: Hat selected -> " + hatName);
+        Debug.Log($"[AchievementManager]: Hat selection changed to '{hatName}'");
     }
 
     // ======================

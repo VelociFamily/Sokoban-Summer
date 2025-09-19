@@ -11,7 +11,7 @@ public class AchievementShower : MonoBehaviour
     {
         if (AchievementManager.Instance == null)
         {
-            Debug.LogWarning("AchievementManager not found.");
+            Debug.LogWarning("[AchievementShower]: AchievementManager instance not found - badges will not update");
             return;
         }
 

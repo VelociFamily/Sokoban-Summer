@@ -76,7 +76,7 @@ public class SceneButton : MonoBehaviour
         }
         else
         {
-            Debug.Log("You must complete the previous level first!");
+            Debug.Log("[SceneButton]: Level locked - complete previous level first to unlock");
         }
     }
 

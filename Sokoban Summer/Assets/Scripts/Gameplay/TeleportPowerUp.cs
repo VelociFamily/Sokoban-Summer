@@ -11,6 +11,7 @@ public class TeleportPowerUp : MonoBehaviour
         {
             teleportTimes = 3;
             teleportItem.SetActive(false);
+            Debug.Log("[TeleportPowerUp]: Teleport power-up collected - 3 uses granted");
         }
     }
 }

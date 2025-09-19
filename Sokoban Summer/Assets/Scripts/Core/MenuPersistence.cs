@@ -59,13 +59,13 @@ public class MenuPersistence : MonoBehaviour
                 // Destroy duplicate MenuUI
                 if (obj.CompareTag("MenuUI") && !preservedObjects.Contains(obj))
                 {
-                    Debug.Log("MenuPersistence: Destroying duplicate MenuUI: " + obj.name);
+                    Debug.Log($"[MenuPersistence]: Removing duplicate MenuUI object '{obj.name}' from scene");
                     Destroy(obj);
                 }
                 // Destroy duplicate music player (assuming it has tag "Music" or similar)
                 if (obj.CompareTag("Music") && !preservedObjects.Contains(obj))
                 {
-                    Debug.Log("MenuPersistence: Destroying duplicate Music: " + obj.name);
+                    Debug.Log($"[MenuPersistence]: Removing duplicate Music object '{obj.name}' from scene");
                     Destroy(obj);
                 }
             }
@@ -107,12 +107,12 @@ public class MenuPersistence : MonoBehaviour
         
         if (eventSystems.Length > 1)
         {
-            Debug.LogWarning($"MenuPersistence: Found {eventSystems.Length} EventSystems in scene. Removing duplicates.");
+            Debug.LogWarning($"[MenuPersistence]: Detected {eventSystems.Length} EventSystems in scene - removing duplicates to prevent input conflicts");
             
             // Keep the first EventSystem and destroy the rest
             for (int i = 1; i < eventSystems.Length; i++)
             {
-                Debug.Log($"MenuPersistence: Destroying duplicate EventSystem on '{eventSystems[i].gameObject.name}'");
+                Debug.Log($"[MenuPersistence]: Removing duplicate EventSystem from '{eventSystems[i].gameObject.name}'");
                 Destroy(eventSystems[i].gameObject);
             }
         }

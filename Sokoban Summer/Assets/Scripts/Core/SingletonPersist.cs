@@ -10,11 +10,11 @@ public class SingletonPersist : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            Debug.Log($"SingletonPersist: Instance created on {gameObject.name}");
+            Debug.Log($"[SingletonPersist]: Instance created on '{gameObject.name}'");
         }
         else
         {
-            Debug.LogWarning($"SingletonPersist: Duplicate instance found on {gameObject.name}, destroying");
+            Debug.LogWarning($"[SingletonPersist]: Duplicate instance detected on '{gameObject.name}' - destroying");
             Destroy(gameObject);
         }
     }
@@ -23,7 +23,7 @@ public class SingletonPersist : MonoBehaviour
     {
         if (Instance == this)
         {
-            Debug.Log("SingletonPersist: Main instance destroyed");
+            Debug.Log("[SingletonPersist]: Primary instance destroyed");
             Instance = null;
         }
     }

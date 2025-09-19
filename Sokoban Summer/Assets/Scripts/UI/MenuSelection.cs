@@ -38,7 +38,7 @@ public class SceneSelector : MonoBehaviour
 
         if (sceneToLoadIndex < 0 || sceneToLoadIndex >= completedScenes.Length)
         {
-            Debug.LogWarning("Invalid scene index");
+            Debug.LogWarning("[SceneSelector]: Invalid scene index provided - cannot load scene");
             return;
         }
 
@@ -48,7 +48,7 @@ public class SceneSelector : MonoBehaviour
         }
         else
         {
-            Debug.Log("❌ You must complete the previous scene first!");
+            Debug.Log("[SceneSelector]: Scene locked - complete previous level to unlock");
         }
     }
 
@@ -59,7 +59,7 @@ public class SceneSelector : MonoBehaviour
         if (sceneIndex >= 0 && sceneIndex < completedScenes.Length)
         {
             completedScenes[sceneIndex] = true;
-            Debug.Log($"✅ Scene {sceneIndex} marked as completed.");
+            Debug.Log($"[SceneSelector]: Scene {sceneIndex} completed and unlocked for progression");
         }
     }
 

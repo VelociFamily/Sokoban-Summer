@@ -17,11 +17,11 @@ public class VolumeSliderConnector : MonoBehaviour
 
         if (volumeControl == null)
         {
-            Debug.LogError("VolumeSliderConnector: No VolumeControl found in the scene!");
+            Debug.LogError("[VolumeSliderConnector]: VolumeControl instance not found in scene");
         }
         else if (volumeSlider == null)
         {
-            Debug.LogError("VolumeSliderConnector: No volume Slider assigned!");
+            Debug.LogError("[VolumeSliderConnector]: Volume slider component not assigned in inspector");
         }
         else
         {
@@ -32,11 +32,11 @@ public class VolumeSliderConnector : MonoBehaviour
 
         if (sfxVolumeControl == null)
         {
-            Debug.LogError("VolumeSliderConnector: No SFXVolumeControl found in the scene!");
+            Debug.LogError("[VolumeSliderConnector]: SFXVolumeControl instance not found in scene");
         }
         else if (sfxSlider == null)
         {
-            Debug.LogError("VolumeSliderConnector: No SFX Slider assigned!");
+            Debug.LogError("[VolumeSliderConnector]: SFX slider component not assigned in inspector");
         }
         else
         {

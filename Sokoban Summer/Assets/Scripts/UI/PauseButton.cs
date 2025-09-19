@@ -35,7 +35,7 @@ public class PauseButton : MonoBehaviour
         if (mainCamera == null)
         {
             mainCamera = FindFirstObjectByType<Camera>();
-            Debug.LogWarning("PauseButton: Main camera not found, using first available camera");
+            Debug.LogWarning("[PauseButton]: Main camera not tagged - using first available camera as fallback");
         }
 
         // --- NEW CODE: Using the modern, recommended method ---
@@ -47,7 +47,7 @@ public class PauseButton : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Depth of Field effect not found on volume profile or no Volume object found in the scene.");
+            Debug.LogWarning("[PauseButton]: Depth of Field effect not found on volume profile or no Volume object found in scene");
         }
 
         // Ensure the "game" scene is always loaded
@@ -119,7 +119,7 @@ public class PauseButton : MonoBehaviour
 
         if (hit.collider != null && hit.collider.gameObject == gameObject)
         {
-            Debug.Log("PauseButton: Pause button clicked via InputSystem");
+            Debug.Log("[PauseButton]: Game paused via mouse click");
             PauseGame();
         }
     }
@@ -158,12 +158,12 @@ public class PauseButton : MonoBehaviour
         
         if (eventSystems.Length > 1)
         {
-            Debug.LogWarning($"PauseButton: Found {eventSystems.Length} EventSystems after loading menu. Removing duplicates.");
+            Debug.LogWarning($"[PauseButton]: Detected {eventSystems.Length} EventSystems after menu load - removing duplicates");
             
             // Keep the first EventSystem and destroy the rest
             for (int i = 1; i < eventSystems.Length; i++)
             {
-                Debug.Log($"PauseButton: Destroying duplicate EventSystem on '{eventSystems[i].gameObject.name}'");
+                Debug.Log($"[PauseButton]: Removing duplicate EventSystem from '{eventSystems[i].gameObject.name}'");
                 Destroy(eventSystems[i].gameObject);
             }
         }

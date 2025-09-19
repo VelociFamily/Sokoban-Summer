@@ -10,6 +10,7 @@ public class ConfusePowerDown : MonoBehaviour
         {
             confuseTurns = 5;
             gameObject.SetActive(false);
+            Debug.Log("[ConfusePowerDown]: Confusion effect activated - 5 turns of reversed controls");
         }
     }
 }

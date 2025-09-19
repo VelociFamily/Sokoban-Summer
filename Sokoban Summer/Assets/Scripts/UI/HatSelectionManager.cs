@@ -25,6 +25,7 @@ public class HatSelectionManager : MonoBehaviour
 
         if (unlocked)
         {
+            Debug.Log("[HatSelectionManager]: Hat system unlocked - tutorial completed");
             UpdateHatVisibility();
 
             // Load saved hat if exists
@@ -45,6 +46,7 @@ public class HatSelectionManager : MonoBehaviour
         if (!unlocked && AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial)
         {
             unlocked = true;
+            Debug.Log("[HatSelectionManager]: Hat system newly unlocked during gameplay");
             ShowHatsUI(true);
             UpdateHatVisibility();
         }

@@ -32,7 +32,7 @@ public class ProjectManager : MonoBehaviour
     {
         if (MoveCounter.Instance == null)
         {
-            Debug.LogWarning("MoveCounter instance not found!");
+            Debug.LogError("[ProjectManager]: MoveCounter instance not found - cannot evaluate performance");
             return;
         }
 
@@ -51,14 +51,14 @@ public class ProjectManager : MonoBehaviour
         if (timeUsed <= timeThreshold && stars.Length > 2 && stars[2] != null)
             stars[2].SetActive(true);
 
-        Debug.Log($"Level Complete! Moves: {movesUsed}, Time: {timeUsed:F2}s");
+        Debug.Log($"[ProjectManager]: Level completed - Performance: {movesUsed} moves, {timeUsed:F2}s (Targets: ≤{moveThreshold} moves, ≤{timeThreshold:F2}s)");
     }
 
     private void ShowCompletionMessage()
     {
         if (completionMessageText == null)
         {
-            Debug.LogWarning("Completion Message Text is not assigned!");
+            Debug.LogWarning("[ProjectManager]: Completion message text component not assigned - cannot display completion tips");
             return;
         }
 
