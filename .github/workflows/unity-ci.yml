@@ -9,33 +9,39 @@ on:
 jobs:
   build:
     name: Unity Builder
-    runs-on: ubuntu-latest
+    # ⬇️ MODIFIED: Target your self-hosted runner
+    # This tells the workflow to only run on a machine that you have configured
+    # with the labels "self-hosted" and "unity".
+    runs-on: [self-hosted, unity]
+    
     strategy:
       matrix:
         target: [StandaloneWindows64, StandaloneLinux64]
+        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          lfs: true # This automatically handles Git LFS checkout
 
-      - name: Setup Git LFS
-        run: |
-          sudo apt-get update
-          sudo apt-get install git-lfs -y
-          git lfs install
+      # ⬇️ REMOVED: The Git LFS installation step.
+      # This should be pre-installed on your runner machine.
 
-      - name: Cache Unity packages (optional)
+      - name: Cache Unity packages
         uses: actions/cache@v4
         with:
           path: Library/PackageCache
           key: ${{ runner.os }}-unity-packages-${{ hashFiles('Packages/manifest.json') }}
 
       - name: Run Unity Builder (GameCI)
-        uses: game-ci/unity-builder@v3
+        # ⬇️ MODIFIED: Updated to the latest version (v4)
+        uses: game-ci/unity-builder@v4
         with:
           projectPath: .
-          unityVersion: 6000.2.5f1 # detected from ProjectSettings/ProjectVersion.txt
+          unityVersion: 6000.2.5f1
           targetPlatform: ${{ matrix.target }}
         env:
+          # This part is correct! It uses your secrets to activate Unity.
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
 
@@ -43,12 +49,5 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: unity-build
-          path: build/**
-
-  # Notes:
-  # - This workflow uses your Unity account email and password for CI activation (Personal license).
-  # - No serial or license file is needed for Personal license activation.
-  # - Store your credentials only in GitHub Secrets, never in the repo.
-  # - `unityVersion` uses the detected editor version from `ProjectSettings/ProjectVersion.txt`.
-  # - Adjust `targetPlatform` matrix or remove matrix if only a single platform is required.
+          name: unity-build-${{ matrix.target }} # Added target to artifact name
+          path: build/${{ matrix.target }}
