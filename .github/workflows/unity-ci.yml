@@ -1,44 +1,35 @@
 name: Unity CI
-
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
 jobs:
   build:
     name: Unity Builder
-    # This remains the same, targeting your self-hosted runner
     runs-on: [self-hosted, unity]
-        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           lfs: true
-
       - name: Cache Unity packages
         uses: actions/cache@v4
         with:
           path: Library/PackageCache
           key: ${{ runner.os }}-unity-packages-${{ hashFiles('Packages/manifest.json') }}
-
       - name: Run Unity Builder (GameCI)
         uses: game-ci/unity-builder@v4
         with:
           projectPath: .
           unityVersion: 6000.2.5f1
-          # ⬇️ MODIFIED: Hardcoded to Windows instead of using a matrix
           targetPlatform: StandaloneWindows64
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-
       - name: Upload build artifacts
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          # ⬇️ MODIFIED: Simplified artifact name
           name: unity-build-StandaloneWindows64
           path: build/StandaloneWindows64
