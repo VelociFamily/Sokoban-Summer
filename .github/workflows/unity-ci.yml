@@ -13,6 +13,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true
+          fetch-depth: 0  # Required for semantic versioning to access full git history
       - name: Cache Unity packages
         uses: actions/cache@v4
         with:
@@ -24,6 +25,7 @@ jobs:
           projectPath: .
           unityVersion: 6000.2.5f1
           targetPlatform: StandaloneWindows64
+          versioning: Semantic  # Use 'Custom' + customVersion if you want to avoid git history requirements
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
