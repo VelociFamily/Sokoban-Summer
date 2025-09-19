@@ -1,6 +1,8 @@
-# Sokoban Summer — repository guidelines
+# Sokoban Summer
 
-This repository contains a Unity project edited with Visual Studio / .NET C# scripts. To keep the repository healthy and fast, follow these recommended Git best practices.
+Sokoban Summer is a cozy, Unity-made puzzle game inspired by classic Sokoban mechanics: guide a character through handcrafted levels, push movable blocks to reach targets, and solve increasingly clever spatial puzzles. The project includes player controls (with optional teleport and confusion powerups), move and time tracking for speedrun-style challenges, multiple tutorial scenes, and clean UI feedback for moves and completion. Designed for desktop platforms, the game combines simple, tactile controls with thoughtful level design — perfect for players who enjoy deliberate, brain-teasing puzzles.
+
+# Repository Guidelines
 
 Quick checklist
 - Install Git LFS: `git lfs install`
