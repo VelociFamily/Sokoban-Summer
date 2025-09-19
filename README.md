@@ -104,4 +104,44 @@ Final scan (files > 1 MB in `Assets/`)
 
 CI update: I updated `.github/workflows/unity-ci.yml` to use the detected editor version from `ProjectSettings/ProjectVersion.txt` and a matrix of `StandaloneWindows64` and `StandaloneLinux64`. The workflow expects a `UNITY_LICENSE` secret containing your license file content (or use GameCI's preferred license setup). If you'd like, I can change the workflow to use email/password/serial activation or a different publishing target.
 
+## Post-move Git LFS fix (2025-09-19)
+
+What happened
+- The Unity project folder was moved out of a nested "Sokoban Summer/" directory to the repository root.
+- `.gitattributes` contained path-anchored LFS patterns like `Sokoban[[:space:]]Summer/**/*.png`, which stopped matching after the move.
+- As a result, a large number of binary assets appeared as regular file changes or as deleted/added under the old path in `git status`.
+
+What we changed
+- Simplified `.gitattributes` to use extension-based rules (e.g., `*.png`, `*.fbx`, `*.wav`, `*.mp3`, etc.) so tracking is path-agnostic.
+- Kept an optional explicit rule for `Assets/Sounds/**/*.mp3` for redundancy.
+- Verified Unity `.gitignore` is present at repo root to ignore `Library/`, `Temp/`, `Logs/`, `obj/`, etc.
+
+How to re-stage correctly
+1) Ensure LFS is installed/enabled
+	 - git lfs install
+2) Reapply attributes to the index so moved files match the new rules
+	 - git add --renormalize .
+3) Review LFS status
+	 - git lfs status
+4) Stage and commit
+	 - git add .gitattributes
+	 - git commit -m "fix: normalize LFS attributes after moving project to repo root"
+
+Optional: if any large binaries were accidentally committed as normal (not LFS)
+- Convert them into LFS without rewriting history for other files:
+	- git lfs migrate import --include="*.png,*.jpg,*.jpeg,*.tga,*.psd,*.fbx,*.wav,*.mp3,*.ogg,*.mp4,*.mov" --include-ref=refs/heads/main
+
+Verification
+- List files tracked by LFS:
+	- git lfs ls-files -l
+- Check current LFS tracking patterns:
+	- git lfs track
+- Confirm working tree is clean:
+	- git status
+
+Prevention tips
+- Prefer extension-based LFS rules to avoid path coupling.
+- Keep `.gitattributes` and `.gitignore` at the repository root.
+- When moving folders, run `git add --renormalize .` to re-evaluate attributes.
+
 

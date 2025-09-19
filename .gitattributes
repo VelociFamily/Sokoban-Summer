@@ -23,16 +23,8 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 *.mov filter=lfs diff=lfs merge=lfs -text
 *.zip  binary
-# Git LFS pointer files should be tracked as normal files; use `git lfs track` to manage them
+# Note: We rely on extension-based rules above so assets are tracked regardless of folder.
+# Any previous path-anchored rules for "Sokoban Summer/" were removed after moving the project to repo root.
+
+# Optional: Keep explicit tracking for sound assets if you prefer redundancy
 Assets/Sounds/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.png filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.jpeg filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.tga filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.fbx filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.wav filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.mov filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.jpg filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.psd filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.ogg filter=lfs diff=lfs merge=lfs -text
-Sokoban[[:space:]]Summer/**/*.mp4 filter=lfs diff=lfs merge=lfs -text
