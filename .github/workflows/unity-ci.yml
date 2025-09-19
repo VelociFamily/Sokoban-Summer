@@ -16,12 +16,12 @@ jobs:
       - name: Cache Unity packages
         uses: actions/cache@v4
         with:
-          path: Sokoban Summer/Library/PackageCache
+          path: "Sokoban Summer/Library/PackageCache"
           key: ${{ runner.os }}-unity-packages-${{ hashFiles('Sokoban Summer/Packages/manifest.json') }}
       - name: Run Unity Builder (GameCI)
         uses: game-ci/unity-builder@v4
         with:
-          projectPath: Sokoban Summer
+          projectPath: "Sokoban Summer"
           unityVersion: 6000.2.5f1
           targetPlatform: StandaloneWindows64
         env:
@@ -33,4 +33,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: unity-build-StandaloneWindows64
-          path: Sokoban Summer/build/StandaloneWindows64
+          path: "Sokoban Summer/build/StandaloneWindows64"
