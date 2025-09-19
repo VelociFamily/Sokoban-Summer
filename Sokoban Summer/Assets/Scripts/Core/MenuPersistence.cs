@@ -44,10 +44,11 @@ public class MenuPersistence : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Handle EventSystem duplication for all scenes loaded additively
+        // Handle EventSystem and AudioListener duplication for all scenes loaded additively
         if (mode == LoadSceneMode.Additive)
         {
             HandleEventSystemDuplication();
+            HandleAudioListenerDuplication();
         }
 
         if (scene.buildIndex == 0) // Menu scene
@@ -114,6 +115,27 @@ public class MenuPersistence : MonoBehaviour
             {
                 Debug.Log($"[MenuPersistence]: Removing duplicate EventSystem from '{eventSystems[i].gameObject.name}'");
                 Destroy(eventSystems[i].gameObject);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handles AudioListener duplication by ensuring only one AudioListener exists in the scene.
+    /// When multiple scenes are loaded additively, each may have a Camera with AudioListener causing conflicts.
+    /// </summary>
+    private void HandleAudioListenerDuplication()
+    {
+        var audioListeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
+        
+        if (audioListeners.Length > 1)
+        {
+            Debug.LogWarning($"[MenuPersistence]: Detected {audioListeners.Length} AudioListeners in scene - removing duplicates to prevent audio conflicts");
+            
+            // Keep the first AudioListener and disable the rest (don't destroy the camera, just disable the AudioListener component)
+            for (int i = 1; i < audioListeners.Length; i++)
+            {
+                Debug.Log($"[MenuPersistence]: Disabling duplicate AudioListener on '{audioListeners[i].gameObject.name}'");
+                audioListeners[i].enabled = false;
             }
         }
     }

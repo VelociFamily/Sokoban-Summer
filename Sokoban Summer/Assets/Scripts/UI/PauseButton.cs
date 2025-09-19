@@ -143,8 +143,9 @@ public class PauseButton : MonoBehaviour
         asyncOp.completed += (op) => 
         { 
             menuSceneLoaded = true;
-            // Handle potential EventSystem duplication after menu load
+            // Handle potential EventSystem and AudioListener duplication after menu load
             HandleEventSystemDuplication();
+            HandleAudioListenerDuplication();
         };
     }
 
@@ -165,6 +166,27 @@ public class PauseButton : MonoBehaviour
             {
                 Debug.Log($"[PauseButton]: Removing duplicate EventSystem from '{eventSystems[i].gameObject.name}'");
                 Destroy(eventSystems[i].gameObject);
+            }
+        }
+    }
+
+    /// <summary>
+    /// Handles AudioListener duplication when returning to main menu from pause screen.
+    /// Ensures only one AudioListener exists to prevent audio conflicts.
+    /// </summary>
+    private void HandleAudioListenerDuplication()
+    {
+        var audioListeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
+        
+        if (audioListeners.Length > 1)
+        {
+            Debug.LogWarning($"[PauseButton]: Detected {audioListeners.Length} AudioListeners after menu load - disabling duplicates");
+            
+            // Keep the first AudioListener and disable the rest (don't destroy the camera, just disable the AudioListener component)
+            for (int i = 1; i < audioListeners.Length; i++)
+            {
+                Debug.Log($"[PauseButton]: Disabling duplicate AudioListener on '{audioListeners[i].gameObject.name}'");
+                audioListeners[i].enabled = false;
             }
         }
     }
