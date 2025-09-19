@@ -1,0 +1,118 @@
+name: LFS and Large File Guard
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  check-lfs-and-sizes:
+    name: Enforce LFS rules and size limits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Ensure base ref is fetched
+        run: |
+          set -euo pipefail
+          if [ -n "${{ github.base_ref }}" ]; then
+            git fetch --no-tags --prune --depth=1 origin "+refs/heads/${{ github.base_ref }}:refs/remotes/origin/${{ github.base_ref }}"
+          fi
+
+      - name: Run LFS and size guard
+        run: |
+          set -euo pipefail
+
+          # Determine diff base (PR base branch) and head (current)
+          if [ -n "${{ github.base_ref }}" ]; then
+            BASE_REF="origin/${{ github.base_ref }}"
+          else
+            # Fallback (shouldn't happen for pull_request)
+            BASE_REF="origin/main"
+            git fetch --no-tags --prune --depth=1 origin "+refs/heads/main:refs/remotes/origin/main"
+          fi
+          BASE_SHA=$(git merge-base HEAD "$BASE_REF")
+
+          echo "Comparing changes from $BASE_SHA...HEAD"
+
+          # Configure thresholds (bytes)
+          MAX_GH_LIMIT=$((100*1024*1024))   # 100 MB (GitHub hard limit)
+          MAX_NON_LFS=$((50*1024*1024))     # 50 MB max for non-LFS files
+
+          # LFS-eligible extensions (lowercase, no dots)
+          LFS_EXTS=(png jpg jpeg tga psd fbx wav mp3 ogg mp4 mov)
+
+          fail=0
+          problems=()
+
+          # Iterate files added/modified/renamed in this PR (NUL-delimited; handles spaces)
+          while IFS= read -r -d '' file; do
+            # Skip deleted files (we only asked for name-only AMR)
+            if [ ! -e "$file" ]; then
+              # File might be renamed in history; we still want to inspect blob at HEAD
+              :
+            fi
+
+            # Blob size at HEAD
+            if ! size=$(git cat-file -s "HEAD:$file" 2>/dev/null); then
+              # Probably not a regular file (submodule/rename issues); skip
+              continue
+            fi
+
+            # Read first three lines of blob to detect LFS pointer
+            head3=$(git cat-file -p "HEAD:$file" | head -n 3 || true)
+            is_pointer=0
+            if echo "$head3" | grep -q "^version https://git-lfs.github.com/spec/v1"; then
+              is_pointer=1
+            fi
+
+            # Extension check (case-insensitive)
+            fname=$(basename -- "$file")
+            ext="${fname##*.}"
+            ext_lc="${ext,,}"
+            is_lfs_ext=0
+            for e in "${LFS_EXTS[@]}"; do
+              if [ "$ext_lc" = "$e" ]; then
+                is_lfs_ext=1; break
+              fi
+            done
+
+            # Rule 1: Any LFS-eligible extension must be an LFS pointer
+            if [ "$is_lfs_ext" -eq 1 ] && [ "$is_pointer" -ne 1 ]; then
+              problems+=("LFS-eligible file not stored as LFS pointer: $file")
+              fail=1
+            fi
+
+            # Rule 2: Enforce absolute GitHub limit
+            if [ "$size" -gt "$MAX_GH_LIMIT" ]; then
+              problems+=("File exceeds GitHub 100MB limit: $file (${size} bytes)")
+              fail=1
+            fi
+
+            # Rule 3: Large non-LFS files (>50MB) are blocked
+            if [ "$is_pointer" -ne 1 ] && [ "$size" -gt "$MAX_NON_LFS" ]; then
+              problems+=("Large non-LFS file (>50MB): $file (${size} bytes)")
+              fail=1
+            fi
+          done < <(git diff -z --name-only --diff-filter=AMR "$BASE_SHA"...HEAD)
+
+          if [ "$fail" -eq 1 ]; then
+            printf "\nProblems detected (LFS/size guard):\n"
+            for p in "${problems[@]}"; do
+              echo " - $p"
+            done
+            echo "\nHow to fix:"
+            echo " - For binary assets, add appropriate LFS rules in .gitattributes and re-stage the file(s)."
+            echo " - Keep individual files under 100MB; prefer LFS for assets over ~10-50MB."
+            exit 1
+          else
+            echo "No LFS or size issues detected."
+          fi
+
+      - name: Post-run note
+        if: failure()
+        run: |
+          echo "This job failed because the PR introduces files that violate LFS/size policy."
+          echo "Please read the README section 'Post-move Git LFS fix' for guidance."
