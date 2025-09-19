@@ -15,6 +15,7 @@ public class PauseButton : MonoBehaviour
     private DepthOfField depthOfField; // Reference to the Depth of Field effect
 
     private InputSystem_Actions inputActions;
+    private Camera mainCamera;
 
     // Track the menu scene name or index
     private const int menuSceneBuildIndex = 0;
@@ -26,7 +27,16 @@ public class PauseButton : MonoBehaviour
         Time.timeScale = 1f;
         inputActions = new InputSystem_Actions();
         inputActions.UI.EscapeStart.performed += OnPausePerformed;
+        inputActions.UI.Click.performed += OnClickPerformed;
         inputActions.UI.Enable();
+
+        // Get main camera for mouse position conversion
+        mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            mainCamera = FindFirstObjectByType<Camera>();
+            Debug.LogWarning("PauseButton: Main camera not found, using first available camera");
+        }
 
         // --- NEW CODE: Using the modern, recommended method ---
         volume = FindAnyObjectByType<Volume>();
@@ -56,14 +66,21 @@ public class PauseButton : MonoBehaviour
 
     private void OnDisable()
     {
-        inputActions?.UI.Disable();
+        if (inputActions != null)
+        {
+            inputActions.UI.EscapeStart.performed -= OnPausePerformed;
+            inputActions.UI.Click.performed -= OnClickPerformed;
+            inputActions.UI.Disable();
+        }
     }
 
     private void OnDestroy()
     {
         if (inputActions == null) return;
         inputActions.UI.EscapeStart.performed -= OnPausePerformed;
+        inputActions.UI.Click.performed -= OnClickPerformed;
         inputActions.UI.Disable();
+        inputActions?.Dispose();
     }
 
     private void OnPausePerformed(InputAction.CallbackContext context)
@@ -86,15 +103,25 @@ public class PauseButton : MonoBehaviour
         }
     }
 
-    public void OnMouseDown()
+    private void OnClickPerformed(InputAction.CallbackContext context)
     {
+        if (mainCamera == null) return;
         if (blocker != null && blocker.activeInHierarchy) return;
 
         // Check if a GameObject with the tag "levelcomplete" is active
         var levelCompleteObject = GameObject.FindWithTag("levelcomplete");
         if (levelCompleteObject != null && levelCompleteObject.activeSelf) return;
 
-        PauseGame();
+        // Get mouse position and check if this pause button was clicked
+        Vector2 mousePosition = inputActions.UI.Point.ReadValue<Vector2>();
+        Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
+        var hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+
+        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        {
+            Debug.Log("PauseButton: Pause button clicked via InputSystem");
+            PauseGame();
+        }
     }
 
     public void LoadMenu()

@@ -1,28 +1,70 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ArrowClick : MonoBehaviour
 {
     public HatSelectionManager manager; // Drag your HatSelectionManager here
     public bool isRightArrow;
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0)) // Left mouse button
-        {
-            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var hit = Physics2D.Raycast(mousePosition, Vector2.zero);
+    private InputSystem_Actions inputActions;
+    private Camera mainCamera;
 
-            if (hit.collider != null && hit.collider.gameObject == gameObject)
+    private void Awake()
+    {
+        inputActions = new InputSystem_Actions();
+        mainCamera = Camera.main;
+        if (mainCamera == null)
+        {
+            mainCamera = FindFirstObjectByType<Camera>();
+            Debug.LogWarning("ArrowClick: Main camera not found, using first available camera");
+        }
+    }
+
+    private void OnEnable()
+    {
+        inputActions.UI.Enable();
+        inputActions.UI.Click.performed += OnClickPerformed;
+    }
+
+    private void OnDisable()
+    {
+        if (inputActions != null)
+        {
+            inputActions.UI.Click.performed -= OnClickPerformed;
+            inputActions.UI.Disable();
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (inputActions != null)
+        {
+            inputActions.UI.Click.performed -= OnClickPerformed;
+            inputActions.UI.Disable();
+            inputActions?.Dispose();
+        }
+    }
+
+    private void OnClickPerformed(InputAction.CallbackContext context)
+    {
+        if (mainCamera == null) return;
+
+        Vector2 mousePosition = inputActions.UI.Point.ReadValue<Vector2>();
+        Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
+        var hit = Physics2D.Raycast(worldPosition, Vector2.zero);
+
+        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        {
+            Debug.Log($"ArrowClick: {(isRightArrow ? "Right" : "Left")} arrow clicked");
+            
+            // This object was clicked!
+            if (isRightArrow)
             {
-                // This object was clicked!
-                if (isRightArrow)
-                {
-                    manager.NextHat();
-                }
-                else
-                {
-                    manager.PreviousHat();
-                }
+                manager?.NextHat();
+            }
+            else
+            {
+                manager?.PreviousHat();
             }
         }
     }
