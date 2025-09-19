@@ -18,7 +18,7 @@ public class SliderMusicConnector : MonoBehaviour
         }
 
         // Find the AudioSource with the tag "Music Looper"
-        var musicObj = GameObject.FindGameObjectWithTag("Music Looper");
+        var musicObj = GameObject.FindWithTag("Music Looper");
         if (musicObj != null)
         {
             musicPlayer = musicObj.GetComponent<AudioSource>();

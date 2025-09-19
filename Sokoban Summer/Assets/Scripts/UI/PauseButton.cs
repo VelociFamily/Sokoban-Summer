@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class PauseButton : MonoBehaviour
 {
@@ -70,7 +71,7 @@ public class PauseButton : MonoBehaviour
         if (blocker != null && blocker.activeInHierarchy) return;
 
         // Check if a GameObject with the tag "levelcomplete" is active
-        var levelCompleteObject = GameObject.FindGameObjectWithTag("levelcomplete");
+        var levelCompleteObject = GameObject.FindWithTag("levelcomplete");
         if (levelCompleteObject != null && levelCompleteObject.activeSelf) return;
 
         var isActive = pauseMenu.activeSelf;
@@ -90,7 +91,7 @@ public class PauseButton : MonoBehaviour
         if (blocker != null && blocker.activeInHierarchy) return;
 
         // Check if a GameObject with the tag "levelcomplete" is active
-        var levelCompleteObject = GameObject.FindGameObjectWithTag("levelcomplete");
+        var levelCompleteObject = GameObject.FindWithTag("levelcomplete");
         if (levelCompleteObject != null && levelCompleteObject.activeSelf) return;
 
         PauseGame();
@@ -112,7 +113,33 @@ public class PauseButton : MonoBehaviour
         }
 
         var asyncOp = SceneManager.LoadSceneAsync(menuSceneBuildIndex, LoadSceneMode.Additive);
-        asyncOp.completed += (op) => { menuSceneLoaded = true; };
+        asyncOp.completed += (op) => 
+        { 
+            menuSceneLoaded = true;
+            // Handle potential EventSystem duplication after menu load
+            HandleEventSystemDuplication();
+        };
+    }
+
+    /// <summary>
+    /// Handles EventSystem duplication when returning to main menu from pause screen.
+    /// Ensures only one EventSystem exists to prevent input conflicts.
+    /// </summary>
+    private void HandleEventSystemDuplication()
+    {
+        var eventSystems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
+        
+        if (eventSystems.Length > 1)
+        {
+            Debug.LogWarning($"PauseButton: Found {eventSystems.Length} EventSystems after loading menu. Removing duplicates.");
+            
+            // Keep the first EventSystem and destroy the rest
+            for (int i = 1; i < eventSystems.Length; i++)
+            {
+                Debug.Log($"PauseButton: Destroying duplicate EventSystem on '{eventSystems[i].gameObject.name}'");
+                Destroy(eventSystems[i].gameObject);
+            }
+        }
     }
 
     public void PauseGame()

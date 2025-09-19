@@ -146,7 +146,7 @@ public class AchievementManager : MonoBehaviour
     private void FindAchievementText()
     {
         achievementText = null;
-        GameObject achievementObj = GameObject.FindGameObjectWithTag("achievement");
+        GameObject achievementObj = GameObject.FindWithTag("achievement");
         if (achievementObj != null)
         {
             achievementText = achievementObj.GetComponent<TextMeshProUGUI>();

@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using System.Collections.Generic;
+using System.Linq;
 
 public class MenuPersistence : MonoBehaviour
 {
@@ -42,6 +44,12 @@ public class MenuPersistence : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Handle EventSystem duplication for all scenes loaded additively
+        if (mode == LoadSceneMode.Additive)
+        {
+            HandleEventSystemDuplication();
+        }
+
         if (scene.buildIndex == 0) // Menu scene
         {
             var rootObjects = scene.GetRootGameObjects();
@@ -51,13 +59,13 @@ public class MenuPersistence : MonoBehaviour
                 // Destroy duplicate MenuUI
                 if (obj.CompareTag("MenuUI") && !preservedObjects.Contains(obj))
                 {
-                    Debug.Log("Destroying duplicate MenuUI: " + obj.name);
+                    Debug.Log("MenuPersistence: Destroying duplicate MenuUI: " + obj.name);
                     Destroy(obj);
                 }
                 // Destroy duplicate music player (assuming it has tag "Music" or similar)
                 if (obj.CompareTag("Music") && !preservedObjects.Contains(obj))
                 {
-                    Debug.Log("Destroying duplicate Music: " + obj.name);
+                    Debug.Log("MenuPersistence: Destroying duplicate Music: " + obj.name);
                     Destroy(obj);
                 }
             }
@@ -86,6 +94,27 @@ public class MenuPersistence : MonoBehaviour
         {
             if (obj != null)
                 obj.SetActive(true);
+        }
+    }
+
+    /// <summary>
+    /// Handles EventSystem duplication by ensuring only one EventSystem exists in the scene.
+    /// When multiple scenes are loaded additively, each may have an EventSystem causing conflicts.
+    /// </summary>
+    private void HandleEventSystemDuplication()
+    {
+        var eventSystems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
+        
+        if (eventSystems.Length > 1)
+        {
+            Debug.LogWarning($"MenuPersistence: Found {eventSystems.Length} EventSystems in scene. Removing duplicates.");
+            
+            // Keep the first EventSystem and destroy the rest
+            for (int i = 1; i < eventSystems.Length; i++)
+            {
+                Debug.Log($"MenuPersistence: Destroying duplicate EventSystem on '{eventSystems[i].gameObject.name}'");
+                Destroy(eventSystems[i].gameObject);
+            }
         }
     }
 
