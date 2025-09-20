@@ -35,6 +35,29 @@ public class PlayerController : MonoBehaviour
         inputActions.Player.Move.canceled += OnMoveCanceled;
     }
 
+    private void Start()
+    {
+        // Check if power-ups are already active when level starts (e.g., from previous level)
+        // and start animations immediately to provide visual feedback
+        if (ConfusePowerDown.confuseTurns > 0)
+        {
+            if (confuseEffect != null && !confuseEffect.isPlaying)
+            {
+                confuseEffect.Play();
+                Debug.Log($"[PlayerController]: Confusion animation started on level start - {ConfusePowerDown.confuseTurns} turns remaining");
+            }
+        }
+        
+        if (TeleportPowerUp.teleportTimes > 0)
+        {
+            if (teleportEffect != null && !teleportEffect.isPlaying)
+            {
+                teleportEffect.Play();
+                Debug.Log($"[PlayerController]: Teleport animation started on level start - {TeleportPowerUp.teleportTimes} uses remaining");
+            }
+        }
+    }
+
     private void OnEnable()
     {
         inputActions?.Player.Enable();
