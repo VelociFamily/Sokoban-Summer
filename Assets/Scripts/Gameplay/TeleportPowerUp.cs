@@ -12,6 +12,14 @@ public class TeleportPowerUp : MonoBehaviour
             teleportTimes = 3;
             teleportItem.SetActive(false);
             Debug.Log("[TeleportPowerUp]: Teleport power-up collected - 3 uses granted");
+            
+            // Start the teleport animation immediately
+            var playerController = collision.GetComponent<PlayerController>();
+            if (playerController != null && playerController.teleportEffect != null && !playerController.teleportEffect.isPlaying)
+            {
+                playerController.teleportEffect.Play();
+                Debug.Log("[TeleportPowerUp]: Teleport animation started immediately");
+            }
         }
     }
 }
