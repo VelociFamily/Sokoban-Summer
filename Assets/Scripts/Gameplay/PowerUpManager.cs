@@ -24,7 +24,7 @@ public class PowerUpManager
     }
     
     /// <summary>
-    /// Initializes power-up animations when a level starts (for level transitions)
+    /// Initializes power-up effects and animations when a level starts (for level transitions)
     /// </summary>
     public void InitializeLevelStart()
     {
@@ -35,6 +35,17 @@ public class PowerUpManager
                 powerUp.StartEffect(_playerController);
                 Debug.Log($"[PowerUpManager]: {powerUp.PowerUpName} animation started on level start - {powerUp.RemainingUses} uses remaining");
             }
+        }
+        
+        // Apply persistent effects that should be active immediately when level starts
+        if (_teleportationPowerUp.IsActive)
+        {
+            _playerController.moveSpeed = _playerController.teleportSpeed;
+            Debug.Log($"[PowerUpManager]: Teleport speed boost applied on level start");
+        }
+        else
+        {
+            _playerController.moveSpeed = _playerController.normalMoveSpeed;
         }
     }
     
