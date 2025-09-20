@@ -104,6 +104,11 @@ Final scan (files > 1 MB in `Assets/`)
 
 CI update: I updated `.github/workflows/unity-ci.yml` to use the detected editor version from `ProjectSettings/ProjectVersion.txt` and a matrix of `StandaloneWindows64` and `StandaloneLinux64`. The workflow expects a `UNITY_LICENSE` secret containing your license file content (or use GameCI's preferred license setup). If you'd like, I can change the workflow to use email/password/serial activation or a different publishing target.
 
+Unity CI git fix (2025-09-19)
+- Fixed "git rev-parse --is-shallow-repository" error by adding `fetch-depth: 0` to checkout action
+- This provides full git history required for semantic versioning in game-ci/unity-builder
+- Alternative solution: use `versioning: Custom` with manual version number to avoid git history requirements
+
 ## Post-move Git LFS fix (2025-09-19)
 
 What happened
