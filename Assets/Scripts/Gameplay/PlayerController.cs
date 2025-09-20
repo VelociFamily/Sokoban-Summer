@@ -16,14 +16,16 @@ public class PlayerController : MonoBehaviour
 
     private Vector2 moveDirection = Vector2.zero;
     public float moveSpeed = 5f;
-    private readonly float normalMoveSpeed = 5f;
+    public readonly float normalMoveSpeed = 5f;
     private Rigidbody2D rb;
 
     public ParticleSystem teleportEffect;
     public AudioClip teleportSound;
-    private readonly float teleportSpeed = 20f;
+    public readonly float teleportSpeed = 20f;
 
     public LayerMask wallLayer;
+
+    private PowerUpManager _powerUpManager;
 
     private void Awake()
     {
@@ -33,29 +35,15 @@ public class PlayerController : MonoBehaviour
         inputActions = new InputSystem_Actions();
         inputActions.Player.Move.performed += OnMovePerformed;
         inputActions.Player.Move.canceled += OnMoveCanceled;
+        
+        _powerUpManager = new PowerUpManager(this);
     }
 
     private void Start()
     {
         // Check if power-ups are already active when level starts (e.g., from previous level)
         // and start animations immediately to provide visual feedback
-        if (ConfusePowerDown.confuseTurns > 0)
-        {
-            if (confuseEffect != null && !confuseEffect.isPlaying)
-            {
-                confuseEffect.Play();
-                Debug.Log($"[PlayerController]: Confusion animation started on level start - {ConfusePowerDown.confuseTurns} turns remaining");
-            }
-        }
-        
-        if (TeleportPowerUp.teleportTimes > 0)
-        {
-            if (teleportEffect != null && !teleportEffect.isPlaying)
-            {
-                teleportEffect.Play();
-                Debug.Log($"[PlayerController]: Teleport animation started on level start - {TeleportPowerUp.teleportTimes} uses remaining");
-            }
-        }
+        _powerUpManager.InitializeLevelStart();
     }
 
     private void OnEnable()
@@ -87,81 +75,13 @@ public class PlayerController : MonoBehaviour
         else
             inputDirection = inputDirection.y > 0 ? Vector2.up : Vector2.down;
 
-        // Confusion handling
-        var isConfused = ConfusePowerDown.confuseTurns > 0;
-        if (isConfused)
-        {
-            if (confuseEffect != null && !confuseEffect.isPlaying)
-            {
-                confuseEffect.Play();
-                Debug.Log($"[PlayerController]: Confusion effect activated - {ConfusePowerDown.confuseTurns} turns remaining");
-            }
-
-            var originalDirection = inputDirection;
-            if (inputDirection == Vector2.up) inputDirection = Vector2.right;
-            else if (inputDirection == Vector2.right) inputDirection = Vector2.up;
-            else if (inputDirection == Vector2.down) inputDirection = Vector2.left;
-            else if (inputDirection == Vector2.left) inputDirection = Vector2.down;
-        }
-        // Stop confusion animation if this is the last confused turn
-        else if (confuseEffect != null && confuseEffect.isPlaying)
-        {
-            confuseEffect.Stop();
-            Debug.Log("[PlayerController]: Confusion effect ended");
-        }
-
-        // Teleport handling
-        var teleporting = TeleportPowerUp.teleportTimes > 0;
-        moveSpeed = teleporting ? teleportSpeed : normalMoveSpeed;
-
-        if (teleporting)
-        {
-            if (teleportEffect != null && !teleportEffect.isPlaying)
-            {
-                teleportEffect.Play();
-                Debug.Log($"[PlayerController]: Teleport mode activated - {TeleportPowerUp.teleportTimes} uses remaining");
-            }
-        }
-        // Stop teleport animation if this is the last teleport turn  
-        else if (teleportEffect != null && teleportEffect.isPlaying)
-        {
-            teleportEffect.Stop();
-            Debug.Log("[PlayerController]: Teleport mode deactivated");
-        }
+        // Process power-ups and get modified input direction
+        inputDirection = _powerUpManager.ProcessMovement(inputDirection);
 
         if (!TryMove(inputDirection)) return;
         
-        // Decrement power-up counters after successful move
-        if (isConfused) 
-        {
-            ConfusePowerDown.confuseTurns--;
-            // Stop confusion animation if we just used the last turn
-            if (ConfusePowerDown.confuseTurns == 0 && confuseEffect != null && confuseEffect.isPlaying)
-            {
-                confuseEffect.Stop();
-                Debug.Log("[PlayerController]: Confusion effect ended");
-            }
-        }
-        
-        if (teleporting)
-        {
-            TeleportPowerUp.teleportTimes--;
-            if (TeleportPowerUp.teleportTimes == 0)
-            {
-                Debug.Log("[PlayerController]: All teleport uses consumed");
-                // Stop teleport animation when all uses are consumed
-                if (teleportEffect != null && teleportEffect.isPlaying)
-                {
-                    teleportEffect.Stop();
-                    Debug.Log("[PlayerController]: Teleport mode deactivated");
-                }
-            }
-                
-            if (audioSource != null && teleportSound != null)
-                audioSource.PlayOneShot(teleportSound);
-            else if (teleportSound == null)
-                Debug.LogWarning("[PlayerController]: Teleport sound not assigned - cannot play audio feedback");
-        }
+        // Process power-up consumption after successful move
+        _powerUpManager.ProcessPostMove();
     }
 
     private static void OnMoveCanceled(InputAction.CallbackContext context)

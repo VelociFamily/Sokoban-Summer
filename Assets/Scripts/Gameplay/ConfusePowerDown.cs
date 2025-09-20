@@ -1,24 +1,25 @@
 using UnityEngine;
 
-public class ConfusePowerDown : MonoBehaviour
+/// <summary>
+/// MonoBehaviour for confusion power-up collection
+/// </summary>
+public class ConfusePowerDown : PowerUpBase
 {
-    public static int confuseTurns;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private static readonly ConfusionPowerUp _confusionImplementation = new ConfusionPowerUp();
+    
+    protected override IPowerUp PowerUpImplementation => _confusionImplementation;
+    
+    private void Awake()
     {
-        if (other.CompareTag("Player"))
-        {
-            confuseTurns = 5;
-            gameObject.SetActive(false);
-            Debug.Log("[ConfusePowerDown]: Confusion effect activated - 5 turns of reversed controls");
-            
-            // Start the confusion animation immediately
-            var playerController = other.GetComponent<PlayerController>();
-            if (playerController != null && playerController.confuseEffect != null && !playerController.confuseEffect.isPlaying)
-            {
-                playerController.confuseEffect.Play();
-                Debug.Log("[ConfusePowerDown]: Confusion animation started immediately");
-            }
-        }
+        // Set default uses for confusion power-up
+        if (usesGranted == 1) // Only set if not changed in inspector
+            usesGranted = 5;
+    }
+    
+    // Static accessors for backward compatibility with existing code
+    public static int confuseTurns
+    {
+        get => _confusionImplementation.RemainingUses;
+        set => ConfusionPowerUp.ConfuseTurns = value;
     }
 }
