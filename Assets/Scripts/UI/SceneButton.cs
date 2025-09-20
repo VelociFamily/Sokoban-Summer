@@ -3,20 +3,23 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Threading.Tasks;
 
-public class SceneButton : MonoBehaviour
+public class SceneButton : MonoBehaviour, IInitializable
 {
     [Tooltip("Build index of the scene this button will load")]
     public int sceneIndex;
 
     [Tooltip("Optional: Drag a lock overlay GameObject (e.g., lock icon or panel) here")]
     public GameObject lockOverlay;
-    private GameInitiator gameInitiator;
+    private GameInitializer gameInitializer;
     private Button button;
 
     // This will be true once Scene 5 has been loaded at least once
     public static bool hatUnlocked;
 
-    private void Awake()
+    /// <summary>
+    /// Initialize the SceneButton - can be called by UI management systems
+    /// </summary>
+    public void Initialize()
     {
         button = GetComponent<Button>();
 
@@ -26,16 +29,13 @@ public class SceneButton : MonoBehaviour
         UpdateLockState();
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
+        Debug.Log($"[SceneButton]: Initialized for scene {sceneIndex}");
     }
 
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void Start()
-    {
-        UpdateLockState();
     }
 
     public async void LoadScene()

@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class MoveCounter : MonoBehaviour
+public class MoveCounter : MonoBehaviour, IInitializable
 {
     public static MoveCounter Instance;
 
@@ -16,11 +16,16 @@ public class MoveCounter : MonoBehaviour
     private float timer;
     private bool timerRunning = true;
 
-    private void Awake()
+    /// <summary>
+    /// Initialize the MoveCounter - can be called by other systems
+    /// </summary>
+    public void Initialize()
     {
         if (Instance == null)
         {
             Instance = this;
+            timer = 0f;
+            timerRunning = true;
             Debug.Log("[MoveCounter]: Instance initialized");
         }
         else
@@ -28,12 +33,6 @@ public class MoveCounter : MonoBehaviour
             Debug.LogWarning($"[MoveCounter]: Duplicate instance detected on '{gameObject.name}' - destroying");
             Destroy(gameObject);
         }
-    }
-
-    private void Start()
-    {
-        timer = 0f;
-        timerRunning = true;
     }
 
     private void Update()

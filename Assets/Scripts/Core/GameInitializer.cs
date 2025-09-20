@@ -86,14 +86,17 @@ public class GameInitializer : MonoBehaviour
     /// </summary>
     private async Task InitializeAchievementSystemAsync()
     {
-        // AchievementManager is a singleton that initializes itself
-        // We just need to ensure it's created and ready
-        achievementManager = AchievementManager.Instance;
-        if (achievementManager != null)
+        // Initialize AchievementManager asynchronously
+        var achievementManagerObj = FindObjectOfType<AchievementManager>();
+        if (achievementManagerObj != null)
         {
-            Debug.Log("[GameInitializer]: AchievementManager ready");
+            await achievementManagerObj.InitializeAsync();
+            achievementManager = AchievementManager.Instance;
         }
-        await Task.Yield(); // Ensure async behavior
+        else
+        {
+            Debug.LogWarning("[GameInitializer]: AchievementManager not found in scene");
+        }
     }
 
     /// <summary>

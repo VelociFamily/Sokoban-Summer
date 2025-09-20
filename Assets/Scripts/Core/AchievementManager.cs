@@ -1,9 +1,10 @@
 ﻿using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AchievementManager : MonoBehaviour
+public class AchievementManager : MonoBehaviour, IAsyncInitializable
 {
     public static AchievementManager Instance { get; private set; }
 
@@ -32,7 +33,10 @@ public class AchievementManager : MonoBehaviour
     // Tracks the number of scenes loaded
     private int sceneLoadCount = 0;
 
-    private void Awake()
+    /// <summary>
+    /// Initialize the AchievementManager asynchronously
+    /// </summary>
+    public async Task InitializeAsync()
     {
         if (Instance != null && Instance != this)
         {
@@ -43,12 +47,18 @@ public class AchievementManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+        
+        // Initialize UI elements
+        await InitializeUIAsync();
+        
+        Debug.Log("[AchievementManager]: Initialized asynchronously");
     }
 
-    private void Start()
+    private async Task InitializeUIAsync()
     {
         FindAchievementText();
         UpdateAchievementDisplay(true);
+        await Task.Yield(); // Ensure async behavior
     }
 
     private void OnDestroy()
