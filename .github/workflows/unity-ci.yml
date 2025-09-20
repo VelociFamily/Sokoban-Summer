@@ -25,7 +25,8 @@ jobs:
           projectPath: .
           unityVersion: 6000.2.5f1
           targetPlatform: StandaloneWindows64
-          versioning: Semantic  # Use 'Custom' + customVersion if you want to avoid git history requirements
+          versioning: Semantic
+          customParameters: -quit
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
