@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
             else if (inputDirection == Vector2.down) inputDirection = Vector2.left;
             else if (inputDirection == Vector2.left) inputDirection = Vector2.down;
         }
+        // Stop confusion animation if this is the last confused turn
         else if (confuseEffect != null && confuseEffect.isPlaying)
         {
             confuseEffect.Stop();
@@ -90,33 +91,54 @@ public class PlayerController : MonoBehaviour
         var teleporting = TeleportPowerUp.teleportTimes > 0;
         moveSpeed = teleporting ? teleportSpeed : normalMoveSpeed;
 
-        switch (teleporting)
+        if (teleporting)
         {
-            case true when teleportEffect != null && !teleportEffect.isPlaying:
+            if (teleportEffect != null && !teleportEffect.isPlaying)
+            {
                 teleportEffect.Play();
                 Debug.Log($"[PlayerController]: Teleport mode activated - {TeleportPowerUp.teleportTimes} uses remaining");
-                break;
-            case false when teleportEffect != null && teleportEffect.isPlaying:
-                teleportEffect.Stop();
-                Debug.Log("[PlayerController]: Teleport mode deactivated");
-                break;
+            }
+        }
+        // Stop teleport animation if this is the last teleport turn  
+        else if (teleportEffect != null && teleportEffect.isPlaying)
+        {
+            teleportEffect.Stop();
+            Debug.Log("[PlayerController]: Teleport mode deactivated");
         }
 
         if (!TryMove(inputDirection)) return;
+        
+        // Decrement power-up counters after successful move
         if (isConfused) 
         {
             ConfusePowerDown.confuseTurns--;
+            // Stop confusion animation if we just used the last turn
+            if (ConfusePowerDown.confuseTurns == 0 && confuseEffect != null && confuseEffect.isPlaying)
+            {
+                confuseEffect.Stop();
+                Debug.Log("[PlayerController]: Confusion effect ended");
+            }
         }
-        if (!teleporting) return;
-
-        TeleportPowerUp.teleportTimes--;
-        if (TeleportPowerUp.teleportTimes == 0)
-            Debug.Log("[PlayerController]: All teleport uses consumed");
-            
-        if (audioSource != null && teleportSound != null)
-            audioSource.PlayOneShot(teleportSound);
-        else if (teleportSound == null)
-            Debug.LogWarning("[PlayerController]: Teleport sound not assigned - cannot play audio feedback");
+        
+        if (teleporting)
+        {
+            TeleportPowerUp.teleportTimes--;
+            if (TeleportPowerUp.teleportTimes == 0)
+            {
+                Debug.Log("[PlayerController]: All teleport uses consumed");
+                // Stop teleport animation when all uses are consumed
+                if (teleportEffect != null && teleportEffect.isPlaying)
+                {
+                    teleportEffect.Stop();
+                    Debug.Log("[PlayerController]: Teleport mode deactivated");
+                }
+            }
+                
+            if (audioSource != null && teleportSound != null)
+                audioSource.PlayOneShot(teleportSound);
+            else if (teleportSound == null)
+                Debug.LogWarning("[PlayerController]: Teleport sound not assigned - cannot play audio feedback");
+        }
     }
 
     private static void OnMoveCanceled(InputAction.CallbackContext context)
