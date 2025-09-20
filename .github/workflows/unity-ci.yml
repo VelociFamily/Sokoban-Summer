@@ -1,9 +1,8 @@
 name: Unity CI
 on:
-  push:
-    branches: [ main ]
   pull_request:
-    branches: [ main ]
+    types: [closed]
+    branches: [main]
 jobs:
   build:
     name: Unity Builder
