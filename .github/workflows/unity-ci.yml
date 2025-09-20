@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     name: Unity Builder
-    runs-on: windowws-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
