@@ -13,7 +13,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true
-          fetch-depth: 0  # Required for semantic versioning to access full git history
+      - name: Set git to ignore file permissions
+        run: git config --global core.filemode false
+        shell: bash
       - name: Cache Unity packages
         uses: actions/cache@v4
         with:
@@ -25,8 +27,8 @@ jobs:
           projectPath: .
           unityVersion: 6000.2.5f1
           targetPlatform: StandaloneWindows64
-          versioning: Semantic
           customParameters: -quit
+          customImage: gableroux/unity3d:6000.2.5f1-win
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
