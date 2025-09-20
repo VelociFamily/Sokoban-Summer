@@ -10,7 +10,10 @@ public class SfxVolumeControl : MonoBehaviour
 
     public static SfxVolumeControl Instance;
 
-    private void Awake()
+    /// <summary>
+    /// Initialize this SfxVolumeControl instance - called by AudioService
+    /// </summary>
+    public void Initialize()
     {
         if (Instance != null && Instance != this)
         {
@@ -18,9 +21,12 @@ public class SfxVolumeControl : MonoBehaviour
             return;
         }
         Instance = this;
+        
+        SetupSfxSlider();
+        Debug.Log("[SfxVolumeControl]: Initialized successfully");
     }
 
-    private void Start()
+    private void SetupSfxSlider()
     {
         if (sfxSlider == null)
         {

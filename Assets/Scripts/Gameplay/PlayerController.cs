@@ -31,12 +31,10 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
-
-        inputActions = new InputSystem_Actions();
-        inputActions.Player.Move.performed += OnMovePerformed;
-        inputActions.Player.Move.canceled += OnMoveCanceled;
-        
         _powerUpManager = new PowerUpManager(this);
+        
+        // Use InputService instead of creating our own InputSystem_Actions
+        InitializeInput();
     }
 
     private void Start()
@@ -46,22 +44,34 @@ public class PlayerController : MonoBehaviour
         _powerUpManager.InitializeLevelStart();
     }
 
+    private void InitializeInput()
+    {
+        // Use centralized input service instead of creating our own
+        if (InputService.Instance.InputActions != null)
+        {
+            inputActions = InputService.Instance.InputActions;
+            inputActions.Player.Move.performed += OnMovePerformed;
+            inputActions.Player.Move.canceled += OnMoveCanceled;
+        }
+    }
+
     private void OnEnable()
     {
-        inputActions?.Player.Enable();
+        InputService.Instance?.EnablePlayerInput();
     }
 
     private void OnDisable()
     {
-        inputActions?.Player.Disable();
+        InputService.Instance?.DisablePlayerInput();
     }
 
     private void OnDestroy()
     {
-        if (inputActions == null) return;
-        inputActions.Player.Move.performed -= OnMovePerformed;
-        inputActions.Player.Move.canceled -= OnMoveCanceled;
-        inputActions.Player.Disable();
+        if (inputActions != null)
+        {
+            inputActions.Player.Move.performed -= OnMovePerformed;
+            inputActions.Player.Move.canceled -= OnMoveCanceled;
+        }
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)

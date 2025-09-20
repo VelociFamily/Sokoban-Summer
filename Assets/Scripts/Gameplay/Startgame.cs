@@ -15,30 +15,36 @@ public class Startgame : MonoBehaviour
 
     private void Awake()
     {
-        if (_inputActions == null)
-            _inputActions = new InputSystem_Actions();
+        // Use InputService instead of creating our own InputSystem_Actions
+        InitializeInput();
+    }
 
-        _inputActions.UI.Cancel.performed += OnCancelPerformed;
+    private void InitializeInput()
+    {
+        // Use centralized input service
+        if (InputService.Instance.InputActions != null)
+        {
+            _inputActions = InputService.Instance.InputActions;
+            _inputActions.UI.Cancel.performed += OnCancelPerformed;
+        }
     }
 
     private void OnEnable()
     {
-        if (_inputActions == null)
-            _inputActions = new InputSystem_Actions();
-
-        _inputActions.UI.Enable();
+        InputService.Instance?.EnableUIInput();
     }
 
     private void OnDisable()
     {
-        _inputActions?.UI.Disable();
+        InputService.Instance?.DisableUIInput();
     }
 
     private void OnDestroy()
     {
-        if (_inputActions == null) return;
-        _inputActions.UI.Cancel.performed -= OnCancelPerformed;
-        _inputActions.UI.Disable();
+        if (_inputActions != null)
+        {
+            _inputActions.UI.Cancel.performed -= OnCancelPerformed;
+        }
     }
 
     private void OnCancelPerformed(InputAction.CallbackContext context)

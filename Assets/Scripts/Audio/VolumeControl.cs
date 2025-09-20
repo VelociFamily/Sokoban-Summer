@@ -11,9 +11,15 @@ public class VolumeControl : MonoBehaviour
     private AudioSource audioSource;
     private GameObject audioManagerInstance;
 
-    private void Awake()
+    /// <summary>
+    /// Initialize this VolumeControl instance - called by AudioService
+    /// </summary>
+    public void Initialize()
     {
         instance = this;
+        SetupAudioManager();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        Debug.Log("[VolumeControl]: Initialized successfully");
     }
 
     private void OnDestroy()
@@ -21,16 +27,11 @@ public class VolumeControl : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void Start()
-    {
-        SetupAudioManager();
-    }
-
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.buildIndex == 0) // Menu scene
         {
-            SetupAudioManager(); // Just rebind UI, don’t destroy or duplicate
+            SetupAudioManager(); // Just rebind UI, don't destroy or duplicate
         }
     }
 

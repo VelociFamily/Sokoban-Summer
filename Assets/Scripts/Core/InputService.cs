@@ -1,0 +1,80 @@
+using UnityEngine;
+using System.Threading.Tasks;
+using System;
+
+/// <summary>
+/// Centralized input service to manage input actions across the game
+/// Reduces duplication of InputSystem_Actions creation in multiple classes
+/// </summary>
+public class InputService : IAsyncInitializable
+{
+    private static InputService _instance;
+    public static InputService Instance => _instance ??= new InputService();
+
+    private InputSystem_Actions _inputActions;
+    
+    public InputSystem_Actions InputActions => _inputActions;
+
+    // Events for common input actions to reduce coupling
+    public event Action<UnityEngine.InputSystem.InputAction.CallbackContext> OnPlayerMove;
+    public event Action<UnityEngine.InputSystem.InputAction.CallbackContext> OnUICancel;
+
+    private InputService() { }
+
+    public async Task InitializeAsync()
+    {
+        Debug.Log("[InputService]: Initializing input systems...");
+        
+        await InitializeInputActions();
+        
+        Debug.Log("[InputService]: Input systems initialized successfully");
+    }
+
+    private async Task InitializeInputActions()
+    {
+        if (_inputActions == null)
+        {
+            _inputActions = new InputSystem_Actions();
+            
+            // Set up common event forwarding to reduce coupling
+            _inputActions.Player.Move.performed += ctx => OnPlayerMove?.Invoke(ctx);
+            _inputActions.Player.Move.canceled += ctx => OnPlayerMove?.Invoke(ctx);
+            _inputActions.UI.Cancel.performed += ctx => OnUICancel?.Invoke(ctx);
+        }
+        
+        await Task.Yield(); // Ensure async behavior
+    }
+
+    public void EnablePlayerInput()
+    {
+        _inputActions?.Player.Enable();
+    }
+
+    public void DisablePlayerInput()
+    {
+        _inputActions?.Player.Disable();
+    }
+
+    public void EnableUIInput()
+    {
+        _inputActions?.UI.Enable();
+    }
+
+    public void DisableUIInput()
+    {
+        _inputActions?.UI.Disable();
+    }
+
+    public void Dispose()
+    {
+        if (_inputActions != null)
+        {
+            _inputActions.Player.Move.performed -= ctx => OnPlayerMove?.Invoke(ctx);
+            _inputActions.Player.Move.canceled -= ctx => OnPlayerMove?.Invoke(ctx);
+            _inputActions.UI.Cancel.performed -= ctx => OnUICancel?.Invoke(ctx);
+            
+            _inputActions.Dispose();
+            _inputActions = null;
+        }
+    }
+}
