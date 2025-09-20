@@ -25,6 +25,5 @@
 *.zip  binary
 # Note: We rely on extension-based rules above so assets are tracked regardless of folder.
 # Any previous path-anchored rules for "Sokoban Summer/" were removed after moving the project to repo root.
-
 # Optional: Keep explicit tracking for sound assets if you prefer redundancy
 Assets/Sounds/**/*.mp3 filter=lfs diff=lfs merge=lfs -text
