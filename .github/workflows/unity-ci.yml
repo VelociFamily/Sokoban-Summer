@@ -28,7 +28,6 @@ jobs:
           unityVersion: 6000.2.5f1
           targetPlatform: StandaloneWindows64
           customParameters: -quit
-          customImage: gableroux/unity3d:6000.2.5f1-win
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
