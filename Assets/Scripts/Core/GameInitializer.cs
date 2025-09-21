@@ -11,6 +11,7 @@ public class GameInitializer : MonoBehaviour
     public VolumeControl VolumeControl;
     public SfxVolumeControl SFXVolumeControl;
     public LevelLogger LevelLogger;
+    public GameObject MusicPlayer;
 
     private GameObject backgroundClone;
     private AchievementManager achievementManager;
@@ -28,13 +29,16 @@ public class GameInitializer : MonoBehaviour
             // Step 2: Initialize background first (like original timing)
             await InitializeBackgroundAsync();
             
-            // Step 3: Initialize core systems in parallel
+            // Step 3: Initialize music player (needed before VolumeControl)
+            await InitializeMusicPlayerAsync();
+            
+            // Step 4: Initialize core systems in parallel
             await InitializeCoreSystemsAsync();
             
-            // Step 4: Initialize remaining scene-specific systems  
+            // Step 5: Initialize remaining scene-specific systems  
             await InitializeLevelLoggerAsync();
             
-            // Step 5: Load main menu scene LAST (like original)
+            // Step 6: Load main menu scene LAST (like original)
             await LoadMainMenuAsync();
             
             Debug.Log("[GameInitializer]: Game initialization completed successfully");
@@ -43,6 +47,23 @@ public class GameInitializer : MonoBehaviour
         {
             Debug.LogError($"[GameInitializer]: Error during game initialization: {exception}");
         }
+    }
+
+    /// <summary>
+    /// Initialize music player asynchronously - needed before VolumeControl
+    /// </summary>
+    private async Task InitializeMusicPlayerAsync()
+    {
+        if (MusicPlayer != null)
+        {
+            var musicPlayerClone = Instantiate(MusicPlayer);
+            Debug.Log($"[GameInitializer]: Music Player '{musicPlayerClone.name}' initialized with tag '{musicPlayerClone.tag}'");
+        }
+        else
+        {
+            Debug.LogError("[GameInitializer]: Music Player prefab is null - background music will not play. Check GameInitializer prefab assignments!");
+        }
+        await Task.Yield();
     }
 
     /// <summary>
