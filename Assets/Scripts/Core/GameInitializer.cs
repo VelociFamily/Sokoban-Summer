@@ -10,7 +10,6 @@ public class GameInitializer : MonoBehaviour
     public GameObject Background;
     public VolumeControl VolumeControl;
     public SfxVolumeControl SFXVolumeControl;
-    public AudioSource AudioSource;
     public LevelLogger LevelLogger;
 
     private GameObject backgroundClone;
@@ -66,11 +65,8 @@ public class GameInitializer : MonoBehaviour
     /// </summary>
     private async Task InitializeAudioSystemAsync()
     {
-        // Ensure AudioListener exists first (synchronous but fast)
-        EnsureAudioListenerExists();
-        
         // Initialize audio service asynchronously with prefab references
-        await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl, AudioSource);
+        await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl);
     }
 
     /// <summary>
@@ -87,7 +83,7 @@ public class GameInitializer : MonoBehaviour
     private async Task InitializeAchievementSystemAsync()
     {
         // Initialize AchievementManager asynchronously
-        var achievementManagerObj = FindObjectOfType<AchievementManager>();
+        var achievementManagerObj = FindFirstObjectByType<AchievementManager>();
         if (achievementManagerObj != null)
         {
             await achievementManagerObj.InitializeAsync();
@@ -167,30 +163,6 @@ public class GameInitializer : MonoBehaviour
                     backgroundClone.SetActive(true);
                     break;
             }
-    }
-
-    /// <summary>
-    /// Ensures there's always an AudioListener in the scene to prevent Unity warnings.
-    /// Creates a minimal AudioListener if none exists.
-    /// </summary>
-    private void EnsureAudioListenerExists()
-    {
-        var audioListeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
-        
-        if (audioListeners.Length == 0)
-        {
-            Debug.LogWarning("[GameInitializer]: No AudioListener found in scene - creating temporary one");
-            
-            // Create a temporary GameObject with AudioListener to prevent Unity warnings
-            var tempAudioListenerObject = new GameObject("TempAudioListener");
-            tempAudioListenerObject.AddComponent<AudioListener>();
-            
-            Debug.Log("[GameInitializer]: Temporary AudioListener created - will be managed by scene loading system");
-        }
-        else
-        {
-            Debug.Log($"[GameInitializer]: Found {audioListeners.Length} AudioListener(s) in scene");
-        }
     }
 
     private void OnDestroy()

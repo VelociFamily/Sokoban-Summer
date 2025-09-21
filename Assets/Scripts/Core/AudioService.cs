@@ -31,13 +31,13 @@ public class AudioService : IAsyncInitializable
     /// <summary>
     /// Initialize with specific prefab references from GameInitializer
     /// </summary>
-    public async Task InitializeWithPrefabsAsync(VolumeControl volumeControlPrefab, SfxVolumeControl sfxVolumeControlPrefab, AudioSource audioSourcePrefab)
+    public async Task InitializeWithPrefabsAsync(VolumeControl volumeControlPrefab, SfxVolumeControl sfxVolumeControlPrefab)
     {
         Debug.Log("[AudioService]: Initializing audio systems with prefabs...");
         
         // Initialize with provided prefabs
         await InitializeVolumeControlsWithPrefabs(volumeControlPrefab, sfxVolumeControlPrefab);
-        await InitializeAudioSourceWithPrefab(audioSourcePrefab);
+        await InitializeAudioSourceWithPrefab();
         
         Debug.Log("[AudioService]: Audio systems with prefabs initialized successfully");
     }
@@ -45,7 +45,7 @@ public class AudioService : IAsyncInitializable
     private async Task InitializeVolumeControls()
     {
         // Find or create volume control instances
-        _volumeControl = Object.FindObjectOfType<VolumeControl>();
+        _volumeControl = Object.FindFirstObjectByType<VolumeControl>();
         if (_volumeControl == null)
         {
             var volumeControlPrefab = Resources.Load<VolumeControl>("VolumeControl");
@@ -61,7 +61,7 @@ public class AudioService : IAsyncInitializable
             _volumeControl.Initialize();
         }
 
-        _sfxVolumeControl = Object.FindObjectOfType<SfxVolumeControl>();
+        _sfxVolumeControl = Object.FindFirstObjectByType<SfxVolumeControl>();
         if (_sfxVolumeControl == null)
         {
             var sfxVolumeControlPrefab = Resources.Load<SfxVolumeControl>("SFXVolumeControl");
@@ -83,7 +83,7 @@ public class AudioService : IAsyncInitializable
     private async Task InitializeAudioSource()
     {
         // Destroy any existing extra AudioSources to ensure only one exists
-        var existingAudioSources = Object.FindObjectsOfType<AudioSource>();
+        var existingAudioSources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
         
         if (existingAudioSources.Length > 1)
         {
@@ -133,7 +133,7 @@ public class AudioService : IAsyncInitializable
     private async Task InitializeVolumeControlsWithPrefabs(VolumeControl volumeControlPrefab, SfxVolumeControl sfxVolumeControlPrefab)
     {
         // Find existing or create new volume control instances
-        _volumeControl = Object.FindObjectOfType<VolumeControl>();
+        _volumeControl = Object.FindFirstObjectByType<VolumeControl>();
         if (_volumeControl == null && volumeControlPrefab != null)
         {
             _volumeControl = Object.Instantiate(volumeControlPrefab);
@@ -145,7 +145,7 @@ public class AudioService : IAsyncInitializable
             _volumeControl.Initialize();
         }
 
-        _sfxVolumeControl = Object.FindObjectOfType<SfxVolumeControl>();
+        _sfxVolumeControl = Object.FindFirstObjectByType<SfxVolumeControl>();
         if (_sfxVolumeControl == null && sfxVolumeControlPrefab != null)
         {
             _sfxVolumeControl = Object.Instantiate(sfxVolumeControlPrefab);
@@ -160,39 +160,38 @@ public class AudioService : IAsyncInitializable
         await Task.Yield(); // Ensure async behavior
     }
 
-    private async Task InitializeAudioSourceWithPrefab(AudioSource audioSourcePrefab)
+    private async Task InitializeAudioSourceWithPrefab()
     {
         // Destroy any existing extra AudioSources to ensure only one exists
-        var existingAudioSources = Object.FindObjectsOfType<AudioSource>();
+        var existingAudioSources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
         
-        if (existingAudioSources.Length > 1)
+        switch (existingAudioSources.Length)
         {
-            Debug.LogWarning($"[AudioService]: Found {existingAudioSources.Length} AudioSources in scene. Consolidating to single instance.");
-            
-            // Keep the first one and destroy the rest
-            _mainAudioSource = existingAudioSources[0];
-            for (int i = 1; i < existingAudioSources.Length; i++)
+            case > 1:
             {
-                if (existingAudioSources[i] != null && existingAudioSources[i] != _mainAudioSource)
+                Debug.LogWarning($"[AudioService]: Found {existingAudioSources.Length} AudioSources in scene. Consolidating to single instance.");
+            
+                // Keep the first one and destroy the rest
+                _mainAudioSource = existingAudioSources[0];
+                for (var i = 1; i < existingAudioSources.Length; i++)
                 {
+                    if (existingAudioSources[i] == null || existingAudioSources[i] == _mainAudioSource) continue;
                     Debug.Log($"[AudioService]: Destroying duplicate AudioSource on '{existingAudioSources[i].gameObject.name}'");
                     Object.Destroy(existingAudioSources[i]);
                 }
+
+                break;
             }
-        }
-        else if (existingAudioSources.Length == 1)
-        {
-            _mainAudioSource = existingAudioSources[0];
-        }
-        else if (audioSourcePrefab != null)
-        {
-            _mainAudioSource = Object.Instantiate(audioSourcePrefab);
-        }
-        else
-        {
-            // Create a basic AudioSource GameObject
-            var audioSourceObject = new GameObject("Main Audio Source");
-            _mainAudioSource = audioSourceObject.AddComponent<AudioSource>();
+            case 1:
+                _mainAudioSource = existingAudioSources[0];
+                break;
+            default:
+            {
+                // Create a basic AudioSource GameObject
+                var audioSourceObject = new GameObject("Main Audio Source");
+                _mainAudioSource = audioSourceObject.AddComponent<AudioSource>();
+                break;
+            }
         }
         
         // Ensure the main AudioSource persists across scene changes
@@ -250,10 +249,4 @@ public class AudioService : IAsyncInitializable
 
     public VolumeControl GetVolumeControl() => _volumeControl;
     public SfxVolumeControl GetSfxVolumeControl() => _sfxVolumeControl;
-    
-    /// <summary>
-    /// Deprecated: Use GetMainAudioSource() instead
-    /// </summary>
-    [System.Obsolete("Use GetMainAudioSource() instead")]
-    public AudioSource GetAudioSource() => GetMainAudioSource();
 }
