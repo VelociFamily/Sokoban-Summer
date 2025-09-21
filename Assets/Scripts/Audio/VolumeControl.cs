@@ -29,7 +29,7 @@ public class VolumeControl : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.buildIndex == 0) // Menu scene
+        if (SceneInfo.IsMainMenuScene(scene)) // Menu scene
         {
             SetupAudioManager(); // Just rebind UI, don't destroy or duplicate
         }

@@ -42,9 +42,10 @@ public class PortalTrigger : MonoBehaviour
                 Debug.LogWarning("[PortalTrigger]: Player reference not assigned - cannot disable player");
             }
 
-            var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-            SceneSelector.MarkSceneCompleted(currentSceneIndex);
-            Debug.Log($"[PortalTrigger]: Scene {currentSceneIndex} marked as completed and unlocked for progression");
+            // Use scene name for better maintainability instead of buildIndex
+            var currentScene = SceneManager.GetActiveScene();
+            SceneSelector.MarkSceneCompleted(currentScene.buildIndex); // SceneSelector still uses buildIndex internally
+            Debug.Log($"[PortalTrigger]: Scene '{currentScene.name}' marked as completed and unlocked for progression");
 
             // (Optional) Automatically go to the main menu or next scene
             // SceneManager.LoadScene("MainMenu");
