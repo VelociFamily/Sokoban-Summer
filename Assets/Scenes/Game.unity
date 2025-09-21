@@ -156,9 +156,9 @@ MonoBehaviour:
     type: 3}
   SFXVolumeControl: {fileID: 8042197476450585151, guid: 471cbf17642e3b2489b010a9a921807b,
     type: 3}
-  AudioSource: {fileID: 3151595561698033625, guid: 471cbf17642e3b2489b010a9a921807b,
-    type: 3}
   LevelLogger: {fileID: 7322051495895024113, guid: 8f10432bbd156e44ba6569edb1f1fbd9,
+    type: 3}
+  MusicPlayer: {fileID: 5260749598366790734, guid: ffe1261ba03f3154e8dddfda3970f90f,
     type: 3}
 --- !u!4 &1538283959
 Transform:
