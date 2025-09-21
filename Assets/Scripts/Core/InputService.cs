@@ -6,7 +6,7 @@ using System;
 /// Centralized input service to manage input actions across the game
 /// Reduces duplication of InputSystem_Actions creation in multiple classes
 /// </summary>
-public class InputService : IAsyncInitializable
+public class InputService
 {
     private static InputService _instance;
     public static InputService Instance => _instance ??= new InputService();

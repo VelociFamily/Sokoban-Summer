@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class AchievementManager : MonoBehaviour, IAsyncInitializable
+public class AchievementManager : MonoBehaviour
 {
     public static AchievementManager Instance { get; private set; }
 

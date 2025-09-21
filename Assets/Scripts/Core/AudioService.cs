@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 /// Reduces the need for multiple MonoBehaviour-based audio managers
 /// Ensures only one main AudioSource exists across all scenes
 /// </summary>
-public class AudioService : IAsyncInitializable
+public class AudioService
 {
     private static AudioService _instance;
     public static AudioService Instance => _instance ??= new AudioService();

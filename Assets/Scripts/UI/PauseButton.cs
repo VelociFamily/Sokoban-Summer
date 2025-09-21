@@ -18,7 +18,7 @@ public class PauseButton : MonoBehaviour
     private Camera mainCamera;
 
     // Track the menu scene name or index
-    private const int menuSceneBuildIndex = 0;
+    private const int menuSceneBuildIndex = 1;
     private string menuSceneName;
 
     private void Start()

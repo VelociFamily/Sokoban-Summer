@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Threading.Tasks;
 
-public class SceneButton : MonoBehaviour, IInitializable
+public class SceneButton : MonoBehaviour
 {
     [Tooltip("Build index of the scene this button will load")]
     public int sceneIndex;
@@ -18,7 +18,7 @@ public class SceneButton : MonoBehaviour, IInitializable
     /// <summary>
     /// Initialize the SceneButton - can be called by UI management systems
     /// </summary>
-    public void Initialize()
+    public void Awake()
     {
         button = GetComponent<Button>();
 

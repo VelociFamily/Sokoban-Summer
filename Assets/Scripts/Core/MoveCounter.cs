@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class MoveCounter : MonoBehaviour, IInitializable
+public class MoveCounter : MonoBehaviour
 {
     public static MoveCounter Instance;
 
@@ -19,7 +19,7 @@ public class MoveCounter : MonoBehaviour, IInitializable
     /// <summary>
     /// Initialize the MoveCounter - can be called by other systems
     /// </summary>
-    public void Initialize()
+    public void Awake()
     {
         if (Instance == null)
         {

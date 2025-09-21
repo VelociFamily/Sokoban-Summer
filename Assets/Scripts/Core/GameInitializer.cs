@@ -21,25 +21,22 @@ public class GameInitializer : MonoBehaviour
         try
         {
             Debug.Log("[GameInitializer]: Starting async game initialization...");
-            
-            // Step 1: Ensure AudioListener exists first (like original)
-            //EnsureAudioListenerExists();
-            
-            // Step 2: Initialize background first (like original timing)
+
+            // Step 1: Initialize background first (like original timing)
             await InitializeBackgroundAsync();
-            
-            // Step 3: Initialize music player (needed before VolumeControl)
+
+            // Step 2: Initialize music player (needed before VolumeControl)
             await InitializeMusicPlayerAsync();
-            
-            // Step 4: Initialize core systems in parallel
+
+            // Step 3: Initialize core systems in parallel
             await InitializeCoreSystemsAsync();
-            
-            // Step 5: Initialize remaining scene-specific systems  
+
+            // Step 4: Initialize remaining scene-specific systems  
             await InitializeLevelLoggerAsync();
-            
-            // Step 6: Load main menu scene LAST (like original)
+
+            // Step 5: Load main menu scene LAST (like original)
             await LoadMainMenuAsync();
-            
+
             Debug.Log("[GameInitializer]: Game initialization completed successfully");
         }
         catch (Exception exception)
@@ -59,9 +56,9 @@ public class GameInitializer : MonoBehaviour
             Debug.Log($"[GameInitializer]: Music Player '{musicPlayerClone.name}' initialized with tag '{musicPlayerClone.tag}'");
         }
         else
-        {
-            Debug.LogError("[GameInitializer]: Music Player prefab is null - background music will not play. Check GameInitializer prefab assignments!");
-        }
+            Debug.LogError(
+                "[GameInitializer]: Music Player prefab is null - background music will not play. Check GameInitializer prefab assignments!");
+
         await Task.Yield();
     }
 
@@ -71,7 +68,7 @@ public class GameInitializer : MonoBehaviour
     private async Task InitializeCoreSystemsAsync()
     {
         Debug.Log("[GameInitializer]: Initializing core systems...");
-        
+
         // Start all async initializations in parallel
         var initTasks = new List<Task>
         {
@@ -79,10 +76,10 @@ public class GameInitializer : MonoBehaviour
             InitializeInputSystemAsync(),
             InitializeAchievementSystemAsync()
         };
-        
+
         // Wait for all core systems to initialize
         await Task.WhenAll(initTasks);
-        
+
         Debug.Log("[GameInitializer]: Core systems initialized");
     }
 
@@ -91,9 +88,6 @@ public class GameInitializer : MonoBehaviour
     /// </summary>
     private async Task InitializeAudioSystemAsync()
     {
-        // Ensure AudioListener exists first (synchronous but fast)
-        //EnsureAudioListenerExists();
-        
         // Initialize audio service asynchronously with prefab references
         await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl);
     }
@@ -101,7 +95,7 @@ public class GameInitializer : MonoBehaviour
     /// <summary>
     /// Initialize input systems asynchronously
     /// </summary>
-    private async Task InitializeInputSystemAsync()
+    private static async Task InitializeInputSystemAsync()
     {
         await InputService.Instance.InitializeAsync();
     }
@@ -109,7 +103,7 @@ public class GameInitializer : MonoBehaviour
     /// <summary>
     /// Initialize achievement system asynchronously
     /// </summary>
-    private async Task InitializeAchievementSystemAsync()
+    private static async Task InitializeAchievementSystemAsync()
     {
         // Initialize AchievementManager asynchronously
         var achievementManagerObj = FindFirstObjectByType<AchievementManager>();
@@ -119,9 +113,7 @@ public class GameInitializer : MonoBehaviour
             Debug.Log("[GameInitializer]: AchievementManager initialized");
         }
         else
-        {
             Debug.LogWarning("[GameInitializer]: AchievementManager not found in scene");
-        }
     }
 
     /// <summary>
@@ -134,15 +126,15 @@ public class GameInitializer : MonoBehaviour
             backgroundClone = Instantiate(Background);
             if (!backgroundClone.CompareTag("background"))
                 backgroundClone.tag = "background";
-            
+
             // Ensure background is visible initially (it should be managed by Update() later)
             backgroundClone.SetActive(true);
             Debug.Log($"[GameInitializer]: Background '{backgroundClone.name}' initialized and activated");
         }
         else
-        {
-            Debug.LogError("[GameInitializer]: Background prefab is null - cannot initialize background. Check GameInitializer prefab assignments!");
-        }
+            Debug.LogError(
+                "[GameInitializer]: Background prefab is null - cannot initialize background. Check GameInitializer prefab assignments!");
+
         await Task.Yield();
     }
 
@@ -162,60 +154,21 @@ public class GameInitializer : MonoBehaviour
     /// <summary>
     /// Load main menu scene asynchronously
     /// </summary>
-    private async Task LoadMainMenuAsync()
+    private static async Task LoadMainMenuAsync()
     {
         Debug.Log("[GameInitializer]: Loading Main Menu scene...");
         await SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
-        
-        // Initialize SceneButton components in the newly loaded Main Menu scene
-        await InitializeSceneButtonsInMainMenuAsync();
-        
         Debug.Log("[GameInitializer]: Main Menu scene loaded");
-    }
-    
-    /// <summary>
-    /// Initialize all SceneButton components in the Main Menu scene
-    /// </summary>
-    private async Task InitializeSceneButtonsInMainMenuAsync()
-    {
-        // Wait one frame to ensure the scene is fully loaded
-        await Task.Yield();
-        
-        var mainMenuScene = SceneManager.GetSceneByName("Main Menu");
-        if (mainMenuScene.IsValid())
-        {
-            var sceneButtons = new List<SceneButton>();
-            
-            // Find all SceneButton components in the Main Menu scene
-            foreach (var rootObj in mainMenuScene.GetRootGameObjects())
-            {
-                sceneButtons.AddRange(rootObj.GetComponentsInChildren<SceneButton>());
-            }
-            
-            // Initialize each SceneButton
-            foreach (var sceneButton in sceneButtons)
-            {
-                sceneButton.Initialize();
-            }
-            
-            Debug.Log($"[GameInitializer]: Initialized {sceneButtons.Count} SceneButton(s) in Main Menu scene");
-        }
-        else
-        {
-            Debug.LogWarning("[GameInitializer]: Main Menu scene not found for SceneButton initialization");
-        }
     }
 
     private void Update()
     {
         if (backgroundClone == null)
-        {
             return;
-        }
 
         // Use the new SceneInfo system instead of hardcoded build indices
         var shouldShow = SceneInfo.ShouldShowBackground();
-        
+
         if (backgroundClone.activeSelf != shouldShow)
         {
             backgroundClone.SetActive(shouldShow);
@@ -226,34 +179,5 @@ public class GameInitializer : MonoBehaviour
     {
         // Clean up input service when GameInitializer is destroyed
         InputService.Instance?.Dispose();
-    }
-
-    /// <summary>
-    /// Ensures there's always an AudioListener in the scene to prevent Unity warnings.
-    /// Creates a minimal AudioListener if none exists.
-    /// </summary>
-    private void EnsureAudioListenerExists()
-    {
-        var audioListeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
-        
-        if (audioListeners.Length == 0)
-        {
-            Debug.LogWarning("[GameInitializer]: No AudioListener found - creating temporary one");
-            
-            // Create a temporary GameObject with AudioListener to prevent Unity warnings
-            var tempAudioListenerObject = new GameObject("TempAudioListener");
-            tempAudioListenerObject.AddComponent<AudioListener>();
-        }
-        else if (audioListeners.Length > 1)
-        {
-            Debug.LogWarning($"[GameInitializer]: Found {audioListeners.Length} AudioListeners - disabling extras to prevent warnings");
-            for (var i = 1; i < audioListeners.Length; i++)
-            {
-                if (audioListeners[i] != null)
-                {
-                    audioListeners[i].enabled = false;
-                }
-            }
-        }
     }
 }

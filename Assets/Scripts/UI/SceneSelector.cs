@@ -14,7 +14,7 @@ public class SceneSelector
         }
     }
 
-    public static void MarkSceneCompleted(int sceneIndex)
+    public static void MarkNextLevelUnlocked(int sceneIndex)
     {
         CompletedScenes[sceneIndex] = true;
         Debug.Log($"[SceneSelector]: Scene {sceneIndex} completed and unlocked for progression");

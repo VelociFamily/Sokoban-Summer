@@ -44,7 +44,7 @@ public class PortalTrigger : MonoBehaviour
 
             // Use scene name for better maintainability instead of buildIndex
             var currentScene = SceneManager.GetActiveScene();
-            SceneSelector.MarkSceneCompleted(currentScene.buildIndex); // SceneSelector still uses buildIndex internally
+            SceneSelector.MarkNextLevelUnlocked(currentScene.buildIndex+1); // SceneSelector still uses buildIndex internally
             Debug.Log($"[PortalTrigger]: Scene '{currentScene.name}' marked as completed and unlocked for progression");
 
             // (Optional) Automatically go to the main menu or next scene
