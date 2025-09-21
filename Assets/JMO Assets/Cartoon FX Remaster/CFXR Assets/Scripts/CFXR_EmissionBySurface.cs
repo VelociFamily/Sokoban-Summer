@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditor;
@@ -20,7 +20,7 @@ namespace CartoonFX
 #if UNITY_EDITOR
         private void OnValidate()
         {
-            this.hideFlags = HideFlags.DontSaveInBuild;
+            hideFlags = HideFlags.DontSaveInBuild;
             CalculateAndUpdateEmission();
         }
 
@@ -44,7 +44,7 @@ namespace CartoonFX
         {
             CalculateAndUpdateEmission();
 
-            if (!System.Array.Exists(Selection.gameObjects, item => item == this.gameObject))
+            if (!Array.Exists(Selection.gameObjects, item => item == gameObject))
             {
                 DetachFromEditor();
             }
@@ -54,8 +54,8 @@ namespace CartoonFX
         {
             if (!active) return;
             if (this == null) return;
-            if (ps == null) ps = this.GetComponent<ParticleSystem>();
-            density = CalculateShapeDensity(ps.shape, ps.main.scalingMode == ParticleSystemScalingMode.Shape, this.transform);
+            if (ps == null) ps = GetComponent<ParticleSystem>();
+            density = CalculateShapeDensity(ps.shape, ps.main.scalingMode == ParticleSystemScalingMode.Shape, transform);
             if (density == 0) return;
             var emissionOverTime = density * particlesPerUnit;
             var emission = ps.emission;
@@ -150,14 +150,14 @@ namespace CartoonFX
                 case ParticleSystemShapeType.MeshRenderer:
                 {
                     Debug.LogWarning( string.Format("[{0}] Calculating volume for a mesh is unsupported.", nameof(CFXR_EmissionBySurface)));
-                    this.active = false;
+                    active = false;
                     return 0;
                 }
                 case ParticleSystemShapeType.Sprite:
                 case ParticleSystemShapeType.SpriteRenderer:
                 {
                     Debug.LogWarning( string.Format("[{0}] Calculating volume for a sprite is unsupported.", nameof(CFXR_EmissionBySurface)));
-                    this.active = false;
+                    active = false;
                     return 0;
                 }
             }

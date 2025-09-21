@@ -255,7 +255,7 @@ namespace CartoonFX
             [CustomEditor(typeof(CFXR_ShaderImporter)), CanEditMultipleObjects]
             public class TCP2ShaderImporter_Editor : Editor
             {
-                private CFXR_ShaderImporter Importer => (CFXR_ShaderImporter) this.target;
+                private CFXR_ShaderImporter Importer => (CFXR_ShaderImporter) target;
 
                 // From: UnityEditor.ShaderInspectorPlatformsPopup
                 private static string FormatCount(ulong count)

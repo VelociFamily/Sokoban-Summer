@@ -67,7 +67,7 @@ public class AchievementManager : MonoBehaviour, IAsyncInitializable
     private void InitializeDefaultUnlocks()
     {
         // Always unlock the tutorial level by default
-        _completeTutorial = true;
+        CompleteTutorial = true;
         Debug.Log("[AchievementManager]: Tutorial level unlocked by default on game start");
     }
     
@@ -80,7 +80,7 @@ public class AchievementManager : MonoBehaviour, IAsyncInitializable
         }
     }
 
-    private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         FindAchievementText();
         UpdateAchievementDisplay(true);

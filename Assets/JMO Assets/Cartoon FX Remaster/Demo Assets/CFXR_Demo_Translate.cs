@@ -1,4 +1,4 @@
-﻿//--------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 // Cartoon FX
 // (c) 2012-2025 Jean Moreno
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -21,22 +21,22 @@ namespace CartoonFX
 			if (!initialized)
 			{
 				initialized = true;
-				initialPosition = this.transform.position;
+				initialPosition = transform.position;
 			}
 		}
 
         private void OnEnable()
 		{
-			this.transform.position = initialPosition;
+			transform.position = initialPosition;
 			if (randomRotation)
 			{
-				this.transform.eulerAngles = Vector3.Lerp(Vector3.zero, Vector3.up * 360, Random.value);
+				transform.eulerAngles = Vector3.Lerp(Vector3.zero, Vector3.up * 360, Random.value);
 			}
 		}
 
         private void Update()
 		{
-			this.transform.Translate(direction * Time.deltaTime);
+			transform.Translate(direction * Time.deltaTime);
 		}
 	}
 }

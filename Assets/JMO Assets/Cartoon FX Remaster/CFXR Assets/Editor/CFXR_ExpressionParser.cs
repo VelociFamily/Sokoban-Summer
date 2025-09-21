@@ -122,21 +122,21 @@ namespace CartoonFX
 
 					switch(t.type)
 					{
-						case Token.TokenType.LITERAL:
+						case TokenType.LITERAL:
 							outputQueue.Enqueue(t);
 							break;
-						case Token.TokenType.BINARY_OP:
-						case Token.TokenType.UNARY_OP:
-						case Token.TokenType.OPEN_PAREN:
+						case TokenType.BINARY_OP:
+						case TokenType.UNARY_OP:
+						case TokenType.OPEN_PAREN:
 							stack.Push(t);
 							break;
-						case Token.TokenType.CLOSE_PAREN:
-							while(stack.Peek().type != Token.TokenType.OPEN_PAREN)
+						case TokenType.CLOSE_PAREN:
+							while(stack.Peek().type != TokenType.OPEN_PAREN)
 							{
 								outputQueue.Enqueue(stack.Pop());
 							}
 							stack.Pop();
-							if(stack.Count > 0 && stack.Peek().type == Token.TokenType.UNARY_OP)
+							if(stack.Count > 0 && stack.Peek().type == TokenType.UNARY_OP)
 							{
 								outputQueue.Enqueue(stack.Pop());
 							}
@@ -173,8 +173,8 @@ namespace CartoonFX
 
 			public ExpressionLeaf(EvaluateFunction _evalFunction, string _content)
 			{
-				this.evalFunction = _evalFunction;
-				this.content = _content;
+				evalFunction = _evalFunction;
+				content = _content;
 			}
 
 			override public bool Evaluate()
@@ -182,10 +182,10 @@ namespace CartoonFX
 				//embedded not, see special case in Token declaration
 				if(content.StartsWith("!"))
 				{
-					return !this.evalFunction(content.Substring(1));
+					return !evalFunction(content.Substring(1));
 				}
 
-				return this.evalFunction(content);
+				return evalFunction(content);
 			}
 		}
 
@@ -196,8 +196,8 @@ namespace CartoonFX
 
 			public ExpressionAnd(Expression _left, Expression _right)
 			{
-				this.left = _left;
-				this.right = _right;
+				left = _left;
+				right = _right;
 			}
 
 			override public bool Evaluate()
@@ -213,8 +213,8 @@ namespace CartoonFX
 
 			public ExpressionOr(Expression _left, Expression _right)
 			{
-				this.left = _left;
-				this.right = _right;
+				left = _left;
+				right = _right;
 			}
 
 			override public bool Evaluate()
@@ -229,7 +229,7 @@ namespace CartoonFX
 
 			public ExpressionNot(Expression _expr)
 			{
-				this.expr = _expr;
+				expr = _expr;
 			}
 
 			override public bool Evaluate()

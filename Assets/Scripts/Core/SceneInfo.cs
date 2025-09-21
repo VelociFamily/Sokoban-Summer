@@ -172,7 +172,7 @@ public class SceneInfo : MonoBehaviour
         }
         
         // Fallback to build index mapping
-        var activeScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        var activeScene = SceneManager.GetActiveScene();
         return activeScene.buildIndex switch
         {
             0 => SceneType.Game,

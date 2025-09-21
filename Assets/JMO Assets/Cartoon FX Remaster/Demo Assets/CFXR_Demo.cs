@@ -1,4 +1,4 @@
-﻿//--------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 // Cartoon FX
 // (c) 2012-2025 Jean Moreno
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -153,9 +153,9 @@ namespace CartoonFX
 			camInitialRotation = demoCamera.transform.rotation;
 
 			var list = new List<GameObject>();
-			for (var i = 0; i < this.transform.childCount; i++)
+			for (var i = 0; i < transform.childCount; i++)
 			{
-				var effect = this.transform.GetChild(i).gameObject;
+				var effect = transform.GetChild(i).gameObject;
 				list.Add(effect);
 
 				var cfxrEffect= effect.GetComponent<CFXR_Effect>();

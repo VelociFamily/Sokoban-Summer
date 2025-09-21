@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Threading.Tasks;
@@ -10,7 +10,6 @@ public class SceneButton : MonoBehaviour, IInitializable
 
     [Tooltip("Optional: Drag a lock overlay GameObject (e.g., lock icon or panel) here")]
     public GameObject lockOverlay;
-    private GameInitializer gameInitializer;
     private Button button;
 
     // This will be true once Scene 5 has been loaded at least once

@@ -277,7 +277,7 @@ namespace CartoonFX
 		public override float GetPropertyHeight(MaterialProperty prop, string label, MaterialEditor editor)
 		{
 			float height;
-			if (!MaterialToggleNoKeywordDrawer.IsPropertyTypeSuitable(prop))
+			if (!IsPropertyTypeSuitable(prop))
 			{
 				height = 40f;
 			}
@@ -290,7 +290,7 @@ namespace CartoonFX
 
 		public override void OnGUI(Rect position, MaterialProperty prop, GUIContent label, MaterialEditor editor)
 		{
-			if (!MaterialToggleNoKeywordDrawer.IsPropertyTypeSuitable(prop))
+			if (!IsPropertyTypeSuitable(prop))
 			{
 				EditorGUI.HelpBox(position, "Toggle used on a non-float property: " + prop.name, MessageType.Warning);
 			}

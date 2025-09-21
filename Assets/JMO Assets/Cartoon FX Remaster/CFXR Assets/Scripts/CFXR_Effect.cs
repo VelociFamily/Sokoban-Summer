@@ -1,4 +1,4 @@
-﻿//--------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 // Cartoon FX
 // (c) 2012-2025 Jean Moreno
 //--------------------------------------------------------------------------------------------------------------------------------
@@ -498,7 +498,7 @@ namespace CartoonFX
 			startFrameOffset = GlobalStartFrameOffset++;
 	#endif
 			// Detect if world position needs to be passed to the shader
-			particleRenderer = this.GetComponent<ParticleSystemRenderer>();
+			particleRenderer = GetComponent<ParticleSystemRenderer>();
 			if (particleRenderer.sharedMaterial != null && particleRenderer.sharedMaterial.IsKeywordEnabled("_CFXR_LIGHTING_WPOS_OFFSET"))
 			{
 				materialPropertyBlock = new MaterialPropertyBlock();
@@ -562,7 +562,7 @@ namespace CartoonFX
 			{
 				if (rootParticleSystem == null)
 				{
-					rootParticleSystem = this.GetComponent<ParticleSystem>();
+					rootParticleSystem = GetComponent<ParticleSystem>();
 				}
 
 				// Check isAlive every N frame, with an offset so that all active effects aren't checked at once
@@ -572,11 +572,11 @@ namespace CartoonFX
 					{
 						if (clearBehavior == ClearBehavior.Destroy)
 						{
-							GameObject.Destroy(this.gameObject);
+							Destroy(gameObject);
 						}
 						else
 						{
-							this.gameObject.SetActive(false);
+							gameObject.SetActive(false);
 						}
 					}
 				}
@@ -585,7 +585,7 @@ namespace CartoonFX
 			if (materialPropertyBlock != null)
 			{
 				particleRenderer.GetPropertyBlock(materialPropertyBlock);
-				materialPropertyBlock.SetVector("_GameObjectWorldPosition", this.transform.position);
+				materialPropertyBlock.SetVector("_GameObjectWorldPosition", transform.position);
 				particleRenderer.SetPropertyBlock(materialPropertyBlock);
 			}
 		}
@@ -654,7 +654,7 @@ namespace CartoonFX
 			{
 				if (_parentParticle == null)
 				{
-					_parentParticle = this.GetComponent<ParticleSystem>();
+					_parentParticle = GetComponent<ParticleSystem>();
 				}
 				return _parentParticle;
 			}
@@ -672,8 +672,8 @@ namespace CartoonFX
 
 		public void RegisterEditorUpdate()
 		{
-			var type = PrefabUtility.GetPrefabAssetType(this.gameObject);
-			var status = PrefabUtility.GetPrefabInstanceStatus(this.gameObject);
+			var type = PrefabUtility.GetPrefabAssetType(gameObject);
+			var status = PrefabUtility.GetPrefabInstanceStatus(gameObject);
 
 			// Prefab in Project window
 			if ((type == PrefabAssetType.Regular || type == PrefabAssetType.Variant) && status == PrefabInstanceStatus.NotAPrefab)
@@ -710,7 +710,7 @@ namespace CartoonFX
 				return;
 			}
 
-			var renderer = this.GetComponent<ParticleSystemRenderer>();
+			var renderer = GetComponent<ParticleSystemRenderer>();
 			if (renderer.sharedMaterial != null && renderer.sharedMaterial.IsKeywordEnabled("_CFXR_LIGHTING_WPOS_OFFSET"))
 			{
 				if (materialPropertyBlock == null)
@@ -719,7 +719,7 @@ namespace CartoonFX
 				}
 
 				renderer.GetPropertyBlock(materialPropertyBlock);
-				materialPropertyBlock.SetVector("_GameObjectWorldPosition", this.transform.position);
+				materialPropertyBlock.SetVector("_GameObjectWorldPosition", transform.position);
 				renderer.SetPropertyBlock(materialPropertyBlock);
 			}
 
@@ -846,12 +846,12 @@ namespace CartoonFX
 
         private void OnEnable()
 		{
-			if (this.targets == null)
+			if (targets == null)
 			{
 				return;
 			}
 
-			foreach (var t in this.targets)
+			foreach (var t in targets)
 			{
 				var cfxr_effect = t as CFXR_Effect;
 				if (cfxr_effect != null)
@@ -867,12 +867,12 @@ namespace CartoonFX
 
         private void OnDisable()
 		{
-			if (this.targets == null)
+			if (targets == null)
 			{
 				return;
 			}
 
-			foreach (var t in this.targets)
+			foreach (var t in targets)
 			{
 				// Can be null if GameObject has been destroyed
 				var cfxr_effect = t as CFXR_Effect;

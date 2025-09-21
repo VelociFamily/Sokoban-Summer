@@ -63,7 +63,7 @@ public class InitializationValidator : MonoBehaviour
             results.AppendLine($"  - Main AudioSource: {(mainAudioSource != null ? "✓ Found" : "✗ Missing")}");
             
             // Additional validation - check for duplicate AudioSources
-            var allAudioSources = Object.FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+            var allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
             results.AppendLine($"  - Total AudioSources in scene: {allAudioSources.Length} {(allAudioSources.Length == 1 ? "✓ (Good - only one)" : "⚠ (Multiple found - should be consolidated)")}");
         }
         catch (System.Exception ex)

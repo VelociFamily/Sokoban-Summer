@@ -23,7 +23,7 @@ public class GameInitializer : MonoBehaviour
             Debug.Log("[GameInitializer]: Starting async game initialization...");
             
             // Step 1: Ensure AudioListener exists first (like original)
-            EnsureAudioListenerExists();
+            //EnsureAudioListenerExists();
             
             // Step 2: Initialize background first (like original timing)
             await InitializeBackgroundAsync();
@@ -92,7 +92,7 @@ public class GameInitializer : MonoBehaviour
     private async Task InitializeAudioSystemAsync()
     {
         // Ensure AudioListener exists first (synchronous but fast)
-        EnsureAudioListenerExists();
+        //EnsureAudioListenerExists();
         
         // Initialize audio service asynchronously with prefab references
         await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl);

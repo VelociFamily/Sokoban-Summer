@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 #if UNITY_EDITOR
@@ -251,7 +251,7 @@ namespace CartoonFX
 
 					if (!isShaking)
 					{
-						this.StartShake();
+						StartShake();
 					}
 
 					// duration of the camera shake

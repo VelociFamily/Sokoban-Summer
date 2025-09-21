@@ -65,12 +65,12 @@ namespace CartoonFX
             {
                 root.style.backgroundImage = new StyleBackground(AssetDatabase.LoadAssetAtPath<Texture2D>(AssetDatabase.GUIDToAssetPath("fed1b64fd853f994c8d504720a0a6d44")));
                 root.style.backgroundSize = new StyleBackgroundSize(new BackgroundSize(BackgroundSizeType.Cover));
-                this.Close();
+                Close();
                 var importer = AssetImporter.GetAtPath(AssetDatabase.GUIDToAssetPath("bfd03f272fe010b4ba558a3bc456ffeb"));
                 importer.userData = "dontshow";
                 importer.SaveAndReimport();
             });
-            root.Q<Button>("close").RegisterCallback<ClickEvent>(_ => { this.Close(); });
+            root.Q<Button>("close").RegisterCallback<ClickEvent>(_ => { Close(); });
         }
     }
 }
