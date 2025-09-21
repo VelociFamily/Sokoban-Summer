@@ -28,8 +28,8 @@ public class SceneSelector : MonoBehaviour
 
     private void Start()
     {
-        var currentScene = SceneManager.GetActiveScene().buildIndex;
-        completedScenes[currentScene] = true;
+        var currentScene = SceneManager.GetActiveScene();
+        completedScenes[currentScene.buildIndex] = true;
     }
 
     public void TryLoadScene()

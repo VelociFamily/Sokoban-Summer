@@ -71,8 +71,8 @@ public class RestartLevel : MonoBehaviour
     public void Restart()
     {
         Debug.Log("[RestartLevel]: Reloading current level for new attempt");
-        // Reload current active scene
+        // Reload current active scene using SceneManager helper
         var currentScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(currentScene.buildIndex);
+        SceneManager.LoadScene(currentScene.name); // Use scene name instead of buildIndex for better maintainability
     }
 }
