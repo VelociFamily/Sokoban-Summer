@@ -64,6 +64,12 @@ namespace Core
 
             Debug.Log($"[LevelLogger]: Level '{GetLevelName(sceneIndex)}' completed - Moves: {moves}, Time: {FormatTime(time)}{(newBest ? " (New Best!)" : "")}");
 
+            // Notify LevelManager about completion to unlock next level
+            if (LevelManager.Instance != null)
+            {
+                LevelManager.Instance.MarkLevelCompleted(sceneIndex);
+            }
+
             if (bestResults.Count > 1)
             {
                 Debug.Log("[LevelLogger]: Updated level progress summary:");
@@ -90,6 +96,17 @@ namespace Core
 
         public string GetLevelName(int index)
         {
+            // Try to get level name from LevelManager first
+            if (LevelManager.Instance != null)
+            {
+                var levelInfo = LevelManager.Instance.GetLevelByBuildIndex(index);
+                if (levelInfo != null)
+                {
+                    return levelInfo.displayName;
+                }
+            }
+
+            // Fallback to hardcoded names for backward compatibility
             return index switch
             {
                 1 => "Moving Tutorial",
