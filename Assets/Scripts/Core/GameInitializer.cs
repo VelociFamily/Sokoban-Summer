@@ -65,6 +65,9 @@ public class GameInitializer : MonoBehaviour
     /// </summary>
     private async Task InitializeAudioSystemAsync()
     {
+        // Ensure AudioListener exists first (synchronous but fast)
+        EnsureAudioListenerExists();
+        
         // Initialize audio service asynchronously with prefab references
         await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl);
     }
@@ -130,7 +133,7 @@ public class GameInitializer : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("[GameInitializer]: Background prefab is null - cannot initialize background");
+            Debug.LogError("[GameInitializer]: Background prefab is null - cannot initialize background. Check GameInitializer prefab assignments!");
         }
         await Task.Yield();
     }
@@ -185,25 +188,19 @@ public class GameInitializer : MonoBehaviour
                 if (backgroundClone.activeSelf)
                 {
                     backgroundClone.SetActive(false);
-                    Debug.Log($"[GameInitializer]: Background hidden for scene '{activeScene.name}' (build index: {activeScene.buildIndex})");
                 }
                 break;
             case 1: // Main Menu scene
                 if (!backgroundClone.activeSelf)
                 {
                     backgroundClone.SetActive(true);
-                    Debug.Log($"[GameInitializer]: Background shown for scene '{activeScene.name}' (build index: {activeScene.buildIndex})");
                 }
                 break;
             case 0: // Game scene - should show background when it's the startup scene before Main Menu loads
                 if (!backgroundClone.activeSelf)
                 {
                     backgroundClone.SetActive(true);
-                    Debug.Log($"[GameInitializer]: Background shown for scene '{activeScene.name}' (build index: {activeScene.buildIndex})");
                 }
-                break;
-            default:
-                Debug.Log($"[GameInitializer]: No background rules defined for scene '{activeScene.name}' (build index: {activeScene.buildIndex})");
                 break;
         }
     }
@@ -212,5 +209,43 @@ public class GameInitializer : MonoBehaviour
     {
         // Clean up input service when GameInitializer is destroyed
         InputService.Instance?.Dispose();
+    }
+
+    /// <summary>
+    /// Ensures there's always an AudioListener in the scene to prevent Unity warnings.
+    /// Creates a minimal AudioListener if none exists.
+    /// </summary>
+    private void EnsureAudioListenerExists()
+    {
+        var audioListeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
+        
+        if (audioListeners.Length == 0)
+        {
+            Debug.LogWarning("[GameInitializer]: No AudioListener found in scene - creating temporary one");
+            
+            // Create a temporary GameObject with AudioListener to prevent Unity warnings
+            var tempAudioListenerObject = new GameObject("TempAudioListener");
+            tempAudioListenerObject.AddComponent<AudioListener>();
+            
+            Debug.Log("[GameInitializer]: Temporary AudioListener created - will be managed by scene loading system");
+        }
+        else
+        {
+            Debug.Log($"[GameInitializer]: Found {audioListeners.Length} AudioListener(s) in scene");
+            
+            // If there are multiple AudioListeners, disable the extras
+            if (audioListeners.Length > 1)
+            {
+                Debug.LogWarning($"[GameInitializer]: Found {audioListeners.Length} AudioListeners. Disabling extras to prevent warnings.");
+                for (int i = 1; i < audioListeners.Length; i++)
+                {
+                    if (audioListeners[i] != null)
+                    {
+                        Debug.Log($"[GameInitializer]: Disabling extra AudioListener on '{audioListeners[i].gameObject.name}'");
+                        audioListeners[i].enabled = false;
+                    }
+                }
+            }
+        }
     }
 }
