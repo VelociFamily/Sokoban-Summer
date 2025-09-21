@@ -63,11 +63,12 @@ public class TeleportationPowerUp : IPowerUp
     /// <param name="playerController">The player controller to play sound on</param>
     public void PlayTeleportSound(PlayerController playerController)
     {
-        if (playerController.audioSource != null && playerController.teleportSound != null)
+        if (playerController.teleportSound != null)
         {
-            playerController.audioSource.PlayOneShot(playerController.teleportSound);
+            // Use centralized AudioService instead of player's individual audioSource
+            AudioService.Instance.PlayOneShot(playerController.teleportSound);
         }
-        else if (playerController.teleportSound == null)
+        else
         {
             Debug.LogWarning("[TeleportationPowerUp]: Teleport sound not assigned - cannot play audio feedback");
         }
