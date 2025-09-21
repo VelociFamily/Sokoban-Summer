@@ -55,12 +55,16 @@ public class InitializationValidator : MonoBehaviour
             var audioService = AudioService.Instance;
             var volumeControl = audioService.GetVolumeControl();
             var sfxVolumeControl = audioService.GetSfxVolumeControl();
-            var audioSource = audioService.GetAudioSource();
+            var mainAudioSource = audioService.GetMainAudioSource();
 
             results.AppendLine($"✓ AudioService: Initialized");
             results.AppendLine($"  - VolumeControl: {(volumeControl != null ? "✓ Found" : "✗ Missing")}");
             results.AppendLine($"  - SfxVolumeControl: {(sfxVolumeControl != null ? "✓ Found" : "✗ Missing")}");
-            results.AppendLine($"  - AudioSource: {(audioSource != null ? "✓ Found" : "✗ Missing")}");
+            results.AppendLine($"  - Main AudioSource: {(mainAudioSource != null ? "✓ Found" : "✗ Missing")}");
+            
+            // Additional validation - check for duplicate AudioSources
+            var allAudioSources = Object.FindObjectsOfType<AudioSource>();
+            results.AppendLine($"  - Total AudioSources in scene: {allAudioSources.Length} {(allAudioSources.Length == 1 ? "✓ (Good - only one)" : "⚠ (Multiple found - should be consolidated)")}");
         }
         catch (System.Exception ex)
         {

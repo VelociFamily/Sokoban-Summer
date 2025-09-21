@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioSource audioSource;
+    // Removed: public AudioSource audioSource; - now using centralized AudioService
     private bool canChangeDirection = true;
     private Collider2D col;
 

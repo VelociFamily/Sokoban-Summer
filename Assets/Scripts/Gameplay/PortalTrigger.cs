@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class PortalTrigger : MonoBehaviour
 {
     public GameObject player;
-    public AudioSource audioSource;
+    // Removed: public AudioSource audioSource; - now using centralized AudioService
     public AudioClip portalSound;
     public ParticleSystem portalEffect;
 
@@ -14,13 +14,14 @@ public class PortalTrigger : MonoBehaviour
         {
             Debug.Log("[PortalTrigger]: Level completed - Player reached portal");
             
-            if (audioSource != null && portalSound != null)
+            // Use centralized AudioService instead of local AudioSource
+            if (portalSound != null)
             {
-                audioSource.PlayOneShot(portalSound);
+                AudioService.Instance.PlayOneShot(portalSound);
             }
             else
             {
-                Debug.LogWarning("[PortalTrigger]: Audio source or portal sound not assigned - no completion sound");
+                Debug.LogWarning("[PortalTrigger]: Portal sound not assigned - no completion sound");
             }
 
             if (portalEffect != null)

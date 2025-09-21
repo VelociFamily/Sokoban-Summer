@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 /// <summary>
 /// Centralized audio service to manage volume controls and audio sources
 /// Reduces the need for multiple MonoBehaviour-based audio managers
+/// Ensures only one main AudioSource exists across all scenes
 /// </summary>
 public class AudioService : IAsyncInitializable
 {
@@ -12,7 +13,7 @@ public class AudioService : IAsyncInitializable
 
     private VolumeControl _volumeControl;
     private SfxVolumeControl _sfxVolumeControl;
-    private AudioSource _audioSource;
+    private AudioSource _mainAudioSource;
 
     private AudioService() { }
 
@@ -81,14 +82,49 @@ public class AudioService : IAsyncInitializable
 
     private async Task InitializeAudioSource()
     {
-        _audioSource = Object.FindObjectOfType<AudioSource>();
-        if (_audioSource == null)
+        // Destroy any existing extra AudioSources to ensure only one exists
+        var existingAudioSources = Object.FindObjectsOfType<AudioSource>();
+        
+        if (existingAudioSources.Length > 1)
         {
+            Debug.LogWarning($"[AudioService]: Found {existingAudioSources.Length} AudioSources in scene. Consolidating to single instance.");
+            
+            // Keep the first one and destroy the rest
+            _mainAudioSource = existingAudioSources[0];
+            for (int i = 1; i < existingAudioSources.Length; i++)
+            {
+                if (existingAudioSources[i] != null && existingAudioSources[i] != _mainAudioSource)
+                {
+                    Debug.Log($"[AudioService]: Destroying duplicate AudioSource on '{existingAudioSources[i].gameObject.name}'");
+                    Object.Destroy(existingAudioSources[i]);
+                }
+            }
+        }
+        else if (existingAudioSources.Length == 1)
+        {
+            _mainAudioSource = existingAudioSources[0];
+        }
+        else
+        {
+            // No AudioSource found, try to load from Resources
             var audioSourcePrefab = Resources.Load<AudioSource>("AudioSource");
             if (audioSourcePrefab != null)
             {
-                _audioSource = Object.Instantiate(audioSourcePrefab);
+                _mainAudioSource = Object.Instantiate(audioSourcePrefab);
             }
+            else
+            {
+                // Create a basic AudioSource GameObject
+                var audioSourceObject = new GameObject("Main Audio Source");
+                _mainAudioSource = audioSourceObject.AddComponent<AudioSource>();
+            }
+        }
+        
+        // Ensure the main AudioSource persists across scene changes
+        if (_mainAudioSource != null)
+        {
+            Object.DontDestroyOnLoad(_mainAudioSource.gameObject);
+            Debug.Log($"[AudioService]: Main AudioSource '{_mainAudioSource.gameObject.name}' set to persist across scenes");
         }
         
         await Task.Yield(); // Ensure async behavior
@@ -126,16 +162,99 @@ public class AudioService : IAsyncInitializable
 
     private async Task InitializeAudioSourceWithPrefab(AudioSource audioSourcePrefab)
     {
-        _audioSource = Object.FindObjectOfType<AudioSource>();
-        if (_audioSource == null && audioSourcePrefab != null)
+        // Destroy any existing extra AudioSources to ensure only one exists
+        var existingAudioSources = Object.FindObjectsOfType<AudioSource>();
+        
+        if (existingAudioSources.Length > 1)
         {
-            _audioSource = Object.Instantiate(audioSourcePrefab);
+            Debug.LogWarning($"[AudioService]: Found {existingAudioSources.Length} AudioSources in scene. Consolidating to single instance.");
+            
+            // Keep the first one and destroy the rest
+            _mainAudioSource = existingAudioSources[0];
+            for (int i = 1; i < existingAudioSources.Length; i++)
+            {
+                if (existingAudioSources[i] != null && existingAudioSources[i] != _mainAudioSource)
+                {
+                    Debug.Log($"[AudioService]: Destroying duplicate AudioSource on '{existingAudioSources[i].gameObject.name}'");
+                    Object.Destroy(existingAudioSources[i]);
+                }
+            }
+        }
+        else if (existingAudioSources.Length == 1)
+        {
+            _mainAudioSource = existingAudioSources[0];
+        }
+        else if (audioSourcePrefab != null)
+        {
+            _mainAudioSource = Object.Instantiate(audioSourcePrefab);
+        }
+        else
+        {
+            // Create a basic AudioSource GameObject
+            var audioSourceObject = new GameObject("Main Audio Source");
+            _mainAudioSource = audioSourceObject.AddComponent<AudioSource>();
+        }
+        
+        // Ensure the main AudioSource persists across scene changes
+        if (_mainAudioSource != null)
+        {
+            Object.DontDestroyOnLoad(_mainAudioSource.gameObject);
+            Debug.Log($"[AudioService]: Main AudioSource '{_mainAudioSource.gameObject.name}' set to persist across scenes");
         }
         
         await Task.Yield(); // Ensure async behavior
     }
 
+    /// <summary>
+    /// Get the centralized main AudioSource - use this instead of individual AudioSources
+    /// </summary>
+    public AudioSource GetMainAudioSource()
+    {
+        if (_mainAudioSource == null)
+        {
+            Debug.LogWarning("[AudioService]: Main AudioSource is null. Make sure AudioService is initialized first.");
+        }
+        return _mainAudioSource;
+    }
+
+    /// <summary>
+    /// Play a one-shot audio clip using the centralized AudioSource
+    /// </summary>
+    public void PlayOneShot(AudioClip clip, float volumeScale = 1.0f)
+    {
+        if (_mainAudioSource != null && clip != null)
+        {
+            _mainAudioSource.PlayOneShot(clip, volumeScale);
+        }
+        else
+        {
+            Debug.LogWarning("[AudioService]: Cannot play one-shot clip - AudioSource or clip is null");
+        }
+    }
+
+    /// <summary>
+    /// Play an audio clip using the centralized AudioSource
+    /// </summary>
+    public void PlayClip(AudioClip clip)
+    {
+        if (_mainAudioSource != null && clip != null)
+        {
+            _mainAudioSource.clip = clip;
+            _mainAudioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("[AudioService]: Cannot play clip - AudioSource or clip is null");
+        }
+    }
+
     public VolumeControl GetVolumeControl() => _volumeControl;
     public SfxVolumeControl GetSfxVolumeControl() => _sfxVolumeControl;
-    public AudioSource GetAudioSource() => _audioSource;
+    
+    /// <summary>
+    /// Deprecated: Use GetMainAudioSource() instead
+    /// </summary>
+    [System.Obsolete("Use GetMainAudioSource() instead")]
+    public AudioSource GetAudioSource() => GetMainAudioSource();
+}
 }
