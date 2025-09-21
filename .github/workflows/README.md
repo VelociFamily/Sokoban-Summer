@@ -15,6 +15,7 @@ When a PR is closed to the main branch, the workflow:
 
 ### 2. Manual Controls (workflow_dispatch)
 You can manually trigger the workflow with these options:
+- **`branch`** - Specify which branch to run the workflow on (leave empty for current branch)
 - **`force_windows: true`** - Skip self-hosted runner entirely and use Windows runner
 - **`retry_self_hosted: true`** - Force retry of self-hosted runner (useful when you just turned it on)
 
@@ -61,6 +62,12 @@ The workflow uses a protected environment called `windows-runner-approval` to ga
 - Use Manual workflow dispatch  
 - Set `retry_self_hosted: true`
 - Self-hosted runner attempted again ✅
+
+### Scenario 5: You want to test a specific branch
+- Use Manual workflow dispatch
+- Set `branch` to the branch name (e.g., `feature/my-branch`)
+- Optionally combine with other options like `force_windows` or `retry_self_hosted`
+- Workflow runs on the specified branch ✅
 
 ## Build Artifacts
 

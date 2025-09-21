@@ -5,6 +5,11 @@ on:
     branches: [main]
   workflow_dispatch:
     inputs:
+      branch:
+        description: 'Branch to run the workflow on (leave empty for current branch)'
+        required: false
+        default: ''
+        type: string
       force_windows:
         description: 'Force use of Windows runner instead of self-hosted'
         required: false
@@ -62,6 +67,7 @@ jobs:
         with:
           lfs: true
           fetch-depth: 0
+          ref: ${{ github.event.inputs.branch || github.ref }}
       - name: Cache Unity packages
         uses: actions/cache@v4
         with:
@@ -135,6 +141,7 @@ jobs:
         with:
           lfs: true
           fetch-depth: 0
+          ref: ${{ github.event.inputs.branch || github.ref }}
       - name: Cache Unity packages
         uses: actions/cache@v4
         with:
