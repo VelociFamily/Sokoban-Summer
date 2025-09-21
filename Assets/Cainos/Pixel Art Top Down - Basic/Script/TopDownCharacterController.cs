@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Cainos.PixelArtTopDown_Basic
+namespace Cainos.Pixel_Art_Top_Down___Basic.Script
 {
     public class TopDownCharacterController : MonoBehaviour
     {

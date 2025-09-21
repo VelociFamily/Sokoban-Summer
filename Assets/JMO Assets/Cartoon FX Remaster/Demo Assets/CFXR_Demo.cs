@@ -4,19 +4,17 @@
 //--------------------------------------------------------------------------------------------------------------------------------
 
 using System.Collections.Generic;
+using JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Scripts;
 using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEngine.UI;
-#if UNITY_6000_0_OR_NEWER && CFXR_NEW_INPUT_SYSTEM
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.UI;
-#endif
-#if CFXR_URP_INSTALLED
+using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-#endif
+using UnityEngine.UI;
+using Bloom = JMO_Assets.Cartoon_FX_Remaster.Demo_Assets.Kino_Bloom.Bloom;
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.Demo_Assets
 {
 	public class CFXR_Demo : MonoBehaviour
 	{
@@ -171,7 +169,7 @@ namespace CartoonFX
 			groundURP.SetActive(isURP);
 			groundBIRP.SetActive(!isURP);
 
-			bloom = demoCamera.GetComponent<Kino.Bloom>();
+			bloom = demoCamera.GetComponent<Bloom>();
 #if CFXR_URP_INSTALLED
 			if (isURP)
 			{

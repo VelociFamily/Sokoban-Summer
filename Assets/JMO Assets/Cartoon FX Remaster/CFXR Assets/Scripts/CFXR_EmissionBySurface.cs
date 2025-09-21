@@ -1,10 +1,8 @@
 using System;
-using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
+using UnityEngine;
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Scripts
 {
     [RequireComponent(typeof(ParticleSystem))]
     public class CFXR_EmissionBySurface : MonoBehaviour

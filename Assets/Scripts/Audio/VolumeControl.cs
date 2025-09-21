@@ -1,71 +1,75 @@
+using Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class VolumeControl : MonoBehaviour
+namespace Audio
 {
-    public static VolumeControl instance;
-
-    [Header("Tags")]
-    public string musicLooperTag = "MusicLooper";
-
-    private AudioSource audioSource;
-    private GameObject audioManagerInstance;
-
-    /// <summary>
-    /// Initialize this VolumeControl instance - called by AudioService
-    /// </summary>
-    public void Initialize()
+    public class VolumeControl : MonoBehaviour
     {
-        instance = this;
-        SetupAudioManager();
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        Debug.Log("[VolumeControl]: Initialized successfully");
-    }
+        public static VolumeControl instance;
 
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+        [Header("Tags")]
+        public string musicLooperTag = "MusicLooper";
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (SceneInfo.IsMainMenuScene(scene)) // Menu scene
+        private AudioSource audioSource;
+        private GameObject audioManagerInstance;
+
+        /// <summary>
+        /// Initialize this VolumeControl instance - called by AudioService
+        /// </summary>
+        public void Initialize()
         {
-            SetupAudioManager(); // Just rebind UI, don't destroy or duplicate
+            instance = this;
+            SetupAudioManager();
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            Debug.Log("[VolumeControl]: Initialized successfully");
         }
-    }
 
-    private void SetupAudioManager()
-    {
-        var managers = GameObject.FindGameObjectsWithTag(musicLooperTag);
-
-        if (managers.Length > 0)
+        private void OnDestroy()
         {
-            audioManagerInstance = managers[0];
-            for (var i = 1; i < managers.Length; i++)
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (SceneInfo.IsMainMenuScene(scene)) // Menu scene
             {
-                Destroy(managers[i]);
+                SetupAudioManager(); // Just rebind UI, don't destroy or duplicate
             }
         }
-        else
+
+        private void SetupAudioManager()
         {
-            audioManagerInstance = null;
+            var managers = GameObject.FindGameObjectsWithTag(musicLooperTag);
+
+            if (managers.Length > 0)
+            {
+                audioManagerInstance = managers[0];
+                for (var i = 1; i < managers.Length; i++)
+                {
+                    Destroy(managers[i]);
+                }
+            }
+            else
+            {
+                audioManagerInstance = null;
+            }
+
+            if (audioManagerInstance != null)
+                DontDestroyOnLoad(audioManagerInstance);
+
+            if (audioManagerInstance != null)
+                audioSource = audioManagerInstance.GetComponent<AudioSource>();
+            else
+                audioSource = null;
         }
 
-        if (audioManagerInstance != null)
-            DontDestroyOnLoad(audioManagerInstance);
-
-        if (audioManagerInstance != null)
-            audioSource = audioManagerInstance.GetComponent<AudioSource>();
-        else
-            audioSource = null;
-    }
-
-    public void SetVolume(float value)
-    {
-        if (audioSource != null)
-            audioSource.volume = value;
-        PlayerPrefs.SetFloat("Volume", value);
-        PlayerPrefs.Save();
+        public void SetVolume(float value)
+        {
+            if (audioSource != null)
+                audioSource.volume = value;
+            PlayerPrefs.SetFloat("Volume", value);
+            PlayerPrefs.Save();
+        }
     }
 }

@@ -8,7 +8,7 @@ using System.IO;
 
 // Parse conditional expressions from CFXR_MaterialInspector to show/hide some parts of the UI easily
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Editor
 {
 	public static class ExpressionParser
 	{

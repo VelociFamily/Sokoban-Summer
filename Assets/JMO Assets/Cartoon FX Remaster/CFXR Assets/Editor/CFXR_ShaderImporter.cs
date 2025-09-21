@@ -6,16 +6,16 @@ using System.Globalization;
 using System.IO;
 using System.Reflection;
 using UnityEditor;
+using UnityEditor.AssetImporters;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Rendering;
 #if UNITY_2020_2_OR_NEWER
-using UnityEditor.AssetImporters;
 #else
 using UnityEditor.Experimental.AssetImporters;
 #endif
-using UnityEngine.Rendering;
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Editor
 {
     namespace CustomShaderImporter
     {
@@ -253,7 +253,7 @@ namespace CartoonFX
         namespace Inspector
         {
             [CustomEditor(typeof(CFXR_ShaderImporter)), CanEditMultipleObjects]
-            public class TCP2ShaderImporter_Editor : Editor
+            public class TCP2ShaderImporter_Editor : UnityEditor.Editor
             {
                 private CFXR_ShaderImporter Importer => (CFXR_ShaderImporter) target;
 

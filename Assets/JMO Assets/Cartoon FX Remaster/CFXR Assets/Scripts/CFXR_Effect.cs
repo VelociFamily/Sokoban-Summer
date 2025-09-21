@@ -15,13 +15,11 @@
 
 //--------------------------------------------------------------------------------------------------------------------------------
 
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Scripts
 {
 	[RequireComponent(typeof(ParticleSystem))]
 	[DisallowMultipleComponent]

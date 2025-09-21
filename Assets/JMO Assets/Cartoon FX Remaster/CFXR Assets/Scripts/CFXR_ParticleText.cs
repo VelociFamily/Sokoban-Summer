@@ -4,13 +4,10 @@
 //--------------------------------------------------------------------------------------------------------------------------------
 
 using System.Collections.Generic;
-using UnityEngine;
-using Object = UnityEngine.Object;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
+using UnityEngine;
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Scripts
 {
     [RequireComponent(typeof(ParticleSystem))]
     public class CFXR_ParticleText : MonoBehaviour

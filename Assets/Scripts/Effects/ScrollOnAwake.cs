@@ -1,12 +1,15 @@
 using UnityEngine;
 
-public class ScrollOnAwake : MonoBehaviour
+namespace Effects
 {
-    public float speed = 50f; // Units per second
-
-    void Update()
+    public class ScrollOnAwake : MonoBehaviour
     {
-        // Move upward each frame
-        transform.Translate(Vector3.up * speed * Time.deltaTime);
+        public float speed = 50f; // Units per second
+
+        void Update()
+        {
+            // Move upward each frame
+            transform.Translate(Vector3.up * speed * Time.deltaTime);
+        }
     }
 }

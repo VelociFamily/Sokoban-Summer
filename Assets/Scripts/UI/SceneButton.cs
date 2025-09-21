@@ -1,122 +1,126 @@
+using System.Threading.Tasks;
+using Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Threading.Tasks;
 
-public class SceneButton : MonoBehaviour
+namespace UI
 {
-    [Tooltip("Build index of the scene this button will load")]
-    public int sceneIndex;
-
-    [Tooltip("Optional: Drag a lock overlay GameObject (e.g., lock icon or panel) here")]
-    public GameObject lockOverlay;
-    private Button button;
-
-    // This will be true once Scene 5 has been loaded at least once
-    public static bool hatUnlocked;
-
-    /// <summary>
-    /// Initialize the SceneButton - can be called by UI management systems
-    /// </summary>
-    public void Awake()
+    public class SceneButton : MonoBehaviour
     {
-        button = GetComponent<Button>();
+        [Tooltip("Build index of the scene this button will load")]
+        public int sceneIndex;
 
-        // Load saved unlock state from PlayerPrefs
-        hatUnlocked = PlayerPrefs.GetInt("HasPlayedScene5", 0) == 1;
+        [Tooltip("Optional: Drag a lock overlay GameObject (e.g., lock icon or panel) here")]
+        public GameObject lockOverlay;
+        private Button button;
 
-        UpdateLockState();
+        // This will be true once Scene 5 has been loaded at least once
+        public static bool hatUnlocked;
 
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        
-        Debug.Log($"[SceneButton]: Initialized for scene {sceneIndex}");
-    }
-
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    public async void LoadScene()
-    {
-        if (SceneSelector.CanLoadScene(sceneIndex))
+        /// <summary>
+        /// Initialize the SceneButton - can be called by UI management systems
+        /// </summary>
+        public void Awake()
         {
-            // 1️⃣ Load the level additively first
-            var loadOp = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
-            while (!loadOp.isDone)
-                await Task.Yield();
+            button = GetComponent<Button>();
 
-            // 2️⃣ Set the new scene active
-            var newScene = SceneManager.GetSceneByBuildIndex(sceneIndex);
-            if (newScene.IsValid())
+            // Load saved unlock state from PlayerPrefs
+            hatUnlocked = PlayerPrefs.GetInt("HasPlayedScene5", 0) == 1;
+
+            UpdateLockState();
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        
+            Debug.Log($"[SceneButton]: Initialized for scene {sceneIndex}");
+        }
+
+        private void OnDestroy()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        public async void LoadScene()
+        {
+            if (SceneSelector.CanLoadScene(sceneIndex))
             {
-                SceneManager.SetActiveScene(newScene);
+                // 1️⃣ Load the level additively first
+                var loadOp = SceneManager.LoadSceneAsync(sceneIndex, LoadSceneMode.Additive);
+                while (!loadOp.isDone)
+                    await Task.Yield();
 
-                // Recursively search for the GameObject with the tag "background"
-                foreach (var rootObject in newScene.GetRootGameObjects())
+                // 2️⃣ Set the new scene active
+                var newScene = SceneManager.GetSceneByBuildIndex(sceneIndex);
+                if (newScene.IsValid())
                 {
-                    var backgroundObj = FindWithTagRecursive(rootObject, "background");
-                    if (backgroundObj != null)
+                    SceneManager.SetActiveScene(newScene);
+
+                    // Recursively search for the GameObject with the tag "background"
+                    foreach (var rootObject in newScene.GetRootGameObjects())
                     {
-                        backgroundObj.SetActive(false);
-                        break;
+                        var backgroundObj = FindWithTagRecursive(rootObject, "background");
+                        if (backgroundObj != null)
+                        {
+                            backgroundObj.SetActive(false);
+                            break;
+                        }
                     }
                 }
-            }
 
-            // 3️⃣ Unload "Main Menu" only if it's loaded and NOT the only loaded scene
-            var mainMenuScene = SceneManager.GetSceneByName("Main Menu");
-            if (mainMenuScene.IsValid() && mainMenuScene.isLoaded && SceneManager.sceneCount > 1)
+                // 3️⃣ Unload "Main Menu" only if it's loaded and NOT the only loaded scene
+                var mainMenuScene = SceneManager.GetSceneByName("Main Menu");
+                if (mainMenuScene.IsValid() && mainMenuScene.isLoaded && SceneManager.sceneCount > 1)
+                {
+                    var unloadOp = SceneManager.UnloadSceneAsync("Main Menu");
+                    while (!unloadOp.isDone)
+                        await Task.Yield();
+                }
+            }
+            else
             {
-                var unloadOp = SceneManager.UnloadSceneAsync("Main Menu");
-                while (!unloadOp.isDone)
-                    await Task.Yield();
+                Debug.Log("[SceneButton]: Level locked - complete previous level first to unlock");
             }
         }
-        else
+
+        // Helper method to recursively search for a tag
+        private GameObject FindWithTagRecursive(GameObject obj, string tag)
         {
-            Debug.Log("[SceneButton]: Level locked - complete previous level first to unlock");
-        }
-    }
+            if (obj.CompareTag(tag))
+                return obj;
 
-    // Helper method to recursively search for a tag
-    private GameObject FindWithTagRecursive(GameObject obj, string tag)
-    {
-        if (obj.CompareTag(tag))
-            return obj;
-
-        foreach (Transform child in obj.transform)
-        {
-            var result = FindWithTagRecursive(child.gameObject, tag);
-            if (result != null)
-                return result;
-        }
-        return null;
-    }
-
-    private void UpdateLockState()
-    {
-        var canLoad = SceneSelector.CanLoadScene(sceneIndex);
-
-        if (lockOverlay != null)
-        {
-            lockOverlay.SetActive(!canLoad);
+            foreach (Transform child in obj.transform)
+            {
+                var result = FindWithTagRecursive(child.gameObject, tag);
+                if (result != null)
+                    return result;
+            }
+            return null;
         }
 
-        if (button != null)
+        private void UpdateLockState()
         {
-            button.interactable = canLoad;
-        }
-    }
+            var canLoad = SceneSelector.CanLoadScene(sceneIndex);
 
-    private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // Check if this is a special scene that unlocks the hat feature
-        if (SceneInfo.GetSceneType(scene) == SceneType.GameplayLevel)
+            if (lockOverlay != null)
+            {
+                lockOverlay.SetActive(!canLoad);
+            }
+
+            if (button != null)
+            {
+                button.interactable = canLoad;
+            }
+        }
+
+        private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            hatUnlocked = true;
-            PlayerPrefs.SetInt("HasPlayedScene5", 1);
-            PlayerPrefs.Save();
+            // Check if this is a special scene that unlocks the hat feature
+            if (SceneInfo.GetSceneType(scene) == SceneType.GameplayLevel)
+            {
+                hatUnlocked = true;
+                PlayerPrefs.SetInt("HasPlayedScene5", 1);
+                PlayerPrefs.Save();
+            }
         }
     }
 }

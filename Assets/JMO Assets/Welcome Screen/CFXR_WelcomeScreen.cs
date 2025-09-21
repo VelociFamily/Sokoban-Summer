@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace CartoonFX
+namespace JMO_Assets.Welcome_Screen
 {
     [InitializeOnLoad]
     public class CFXR_WelcomeScreen : EditorWindow

@@ -28,7 +28,7 @@
 
 using UnityEngine;
 
-namespace Kino
+namespace JMO_Assets.Cartoon_FX_Remaster.Demo_Assets.Kino_Bloom
 {
 	[ExecuteInEditMode]
 	[RequireComponent(typeof(Camera))]

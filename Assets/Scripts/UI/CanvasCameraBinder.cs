@@ -1,14 +1,17 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Canvas))]
-public class CanvasCameraBinder : MonoBehaviour
+namespace UI
 {
-    void Start()
+    [RequireComponent(typeof(Canvas))]
+    public class CanvasCameraBinder : MonoBehaviour
     {
-        var canvas = GetComponent<Canvas>();
-        if (canvas.renderMode == RenderMode.ScreenSpaceCamera && canvas.worldCamera == null)
+        void Start()
         {
-            canvas.worldCamera = Camera.main; // Finds the active camera in the scene
+            var canvas = GetComponent<Canvas>();
+            if (canvas.renderMode == RenderMode.ScreenSpaceCamera && canvas.worldCamera == null)
+            {
+                canvas.worldCamera = Camera.main; // Finds the active camera in the scene
+            }
         }
     }
 }

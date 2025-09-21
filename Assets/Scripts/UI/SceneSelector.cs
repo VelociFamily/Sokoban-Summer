@@ -1,27 +1,30 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
-public class SceneSelector
+namespace UI
 {
-    private static Dictionary<int, bool> _completedScenes;
-
-    private static Dictionary<int, bool> CompletedScenes
+    public class SceneSelector
     {
-        get
+        private static Dictionary<int, bool> _completedScenes;
+
+        private static Dictionary<int, bool> CompletedScenes
         {
-            _completedScenes ??= new Dictionary<int, bool> { [2] = true };
-            return _completedScenes;
+            get
+            {
+                _completedScenes ??= new Dictionary<int, bool> { [2] = true };
+                return _completedScenes;
+            }
         }
-    }
 
-    public static void MarkNextLevelUnlocked(int sceneIndex)
-    {
-        CompletedScenes[sceneIndex] = true;
-        Debug.Log($"[SceneSelector]: Scene {sceneIndex} completed and unlocked for progression");
-    }
+        public static void MarkNextLevelUnlocked(int sceneIndex)
+        {
+            CompletedScenes[sceneIndex] = true;
+            Debug.Log($"[SceneSelector]: Scene {sceneIndex} completed and unlocked for progression");
+        }
 
-    public static bool CanLoadScene(int sceneIndex)
-    {
-        return CompletedScenes.TryGetValue(sceneIndex, out var isUnlocked) && isUnlocked;
+        public static bool CanLoadScene(int sceneIndex)
+        {
+            return CompletedScenes.TryGetValue(sceneIndex, out var isUnlocked) && isUnlocked;
+        }
     }
 }

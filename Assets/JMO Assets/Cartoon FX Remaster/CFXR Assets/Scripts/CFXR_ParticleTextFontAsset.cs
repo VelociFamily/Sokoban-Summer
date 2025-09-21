@@ -3,14 +3,11 @@
 // (c) 2012-2025 Jean Moreno
 //--------------------------------------------------------------------------------------------------------------------------------
 
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
+using UnityEngine;
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Scripts
 {
 	public class CFXR_ParticleTextFontAsset : ScriptableObject
 	{

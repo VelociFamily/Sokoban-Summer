@@ -1,12 +1,16 @@
+using Core;
 using UnityEngine;
 
-public class LockHider : MonoBehaviour
+namespace UI
 {
-    void Update()
+    public class LockHider : MonoBehaviour
     {
-        if (AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial)
+        void Update()
         {
-            gameObject.SetActive(false);
+            if (AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

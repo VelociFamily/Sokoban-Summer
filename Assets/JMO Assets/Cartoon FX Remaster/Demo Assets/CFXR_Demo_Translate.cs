@@ -5,7 +5,7 @@
 
 using UnityEngine;
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.Demo_Assets
 {
 	public class CFXR_Demo_Translate : MonoBehaviour
 	{

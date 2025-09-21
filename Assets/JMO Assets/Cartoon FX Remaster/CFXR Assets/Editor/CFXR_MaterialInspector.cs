@@ -3,18 +3,18 @@
 // (c) 2012-2025 Jean Moreno
 //--------------------------------------------------------------------------------------------------------------------------------
 
-using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using UnityEditor;
+using UnityEngine;
 
 // Custom material inspector for Stylized FX shaders
 // - organize UI using comments in the shader code
 // - more flexibility than the material property drawers
 // version 2 (dec 2017)
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Editor
 {
 	public class MaterialInspector : ShaderGUI
 	{
