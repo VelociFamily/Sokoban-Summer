@@ -112,9 +112,12 @@ public class SceneButton : MonoBehaviour, IInitializable
 
     private static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.buildIndex != 5) return;
-        hatUnlocked = true;
-        PlayerPrefs.SetInt("HasPlayedScene5", 1);
-        PlayerPrefs.Save();
+        // Check if this is a special scene that unlocks the hat feature
+        if (SceneInfo.GetSceneType(scene) == SceneType.GameplayLevel)
+        {
+            hatUnlocked = true;
+            PlayerPrefs.SetInt("HasPlayedScene5", 1);
+            PlayerPrefs.Save();
+        }
     }
 }

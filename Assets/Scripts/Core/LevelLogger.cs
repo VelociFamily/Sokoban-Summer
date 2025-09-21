@@ -17,7 +17,7 @@ public class LevelLogger : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 0)
+        if (SceneInfo.IsMainMenuScene())
             return;
 
         var moveCounter = MoveCounter.Instance;

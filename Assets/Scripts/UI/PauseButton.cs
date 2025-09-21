@@ -110,12 +110,12 @@ public class PauseButton : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        // Unload any loaded scene with build index between 1 and 6 (inclusive)
+        // Unload any loaded gameplay scenes (tutorial or game levels)
         for (var i = 0; i < SceneManager.sceneCount; i++)
         {
             var loadedScene = SceneManager.GetSceneAt(i);
-            var buildIndex = loadedScene.buildIndex;
-            if (buildIndex is >= 1 and <= 6 && loadedScene.isLoaded) SceneManager.UnloadSceneAsync(loadedScene);
+            if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded) 
+                SceneManager.UnloadSceneAsync(loadedScene);
         }
 
         var asyncOp = SceneManager.LoadSceneAsync(menuSceneBuildIndex, LoadSceneMode.Additive);

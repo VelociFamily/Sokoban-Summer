@@ -72,9 +72,8 @@ public class AchievementManager : MonoBehaviour, IAsyncInitializable
         FindAchievementText();
         UpdateAchievementDisplay(true);
 
-        // Check if the loaded scene is the tutorial completion scene (index 6)
-        // AND it is the second scene to be loaded
-        if (scene.buildIndex != 6) return;
+        // Check if the loaded scene is the final tutorial completion scene (Level Two)
+        if (!SceneInfo.IsLevelTwo(scene)) return;
         UnlockTutorial();
         CompleteTutorial = true;
     }
@@ -83,14 +82,15 @@ public class AchievementManager : MonoBehaviour, IAsyncInitializable
      {
         // Only check achievements if the active scene is a gameplay scene (not menu)
         var activeScene = SceneManager.GetActiveScene();
-        switch (activeScene.buildIndex)
+        if (SceneInfo.IsMainMenuScene(activeScene))
         {
-            case 0:
-                return; // Assuming buildIndex 0 is your menu
-            case 6:
-                UnlockTutorial();
-                CompleteTutorial = true;
-                break;
+            return; // Skip achievement checks in menu scene
+        }
+
+        if (SceneInfo.IsLevelTwo(activeScene))
+        {
+            UnlockTutorial();
+            CompleteTutorial = true;
         }
 
         CheckPowerUpAchievement();

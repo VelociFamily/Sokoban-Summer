@@ -51,7 +51,7 @@ public class MenuPersistence : MonoBehaviour
             HandleAudioListenerDuplication();
         }
 
-        if (scene.buildIndex == 0) // Menu scene
+        if (SceneInfo.IsMainMenuScene(scene)) // Menu scene
         {
             var rootObjects = scene.GetRootGameObjects();
 
