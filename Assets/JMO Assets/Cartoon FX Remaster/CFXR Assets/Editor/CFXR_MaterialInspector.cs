@@ -3,18 +3,18 @@
 // (c) 2012-2025 Jean Moreno
 //--------------------------------------------------------------------------------------------------------------------------------
 
-using UnityEngine;
-using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using UnityEditor;
+using UnityEngine;
 
 // Custom material inspector for Stylized FX shaders
 // - organize UI using comments in the shader code
 // - more flexibility than the material property drawers
 // version 2 (dec 2017)
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Editor
 {
 	public class MaterialInspector : ShaderGUI
 	{
@@ -277,7 +277,7 @@ namespace CartoonFX
 		public override float GetPropertyHeight(MaterialProperty prop, string label, MaterialEditor editor)
 		{
 			float height;
-			if (!MaterialToggleNoKeywordDrawer.IsPropertyTypeSuitable(prop))
+			if (!IsPropertyTypeSuitable(prop))
 			{
 				height = 40f;
 			}
@@ -290,7 +290,7 @@ namespace CartoonFX
 
 		public override void OnGUI(Rect position, MaterialProperty prop, GUIContent label, MaterialEditor editor)
 		{
-			if (!MaterialToggleNoKeywordDrawer.IsPropertyTypeSuitable(prop))
+			if (!IsPropertyTypeSuitable(prop))
 			{
 				EditorGUI.HelpBox(position, "Toggle used on a non-float property: " + prop.name, MessageType.Warning);
 			}

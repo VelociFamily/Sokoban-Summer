@@ -1,11 +1,11 @@
-﻿//--------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------
 // Cartoon FX
 // (c) 2012-2025 Jean Moreno
 //--------------------------------------------------------------------------------------------------------------------------------
 
 using UnityEngine;
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.Demo_Assets
 {
 	public class CFXR_Demo_Rotate : MonoBehaviour
 	{
@@ -15,7 +15,7 @@ namespace CartoonFX
 
         private void Update()
 		{
-			this.transform.RotateAround(center, axis, speed * Time.deltaTime);
+			transform.RotateAround(center, axis, speed * Time.deltaTime);
 		}
 	}
 }

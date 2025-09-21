@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4983235438029878412}
+  - component: {fileID: -5303712246641132193}
   - component: {fileID: 7604664476225540257}
   - component: {fileID: 4632062060652585910}
   - component: {fileID: 2772994923042690502}
@@ -19,7 +20,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4983235438029878412
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40,6 +41,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &-5303712246641132193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7989558775053221618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761f2f967ed02f74d96098528a22195b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneInfo
+  sceneType: 0
+  showBackground: 1
+  levelNumber: 1
 --- !u!223 &7604664476225540257
 Canvas:
   m_ObjectHideFlags: 0

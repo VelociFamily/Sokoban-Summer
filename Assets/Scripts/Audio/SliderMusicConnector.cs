@@ -1,54 +1,57 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SliderMusicConnector : MonoBehaviour
+namespace Audio
 {
-    private Slider slider;
-    private AudioSource musicPlayer;
-
-    private void Awake()
+    public class SliderMusicConnector : MonoBehaviour
     {
-        // Get the slider attached to this GameObject
-        slider = GetComponent<Slider>();
+        private Slider slider;
+        private AudioSource musicPlayer;
 
-        if (slider == null)
+        private void Awake()
         {
-            Debug.LogError($"[SliderMusicConnector]: No Slider component found on '{gameObject.name}'");
-            return;
+            // Get the slider attached to this GameObject
+            slider = GetComponent<Slider>();
+
+            if (slider == null)
+            {
+                Debug.LogError($"[SliderMusicConnector]: No Slider component found on '{gameObject.name}'");
+                return;
+            }
+
+            // Find the AudioSource with the tag "Music Looper"
+            var musicObj = GameObject.FindWithTag("Music Looper");
+            if (musicObj != null)
+            {
+                musicPlayer = musicObj.GetComponent<AudioSource>();
+            }
+
+            if (musicPlayer == null)
+            {
+                Debug.LogError("[SliderMusicConnector]: No AudioSource with tag 'Music Looper' found in scene");
+                return;
+            }
+
+            // Set slider to current music volume
+            slider.value = musicPlayer.volume;
+
+            // Listen for slider changes
+            slider.onValueChanged.AddListener(OnSliderValueChanged);
         }
 
-        // Find the AudioSource with the tag "Music Looper"
-        var musicObj = GameObject.FindWithTag("Music Looper");
-        if (musicObj != null)
+        private void OnSliderValueChanged(float value)
         {
-            musicPlayer = musicObj.GetComponent<AudioSource>();
+            if (musicPlayer != null)
+            {
+                musicPlayer.volume = value;
+            }
         }
 
-        if (musicPlayer == null)
+        private void OnDestroy()
         {
-            Debug.LogError("[SliderMusicConnector]: No AudioSource with tag 'Music Looper' found in scene");
-            return;
+            // Clean up listener
+            if (slider != null)
+                slider.onValueChanged.RemoveListener(OnSliderValueChanged);
         }
-
-        // Set slider to current music volume
-        slider.value = musicPlayer.volume;
-
-        // Listen for slider changes
-        slider.onValueChanged.AddListener(OnSliderValueChanged);
-    }
-
-    private void OnSliderValueChanged(float value)
-    {
-        if (musicPlayer != null)
-        {
-            musicPlayer.volume = value;
-        }
-    }
-
-    private void OnDestroy()
-    {
-        // Clean up listener
-        if (slider != null)
-            slider.onValueChanged.RemoveListener(OnSliderValueChanged);
     }
 }

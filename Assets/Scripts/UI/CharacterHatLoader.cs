@@ -1,31 +1,35 @@
+using Core;
 using UnityEngine;
 
-public class CharacterHatLoader : MonoBehaviour
+namespace UI
 {
-    [Tooltip("The Hats folder inside this character prefab.")]
-    public Transform hatsFolder;
-    void Start()
+    public class CharacterHatLoader : MonoBehaviour
     {
-        if (AchievementManager.Instance == null || string.IsNullOrEmpty(AchievementManager.Instance.selectedHatName))
-            return;
-
-        string hatToActivate = AchievementManager.Instance.selectedHatName;
-
-        // Disable all hats first
-        foreach (Transform hat in hatsFolder)
+        [Tooltip("The Hats folder inside this character prefab.")]
+        public Transform hatsFolder;
+        void Start()
         {
-            hat.gameObject.SetActive(false);
-        }
+            if (AchievementManager.Instance == null || string.IsNullOrEmpty(AchievementManager.Instance.selectedHatName))
+                return;
 
-        // Find the hat with the matching name and activate it
-        Transform selectedHat = hatsFolder.Find(hatToActivate);
-        if (selectedHat != null)
-        {
-            selectedHat.gameObject.SetActive(true);
-        }
-        else
-        {
-            Debug.LogWarning($"[CharacterHatLoader] No hat named '{hatToActivate}' found under {hatsFolder.name}");
+            var hatToActivate = AchievementManager.Instance.selectedHatName;
+
+            // Disable all hats first
+            foreach (Transform hat in hatsFolder)
+            {
+                hat.gameObject.SetActive(false);
+            }
+
+            // Find the hat with the matching name and activate it
+            var selectedHat = hatsFolder.Find(hatToActivate);
+            if (selectedHat != null)
+            {
+                selectedHat.gameObject.SetActive(true);
+            }
+            else
+            {
+                Debug.LogWarning($"[CharacterHatLoader] No hat named '{hatToActivate}' found under {hatsFolder.name}");
+            }
         }
     }
 }

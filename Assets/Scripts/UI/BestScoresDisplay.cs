@@ -1,42 +1,46 @@
-using UnityEngine;
+using Core;
 using TMPro;
+using UnityEngine;
 
-public class BestScoresDisplay : MonoBehaviour
+namespace UI
 {
-    private TextMeshProUGUI textBox;
-
-    private void Start()
+    public class BestScoresDisplay : MonoBehaviour
     {
-        textBox = GetComponent<TextMeshProUGUI>();
+        private TextMeshProUGUI textBox;
 
-        if (LevelLogger.Instance == null)
+        private void Start()
         {
-            textBox.text = "No scores to display.";
-            return;
+            textBox = GetComponent<TextMeshProUGUI>();
+
+            if (LevelLogger.Instance == null)
+            {
+                textBox.text = "No scores to display.";
+                return;
+            }
+
+            textBox.text = GetFormattedScores();
         }
 
-        textBox.text = GetFormattedScores();
-    }
-
-    private string GetFormattedScores()
-    {
-        var logger = LevelLogger.Instance;
-        var results = logger.GetAllResults(); // We need to add this method to LevelLogger
-
-        if (results.Count == 0)
-            return "No levels completed yet.";
-
-        var output = "<b>Best Scores:</b>\n";
-
-        foreach (var kvp in results)
+        private string GetFormattedScores()
         {
-            var sceneIndex = kvp.Key;
-            var result = kvp.Value;
-            var levelName = logger.GetLevelName(sceneIndex);
-            var time = logger.FormatTime(result.bestTime);
-            output += $"{levelName} - Moves: {result.bestMoves}, Time: {time}\n";
-        }
+            var logger = LevelLogger.Instance;
+            var results = logger.GetAllResults(); // We need to add this method to LevelLogger
 
-        return output;
+            if (results.Count == 0)
+                return "No levels completed yet.";
+
+            var output = "<b>Best Scores:</b>\n";
+
+            foreach (var kvp in results)
+            {
+                var sceneIndex = kvp.Key;
+                var result = kvp.Value;
+                var levelName = logger.GetLevelName(sceneIndex);
+                var time = logger.FormatTime(result.bestTime);
+                output += $"{levelName} - Moves: {result.bestMoves}, Time: {time}\n";
+            }
+
+            return output;
+        }
     }
 }

@@ -1,43 +1,46 @@
 using UnityEngine;
 
-public class ObjectShower : MonoBehaviour
+namespace Gameplay
 {
-    public GameObject objectToShow;
-    public GameObject menu;
-    private void OnTriggerEnter2D(Collider2D other)
+    public class ObjectShower : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        public GameObject objectToShow;
+        public GameObject menu;
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                if (objectToShow != null)
+                {
+                    objectToShow.SetActive(true);
+                    Debug.Log($"[ObjectShower]: Player revealed object '{objectToShow.name}'");
+                }
+                else
+                {
+                    Debug.LogWarning("[ObjectShower]: Object to show not assigned - trigger has no effect");
+                }
+            }
+        }
+        public void show()
         {
             if (objectToShow != null)
             {
                 objectToShow.SetActive(true);
-                Debug.Log($"[ObjectShower]: Player revealed object '{objectToShow.name}'");
+                Debug.Log($"[ObjectShower]: Manually activated object '{objectToShow.name}'");
             }
             else
             {
-                Debug.LogWarning("[ObjectShower]: Object to show not assigned - trigger has no effect");
+                Debug.LogWarning("[ObjectShower]: Object to show not assigned - manual activation failed");
             }
-        }
-    }
-    public void show()
-    {
-        if (objectToShow != null)
-        {
-            objectToShow.SetActive(true);
-            Debug.Log($"[ObjectShower]: Manually activated object '{objectToShow.name}'");
-        }
-        else
-        {
-            Debug.LogWarning("[ObjectShower]: Object to show not assigned - manual activation failed");
-        }
         
-        if (menu != null)
-        {
-            menu.SetActive(false);
-        }
-        else
-        {
-            Debug.LogWarning("[ObjectShower]: Menu reference not assigned - cannot hide menu");
+            if (menu != null)
+            {
+                menu.SetActive(false);
+            }
+            else
+            {
+                Debug.LogWarning("[ObjectShower]: Menu reference not assigned - cannot hide menu");
+            }
         }
     }
 }

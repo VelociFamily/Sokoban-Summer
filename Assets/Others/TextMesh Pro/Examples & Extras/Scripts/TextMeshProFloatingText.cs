@@ -1,8 +1,8 @@
-using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine;
 
-
-namespace TMPro.Examples
+namespace Others.TextMesh_Pro.Examples___Extras.Scripts
 {
 
     public class TextMeshProFloatingText : MonoBehaviour
@@ -38,7 +38,7 @@ namespace TMPro.Examples
         private void Awake()
         {
             m_transform = transform;
-            m_floatingText = new GameObject(this.name + " floating text");
+            m_floatingText = new GameObject(name + " floating text");
 
             // Reference to Transform is lost when TMP component is added since it replaces it by a RectTransform.
             //m_floatingText_Transform = m_floatingText.transform;

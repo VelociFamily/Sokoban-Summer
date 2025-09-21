@@ -1,92 +1,96 @@
-using UnityEngine;
 using System.Collections.Generic;
+using Core;
+using UnityEngine;
 
-public class HatSelectionManager : MonoBehaviour
+namespace UI
 {
-    [Header("Hat Options (Menu Prefabs)")]
-    public List<GameObject> hats; // menu versions of hats
-
-    [Header("UI Arrows")]
-    public GameObject leftArrow;
-    public GameObject rightArrow;
-
-    [Header("Character & Lock UI")]
-    public GameObject character;   // menu display character
-    public GameObject lockObject;  // lock icon if not unlocked
-
-    private int currentIndex;
-    private bool unlocked;
-
-    void Start()
+    public class HatSelectionManager : MonoBehaviour
     {
-        // unlocked only if tutorial is complete
-        unlocked = (AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial);
-        ShowHatsUI(unlocked);
+        [Header("Hat Options (Menu Prefabs)")]
+        public List<GameObject> hats; // menu versions of hats
 
-        if (unlocked)
+        [Header("UI Arrows")]
+        public GameObject leftArrow;
+        public GameObject rightArrow;
+
+        [Header("Character & Lock UI")]
+        public GameObject character;   // menu display character
+        public GameObject lockObject;  // lock icon if not unlocked
+
+        private int currentIndex;
+        private bool unlocked;
+
+        void Start()
         {
-            Debug.Log("[HatSelectionManager]: Hat system unlocked - tutorial completed");
-            UpdateHatVisibility();
+            // unlocked only if tutorial is complete
+            unlocked = (AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial);
+            ShowHatsUI(unlocked);
 
-            // Load saved hat if exists
-            if (!string.IsNullOrEmpty(AchievementManager.Instance.selectedHatName))
+            if (unlocked)
             {
-                int index = hats.FindIndex(h => h.name == AchievementManager.Instance.selectedHatName);
-                if (index >= 0)
+                Debug.Log("[HatSelectionManager]: Hat system unlocked - tutorial completed");
+                UpdateHatVisibility();
+
+                // Load saved hat if exists
+                if (!string.IsNullOrEmpty(AchievementManager.Instance.selectedHatName))
                 {
-                    currentIndex = index;
-                    UpdateHatVisibility();
+                    var index = hats.FindIndex(h => h.name == AchievementManager.Instance.selectedHatName);
+                    if (index >= 0)
+                    {
+                        currentIndex = index;
+                        UpdateHatVisibility();
+                    }
                 }
             }
         }
-    }
 
-    void Update()
-    {
-        if (!unlocked && AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial)
+        void Update()
         {
-            unlocked = true;
-            Debug.Log("[HatSelectionManager]: Hat system newly unlocked during gameplay");
-            ShowHatsUI(true);
+            if (!unlocked && AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial)
+            {
+                unlocked = true;
+                Debug.Log("[HatSelectionManager]: Hat system newly unlocked during gameplay");
+                ShowHatsUI(true);
+                UpdateHatVisibility();
+            }
+        }
+
+        void UpdateHatVisibility()
+        {
+            for (var i = 0; i < hats.Count; i++)
+            {
+                hats[i].SetActive(i == currentIndex);
+            }
+
+            // save selected hat name to AchievementManager
+            if (AchievementManager.Instance != null && hats.Count > 0)
+            {
+                AchievementManager.Instance.SetSelectedHat(hats[currentIndex].name);
+            }
+        }
+
+        public void NextHat()
+        {
+            if (!unlocked) return;
+            currentIndex++;
+            if (currentIndex >= hats.Count) currentIndex = 0;
             UpdateHatVisibility();
         }
-    }
 
-    void UpdateHatVisibility()
-    {
-        for (int i = 0; i < hats.Count; i++)
+        public void PreviousHat()
         {
-            hats[i].SetActive(i == currentIndex);
+            if (!unlocked) return;
+            currentIndex--;
+            if (currentIndex < 0) currentIndex = hats.Count - 1;
+            UpdateHatVisibility();
         }
 
-        // save selected hat name to AchievementManager
-        if (AchievementManager.Instance != null && hats.Count > 0)
+        void ShowHatsUI(bool show)
         {
-            AchievementManager.Instance.SetSelectedHat(hats[currentIndex].name);
+            character.SetActive(show);
+            leftArrow.SetActive(show);
+            rightArrow.SetActive(show);
+            lockObject.SetActive(!show);
         }
-    }
-
-    public void NextHat()
-    {
-        if (!unlocked) return;
-        currentIndex++;
-        if (currentIndex >= hats.Count) currentIndex = 0;
-        UpdateHatVisibility();
-    }
-
-    public void PreviousHat()
-    {
-        if (!unlocked) return;
-        currentIndex--;
-        if (currentIndex < 0) currentIndex = hats.Count - 1;
-        UpdateHatVisibility();
-    }
-
-    void ShowHatsUI(bool show)
-    {
-        character.SetActive(show);
-        leftArrow.SetActive(show);
-        rightArrow.SetActive(show);
-        lockObject.SetActive(!show);
     }
 }

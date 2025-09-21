@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 
-namespace CartoonFX
+namespace JMO_Assets.Cartoon_FX_Remaster.CFXR_Assets.Scripts
 {
 	public partial class CFXR_Effect : MonoBehaviour
 	{
@@ -251,7 +249,7 @@ namespace CartoonFX
 
 					if (!isShaking)
 					{
-						this.StartShake();
+						StartShake();
 					}
 
 					// duration of the camera shake

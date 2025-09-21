@@ -21,14 +21,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 //
-using UnityEngine;
-using UnityEditor;
 
-namespace Kino
+using UnityEditor;
+using UnityEngine;
+
+namespace JMO_Assets.Cartoon_FX_Remaster.Demo_Assets.Kino_Bloom.Editor
 {
     [CanEditMultipleObjects]
     [CustomEditor(typeof(Bloom))]
-    public class BloomEditor : Editor
+    public class BloomEditor : UnityEditor.Editor
     {
         private BloomGraphDrawer _graph;
 
