@@ -3,15 +3,138 @@ on:
   pull_request:
     types: [closed]
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      force_windows:
+        description: 'Force use of Windows runner instead of self-hosted'
+        required: false
+        default: 'false'
+        type: boolean
+      retry_self_hosted:
+        description: 'Retry with self-hosted runner'
+        required: false
+        default: 'false'
+        type: boolean
+
 jobs:
-  build:
-    name: Unity Builder
+  check-runner:
+    name: Check Runner Availability
+    runs-on: ubuntu-latest
+    outputs:
+      use-self-hosted: ${{ steps.check.outputs.use-self-hosted }}
+      runner-available: ${{ steps.check.outputs.runner-available }}
+    steps:
+      - name: Check for self-hosted runner availability
+        id: check
+        run: |
+          # Check if user explicitly wants Windows runner
+          if [ "${{ github.event.inputs.force_windows }}" = "true" ]; then
+            echo "use-self-hosted=false" >> $GITHUB_OUTPUT
+            echo "runner-available=false" >> $GITHUB_OUTPUT
+            echo "User requested Windows runner explicitly"
+            exit 0
+          fi
+          
+          # Check if user wants to retry self-hosted
+          if [ "${{ github.event.inputs.retry_self_hosted }}" = "true" ]; then
+            echo "use-self-hosted=true" >> $GITHUB_OUTPUT
+            echo "runner-available=true" >> $GITHUB_OUTPUT
+            echo "User requested retry with self-hosted runner"
+            exit 0
+          fi
+          
+          # For PR events, default to trying self-hosted first
+          echo "use-self-hosted=true" >> $GITHUB_OUTPUT
+          echo "runner-available=true" >> $GITHUB_OUTPUT
+          echo "Will attempt self-hosted runner first"
+
+  build-self-hosted:
+    name: Unity Builder (Self-Hosted)
+    needs: check-runner
+    if: needs.check-runner.outputs.use-self-hosted == 'true'
+    runs-on: [self-hosted, unity]
+    continue-on-error: true
+    outputs:
+      build-success: ${{ steps.build-result.outputs.success }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+      - name: Cache Unity packages
+        uses: actions/cache@v4
+        with:
+          path: Library/PackageCache
+          key: ${{ runner.os }}-unity-packages-${{ hashFiles('Packages/manifest.json') }}
+      - name: Run Unity Builder (GameCI)
+        id: unity-build
+        continue-on-error: true
+        uses: game-ci/unity-builder@v4
+        with:
+          projectPath: .
+          unityVersion: 6000.2.5f1
+          targetPlatform: StandaloneWindows64
+        env:
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+      - name: Check build result
+        id: build-result
+        run: |
+          if [ "${{ steps.unity-build.outcome }}" = "success" ]; then
+            echo "success=true" >> $GITHUB_OUTPUT
+            echo "Self-hosted build completed successfully"
+          else
+            echo "success=false" >> $GITHUB_OUTPUT
+            echo "Self-hosted build failed or runner unavailable"
+          fi
+      - name: Upload build artifacts
+        if: steps.unity-build.outcome == 'success'
+        uses: actions/upload-artifact@v4
+        with:
+          name: unity-build-StandaloneWindows64-self-hosted
+          path: build/StandaloneWindows64
+
+  request-approval:
+    name: Request Windows Runner Approval
+    needs: [check-runner, build-self-hosted]
+    if: |
+      always() && 
+      (needs.build-self-hosted.result == 'failure' || 
+       needs.build-self-hosted.outputs.build-success == 'false') && 
+       github.event.inputs.force_windows != 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: windows-runner-approval
+      url: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Request approval for Windows runner
+        run: |
+          echo "Self-hosted Unity runner is not available or build failed."
+          echo "Approval requested to use Windows runner as fallback."
+          echo ""
+          echo "Options:"
+          echo "1. Approve this environment to continue with Windows runner"
+          echo "2. Cancel this workflow and try again later when self-hosted runner is available"
+          echo "3. Use manual workflow dispatch with 'retry_self_hosted: true' option"
+
+  build-windows:
+    name: Unity Builder (Windows)
+    needs: [check-runner, build-self-hosted, request-approval]
+    if: |
+      always() && 
+      (github.event.inputs.force_windows == 'true' || 
+       (needs.request-approval.result == 'success' && 
+        (needs.build-self-hosted.result == 'failure' || 
+         needs.build-self-hosted.outputs.build-success == 'false')))
     runs-on: windows-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           lfs: true
+          fetch-depth: 0
       - name: Cache Unity packages
         uses: actions/cache@v4
         with:
@@ -31,5 +154,38 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: unity-build-StandaloneWindows64
+          name: unity-build-StandaloneWindows64-windows
           path: build/StandaloneWindows64
+
+  summary:
+    name: Build Summary
+    needs: [check-runner, build-self-hosted, build-windows]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build Summary
+        run: |
+          echo "## Unity CI Build Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.build-self-hosted.result }}" = "success" ] && [ "${{ needs.build-self-hosted.outputs.build-success }}" = "true" ]; then
+            echo "✅ **Self-hosted Unity runner**: Build completed successfully" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.build-self-hosted.result }}" = "failure" ] || [ "${{ needs.build-self-hosted.outputs.build-success }}" = "false" ]; then
+            echo "❌ **Self-hosted Unity runner**: Build failed or runner unavailable" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⏭️ **Self-hosted Unity runner**: Skipped" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          if [ "${{ needs.build-windows.result }}" = "success" ]; then
+            echo "✅ **Windows runner**: Build completed successfully" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ needs.build-windows.result }}" = "failure" ]; then
+            echo "❌ **Windows runner**: Build failed" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "⏭️ **Windows runner**: Skipped" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Options for next run:" >> $GITHUB_STEP_SUMMARY
+          echo "- Use **Manual Workflow Dispatch** with \`force_windows: true\` to skip self-hosted runner" >> $GITHUB_STEP_SUMMARY
+          echo "- Use **Manual Workflow Dispatch** with \`retry_self_hosted: true\` to retry self-hosted runner" >> $GITHUB_STEP_SUMMARY
+          echo "- Regular PR events will automatically try self-hosted first" >> $GITHUB_STEP_SUMMARY
