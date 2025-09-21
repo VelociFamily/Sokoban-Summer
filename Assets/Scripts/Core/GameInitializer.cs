@@ -166,7 +166,44 @@ public class GameInitializer : MonoBehaviour
     {
         Debug.Log("[GameInitializer]: Loading Main Menu scene...");
         await SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
+        
+        // Initialize SceneButton components in the newly loaded Main Menu scene
+        await InitializeSceneButtonsInMainMenuAsync();
+        
         Debug.Log("[GameInitializer]: Main Menu scene loaded");
+    }
+    
+    /// <summary>
+    /// Initialize all SceneButton components in the Main Menu scene
+    /// </summary>
+    private async Task InitializeSceneButtonsInMainMenuAsync()
+    {
+        // Wait one frame to ensure the scene is fully loaded
+        await Task.Yield();
+        
+        var mainMenuScene = SceneManager.GetSceneByName("Main Menu");
+        if (mainMenuScene.IsValid())
+        {
+            var sceneButtons = new List<SceneButton>();
+            
+            // Find all SceneButton components in the Main Menu scene
+            foreach (var rootObj in mainMenuScene.GetRootGameObjects())
+            {
+                sceneButtons.AddRange(rootObj.GetComponentsInChildren<SceneButton>());
+            }
+            
+            // Initialize each SceneButton
+            foreach (var sceneButton in sceneButtons)
+            {
+                sceneButton.Initialize();
+            }
+            
+            Debug.Log($"[GameInitializer]: Initialized {sceneButtons.Count} SceneButton(s) in Main Menu scene");
+        }
+        else
+        {
+            Debug.LogWarning("[GameInitializer]: Main Menu scene not found for SceneButton initialization");
+        }
     }
 
     private void Update()
