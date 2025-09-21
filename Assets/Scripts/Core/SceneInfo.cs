@@ -33,7 +33,7 @@ public class SceneInfo : MonoBehaviour
     /// </summary>
     /// <param name="scene">Scene to search in</param>
     /// <returns>SceneInfo component if found, null otherwise</returns>
-    private static SceneInfo FindSceneInfoInScene(Scene scene)
+    public static SceneInfo FindSceneInfoInScene(Scene scene)
     {
         if (!scene.IsValid() || !scene.isLoaded)
             return null;

@@ -45,10 +45,13 @@ public class AchievementManager : MonoBehaviour, IAsyncInitializable
 
         SceneManager.sceneLoaded += OnSceneLoaded;
         
+        // Initialize default unlocks (first level should always be unlocked)
+        InitializeDefaultUnlocks();
+        
         // Initialize UI elements
         await InitializeUIAsync();
         
-        Debug.Log("[AchievementManager]: Initialized asynchronously");
+        Debug.Log("[AchievementManager]: Initialized asynchronously with default unlocks");
     }
 
     private async Task InitializeUIAsync()
@@ -56,6 +59,16 @@ public class AchievementManager : MonoBehaviour, IAsyncInitializable
         FindAchievementText();
         UpdateAchievementDisplay(true);
         await Task.Yield(); // Ensure async behavior
+    }
+    
+    /// <summary>
+    /// Initialize default unlocks (first level should always be unlocked)
+    /// </summary>
+    private void InitializeDefaultUnlocks()
+    {
+        // Always unlock the tutorial level by default
+        _completeTutorial = true;
+        Debug.Log("[AchievementManager]: Tutorial level unlocked by default on game start");
     }
     
     private void OnDestroy()
