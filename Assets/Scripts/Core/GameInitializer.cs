@@ -125,7 +125,16 @@ public class GameInitializer : MonoBehaviour
             backgroundClone = Instantiate(Background);
             if (!backgroundClone.CompareTag("background"))
                 backgroundClone.tag = "background";
-            Debug.Log("[GameInitializer]: Background initialized");
+            
+            Debug.Log($"[GameInitializer]: Background initialized - GameObject: '{backgroundClone.name}', Active: {backgroundClone.activeSelf}");
+            
+            // Ensure background is visible initially (it should be managed by Update() later)
+            backgroundClone.SetActive(true);
+            Debug.Log($"[GameInitializer]: Background set to active: {backgroundClone.activeSelf}");
+        }
+        else
+        {
+            Debug.LogWarning("[GameInitializer]: Background prefab is null - cannot initialize background");
         }
         await Task.Yield();
     }
@@ -150,23 +159,57 @@ public class GameInitializer : MonoBehaviour
     {
         Debug.Log("[GameInitializer]: Loading Main Menu scene...");
         await SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
-        Debug.Log("[GameInitializer]: Main Menu scene loaded");
+        
+        // Set Main Menu as the active scene after loading
+        var mainMenuScene = SceneManager.GetSceneByName("Main Menu");
+        if (mainMenuScene.IsValid())
+        {
+            SceneManager.SetActiveScene(mainMenuScene);
+            Debug.Log($"[GameInitializer]: Main Menu scene loaded and set as active. Active scene: '{SceneManager.GetActiveScene().name}'");
+        }
+        else
+        {
+            Debug.LogError("[GameInitializer]: Failed to find Main Menu scene after loading");
+        }
     }
 
     private void Update()
     {
         if (backgroundClone == null)
+        {
             return;
-        for (var index = 0; index < SceneManager.sceneCount; index++)
-            switch (SceneManager.GetSceneAt(index).buildIndex)
-            {
-                case >= 2 and <= 7:
+        }
+
+        // Check the active scene instead of iterating through all loaded scenes
+        var activeScene = SceneManager.GetActiveScene();
+        
+        switch (activeScene.buildIndex)
+        {
+            case >= 2 and <= 7: // Tutorial and level scenes
+                if (backgroundClone.activeSelf)
+                {
                     backgroundClone.SetActive(false);
-                    break;
-                case 1:
+                    Debug.Log($"[GameInitializer]: Background hidden for scene '{activeScene.name}' (build index: {activeScene.buildIndex})");
+                }
+                break;
+            case 1: // Main Menu scene
+                if (!backgroundClone.activeSelf)
+                {
                     backgroundClone.SetActive(true);
-                    break;
-            }
+                    Debug.Log($"[GameInitializer]: Background shown for scene '{activeScene.name}' (build index: {activeScene.buildIndex})");
+                }
+                break;
+            case 0: // Game scene - should show background when it's the startup scene before Main Menu loads
+                if (!backgroundClone.activeSelf)
+                {
+                    backgroundClone.SetActive(true);
+                    Debug.Log($"[GameInitializer]: Background shown for scene '{activeScene.name}' (build index: {activeScene.buildIndex})");
+                }
+                break;
+            default:
+                Debug.Log($"[GameInitializer]: No background rules defined for scene '{activeScene.name}' (build index: {activeScene.buildIndex})");
+                break;
+        }
     }
 
     /// <summary>
