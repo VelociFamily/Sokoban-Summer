@@ -115,11 +115,9 @@ public class GameInitializer : MonoBehaviour
             if (!backgroundClone.CompareTag("background"))
                 backgroundClone.tag = "background";
             
-            Debug.Log($"[GameInitializer]: Background initialized - GameObject: '{backgroundClone.name}', Active: {backgroundClone.activeSelf}");
-            
             // Ensure background is visible initially (it should be managed by Update() later)
             backgroundClone.SetActive(true);
-            Debug.Log($"[GameInitializer]: Background set to active: {backgroundClone.activeSelf}");
+            Debug.Log($"[GameInitializer]: Background '{backgroundClone.name}' initialized and activated");
         }
         else
         {
@@ -200,29 +198,20 @@ public class GameInitializer : MonoBehaviour
         
         if (audioListeners.Length == 0)
         {
-            Debug.LogWarning("[GameInitializer]: No AudioListener found in scene - creating temporary one");
+            Debug.LogWarning("[GameInitializer]: No AudioListener found - creating temporary one");
             
             // Create a temporary GameObject with AudioListener to prevent Unity warnings
             var tempAudioListenerObject = new GameObject("TempAudioListener");
             tempAudioListenerObject.AddComponent<AudioListener>();
-            
-            Debug.Log("[GameInitializer]: Temporary AudioListener created - will be managed by scene loading system");
         }
-        else
+        else if (audioListeners.Length > 1)
         {
-            Debug.Log($"[GameInitializer]: Found {audioListeners.Length} AudioListener(s) in scene");
-            
-            // If there are multiple AudioListeners, disable the extras
-            if (audioListeners.Length > 1)
+            Debug.LogWarning($"[GameInitializer]: Found {audioListeners.Length} AudioListeners - disabling extras to prevent warnings");
+            for (int i = 1; i < audioListeners.Length; i++)
             {
-                Debug.LogWarning($"[GameInitializer]: Found {audioListeners.Length} AudioListeners. Disabling extras to prevent warnings.");
-                for (int i = 1; i < audioListeners.Length; i++)
+                if (audioListeners[i] != null)
                 {
-                    if (audioListeners[i] != null)
-                    {
-                        Debug.Log($"[GameInitializer]: Disabling extra AudioListener on '{audioListeners[i].gameObject.name}'");
-                        audioListeners[i].enabled = false;
-                    }
+                    audioListeners[i].enabled = false;
                 }
             }
         }
