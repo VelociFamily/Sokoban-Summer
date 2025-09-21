@@ -14,8 +14,6 @@ public class GameInitializer : MonoBehaviour
     public GameObject MusicPlayer;
 
     private GameObject backgroundClone;
-    private AchievementManager achievementManager;
-    private List<IAsyncInitializable> asyncInitializables = new List<IAsyncInitializable>();
 
     private async void Start()
     {
@@ -117,7 +115,7 @@ public class GameInitializer : MonoBehaviour
         if (achievementManagerObj != null)
         {
             await achievementManagerObj.InitializeAsync();
-            achievementManager = AchievementManager.Instance;
+            Debug.Log("[GameInitializer]: AchievementManager initialized");
         }
         else
         {
@@ -177,29 +175,12 @@ public class GameInitializer : MonoBehaviour
             return;
         }
 
-        // Check the active scene instead of iterating through all loaded scenes
-        var activeScene = SceneManager.GetActiveScene();
+        // Use the new SceneInfo system instead of hardcoded build indices
+        bool shouldShow = SceneInfo.ShouldShowBackground();
         
-        switch (activeScene.buildIndex)
+        if (backgroundClone.activeSelf != shouldShow)
         {
-            case >= 2 and <= 7: // Tutorial and level scenes
-                if (backgroundClone.activeSelf)
-                {
-                    backgroundClone.SetActive(false);
-                }
-                break;
-            case 1: // Main Menu scene
-                if (!backgroundClone.activeSelf)
-                {
-                    backgroundClone.SetActive(true);
-                }
-                break;
-            case 0: // Game scene - should show background when it's the startup scene before Main Menu loads
-                if (!backgroundClone.activeSelf)
-                {
-                    backgroundClone.SetActive(true);
-                }
-                break;
+            backgroundClone.SetActive(shouldShow);
         }
     }
 
