@@ -47,12 +47,10 @@ public class PlayerController : MonoBehaviour
     private void InitializeInput()
     {
         // Use centralized input service instead of creating our own
-        if (InputService.Instance.InputActions != null)
-        {
-            inputActions = InputService.Instance.InputActions;
-            inputActions.Player.Move.performed += OnMovePerformed;
-            inputActions.Player.Move.canceled += OnMoveCanceled;
-        }
+        if (InputService.Instance.InputActions == null) return;
+        inputActions = InputService.Instance.InputActions;
+        inputActions.Player.Move.performed += OnMovePerformed;
+        inputActions.Player.Move.canceled += OnMoveCanceled;
     }
 
     private void OnEnable()
@@ -67,11 +65,9 @@ public class PlayerController : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (inputActions != null)
-        {
-            inputActions.Player.Move.performed -= OnMovePerformed;
-            inputActions.Player.Move.canceled -= OnMoveCanceled;
-        }
+        if (inputActions == null) return;
+        inputActions.Player.Move.performed -= OnMovePerformed;
+        inputActions.Player.Move.canceled -= OnMoveCanceled;
     }
 
     private void OnMovePerformed(InputAction.CallbackContext context)
@@ -100,7 +96,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        transform.position += (Vector3)(moveDirection * moveSpeed * Time.deltaTime);
+        transform.position += (Vector3)(moveDirection * (moveSpeed * Time.deltaTime));
     }
 
     private bool TryMove(Vector2 dir)

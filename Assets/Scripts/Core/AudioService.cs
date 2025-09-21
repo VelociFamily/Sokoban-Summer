@@ -257,4 +257,3 @@ public class AudioService : IAsyncInitializable
     [System.Obsolete("Use GetMainAudioSource() instead")]
     public AudioSource GetAudioSource() => GetMainAudioSource();
 }
-}

@@ -147,18 +147,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1538283957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94223f5ad552aeb429117ff68ce66d64, type: 3}
+  m_Script: {fileID: 11500000, guid: c217609a6e2aed0458685871b9e644c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Background: {fileID: 7989558775053221618, guid: caac141454713444aac4f403378378b5,
-    type: 3}
-  AchievementManager: {fileID: 2464884067389089345, guid: 626c84c5b2f5d504f80c1c71bb66fa1a,
-    type: 3}
-  SFXVolumeControl: {fileID: 8042197476450585151, guid: 471cbf17642e3b2489b010a9a921807b,
+  Background: {fileID: 680087514678784242, guid: 638d6a9b5703a2d44a4a2ea2c97d9946,
     type: 3}
   VolumeControl: {fileID: 6964444006871117818, guid: 471cbf17642e3b2489b010a9a921807b,
     type: 3}
-  AudioSource: {fileID: 4009926922293170676, guid: ffe1261ba03f3154e8dddfda3970f90f,
+  SFXVolumeControl: {fileID: 8042197476450585151, guid: 471cbf17642e3b2489b010a9a921807b,
+    type: 3}
+  AudioSource: {fileID: 3151595561698033625, guid: 471cbf17642e3b2489b010a9a921807b,
     type: 3}
   LevelLogger: {fileID: 7322051495895024113, guid: 8f10432bbd156e44ba6569edb1f1fbd9,
     type: 3}
