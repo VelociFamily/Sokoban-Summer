@@ -22,13 +22,19 @@ public class GameInitializer : MonoBehaviour
         {
             Debug.Log("[GameInitializer]: Starting async game initialization...");
             
-            // Initialize core systems asynchronously in parallel where possible
+            // Step 1: Ensure AudioListener exists first (like original)
+            EnsureAudioListenerExists();
+            
+            // Step 2: Initialize background first (like original timing)
+            await InitializeBackgroundAsync();
+            
+            // Step 3: Initialize core systems in parallel
             await InitializeCoreSystemsAsync();
             
-            // Initialize scene-specific systems
-            await InitializeSceneSystemsAsync();
+            // Step 4: Initialize remaining scene-specific systems  
+            await InitializeLevelLoggerAsync();
             
-            // Load main menu scene
+            // Step 5: Load main menu scene LAST (like original)
             await LoadMainMenuAsync();
             
             Debug.Log("[GameInitializer]: Game initialization completed successfully");
@@ -99,22 +105,6 @@ public class GameInitializer : MonoBehaviour
     }
 
     /// <summary>
-    /// Initialize scene-specific systems
-    /// </summary>
-    private async Task InitializeSceneSystemsAsync()
-    {
-        Debug.Log("[GameInitializer]: Initializing scene systems...");
-        
-        // Initialize background
-        await InitializeBackgroundAsync();
-        
-        // Initialize level logger
-        await InitializeLevelLoggerAsync();
-        
-        Debug.Log("[GameInitializer]: Scene systems initialized");
-    }
-
-    /// <summary>
     /// Initialize background asynchronously
     /// </summary>
     private async Task InitializeBackgroundAsync()
@@ -158,18 +148,7 @@ public class GameInitializer : MonoBehaviour
     {
         Debug.Log("[GameInitializer]: Loading Main Menu scene...");
         await SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
-        
-        // Set Main Menu as the active scene after loading
-        var mainMenuScene = SceneManager.GetSceneByName("Main Menu");
-        if (mainMenuScene.IsValid())
-        {
-            SceneManager.SetActiveScene(mainMenuScene);
-            Debug.Log($"[GameInitializer]: Main Menu scene loaded and set as active. Active scene: '{SceneManager.GetActiveScene().name}'");
-        }
-        else
-        {
-            Debug.LogError("[GameInitializer]: Failed to find Main Menu scene after loading");
-        }
+        Debug.Log("[GameInitializer]: Main Menu scene loaded");
     }
 
     private void Update()
