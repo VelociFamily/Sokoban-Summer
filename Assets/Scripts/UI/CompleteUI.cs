@@ -39,7 +39,7 @@ public class CompleteUI : MonoBehaviour
             
             // Check if this is a level scene using SceneInfo instead of build indices
             var sceneObjects = loadedScene.GetRootGameObjects();
-            bool isLevelScene = false;
+            var isLevelScene = false;
             
             foreach (var obj in sceneObjects)
             {

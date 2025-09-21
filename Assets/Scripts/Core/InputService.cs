@@ -11,9 +11,7 @@ public class InputService : IAsyncInitializable
     private static InputService _instance;
     public static InputService Instance => _instance ??= new InputService();
 
-    private InputSystem_Actions _inputActions;
-    
-    public InputSystem_Actions InputActions => _inputActions;
+    public InputSystem_Actions InputActions { get; private set; }
 
     // Events for common input actions to reduce coupling
     public event Action<UnityEngine.InputSystem.InputAction.CallbackContext> OnPlayerMove;
@@ -32,14 +30,14 @@ public class InputService : IAsyncInitializable
 
     private async Task InitializeInputActions()
     {
-        if (_inputActions == null)
+        if (InputActions == null)
         {
-            _inputActions = new InputSystem_Actions();
+            InputActions = new InputSystem_Actions();
             
             // Set up common event forwarding to reduce coupling
-            _inputActions.Player.Move.performed += ctx => OnPlayerMove?.Invoke(ctx);
-            _inputActions.Player.Move.canceled += ctx => OnPlayerMove?.Invoke(ctx);
-            _inputActions.UI.Cancel.performed += ctx => OnUICancel?.Invoke(ctx);
+            InputActions.Player.Move.performed += ctx => OnPlayerMove?.Invoke(ctx);
+            InputActions.Player.Move.canceled += ctx => OnPlayerMove?.Invoke(ctx);
+            InputActions.UI.Cancel.performed += ctx => OnUICancel?.Invoke(ctx);
         }
         
         await Task.Yield(); // Ensure async behavior
@@ -47,34 +45,34 @@ public class InputService : IAsyncInitializable
 
     public void EnablePlayerInput()
     {
-        _inputActions?.Player.Enable();
+        InputActions?.Player.Enable();
     }
 
     public void DisablePlayerInput()
     {
-        _inputActions?.Player.Disable();
+        InputActions?.Player.Disable();
     }
 
     public void EnableUIInput()
     {
-        _inputActions?.UI.Enable();
+        InputActions?.UI.Enable();
     }
 
     public void DisableUIInput()
     {
-        _inputActions?.UI.Disable();
+        InputActions?.UI.Disable();
     }
 
     public void Dispose()
     {
-        if (_inputActions != null)
+        if (InputActions != null)
         {
-            _inputActions.Player.Move.performed -= ctx => OnPlayerMove?.Invoke(ctx);
-            _inputActions.Player.Move.canceled -= ctx => OnPlayerMove?.Invoke(ctx);
-            _inputActions.UI.Cancel.performed -= ctx => OnUICancel?.Invoke(ctx);
+            InputActions.Player.Move.performed -= ctx => OnPlayerMove?.Invoke(ctx);
+            InputActions.Player.Move.canceled -= ctx => OnPlayerMove?.Invoke(ctx);
+            InputActions.UI.Cancel.performed -= ctx => OnUICancel?.Invoke(ctx);
             
-            _inputActions.Dispose();
-            _inputActions = null;
+            InputActions.Dispose();
+            InputActions = null;
         }
     }
 }

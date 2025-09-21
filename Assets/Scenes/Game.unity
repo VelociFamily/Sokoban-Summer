@@ -160,6 +160,8 @@ MonoBehaviour:
     type: 3}
   MusicPlayer: {fileID: 5260749598366790734, guid: ffe1261ba03f3154e8dddfda3970f90f,
     type: 3}
+  SceneInfo: {fileID: 1784882817430136078, guid: 13fbbece91bfc0141a4a9e7dd92f22df,
+    type: 3}
 --- !u!4 &1538283959
 Transform:
   m_ObjectHideFlags: 0

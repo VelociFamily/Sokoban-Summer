@@ -49,7 +49,7 @@ public class ArrowClick : MonoBehaviour
     {
         if (mainCamera == null) return;
 
-        Vector2 mousePosition = inputActions.UI.Point.ReadValue<Vector2>();
+        var mousePosition = inputActions.UI.Point.ReadValue<Vector2>();
         Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
         var hit = Physics2D.Raycast(worldPosition, Vector2.zero);
 

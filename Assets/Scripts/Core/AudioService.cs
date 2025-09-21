@@ -91,7 +91,7 @@ public class AudioService : IAsyncInitializable
             
             // Keep the first one and destroy the rest
             _mainAudioSource = existingAudioSources[0];
-            for (int i = 1; i < existingAudioSources.Length; i++)
+            for (var i = 1; i < existingAudioSources.Length; i++)
             {
                 if (existingAudioSources[i] != null && existingAudioSources[i] != _mainAudioSource)
                 {

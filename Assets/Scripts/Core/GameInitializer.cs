@@ -12,6 +12,7 @@ public class GameInitializer : MonoBehaviour
     public SfxVolumeControl SFXVolumeControl;
     public LevelLogger LevelLogger;
     public GameObject MusicPlayer;
+    public SceneInfo SceneInfo;
 
     private GameObject backgroundClone;
 
@@ -176,7 +177,7 @@ public class GameInitializer : MonoBehaviour
         }
 
         // Use the new SceneInfo system instead of hardcoded build indices
-        bool shouldShow = SceneInfo.ShouldShowBackground();
+        var shouldShow = SceneInfo.ShouldShowBackground();
         
         if (backgroundClone.activeSelf != shouldShow)
         {
@@ -209,7 +210,7 @@ public class GameInitializer : MonoBehaviour
         else if (audioListeners.Length > 1)
         {
             Debug.LogWarning($"[GameInitializer]: Found {audioListeners.Length} AudioListeners - disabling extras to prevent warnings");
-            for (int i = 1; i < audioListeners.Length; i++)
+            for (var i = 1; i < audioListeners.Length; i++)
             {
                 if (audioListeners[i] != null)
                 {

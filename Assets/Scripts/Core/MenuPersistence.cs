@@ -111,7 +111,7 @@ public class MenuPersistence : MonoBehaviour
             Debug.LogWarning($"[MenuPersistence]: Detected {eventSystems.Length} EventSystems in scene - removing duplicates to prevent input conflicts");
             
             // Keep the first EventSystem and destroy the rest
-            for (int i = 1; i < eventSystems.Length; i++)
+            for (var i = 1; i < eventSystems.Length; i++)
             {
                 Debug.Log($"[MenuPersistence]: Removing duplicate EventSystem from '{eventSystems[i].gameObject.name}'");
                 Destroy(eventSystems[i].gameObject);
@@ -132,7 +132,7 @@ public class MenuPersistence : MonoBehaviour
             Debug.LogWarning($"[MenuPersistence]: Detected {audioListeners.Length} AudioListeners in scene - removing duplicates to prevent audio conflicts");
             
             // Keep the first AudioListener and disable the rest (don't destroy the camera, just disable the AudioListener component)
-            for (int i = 1; i < audioListeners.Length; i++)
+            for (var i = 1; i < audioListeners.Length; i++)
             {
                 Debug.Log($"[MenuPersistence]: Disabling duplicate AudioListener on '{audioListeners[i].gameObject.name}'");
                 audioListeners[i].enabled = false;

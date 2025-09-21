@@ -93,7 +93,7 @@ public class PowerUpManager
                     teleportPowerUp.PlayTeleportSound(_playerController);
                 }
                 
-                bool stillActive = powerUp.ConsumeUse();
+                var stillActive = powerUp.ConsumeUse();
                 
                 if (!stillActive)
                 {

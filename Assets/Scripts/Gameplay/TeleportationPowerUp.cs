@@ -5,30 +5,24 @@ using UnityEngine;
 /// </summary>
 public class TeleportationPowerUp : IPowerUp
 {
-    private static int _teleportTimes;
-    
-    public int RemainingUses => _teleportTimes;
-    public bool IsActive => _teleportTimes > 0;
+    public int RemainingUses => TeleportTimes;
+    public bool IsActive => TeleportTimes > 0;
     public string PowerUpName => "TeleportationPowerUp";
     
     // Static accessor for backward compatibility
-    public static int TeleportTimes
-    {
-        get => _teleportTimes;
-        set => _teleportTimes = value;
-    }
-    
+    public static int TeleportTimes { get; set; }
+
     public void Activate(int uses)
     {
-        _teleportTimes = uses;
+        TeleportTimes = uses;
     }
     
     public bool ConsumeUse()
     {
-        if (_teleportTimes > 0)
+        if (TeleportTimes > 0)
         {
-            _teleportTimes--;
-            return _teleportTimes > 0;
+            TeleportTimes--;
+            return TeleportTimes > 0;
         }
         return false;
     }

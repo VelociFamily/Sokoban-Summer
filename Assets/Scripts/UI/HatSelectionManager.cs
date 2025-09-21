@@ -31,7 +31,7 @@ public class HatSelectionManager : MonoBehaviour
             // Load saved hat if exists
             if (!string.IsNullOrEmpty(AchievementManager.Instance.selectedHatName))
             {
-                int index = hats.FindIndex(h => h.name == AchievementManager.Instance.selectedHatName);
+                var index = hats.FindIndex(h => h.name == AchievementManager.Instance.selectedHatName);
                 if (index >= 0)
                 {
                     currentIndex = index;
@@ -54,7 +54,7 @@ public class HatSelectionManager : MonoBehaviour
 
     void UpdateHatVisibility()
     {
-        for (int i = 0; i < hats.Count; i++)
+        for (var i = 0; i < hats.Count; i++)
         {
             hats[i].SetActive(i == currentIndex);
         }

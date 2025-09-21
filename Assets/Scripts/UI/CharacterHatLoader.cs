@@ -9,7 +9,7 @@ public class CharacterHatLoader : MonoBehaviour
         if (AchievementManager.Instance == null || string.IsNullOrEmpty(AchievementManager.Instance.selectedHatName))
             return;
 
-        string hatToActivate = AchievementManager.Instance.selectedHatName;
+        var hatToActivate = AchievementManager.Instance.selectedHatName;
 
         // Disable all hats first
         foreach (Transform hat in hatsFolder)
@@ -18,7 +18,7 @@ public class CharacterHatLoader : MonoBehaviour
         }
 
         // Find the hat with the matching name and activate it
-        Transform selectedHat = hatsFolder.Find(hatToActivate);
+        var selectedHat = hatsFolder.Find(hatToActivate);
         if (selectedHat != null)
         {
             selectedHat.gameObject.SetActive(true);

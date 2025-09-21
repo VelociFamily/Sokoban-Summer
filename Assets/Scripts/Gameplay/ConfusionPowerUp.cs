@@ -5,30 +5,24 @@ using UnityEngine;
 /// </summary>
 public class ConfusionPowerUp : IPowerUp
 {
-    private static int _confuseTurns;
-    
-    public int RemainingUses => _confuseTurns;
-    public bool IsActive => _confuseTurns > 0;
+    public int RemainingUses => ConfuseTurns;
+    public bool IsActive => ConfuseTurns > 0;
     public string PowerUpName => "ConfusionPowerUp";
     
     // Static accessor for backward compatibility
-    public static int ConfuseTurns
-    {
-        get => _confuseTurns;
-        set => _confuseTurns = value;
-    }
-    
+    public static int ConfuseTurns { get; set; }
+
     public void Activate(int uses)
     {
-        _confuseTurns = uses;
+        ConfuseTurns = uses;
     }
     
     public bool ConsumeUse()
     {
-        if (_confuseTurns > 0)
+        if (ConfuseTurns > 0)
         {
-            _confuseTurns--;
-            return _confuseTurns > 0;
+            ConfuseTurns--;
+            return ConfuseTurns > 0;
         }
         return false;
     }
