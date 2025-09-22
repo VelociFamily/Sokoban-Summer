@@ -34,7 +34,7 @@ namespace Audio
             {
                 Debug.LogWarning("[SFXVolumeControl]: SFX slider component not assigned in inspector - attempting to find it automatically");
             
-                // Try to find SFX slider automatically
+                // Try multiple approaches to find SFX slider
                 var sliderConnector = FindFirstObjectByType<VolumeSliderConnector>();
                 if (sliderConnector != null && sliderConnector.SfxSlider != null)
                 {
@@ -43,8 +43,36 @@ namespace Audio
                 }
                 else
                 {
-                    Debug.LogWarning("[SFXVolumeControl]: Could not find SFX slider - SFX volume control disabled");
-                    return;
+                    // Try to find slider by name or tag as fallback
+                    var sliderObject = GameObject.FindGameObjectWithTag("SFXSlider");
+                    if (sliderObject != null)
+                    {
+                        sfxSlider = sliderObject.GetComponent<Slider>();
+                        if (sfxSlider != null)
+                        {
+                            Debug.Log("[SFXVolumeControl]: Found SFX slider by tag");
+                        }
+                    }
+                    
+                    if (sfxSlider == null)
+                    {
+                        // Try finding by name
+                        sliderObject = GameObject.Find("SFX Slider") ?? GameObject.Find("SfxSlider");
+                        if (sliderObject != null)
+                        {
+                            sfxSlider = sliderObject.GetComponent<Slider>();
+                            if (sfxSlider != null)
+                            {
+                                Debug.Log("[SFXVolumeControl]: Found SFX slider by name");
+                            }
+                        }
+                    }
+                    
+                    if (sfxSlider == null)
+                    {
+                        Debug.LogWarning("[SFXVolumeControl]: Could not find SFX slider - SFX volume control disabled");
+                        return;
+                    }
                 }
             }
 

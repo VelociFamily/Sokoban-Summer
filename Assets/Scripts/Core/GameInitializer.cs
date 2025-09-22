@@ -116,7 +116,13 @@ namespace Core
                 Debug.Log("[GameInitializer]: AchievementManager initialized");
             }
             else
-                Debug.LogWarning("[GameInitializer]: AchievementManager not found in scene");
+            {
+                // Try to create an AchievementManager if none exists
+                var achievementManagerGameObject = new GameObject("AchievementManager");
+                var achievementManager = achievementManagerGameObject.AddComponent<AchievementManager>();
+                await achievementManager.InitializeAsync();
+                Debug.Log("[GameInitializer]: AchievementManager created and initialized");
+            }
         }
 
         /// <summary>
