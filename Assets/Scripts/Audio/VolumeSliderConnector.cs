@@ -3,6 +3,10 @@ using UnityEngine.UI;
 
 namespace Audio
 {
+    /// <summary>
+    /// Legacy volume slider connector - replaced by VolumeSlider components
+    /// </summary>
+    [System.Obsolete("VolumeSliderConnector is deprecated. Use individual VolumeSlider components for each channel instead.", false)]
     public class VolumeSliderConnector : MonoBehaviour
     {
         [Header("References")]
