@@ -50,6 +50,12 @@ namespace Audio
                 var savedSFXVolume = PlayerPrefs.GetFloat("SFXVolume", 1f);
                 sfxSlider.value = Mathf.Clamp(savedSFXVolume, 0f, 1f);
                 sfxSlider.onValueChanged.AddListener(OnSFXSliderValueChanged);
+                
+                // Notify SfxVolumeControl that slider is now available
+                if (sfxVolumeControl != null)
+                {
+                    sfxVolumeControl.RetrySliderSetup();
+                }
             }
         }
 

@@ -70,7 +70,9 @@ namespace Audio
                     
                     if (sfxSlider == null)
                     {
-                        Debug.LogWarning("[SFXVolumeControl]: Could not find SFX slider - SFX volume control disabled");
+                        Debug.LogWarning("[SFXVolumeControl]: Could not find SFX slider - SFX volume control will try again when sliders are available");
+                        // Don't return here - let the volume control still initialize, but defer slider setup
+                        SetSfxVolumeOnly(PlayerPrefs.GetFloat("SFXVolume", 1f));
                         return;
                     }
                 }
@@ -81,6 +83,30 @@ namespace Audio
             SetSfxVolume(savedVolume);
 
             sfxSlider.onValueChanged.AddListener(OnSFXSliderValueChanged);
+        }
+
+        /// <summary>
+        /// Set SFX volume without requiring a slider (fallback method)
+        /// </summary>
+        private void SetSfxVolumeOnly(float value)
+        {
+            var dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20;
+            if (audioMixer != null)
+                audioMixer.SetFloat("SFXVolume", dB);
+            PlayerPrefs.SetFloat("SFXVolume", value);
+            PlayerPrefs.Save();
+        }
+
+        /// <summary>
+        /// Manually retry slider setup - can be called when sliders are available
+        /// </summary>
+        public void RetrySliderSetup()
+        {
+            if (sfxSlider == null)
+            {
+                Debug.Log("[SFXVolumeControl]: Retrying slider setup");
+                SetupSfxSlider();
+            }
         }
 
         private void OnSFXSliderValueChanged(float value)
