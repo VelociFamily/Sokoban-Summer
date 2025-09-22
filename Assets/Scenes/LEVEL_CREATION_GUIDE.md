@@ -21,16 +21,19 @@ Your level should include these essential components:
 - **Canvas** - UI elements
 
 #### Level Data Configuration:
-If using a `LevelData` asset:
-1. Right-click in Project > Create > Sokoban > Level Data
-2. Configure:
+To create rich level metadata:
+1. In Unity's Project window, right-click in a folder (e.g., create a "LevelData" folder)
+2. Select Create > Sokoban > Level Data
+3. Name your asset (e.g., "Level_01_Data")
+4. Configure the fields in Inspector:
    - **Level Title**: Display name for the level
-   - **Description**: Brief description
+   - **Description**: Brief description  
    - **Sort Order**: Number for level ordering (lower = earlier)
    - **Par Moves**: Target number of moves (0 = no goal)
    - **Par Time**: Target completion time in seconds (0 = no goal)
    - **Preview Image**: Optional preview sprite for level selection
    - **Requires Unlock**: Whether level needs to be unlocked
+5. In your level scene's SceneInfo component, drag this asset to the "Level Data" field
 
 ### 3. Design Your Level
 - Use existing prefabs from `Assets/Prefabs/` for consistency

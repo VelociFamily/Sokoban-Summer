@@ -67,9 +67,22 @@ UI component that:
    - Scene Type: GameplayLevel (or TutorialLevel)
    - Show Background: false (for gameplay levels)
    - Level Number: Sequential number
-   - Level Data: Optional LevelData reference
+   - Level Data: Optional - create via Right-click > Create > Sokoban > Level Data
 5. Add scene to Build Settings
 6. Test the level
+
+### Creating LevelData Assets (Optional):
+1. In Project window, Right-click in a folder
+2. Select Create > Sokoban > Level Data
+3. Name the asset appropriately (e.g., "Level_01_Data")
+4. Configure the fields in the Inspector:
+   - Level Title: Display name
+   - Description: Brief description
+   - Sort Order: Numeric order (lower = appears first)
+   - Par Moves/Time: Target goals (0 = no goal)
+   - Preview Image: Optional sprite for level selection
+   - Requires Unlock: Whether level needs progression
+5. Reference this asset in your level's SceneInfo component
 
 ## API Reference
 
