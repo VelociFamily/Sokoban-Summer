@@ -1,0 +1,325 @@
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+namespace Core
+{
+    /// <summary>
+    /// Manages dynamic level discovery, loading, and progression tracking
+    /// Scans for scenes in the Levels folder and provides level management functionality
+    /// </summary>
+    public class LevelManager : MonoBehaviour
+    {
+        public static LevelManager Instance { get; private set; }
+
+        [Header("Configuration")]
+        [Tooltip("Path to the levels folder relative to Assets/Scenes/")]
+        public string levelsFolder = "Levels";
+        
+        [Tooltip("Path to the tutorials folder relative to Assets/Scenes/")]
+        public string tutorialsFolder = "Tutorials";
+
+        [Header("Debug")]
+        [SerializeField] private bool debugMode = false;
+
+        // Cached level information
+        private List<LevelInfo> allLevels = new List<LevelInfo>();
+        private List<LevelInfo> tutorialLevels = new List<LevelInfo>();
+        private List<LevelInfo> gameplayLevels = new List<LevelInfo>();
+        
+        private bool levelsScanned = false;
+
+        /// <summary>
+        /// Information about a discovered level
+        /// </summary>
+        [System.Serializable]
+        public class LevelInfo
+        {
+            public string sceneName;
+            public string scenePath;
+            public int buildIndex;
+            public SceneType sceneType;
+            public LevelData levelData;
+            public int sortOrder;
+            
+            // Derived from scene or level data
+            public string displayName;
+            public Sprite previewImage;
+            public int parMoves;
+            public float parTime;
+            public bool requiresUnlock;
+        }
+
+        private void Awake()
+        {
+            // Singleton pattern
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+                ScanForLevels();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        /// <summary>
+        /// Scan for all levels in the configured folders
+        /// </summary>
+        public void ScanForLevels()
+        {
+            if (levelsScanned) return;
+
+            allLevels.Clear();
+            tutorialLevels.Clear();
+            gameplayLevels.Clear();
+
+            // Scan build settings for scenes
+            for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
+            {
+                string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
+                if (string.IsNullOrEmpty(scenePath)) continue;
+
+                string sceneName = Path.GetFileNameWithoutExtension(scenePath);
+                
+                // Check if this scene is in our target folders
+                bool isTutorial = scenePath.Contains($"/{tutorialsFolder}/");
+                bool isLevel = scenePath.Contains($"/{levelsFolder}/");
+                
+                if (!isTutorial && !isLevel) continue;
+
+                // Create level info
+                var levelInfo = new LevelInfo
+                {
+                    sceneName = sceneName,
+                    scenePath = scenePath,
+                    buildIndex = i,
+                    sceneType = isTutorial ? SceneType.TutorialLevel : SceneType.GameplayLevel
+                };
+
+                // Try to load level data from the scene (this would require the scene to be loaded)
+                // For now, we'll use naming conventions and default values
+                PopulateLevelInfoFromPath(levelInfo);
+
+                allLevels.Add(levelInfo);
+                
+                if (isTutorial)
+                    tutorialLevels.Add(levelInfo);
+                else
+                    gameplayLevels.Add(levelInfo);
+            }
+
+            // Sort levels by sort order
+            SortLevels();
+            levelsScanned = true;
+
+            if (debugMode)
+            {
+                Debug.Log($"[LevelManager] Scanned {allLevels.Count} levels ({tutorialLevels.Count} tutorials, {gameplayLevels.Count} gameplay levels)");
+                foreach (var level in allLevels)
+                {
+                    Debug.Log($"[LevelManager] Found level: {level.displayName} ({level.scenePath})");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Populate level info from scene path and naming conventions
+        /// </summary>
+        private void PopulateLevelInfoFromPath(LevelInfo levelInfo)
+        {
+            // Default display name from scene name
+            levelInfo.displayName = levelInfo.sceneName;
+            
+            // Try to extract order from filename (e.g., "01_Tutorial", "Level One" -> 1)
+            levelInfo.sortOrder = ExtractSortOrderFromName(levelInfo.sceneName);
+            
+            // Set default values
+            levelInfo.requiresUnlock = true;
+            levelInfo.parMoves = 0;
+            levelInfo.parTime = 0f;
+
+            // Special handling for known tutorial names
+            if (levelInfo.sceneType == SceneType.TutorialLevel)
+            {
+                switch (levelInfo.sceneName.ToLower())
+                {
+                    case "moving tutorial":
+                        levelInfo.sortOrder = 0;
+                        break;
+                    case "button tutorial":
+                        levelInfo.sortOrder = 1;
+                        break;
+                    case "speed tutorial":
+                        levelInfo.sortOrder = 2;
+                        break;
+                    case "confuse tutorial":
+                        levelInfo.sortOrder = 3;
+                        break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Extract sort order from scene name using various patterns
+        /// </summary>
+        private int ExtractSortOrderFromName(string sceneName)
+        {
+            // Try to find numbers at the start of the name
+            var parts = sceneName.Split(' ');
+            
+            // Pattern: "01_Name" or "1_Name"
+            if (parts[0].Contains('_'))
+            {
+                var prefix = parts[0].Split('_')[0];
+                if (int.TryParse(prefix, out int order))
+                    return order;
+            }
+            
+            // Pattern: "Level One", "Level Two", etc.
+            if (sceneName.ToLower().Contains("one"))
+                return 1;
+            if (sceneName.ToLower().Contains("two"))
+                return 2;
+            if (sceneName.ToLower().Contains("three"))
+                return 3;
+            
+            // Default: use build index as fallback
+            return 999; // Put at end by default
+        }
+
+        /// <summary>
+        /// Sort levels by their sort order
+        /// </summary>
+        private void SortLevels()
+        {
+            allLevels.Sort((a, b) => a.sortOrder.CompareTo(b.sortOrder));
+            tutorialLevels.Sort((a, b) => a.sortOrder.CompareTo(b.sortOrder));
+            gameplayLevels.Sort((a, b) => a.sortOrder.CompareTo(b.sortOrder));
+        }
+
+        /// <summary>
+        /// Get all levels of a specific type
+        /// </summary>
+        public List<LevelInfo> GetLevels(SceneType sceneType)
+        {
+            if (!levelsScanned) ScanForLevels();
+
+            return sceneType switch
+            {
+                SceneType.TutorialLevel => tutorialLevels,
+                SceneType.GameplayLevel => gameplayLevels,
+                _ => new List<LevelInfo>()
+            };
+        }
+
+        /// <summary>
+        /// Get all levels
+        /// </summary>
+        public List<LevelInfo> GetAllLevels()
+        {
+            if (!levelsScanned) ScanForLevels();
+            return allLevels;
+        }
+
+        /// <summary>
+        /// Get a level by build index
+        /// </summary>
+        public LevelInfo GetLevelByBuildIndex(int buildIndex)
+        {
+            if (!levelsScanned) ScanForLevels();
+            return allLevels.FirstOrDefault(l => l.buildIndex == buildIndex);
+        }
+
+        /// <summary>
+        /// Get a level by scene name
+        /// </summary>
+        public LevelInfo GetLevelByName(string sceneName)
+        {
+            if (!levelsScanned) ScanForLevels();
+            return allLevels.FirstOrDefault(l => l.sceneName == sceneName);
+        }
+
+        /// <summary>
+        /// Check if a level can be loaded (handles unlock logic)
+        /// </summary>
+        public bool CanLoadLevel(LevelInfo levelInfo)
+        {
+            if (levelInfo == null) return false;
+            
+            // If level doesn't require unlock, it's always available
+            if (!levelInfo.requiresUnlock) return true;
+
+            // For the first tutorial, it's always unlocked
+            if (levelInfo.sceneType == SceneType.TutorialLevel && levelInfo.sortOrder == 0)
+                return true;
+
+            // Use existing SceneSelector logic
+            return UI.SceneSelector.CanLoadScene(levelInfo.buildIndex);
+        }
+
+        /// <summary>
+        /// Load a level by its info
+        /// </summary>
+        public void LoadLevel(LevelInfo levelInfo)
+        {
+            if (levelInfo == null || !CanLoadLevel(levelInfo))
+            {
+                Debug.LogWarning($"[LevelManager] Cannot load level: {levelInfo?.displayName ?? "null"}");
+                return;
+            }
+
+            SceneManager.LoadScene(levelInfo.buildIndex);
+        }
+
+        /// <summary>
+        /// Force rescan of levels (useful for development)
+        /// </summary>
+        [ContextMenu("Rescan Levels")]
+        public void RescanLevels()
+        {
+            levelsScanned = false;
+            ScanForLevels();
+        }
+
+        /// <summary>
+        /// Get the next level in sequence
+        /// </summary>
+        public LevelInfo GetNextLevel(LevelInfo currentLevel)
+        {
+            if (currentLevel == null) return null;
+
+            var levelList = currentLevel.sceneType == SceneType.TutorialLevel ? tutorialLevels : gameplayLevels;
+            var currentIndex = levelList.FindIndex(l => l.buildIndex == currentLevel.buildIndex);
+            
+            if (currentIndex >= 0 && currentIndex < levelList.Count - 1)
+                return levelList[currentIndex + 1];
+
+            // If we're at the end of tutorials, move to first gameplay level
+            if (currentLevel.sceneType == SceneType.TutorialLevel && gameplayLevels.Count > 0)
+                return gameplayLevels[0];
+
+            return null;
+        }
+
+        /// <summary>
+        /// Mark a level as completed and unlock the next level
+        /// </summary>
+        public void MarkLevelCompleted(int buildIndex)
+        {
+            var level = GetLevelByBuildIndex(buildIndex);
+            if (level != null)
+            {
+                var nextLevel = GetNextLevel(level);
+                if (nextLevel != null)
+                {
+                    UI.SceneSelector.MarkNextLevelUnlocked(nextLevel.buildIndex);
+                }
+            }
+        }
+    }
+}

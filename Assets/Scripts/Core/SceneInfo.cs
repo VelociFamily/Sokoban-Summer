@@ -19,6 +19,9 @@ namespace Core
         [Header("Level Information (for Tutorial/Gameplay levels)")]
         [Tooltip("Level number for progression tracking (only used for level scenes)")]
         public int levelNumber = 1;
+        
+        [Tooltip("Optional level data with metadata, goals, and display information")]
+        public LevelData levelData;
     
         /// <summary>
         /// Get the SceneInfo for the currently active scene
