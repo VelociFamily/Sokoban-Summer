@@ -90,7 +90,7 @@ namespace Tests
             }
             
             // Check for VolumeSlider components
-            var volumeSliders = FindObjectsOfType<VolumeSlider>();
+            var volumeSliders = FindObjectsByType<VolumeSlider>(FindObjectsSortMode.None);
             Debug.Log($"✓ Found {volumeSliders.Length} VolumeSlider components");
             
             foreach (var volumeSlider in volumeSliders)
@@ -113,8 +113,8 @@ namespace Tests
             try
             {
                 // Test if legacy components still exist and function
-                var legacyVolumeControl = FindObjectOfType<VolumeControl>();
-                var legacySfxControl = FindObjectOfType<SfxVolumeControl>();
+                var legacyVolumeControl = FindFirstObjectByType<VolumeControl>();
+                var legacySfxControl = FindFirstObjectByType<SfxVolumeControl>();
                 
                 if (legacyVolumeControl != null)
                 {
@@ -144,7 +144,7 @@ namespace Tests
             Debug.Log("--- Creating Test Volume Sliders ---");
             
             // Create a Canvas if one doesn't exist
-            var canvas = FindObjectOfType<Canvas>();
+            var canvas = FindFirstObjectByType<Canvas>();
             if (canvas == null)
             {
                 var canvasObject = new GameObject("TestCanvas");

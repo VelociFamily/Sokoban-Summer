@@ -102,7 +102,7 @@ namespace Audio
         private void FindAndRegisterSliders()
         {
             // Find all VolumeSlider components in the scene and register them
-            var volumeSliderComponents = FindObjectsOfType<VolumeSlider>();
+            var volumeSliderComponents = FindObjectsByType<VolumeSlider>(FindObjectsSortMode.None);
             
             foreach (var sliderComponent in volumeSliderComponents)
             {
@@ -110,7 +110,7 @@ namespace Audio
             }
             
             // Legacy support: try to find old slider connectors
-            var legacyConnector = FindObjectOfType<VolumeSliderConnector>();
+            var legacyConnector = FindFirstObjectByType<VolumeSliderConnector>();
             if (legacyConnector != null)
             {
                 #pragma warning disable CS0618 // Type or member is obsolete
