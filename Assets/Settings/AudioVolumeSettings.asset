@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c3d4e5f6789012345678901234abcd, type: 3}
+  m_Name: AudioVolumeSettings
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.AudioVolumeSettings
+  volumeChannels:
+  - ChannelType: 0
+    DisplayName: Master Volume
+    PrefsKey: Volume_Master
+    MixerParameter: MasterVolume
+    DefaultVolume: 1
+  - ChannelType: 1
+    DisplayName: Music Volume
+    PrefsKey: Volume_Music
+    MixerParameter: MusicVolume
+    DefaultVolume: 1
+  - ChannelType: 2
+    DisplayName: SFX Volume
+    PrefsKey: Volume_SFX
+    MixerParameter: SFXVolume
+    DefaultVolume: 1
