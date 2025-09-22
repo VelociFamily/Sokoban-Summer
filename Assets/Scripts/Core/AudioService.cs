@@ -5,10 +5,9 @@ using UnityEngine;
 namespace Core
 {
     /// <summary>
-    /// Centralized audio service to manage volume controls and audio sources
-    /// Reduces the need for multiple MonoBehaviour-based audio managers
-    /// Ensures only one main AudioSource exists across all scenes
+    /// Legacy centralized audio service - replaced by ModernAudioService + UnifiedAudioManager
     /// </summary>
+    [System.Obsolete("AudioService is deprecated. Use ModernAudioService with UnifiedAudioManager instead.", false)]
     public class AudioService
     {
         private static AudioService _instance;

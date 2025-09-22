@@ -11,8 +11,17 @@ namespace Core
     {
         [Header("Prefab References")]
         public GameObject Background;
+        
+        [Header("Legacy Audio (Deprecated)")]
+        [System.Obsolete("Use UnifiedAudioManagerPrefab instead")]
         public VolumeControl VolumeControl;
+        [System.Obsolete("Use UnifiedAudioManagerPrefab instead")]
         public SfxVolumeControl SFXVolumeControl;
+        
+        [Header("Modern Audio System")]
+        public Audio.UnifiedAudioManager UnifiedAudioManagerPrefab;
+        
+        [Header("Other Systems")]
         public LevelLogger LevelLogger;
         public GameObject MusicPlayer;
         public SceneInfo SceneInfo;
@@ -91,8 +100,25 @@ namespace Core
         /// </summary>
         private async Task InitializeAudioSystemAsync()
         {
-            // Initialize audio service asynchronously with prefab references
-            await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl);
+            // Use modern audio system if available, otherwise fallback to legacy
+            if (UnifiedAudioManagerPrefab != null)
+            {
+                await ModernAudioService.Instance.InitializeWithPrefabAsync(UnifiedAudioManagerPrefab);
+            }
+            else
+            {
+                // Try modern system without prefab
+                await ModernAudioService.Instance.InitializeAsync();
+                
+                // Fallback to legacy system if needed
+                if (VolumeControl != null || SFXVolumeControl != null)
+                {
+                    Debug.LogWarning("[GameInitializer]: Using legacy audio system. Consider upgrading to UnifiedAudioManager.");
+                    #pragma warning disable CS0618 // Type or member is obsolete
+                    await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl);
+                    #pragma warning restore CS0618 // Type or member is obsolete
+                }
+            }
         }
 
         /// <summary>

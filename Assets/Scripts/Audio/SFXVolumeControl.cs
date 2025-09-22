@@ -4,6 +4,10 @@ using UnityEngine.UI;
 
 namespace Audio
 {
+    /// <summary>
+    /// Legacy SFX volume control system - replaced by UnifiedAudioManager
+    /// </summary>
+    [System.Obsolete("SfxVolumeControl is deprecated. Use UnifiedAudioManager with AudioChannelType.SFX instead.", false)]
     public class SfxVolumeControl : MonoBehaviour
     {
         [Header("References")]

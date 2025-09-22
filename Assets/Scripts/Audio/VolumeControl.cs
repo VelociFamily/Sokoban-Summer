@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 namespace Audio
 {
+    /// <summary>
+    /// Legacy volume control system - replaced by UnifiedAudioManager
+    /// </summary>
+    [System.Obsolete("VolumeControl is deprecated. Use UnifiedAudioManager with AudioChannelType.Master instead.", false)]
     public class VolumeControl : MonoBehaviour
     {
         public static VolumeControl instance;
