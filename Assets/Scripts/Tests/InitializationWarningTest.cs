@@ -50,7 +50,7 @@ namespace Tests
             Debug.Log("--- Testing SfxVolumeControl Initialization ---");
             
             // Clear any existing instances
-            var existingSfx = FindObjectsOfType<SfxVolumeControl>();
+            var existingSfx = FindObjectsByType<SfxVolumeControl>(FindObjectsSortMode.None);
             foreach (var sfx in existingSfx)
             {
                 DestroyImmediate(sfx.gameObject);
@@ -79,7 +79,7 @@ namespace Tests
             Debug.Log("--- Testing AchievementManager Initialization ---");
             
             // Clear any existing instances
-            var existingAchievement = FindObjectsOfType<AchievementManager>();
+            var existingAchievement = FindObjectsByType<AchievementManager>(FindObjectsSortMode.None);
             foreach (var achievement in existingAchievement)
             {
                 DestroyImmediate(achievement.gameObject);
@@ -116,7 +116,7 @@ namespace Tests
             Debug.Log("--- Creating Test UI Sliders ---");
             
             // Create a Canvas if one doesn't exist
-            var canvas = FindObjectOfType<Canvas>();
+            var canvas = FindFirstObjectByType<Canvas>();
             if (canvas == null)
             {
                 var canvasObject = new GameObject("TestCanvas");
