@@ -103,23 +103,7 @@ namespace Audio
         {
             // Find all VolumeSlider components in the scene and register them
             var volumeSliderComponents = FindObjectsByType<VolumeSlider>(FindObjectsSortMode.None);
-            
-            foreach (var sliderComponent in volumeSliderComponents)
-            {
-                RegisterVolumeSlider(sliderComponent.ChannelType, sliderComponent.Slider);
-            }
-            
-            // Legacy support: try to find old slider connectors
-            var legacyConnector = FindFirstObjectByType<VolumeSliderConnector>();
-            if (legacyConnector != null)
-            {
-                #pragma warning disable CS0618 // Type or member is obsolete
-                if (legacyConnector.volumeSlider != null)
-                    RegisterVolumeSlider(AudioChannelType.Master, legacyConnector.volumeSlider);
-                if (legacyConnector.sfxSlider != null)  
-                    RegisterVolumeSlider(AudioChannelType.SFX, legacyConnector.sfxSlider);
-                #pragma warning restore CS0618 // Type or member is obsolete
-            }
+            foreach (var sliderComponent in volumeSliderComponents) RegisterVolumeSlider(sliderComponent.ChannelType, sliderComponent.Slider);
         }
         
         public void RegisterVolumeSlider(AudioChannelType channelType, Slider slider)

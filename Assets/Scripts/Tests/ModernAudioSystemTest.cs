@@ -36,10 +36,6 @@ namespace Tests
             // Test 2: UI Integration
             await TestUIIntegration();
             
-            // Test 3: Legacy Compatibility (if enabled)
-            if (testLegacyCompatibility)
-                await TestLegacyCompatibility();
-            
             Debug.Log("=== Modern Audio System Test Completed ===");
         }
 
@@ -104,39 +100,6 @@ namespace Tests
                     Debug.LogWarning($"⚠ {volumeSlider.ChannelType} VolumeSlider missing Slider reference");
                 }
             }
-        }
-
-        private async Task TestLegacyCompatibility()
-        {
-            Debug.Log("--- Testing Legacy System Compatibility ---");
-            
-            try
-            {
-                // Test if legacy components still exist and function
-                var legacyVolumeControl = FindFirstObjectByType<VolumeControl>();
-                var legacySfxControl = FindFirstObjectByType<SfxVolumeControl>();
-                
-                if (legacyVolumeControl != null)
-                {
-                    Debug.Log("✓ Legacy VolumeControl found - backward compatibility maintained");
-                }
-                
-                if (legacySfxControl != null)
-                {
-                    Debug.Log("✓ Legacy SfxVolumeControl found - backward compatibility maintained");
-                }
-                
-                if (legacyVolumeControl == null && legacySfxControl == null)
-                {
-                    Debug.Log("✓ No legacy components found - clean modern setup");
-                }
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"✗ Legacy compatibility test failed: {e.Message}");
-            }
-            
-            await Task.Yield();
         }
 
         private void CreateTestVolumeSliders()

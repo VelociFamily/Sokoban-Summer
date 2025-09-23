@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,12 +10,6 @@ namespace Core
     {
         [Header("Prefab References")]
         public GameObject Background;
-        
-        [Header("Legacy Audio (Deprecated)")]
-        [System.Obsolete("Use UnifiedAudioManagerPrefab instead")]
-        public VolumeControl VolumeControl;
-        [System.Obsolete("Use UnifiedAudioManagerPrefab instead")]
-        public SfxVolumeControl SFXVolumeControl;
         
         [Header("Modern Audio System")]
         public Audio.UnifiedAudioManager UnifiedAudioManagerPrefab;
@@ -104,20 +97,6 @@ namespace Core
             if (UnifiedAudioManagerPrefab != null)
             {
                 await ModernAudioService.Instance.InitializeWithPrefabAsync(UnifiedAudioManagerPrefab);
-            }
-            else
-            {
-                // Try modern system without prefab
-                await ModernAudioService.Instance.InitializeAsync();
-                
-                // Fallback to legacy system if needed
-                if (VolumeControl != null || SFXVolumeControl != null)
-                {
-                    Debug.LogWarning("[GameInitializer]: Using legacy audio system. Consider upgrading to UnifiedAudioManager.");
-                    #pragma warning disable CS0618 // Type or member is obsolete
-                    await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl);
-                    #pragma warning restore CS0618 // Type or member is obsolete
-                }
             }
         }
 
