@@ -47,4 +47,4 @@ MonoBehaviour:
   masterMixer: {fileID: 24100000, guid: 05a187b4dd6b0984eab39aa2815f2703, type: 2}
   musicSource: {fileID: 0}
   sfxSource: {fileID: 0}
-  volumeSettings: {fileID: 0}
+  volumeSettings: {fileID: 11400000, guid: 04cb8ee3e3c22564ea07de176489eab9, type: 2}
