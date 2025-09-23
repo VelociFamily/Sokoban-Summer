@@ -8090,7 +8090,6 @@ GameObject:
   - component: {fileID: 2075951367}
   - component: {fileID: 2075951369}
   - component: {fileID: 2075951368}
-  - component: {fileID: 2075951370}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -8218,20 +8217,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075951366}
   m_CullTransparentMesh: 1
---- !u!114 &2075951370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2075951366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884f1a484a67f0148a9c2cbf2a7735d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VolumeSliderConnector
-  volumeSlider: {fileID: 245628574}
-  sfxSlider: {fileID: 469921712}
 --- !u!1 &2108044684
 GameObject:
   m_ObjectHideFlags: 0
