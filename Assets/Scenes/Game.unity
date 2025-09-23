@@ -152,9 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Background: {fileID: 7989558775053221618, guid: caac141454713444aac4f403378378b5,
     type: 3}
-  VolumeControl: {fileID: 6964444006871117818, guid: 471cbf17642e3b2489b010a9a921807b,
-    type: 3}
-  SFXVolumeControl: {fileID: 8042197476450585151, guid: 471cbf17642e3b2489b010a9a921807b,
+  VolumeControl: {fileID: 0}
+  SFXVolumeControl: {fileID: 0}
+  UnifiedAudioManagerPrefab: {fileID: 4684732665795058736, guid: 2fac25f5d6ca84f4b9fb94f468a5c181,
     type: 3}
   LevelLogger: {fileID: 7322051495895024113, guid: 8f10432bbd156e44ba6569edb1f1fbd9,
     type: 3}

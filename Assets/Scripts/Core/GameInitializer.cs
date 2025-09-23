@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Audio;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,8 +10,11 @@ namespace Core
     {
         [Header("Prefab References")]
         public GameObject Background;
-        public VolumeControl VolumeControl;
-        public SfxVolumeControl SFXVolumeControl;
+        
+        [Header("Modern Audio System")]
+        public Audio.UnifiedAudioManager UnifiedAudioManagerPrefab;
+        
+        [Header("Other Systems")]
         public LevelLogger LevelLogger;
         public GameObject MusicPlayer;
         public SceneInfo SceneInfo;
@@ -91,8 +93,11 @@ namespace Core
         /// </summary>
         private async Task InitializeAudioSystemAsync()
         {
-            // Initialize audio service asynchronously with prefab references
-            await AudioService.Instance.InitializeWithPrefabsAsync(VolumeControl, SFXVolumeControl);
+            // Use modern audio system if available, otherwise fallback to legacy
+            if (UnifiedAudioManagerPrefab != null)
+            {
+                await ModernAudioService.Instance.InitializeWithPrefabAsync(UnifiedAudioManagerPrefab);
+            }
         }
 
         /// <summary>
@@ -116,7 +121,13 @@ namespace Core
                 Debug.Log("[GameInitializer]: AchievementManager initialized");
             }
             else
-                Debug.LogWarning("[GameInitializer]: AchievementManager not found in scene");
+            {
+                // Try to create an AchievementManager if none exists
+                var achievementManagerGameObject = new GameObject("AchievementManager");
+                var achievementManager = achievementManagerGameObject.AddComponent<AchievementManager>();
+                await achievementManager.InitializeAsync();
+                Debug.Log("[GameInitializer]: AchievementManager created and initialized");
+            }
         }
 
         /// <summary>

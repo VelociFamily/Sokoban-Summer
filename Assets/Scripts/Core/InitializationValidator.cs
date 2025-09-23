@@ -32,9 +32,6 @@ namespace Core
             var validationResults = new System.Text.StringBuilder();
             validationResults.AppendLine("=== Initialization Validation Results ===");
 
-            // Validate AudioService
-            ValidateAudioService(validationResults);
-
             // Validate InputService
             ValidateInputService(validationResults);
 
@@ -48,30 +45,6 @@ namespace Core
             Debug.Log(validationResults.ToString());
 
             await Task.Yield();
-        }
-
-        private void ValidateAudioService(System.Text.StringBuilder results)
-        {
-            try
-            {
-                var audioService = AudioService.Instance;
-                var volumeControl = audioService.GetVolumeControl();
-                var sfxVolumeControl = audioService.GetSfxVolumeControl();
-                var mainAudioSource = audioService.GetMainAudioSource();
-
-                results.AppendLine($"✓ AudioService: Initialized");
-                results.AppendLine($"  - VolumeControl: {(volumeControl != null ? "✓ Found" : "✗ Missing")}");
-                results.AppendLine($"  - SfxVolumeControl: {(sfxVolumeControl != null ? "✓ Found" : "✗ Missing")}");
-                results.AppendLine($"  - Main AudioSource: {(mainAudioSource != null ? "✓ Found" : "✗ Missing")}");
-            
-                // Additional validation - check for duplicate AudioSources
-                var allAudioSources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
-                results.AppendLine($"  - Total AudioSources in scene: {allAudioSources.Length} {(allAudioSources.Length == 1 ? "✓ (Good - only one)" : "⚠ (Multiple found - should be consolidated)")}");
-            }
-            catch (System.Exception ex)
-            {
-                results.AppendLine($"✗ AudioService: Failed - {ex.Message}");
-            }
         }
 
         private void ValidateInputService(System.Text.StringBuilder results)

@@ -528,6 +528,7 @@ GameObject:
   m_Component:
   - component: {fileID: 245628573}
   - component: {fileID: 245628574}
+  - component: {fileID: 245628575}
   m_Layer: 5
   m_Name: Volume
   m_TagString: VolumeSlider
@@ -620,6 +621,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &245628575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245628572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d4e5f6789012345678901234abcdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.VolumeSlider
+  channelType: 0
+  slider: {fileID: 245628574}
 --- !u!1 &271644680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 469921713}
   - component: {fileID: 469921712}
+  - component: {fileID: 469921714}
   m_Layer: 5
   m_Name: SFX
   m_TagString: SFXSlider
@@ -1303,6 +1319,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -150}
   m_SizeDelta: {x: 1000, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &469921714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469921711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d4e5f6789012345678901234abcdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Audio.VolumeSlider
+  channelType: 2
+  slider: {fileID: 469921712}
 --- !u!1 &496399840
 GameObject:
   m_ObjectHideFlags: 0

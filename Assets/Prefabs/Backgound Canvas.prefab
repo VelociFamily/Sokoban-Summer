@@ -56,6 +56,7 @@ MonoBehaviour:
   sceneType: 0
   showBackground: 1
   levelNumber: 1
+  levelData: {fileID: 0}
 --- !u!223 &7604664476225540257
 Canvas:
   m_ObjectHideFlags: 0

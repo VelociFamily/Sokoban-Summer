@@ -21,7 +21,7 @@ namespace Gameplay
                 // Use centralized AudioService instead of local AudioSource
                 if (portalSound != null)
                 {
-                    AudioService.Instance.PlayOneShot(portalSound);
+                    ModernAudioService.Instance.PlaySFX(portalSound);
                 }
                 else
                 {
