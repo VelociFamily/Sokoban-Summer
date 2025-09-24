@@ -85,6 +85,13 @@ The MoveCounter can **automatically find UI components** if they follow naming c
 5. **Watch timer** - should see time counting up
 6. **Complete level** - timer should stop when completion canvas appears
 
+**Use the Test Script** (Recommended):
+1. Add the `MoveCounterTimerTest` component to any GameObject in a scene
+2. Set "Run Test On Start" to true for automatic testing
+3. Play the scene and check Console for test results
+4. Or right-click the component and use "Run MoveCounter Test" from context menu
+5. Individual test methods available: "Test Move Increment" and "Test Counter Reset"
+
 **Test Scene Transitions**:
 1. Complete a level and go to next level
 2. Move counter should reset to 0
