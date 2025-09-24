@@ -52,33 +52,23 @@ namespace Core
         /// </summary>
         private void TryFindUIComponents()
         {
+            var allTexts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
+            
             if (moveText == null)
             {
-                // Look for a Text component with "move" in its name or parent name
-                var allTexts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
-                foreach (var text in allTexts)
+                moveText = FindBestMatchingText(allTexts, "move", new[] { "move", "moves", "step", "steps" }, new[] { "time", "timer", "second" });
+                if (moveText != null)
                 {
-                    if (text.name.ToLower().Contains("move") || text.transform.parent?.name.ToLower().Contains("move") == true)
-                    {
-                        moveText = text;
-                        Debug.Log($"[MoveCounter]: Auto-assigned moveText to '{text.name}' on '{text.transform.parent?.name}'");
-                        break;
-                    }
+                    Debug.Log($"[MoveCounter]: Auto-assigned moveText to '{moveText.name}' on '{moveText.transform.parent?.name}'");
                 }
             }
 
             if (timerText == null)
             {
-                // Look for a Text component with "timer" or "time" in its name or parent name
-                var allTexts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
-                foreach (var text in allTexts)
+                timerText = FindBestMatchingText(allTexts, "time", new[] { "time", "timer", "clock", "duration" }, new[] { "move", "step", "count" });
+                if (timerText != null)
                 {
-                    if (text.name.ToLower().Contains("time") || text.transform.parent?.name.ToLower().Contains("time") == true)
-                    {
-                        timerText = text;
-                        Debug.Log($"[MoveCounter]: Auto-assigned timerText to '{text.name}' on '{text.transform.parent?.name}'");
-                        break;
-                    }
+                    Debug.Log($"[MoveCounter]: Auto-assigned timerText to '{timerText.name}' on '{timerText.transform.parent?.name}'");
                 }
             }
 
@@ -99,6 +89,116 @@ namespace Core
 
             // Update display with current values
             RefreshDisplay();
+        }
+
+        /// <summary>
+        /// Find the best matching TextMeshProUGUI component using prioritized search terms and exclusions
+        /// </summary>
+        private TextMeshProUGUI FindBestMatchingText(TextMeshProUGUI[] allTexts, string logName, string[] includeTerms, string[] excludeTerms)
+        {
+            TextMeshProUGUI bestMatch = null;
+            int bestScore = -1;
+
+            if (verboseLogging)
+            {
+                Debug.Log($"[MoveCounter]: Searching for {logName} text among {allTexts.Length} TextMeshProUGUI components");
+            }
+
+            foreach (var text in allTexts)
+            {
+                var textName = text.name.ToLower();
+                var parentName = text.transform.parent?.name.ToLower() ?? "";
+                var currentText = text.text.ToLower();
+                
+                // Skip if it contains exclude terms
+                bool shouldExclude = false;
+                foreach (var excludeTerm in excludeTerms)
+                {
+                    if (textName.Contains(excludeTerm) || parentName.Contains(excludeTerm) || currentText.Contains(excludeTerm))
+                    {
+                        shouldExclude = true;
+                        if (verboseLogging) Debug.Log($"[MoveCounter]: Excluding '{text.name}' (parent: '{text.transform.parent?.name}') - contains exclude term '{excludeTerm}'");
+                        break;
+                    }
+                }
+                if (shouldExclude) continue;
+
+                // Calculate score based on include terms
+                int score = 0;
+                foreach (var includeTerm in includeTerms)
+                {
+                    if (textName.Contains(includeTerm)) score += 3; // Name match is highest priority
+                    else if (parentName.Contains(includeTerm)) score += 2; // Parent name match is second priority
+                    else if (currentText.Contains(includeTerm)) score += 1; // Current text content is lowest priority
+                }
+
+                // Prefer exact matches
+                if (textName == logName || parentName == logName) score += 5;
+
+                if (verboseLogging && score > 0)
+                {
+                    Debug.Log($"[MoveCounter]: Text '{text.name}' (parent: '{text.transform.parent?.name}', content: '{text.text}') scored {score} for {logName}");
+                }
+
+                if (score > bestScore)
+                {
+                    bestScore = score;
+                    bestMatch = text;
+                }
+            }
+
+            if (verboseLogging)
+            {
+                if (bestMatch != null)
+                    Debug.Log($"[MoveCounter]: Best match for {logName}: '{bestMatch.name}' with score {bestScore}");
+                else
+                    Debug.Log($"[MoveCounter]: No suitable match found for {logName}");
+            }
+
+            return bestMatch;
+        }
+
+        [Header("Debug")]
+        [Tooltip("Enable verbose logging for UI component discovery")]
+        public bool verboseLogging = false;
+
+        /// <summary>
+        /// Manually assign UI components - useful for debugging or when auto-discovery fails
+        /// </summary>
+        public void ManuallyAssignUIComponents(TextMeshProUGUI moveTextComponent, TextMeshProUGUI timerTextComponent, GameObject levelCompleteCanvasComponent)
+        {
+            if (moveTextComponent != null)
+            {
+                moveText = moveTextComponent;
+                Debug.Log($"[MoveCounter]: Manually assigned moveText to '{moveTextComponent.name}'");
+            }
+
+            if (timerTextComponent != null)
+            {
+                timerText = timerTextComponent;
+                Debug.Log($"[MoveCounter]: Manually assigned timerText to '{timerTextComponent.name}'");
+            }
+
+            if (levelCompleteCanvasComponent != null)
+            {
+                levelCompleteCanvas = levelCompleteCanvasComponent;
+                Debug.Log($"[MoveCounter]: Manually assigned levelCompleteCanvas to '{levelCompleteCanvasComponent.name}'");
+            }
+
+            RefreshDisplay();
+        }
+
+        /// <summary>
+        /// Force re-discovery of UI components - useful when scene layout changes
+        /// </summary>
+        [ContextMenu("Re-discover UI Components")]
+        public void RediscoverUIComponents()
+        {
+            moveText = null;
+            timerText = null;
+            levelCompleteCanvas = null;
+            Debug.Log("[MoveCounter]: Cleared UI component assignments - re-discovering...");
+            TryFindUIComponents();
         }
 
         /// <summary>

@@ -43,21 +43,28 @@ The moves counter and timer were not working in most levels and tutorials becaus
 
 ### 3. UI Component Naming Convention (IMPORTANT)
 
-The MoveCounter can **automatically find UI components** if they follow naming conventions:
+The MoveCounter uses an **improved auto-discovery algorithm** with prioritized matching and exclusion rules:
 
 **Move Text Component**:
-- GameObject name should contain "move" (case-insensitive)
-- OR parent GameObject name should contain "move"
-- Examples: "MoveText", "Move Counter", "UI_Move_Display"
+- **Best matches**: "move", "moves", "step", "steps" in name/parent name
+- **Excludes**: Components containing "time", "timer", "second" 
+- **Priority**: Exact name match > GameObject name > Parent name > Text content
+- Examples: "MoveText", "Move Counter", "UI_Move_Display", "Steps_Counter"
 
 **Timer Text Component**:
-- GameObject name should contain "time" (case-insensitive) 
-- OR parent GameObject name should contain "time"
-- Examples: "TimerText", "Time Display", "UI_Time_Counter"
+- **Best matches**: "time", "timer", "clock", "duration" in name/parent name  
+- **Excludes**: Components containing "move", "step", "count"
+- **Priority**: Exact name match > GameObject name > Parent name > Text content
+- Examples: "TimerText", "Time Display", "UI_Time_Counter", "Clock_Display"
 
 **Level Complete Canvas**:
 - Canvas GameObject name should contain "complete" (case-insensitive)
 - Examples: "CompleteCanvas", "Level Complete UI", "Victory_Complete"
+
+**Debug Features**:
+- Enable "Verbose Logging" on MoveCounter component for detailed assignment logs
+- Use "Re-discover UI Components" context menu to force re-assignment
+- Use MoveCounterTimerTest "Debug UI Component Discovery" to see all available components
 
 ### 4. Scene-Specific Setup
 
@@ -115,10 +122,15 @@ The MoveCounter can **automatically find UI components** if they follow naming c
 - **Check**: Canvas becomes active when level is completed
 - **Fix**: Ensure completion canvas name contains "complete"
 
-### UI Not Found Automatically
+### UI Not Found Automatically / Wrong Assignment
 - **Check**: Component names contain the keywords ("move", "time", "complete")
 - **Check**: Components are TextMeshProUGUI (not legacy Text)
-- **Fix**: Rename components or parents to follow convention
+- **Check**: Use MoveCounterTimerTest with "Debug UI Component Discovery" to see all available components
+- **Fix**: 
+  - Rename components or parents to follow convention
+  - Use MoveCounter's "Re-discover UI Components" context menu option
+  - Manually assign components in MoveCounter Inspector if auto-discovery fails
+  - Enable "Verbose Logging" on MoveCounter for detailed assignment logs
 
 ### Counters Don't Reset Between Levels
 - **Check**: Scenes have proper SceneInfo components with correct SceneType

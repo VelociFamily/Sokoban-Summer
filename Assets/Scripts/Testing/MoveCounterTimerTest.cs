@@ -89,9 +89,19 @@ namespace Testing
 
             if (verboseLogging)
             {
-                Debug.Log($"Move Text: {(moveTextAssigned ? $"Assigned to '{instance.moveText.name}'" : "Not assigned")}");
-                Debug.Log($"Timer Text: {(timerTextAssigned ? $"Assigned to '{instance.timerText.name}'" : "Not assigned")}");
+                Debug.Log($"Move Text: {(moveTextAssigned ? $"Assigned to '{instance.moveText.name}' (parent: '{instance.moveText.transform.parent?.name}', current text: '{instance.moveText.text}')" : "Not assigned")}");
+                Debug.Log($"Timer Text: {(timerTextAssigned ? $"Assigned to '{instance.timerText.name}' (parent: '{instance.timerText.transform.parent?.name}', current text: '{instance.timerText.text}')" : "Not assigned")}");
                 Debug.Log($"Level Complete Canvas: {(levelCompleteAssigned ? $"Assigned to '{instance.levelCompleteCanvas.name}'" : "Not assigned")}");
+                
+                // List all TextMeshProUGUI components in the scene for debugging
+                var allTexts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
+                Debug.Log($"=== All TextMeshProUGUI components in scene ({allTexts.Length}) ===");
+                for (int i = 0; i < allTexts.Length; i++)
+                {
+                    var text = allTexts[i];
+                    Debug.Log($"[{i}] '{text.name}' (parent: '{text.transform.parent?.name}') - Text: '{text.text}'");
+                }
+                Debug.Log("=== End of TextMeshProUGUI list ===");
             }
 
             // At least move text or timer text should be assigned for the counter to be functional
@@ -186,6 +196,31 @@ namespace Testing
             {
                 Debug.LogError("Cannot test counter reset - MoveCounter.Instance is null");
             }
+        }
+
+        [ContextMenu("Debug UI Component Discovery")]
+        public void DebugUIComponentDiscovery()
+        {
+            var instance = MoveCounter.Instance;
+            if (instance == null)
+            {
+                Debug.LogError("Cannot debug UI discovery - MoveCounter.Instance is null");
+                return;
+            }
+
+            Debug.Log("=== UI Component Discovery Debug ===");
+            
+            // Enable verbose logging temporarily
+            bool originalVerbose = instance.verboseLogging;
+            instance.verboseLogging = true;
+            
+            // Force re-discovery
+            instance.RediscoverUIComponents();
+            
+            // Restore original verbose setting
+            instance.verboseLogging = originalVerbose;
+            
+            Debug.Log("=== UI Discovery Debug Complete ===");
         }
     }
 }
