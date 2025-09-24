@@ -17,6 +17,22 @@ namespace Core
         private Dictionary<int, LevelResult> bestResults = new Dictionary<int, LevelResult>();
         private bool hasLogged;
 
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+                SceneManager.sceneLoaded += OnSceneLoaded;
+                Debug.Log("[LevelLogger]: Instance initialized and persisted across scenes");
+            }
+            else
+            {
+                Debug.LogWarning($"[LevelLogger]: Duplicate instance detected on '{gameObject.name}' - destroying");
+                Destroy(gameObject);
+            }
+        }
+
         private void Update()
         {
             if (SceneInfo.IsMainMenuScene())
@@ -117,6 +133,16 @@ namespace Core
                 6 => "Level Two",
                 _ => $"Scene {index}"
             };
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == this)
+            {
+                SceneManager.sceneLoaded -= OnSceneLoaded;
+                Debug.Log("[LevelLogger]: Primary instance destroyed - clearing static reference");
+                Instance = null;
+            }
         }
     }
 }
