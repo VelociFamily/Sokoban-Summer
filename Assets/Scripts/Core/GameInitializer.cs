@@ -16,6 +16,7 @@ namespace Core
         
         [Header("Other Systems")]
         public LevelLogger LevelLogger;
+        public MoveCounter MoveCounterPrefab;
         public GameObject MusicPlayer;
         public SceneInfo SceneInfo;
 
@@ -79,7 +80,8 @@ namespace Core
             {
                 InitializeAudioSystemAsync(),
                 InitializeInputSystemAsync(),
-                InitializeAchievementSystemAsync()
+                InitializeAchievementSystemAsync(),
+                InitializeMoveCounterAsync()
             };
 
             // Wait for all core systems to initialize
@@ -128,6 +130,37 @@ namespace Core
                 await achievementManager.InitializeAsync();
                 Debug.Log("[GameInitializer]: AchievementManager created and initialized");
             }
+        }
+
+        /// <summary>
+        /// Initialize MoveCounter system asynchronously
+        /// </summary>
+        private async Task InitializeMoveCounterAsync()
+        {
+            // Check if MoveCounter already exists in the scene
+            var existingMoveCounter = FindFirstObjectByType<MoveCounter>();
+            if (existingMoveCounter != null)
+            {
+                Debug.Log("[GameInitializer]: MoveCounter already exists in scene");
+                await Task.Yield();
+                return;
+            }
+
+            // Create MoveCounter from prefab if available, otherwise create empty one
+            if (MoveCounterPrefab != null)
+            {
+                var moveCounterClone = Instantiate(MoveCounterPrefab);
+                Debug.Log($"[GameInitializer]: MoveCounter '{moveCounterClone.name}' created from prefab");
+            }
+            else
+            {
+                // Create a basic MoveCounter if no prefab is assigned
+                var moveCounterGameObject = new GameObject("MoveCounter");
+                var moveCounter = moveCounterGameObject.AddComponent<MoveCounter>();
+                Debug.Log("[GameInitializer]: MoveCounter created programmatically - UI components will need to be assigned in scenes");
+            }
+
+            await Task.Yield();
         }
 
         /// <summary>

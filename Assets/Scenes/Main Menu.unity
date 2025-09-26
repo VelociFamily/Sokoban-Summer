@@ -7292,6 +7292,7 @@ GameObject:
   - component: {fileID: 1921850722}
   - component: {fileID: 1921850721}
   - component: {fileID: 1921850720}
+  - component: {fileID: 1921850723}
   m_Layer: 0
   m_Name: Arrows
   m_TagString: Untagged
@@ -7383,6 +7384,19 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1921850723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921850718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4268b0e82b4f8bb4286f626a9851d763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cainos.Pixel_Art_Top_Down___Basic.Script.MenuFirstSelect
+  firstButton: {fileID: 183240580}
 --- !u!1 &1951469303
 GameObject:
   m_ObjectHideFlags: 0
@@ -8227,7 +8241,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2108044685}
   - component: {fileID: 2108044686}
-  - component: {fileID: 2108044687}
   m_Layer: 0
   m_Name: Accesories manager
   m_TagString: Untagged
@@ -8276,19 +8289,6 @@ MonoBehaviour:
   rightArrow: {fileID: 183240580}
   character: {fileID: 847718989}
   lockObject: {fileID: 854418913}
---- !u!114 &2108044687
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2108044684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4268b0e82b4f8bb4286f626a9851d763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstButton: {fileID: 183240580}
 --- !u!1 &2146988024
 GameObject:
   m_ObjectHideFlags: 0
