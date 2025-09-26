@@ -14,11 +14,21 @@ namespace UI
         private void Awake()
         {
             inputActions = new InputSystem_Actions();
+            
+            // Improved camera finding with fallback
             mainCamera = Camera.main;
             if (mainCamera == null)
             {
-                mainCamera = FindFirstObjectByType<Camera>();
-                Debug.LogWarning("[ArrowClick]: Main camera not tagged - using first available camera as fallback");
+                // Use FindAnyObjectByType instead of FindFirstObjectByType for better compatibility
+                mainCamera = FindAnyObjectByType<Camera>();
+                if (mainCamera != null)
+                {
+                    Debug.LogWarning("[ArrowClick]: Main camera not tagged - using first available camera as fallback");
+                }
+                else
+                {
+                    Debug.LogError("[ArrowClick]: No camera found in scene - click detection will not work");
+                }
             }
         }
 

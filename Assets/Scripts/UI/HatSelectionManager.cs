@@ -46,7 +46,16 @@ namespace UI
 
         void Update()
         {
-            if (!unlocked && AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial)
+            // Check unlock status less frequently to improve performance
+            if (!unlocked && Time.frameCount % 30 == 0) // Check every 30 frames (~0.5 seconds at 60fps)
+            {
+                CheckUnlockStatus();
+            }
+        }
+
+        private void CheckUnlockStatus()
+        {
+            if (AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial)
             {
                 unlocked = true;
                 Debug.Log("[HatSelectionManager]: Hat system newly unlocked during gameplay");

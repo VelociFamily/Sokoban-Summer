@@ -32,12 +32,20 @@ namespace UI
             inputActions.UI.Click.performed += OnClickPerformed;
             inputActions.UI.Enable();
 
-            // Get main camera for mouse position conversion
+            // Get main camera for mouse position conversion with improved fallback
             mainCamera = Camera.main;
             if (mainCamera == null)
             {
-                mainCamera = FindFirstObjectByType<Camera>();
-                Debug.LogWarning("[PauseButton]: Main camera not tagged - using first available camera as fallback");
+                // Use FindAnyObjectByType instead of FindFirstObjectByType for better compatibility
+                mainCamera = FindAnyObjectByType<Camera>();
+                if (mainCamera != null)
+                {
+                    Debug.LogWarning("[PauseButton]: Main camera not tagged - using first available camera as fallback");
+                }
+                else
+                {
+                    Debug.LogError("[PauseButton]: No camera found in scene - mouse click detection will not work");
+                }
             }
 
             // --- NEW CODE: Using the modern, recommended method ---

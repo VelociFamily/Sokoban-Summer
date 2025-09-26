@@ -106,9 +106,25 @@ namespace UI
             if (sectionHeaderPrefab == null) return;
 
             var headerObj = Instantiate(sectionHeaderPrefab, levelButtonContainer);
-            var headerText = headerObj.GetComponentInChildren<Text>();
-            if (headerText != null)
-                headerText.text = title;
+            
+            // Try TextMeshPro first, then fall back to legacy Text
+            var headerTextTMP = headerObj.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+            if (headerTextTMP != null)
+            {
+                headerTextTMP.text = title;
+            }
+            else
+            {
+                var headerText = headerObj.GetComponentInChildren<UnityEngine.UI.Text>();
+                if (headerText != null)
+                {
+                    headerText.text = title;
+                }
+                else
+                {
+                    Debug.LogWarning($"[DynamicLevelSelector]: No text component found in section header prefab for '{title}'");
+                }
+            }
 
             generatedButtons.Add(headerObj);
         }
@@ -140,17 +156,29 @@ namespace UI
         /// </summary>
         private void UpdateButtonAppearance(GameObject buttonObj, LevelManager.LevelInfo levelInfo)
         {
-            // Update button text
-            var buttonText = buttonObj.GetComponentInChildren<Text>();
-            if (buttonText != null)
+            // Update button text - try TextMeshPro first, then fall back to legacy Text
+            var buttonTextTMP = buttonObj.GetComponentInChildren<TMPro.TextMeshProUGUI>();
+            if (buttonTextTMP != null)
             {
-                buttonText.text = levelInfo.displayName;
+                buttonTextTMP.text = levelInfo.displayName;
+            }
+            else
+            {
+                var buttonText = buttonObj.GetComponentInChildren<UnityEngine.UI.Text>();
+                if (buttonText != null)
+                {
+                    buttonText.text = levelInfo.displayName;
+                }
+                else
+                {
+                    Debug.LogWarning($"[DynamicLevelSelector]: No text component found in button for '{levelInfo.displayName}'");
+                }
             }
 
             // Update button image if preview is available
             if (levelInfo.previewImage != null)
             {
-                var buttonImage = buttonObj.GetComponent<Image>();
+                var buttonImage = buttonObj.GetComponent<UnityEngine.UI.Image>();
                 if (buttonImage != null)
                 {
                     buttonImage.sprite = levelInfo.previewImage;
@@ -166,11 +194,11 @@ namespace UI
         /// </summary>
         private void AddGoalInformation(GameObject buttonObj, LevelManager.LevelInfo levelInfo)
         {
-            // Look for a secondary text component for goals
-            var texts = buttonObj.GetComponentsInChildren<Text>();
-            if (texts.Length > 1)
+            // Look for a secondary text component for goals - try TextMeshPro first
+            var textsTMP = buttonObj.GetComponentsInChildren<TMPro.TextMeshProUGUI>();
+            if (textsTMP.Length > 1)
             {
-                var goalText = texts[1]; // Assume second text component is for goals
+                var goalText = textsTMP[1]; // Assume second text component is for goals
                 var goals = new List<string>();
                 
                 if (levelInfo.parMoves > 0)
@@ -179,6 +207,23 @@ namespace UI
                     goals.Add($"Time: {FormatTime(levelInfo.parTime)}");
 
                 goalText.text = goals.Count > 0 ? string.Join(" | ", goals) : "";
+            }
+            else
+            {
+                // Fall back to legacy Text components
+                var texts = buttonObj.GetComponentsInChildren<UnityEngine.UI.Text>();
+                if (texts.Length > 1)
+                {
+                    var goalText = texts[1]; // Assume second text component is for goals
+                    var goals = new List<string>();
+                    
+                    if (levelInfo.parMoves > 0)
+                        goals.Add($"Moves: {levelInfo.parMoves}");
+                    if (levelInfo.parTime > 0f)
+                        goals.Add($"Time: {FormatTime(levelInfo.parTime)}");
+
+                    goalText.text = goals.Count > 0 ? string.Join(" | ", goals) : "";
+                }
             }
         }
 
@@ -190,7 +235,7 @@ namespace UI
             bool canLoad = LevelManager.Instance.CanLoadLevel(levelInfo);
             
             // Enable/disable the button
-            var button = sceneButton.GetComponent<Button>();
+            var button = sceneButton.GetComponent<UnityEngine.UI.Button>();
             if (button != null)
             {
                 button.interactable = canLoad;
@@ -211,7 +256,11 @@ namespace UI
             foreach (var button in generatedButtons)
             {
                 if (button != null)
-                    DestroyImmediate(button);
+                {
+                    // Use regular Destroy instead of DestroyImmediate for better performance
+                    // DestroyImmediate can cause frame hitches
+                    Destroy(button);
+                }
             }
             generatedButtons.Clear();
         }
