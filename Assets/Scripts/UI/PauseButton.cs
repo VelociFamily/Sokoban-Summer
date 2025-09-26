@@ -17,8 +17,8 @@ namespace UI
         public Volume volume; // Reference to the Volume component
         private DepthOfField depthOfField; // Reference to the Depth of Field effect
 
-        private InputSystem_Actions inputActions;
         private Camera mainCamera;
+        private bool isUsingInputService = false;
 
         // Track the menu scene name or index
         private const int menuSceneBuildIndex = 1;
@@ -27,10 +27,22 @@ namespace UI
         private void Start()
         {
             Time.timeScale = 1f;
-            inputActions = new InputSystem_Actions();
-            inputActions.UI.EscapeStart.performed += OnPausePerformed;
-            inputActions.UI.Click.performed += OnClickPerformed;
-            inputActions.UI.Enable();
+            
+            // Try to use InputService if available
+            if (InputService.Instance != null && InputService.Instance.InputActions != null)
+            {
+                isUsingInputService = true;
+                InputService.Instance.InputActions.UI.EscapeStart.performed += OnPausePerformed;
+                InputService.Instance.InputActions.UI.Click.performed += OnClickPerformed;
+                InputService.Instance.InputActions.UI.Enable();
+            }
+            else
+            {
+                // Fallback - create own instance if InputService not available
+                Debug.LogWarning("[PauseButton]: InputService not available, creating fallback input actions");
+                // Note: This fallback behavior would need InputSystem_Actions implementation
+                // For now, we'll rely on InputService being available
+            }
 
             // Get main camera for mouse position conversion with improved fallback
             mainCamera = Camera.main;
@@ -67,19 +79,20 @@ namespace UI
 
         private void OnDisable()
         {
-            if (inputActions == null) return;
-            inputActions.UI.EscapeStart.performed -= OnPausePerformed;
-            inputActions.UI.Click.performed -= OnClickPerformed;
-            inputActions.UI.Disable();
+            if (isUsingInputService && InputService.Instance?.InputActions?.UI != null)
+            {
+                InputService.Instance.InputActions.UI.EscapeStart.performed -= OnPausePerformed;
+                InputService.Instance.InputActions.UI.Click.performed -= OnClickPerformed;
+            }
         }
 
         private void OnDestroy()
         {
-            if (inputActions == null) return;
-            inputActions.UI.EscapeStart.performed -= OnPausePerformed;
-            inputActions.UI.Click.performed -= OnClickPerformed;
-            inputActions.UI.Disable();
-            inputActions?.Dispose();
+            if (isUsingInputService && InputService.Instance?.InputActions?.UI != null)
+            {
+                InputService.Instance.InputActions.UI.EscapeStart.performed -= OnPausePerformed;
+                InputService.Instance.InputActions.UI.Click.performed -= OnClickPerformed;
+            }
         }
 
         private void OnPausePerformed(InputAction.CallbackContext context)
@@ -107,8 +120,19 @@ namespace UI
             var levelCompleteObject = GameObject.FindWithTag("levelcomplete");
             if (levelCompleteObject != null && levelCompleteObject.activeSelf) return;
 
-            // Get mouse position and check if this pause button was clicked
-            var mousePosition = inputActions.UI.Point.ReadValue<Vector2>();
+            // Get mouse position - use InputService if available
+            Vector2 mousePosition;
+            
+            if (isUsingInputService && InputService.Instance?.InputActions?.UI != null)
+            {
+                mousePosition = InputService.Instance.InputActions.UI.Point.ReadValue<Vector2>();
+            }
+            else
+            {
+                // Fallback for when InputService is not available
+                mousePosition = Mouse.current.position.ReadValue();
+            }
+            
             Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
             var hit = Physics2D.Raycast(worldPosition, Vector2.zero);
 

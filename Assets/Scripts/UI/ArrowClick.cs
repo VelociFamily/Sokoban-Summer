@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Core;
 
 namespace UI
 {
@@ -8,12 +9,16 @@ namespace UI
         public HatSelectionManager manager; // Drag your HatSelectionManager here
         public bool isRightArrow;
 
-        private InputSystem_Actions inputActions;
         private Camera mainCamera;
+        private bool isUsingInputService = false;
 
         private void Awake()
         {
-            inputActions = new InputSystem_Actions();
+            // Try to use InputService if available, otherwise fall back to direct InputSystem usage
+            if (InputService.Instance != null)
+            {
+                isUsingInputService = true;
+            }
             
             // Improved camera finding with fallback
             mainCamera = Camera.main;
@@ -34,26 +39,18 @@ namespace UI
 
         private void OnEnable()
         {
-            inputActions.UI.Enable();
-            inputActions.UI.Click.performed += OnClickPerformed;
+            if (isUsingInputService && InputService.Instance?.InputActions?.UI != null)
+            {
+                InputService.Instance.InputActions.UI.Enable();
+                InputService.Instance.InputActions.UI.Click.performed += OnClickPerformed;
+            }
         }
 
         private void OnDisable()
         {
-            if (inputActions != null)
+            if (isUsingInputService && InputService.Instance?.InputActions?.UI != null)
             {
-                inputActions.UI.Click.performed -= OnClickPerformed;
-                inputActions.UI.Disable();
-            }
-        }
-
-        private void OnDestroy()
-        {
-            if (inputActions != null)
-            {
-                inputActions.UI.Click.performed -= OnClickPerformed;
-                inputActions.UI.Disable();
-                inputActions?.Dispose();
+                InputService.Instance.InputActions.UI.Click.performed -= OnClickPerformed;
             }
         }
 
@@ -61,7 +58,18 @@ namespace UI
         {
             if (mainCamera == null) return;
 
-            var mousePosition = inputActions.UI.Point.ReadValue<Vector2>();
+            Vector2 mousePosition;
+            
+            if (isUsingInputService && InputService.Instance?.InputActions?.UI != null)
+            {
+                mousePosition = InputService.Instance.InputActions.UI.Point.ReadValue<Vector2>();
+            }
+            else
+            {
+                // Fallback - shouldn't happen if InputService is properly set up
+                mousePosition = Mouse.current.position.ReadValue();
+            }
+
             Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
             var hit = Physics2D.Raycast(worldPosition, Vector2.zero);
 
