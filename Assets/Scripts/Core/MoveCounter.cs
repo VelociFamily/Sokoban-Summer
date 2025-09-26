@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -53,7 +54,35 @@ namespace Core
         private void TryFindUIComponents()
         {
             var allTexts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
-            
+
+            // First attempt: look for exact named fields (case-insensitive) - faster and predictable
+            if (moveText == null)
+            {
+                foreach (var t in allTexts)
+                {
+                    if (t.name.Equals("Moves", StringComparison.OrdinalIgnoreCase))
+                    {
+                        moveText = t;
+                        Debug.Log($"[MoveCounter]: Found exact-named moveText by name '{t.name}' on '{t.transform.parent?.name}'");
+                        break;
+                    }
+                }
+            }
+
+            if (timerText == null)
+            {
+                foreach (var t in allTexts)
+                {
+                    if (t.name.Equals("Timer", StringComparison.OrdinalIgnoreCase))
+                    {
+                        timerText = t;
+                        Debug.Log($"[MoveCounter]: Found exact-named timerText by name '{t.name}' on '{t.transform.parent?.name}'");
+                        break;
+                    }
+                }
+            }
+
+            // Fallback: fuzzy discovery if exact names weren't found
             if (moveText == null)
             {
                 moveText = FindBestMatchingText(allTexts, "move", new[] { "move", "moves", "step", "steps" }, new[] { "time", "timer", "second" });
