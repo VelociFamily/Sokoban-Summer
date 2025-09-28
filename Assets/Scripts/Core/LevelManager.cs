@@ -139,9 +139,12 @@ namespace Core
             levelInfo.sortOrder = ExtractSortOrderFromName(levelInfo.sceneName);
             
             // Set default values
-            levelInfo.requiresUnlock = true;
+            levelInfo.requiresUnlock = false; // Default to unlocked for easier testing
             levelInfo.parMoves = 0;
             levelInfo.parTime = 0f;
+
+            // Try to find a matching LevelData asset
+            LoadLevelDataAsset(levelInfo);
 
             // Special handling for known tutorial names
             if (levelInfo.sceneType == SceneType.TutorialLevel)
@@ -160,6 +163,46 @@ namespace Core
                     case "confuse tutorial":
                         levelInfo.sortOrder = 3;
                         break;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Try to load a LevelData asset that matches this level
+        /// </summary>
+        private void LoadLevelDataAsset(LevelInfo levelInfo)
+        {
+            // Try to find LevelData asset by name
+            string[] possibleNames = {
+                levelInfo.sceneName + "_Data",
+                levelInfo.sceneName + " Data",
+                levelInfo.sceneName.Replace(" ", "_") + "_Data",
+                levelInfo.sceneName.Replace(" ", "") + "Data"
+            };
+
+            foreach (string assetName in possibleNames)
+            {
+                var levelData = Resources.Load<LevelData>(assetName);
+                if (levelData != null)
+                {
+                    levelInfo.levelData = levelData;
+                    
+                    // Override with data from asset
+                    if (!string.IsNullOrEmpty(levelData.levelTitle))
+                        levelInfo.displayName = levelData.levelTitle;
+                    
+                    levelInfo.parMoves = levelData.parMoves;
+                    levelInfo.parTime = levelData.parTime;
+                    levelInfo.requiresUnlock = levelData.requiresUnlock;
+                    levelInfo.previewImage = levelData.previewImage;
+                    
+                    if (levelData.sortOrder > 0)
+                        levelInfo.sortOrder = levelData.sortOrder;
+                    
+                    if (debugMode)
+                        Debug.Log($"[LevelManager] Loaded LevelData asset '{assetName}' for {levelInfo.sceneName}");
+                    
+                    break;
                 }
             }
         }
@@ -258,8 +301,9 @@ namespace Core
             if (levelInfo.sceneType == SceneType.TutorialLevel && levelInfo.sortOrder == 0)
                 return true;
 
-            // Use existing SceneSelector logic
-            return UI.SceneSelector.CanLoadScene(levelInfo.buildIndex);
+            // For now, make all levels available for testing
+            // TODO: Implement proper progression system based on level completion
+            return true;
         }
 
         /// <summary>
@@ -314,11 +358,72 @@ namespace Core
             var level = GetLevelByBuildIndex(buildIndex);
             if (level != null)
             {
+                // Store completion in PlayerPrefs
+                PlayerPrefs.SetInt($"Level_{buildIndex}_Completed", 1);
+                PlayerPrefs.Save();
+                
+                Debug.Log($"[LevelManager] Level {level.displayName} marked as completed");
+                
                 var nextLevel = GetNextLevel(level);
                 if (nextLevel != null)
                 {
-                    UI.SceneSelector.MarkNextLevelUnlocked(nextLevel.buildIndex);
+                    Debug.Log($"[LevelManager] Next level {nextLevel.displayName} is now available");
                 }
+            }
+        }
+        /// <summary>
+        /// Check if a level is completed
+        /// </summary>
+        public bool IsLevelCompleted(int buildIndex)
+        {
+            return PlayerPrefs.GetInt($"Level_{buildIndex}_Completed", 0) == 1;
+        }
+
+        /// <summary>
+        /// Check if a level is completed by level info
+        /// </summary>
+        public bool IsLevelCompleted(LevelInfo levelInfo)
+        {
+            return levelInfo != null && IsLevelCompleted(levelInfo.buildIndex);
+        }
+
+        /// <summary>
+        /// Get completion stats for a level
+        /// </summary>
+        public void GetLevelStats(int buildIndex, out int bestMoves, out float bestTime)
+        {
+            bestMoves = PlayerPrefs.GetInt($"Level_{buildIndex}_BestMoves", 0);
+            bestTime = PlayerPrefs.GetFloat($"Level_{buildIndex}_BestTime", 0f);
+        }
+
+        /// <summary>
+        /// Save level completion with stats
+        /// </summary>
+        public void SaveLevelStats(int buildIndex, int moves, float time)
+        {
+            // Save completion
+            PlayerPrefs.SetInt($"Level_{buildIndex}_Completed", 1);
+            
+            // Save best moves (if better than previous or first completion)
+            int currentBest = PlayerPrefs.GetInt($"Level_{buildIndex}_BestMoves", 0);
+            if (currentBest == 0 || moves < currentBest)
+            {
+                PlayerPrefs.SetInt($"Level_{buildIndex}_BestMoves", moves);
+            }
+            
+            // Save best time (if better than previous or first completion)
+            float currentBestTime = PlayerPrefs.GetFloat($"Level_{buildIndex}_BestTime", 0f);
+            if (currentBestTime == 0f || time < currentBestTime)
+            {
+                PlayerPrefs.SetFloat($"Level_{buildIndex}_BestTime", time);
+            }
+            
+            PlayerPrefs.Save();
+            
+            var level = GetLevelByBuildIndex(buildIndex);
+            if (level != null)
+            {
+                Debug.Log($"[LevelManager] Stats saved for {level.displayName}: {moves} moves, {time:F1}s");
             }
         }
     }

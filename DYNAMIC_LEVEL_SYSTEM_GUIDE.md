@@ -30,30 +30,51 @@ UI component that:
 
 ## Setup Instructions
 
-### For Existing Scenes:
+### For New Projects:
 1. Add a LevelManager to your Game scene:
    ```
    GameObject > Create Empty > Name: "Level Manager"
    Add Component > LevelManager
-   Configure folder paths if needed
+   Configure folder paths if needed (default: "Levels" and "Tutorials")
+   Enable Debug Mode for development
    ```
 
-2. For each existing level scene:
+2. Create your level button prefab:
    ```
-   Open the level scene
-   Find/Create a GameObject with SceneInfo component
-   Optionally create a LevelData asset (Right-click > Create > Sokoban > Level Data)
-   Configure the LevelData with goals, title, etc.
-   Reference the LevelData in SceneInfo component
+   Create UI > Button
+   Add DynamicLevelButton component
+   Add child Text objects for level name and goals
+   Add child Image for preview thumbnail
+   Add lock overlay GameObject (optional)
+   Save as prefab
    ```
 
-3. Update Main Menu scene:
+3. Set up level selection UI:
    ```
-   Find level selection UI container
-   Add DynamicLevelSelector component
-   Configure prefab references and settings
-   Remove hardcoded level buttons (optional, for clean UI)
+   Add DynamicLevelSelector component to your UI
+   Assign Level Button Container (ScrollView content area)
+   Assign Level Button Prefab (created above)
+   Configure display options (tutorials, levels, headers)
    ```
+
+### For Each Level Scene:
+1. Create or open your level scene
+2. Add SceneInfo component to a GameObject:
+   ```
+   Create Empty GameObject > Name: "Level Info"
+   Add SceneInfo component
+   Set Scene Type: TutorialLevel or GameplayLevel
+   Set Level Number for progression
+   ```
+
+3. Create LevelData asset (optional but recommended):
+   ```
+   Right-click in Project > Create > Sokoban > Level Data
+   Configure title, description, goals, and thumbnail
+   Assign to SceneInfo's Level Data field
+   ```
+
+4. Add scene to Build Settings and ensure proper ordering
 
 ### For New Levels:
 1. Create scene in `Assets/Scenes/Levels/` folder
