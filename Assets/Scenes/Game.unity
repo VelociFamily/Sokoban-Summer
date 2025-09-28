@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 1538283959}
   - component: {fileID: 1538283958}
   - component: {fileID: 1538283961}
+  - component: {fileID: 1538283963}
   - component: {fileID: 1538283962}
   m_Layer: 0
   m_Name: GameInitiator
@@ -152,12 +153,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Background: {fileID: 7989558775053221618, guid: caac141454713444aac4f403378378b5,
     type: 3}
-  VolumeControl: {fileID: 0}
-  SFXVolumeControl: {fileID: 0}
   UnifiedAudioManagerPrefab: {fileID: 4684732665795058736, guid: 2fac25f5d6ca84f4b9fb94f468a5c181,
     type: 3}
   LevelLogger: {fileID: 7322051495895024113, guid: 8f10432bbd156e44ba6569edb1f1fbd9,
     type: 3}
+  MoveCounterPrefab: {fileID: 0}
   MusicPlayer: {fileID: 5260749598366790734, guid: ffe1261ba03f3154e8dddfda3970f90f,
     type: 3}
   SceneInfo: {fileID: 1784882817430136078, guid: 13fbbece91bfc0141a4a9e7dd92f22df,
@@ -234,6 +234,21 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!114 &1538283963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538283957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Core.LevelManager
+  levelsFolder: Levels
+  tutorialsFolder: Tutorials
+  debugMode: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
