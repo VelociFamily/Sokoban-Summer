@@ -121,18 +121,28 @@ namespace UI
             var buttonObj = Instantiate(levelButtonPrefab, levelButtonContainer);
             generatedButtons.Add(buttonObj);
 
-            // Configure the SceneButton component
-            var sceneButton = buttonObj.GetComponent<SceneButton>();
-            if (sceneButton != null)
+            // Configure the DynamicLevelButton component
+            var dynamicButton = buttonObj.GetComponent<DynamicLevelButton>();
+            if (dynamicButton != null)
             {
-                sceneButton.sceneIndex = levelInfo.buildIndex;
-                
-                // Update lock state based on progression
-                UpdateButtonLockState(sceneButton, levelInfo);
+                dynamicButton.SetupLevel(levelInfo);
+            }
+            else
+            {
+                // Fallback to old SceneButton if DynamicLevelButton is not available
+                var sceneButton = buttonObj.GetComponent<SceneButton>();
+                if (sceneButton != null)
+                {
+                    sceneButton.sceneIndex = levelInfo.buildIndex;
+                    UpdateButtonLockState(sceneButton, levelInfo);
+                }
             }
 
-            // Update button text/image if available
-            UpdateButtonAppearance(buttonObj, levelInfo);
+            // Update button appearance if using basic components
+            if (dynamicButton == null)
+            {
+                UpdateButtonAppearance(buttonObj, levelInfo);
+            }
         }
 
         /// <summary>
@@ -266,13 +276,22 @@ namespace UI
         {
             foreach (var buttonObj in generatedButtons)
             {
-                var sceneButton = buttonObj.GetComponent<SceneButton>();
-                if (sceneButton != null)
+                var dynamicButton = buttonObj.GetComponent<DynamicLevelButton>();
+                if (dynamicButton != null)
                 {
-                    var levelInfo = LevelManager.Instance.GetLevelByBuildIndex(sceneButton.sceneIndex);
-                    if (levelInfo != null)
+                    dynamicButton.UpdateLockState();
+                }
+                else
+                {
+                    // Fallback for old SceneButton
+                    var sceneButton = buttonObj.GetComponent<SceneButton>();
+                    if (sceneButton != null)
                     {
-                        UpdateButtonLockState(sceneButton, levelInfo);
+                        var levelInfo = LevelManager.Instance.GetLevelByBuildIndex(sceneButton.sceneIndex);
+                        if (levelInfo != null)
+                        {
+                            UpdateButtonLockState(sceneButton, levelInfo);
+                        }
                     }
                 }
             }
