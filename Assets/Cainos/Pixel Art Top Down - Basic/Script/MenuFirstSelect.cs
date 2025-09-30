@@ -21,6 +21,7 @@ namespace Cainos.Pixel_Art_Top_Down___Basic.Script
             InputSystemActions.UI.Enable();
 
             InputSystemActions.UI.Submit.performed += SelectTheFirstOne;
+            InputSystemActions.UI.Navigate.performed += OnNavigatePerformed;
         }
 
         private System.Collections.IEnumerator SelectFirst()
@@ -45,6 +46,21 @@ namespace Cainos.Pixel_Art_Top_Down___Basic.Script
         {
             if (EventSystem.current == null || EventSystem.current.currentSelectedGameObject != null) return;
             EventSystem.current.SetSelectedGameObject(firstButton);
+        }
+
+        private void OnNavigatePerformed(InputAction.CallbackContext context)
+        {
+            // When the left stick is moved and no button is selected, reselect the first button
+            if (EventSystem.current == null || EventSystem.current.currentSelectedGameObject != null) return;
+            EventSystem.current.SetSelectedGameObject(firstButton);
+        }
+
+        private void OnDisable()
+        {
+            if (InputSystemActions == null) return;
+            InputSystemActions.UI.Submit.performed -= SelectTheFirstOne;
+            InputSystemActions.UI.Navigate.performed -= OnNavigatePerformed;
+            InputSystemActions.UI.Disable();
         }
     }
 }
