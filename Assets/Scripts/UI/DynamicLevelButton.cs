@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 using Core;
 
 namespace UI
@@ -14,27 +15,34 @@ namespace UI
         [Header("UI Components")]
         [Tooltip("Main button component")]
         public Button button;
-        
-        [Tooltip("Text component for level name")]
-        public Text levelNameText;
-        
-        [Tooltip("Text component for goals/par info")]
-        public Text goalText;
-        
+
+    [Tooltip("TextMeshProUGUI component for level name")]
+    public TextMeshProUGUI levelNameText;
+
+    [Tooltip("TextMeshProUGUI component for goals/par info")]
+    public TextMeshProUGUI goalText;
+
         [Tooltip("Image component for level preview")]
         public Image previewImage;
-        
+
         [Tooltip("Lock overlay GameObject (shown when level is locked)")]
         public GameObject lockOverlay;
 
+    [Header("Audio")]
+    [Tooltip("Optional click sound to play when selecting a level")]
+    public AudioClip clickSfx;
+
         [Header("Level Data")]
         public LevelManager.LevelInfo levelInfo;
+
+    // Prevent double-activation while scenes are loading
+    private bool _clicked = false;
 
         private void Awake()
         {
             if (button == null)
                 button = GetComponent<Button>();
-                
+
             if (button != null)
                 button.onClick.AddListener(LoadLevel);
         }
@@ -45,17 +53,17 @@ namespace UI
         public void SetupLevel(LevelManager.LevelInfo info)
         {
             levelInfo = info;
-            
+
             // Update UI elements
             if (levelNameText != null)
                 levelNameText.text = info.displayName;
-            
+
             if (goalText != null)
                 SetupGoalText(info);
-                
+
             if (previewImage != null && info.previewImage != null)
                 previewImage.sprite = info.previewImage;
-            
+
             // Update lock state
             UpdateLockState();
         }
@@ -66,7 +74,7 @@ namespace UI
         private void SetupGoalText(LevelManager.LevelInfo info)
         {
             var goals = new System.Collections.Generic.List<string>();
-            
+
             if (info.parMoves > 0)
                 goals.Add($"Par: {info.parMoves} moves");
             if (info.parTime > 0f)
@@ -81,13 +89,13 @@ namespace UI
         public void UpdateLockState()
         {
             if (levelInfo == null) return;
-            
+
             bool canLoad = LevelManager.Instance.CanLoadLevel(levelInfo);
-            
+
             // Update button interactability
             if (button != null)
                 button.interactable = canLoad;
-            
+
             // Update lock overlay
             if (lockOverlay != null)
                 lockOverlay.SetActive(!canLoad);
@@ -111,9 +119,15 @@ namespace UI
             }
 
             Debug.Log($"[DynamicLevelButton] Loading level: {levelInfo.displayName}");
-            
-            // Simple scene loading - just load the scene directly
-            SceneManager.LoadScene(levelInfo.buildIndex);
+
+                // Prevent double clicks
+                if (_clicked) return;
+                _clicked = true;
+
+                if (clickSfx) ModernAudioService.Instance?.PlaySFX(clickSfx);
+
+                // Delegate to LevelManager so loading respects additive/persistence rules.
+                LevelManager.Instance?.LoadLevel(levelInfo);
         }
 
         /// <summary>

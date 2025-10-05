@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Core;
 
 namespace Gameplay
 {
@@ -72,10 +73,18 @@ namespace Gameplay
 
         public void Restart()
         {
-            Debug.Log("[RestartLevel]: Reloading current level for new attempt");
-            // Reload current active scene using SceneManager helper
+            Debug.Log("[RestartLevel]: Reloading current level for new attempt (via LevelManager)");
             var currentScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(currentScene.name); // Use scene name instead of buildIndex for better maintainability
+            var level = LevelManager.Instance?.GetLevelByBuildIndex(currentScene.buildIndex);
+            if (level != null)
+            {
+                LevelManager.Instance.LoadLevel(level);
+            }
+            else
+            {
+                // Fallback to legacy behavior
+                SceneManager.LoadScene(currentScene.name);
+            }
         }
     }
 }

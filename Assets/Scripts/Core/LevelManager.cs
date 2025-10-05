@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace Core
         [Header("Configuration")]
         [Tooltip("Path to the levels folder relative to Assets/Scenes/")]
         public string levelsFolder = "Levels";
-        
+
         [Tooltip("Path to the tutorials folder relative to Assets/Scenes/")]
         public string tutorialsFolder = "Tutorials";
 
@@ -28,7 +29,7 @@ namespace Core
         private List<LevelInfo> allLevels = new List<LevelInfo>();
         private List<LevelInfo> tutorialLevels = new List<LevelInfo>();
         private List<LevelInfo> gameplayLevels = new List<LevelInfo>();
-        
+
         private bool levelsScanned = false;
 
         /// <summary>
@@ -43,7 +44,7 @@ namespace Core
             public SceneType sceneType;
             public LevelData levelData;
             public int sortOrder;
-            
+
             // Derived from scene or level data
             public string displayName;
             public Sprite previewImage;
@@ -85,11 +86,11 @@ namespace Core
                 if (string.IsNullOrEmpty(scenePath)) continue;
 
                 string sceneName = Path.GetFileNameWithoutExtension(scenePath);
-                
+
                 // Check if this scene is in our target folders
                 bool isTutorial = scenePath.Contains($"/{tutorialsFolder}/");
                 bool isLevel = scenePath.Contains($"/{levelsFolder}/");
-                
+
                 if (!isTutorial && !isLevel) continue;
 
                 // Create level info
@@ -106,7 +107,7 @@ namespace Core
                 PopulateLevelInfoFromPath(levelInfo);
 
                 allLevels.Add(levelInfo);
-                
+
                 if (isTutorial)
                     tutorialLevels.Add(levelInfo);
                 else
@@ -134,10 +135,10 @@ namespace Core
         {
             // Default display name from scene name
             levelInfo.displayName = levelInfo.sceneName;
-            
+
             // Try to extract order from filename (e.g., "01_Tutorial", "Level One" -> 1)
             levelInfo.sortOrder = ExtractSortOrderFromName(levelInfo.sceneName);
-            
+
             // Set default values
             levelInfo.requiresUnlock = false; // Default to unlocked for easier testing
             levelInfo.parMoves = 0;
@@ -186,22 +187,22 @@ namespace Core
                 if (levelData != null)
                 {
                     levelInfo.levelData = levelData;
-                    
+
                     // Override with data from asset
                     if (!string.IsNullOrEmpty(levelData.levelTitle))
                         levelInfo.displayName = levelData.levelTitle;
-                    
+
                     levelInfo.parMoves = levelData.parMoves;
                     levelInfo.parTime = levelData.parTime;
                     levelInfo.requiresUnlock = levelData.requiresUnlock;
                     levelInfo.previewImage = levelData.previewImage;
-                    
+
                     if (levelData.sortOrder > 0)
                         levelInfo.sortOrder = levelData.sortOrder;
-                    
+
                     if (debugMode)
                         Debug.Log($"[LevelManager] Loaded LevelData asset '{assetName}' for {levelInfo.sceneName}");
-                    
+
                     break;
                 }
             }
@@ -214,7 +215,7 @@ namespace Core
         {
             // Try to find numbers at the start of the name
             var parts = sceneName.Split(' ');
-            
+
             // Pattern: "01_Name" or "1_Name"
             if (parts[0].Contains('_'))
             {
@@ -222,7 +223,7 @@ namespace Core
                 if (int.TryParse(prefix, out int order))
                     return order;
             }
-            
+
             // Pattern: "Level One", "Level Two", etc.
             if (sceneName.ToLower().Contains("one"))
                 return 1;
@@ -230,7 +231,7 @@ namespace Core
                 return 2;
             if (sceneName.ToLower().Contains("three"))
                 return 3;
-            
+
             // Default: use build index as fallback
             return 999; // Put at end by default
         }
@@ -293,7 +294,7 @@ namespace Core
         public bool CanLoadLevel(LevelInfo levelInfo)
         {
             if (levelInfo == null) return false;
-            
+
             // If level doesn't require unlock, it's always available
             if (!levelInfo.requiresUnlock) return true;
 
@@ -307,7 +308,8 @@ namespace Core
         }
 
         /// <summary>
-        /// Load a level by its info
+        /// Load a level by its info (additive) and unload menu/previous level scenes.
+        /// Keeps the base Game scene loaded so singletons persist (Input/Audio/MoveCounter).
         /// </summary>
         public void LoadLevel(LevelInfo levelInfo)
         {
@@ -317,7 +319,100 @@ namespace Core
                 return;
             }
 
-            SceneManager.LoadScene(levelInfo.buildIndex);
+            StartCoroutine(LoadLevelAdditiveRoutine(levelInfo));
+        }
+
+        private IEnumerator LoadLevelAdditiveRoutine(LevelInfo levelInfo)
+        {
+            // Prevent duplicate loads
+            Debug.Log($"[LevelManager] Loading level additively: {levelInfo.displayName} (buildIndex {levelInfo.buildIndex})");
+
+            // Load target scene additively
+            var async = SceneManager.LoadSceneAsync(levelInfo.buildIndex, LoadSceneMode.Additive);
+            while (!async.isDone) yield return null;
+
+            // Get the loaded scene and set active
+            var loadedScene = SceneManager.GetSceneByBuildIndex(levelInfo.buildIndex);
+            if (loadedScene.IsValid())
+            {
+                SceneManager.SetActiveScene(loadedScene);
+                Debug.Log($"[LevelManager] Active scene set: {loadedScene.name}");
+            }
+            else
+            {
+                Debug.LogWarning($"[LevelManager] Loaded scene not valid for index {levelInfo.buildIndex}");
+            }
+
+            // Unload Main Menu if loaded (detect by name or path)
+            var mainMenuScene = SceneManager.GetSceneByName("Main Menu");
+            if (!mainMenuScene.IsValid())
+            {
+                mainMenuScene = SceneManager.GetSceneByPath("Assets/Scenes/Main Menu.unity");
+            }
+            if (mainMenuScene.IsValid() && mainMenuScene.isLoaded)
+            {
+                var unload = SceneManager.UnloadSceneAsync(mainMenuScene);
+                while (unload != null && !unload.isDone) yield return null;
+                Debug.Log("[LevelManager] Unloaded Main Menu scene after level load");
+            }
+
+            // Unload any other loaded level/tutorial scenes (avoid accumulating multiple level scenes)
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var scn = SceneManager.GetSceneAt(i);
+                if (!scn.isLoaded) continue;
+                if (scn.buildIndex == 0) continue; // keep base Game scene
+                if (scn.buildIndex == levelInfo.buildIndex) continue; // keep current level
+
+                // Heuristic: unload if it's under Tutorials or Levels folder
+                if (scn.path.Contains("/Scenes/Tutorials/") || scn.path.Contains("/Scenes/Levels/"))
+                {
+                    var u = SceneManager.UnloadSceneAsync(scn);
+                    while (u != null && !u.isDone) yield return null;
+                    Debug.Log($"[LevelManager] Unloaded previous level scene: {scn.name}");
+                }
+            }
+
+            // Optional: free memory
+            yield return Resources.UnloadUnusedAssets();
+        }
+
+        /// <summary>
+        /// Load Main Menu additively and unload all gameplay/tutorial level scenes.
+        /// Keeps the base Game scene loaded for singletons.
+        /// </summary>
+        public void LoadMainMenu()
+        {
+            StartCoroutine(LoadMainMenuRoutine());
+        }
+
+        private IEnumerator LoadMainMenuRoutine()
+        {
+            var load = SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
+            while (!load.isDone) yield return null;
+
+            var menuScene = SceneManager.GetSceneByName("Main Menu");
+            if (menuScene.IsValid())
+            {
+                SceneManager.SetActiveScene(menuScene);
+            }
+
+            // Unload any level scenes
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var scn = SceneManager.GetSceneAt(i);
+                if (!scn.isLoaded) continue;
+                if (scn.buildIndex == 0) continue; // keep base Game scene
+                if (scn.name == "Main Menu") continue; // keep menu
+
+                if (scn.path.Contains("/Scenes/Tutorials/") || scn.path.Contains("/Scenes/Levels/"))
+                {
+                    var u = SceneManager.UnloadSceneAsync(scn);
+                    while (u != null && !u.isDone) yield return null;
+                }
+            }
+
+            yield return Resources.UnloadUnusedAssets();
         }
 
         /// <summary>
@@ -339,7 +434,7 @@ namespace Core
 
             var levelList = currentLevel.sceneType == SceneType.TutorialLevel ? tutorialLevels : gameplayLevels;
             var currentIndex = levelList.FindIndex(l => l.buildIndex == currentLevel.buildIndex);
-            
+
             if (currentIndex >= 0 && currentIndex < levelList.Count - 1)
                 return levelList[currentIndex + 1];
 
@@ -361,9 +456,9 @@ namespace Core
                 // Store completion in PlayerPrefs
                 PlayerPrefs.SetInt($"Level_{buildIndex}_Completed", 1);
                 PlayerPrefs.Save();
-                
+
                 Debug.Log($"[LevelManager] Level {level.displayName} marked as completed");
-                
+
                 var nextLevel = GetNextLevel(level);
                 if (nextLevel != null)
                 {
@@ -403,23 +498,23 @@ namespace Core
         {
             // Save completion
             PlayerPrefs.SetInt($"Level_{buildIndex}_Completed", 1);
-            
+
             // Save best moves (if better than previous or first completion)
             int currentBest = PlayerPrefs.GetInt($"Level_{buildIndex}_BestMoves", 0);
             if (currentBest == 0 || moves < currentBest)
             {
                 PlayerPrefs.SetInt($"Level_{buildIndex}_BestMoves", moves);
             }
-            
+
             // Save best time (if better than previous or first completion)
             float currentBestTime = PlayerPrefs.GetFloat($"Level_{buildIndex}_BestTime", 0f);
             if (currentBestTime == 0f || time < currentBestTime)
             {
                 PlayerPrefs.SetFloat($"Level_{buildIndex}_BestTime", time);
             }
-            
+
             PlayerPrefs.Save();
-            
+
             var level = GetLevelByBuildIndex(buildIndex);
             if (level != null)
             {

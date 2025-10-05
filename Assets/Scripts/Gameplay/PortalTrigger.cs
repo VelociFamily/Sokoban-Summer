@@ -1,5 +1,4 @@
 using Core;
-using UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -46,10 +45,14 @@ namespace Gameplay
                     Debug.LogWarning("[PortalTrigger]: Player reference not assigned - cannot disable player");
                 }
 
-                // Use scene name for better maintainability instead of buildIndex
+                // Notify LevelManager of completion to unlock progression
                 var currentScene = SceneManager.GetActiveScene();
-                SceneSelector.MarkNextLevelUnlocked(currentScene.buildIndex+1); // SceneSelector still uses buildIndex internally
-                Debug.Log($"[PortalTrigger]: Scene '{currentScene.name}' marked as completed and unlocked for progression");
+                if (LevelManager.Instance != null)
+                {
+                    LevelManager.Instance.MarkLevelCompleted(currentScene.buildIndex);
+                }
+
+                Debug.Log($"[PortalTrigger]: Scene '{currentScene.name}' marked as completed");
 
                 // (Optional) Automatically go to the main menu or next scene
                 // SceneManager.LoadScene("MainMenu");
