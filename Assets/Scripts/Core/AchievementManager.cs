@@ -4,6 +4,7 @@ using Gameplay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Core;
 
 namespace Core
 {
@@ -47,13 +48,26 @@ namespace Core
             DontDestroyOnLoad(gameObject);
 
             SceneManager.sceneLoaded += OnSceneLoaded;
-        
+
             // Initialize default unlocks (first level should always be unlocked)
             InitializeDefaultUnlocks();
-        
+
+            // Load persisted achievement state if available
+            if (SaveFacade.Instance != null)
+            {
+                var a = SaveFacade.Instance.Achievements;
+                if (a != null)
+                {
+                    ConfuseAndSpeed = a.confuseAndSpeed;
+                    CompleteTutorial = a.completeTutorial || CompleteTutorial; // preserve default unlock
+                    CompleteLevelTwo = a.completeLevelTwo;
+                    selectedHatName = a.selectedHatName ?? selectedHatName;
+                }
+            }
+
             // Initialize UI elements
             await InitializeUIAsync();
-        
+
             Debug.Log("[AchievementManager]: Initialized asynchronously with default unlocks");
         }
 
@@ -63,7 +77,7 @@ namespace Core
             UpdateAchievementDisplay(true);
             await Task.Yield(); // Ensure async behavior
         }
-    
+
         /// <summary>
         /// Initialize default unlocks (first level should always be unlocked)
         /// </summary>
@@ -73,7 +87,7 @@ namespace Core
             CompleteTutorial = true;
             Debug.Log("[AchievementManager]: Tutorial level unlocked by default on game start");
         }
-    
+
         private void OnDestroy()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -135,18 +149,33 @@ namespace Core
         {
             ConfuseAndSpeed = true;
             Debug.Log("[AchievementManager]: Achievement unlocked - 'Confuse and Speed' (used both power-ups simultaneously)");
+            if (SaveFacade.Instance != null)
+            {
+                SaveFacade.Instance.Achievements.confuseAndSpeed = true;
+                SaveFacade.Instance.SaveAchievements();
+            }
         }
 
         public void UnlockTutorial()
         {
             CompleteTutorial = true;
             Debug.Log("[AchievementManager]: Achievement unlocked - 'Tutorial Complete' (finished all tutorial levels)");
+            if (SaveFacade.Instance != null)
+            {
+                SaveFacade.Instance.Achievements.completeTutorial = true;
+                SaveFacade.Instance.SaveAchievements();
+            }
         }
 
         public void UnlockLevelTwo()
         {
             CompleteLevelTwo = true;
             Debug.Log("[AchievementManager]: Achievement unlocked - 'Level Two Complete' (completed second main level)");
+            if (SaveFacade.Instance != null)
+            {
+                SaveFacade.Instance.Achievements.completeLevelTwo = true;
+                SaveFacade.Instance.SaveAchievements();
+            }
         }
 
         // ======================
@@ -157,6 +186,11 @@ namespace Core
         {
             selectedHatName = hatName;
             Debug.Log($"[AchievementManager]: Hat selection changed to '{hatName}'");
+            if (SaveFacade.Instance != null)
+            {
+                SaveFacade.Instance.Achievements.selectedHatName = hatName ?? "";
+                SaveFacade.Instance.SaveAll();
+            }
         }
 
         // ======================
@@ -180,9 +214,9 @@ namespace Core
             // Check against the private fields
             if (!forceUpdate) return;
             var display = "Achievements:\n";
-            if (ConfuseAndSpeed) display += "- Confuse and Speed Combo\n";
-            if (CompleteTutorial) display += "- Completed Tutorial\n";
-            if (CompleteLevelTwo) display += "- Completed Level Two\n";
+            if (ConfuseAndSpeed || (SaveFacade.Instance?.Achievements.confuseAndSpeed ?? false)) display += "- Confuse and Speed Combo\n";
+            if (CompleteTutorial || (SaveFacade.Instance?.Achievements.completeTutorial ?? false)) display += "- Completed Tutorial\n";
+            if (CompleteLevelTwo || (SaveFacade.Instance?.Achievements.completeLevelTwo ?? false)) display += "- Completed Level Two\n";
             achievementText.text = display;
             if (hideAchievementCoroutine != null) StopCoroutine(hideAchievementCoroutine);
             hideAchievementCoroutine = StartCoroutine(HideAchievementAfterDelay(displayDuration));

@@ -5,15 +5,8 @@ Sokoban Summer is a cozy, Unity-made puzzle game inspired by classic Sokoban mec
 # Repository Guidelines
 
 Quick checklist
-- Install Git LFS: `git lfs install`
-- Track large binary asset types: `git lfs track "*.psd" "*.png" "*.fbx" "*.wav"` (see below)
-- Ensure `core.autocrlf` is set appropriately on Windows: `git config --global core.autocrlf true`
-- Commit `.gitattributes`, `.gitignore`, and `.editorconfig` before adding large assets
 
 Why these files exist
-- `.gitignore`: excludes Unity build artifacts, `Library/`, `Temp/`, Visual Studio caches, and other generated files.
-- `.gitattributes`: normalizes line endings for text files and marks common binary asset types (recommendation for Git LFS).
-- `.editorconfig`: enforces consistent C# formatting and encoding across editors.
 
 Recommended Git LFS usage
 1. Install Git LFS: `git lfs install`
@@ -26,7 +19,7 @@ git lfs track "*.wav"
 git add .gitattributes
 git commit -m "Track binary assets with Git LFS"
 ```
-
+ PERSISTENCE_GUIDE.md
 Migrating existing large files into LFS (use carefully)
 - If you already have large files in history, migrate them with:
 ```

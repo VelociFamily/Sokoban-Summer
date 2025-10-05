@@ -10,10 +10,10 @@ namespace Core
     {
         [Header("Prefab References")]
         public GameObject Background;
-        
+
         [Header("Modern Audio System")]
         public Audio.UnifiedAudioManager UnifiedAudioManagerPrefab;
-        
+
         [Header("Other Systems")]
         public LevelLogger LevelLogger;
         public MoveCounter MoveCounterPrefab;
@@ -37,7 +37,7 @@ namespace Core
                 // Step 3: Initialize core systems in parallel
                 await InitializeCoreSystemsAsync();
 
-                // Step 4: Initialize remaining scene-specific systems  
+                // Step 4: Initialize remaining scene-specific systems
                 await InitializeLevelLoggerAsync();
 
                 // Step 5: Load main menu scene LAST (like original)
@@ -50,6 +50,19 @@ namespace Core
                 Debug.LogError($"[GameInitializer]: Error during game initialization: {exception}");
             }
         }
+
+#if DEVELOPMENT_BUILD || UNITY_EDITOR
+        private void Awake()
+        {
+            // Ensure a DevBuildIndicator is present in dev/editor builds
+            if (FindFirstObjectByType<global::Core.DevBuildIndicator>() == null)
+            {
+                var go = new GameObject("DevBuildIndicator");
+                go.AddComponent<global::Core.DevBuildIndicator>();
+                DontDestroyOnLoad(go);
+            }
+        }
+#endif
 
         /// <summary>
         /// Initialize music player asynchronously - needed before VolumeControl
@@ -74,6 +87,9 @@ namespace Core
         private async Task InitializeCoreSystemsAsync()
         {
             Debug.Log("[GameInitializer]: Initializing core systems...");
+
+            // Initialize persistence (synchronous/lightweight) BEFORE starting parallel tasks
+            Core.SaveFacade.Instance.InitializeAndMaybeMigrate();
 
             // Start all async initializations in parallel
             var initTasks = new List<Task>

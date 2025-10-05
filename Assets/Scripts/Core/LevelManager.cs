@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Core;
 
 namespace Core
 {
@@ -453,9 +454,15 @@ namespace Core
             var level = GetLevelByBuildIndex(buildIndex);
             if (level != null)
             {
-                // Store completion in PlayerPrefs
-                PlayerPrefs.SetInt($"Level_{buildIndex}_Completed", 1);
-                PlayerPrefs.Save();
+                // Store completion via SaveService
+                var key = buildIndex.ToString();
+                if (!Core.SaveFacade.Instance.Progress.levelStats.TryGetValue(key, out var stat))
+                {
+                    stat = new Core.LevelStat();
+                    Core.SaveFacade.Instance.Progress.levelStats[key] = stat;
+                }
+                stat.completed = true;
+                Core.SaveFacade.Instance.SaveProgress();
 
                 Debug.Log($"[LevelManager] Level {level.displayName} marked as completed");
 
@@ -471,7 +478,12 @@ namespace Core
         /// </summary>
         public bool IsLevelCompleted(int buildIndex)
         {
-            return PlayerPrefs.GetInt($"Level_{buildIndex}_Completed", 0) == 1;
+            var key = buildIndex.ToString();
+            if (Core.SaveFacade.Instance.Progress.levelStats.TryGetValue(key, out var stat))
+            {
+                return stat.completed;
+            }
+            return false;
         }
 
         /// <summary>
@@ -487,8 +499,15 @@ namespace Core
         /// </summary>
         public void GetLevelStats(int buildIndex, out int bestMoves, out float bestTime)
         {
-            bestMoves = PlayerPrefs.GetInt($"Level_{buildIndex}_BestMoves", 0);
-            bestTime = PlayerPrefs.GetFloat($"Level_{buildIndex}_BestTime", 0f);
+            var key = buildIndex.ToString();
+            if (Core.SaveFacade.Instance.Progress.levelStats.TryGetValue(key, out var stat))
+            {
+                bestMoves = stat.bestMoves;
+                bestTime = stat.bestTime;
+                return;
+            }
+            bestMoves = 0;
+            bestTime = 0f;
         }
 
         /// <summary>
@@ -496,24 +515,27 @@ namespace Core
         /// </summary>
         public void SaveLevelStats(int buildIndex, int moves, float time)
         {
+            var key = buildIndex.ToString();
+            if (!Core.SaveFacade.Instance.Progress.levelStats.TryGetValue(key, out var stat))
+            {
+                stat = new Core.LevelStat();
+                Core.SaveFacade.Instance.Progress.levelStats[key] = stat;
+            }
+
             // Save completion
-            PlayerPrefs.SetInt($"Level_{buildIndex}_Completed", 1);
+            stat.completed = true;
 
-            // Save best moves (if better than previous or first completion)
-            int currentBest = PlayerPrefs.GetInt($"Level_{buildIndex}_BestMoves", 0);
-            if (currentBest == 0 || moves < currentBest)
+            // Save bests
+            if (stat.bestMoves == 0 || (moves > 0 && moves < stat.bestMoves))
             {
-                PlayerPrefs.SetInt($"Level_{buildIndex}_BestMoves", moves);
+                stat.bestMoves = moves;
+            }
+            if (stat.bestTime == 0f || (time > 0f && time < stat.bestTime))
+            {
+                stat.bestTime = time;
             }
 
-            // Save best time (if better than previous or first completion)
-            float currentBestTime = PlayerPrefs.GetFloat($"Level_{buildIndex}_BestTime", 0f);
-            if (currentBestTime == 0f || time < currentBestTime)
-            {
-                PlayerPrefs.SetFloat($"Level_{buildIndex}_BestTime", time);
-            }
-
-            PlayerPrefs.Save();
+            Core.SaveFacade.Instance.SaveProgress();
 
             var level = GetLevelByBuildIndex(buildIndex);
             if (level != null)
