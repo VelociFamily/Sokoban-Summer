@@ -13,6 +13,8 @@ namespace Core
         public int fontSize = 14;
         public Vector2 margin = new Vector2(10, 10);
         public TextAnchor anchor = TextAnchor.UpperLeft;
+        public Color backgroundColor = new Color(0.2f, 0.2f, 0.2f, 0.5f); // transparent grey
+        public Vector2 padding = new Vector2(10, 6);
 
         private GUIStyle _style;
 
@@ -34,8 +36,10 @@ namespace Core
             var text = string.IsNullOrEmpty(prefixText)
                 ? $"{Application.productName} {Application.version}"
                 : $"{prefixText} — {Application.productName} {Application.version}";
-
-            float w = 340f; float h = 24f;
+            var content = new GUIContent(text);
+            var size = _style.CalcSize(content);
+            float w = size.x + padding.x * 2f;
+            float h = size.y + padding.y * 2f;
             float x = margin.x; float y = margin.y;
 
             switch (anchor)
@@ -49,11 +53,12 @@ namespace Core
             }
 
             var rect = new Rect(x, y, w, h);
+            var textRect = new Rect(x + padding.x, y + padding.y, size.x, size.y);
             var oldColor = GUI.color;
-            GUI.color = new Color(0f, 0f, 0f, 0.5f);
+            GUI.color = backgroundColor;
             GUI.Box(rect, GUIContent.none);
             GUI.color = oldColor;
-            GUI.Label(rect, text, _style);
+            GUI.Label(textRect, content, _style);
         }
     }
 }
