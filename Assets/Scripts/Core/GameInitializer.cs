@@ -20,6 +20,21 @@ namespace Core
         public GameObject MusicPlayer;
         public SceneInfo SceneInfo;
 
+        [Header("Splash Screen")]
+        [Tooltip("Optional prefab for the startup splash. When empty, a simple default splash is generated at runtime.")]
+        public GameObject SplashScreenPrefab;
+
+        [Min(0f)]
+        [Tooltip("Seconds to keep the splash visible before fading.")]
+        public float SplashHoldDuration = 2f;
+
+        [Min(0f)]
+        [Tooltip("Seconds the splash takes to fade out.")]
+        public float SplashFadeDuration = 1f;
+
+        [Tooltip("Title text displayed on the splash when using the default generated layout.")]
+        public string SplashTitleText = "Title";
+
         private GameObject backgroundClone;
 
         private async void Start()
@@ -40,8 +55,14 @@ namespace Core
                 // Step 4: Initialize remaining scene-specific systems
                 await InitializeLevelLoggerAsync();
 
-                // Step 5: Load main menu scene LAST (like original)
+                // Step 5: Load the main menu scene so its camera becomes available
                 await LoadMainMenuAsync();
+
+                // Step 6: Wait for a primary camera before showing the splash
+                await WaitForPrimaryCameraAsync();
+
+                // Step 7: Show splash/title screen once the camera is ready
+                await ShowSplashScreenAsync();
 
                 Debug.Log("[GameInitializer]: Game initialization completed successfully");
             }
@@ -215,6 +236,37 @@ namespace Core
         }
 
         /// <summary>
+        /// Display a splash/title screen for a short duration before continuing initialization.
+        /// </summary>
+        private async Task ShowSplashScreenAsync()
+        {
+            SplashScreenController controller;
+            GameObject splashInstance;
+
+            if (SplashScreenPrefab != null)
+            {
+                splashInstance = Instantiate(SplashScreenPrefab);
+                controller = splashInstance.GetComponent<SplashScreenController>();
+                if (controller == null)
+                {
+                    controller = splashInstance.AddComponent<SplashScreenController>();
+                }
+            }
+            else
+            {
+                Debug.Log("[GameInitializer]: No splash screen prefab assigned; generating a basic splash overlay.");
+                splashInstance = new GameObject("GeneratedSplashScreen", typeof(RectTransform));
+                controller = splashInstance.AddComponent<SplashScreenController>();
+            }
+
+            controller.SetTitle(SplashTitleText);
+
+            await controller.PlaySequenceAsync(SplashHoldDuration, SplashFadeDuration);
+
+            Debug.Log("[GameInitializer]: Splash screen sequence completed");
+        }
+
+        /// <summary>
         /// Load main menu scene asynchronously
         /// </summary>
         private static async Task LoadMainMenuAsync()
@@ -222,6 +274,28 @@ namespace Core
             Debug.Log("[GameInitializer]: Loading Main Menu scene...");
             await SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
             Debug.Log("[GameInitializer]: Main Menu scene loaded");
+        }
+
+        /// <summary>
+        /// Wait for a camera to exist so UI canvases can target it.
+        /// </summary>
+        private static async Task WaitForPrimaryCameraAsync(float timeoutSeconds = 5f)
+        {
+            var startTime = Time.realtimeSinceStartup;
+
+            while (Time.realtimeSinceStartup - startTime < timeoutSeconds)
+            {
+                var camera = Camera.main ?? FindFirstObjectByType<Camera>();
+                if (camera != null)
+                {
+                    Debug.Log($"[GameInitializer]: Primary camera '{camera.name}' detected; proceeding with splash.");
+                    return;
+                }
+
+                await Task.Yield();
+            }
+
+            Debug.LogWarning("[GameInitializer]: Timed out waiting for a primary camera. Proceeding without explicit camera binding.");
         }
 
         private void Update()
