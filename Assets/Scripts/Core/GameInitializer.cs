@@ -35,7 +35,36 @@ namespace Core
         [Tooltip("Title text displayed on the splash when using the default generated layout.")]
         public string SplashTitleText = "Title";
 
-        private GameObject backgroundClone;
+        [Header("Foreground Ambient FX")]
+        [Tooltip("Looping wind VFX prefab to display in gameplay scenes.")]
+        public GameObject WindForegroundEffectPrefab;
+
+        [Tooltip("Position offset for the wind effect relative to the camera origin.")]
+        public Vector3 WindEffectOffset = new Vector3(0f, 0f, 0f);
+
+        [Tooltip("Leaf burst VFX prefab to spawn periodically in gameplay scenes.")]
+        public GameObject LeafBurstEffectPrefab;
+
+        [Tooltip("Central point for spawning leaf bursts.")]
+        public Vector3 LeafEffectPivot = new Vector3(0f, 2f, 0f);
+
+        [Tooltip("Width (x) and height (y) of the rectangle to randomize leaf burst positions.")]
+        public Vector2 LeafSpawnArea = new Vector2(18f, 6f);
+
+        [Tooltip("Minimum and maximum delay between leaf bursts.")]
+    public Vector2 LeafSpawnIntervalRange = new Vector2(1f, 2f);
+
+        [Tooltip("Lifetime assigned to spawned leaf bursts (seconds).")]
+        public float LeafBurstLifetime = 12f;
+
+    [Tooltip("Sorting layer used by the foreground ambient effects.")]
+    public string ForegroundSortingLayer = "Foreground";
+
+    [Tooltip("Sorting order used by the foreground ambient effects.")]
+    public int ForegroundSortingOrder = 500;
+
+            private GameObject backgroundClone;
+            private ForegroundAmbientManager foregroundAmbientManager;
 
         private async void Start()
         {
@@ -54,6 +83,9 @@ namespace Core
 
                 // Step 4: Initialize remaining scene-specific systems
                 await InitializeLevelLoggerAsync();
+
+                // Step 4b: Prepare ambient foreground effects (if configured)
+                await InitializeForegroundEffectsAsync();
 
                 // Step 5: Load the main menu scene so its camera becomes available
                 await LoadMainMenuAsync();
@@ -232,6 +264,37 @@ namespace Core
                 Instantiate(LevelLogger);
                 Debug.Log("[GameInitializer]: LevelLogger initialized");
             }
+            await Task.Yield();
+        }
+
+        /// <summary>
+        /// Initialize the foreground ambient effect manager if prefabs are provided.
+        /// </summary>
+        private async Task InitializeForegroundEffectsAsync()
+        {
+            if (WindForegroundEffectPrefab == null && LeafBurstEffectPrefab == null)
+            {
+                await Task.Yield();
+                return;
+            }
+
+            if (foregroundAmbientManager == null)
+            {
+                var managerObject = new GameObject("ForegroundAmbientManager");
+                foregroundAmbientManager = managerObject.AddComponent<ForegroundAmbientManager>();
+            }
+
+            foregroundAmbientManager.Initialize(
+                WindForegroundEffectPrefab,
+                LeafBurstEffectPrefab,
+                WindEffectOffset,
+                LeafEffectPivot,
+                LeafSpawnArea,
+                LeafSpawnIntervalRange,
+                LeafBurstLifetime,
+                ForegroundSortingLayer,
+                ForegroundSortingOrder);
+
             await Task.Yield();
         }
 
