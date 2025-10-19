@@ -53,6 +53,16 @@ namespace Core
         /// </summary>
         private void TryFindUIComponents()
         {
+            // Only search for UI components in gameplay levels (not menus, settings, etc.)
+            if (!SceneInfo.IsGameplayScene())
+            {
+                if (verboseLogging)
+                {
+                    Debug.Log($"[MoveCounter]: Skipping UI component discovery - current scene is not a gameplay level (Scene: {UnityEngine.SceneManagement.SceneManager.GetActiveScene().name})");
+                }
+                return;
+            }
+            
             var allTexts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
 
             // First attempt: look for exact named fields (case-insensitive) - faster and predictable
@@ -325,11 +335,18 @@ namespace Core
             if (SceneInfo.IsGameplayScene(scene))
             {
                 ResetCounter();
+                
+                // Try to find new UI components in the loaded scene
+                // Use a coroutine to delay this until after the scene is fully loaded
+                StartCoroutine(DelayedUISearch());
             }
-            
-            // Try to find new UI components in the loaded scene
-            // Use a coroutine to delay this until after the scene is fully loaded
-            StartCoroutine(DelayedUISearch());
+            else
+            {
+                if (verboseLogging)
+                {
+                    Debug.Log($"[MoveCounter]: Scene '{scene.name}' is not a gameplay scene - skipping UI component discovery");
+                }
+            }
         }
 
         private System.Collections.IEnumerator DelayedUISearch()
