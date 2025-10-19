@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Core;
 
@@ -56,11 +57,11 @@ namespace UI
         public LayoutMode layoutMode = LayoutMode.VerticalList;
 
         [Header("Grid Settings")]
-        [Tooltip("Number of columns for Grid layout")]
-        public int gridColumns = 2;
+    [Tooltip("Number of columns for Grid layout")]
+    public int gridColumns = 5;
 
         [Tooltip("Cell height for Grid layout")]
-        public float gridCellHeight = 212f;
+    public float gridCellHeight = 180f;
 
         [Tooltip("Horizontal spacing between cells in Grid layout")]
         public float gridHorizontalSpacing = 24f;
@@ -83,12 +84,38 @@ namespace UI
     [Tooltip("Max container width for 2 columns (if responsive enabled); above uses 3+")]
     public float twoColumnMaxWidth = 1080f;
 
-        private List<GameObject> generatedButtons = new List<GameObject>();
+        [Header("Lock Visuals")]
+        [Tooltip("Sprite applied to the lock overlay Image on each level button")]
+        public Sprite lockedLevelSprite;
+
+        [Header("Pagination")]
+        [Tooltip("Enable pagination when there are more buttons than fit in the grid at once")]
+        public bool enablePagination = true;
+
+        [Tooltip("Rows per page when laying out buttons as a grid (combined with columns)")]
+        public int gridRowsPerPage = 3;
+
+        [Tooltip("Optional button to move to the previous page of levels")]
+        public Button previousPageButton;
+
+        [Tooltip("Optional button to move to the next page of levels")]
+        public Button nextPageButton;
+
+    private List<GameObject> generatedButtons = new List<GameObject>();
+    private readonly List<DynamicLevelButton> generatedLevelButtons = new List<DynamicLevelButton>();
+    private readonly Dictionary<LevelManager.LevelInfo, DynamicLevelButton> levelInfoToButton = new Dictionary<LevelManager.LevelInfo, DynamicLevelButton>();
+    private readonly List<LevelManager.LevelInfo> orderedLevelSequence = new List<LevelManager.LevelInfo>();
+    private readonly List<LevelManager.LevelInfo> cachedDisplayLevels = new List<LevelManager.LevelInfo>();
+    private int currentPage;
+    private bool preferLastUnlockedSelection = true;
+
+        private int LevelsPerPage => Mathf.Max(1, gridColumns * Mathf.Max(1, gridRowsPerPage));
 
         private void Start()
         {
             AutoBindScrollRectAndContainer();
             EnsureOrConfigureLayoutGroup();
+            HookPaginationButtons();
             PopulateLevelButtons();
         }
 
@@ -98,7 +125,9 @@ namespace UI
             AutoBindScrollRectAndContainer();
             EnsureOrConfigureLayoutGroup();
             AssignDefaultPrefabsInEditor();
+            HookPaginationButtons();
             UpdateLayout();
+            UpdatePaginationControls();
         }
 
         /// <summary>
@@ -123,40 +152,60 @@ namespace UI
 
             EnsureOrConfigureLayoutGroup();
 
-            // Add tutorial levels
-            if (showTutorials)
-            {
-                var tutorials = LevelManager.Instance.GetLevels(SceneType.TutorialLevel);
-                if (tutorials.Count > 0)
-                {
-                    if (addSectionHeaders && layoutMode == LayoutMode.VerticalList)
-                        CreateSectionHeader("Tutorials");
+            GatherDisplayLevels(orderedLevelSequence);
+            int defaultSelectionIndex = ResolveDefaultSelectionIndex(orderedLevelSequence);
+            bool useLastUnlocked = preferLastUnlockedSelection && defaultSelectionIndex >= 0;
 
-                    foreach (var tutorial in tutorials)
-                    {
-                        CreateLevelButton(tutorial);
-                    }
+            if (layoutMode == LayoutMode.Grid)
+            {
+                cachedDisplayLevels.Clear();
+                cachedDisplayLevels.AddRange(orderedLevelSequence);
+
+                if (!enablePagination)
+                {
+                    currentPage = 0;
                 }
+                else if (useLastUnlocked)
+                {
+                    currentPage = Mathf.Clamp(defaultSelectionIndex / LevelsPerPage, 0, Mathf.Max(0, GetTotalPages() - 1));
+                }
+                else
+                {
+                    currentPage = Mathf.Clamp(currentPage, 0, Mathf.Max(0, GetTotalPages() - 1));
+                }
+
+                RenderCurrentGridPage();
+            }
+            else
+            {
+                bool tutorialHeaderAdded = false;
+                bool gameplayHeaderAdded = false;
+
+                foreach (var levelInfo in orderedLevelSequence)
+                {
+                    if (addSectionHeaders)
+                    {
+                        if (levelInfo.sceneType == SceneType.TutorialLevel && !tutorialHeaderAdded)
+                        {
+                            CreateSectionHeader("Tutorials");
+                            tutorialHeaderAdded = true;
+                        }
+                        else if (levelInfo.sceneType == SceneType.GameplayLevel && !gameplayHeaderAdded)
+                        {
+                            CreateSectionHeader("Levels");
+                            gameplayHeaderAdded = true;
+                        }
+                    }
+
+                    CreateLevelButton(levelInfo);
+                }
+
+                UpdateLayout();
             }
 
-            // Add gameplay levels
-            if (showGameplayLevels)
-            {
-                var levels = LevelManager.Instance.GetLevels(SceneType.GameplayLevel);
-                if (levels.Count > 0)
-                {
-                    if (addSectionHeaders && layoutMode == LayoutMode.VerticalList)
-                        CreateSectionHeader("Levels");
-
-                    foreach (var level in levels)
-                    {
-                        CreateLevelButton(level);
-                    }
-                }
-            }
-
-            // Update layout
-            UpdateLayout();
+            UpdatePaginationControls();
+            SelectDefaultLevelButton(defaultSelectionIndex, useLastUnlocked);
+            preferLastUnlockedSelection = true;
         }
 
         /// <summary>
@@ -191,7 +240,14 @@ namespace UI
                 return;
             }
 
+            if (lockedLevelSprite != null)
+            {
+                dynamicButton.SetLockSprite(lockedLevelSprite);
+            }
+
             dynamicButton.SetupLevel(levelInfo);
+            generatedLevelButtons.Add(dynamicButton);
+            levelInfoToButton[levelInfo] = dynamicButton;
 
             ConfigureChildForLayout(buttonObj, isHeader: false);
         }
@@ -207,6 +263,8 @@ namespace UI
                     DestroyImmediate(button);
             }
             generatedButtons.Clear();
+            generatedLevelButtons.Clear();
+            levelInfoToButton.Clear();
         }
 
         /// <summary>
@@ -285,6 +343,11 @@ namespace UI
         /// </summary>
         public void RefreshLevelSelection()
         {
+            if (layoutMode == LayoutMode.Grid)
+            {
+                currentPage = Mathf.Clamp(currentPage, 0, GetTotalPages() - 1);
+            }
+            preferLastUnlockedSelection = true;
             PopulateLevelButtons();
         }
 
@@ -298,6 +361,10 @@ namespace UI
             {
                 RefreshButtonStates();
             }
+            UpdatePaginationControls();
+
+            var defaultIndex = ResolveDefaultSelectionIndex(orderedLevelSequence);
+            SelectDefaultLevelButton(defaultIndex, true);
         }
 
         /// <summary>
@@ -312,6 +379,192 @@ namespace UI
                 {
                     dynamicButton.UpdateLockState();
                 }
+            }
+        }
+
+        private void GatherDisplayLevels(List<LevelManager.LevelInfo> targetList)
+        {
+            targetList.Clear();
+
+            if (LevelManager.Instance == null)
+                return;
+
+            if (showTutorials)
+            {
+                var tutorials = LevelManager.Instance.GetLevels(SceneType.TutorialLevel);
+                if (tutorials != null && tutorials.Count > 0)
+                {
+                    targetList.AddRange(tutorials);
+                }
+            }
+
+            if (showGameplayLevels)
+            {
+                var levels = LevelManager.Instance.GetLevels(SceneType.GameplayLevel);
+                if (levels != null && levels.Count > 0)
+                {
+                    targetList.AddRange(levels);
+                }
+            }
+        }
+
+        private int ResolveDefaultSelectionIndex(List<LevelManager.LevelInfo> orderedLevels)
+        {
+            if (orderedLevels == null || orderedLevels.Count == 0 || LevelManager.Instance == null)
+                return -1;
+
+            int lastUnlockedIndex = -1;
+            for (int i = 0; i < orderedLevels.Count; i++)
+            {
+                var info = orderedLevels[i];
+                if (info != null && LevelManager.Instance.CanLoadLevel(info))
+                {
+                    lastUnlockedIndex = i;
+                }
+            }
+
+            if (lastUnlockedIndex >= 0)
+                return lastUnlockedIndex;
+
+            return orderedLevels.Count > 0 ? 0 : -1;
+        }
+
+        private void SelectDefaultLevelButton(int defaultSelectionIndex, bool useLastUnlocked)
+        {
+            DynamicLevelButton targetButton = null;
+
+            if (useLastUnlocked && defaultSelectionIndex >= 0 && defaultSelectionIndex < orderedLevelSequence.Count)
+            {
+                var targetLevel = orderedLevelSequence[defaultSelectionIndex];
+                if (targetLevel != null && levelInfoToButton.TryGetValue(targetLevel, out var mappedButton))
+                {
+                    if (mappedButton != null && mappedButton.button != null && mappedButton.button.interactable)
+                    {
+                        targetButton = mappedButton;
+                    }
+                }
+            }
+
+            if (targetButton == null)
+            {
+                targetButton = FindFirstInteractableButtonOnPage();
+            }
+
+            if (targetButton == null && generatedLevelButtons.Count > 0)
+            {
+                targetButton = generatedLevelButtons[0];
+            }
+
+            if (targetButton != null)
+            {
+                var buttonComponent = targetButton.button;
+                if (buttonComponent != null)
+                {
+                    buttonComponent.Select();
+                    if (EventSystem.current != null)
+                    {
+                        EventSystem.current.SetSelectedGameObject(buttonComponent.gameObject);
+                    }
+                }
+                else if (EventSystem.current != null)
+                {
+                    EventSystem.current.SetSelectedGameObject(targetButton.gameObject);
+                }
+            }
+        }
+
+        private DynamicLevelButton FindFirstInteractableButtonOnPage()
+        {
+            foreach (var button in generatedLevelButtons)
+            {
+                if (button == null || button.button == null)
+                    continue;
+
+                if (button.button.interactable)
+                    return button;
+            }
+
+            return null;
+        }
+
+        private void RenderCurrentGridPage()
+        {
+            if (cachedDisplayLevels.Count == 0)
+            {
+                UpdateLayout();
+                return;
+            }
+
+            int startIndex = enablePagination ? currentPage * LevelsPerPage : 0;
+            int endIndex = enablePagination ? Mathf.Min(cachedDisplayLevels.Count, startIndex + LevelsPerPage) : cachedDisplayLevels.Count;
+
+            startIndex = Mathf.Clamp(startIndex, 0, Mathf.Max(0, cachedDisplayLevels.Count - 1));
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                CreateLevelButton(cachedDisplayLevels[i]);
+            }
+
+            UpdateLayout();
+        }
+
+        private void HookPaginationButtons()
+        {
+            if (previousPageButton != null)
+            {
+                previousPageButton.onClick.RemoveListener(GoToPreviousPage);
+                previousPageButton.onClick.AddListener(GoToPreviousPage);
+            }
+
+            if (nextPageButton != null)
+            {
+                nextPageButton.onClick.RemoveListener(GoToNextPage);
+                nextPageButton.onClick.AddListener(GoToNextPage);
+            }
+        }
+
+        private void GoToPreviousPage()
+        {
+            if (currentPage <= 0) return;
+            currentPage--;
+            preferLastUnlockedSelection = false;
+            PopulateLevelButtons();
+        }
+
+        private void GoToNextPage()
+        {
+            var totalPages = GetTotalPages();
+            if (currentPage >= totalPages - 1) return;
+            currentPage++;
+            preferLastUnlockedSelection = false;
+            PopulateLevelButtons();
+        }
+
+        private int GetTotalPages()
+        {
+            if (!enablePagination || layoutMode != LayoutMode.Grid)
+                return Mathf.Max(1, cachedDisplayLevels.Count > 0 ? 1 : 0);
+
+            int perPage = LevelsPerPage;
+            if (perPage <= 0) return 1;
+            int count = Mathf.Max(0, cachedDisplayLevels.Count);
+            return Mathf.Max(1, Mathf.CeilToInt(count / (float)perPage));
+        }
+
+        private void UpdatePaginationControls()
+        {
+            bool shouldShow = enablePagination && layoutMode == LayoutMode.Grid && cachedDisplayLevels.Count > LevelsPerPage;
+            int totalPages = Mathf.Max(1, GetTotalPages());
+
+            if (previousPageButton != null)
+            {
+                previousPageButton.gameObject.SetActive(shouldShow);
+                previousPageButton.interactable = shouldShow && currentPage > 0;
+            }
+
+            if (nextPageButton != null)
+            {
+                nextPageButton.gameObject.SetActive(shouldShow);
+                nextPageButton.interactable = shouldShow && currentPage < totalPages - 1;
             }
         }
 

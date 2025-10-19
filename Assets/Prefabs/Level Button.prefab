@@ -565,6 +565,7 @@ MonoBehaviour:
   goalText: {fileID: 7777777777777777777}
   previewImage: {fileID: 5061357311040490703}
   lockOverlay: {fileID: 6511752640106812837}
+  lockOverlayImage: {fileID: 4845665232938289962}
   levelInfo:
     sceneName: 
     scenePath: 
