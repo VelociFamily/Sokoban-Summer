@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Core;
 using TMPro;
@@ -26,7 +27,7 @@ namespace Testing
             }
         }
 
-        private System.Collections.IEnumerator DelayedTest()
+        private IEnumerator DelayedTest()
         {
             // Wait a moment for all systems to initialize
             yield return new WaitForSeconds(1f);
