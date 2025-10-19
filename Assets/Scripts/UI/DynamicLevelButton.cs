@@ -28,6 +28,9 @@ namespace UI
         [Tooltip("Lock overlay GameObject (shown when level is locked)")]
         public GameObject lockOverlay;
 
+    [Tooltip("Image used to render the lock overlay sprite")]
+    public Image lockOverlayImage;
+
     [Header("Audio")]
     [Tooltip("Optional click sound to play when selecting a level")]
     public AudioClip clickSfx;
@@ -37,6 +40,7 @@ namespace UI
 
     // Prevent double-activation while scenes are loading
     private bool _clicked = false;
+    private Sprite _assignedLockSprite;
 
         private void Awake()
         {
@@ -63,6 +67,9 @@ namespace UI
 
             if (previewImage != null && info.previewImage != null)
                 previewImage.sprite = info.previewImage;
+
+            EnsureLockOverlayImage();
+            ApplyAssignedLockSprite();
 
             // Update lock state
             UpdateLockState();
@@ -99,6 +106,40 @@ namespace UI
             // Update lock overlay
             if (lockOverlay != null)
                 lockOverlay.SetActive(!canLoad);
+
+            if (lockOverlayImage != null)
+            {
+                lockOverlayImage.enabled = !canLoad;
+            }
+        }
+
+        /// <summary>
+        /// Assign a sprite to the lock overlay image.
+        /// </summary>
+        public void SetLockSprite(Sprite sprite)
+        {
+            _assignedLockSprite = sprite;
+            EnsureLockOverlayImage();
+            ApplyAssignedLockSprite();
+        }
+
+        private void EnsureLockOverlayImage()
+        {
+            if (lockOverlayImage != null) return;
+
+            if (lockOverlay != null)
+            {
+                lockOverlayImage = lockOverlay.GetComponent<Image>() ?? lockOverlay.GetComponentInChildren<Image>();
+            }
+        }
+
+        private void ApplyAssignedLockSprite()
+        {
+            if (lockOverlayImage != null && _assignedLockSprite != null)
+            {
+                lockOverlayImage.sprite = _assignedLockSprite;
+                lockOverlayImage.preserveAspect = true;
+            }
         }
 
         /// <summary>

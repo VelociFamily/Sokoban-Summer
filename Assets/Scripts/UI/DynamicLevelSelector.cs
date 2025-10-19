@@ -56,11 +56,11 @@ namespace UI
         public LayoutMode layoutMode = LayoutMode.VerticalList;
 
         [Header("Grid Settings")]
-        [Tooltip("Number of columns for Grid layout")]
-        public int gridColumns = 2;
+    [Tooltip("Number of columns for Grid layout")]
+    public int gridColumns = 5;
 
         [Tooltip("Cell height for Grid layout")]
-        public float gridCellHeight = 212f;
+    public float gridCellHeight = 180f;
 
         [Tooltip("Horizontal spacing between cells in Grid layout")]
         public float gridHorizontalSpacing = 24f;
@@ -83,12 +83,34 @@ namespace UI
     [Tooltip("Max container width for 2 columns (if responsive enabled); above uses 3+")]
     public float twoColumnMaxWidth = 1080f;
 
+        [Header("Lock Visuals")]
+        [Tooltip("Sprite applied to the lock overlay Image on each level button")]
+        public Sprite lockedLevelSprite;
+
+        [Header("Pagination")]
+        [Tooltip("Enable pagination when there are more buttons than fit in the grid at once")]
+        public bool enablePagination = true;
+
+        [Tooltip("Rows per page when laying out buttons as a grid (combined with columns)")]
+        public int gridRowsPerPage = 3;
+
+        [Tooltip("Optional button to move to the previous page of levels")]
+        public Button previousPageButton;
+
+        [Tooltip("Optional button to move to the next page of levels")]
+        public Button nextPageButton;
+
         private List<GameObject> generatedButtons = new List<GameObject>();
+        private readonly List<LevelManager.LevelInfo> cachedDisplayLevels = new List<LevelManager.LevelInfo>();
+        private int currentPage;
+
+        private int LevelsPerPage => Mathf.Max(1, gridColumns * Mathf.Max(1, gridRowsPerPage));
 
         private void Start()
         {
             AutoBindScrollRectAndContainer();
             EnsureOrConfigureLayoutGroup();
+            HookPaginationButtons();
             PopulateLevelButtons();
         }
 
@@ -98,7 +120,9 @@ namespace UI
             AutoBindScrollRectAndContainer();
             EnsureOrConfigureLayoutGroup();
             AssignDefaultPrefabsInEditor();
+            HookPaginationButtons();
             UpdateLayout();
+            UpdatePaginationControls();
         }
 
         /// <summary>
@@ -123,40 +147,50 @@ namespace UI
 
             EnsureOrConfigureLayoutGroup();
 
-            // Add tutorial levels
-            if (showTutorials)
+            if (layoutMode == LayoutMode.Grid)
             {
-                var tutorials = LevelManager.Instance.GetLevels(SceneType.TutorialLevel);
-                if (tutorials.Count > 0)
+                BuildDisplayLevels();
+                currentPage = Mathf.Clamp(currentPage, 0, GetTotalPages() - 1);
+                RenderCurrentGridPage();
+            }
+            else
+            {
+                // Add tutorial levels
+                if (showTutorials)
                 {
-                    if (addSectionHeaders && layoutMode == LayoutMode.VerticalList)
-                        CreateSectionHeader("Tutorials");
-
-                    foreach (var tutorial in tutorials)
+                    var tutorials = LevelManager.Instance.GetLevels(SceneType.TutorialLevel);
+                    if (tutorials.Count > 0)
                     {
-                        CreateLevelButton(tutorial);
+                        if (addSectionHeaders)
+                            CreateSectionHeader("Tutorials");
+
+                        foreach (var tutorial in tutorials)
+                        {
+                            CreateLevelButton(tutorial);
+                        }
                     }
                 }
-            }
 
-            // Add gameplay levels
-            if (showGameplayLevels)
-            {
-                var levels = LevelManager.Instance.GetLevels(SceneType.GameplayLevel);
-                if (levels.Count > 0)
+                // Add gameplay levels
+                if (showGameplayLevels)
                 {
-                    if (addSectionHeaders && layoutMode == LayoutMode.VerticalList)
-                        CreateSectionHeader("Levels");
-
-                    foreach (var level in levels)
+                    var levels = LevelManager.Instance.GetLevels(SceneType.GameplayLevel);
+                    if (levels.Count > 0)
                     {
-                        CreateLevelButton(level);
+                        if (addSectionHeaders)
+                            CreateSectionHeader("Levels");
+
+                        foreach (var level in levels)
+                        {
+                            CreateLevelButton(level);
+                        }
                     }
                 }
+
+                UpdateLayout();
             }
 
-            // Update layout
-            UpdateLayout();
+            UpdatePaginationControls();
         }
 
         /// <summary>
@@ -189,6 +223,11 @@ namespace UI
             {
                 Debug.LogError("[DynamicLevelSelector] Level button prefab must have DynamicLevelButton component. See LEVEL_BUTTON_SETUP_GUIDE.md.");
                 return;
+            }
+
+            if (lockedLevelSprite != null)
+            {
+                dynamicButton.SetLockSprite(lockedLevelSprite);
             }
 
             dynamicButton.SetupLevel(levelInfo);
@@ -285,6 +324,10 @@ namespace UI
         /// </summary>
         public void RefreshLevelSelection()
         {
+            if (layoutMode == LayoutMode.Grid)
+            {
+                currentPage = Mathf.Clamp(currentPage, 0, GetTotalPages() - 1);
+            }
             PopulateLevelButtons();
         }
 
@@ -298,6 +341,7 @@ namespace UI
             {
                 RefreshButtonStates();
             }
+            UpdatePaginationControls();
         }
 
         /// <summary>
@@ -312,6 +356,100 @@ namespace UI
                 {
                     dynamicButton.UpdateLockState();
                 }
+            }
+        }
+
+        private void BuildDisplayLevels()
+        {
+            cachedDisplayLevels.Clear();
+
+            if (showTutorials)
+            {
+                cachedDisplayLevels.AddRange(LevelManager.Instance.GetLevels(SceneType.TutorialLevel));
+            }
+
+            if (showGameplayLevels)
+            {
+                cachedDisplayLevels.AddRange(LevelManager.Instance.GetLevels(SceneType.GameplayLevel));
+            }
+        }
+
+        private void RenderCurrentGridPage()
+        {
+            if (cachedDisplayLevels.Count == 0)
+            {
+                UpdateLayout();
+                return;
+            }
+
+            int startIndex = enablePagination ? currentPage * LevelsPerPage : 0;
+            int endIndex = enablePagination ? Mathf.Min(cachedDisplayLevels.Count, startIndex + LevelsPerPage) : cachedDisplayLevels.Count;
+
+            startIndex = Mathf.Clamp(startIndex, 0, Mathf.Max(0, cachedDisplayLevels.Count - 1));
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                CreateLevelButton(cachedDisplayLevels[i]);
+            }
+
+            UpdateLayout();
+        }
+
+        private void HookPaginationButtons()
+        {
+            if (previousPageButton != null)
+            {
+                previousPageButton.onClick.RemoveListener(GoToPreviousPage);
+                previousPageButton.onClick.AddListener(GoToPreviousPage);
+            }
+
+            if (nextPageButton != null)
+            {
+                nextPageButton.onClick.RemoveListener(GoToNextPage);
+                nextPageButton.onClick.AddListener(GoToNextPage);
+            }
+        }
+
+        private void GoToPreviousPage()
+        {
+            if (currentPage <= 0) return;
+            currentPage--;
+            PopulateLevelButtons();
+        }
+
+        private void GoToNextPage()
+        {
+            var totalPages = GetTotalPages();
+            if (currentPage >= totalPages - 1) return;
+            currentPage++;
+            PopulateLevelButtons();
+        }
+
+        private int GetTotalPages()
+        {
+            if (!enablePagination || layoutMode != LayoutMode.Grid)
+                return Mathf.Max(1, cachedDisplayLevels.Count > 0 ? 1 : 0);
+
+            int perPage = LevelsPerPage;
+            if (perPage <= 0) return 1;
+            int count = Mathf.Max(0, cachedDisplayLevels.Count);
+            return Mathf.Max(1, Mathf.CeilToInt(count / (float)perPage));
+        }
+
+        private void UpdatePaginationControls()
+        {
+            bool shouldShow = enablePagination && layoutMode == LayoutMode.Grid && cachedDisplayLevels.Count > LevelsPerPage;
+            int totalPages = Mathf.Max(1, GetTotalPages());
+
+            if (previousPageButton != null)
+            {
+                previousPageButton.gameObject.SetActive(shouldShow);
+                previousPageButton.interactable = shouldShow && currentPage > 0;
+            }
+
+            if (nextPageButton != null)
+            {
+                nextPageButton.gameObject.SetActive(shouldShow);
+                nextPageButton.interactable = shouldShow && currentPage < totalPages - 1;
             }
         }
 
