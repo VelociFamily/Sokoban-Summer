@@ -45,6 +45,9 @@ namespace Core
         [Tooltip("Leaf burst VFX prefab to spawn periodically in gameplay scenes.")]
         public GameObject LeafBurstEffectPrefab;
 
+    [Tooltip("Optional collection of leaf VFX prefabs that will be chosen at random when spawning.")]
+    public List<GameObject> LeafBurstEffectPrefabs = new List<GameObject>();
+
         [Tooltip("Central point for spawning leaf bursts.")]
         public Vector3 LeafEffectPivot = new Vector3(0f, 2f, 0f);
 
@@ -52,7 +55,7 @@ namespace Core
         public Vector2 LeafSpawnArea = new Vector2(18f, 6f);
 
         [Tooltip("Minimum and maximum delay between leaf bursts.")]
-    public Vector2 LeafSpawnIntervalRange = new Vector2(1f, 2f);
+    public Vector2 LeafSpawnIntervalRange = new Vector2(0.35f, 0.85f);
 
         [Tooltip("Lifetime assigned to spawned leaf bursts (seconds).")]
         public float LeafBurstLifetime = 12f;
@@ -272,7 +275,24 @@ namespace Core
         /// </summary>
         private async Task InitializeForegroundEffectsAsync()
         {
-            if (WindForegroundEffectPrefab == null && LeafBurstEffectPrefab == null)
+            var leafPrefabsBuffer = new List<GameObject>();
+            if (LeafBurstEffectPrefabs != null)
+            {
+                foreach (var prefab in LeafBurstEffectPrefabs)
+                {
+                    if (prefab != null && !leafPrefabsBuffer.Contains(prefab))
+                    {
+                        leafPrefabsBuffer.Add(prefab);
+                    }
+                }
+            }
+
+            if (leafPrefabsBuffer.Count == 0 && LeafBurstEffectPrefab != null)
+            {
+                leafPrefabsBuffer.Add(LeafBurstEffectPrefab);
+            }
+
+            if (WindForegroundEffectPrefab == null && leafPrefabsBuffer.Count == 0)
             {
                 await Task.Yield();
                 return;
@@ -286,7 +306,7 @@ namespace Core
 
             foregroundAmbientManager.Initialize(
                 WindForegroundEffectPrefab,
-                LeafBurstEffectPrefab,
+                leafPrefabsBuffer,
                 WindEffectOffset,
                 LeafEffectPivot,
                 LeafSpawnArea,

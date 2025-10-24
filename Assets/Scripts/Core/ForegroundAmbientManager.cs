@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,8 +15,8 @@ namespace Core
         [Tooltip("Looping wind effect instantiated once while gameplay scenes are active.")]
         [SerializeField] private GameObject windEffectPrefab;
 
-        [Tooltip("Burst effect spawned periodically to simulate drifting leaves. Should be a self-cleaning particle effect.")]
-        [SerializeField] private GameObject leavesBurstPrefab;
+    [Tooltip("Burst effect spawned periodically to simulate drifting leaves. Should be a self-cleaning particle effect.")]
+    [SerializeField] private List<GameObject> leavesBurstPrefabs = new();
 
     [Header("Placement")]
         [SerializeField] private Vector3 windEffectOffset = new Vector3(0f, 0f, 0f);
@@ -25,8 +26,8 @@ namespace Core
         [Header("Timing (seconds)")]
             [SerializeField] private Vector2 leavesSpawnIntervalRange = new Vector2(1f, 2f);
             [SerializeField] private float leavesLifetime = 10f;
-            [Tooltip("Seconds between wind effect repositioning attempts (min/max).")]
-            [SerializeField] private Vector2 windRepositionIntervalRange = new Vector2(5f, 9f);
+        [Tooltip("Seconds between wind effect re-spawns (min/max).")]
+        [SerializeField] private Vector2 windRepositionIntervalRange = new Vector2(0.5f, 2f);
             [Tooltip("Offset from the camera near clip plane used when positioning the wind effect.")]
             [SerializeField] private float windCameraDepthOffset = 0.5f;
             [Tooltip("Minimum distance (world units) the wind effect should move between reposition attempts.")]
@@ -41,21 +42,21 @@ namespace Core
     [Tooltip("Sorting order assigned to all renderers in the foreground effects.")]
     [SerializeField] private int targetSortingOrder = 500;
 
-        private GameObject windInstance;
-    private Coroutine leavesRoutine;
-    private Coroutine windCameraWaitRoutine;
-    private Coroutine windRepositionLoopRoutine;
-    private Vector3 lastWindPosition;
-    private bool hasWindPosition;
+        private Coroutine leavesRoutine;
+        private Coroutine windSpawnLoopRoutine;
+        private GameObject activeWindEffect;
+        private Vector3 lastWindPosition;
+        private bool hasWindPosition;
         private bool isInitialized;
         private bool sortingLayerIsValid;
+        private float cachedWindClipDuration = -1f;
 
         /// <summary>
         /// Configure and activate the ambient manager. Subsequent calls update the configuration.
         /// </summary>
         public void Initialize(
             GameObject windPrefab,
-            GameObject leavesPrefab,
+            IReadOnlyList<GameObject> leavesPrefabs,
             Vector3 windOffset,
             Vector3 leavesPivot,
             Vector2 spawnArea,
@@ -66,7 +67,7 @@ namespace Core
         {
             ApplyConfiguration(
                 windPrefab,
-                leavesPrefab,
+                leavesPrefabs,
                 windOffset,
                 leavesPivot,
                 spawnArea,
@@ -127,20 +128,12 @@ namespace Core
 
         private void EnableEffects()
         {
-            if (windEffectPrefab != null && windInstance == null)
+            if (windEffectPrefab != null && windSpawnLoopRoutine == null)
             {
-                windInstance = Instantiate(windEffectPrefab, transform);
-                windInstance.transform.localRotation = Quaternion.identity;
-                ApplySorting(windInstance);
+                windSpawnLoopRoutine = StartCoroutine(HandleWindLoop());
             }
 
-            if (windInstance != null)
-            {
-                PositionWindEffect();
-                StartWindRepositionLoop();
-            }
-
-            if (leavesBurstPrefab != null && leavesRoutine == null)
+            if (leavesBurstPrefabs.Count > 0 && leavesRoutine == null)
             {
                 leavesRoutine = StartCoroutine(SpawnLeavesLoop());
             }
@@ -148,10 +141,16 @@ namespace Core
 
         private void DisableEffects()
         {
-            if (windInstance != null)
+            if (windSpawnLoopRoutine != null)
             {
-                Destroy(windInstance);
-                windInstance = null;
+                StopCoroutine(windSpawnLoopRoutine);
+                windSpawnLoopRoutine = null;
+            }
+
+            if (activeWindEffect != null)
+            {
+                Destroy(activeWindEffect);
+                activeWindEffect = null;
             }
 
             if (leavesRoutine != null)
@@ -160,28 +159,14 @@ namespace Core
                 leavesRoutine = null;
             }
 
-            if (windCameraWaitRoutine != null)
-            {
-                StopCoroutine(windCameraWaitRoutine);
-                windCameraWaitRoutine = null;
-            }
-
-            if (windRepositionLoopRoutine != null)
-            {
-                StopCoroutine(windRepositionLoopRoutine);
-                windRepositionLoopRoutine = null;
-            }
-
             hasWindPosition = false;
+            cachedWindClipDuration = -1f;
 
-            // Clean up any residual leaf bursts.
+            // Clean up any residual leaf bursts or spawned VFX.
             for (var i = transform.childCount - 1; i >= 0; i--)
             {
                 var child = transform.GetChild(i);
                 if (child == null)
-                    continue;
-
-                if (child.gameObject == windInstance)
                     continue;
 
                 Destroy(child.gameObject);
@@ -194,24 +179,46 @@ namespace Core
             {
                 SpawnLeafBurst();
                 var delay = Random.Range(leavesSpawnIntervalRange.x, leavesSpawnIntervalRange.y);
-                yield return new WaitForSeconds(Mathf.Max(0.1f, delay));
+                yield return new WaitForSeconds(Mathf.Max(0.05f, delay));
             }
         }
 
         private void SpawnLeafBurst()
         {
-            if (leavesBurstPrefab == null)
+            if (leavesBurstPrefabs.Count == 0)
+                return;
+
+            var sourcePrefab = leavesBurstPrefabs[Random.Range(0, leavesBurstPrefabs.Count)];
+            if (sourcePrefab == null)
                 return;
 
             var position = leavesSpawnPivot;
             position.x += Random.Range(-leavesSpawnArea.x * 0.5f, leavesSpawnArea.x * 0.5f);
             position.y += Random.Range(-leavesSpawnArea.y * 0.5f, leavesSpawnArea.y * 0.5f);
 
-            var burst = Instantiate(leavesBurstPrefab, transform);
+            var burst = Instantiate(sourcePrefab, transform);
             burst.transform.localPosition = position;
-            burst.transform.localRotation = Quaternion.identity;
-            burst.transform.localScale = Vector3.one;
+            var randomZ = Random.Range(-20f, 20f);
+            burst.transform.localRotation = Quaternion.Euler(0f, 0f, randomZ);
+            var baseScale = Random.Range(0.8f, 1.25f);
+            burst.transform.localScale = new Vector3(baseScale, baseScale, 1f);
             ApplySorting(burst);
+
+            var animator = burst.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.speed = Random.Range(1.05f, 1.35f);
+                var stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+                animator.Play(stateInfo.fullPathHash, 0, Random.value);
+            }
+
+            var spriteRenderer = burst.GetComponentInChildren<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                var color = spriteRenderer.color;
+                color.a = Random.Range(0.75f, 1f);
+                spriteRenderer.color = color;
+            }
 
             if (leavesLifetime > 0f)
             {
@@ -221,7 +228,7 @@ namespace Core
 
         private void ApplyConfiguration(
             GameObject windPrefab,
-            GameObject leavesPrefab,
+            IReadOnlyList<GameObject> leavesPrefabs,
             Vector3 windOffset,
             Vector3 leavesPivot,
             Vector2 spawnArea,
@@ -233,11 +240,22 @@ namespace Core
             if (windPrefab != null)
             {
                 windEffectPrefab = windPrefab;
+                cachedWindClipDuration = -1f;
             }
 
-            if (leavesPrefab != null)
+            if (leavesPrefabs != null)
             {
-                leavesBurstPrefab = leavesPrefab;
+                leavesBurstPrefabs.Clear();
+                foreach (var prefab in leavesPrefabs)
+                {
+                    if (prefab == null)
+                        continue;
+
+                    if (!leavesBurstPrefabs.Contains(prefab))
+                    {
+                        leavesBurstPrefabs.Add(prefab);
+                    }
+                }
             }
 
             windEffectOffset = windOffset;
@@ -250,7 +268,8 @@ namespace Core
                 (normalizedInterval.x, normalizedInterval.y) = (normalizedInterval.y, normalizedInterval.x);
             }
 
-            normalizedInterval.x = Mathf.Max(0.5f, normalizedInterval.x);
+            const float minLeafInterval = 0.2f;
+            normalizedInterval.x = Mathf.Max(minLeafInterval, normalizedInterval.x);
             normalizedInterval.y = Mathf.Max(normalizedInterval.x, normalizedInterval.y);
             leavesSpawnIntervalRange = normalizedInterval;
             leavesLifetime = Mathf.Max(0f, burstLifetime);
@@ -273,90 +292,129 @@ namespace Core
             sortingLayerIsValid = CheckSortingLayerValidity(targetSortingLayer);
         }
 
-        private void PositionWindEffect()
+        private IEnumerator HandleWindLoop()
         {
-            if (windInstance == null)
-                return;
+            hasWindPosition = false;
 
-            var camera = Camera.main ?? FindFirstObjectByType<Camera>();
-            if (camera == null)
+            while (isActiveAndEnabled)
             {
-                if (windCameraWaitRoutine == null && isActiveAndEnabled)
+                if (windEffectPrefab == null)
                 {
-                    windCameraWaitRoutine = StartCoroutine(WaitForCameraAndPosition());
-                }
-
-                windInstance.transform.localPosition = windEffectOffset;
-                return;
-            }
-
-            if (windCameraWaitRoutine != null)
-            {
-                StopCoroutine(windCameraWaitRoutine);
-                windCameraWaitRoutine = null;
-            }
-
-            PositionWindEffectWithCamera(camera);
-            StartWindRepositionLoop();
-        }
-
-        private void PositionWindEffectWithCamera(Camera camera)
-        {
-            if (windInstance == null || camera == null)
-                return;
-
-            var targetPosition = PickWindWorldPosition(camera);
-            windInstance.transform.position = targetPosition;
-        }
-
-        private IEnumerator WaitForCameraAndPosition()
-        {
-            while (windInstance != null)
-            {
-                var camera = Camera.main ?? FindFirstObjectByType<Camera>();
-                if (camera != null)
-                {
-                    PositionWindEffectWithCamera(camera);
-                    windCameraWaitRoutine = null;
-                    StartWindRepositionLoop();
-                    yield break;
-                }
-
-                yield return null;
-            }
-
-            windCameraWaitRoutine = null;
-        }
-
-        private void StartWindRepositionLoop()
-        {
-            if (windInstance == null || !isActiveAndEnabled)
-                return;
-
-            if (windRepositionLoopRoutine == null)
-            {
-                windRepositionLoopRoutine = StartCoroutine(WindRepositionLoop());
-            }
-        }
-
-        private IEnumerator WindRepositionLoop()
-        {
-            while (windInstance != null)
-            {
-                var camera = Camera.main ?? FindFirstObjectByType<Camera>();
-                if (camera != null)
-                {
-                    PositionWindEffectWithCamera(camera);
-
-                    var delay = Random.Range(windRepositionIntervalRange.x, windRepositionIntervalRange.y);
-                    yield return new WaitForSeconds(Mathf.Max(0.5f, delay));
+                    yield return null;
                     continue;
                 }
 
-                yield return null;
+                var camera = Camera.main ?? FindFirstObjectByType<Camera>();
+                if (camera == null)
+                {
+                    yield return null;
+                    continue;
+                }
+
+                var spawnPosition = PickWindWorldPosition(camera);
+                SpawnWindEffect(spawnPosition);
+
+                var playbackDuration = GetWindClipDuration();
+                var animator = activeWindEffect != null ? activeWindEffect.GetComponent<Animator>() : null;
+
+                if (animator != null)
+                {
+                    animator.speed = 1f;
+                    var elapsed = 0f;
+                    while (elapsed < playbackDuration && activeWindEffect != null)
+                    {
+                        yield return null;
+                        elapsed += Time.deltaTime;
+                    }
+
+                    if (animator != null)
+                    {
+                        animator.speed = 0f;
+                    }
+                }
+                else
+                {
+                    yield return new WaitForSeconds(Mathf.Max(0.1f, playbackDuration));
+                }
+
+                if (activeWindEffect != null)
+                {
+                    Destroy(activeWindEffect);
+                    activeWindEffect = null;
+                }
+
+                var extraDelay = Random.Range(windRepositionIntervalRange.x, windRepositionIntervalRange.y);
+                if (extraDelay > 0.01f)
+                {
+                    yield return new WaitForSeconds(extraDelay);
+                }
+                else
+                {
+                    yield return null;
+                }
             }
 
-            windRepositionLoopRoutine = null;
+            if (activeWindEffect != null)
+            {
+                Destroy(activeWindEffect);
+                activeWindEffect = null;
+            }
+
+            windSpawnLoopRoutine = null;
+        }
+
+        private void SpawnWindEffect(Vector3 position)
+        {
+            if (windEffectPrefab == null)
+                return;
+
+            if (activeWindEffect != null)
+            {
+                Destroy(activeWindEffect);
+            }
+
+            activeWindEffect = Instantiate(windEffectPrefab, position, Quaternion.identity, transform);
+            ApplySorting(activeWindEffect);
+
+            var animator = activeWindEffect.GetComponent<Animator>();
+            if (animator != null)
+            {
+                animator.speed = 1f;
+                animator.Rebind();
+                animator.Update(0f);
+            }
+        }
+
+        private float GetWindClipDuration()
+        {
+            if (cachedWindClipDuration > 0f)
+                return cachedWindClipDuration;
+
+            float duration = 0f;
+
+            if (windEffectPrefab != null)
+            {
+                var animator = windEffectPrefab.GetComponent<Animator>();
+                if (animator != null)
+                {
+                    var controller = animator.runtimeAnimatorController;
+                    if (controller != null)
+                    {
+                        foreach (var clip in controller.animationClips)
+                        {
+                            if (clip == null)
+                                continue;
+
+                            duration = Mathf.Max(duration, clip.length);
+                            if (duration > 0f)
+                                break;
+                        }
+                    }
+                }
+            }
+
+            cachedWindClipDuration = duration > 0f ? duration : 1f;
+            return cachedWindClipDuration;
         }
 
         private Vector3 PickWindWorldPosition(Camera camera)

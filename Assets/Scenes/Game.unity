@@ -169,11 +169,16 @@ MonoBehaviour:
   WindForegroundEffectPrefab: {fileID: 7091897728438677785, guid: 1f819feaf0764ecb82c41f1f71dc59d4,
     type: 3}
   WindEffectOffset: {x: 0, y: 0, z: 0}
-  LeafBurstEffectPrefab: {fileID: 2353600328335836179, guid: ceec7516237b4104b94300043ca39784,
+  LeafBurstEffectPrefab: {fileID: 6418298287415328241, guid: 600a2ec06bd64c81b8c1c41894fe2fe2,
     type: 3}
+  LeafBurstEffectPrefabs:
+  - {fileID: 6418298287415328241, guid: 600a2ec06bd64c81b8c1c41894fe2fe2, type: 3}
+  - {fileID: 4698419445988859553, guid: fd0f60e8e8a540eea32c79e6ff8a3f73, type: 3}
+  - {fileID: 3025679138591669558, guid: 54d64bbbaf5c482abc7a1e444d2845a3, type: 3}
+  - {fileID: 5650457208463699853, guid: 9d1d8830c7a67954986c7ef7b854ed10, type: 3}
   LeafEffectPivot: {x: 0, y: 2, z: 0}
   LeafSpawnArea: {x: 18, y: 6}
-  LeafSpawnIntervalRange: {x: 6, y: 11}
+  LeafSpawnIntervalRange: {x: 0.35, y: 0.85}
   LeafBurstLifetime: 12
   ForegroundSortingLayer: Foreground
   ForegroundSortingOrder: 1000
