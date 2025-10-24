@@ -166,7 +166,7 @@ MonoBehaviour:
   SplashHoldDuration: 2
   SplashFadeDuration: 1
   SplashTitleText: Title
-  WindForegroundEffectPrefab: {fileID: 3696007233179127096, guid: c248f95ffea8b8543bc7ad0fffe0216d,
+  WindForegroundEffectPrefab: {fileID: 7091897728438677785, guid: 1f819feaf0764ecb82c41f1f71dc59d4,
     type: 3}
   WindEffectOffset: {x: 0, y: 0, z: 0}
   LeafBurstEffectPrefab: {fileID: 2353600328335836179, guid: ceec7516237b4104b94300043ca39784,
@@ -175,6 +175,8 @@ MonoBehaviour:
   LeafSpawnArea: {x: 18, y: 6}
   LeafSpawnIntervalRange: {x: 6, y: 11}
   LeafBurstLifetime: 12
+  ForegroundSortingLayer: Foreground
+  ForegroundSortingOrder: 1000
 --- !u!4 &1538283959
 Transform:
   m_ObjectHideFlags: 0

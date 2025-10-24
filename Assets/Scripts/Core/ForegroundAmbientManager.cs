@@ -23,8 +23,16 @@ namespace Core
         [SerializeField] private Vector2 leavesSpawnArea = new Vector2(14f, 6f);
 
         [Header("Timing (seconds)")]
-    [SerializeField] private Vector2 leavesSpawnIntervalRange = new Vector2(1f, 2f);
-        [SerializeField] private float leavesLifetime = 10f;
+            [SerializeField] private Vector2 leavesSpawnIntervalRange = new Vector2(1f, 2f);
+            [SerializeField] private float leavesLifetime = 10f;
+            [Tooltip("Seconds between wind effect repositioning attempts (min/max).")]
+            [SerializeField] private Vector2 windRepositionIntervalRange = new Vector2(5f, 9f);
+            [Tooltip("Offset from the camera near clip plane used when positioning the wind effect.")]
+            [SerializeField] private float windCameraDepthOffset = 0.5f;
+            [Tooltip("Minimum distance (world units) the wind effect should move between reposition attempts.")]
+            [SerializeField] private float windMinRepositionDistance = 3f;
+            [Tooltip("Viewport padding (0-0.5) to keep the wind effect away from the very edge of the screen.")]
+            [SerializeField] [Range(0f, 0.49f)] private float windViewportPadding = 0.1f;
 
     [Header("Rendering Order")]
     [Tooltip("Sorting layer applied to all spawned foreground effects.")]
@@ -34,9 +42,13 @@ namespace Core
     [SerializeField] private int targetSortingOrder = 500;
 
         private GameObject windInstance;
-        private Coroutine leavesRoutine;
+    private Coroutine leavesRoutine;
+    private Coroutine windCameraWaitRoutine;
+    private Coroutine windRepositionLoopRoutine;
+    private Vector3 lastWindPosition;
+    private bool hasWindPosition;
         private bool isInitialized;
-    private bool sortingLayerIsValid;
+        private bool sortingLayerIsValid;
 
         /// <summary>
         /// Configure and activate the ambient manager. Subsequent calls update the configuration.
@@ -118,10 +130,14 @@ namespace Core
             if (windEffectPrefab != null && windInstance == null)
             {
                 windInstance = Instantiate(windEffectPrefab, transform);
-                windInstance.transform.localPosition = windEffectOffset;
                 windInstance.transform.localRotation = Quaternion.identity;
-                windInstance.transform.localScale = Vector3.one;
                 ApplySorting(windInstance);
+            }
+
+            if (windInstance != null)
+            {
+                PositionWindEffect();
+                StartWindRepositionLoop();
             }
 
             if (leavesBurstPrefab != null && leavesRoutine == null)
@@ -143,6 +159,20 @@ namespace Core
                 StopCoroutine(leavesRoutine);
                 leavesRoutine = null;
             }
+
+            if (windCameraWaitRoutine != null)
+            {
+                StopCoroutine(windCameraWaitRoutine);
+                windCameraWaitRoutine = null;
+            }
+
+            if (windRepositionLoopRoutine != null)
+            {
+                StopCoroutine(windRepositionLoopRoutine);
+                windRepositionLoopRoutine = null;
+            }
+
+            hasWindPosition = false;
 
             // Clean up any residual leaf bursts.
             for (var i = transform.childCount - 1; i >= 0; i--)
@@ -225,9 +255,169 @@ namespace Core
             leavesSpawnIntervalRange = normalizedInterval;
             leavesLifetime = Mathf.Max(0f, burstLifetime);
 
+            var windInterval = windRepositionIntervalRange;
+            if (windInterval.x > windInterval.y)
+            {
+                (windInterval.x, windInterval.y) = (windInterval.y, windInterval.x);
+            }
+
+            windInterval.x = Mathf.Max(0.5f, windInterval.x);
+            windInterval.y = Mathf.Max(windInterval.x, windInterval.y);
+            windRepositionIntervalRange = windInterval;
+
+            windCameraDepthOffset = Mathf.Max(0f, windCameraDepthOffset);
+            windMinRepositionDistance = Mathf.Max(0f, windMinRepositionDistance);
+
             targetSortingLayer = sortingLayer;
             targetSortingOrder = sortingOrder;
             sortingLayerIsValid = CheckSortingLayerValidity(targetSortingLayer);
+        }
+
+        private void PositionWindEffect()
+        {
+            if (windInstance == null)
+                return;
+
+            var camera = Camera.main ?? FindFirstObjectByType<Camera>();
+            if (camera == null)
+            {
+                if (windCameraWaitRoutine == null && isActiveAndEnabled)
+                {
+                    windCameraWaitRoutine = StartCoroutine(WaitForCameraAndPosition());
+                }
+
+                windInstance.transform.localPosition = windEffectOffset;
+                return;
+            }
+
+            if (windCameraWaitRoutine != null)
+            {
+                StopCoroutine(windCameraWaitRoutine);
+                windCameraWaitRoutine = null;
+            }
+
+            PositionWindEffectWithCamera(camera);
+            StartWindRepositionLoop();
+        }
+
+        private void PositionWindEffectWithCamera(Camera camera)
+        {
+            if (windInstance == null || camera == null)
+                return;
+
+            var targetPosition = PickWindWorldPosition(camera);
+            windInstance.transform.position = targetPosition;
+        }
+
+        private IEnumerator WaitForCameraAndPosition()
+        {
+            while (windInstance != null)
+            {
+                var camera = Camera.main ?? FindFirstObjectByType<Camera>();
+                if (camera != null)
+                {
+                    PositionWindEffectWithCamera(camera);
+                    windCameraWaitRoutine = null;
+                    StartWindRepositionLoop();
+                    yield break;
+                }
+
+                yield return null;
+            }
+
+            windCameraWaitRoutine = null;
+        }
+
+        private void StartWindRepositionLoop()
+        {
+            if (windInstance == null || !isActiveAndEnabled)
+                return;
+
+            if (windRepositionLoopRoutine == null)
+            {
+                windRepositionLoopRoutine = StartCoroutine(WindRepositionLoop());
+            }
+        }
+
+        private IEnumerator WindRepositionLoop()
+        {
+            while (windInstance != null)
+            {
+                var camera = Camera.main ?? FindFirstObjectByType<Camera>();
+                if (camera != null)
+                {
+                    PositionWindEffectWithCamera(camera);
+
+                    var delay = Random.Range(windRepositionIntervalRange.x, windRepositionIntervalRange.y);
+                    yield return new WaitForSeconds(Mathf.Max(0.5f, delay));
+                    continue;
+                }
+
+                yield return null;
+            }
+
+            windRepositionLoopRoutine = null;
+        }
+
+        private Vector3 PickWindWorldPosition(Camera camera)
+        {
+            var attempts = 0;
+            var sqrMinDistance = windMinRepositionDistance * windMinRepositionDistance;
+
+            while (attempts < 6)
+            {
+                var candidate = GenerateWindWorldPosition(camera);
+                if (!hasWindPosition || (candidate - lastWindPosition).sqrMagnitude >= sqrMinDistance)
+                {
+                    lastWindPosition = candidate;
+                    hasWindPosition = true;
+                    return candidate;
+                }
+
+                attempts++;
+            }
+
+            lastWindPosition = GenerateWindWorldPosition(camera);
+            hasWindPosition = true;
+            return lastWindPosition;
+        }
+
+        private Vector3 GenerateWindWorldPosition(Camera camera)
+        {
+            var forward = camera.transform.forward.normalized;
+            var right = camera.transform.right;
+            var up = camera.transform.up;
+            var baseDistance = camera.nearClipPlane + windCameraDepthOffset;
+            var padding = Mathf.Clamp01(windViewportPadding);
+
+            Vector3 worldPosition;
+
+            if (camera.orthographic)
+            {
+                var halfHeight = camera.orthographicSize;
+                var halfWidth = halfHeight * camera.aspect;
+
+                var paddedWidth = Mathf.Max(0f, halfWidth * (1f - padding * 2f));
+                var paddedHeight = Mathf.Max(0f, halfHeight * (1f - padding * 2f));
+
+                var offsetX = Mathf.Approximately(paddedWidth, 0f) ? 0f : Random.Range(-paddedWidth, paddedWidth);
+                var offsetY = Mathf.Approximately(paddedHeight, 0f) ? 0f : Random.Range(-paddedHeight, paddedHeight);
+
+                var planeCenter = camera.transform.position + forward * baseDistance;
+                worldPosition = planeCenter + right * offsetX + up * offsetY;
+            }
+            else
+            {
+                var min = padding;
+                var max = 1f - padding;
+                var viewport = new Vector3(Random.Range(min, max), Random.Range(min, max), baseDistance);
+                worldPosition = camera.ViewportToWorldPoint(viewport);
+            }
+
+            worldPosition += new Vector3(windEffectOffset.x, windEffectOffset.y, 0f);
+            worldPosition += forward * windEffectOffset.z;
+
+            return worldPosition;
         }
 
         private void ApplySorting(GameObject root)
