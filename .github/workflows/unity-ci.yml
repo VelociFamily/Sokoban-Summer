@@ -79,7 +79,7 @@ jobs:
         uses: game-ci/unity-builder@v4
         with:
           projectPath: .
-          unityVersion: 6000.2.5f1
+          unityVersion: 6000.2.8f1
           targetPlatform: StandaloneWindows64
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
@@ -151,7 +151,7 @@ jobs:
         uses: game-ci/unity-builder@v4
         with:
           projectPath: .
-          unityVersion: 6000.2.5f1
+          unityVersion: 6000.2.8f1
           targetPlatform: StandaloneWindows64
         env:
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
