@@ -8,7 +8,7 @@
 ## Script and prefab organization
 - Runtime scripts are split into domain folders (`Assets/Scripts/Core`, `Gameplay`, `UI`, etc.), which is a good start, but there are lingering backup artifacts such as `ConfusePowerDown.cs.backup` and `TeleportPowerUp.cs.backup` that risk double-compilation and developer confusion.
 - No Assembly Definition files are present, so every script recompiles whenever any code changes. Introducing asmdefs per domain (Core, Gameplay, UI, Editor) would align with Unity best practices and cut iteration time.
-- Prefabs in `Assets/Prefabs/` are domain-specific, yet several (for example `Backgound Canvas.prefab`) have typos or overlap in purpose with the singletons created by `Core/GameInitializer.cs`. Establishing a naming convention and storing per-system prefabs together with their scripts would make it easier to reason about dependencies.
+- Prefabs in `Assets/Prefabs/` are domain-specific, yet several (for example `Background Canvas.prefab`) have typos or overlap in purpose with the singletons created by `Core/GameInitializer.cs`. Establishing a naming convention and storing per-system prefabs together with their scripts would make it easier to reason about dependencies.
 - Documentation claims an `IInitializable` and `AudioService` implementation (`IMPLEMENTATION_SUMMARY.md`, `UNITY_BEST_PRACTICES_REFACTORING.md`), but those types are absent from the codebase. Keeping docs and code in sync (or removing dead references) should be prioritized so contributors do not rely on stale guidance.
 
 ## Use (or misuse) of design patterns
@@ -25,7 +25,7 @@
 
 ## Sokoban-specific mechanics and code quality
 - `Gameplay/PlayerController.cs` translates the player transform every frame (`Update`), even though movement is grid-based. Snapping movement to cells (or using tweened coroutines driven by a state machine) would guarantee alignment with Sokoban crates and simplify collision checks.
-- Power-up state is tracked through static fields on `Gameplay/ConfusionPowerUp.cs` and `Gameplay/TeleportationPowerUp.cs`, so effects persist unintentionally between levels unless each script resets them. Persisting the active power-up through `Core/SaveFacade` or clearing them explicitly in `LevelManager.LoadLevel` would avoid surprise carryover.
+- Power-up state is tracked through static fields on `Gameplay/ConfusePowerDown.cs` and `Gameplay/TeleportPowerUp.cs`, so effects persist unintentionally between levels unless each script resets them. Persisting the active power-up through `Core/SaveFacade` or clearing them explicitly in `LevelManager.LoadLevel` would avoid surprise carryover.
 - `UI/CompleteUI.cs` still advances levels by incrementing `SceneManager.GetActiveScene().buildIndex`, bypassing the additive workflow in `Core/LevelManager.cs`. Using the ordered `LevelManager.LevelInfo` list would make sure tutorial/level progression matches the build settings order and ScriptableObject metadata.
 - `Core/LevelManager.cs` relies on string heuristics and `Resources.Load<LevelData>()` to enrich level metadata. Moving level data into explicit assets referenced by the scene (for example via `SceneInfo`) would be less brittle and remove the need for runtime `Resources` lookups.
 
