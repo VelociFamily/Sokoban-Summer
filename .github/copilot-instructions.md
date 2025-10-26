@@ -31,7 +31,7 @@ Short, actionable rules to get productive fast. Follow the existing service sing
 - Stats/progression: `LevelManager` uses `PlayerPrefs` for completion/best moves/time; call `SaveLevelStats`/`MarkLevelCompleted`.
 
 ## CI/build & repo
-- CI: `.github/workflows/unity-ci.yml` (see `.github/workflows/README.md`) auto‑detects Unity from `ProjectSettings/ProjectVersion.txt` (e.g., 6000.2.5f1). Requires `UNITY_LICENSE` (or email/password/serial) secrets.
+- CI: `.github/workflows/unity-ci.yml` (see `.github/workflows/README.md`) auto‑detects Unity from `ProjectSettings/ProjectVersion.txt` (e.g., 6000.2.8f1). Requires `UNITY_LICENSE` (or email/password/serial) secrets.
 - Git LFS: extension‑based rules in `.gitattributes`; see root `README.md` for post‑move normalization.
 
 ## File map (start here)

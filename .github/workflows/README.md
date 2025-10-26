@@ -24,7 +24,7 @@ You can manually trigger the workflow with these options:
 ### Self-Hosted Runner Setup
 Your self-hosted runner should be configured with:
 - **Labels**: `self-hosted`, `unity` 
-- **Unity Editor**: Version 6000.2.5f1 installed
+- **Unity Editor**: Version 6000.2.8f1 installed
 - **Game CI tools**: Unity Builder dependencies
 
 ### Required Secrets
@@ -79,7 +79,7 @@ Builds produce different artifact names based on the runner:
 
 ### Self-hosted runner not being used
 - Check runner is online and has correct labels: `[self-hosted, unity]`
-- Verify Unity version 6000.2.5f1 is installed
+- Verify Unity version 6000.2.8f1 is installed
 - Check runner can access the repository
 
 ### Windows fallback not working
@@ -89,5 +89,5 @@ Builds produce different artifact names based on the runner:
 
 ### Build failures
 - Check Unity license is valid and secrets are configured
-- Verify Unity version matches project (6000.2.5f1)
+- Verify Unity version matches project (6000.2.8f1)
 - Review build logs in the failed job

@@ -88,7 +88,7 @@ CI / Unity build notes
   - See `.github/workflows/README.md` for detailed setup and usage
 - You must set repository secrets:
 	- `UNITY_EMAIL`, `UNITY_PASSWORD`, and `UNITY_LICENSE` (or use `UNITY_SERIAL`).
-- Unity version is auto-detected from `ProjectSettings/ProjectVersion.txt` (currently 6000.2.5f1)
+- Unity version is auto-detected from `ProjectSettings/ProjectVersion.txt` (currently 6000.2.8f1)
 
 Final scan (files > 1 MB in `Assets/`)
 - `Assets/Sounds/Music songs/gaming-game-minecraft-background-music-372242.mp3` — 6.4 MB
