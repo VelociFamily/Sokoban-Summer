@@ -46,3 +46,15 @@ Short, actionable rules to get productive fast. Follow the existing service sing
 - Don’t hardcode scene indices; do update `GameInitializer.LoadMainMenuAsync()` if the menu scene name changes.
 
 Questions or gaps? If any part of the architecture isn’t clear (e.g., extending `LevelManager` or adding audio channels), ask and reference the specific target files you plan to modify.
+
+## Slash commands
+
+### `/workon <issue-number>`
+- Use when the user wants Copilot to start working on a numbered GitHub issue with minimal prompting (example: `/workon 32`).
+- Parse the numeric argument and fetch the matching issue title/description via `gh issue view <number> --json title,body,url` (fallback: `gh issue view <number>` and parse plaintext). Confirm repository context if the command is run inside a fork or without `origin` remote.
+- Derive a short, kebab-case slug from the issue title (drop stopwords, keep up to five words). Build the branch name `issue/<ISSUE_NUMBER>-<slug>`; if slug generation fails, use `issue/<ISSUE_NUMBER>`.
+- Check for a clean working tree. If there are local changes, prompt the user to commit/stash or confirm continuing before switching branches.
+- Create and checkout the branch from the default branch (`main` unless `git symbolic-ref refs/remotes/origin/HEAD` reports otherwise): `git fetch origin`, `git checkout -B issue/<ISSUE_NUMBER>-<slug> origin/<DEFAULT_BRANCH>`.
+- Start a worklog message in chat summarizing the issue context (link, acceptance criteria, assumptions) and outline the first implementation steps you will take.
+- If the repository uses GitHub CLI authentication, create a draft PR targeting the default branch (`gh pr create --draft`). Set the title to include both the issue number and title, and ensure the body contains the standard GitHub `Resolves` reference to that issue. Mention that work is in progress and list planned tasks as checkboxes.
+- Report the new branch name, PR URL (if created), and immediate next actions back to the user. If any automation step fails (missing CLI, permissions, dirty tree), explain the blocker and request guidance.
