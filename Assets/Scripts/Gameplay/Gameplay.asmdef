@@ -1,0 +1,17 @@
+{
+    "name": "SokobanSummer.Gameplay",
+    "rootNamespace": "Gameplay",
+    "references": [
+        "SokobanSummer.Core",
+        "UnityEngine.UI",
+        "Unity.TextMeshPro",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

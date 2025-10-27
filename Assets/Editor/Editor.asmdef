@@ -1,0 +1,14 @@
+{
+    "name": "SokobanSummer.Editor",
+    "rootNamespace": "Editor",
+    "references": [
+        "SokobanSummer.Core"
+    ],
+    "includePlatforms": ["Editor"],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

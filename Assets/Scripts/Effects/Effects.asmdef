@@ -1,0 +1,15 @@
+{
+    "name": "SokobanSummer.Effects",
+    "rootNamespace": "Effects",
+    "references": [
+        "SokobanSummer.Core",
+        "UnityEngine.UI"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
