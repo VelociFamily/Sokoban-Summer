@@ -2,7 +2,10 @@
     "name": "SokobanSummer.Editor",
     "rootNamespace": "Editor",
     "references": [
-        "SokobanSummer.Core"
+        "SokobanSummer.Core",
+        "SokobanSummer.UI",
+        "Unity.TextMeshPro",
+        "UnityEngine.UI"
     ],
     "includePlatforms": ["Editor"],
     "excludePlatforms": [],

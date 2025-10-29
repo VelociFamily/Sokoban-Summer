@@ -1,0 +1,22 @@
+{
+    "name": "SokobanSummer.Tests",
+    "rootNamespace": "Tests",
+    "references": [
+        "SokobanSummer.Core",
+        "SokobanSummer.Gameplay",
+        "SokobanSummer.UI",
+        "SokobanSummer.Effects",
+        "SokobanSummer.Audio",
+        "SokobanSummer.CoreShared",
+        "UnityEngine.UI",
+        "Unity.TextMeshPro",
+        "Unity.InputSystem"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

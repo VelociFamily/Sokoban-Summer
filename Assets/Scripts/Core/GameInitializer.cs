@@ -12,7 +12,7 @@ namespace Core
         public GameObject Background;
 
         [Header("Modern Audio System")]
-        public Audio.UnifiedAudioManager UnifiedAudioManagerPrefab;
+    public UnityEngine.Object UnifiedAudioManagerPrefab; // Use UnityEngine.Object for prefab references
 
         [Header("Other Systems")]
         public LevelLogger LevelLogger;
@@ -323,30 +323,35 @@ namespace Core
         /// </summary>
         private async Task ShowSplashScreenAsync()
         {
-            SplashScreenController controller;
-            GameObject splashInstance;
+            CoreShared.ISplashScreenController controller = null;
+            GameObject splashInstance = null;
 
             if (SplashScreenPrefab != null)
             {
                 splashInstance = Instantiate(SplashScreenPrefab);
-                controller = splashInstance.GetComponent<SplashScreenController>();
+                controller = splashInstance.GetComponent<CoreShared.ISplashScreenController>();
                 if (controller == null)
                 {
-                    controller = splashInstance.AddComponent<SplashScreenController>();
+                    Debug.LogWarning("[GameInitializer]: Splash prefab instantiated but does not implement ISplashScreenController; skipping splash sequence.");
                 }
             }
             else
             {
-                Debug.Log("[GameInitializer]: No splash screen prefab assigned; generating a basic splash overlay.");
-                splashInstance = new GameObject("GeneratedSplashScreen", typeof(RectTransform));
-                controller = splashInstance.AddComponent<SplashScreenController>();
+                Debug.Log("[GameInitializer]: No splash screen prefab assigned; skipping generated splash (no UI available in Core). Consider providing a prefab implementing ISplashScreenController.");
             }
 
-            controller.SetTitle(SplashTitleText);
-
-            await controller.PlaySequenceAsync(SplashHoldDuration, SplashFadeDuration);
-
-            Debug.Log("[GameInitializer]: Splash screen sequence completed");
+            if (controller != null)
+            {
+                controller.SetTitle(SplashTitleText);
+                await controller.PlaySequenceAsync(SplashHoldDuration, SplashFadeDuration);
+                Debug.Log("[GameInitializer]: Splash screen sequence completed");
+            }
+            else
+            {
+                // No controller available; wait briefly to preserve startup timing
+                await Task.Delay((int)((SplashHoldDuration + SplashFadeDuration) * 1000f));
+                Debug.Log("[GameInitializer]: No splash controller available; continuing without splash.");
+            }
         }
 
         /// <summary>

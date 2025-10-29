@@ -2,6 +2,8 @@
     "name": "SokobanSummer.Core",
     "rootNamespace": "Core",
     "references": [
+        "SokobanSummer.CoreShared",
+        "SokobanSummer.Input",
         "UnityEngine.UI",
         "Unity.TextMeshPro",
         "Unity.InputSystem"

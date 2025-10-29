@@ -16,7 +16,7 @@ namespace Tests
         public bool runTestOnStart = true;
         public bool testLegacyCompatibility = false;
         public bool createTestUI = true;
-        
+
         private async void Start()
         {
             if (runTestOnStart)
@@ -32,36 +32,36 @@ namespace Tests
 
             // Test 1: Modern Audio System
             await TestModernAudioSystem();
-            
+
             // Test 2: UI Integration
             await TestUIIntegration();
-            
+
             Debug.Log("=== Modern Audio System Test Completed ===");
         }
 
         private async Task TestModernAudioSystem()
         {
             Debug.Log("--- Testing Modern Audio System ---");
-            
+
             try
             {
                 // Initialize modern audio service
                 await ModernAudioService.Instance.InitializeAsync();
                 Debug.Log("✓ ModernAudioService initialized without errors");
-                
+
                 // Check UnifiedAudioManager instance
                 var audioManager = ModernAudioService.Instance.GetAudioManager();
                 if (audioManager != null)
                 {
                     Debug.Log("✓ UnifiedAudioManager instance available");
-                    
+
                     // Test volume operations
-                    audioManager.SetVolume(AudioChannelType.Master, 0.8f);
-                    float masterVolume = audioManager.GetVolume(AudioChannelType.Master);
+                    audioManager.SetVolume((int)AudioChannelType.Master, 0.8f);
+                    float masterVolume = audioManager.GetVolume((int)AudioChannelType.Master);
                     Debug.Log($"✓ Master volume set and retrieved: {masterVolume:F2}");
-                    
-                    audioManager.SetVolume(AudioChannelType.SFX, 0.6f);
-                    float sfxVolume = audioManager.GetVolume(AudioChannelType.SFX);
+
+                    audioManager.SetVolume((int)AudioChannelType.SFX, 0.6f);
+                    float sfxVolume = audioManager.GetVolume((int)AudioChannelType.SFX);
                     Debug.Log($"✓ SFX volume set and retrieved: {sfxVolume:F2}");
                 }
                 else
@@ -78,17 +78,17 @@ namespace Tests
         private async Task TestUIIntegration()
         {
             Debug.Log("--- Testing UI Integration ---");
-            
+
             if (createTestUI)
             {
                 CreateTestVolumeSliders();
                 await Task.Delay(100); // Give sliders time to register
             }
-            
+
             // Check for VolumeSlider components
             var volumeSliders = FindObjectsByType<VolumeSlider>(FindObjectsSortMode.None);
             Debug.Log($"✓ Found {volumeSliders.Length} VolumeSlider components");
-            
+
             foreach (var volumeSlider in volumeSliders)
             {
                 if (volumeSlider.Slider != null)
@@ -105,7 +105,7 @@ namespace Tests
         private void CreateTestVolumeSliders()
         {
             Debug.Log("--- Creating Test Volume Sliders ---");
-            
+
             // Create a Canvas if one doesn't exist
             var canvas = FindFirstObjectByType<Canvas>();
             if (canvas == null)
@@ -119,10 +119,10 @@ namespace Tests
 
             // Create Master Volume Slider
             CreateVolumeSlider("Master Volume Slider", AudioChannelType.Master, canvas.transform);
-            
+
             // Create SFX Volume Slider
             CreateVolumeSlider("SFX Volume Slider", AudioChannelType.SFX, canvas.transform);
-            
+
             // Create Music Volume Slider
             CreateVolumeSlider("Music Volume Slider", AudioChannelType.Music, canvas.transform);
 
@@ -134,13 +134,13 @@ namespace Tests
             // Create slider GameObject
             var sliderObject = new GameObject(name);
             sliderObject.transform.SetParent(parent);
-            
+
             // Add Slider component
             var slider = sliderObject.AddComponent<Slider>();
             slider.minValue = 0f;
             slider.maxValue = 1f;
             slider.value = 1f;
-            
+
             // Add modern VolumeSlider component
             var volumeSlider = sliderObject.AddComponent<VolumeSlider>();
             // The VolumeSlider will auto-configure itself through its channelType field
@@ -150,15 +150,15 @@ namespace Tests
         public void TestVolumeChanges()
         {
             Debug.Log("--- Testing Volume Changes ---");
-            
+
             var audioManager = ModernAudioService.Instance.GetAudioManager();
             if (audioManager != null)
             {
                 // Test different volume levels
-                audioManager.SetVolume(AudioChannelType.Master, 1.0f);
-                audioManager.SetVolume(AudioChannelType.SFX, 0.8f);
-                audioManager.SetVolume(AudioChannelType.Music, 0.6f);
-                
+                audioManager.SetVolume((int)AudioChannelType.Master, 1.0f);
+                audioManager.SetVolume((int)AudioChannelType.SFX, 0.8f);
+                audioManager.SetVolume((int)AudioChannelType.Music, 0.6f);
+
                 Debug.Log("✓ Set test volume levels - check UI sliders for updates");
             }
             else
@@ -171,10 +171,10 @@ namespace Tests
         public void TestAudioPlayback()
         {
             Debug.Log("--- Testing Audio Playback ---");
-            
+
             // This would need actual audio clips to test properly
             Debug.Log("⚠ Audio playback test requires AudioClip assets - implement when clips are available");
-            
+
             // Example of how to test with actual clips:
             // ModernAudioService.Instance.PlaySFX(testSFXClip);
             // ModernAudioService.Instance.PlayMusic(testMusicClip);

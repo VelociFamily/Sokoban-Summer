@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
-using Core;
+using CoreShared;
 
 namespace Audio
 {
@@ -12,7 +12,7 @@ namespace Audio
     /// Handles all audio types (Music, SFX, etc.) through AudioMixer groups
     /// Replaces the fragmented VolumeControl/SfxVolumeControl system
     /// </summary>
-    public class UnifiedAudioManager : MonoBehaviour
+    public class UnifiedAudioManager : MonoBehaviour, IAudioManager
     {
         [Header("Audio Mixer")]
         [SerializeField] private AudioMixer masterMixer;
@@ -27,7 +27,7 @@ namespace Audio
         // Singleton instance
         public static UnifiedAudioManager Instance { get; private set; }
 
-        // Events for volume changes
+        // Events for volume changes (uses enum for readability in-audio domain)
         public static event Action<AudioChannelType, float> OnVolumeChanged;
 
         // UI sliders for volume control
@@ -93,31 +93,43 @@ namespace Audio
             }
 
             // Load saved volume settings and apply them
-            var settingsData = SaveFacade.Instance?.Settings;
-            foreach (var setting in volumeSettings.VolumeChannels)
+            var settingsData = Core.SaveFacade.Instance?.Settings;
+            if (volumeSettings != null)
             {
-                float savedVolume = setting.DefaultVolume;
-                if (settingsData != null)
+                foreach (var setting in volumeSettings.VolumeChannels)
                 {
-                    switch (setting.ChannelType)
+                    float savedVolume = setting.DefaultVolume;
+                    if (settingsData != null)
                     {
-                        case AudioChannelType.Master:
-                            savedVolume = settingsData.masterVolume; break;
-                        case AudioChannelType.Music:
-                            savedVolume = settingsData.musicVolume; break;
-                        case AudioChannelType.SFX:
-                            savedVolume = settingsData.sfxVolume; break;
+                        switch (setting.ChannelType)
+                        {
+                            case AudioChannelType.Master:
+                                savedVolume = settingsData.masterVolume; break;
+                            case AudioChannelType.Music:
+                                savedVolume = settingsData.musicVolume; break;
+                            case AudioChannelType.SFX:
+                                savedVolume = settingsData.sfxVolume; break;
+                        }
                     }
+
+                    SetVolume(setting.ChannelType, savedVolume, false); // Don't save again
                 }
-                SetVolume(setting.ChannelType, savedVolume, false); // Don't save again
             }
         }
 
         private void FindAndRegisterSliders()
         {
             // Find all VolumeSlider components in the scene and register them
-            var volumeSliderComponents = FindObjectsByType<VolumeSlider>(FindObjectsSortMode.None);
-            foreach (var sliderComponent in volumeSliderComponents) RegisterVolumeSlider(sliderComponent.ChannelType, sliderComponent.Slider);
+            try
+            {
+                var volumeSliderComponents = FindObjectsByType<VolumeSlider>(FindObjectsSortMode.None);
+                foreach (var sliderComponent in volumeSliderComponents)
+                    RegisterVolumeSlider(sliderComponent.ChannelType, sliderComponent.Slider);
+            }
+            catch
+            {
+                // fallback for older/newer Unity APIs
+            }
         }
 
         public void RegisterVolumeSlider(AudioChannelType channelType, Slider slider)
@@ -127,11 +139,11 @@ namespace Audio
             volumeSliders[channelType] = slider;
 
             // Set slider to current volume
-            var volumeChannel = volumeSettings.GetVolumeChannel(channelType);
+            var volumeChannel = volumeSettings?.GetVolumeChannel(channelType);
             if (volumeChannel != null)
             {
                 float currentVolume = volumeChannel.DefaultVolume;
-                var settingsData = SaveFacade.Instance?.Settings;
+                var settingsData = Core.SaveFacade.Instance?.Settings;
                 if (settingsData != null)
                 {
                     switch (channelType)
@@ -151,11 +163,12 @@ namespace Audio
             Debug.Log($"[UnifiedAudioManager]: Registered {channelType} volume slider");
         }
 
+        // Primary SetVolume implementation using enum
         public void SetVolume(AudioChannelType channelType, float volume, bool saveToPrefs = true)
         {
             volume = Mathf.Clamp01(volume);
 
-            var volumeChannel = volumeSettings.GetVolumeChannel(channelType);
+            var volumeChannel = volumeSettings?.GetVolumeChannel(channelType);
             if (volumeChannel == null)
             {
                 Debug.LogWarning($"[UnifiedAudioManager]: Unknown audio channel type: {channelType}");
@@ -172,15 +185,15 @@ namespace Audio
             }
 
             // Persist to SaveService
-            if (saveToPrefs && SaveFacade.Instance != null)
+            if (saveToPrefs && Core.SaveFacade.Instance != null)
             {
                 switch (channelType)
                 {
-                    case AudioChannelType.Master: SaveFacade.Instance.Settings.masterVolume = volume; break;
-                    case AudioChannelType.Music: SaveFacade.Instance.Settings.musicVolume = volume; break;
-                    case AudioChannelType.SFX: SaveFacade.Instance.Settings.sfxVolume = volume; break;
+                    case AudioChannelType.Master: Core.SaveFacade.Instance.Settings.masterVolume = volume; break;
+                    case AudioChannelType.Music: Core.SaveFacade.Instance.Settings.musicVolume = volume; break;
+                    case AudioChannelType.SFX: Core.SaveFacade.Instance.Settings.sfxVolume = volume; break;
                 }
-                SaveFacade.Instance.SaveSettings();
+                Core.SaveFacade.Instance.SaveSettings();
             }
 
             // Update UI slider if exists
@@ -198,11 +211,17 @@ namespace Audio
             Debug.Log($"[UnifiedAudioManager]: Set {channelType} volume to {volume:F2} ({volumeDb:F1}dB)");
         }
 
+        // IAudioManager-friendly overloads (int-based) so Core can use the shared interface
+        public void SetVolume(int channelType, float volume)
+        {
+            SetVolume((AudioChannelType)channelType, volume, true);
+        }
+
         public float GetVolume(AudioChannelType channelType)
         {
-            var vc = volumeSettings.GetVolumeChannel(channelType);
+            var vc = volumeSettings?.GetVolumeChannel(channelType);
             float def = vc != null ? vc.DefaultVolume : 1f;
-            var settingsData = SaveFacade.Instance?.Settings;
+            var settingsData = Core.SaveFacade.Instance?.Settings;
             if (settingsData == null) return def;
             return channelType switch
             {
@@ -211,6 +230,11 @@ namespace Audio
                 AudioChannelType.SFX => settingsData.sfxVolume,
                 _ => def
             };
+        }
+
+        public float GetVolume(int channelType)
+        {
+            return GetVolume((AudioChannelType)channelType);
         }
 
         // Music playback methods

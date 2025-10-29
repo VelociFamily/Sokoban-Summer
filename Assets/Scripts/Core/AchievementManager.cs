@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Threading.Tasks;
-using Gameplay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -123,7 +122,9 @@ namespace Core
                 CompleteTutorial = true;
             }
 
-            CheckPowerUpAchievement();
+            // Power-up based achievements are triggered from gameplay code; core shouldn't reference gameplay types directly.
+            // Keep this call for backward compatibility only if gameplay invokes CheckPowerUpAchievement via messages.
+            // CheckPowerUpAchievement();
             UpdateAchievementDisplay();
         }
 
@@ -133,12 +134,8 @@ namespace Core
 
         private void CheckPowerUpAchievement()
         {
-            // Ensure achievement is only unlocked when conditions are met during gameplay
-            if (confuseAndSpeedUnlocked ||
-                ConfusePowerDown.confuseTurns <= 0 ||
-                TeleportPowerUp.teleportTimes <= 0) return;
-            confuseAndSpeedUnlocked = true; // Prevents re-unlocking
-            UnlockConfuseAndSpeed();
+            // Deprecated: gameplay should call UnlockConfuseAndSpeed() directly when both powerups are used.
+            // Left intentionally empty to avoid compile-time dependency on gameplay classes.
         }
 
         // ======================

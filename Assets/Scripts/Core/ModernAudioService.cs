@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using UnityEngine;
+using CoreShared;
 
 namespace Core
 {
@@ -12,7 +13,7 @@ namespace Core
         private static ModernAudioService _instance;
         public static ModernAudioService Instance => _instance ??= new ModernAudioService();
 
-        private Audio.UnifiedAudioManager _audioManager;
+    private IAudioManager _audioManager; // Use shared interface to avoid asmdef cycles
 
         private ModernAudioService() { }
 
@@ -23,44 +24,77 @@ namespace Core
         {
             Debug.Log("[ModernAudioService]: Initializing modern audio system...");
 
-            // Find or create UnifiedAudioManager
-            _audioManager = Object.FindFirstObjectByType<Audio.UnifiedAudioManager>();
+            // Find existing implementer of IAudioManager in the scene
+            var found = Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
+            foreach (var mb in found)
+            {
+                if (mb is IAudioManager ia)
+                {
+                    _audioManager = ia;
+                    break;
+                }
+            }
+
             if (_audioManager == null)
             {
-                // Create UnifiedAudioManager GameObject
-                var audioManagerObject = new GameObject("UnifiedAudioManager");
-                _audioManager = audioManagerObject.AddComponent<Audio.UnifiedAudioManager>();
-                
-                Debug.Log("[ModernAudioService]: Created UnifiedAudioManager");
-            }
-            else
-            {
-                Debug.Log("[ModernAudioService]: Found existing UnifiedAudioManager");
+                Debug.LogWarning("[ModernAudioService]: No IAudioManager implementation found in scene. Ensure UnifiedAudioManager exists or provide a prefab via GameInitializer.");
             }
 
             // Wait a frame to ensure initialization completes
             await Task.Yield();
-            
+
             Debug.Log("[ModernAudioService]: Modern audio system initialized successfully");
         }
 
         /// <summary>
         /// Initialize with prefab reference (for compatibility with GameInitializer)
         /// </summary>
-        public async Task InitializeWithPrefabAsync(Audio.UnifiedAudioManager audioManagerPrefab)
+        public async Task InitializeWithPrefabAsync(UnityEngine.Object audioManagerPrefab)
         {
             Debug.Log("[ModernAudioService]: Initializing with prefab...");
-            
+
             // Find existing or create from prefab
-            _audioManager = Object.FindFirstObjectByType<Audio.UnifiedAudioManager>();
+            // Try to find an existing implementer first
+            var found = Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None);
+            foreach (var mb in found)
+            {
+                if (mb is IAudioManager ia)
+                {
+                    _audioManager = ia;
+                    break;
+                }
+            }
+
             if (_audioManager == null && audioManagerPrefab != null)
             {
-                _audioManager = Object.Instantiate(audioManagerPrefab);
-                Debug.Log("[ModernAudioService]: Created UnifiedAudioManager from prefab");
+                // Instantiate prefab (supports either GameObject or Component prefabs)
+                GameObject prefabGo = null;
+                if (audioManagerPrefab is GameObject go) prefabGo = go;
+                else if (audioManagerPrefab is Component comp) prefabGo = comp.gameObject;
+
+                if (prefabGo != null)
+                {
+                    var clone = Object.Instantiate(prefabGo);
+                    // find IAudioManager on the instantiated object
+                    var comps = clone.GetComponentsInChildren<MonoBehaviour>(true);
+                    foreach (var mb in comps)
+                    {
+                        if (mb is IAudioManager ia)
+                        {
+                            _audioManager = ia;
+                            break;
+                        }
+                    }
+
+                    if (_audioManager != null)
+                        Debug.Log("[ModernAudioService]: Created UnifiedAudioManager from prefab");
+                    else
+                        Debug.LogWarning("[ModernAudioService]: Prefab instantiated but no IAudioManager found on it.");
+                }
             }
             else if (_audioManager == null)
             {
-                // Fallback to creating new instance
+                // Fallback to creating new instance (will attempt to find in scene)
                 await InitializeAsync();
                 return;
             }
@@ -72,9 +106,9 @@ namespace Core
         /// <summary>
         /// Get the UnifiedAudioManager instance
         /// </summary>
-        public Audio.UnifiedAudioManager GetAudioManager()
+        public IAudioManager GetAudioManager()
         {
-            return _audioManager ?? Audio.UnifiedAudioManager.Instance;
+            return _audioManager;
         }
 
         /// <summary>
@@ -89,7 +123,7 @@ namespace Core
             }
             else
             {
-                Debug.LogWarning("[ModernAudioService]: UnifiedAudioManager not available for SFX playback");
+                Debug.LogWarning("[ModernAudioService]: IAudioManager not available for SFX playback");
             }
         }
 
@@ -105,14 +139,14 @@ namespace Core
             }
             else
             {
-                Debug.LogWarning("[ModernAudioService]: UnifiedAudioManager not available for music playback");
+                Debug.LogWarning("[ModernAudioService]: IAudioManager not available for music playback");
             }
         }
 
         /// <summary>
         /// Set volume for a specific channel
         /// </summary>
-        public void SetVolume(Audio.AudioChannelType channelType, float volume)
+        public void SetVolume(int channelType, float volume)
         {
             var manager = GetAudioManager();
             if (manager != null)
@@ -121,22 +155,22 @@ namespace Core
             }
             else
             {
-                Debug.LogWarning("[ModernAudioService]: UnifiedAudioManager not available for volume control");
+                Debug.LogWarning("[ModernAudioService]: IAudioManager not available for volume control");
             }
         }
 
         /// <summary>
         /// Get volume for a specific channel
         /// </summary>
-        public float GetVolume(Audio.AudioChannelType channelType)
+        public float GetVolume(int channelType)
         {
             var manager = GetAudioManager();
             if (manager != null)
             {
                 return manager.GetVolume(channelType);
             }
-            
-            Debug.LogWarning("[ModernAudioService]: UnifiedAudioManager not available for volume query");
+
+            Debug.LogWarning("[ModernAudioService]: IAudioManager not available for volume query");
             return 1f;
         }
     }
