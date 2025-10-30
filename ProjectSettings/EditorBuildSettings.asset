@@ -6,28 +6,28 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/_Project/SokobanSummer/Scenes/Game.unity
     guid: 8cc7d1fa568394447bca96723384864c
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/_Project/SokobanSummer/Scenes/Main Menu.unity
     guid: 64c8dc9c90e63cf4d963e359a517e0ca
   - enabled: 1
-    path: Assets/Scenes/Tutorials/Moving Tutorial.unity
+    path: Assets/_Project/SokobanSummer/Scenes/Tutorials/Moving Tutorial.unity
     guid: db4bf80b9453419449cdcbd7fbf1ad84
   - enabled: 1
-    path: Assets/Scenes/Tutorials/Button Tutorial.unity
+    path: Assets/_Project/SokobanSummer/Scenes/Tutorials/Button Tutorial.unity
     guid: 8093df6fe69eee34c932f463c8fc7a1c
   - enabled: 1
-    path: Assets/Scenes/Tutorials/Speed Tutorial.unity
+    path: Assets/_Project/SokobanSummer/Scenes/Tutorials/Speed Tutorial.unity
     guid: 9fe9cdf7773e72241b99f38eca05a944
   - enabled: 1
-    path: Assets/Scenes/Tutorials/Confuse Tutorial.unity
+    path: Assets/_Project/SokobanSummer/Scenes/Tutorials/Confuse Tutorial.unity
     guid: 62c538020a277cd498bf7698e4312489
   - enabled: 1
-    path: Assets/Scenes/Levels/Level One.unity
+    path: Assets/_Project/SokobanSummer/Scenes/Levels/Level One.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/Levels/Level Two.unity
+    path: Assets/_Project/SokobanSummer/Scenes/Levels/Level Two.unity
     guid: c53e394e53f7c664cb1711591a400d8e
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: aacdd2bcc28714340b75466dc0011f48,
