@@ -16,6 +16,14 @@ namespace UI
     /// </summary>
     public class DynamicLevelSelector : MonoBehaviour
     {
+        // Use deferred destruction to avoid exceptions during OnValidate, render, physics, or animation callbacks.
+        private static void SafeDestroy(UnityEngine.Object obj)
+        {
+            if (obj == null) return;
+            // Unity warns: "Destroying components immediately is not permitted during ... or OnValidate. You must use Destroy instead."
+            // Always prefer deferred destroy; it's safe in both play mode and edit-time contexts.
+            UnityEngine.Object.Destroy(obj);
+        }
         public enum LayoutMode
         {
             VerticalList,
@@ -264,7 +272,7 @@ namespace UI
             foreach (var button in generatedButtons)
             {
                 if (button != null)
-                    DestroyImmediate(button);
+                    SafeDestroy(button);
             }
             generatedButtons.Clear();
             generatedLevelButtons.Clear();
@@ -662,7 +670,7 @@ namespace UI
                 if (existingGrid != null)
                 {
                     if (autoAddVerticalLayoutGroup)
-                        DestroyImmediate(existingGrid);
+                        SafeDestroy(existingGrid);
                 }
 
                 var v = existingVertical;
@@ -695,7 +703,7 @@ namespace UI
                 // Remove vertical if present
                 if (existingVertical != null)
                 {
-                    DestroyImmediate(existingVertical);
+                    SafeDestroy(existingVertical);
                 }
 
                 // Grid
