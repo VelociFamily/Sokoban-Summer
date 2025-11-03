@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 2772994923042690502}
   - component: {fileID: -6325207533576139433}
   m_Layer: 22
-  m_Name: Backgound Canvas
+  m_Name: background-canvas
   m_TagString: background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4983235438029878412
 RectTransform:
   m_ObjectHideFlags: 0
