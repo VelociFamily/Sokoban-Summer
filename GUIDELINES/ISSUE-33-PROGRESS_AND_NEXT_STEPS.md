@@ -86,12 +86,27 @@ git push origin issue/33-normalize-prefab-asset-naming-placement
 
 5) Repeat until source folder `Assets/_Project/SokobanSummer/Prefabs/` is clean (minus exclusions).
 
-## Ready-to-move candidates (next up)
+## Recent progress (latest commits)
 
-- System/levels (safe; widely referenced but GUID-stable when .meta moves):
-  - `GameSceneInfo.prefab`, `LevelSceneInfo.prefab`, `TutorialSceneInfo.prefab` -> `Assets/Prefabs/system/` (kebab-case names)
-  - `LevelTemplateManager.prefab` -> `Assets/Prefabs/levels/level-template-manager.prefab`
-- Effects (remaining): already moved leaf/wind; scan for any other `*Effect*.prefab` and group under `effects/`.
+Batch 2 (commit ea5aaea):
+- Moved `GameSceneInfo.prefab` -> `Assets/Prefabs/system/game-scene-info.prefab`
+- Moved `LevelSceneInfo.prefab` -> `Assets/Prefabs/system/level-scene-info.prefab`
+- Moved `TutorialSceneInfo.prefab` -> `Assets/Prefabs/system/tutorial-scene-info.prefab`
+- Moved `LevelTemplateManager.prefab` -> `Assets/Prefabs/levels/level-template-manager.prefab`
+- Validation: SUCCESS ✓
+
+Batch 3 (commit 3c74544):
+- Moved `UnifiedAudioManagerPrefab.prefab` -> `Assets/Prefabs/Audio/unified-audio-manager.prefab`
+- Cleaned up empty directories: `canvases/`, `interactive/`, `walls/`
+- Validation: SUCCESS ✓
+
+## Current state
+
+Source folder `Assets/_Project/SokobanSummer/Prefabs/` now contains only:
+- `Achievement badges/` folder with timestamped experimental prefabs (per exclusion policy, left as-is)
+- Empty folder metadata (`.meta` files for `canvases/`, `interactive/`, `walls/` - Unity artifacts, can be ignored)
+
+All functional prefabs have been successfully migrated to `Assets/Prefabs/` with kebab-case naming and proper categorization.
 
 ## Rollback strategy
 
