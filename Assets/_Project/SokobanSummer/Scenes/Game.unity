@@ -153,7 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Background: {fileID: 7989558775053221618, guid: caac141454713444aac4f403378378b5,
     type: 3}
-  UnifiedAudioManagerPrefab: {fileID: 4684732665795058736, guid: 2fac25f5d6ca84f4b9fb94f468a5c181,
+  UnifiedAudioManagerPrefab: {fileID: 3022072492611492690, guid: 2fac25f5d6ca84f4b9fb94f468a5c181,
     type: 3}
   LevelLogger: {fileID: 7322051495895024113, guid: 8f10432bbd156e44ba6569edb1f1fbd9,
     type: 3}

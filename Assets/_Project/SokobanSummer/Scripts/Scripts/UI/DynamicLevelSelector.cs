@@ -4,6 +4,10 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Core;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
 namespace UI
 {
     /// <summary>
@@ -633,6 +637,19 @@ namespace UI
         /// </summary>
         private void EnsureOrConfigureLayoutGroup()
         {
+            // During batch editor automation (validation / autofix) OnValidate and other editor
+            // callbacks can run in a context where adding/removing components causes
+            // DestroyImmediate / AddComponent to throw or trigger unexpected editor state.
+            // Skip layout modifications when running in batch mode to keep automation stable.
+#if UNITY_EDITOR
+            // EditorApplication.isBatchMode is not available on all Editor versions; detect
+            // batch mode by checking command line args instead.
+            if (System.Array.IndexOf(System.Environment.GetCommandLineArgs(), "-batchmode") >= 0)
+            {
+                return;
+            }
+#endif
+
             if (levelButtonContainer == null) return;
 
             var existingVertical = levelButtonContainer.GetComponent<VerticalLayoutGroup>();
