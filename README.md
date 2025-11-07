@@ -8,6 +8,15 @@ Quick checklist
 
 Why these files exist
 
+## Documentation
+
+Project documentation is organized into focused guides:
+
+- **[LEVEL_BUTTON_VISUAL_POLISH_GUIDE.md](./LEVEL_BUTTON_VISUAL_POLISH_GUIDE.md)** - Complete guide for designing and implementing polished level selection UI, including grid/vertical layout decisions, font/background cohesion, and sprite import settings
+- **[LEVEL_BUTTON_SETUP_GUIDE.md](./LEVEL_BUTTON_SETUP_GUIDE.md)** - Technical setup instructions for level button prefabs with DynamicLevelButton component
+- **[DYNAMIC_LEVEL_SYSTEM_GUIDE.md](./DYNAMIC_LEVEL_SYSTEM_GUIDE.md)** - Architecture and implementation guide for the dynamic level management system
+- **[PERSISTENCE_GUIDE.md](./PERSISTENCE_GUIDE.md)** - How the game saves and loads player progress across sessions
+
 Recommended Git LFS usage
 1. Install Git LFS: `git lfs install`
 2. Track asset types you want to store in LFS, for example:
