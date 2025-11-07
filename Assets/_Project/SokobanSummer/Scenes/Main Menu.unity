@@ -2303,7 +2303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.DynamicLevelSelector
   levelButtonContainer: {fileID: 770562427}
-  levelButtonPrefab: {fileID: 7049657381551481044, guid: 91fb6b7599ce51f48b473bd623b2a9ff,
+  levelButtonPrefab: {fileID: 395609894785464608, guid: ea7d36aa3911c1b4bbec97130f32c6e2,
     type: 3}
   sectionHeaderPrefab: {fileID: 0}
   showTutorials: 1
@@ -2314,7 +2314,7 @@ MonoBehaviour:
   buttonHeight: 212
   headerHeight: 80
   stretchButtonsToContainerWidth: 1
-  layoutMode: 0
+  layoutMode: 1
   gridColumns: 5
   gridCellHeight: 180
   gridHorizontalSpacing: 24
