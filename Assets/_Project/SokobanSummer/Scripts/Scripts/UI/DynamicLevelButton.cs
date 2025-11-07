@@ -25,11 +25,17 @@ namespace UI
         [Tooltip("Image component for level preview")]
         public Image previewImage;
 
+        [Tooltip("Fallback sprite to show when no preview is available")]
+        public Sprite fallbackThumbnail;
+
         [Tooltip("Lock overlay GameObject (shown when level is locked)")]
         public GameObject lockOverlay;
 
     [Tooltip("Image used to render the lock overlay sprite")]
     public Image lockOverlayImage;
+
+        [Tooltip("GameObject with completion badge (star/check, shown when level completed)")]
+        public GameObject completionBadge;
 
     [Header("Audio")]
     [Tooltip("Optional click sound to play when selecting a level")]
@@ -65,14 +71,17 @@ namespace UI
             if (goalText != null)
                 SetupGoalText(info);
 
-            if (previewImage != null && info.previewImage != null)
-                previewImage.sprite = info.previewImage;
+            if (previewImage != null)
+            {
+                previewImage.sprite = info.previewImage != null ? info.previewImage : fallbackThumbnail;
+            }
 
             EnsureLockOverlayImage();
             ApplyAssignedLockSprite();
 
-            // Update lock state
+            // Update lock state and completion badge
             UpdateLockState();
+            UpdateCompletionBadge();
         }
 
         /// <summary>
@@ -111,6 +120,17 @@ namespace UI
             {
                 lockOverlayImage.enabled = !canLoad;
             }
+        }
+
+        /// <summary>
+        /// Update completion badge visibility based on level completion status
+        /// </summary>
+        public void UpdateCompletionBadge()
+        {
+            if (completionBadge == null || levelInfo == null) return;
+
+            bool isCompleted = LevelManager.Instance.IsLevelCompleted(levelInfo.scenePath);
+            completionBadge.SetActive(isCompleted);
         }
 
         /// <summary>
