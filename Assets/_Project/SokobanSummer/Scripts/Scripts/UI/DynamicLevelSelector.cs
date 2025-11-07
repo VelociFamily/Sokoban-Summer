@@ -130,6 +130,7 @@ namespace UI
         private void Start()
         {
             AutoBindScrollRectAndContainer();
+            AutoBindPaginationButtonsIfMissing();
             EnsureOrConfigureLayoutGroup();
             HookPaginationButtons();
             PopulateLevelButtons();
@@ -139,6 +140,7 @@ namespace UI
         {
             // Apply layout changes live in editor
             AutoBindScrollRectAndContainer();
+            AutoBindPaginationButtonsIfMissing();
             EnsureOrConfigureLayoutGroup();
             AssignDefaultPrefabsInEditor();
             HookPaginationButtons();
@@ -552,6 +554,54 @@ namespace UI
             {
                 nextPageButton.onClick.RemoveListener(GoToNextPage);
                 nextPageButton.onClick.AddListener(GoToNextPage);
+            }
+        }
+
+        /// <summary>
+        /// Attempt to auto-bind pagination buttons by name if they are not explicitly assigned.
+        /// Looks for children under this GameObject or its parent canvas whose names contain
+        /// "prev" / "previous" and "next". Keeps existing assignments if already set.
+        /// </summary>
+        private void AutoBindPaginationButtonsIfMissing()
+        {
+            if (!enablePagination || layoutMode != LayoutMode.Grid)
+                return;
+
+            // If both already assigned, skip.
+            if (previousPageButton != null && nextPageButton != null)
+                return;
+
+            // Search breadth: this selector's transform, then its parent hierarchy up to 2 levels.
+            List<Transform> searchRoots = new List<Transform>();
+            searchRoots.Add(transform);
+            if (transform.parent != null)
+            {
+                searchRoots.Add(transform.parent);
+                if (transform.parent.parent != null)
+                    searchRoots.Add(transform.parent.parent);
+            }
+
+            foreach (var root in searchRoots)
+            {
+                if (root == null) continue;
+                var buttons = root.GetComponentsInChildren<Button>(true);
+                foreach (var btn in buttons)
+                {
+                    if (btn == null) continue;
+                    string n = btn.gameObject.name.ToLower();
+                    if (previousPageButton == null && (n.Contains("prev") || n.Contains("previous")))
+                    {
+                        previousPageButton = btn;
+                    }
+                    else if (nextPageButton == null && n.Contains("next"))
+                    {
+                        nextPageButton = btn;
+                    }
+                    if (previousPageButton != null && nextPageButton != null)
+                        break;
+                }
+                if (previousPageButton != null && nextPageButton != null)
+                    break;
             }
         }
 
