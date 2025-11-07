@@ -25,6 +25,10 @@ namespace Core
 
         [Header("Debug")]
         [SerializeField] private bool debugMode = false;
+        [Tooltip("If true, bypass locking and allow all levels to load.")]
+        [SerializeField] private bool unlockAllForTesting = false;
+        [Tooltip("Automatically mark gameplay levels (non-tutorial) as requiring unlock unless overridden by LevelData.")]
+        [SerializeField] private bool autoRequireUnlockForGameplay = true;
 
         // Cached level information
         private List<LevelInfo> allLevels = new List<LevelInfo>();
@@ -140,8 +144,8 @@ namespace Core
             // Try to extract order from filename (e.g., "01_Tutorial", "Level One" -> 1)
             levelInfo.sortOrder = ExtractSortOrderFromName(levelInfo.sceneName);
 
-            // Set default values
-            levelInfo.requiresUnlock = false; // Default to unlocked for easier testing
+            // Set default values (tutorials default unlocked; gameplay may auto require unlock)
+            levelInfo.requiresUnlock = levelInfo.sceneType == SceneType.GameplayLevel && autoRequireUnlockForGameplay;
             levelInfo.parMoves = 0;
             levelInfo.parTime = 0f;
 
@@ -295,6 +299,8 @@ namespace Core
         public bool CanLoadLevel(LevelInfo levelInfo)
         {
             if (levelInfo == null) return false;
+
+            if (unlockAllForTesting) return true; // global override
 
             // If level doesn't require unlock, it's always available
             if (!levelInfo.requiresUnlock) return true;
