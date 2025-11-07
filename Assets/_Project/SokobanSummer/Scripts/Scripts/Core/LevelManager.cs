@@ -299,12 +299,25 @@ namespace Core
             // If level doesn't require unlock, it's always available
             if (!levelInfo.requiresUnlock) return true;
 
-            // For the first tutorial, it's always unlocked
+            // First item of its category is always unlocked
             if (levelInfo.sceneType == SceneType.TutorialLevel && levelInfo.sortOrder == 0)
                 return true;
 
-            // For now, make all levels available for testing
-            // TODO: Implement proper progression system based on level completion
+            // Determine the ordered list relevant for progression
+            List<LevelInfo> ordered = levelInfo.sceneType == SceneType.TutorialLevel ? tutorialLevels : gameplayLevels;
+            if (ordered == null || ordered.Count == 0) return true; // fallback
+
+            // Find the previous level in progression (strictly lower sortOrder)
+            LevelInfo previous = ordered
+                .Where(l => l.sortOrder < levelInfo.sortOrder)
+                .OrderByDescending(l => l.sortOrder)
+                .FirstOrDefault();
+
+            // If there is a previous level that itself requires unlock and is not completed, lock this one
+            if (previous != null && previous.requiresUnlock && !IsLevelCompleted(previous.buildIndex))
+                return false;
+
+            // Otherwise unlocked
             return true;
         }
 

@@ -37,6 +37,10 @@ namespace UI
         [Tooltip("GameObject with completion badge (star/check, shown when level completed)")]
         public GameObject completionBadge;
 
+    [Header("Lock Icon Sizing")]
+    [Tooltip("Ratio of lock icon size relative to button height (0-1).")]
+    [Range(0.1f, 1f)] public float lockIconSizeRatio = 0.45f;
+
     [Header("Audio")]
     [Tooltip("Optional click sound to play when selecting a level")]
     public AudioClip clickSfx;
@@ -119,6 +123,10 @@ namespace UI
             if (lockOverlayImage != null)
             {
                 lockOverlayImage.enabled = !canLoad;
+                if (!canLoad)
+                {
+                    AdjustLockIconSize();
+                }
             }
         }
 
@@ -160,6 +168,16 @@ namespace UI
                 lockOverlayImage.sprite = _assignedLockSprite;
                 lockOverlayImage.preserveAspect = true;
             }
+        }
+
+        private void AdjustLockIconSize()
+        {
+            if (lockOverlayImage == null) return;
+            var rootRect = GetComponent<RectTransform>();
+            if (rootRect == null) return;
+            float target = Mathf.Clamp(lockIconSizeRatio, 0.1f, 1f) * rootRect.rect.height;
+            var rt = lockOverlayImage.rectTransform;
+            rt.sizeDelta = new Vector2(target, target);
         }
 
         /// <summary>
