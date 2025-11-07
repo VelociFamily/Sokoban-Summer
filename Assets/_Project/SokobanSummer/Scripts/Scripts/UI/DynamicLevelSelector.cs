@@ -118,20 +118,24 @@ namespace UI
 
         [Tooltip("Optional button to move to the next page of levels")]
         public Button nextPageButton;
+    private List<GameObject> generatedButtons = new List<GameObject>();
+    private readonly List<DynamicLevelButton> generatedLevelButtons = new List<DynamicLevelButton>();
+    private readonly Dictionary<LevelManager.LevelInfo, DynamicLevelButton> levelInfoToButton = new Dictionary<LevelManager.LevelInfo, DynamicLevelButton>();
+    private readonly List<LevelManager.LevelInfo> orderedLevelSequence = new List<LevelManager.LevelInfo>();
+    private readonly List<LevelManager.LevelInfo> cachedDisplayLevels = new List<LevelManager.LevelInfo>();
+    private int currentPage;
+    private bool preferLastUnlockedSelection = true;
+    // Effective columns after responsive calculation. Falls back to configured gridColumns until first grid pass.
+    private int effectiveColumns = 0;
+    private bool needsGridPaginationRefresh = false; // set when resize changes columns/page size
+    private bool isRefreshingForResize = false; // guard to prevent recursive refresh loops
 
-        private List<GameObject> generatedButtons = new List<GameObject>();
-        private readonly List<DynamicLevelButton> generatedLevelButtons = new List<DynamicLevelButton>();
-        private readonly Dictionary<LevelManager.LevelInfo, DynamicLevelButton> levelInfoToButton = new Dictionary<LevelManager.LevelInfo, DynamicLevelButton>();
-        private readonly List<LevelManager.LevelInfo> orderedLevelSequence = new List<LevelManager.LevelInfo>();
-        private readonly List<LevelManager.LevelInfo> cachedDisplayLevels = new List<LevelManager.LevelInfo>();
-        private int currentPage;
-        private bool preferLastUnlockedSelection = true;
-
-        private int LevelsPerPage => Mathf.Max(1, gridColumns * Mathf.Max(1, gridRowsPerPage));
+        private int LevelsPerPage => Mathf.Max(1, Mathf.Max(1, (effectiveColumns > 0 ? effectiveColumns : gridColumns)) * Mathf.Max(1, gridRowsPerPage));
 
         private void Start()
         {
             AutoBindScrollRectAndContainer();
+            AutoBindPaginationButtonsIfMissing();
             EnsureOrConfigureLayoutGroup();
             HookPaginationButtons();
             PopulateLevelButtons();
@@ -141,6 +145,7 @@ namespace UI
         {
             // Apply layout changes live in editor
             AutoBindScrollRectAndContainer();
+            AutoBindPaginationButtonsIfMissing();
             EnsureOrConfigureLayoutGroup();
             AssignDefaultPrefabsInEditor();
             HookPaginationButtons();
@@ -303,6 +308,23 @@ namespace UI
                 {
                     RecalculateGrid(grid);
                     LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
+                    // If responsive columns changed the page capacity, rebuild current page & selection.
+                    if (needsGridPaginationRefresh && !isRefreshingForResize)
+                    {
+                        isRefreshingForResize = true;
+                        needsGridPaginationRefresh = false;
+                        ClearGeneratedButtons();
+                        // Re-render page with updated LevelsPerPage
+                        if (layoutMode == LayoutMode.Grid)
+                        {
+                            RenderCurrentGridPage();
+                            UpdatePaginationControls();
+                            int defaultSelectionIndex = ResolveDefaultSelectionIndex(orderedLevelSequence);
+                            SelectDefaultLevelButton(defaultSelectionIndex, preferLastUnlockedSelection);
+                        }
+                        isRefreshingForResize = false;
+                        LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
+                    }
                 }
                 return;
             }
@@ -540,6 +562,54 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Attempt to auto-bind pagination buttons by name if they are not explicitly assigned.
+        /// Looks for children under this GameObject or its parent canvas whose names contain
+        /// "prev" / "previous" and "next". Keeps existing assignments if already set.
+        /// </summary>
+        private void AutoBindPaginationButtonsIfMissing()
+        {
+            if (!enablePagination || layoutMode != LayoutMode.Grid)
+                return;
+
+            // If both already assigned, skip.
+            if (previousPageButton != null && nextPageButton != null)
+                return;
+
+            // Search breadth: this selector's transform, then its parent hierarchy up to 2 levels.
+            List<Transform> searchRoots = new List<Transform>();
+            searchRoots.Add(transform);
+            if (transform.parent != null)
+            {
+                searchRoots.Add(transform.parent);
+                if (transform.parent.parent != null)
+                    searchRoots.Add(transform.parent.parent);
+            }
+
+            foreach (var root in searchRoots)
+            {
+                if (root == null) continue;
+                var buttons = root.GetComponentsInChildren<Button>(true);
+                foreach (var btn in buttons)
+                {
+                    if (btn == null) continue;
+                    string n = btn.gameObject.name.ToLower();
+                    if (previousPageButton == null && (n.Contains("prev") || n.Contains("previous")))
+                    {
+                        previousPageButton = btn;
+                    }
+                    else if (nextPageButton == null && n.Contains("next"))
+                    {
+                        nextPageButton = btn;
+                    }
+                    if (previousPageButton != null && nextPageButton != null)
+                        break;
+                }
+                if (previousPageButton != null && nextPageButton != null)
+                    break;
+            }
+        }
+
         private void GoToPreviousPage()
         {
             if (currentPage <= 0) return;
@@ -570,6 +640,11 @@ namespace UI
 
         private void UpdatePaginationControls()
         {
+            // Always clamp current page to valid bounds before updating controls
+            if (layoutMode == LayoutMode.Grid)
+            {
+                currentPage = Mathf.Clamp(currentPage, 0, Mathf.Max(0, GetTotalPages() - 1));
+            }
             bool shouldShow = enablePagination && layoutMode == LayoutMode.Grid && cachedDisplayLevels.Count > LevelsPerPage;
             int totalPages = Mathf.Max(1, GetTotalPages());
 
@@ -758,6 +833,8 @@ namespace UI
             if (rt == null) return;
 
             // Responsive columns
+            int previousColumns = effectiveColumns > 0 ? effectiveColumns : gridColumns;
+            int previousPerPage = LevelsPerPage;
             int cols = Mathf.Max(1, gridColumns);
             if (enableResponsiveColumns)
             {
@@ -774,6 +851,8 @@ namespace UI
                 : rt.rect.width / cols;
 
             grid.cellSize = new Vector2(cellWidth, gridCellHeight);
+            grid.constraintCount = cols; // ensure constraint count matches effective columns
+            effectiveColumns = cols;
 
             // Calculate rows and set a preferred height via sizeDelta
             int itemCount = generatedButtons.Count;
@@ -784,6 +863,24 @@ namespace UI
             // Keep width delta, only adjust height to enable scrolling
             size.y = contentHeight;
             rt.sizeDelta = size;
+
+            // Detect pagination capacity change and schedule refresh.
+            if (layoutMode == LayoutMode.Grid && enablePagination)
+            {
+                int newPerPage = LevelsPerPage;
+                if (newPerPage != previousPerPage || cols != previousColumns)
+                {
+                    // Clamp current page to new total pages.
+                    currentPage = Mathf.Clamp(currentPage, 0, Mathf.Max(0, GetTotalPages() - 1));
+                    // Avoid jumping pages to last unlocked after a resize; keep current page stable.
+                    preferLastUnlockedSelection = false;
+                    // Flag for rebuild after current layout pass.
+                    if (!isRefreshingForResize)
+                    {
+                        needsGridPaginationRefresh = true;
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -850,6 +947,9 @@ namespace UI
                 if (grid != null)
                 {
                     RecalculateGrid(grid);
+                    // Trigger a layout refresh so pagination/selection stays in sync after resize
+                    UpdateLayout();
+                    UpdatePaginationControls();
                 }
             }
         }
