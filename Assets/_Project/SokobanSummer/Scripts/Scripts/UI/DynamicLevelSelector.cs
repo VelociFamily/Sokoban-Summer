@@ -16,12 +16,18 @@ namespace UI
     /// </summary>
     public class DynamicLevelSelector : MonoBehaviour
     {
-        // Use deferred destruction to avoid exceptions during OnValidate, render, physics, or animation callbacks.
+        // Destroy helper: use DestroyImmediate in edit mode (OnValidate, etc.) to avoid
+        // "Destroy may not be called from edit mode" warnings; fall back to Destroy when playing.
         private static void SafeDestroy(UnityEngine.Object obj)
         {
             if (obj == null) return;
-            // Unity warns: "Destroying components immediately is not permitted during ... or OnValidate. You must use Destroy instead."
-            // Always prefer deferred destroy; it's safe in both play mode and edit-time contexts.
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                UnityEngine.Object.DestroyImmediate(obj);
+                return;
+            }
+#endif
             UnityEngine.Object.Destroy(obj);
         }
         public enum LayoutMode
@@ -39,8 +45,8 @@ namespace UI
         [Tooltip("Prefab for section headers (optional)")]
         public GameObject sectionHeaderPrefab;
 
-        [Header("Configuration")]
-        [Tooltip("Show tutorial levels")]
+        private void EnsureOrConfigureLayoutGroup()
+        {
         public bool showTutorials = true;
 
         [Tooltip("Show gameplay levels")]
@@ -55,76 +61,88 @@ namespace UI
 
     [Tooltip("Auto-add a VerticalLayoutGroup to the container if none is present")]
     public bool autoAddVerticalLayoutGroup = true;
+            var existingVertical = levelButtonContainer.GetComponent<VerticalLayoutGroup>();
+            var existingGrid = levelButtonContainer.GetComponent<GridLayoutGroup>();
+            var fitter = levelButtonContainer.GetComponent<ContentSizeFitter>();
 
-    [Tooltip("Preferred height for each level button when using layout groups")]
-    public float buttonHeight = 212f;
+            // Remove any existing LayoutGroup not matching desired mode immediately (edit) or deferred (play).
+            if (layoutMode == LayoutMode.VerticalList && existingGrid != null)
+            {
+                SafeDestroy(existingGrid);
+                existingGrid = null; // mark removed
+            }
+            else if (layoutMode == LayoutMode.Grid && existingVertical != null)
+            {
+                SafeDestroy(existingVertical);
+                existingVertical = null; // mark removed
+            }
 
-    [Tooltip("Preferred height for section headers when using layout groups")]
-    public float headerHeight = 80f;
+            if (layoutMode == LayoutMode.VerticalList)
+            {
+                VerticalLayoutGroup v = existingVertical;
+                if (v == null && autoAddVerticalLayoutGroup)
+                {
+                    v = levelButtonContainer.gameObject.AddComponent<VerticalLayoutGroup>();
+                    if (v == null)
+                    {
+                        // Could not create component (another LayoutGroup still pending destroy in play mode) – abort.
+                        return;
+                    }
+                }
+                if (v != null)
+                {
+                    v.childAlignment = TextAnchor.UpperCenter;
+                    v.childControlWidth = true;
+                    v.childControlHeight = true;
+                    v.childForceExpandWidth = true;
+                    v.childForceExpandHeight = false;
+                    v.spacing = buttonSpacing;
+                }
 
-    [Tooltip("Stretch buttons to container width when using layout groups")]
-    public bool stretchButtonsToContainerWidth = true;
+                if (autoAddVerticalLayoutGroup)
+                {
+                    if (fitter == null)
+                    {
+                        fitter = levelButtonContainer.gameObject.AddComponent<ContentSizeFitter>();
+                    }
+                    if (fitter != null)
+                    {
+                        fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+                        fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+                    }
+                }
+            }
+            else // Grid mode
+            {
+                GridLayoutGroup grid = existingGrid;
+                if (grid == null)
+                {
+                    grid = levelButtonContainer.gameObject.AddComponent<GridLayoutGroup>();
+                    if (grid == null)
+                    {
+                        // Cannot add grid (likely vertical pending destroy in play mode) – abort.
+                        return;
+                    }
+                }
+                grid.childAlignment = TextAnchor.UpperCenter;
+                grid.spacing = new Vector2(gridHorizontalSpacing, gridVerticalSpacing);
+                grid.padding = new RectOffset(gridPaddingLeft, gridPaddingRight, gridPaddingTop, gridPaddingBottom);
+                grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
+                grid.constraintCount = Mathf.Max(1, gridColumns);
 
-        [Tooltip("Choose how to lay out the items")]
-        public LayoutMode layoutMode = LayoutMode.VerticalList;
+                // For grids, ensure a ContentSizeFitter exists but disable vertical fitting to avoid layout loops.
+                if (fitter == null)
+                {
+                    fitter = levelButtonContainer.gameObject.AddComponent<ContentSizeFitter>();
+                }
+                if (fitter != null)
+                {
+                    fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+                    fitter.verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+                }
 
-        [Header("Grid Settings")]
-    [Tooltip("Number of columns for Grid layout")]
-    public int gridColumns = 5;
-
-        [Tooltip("Cell height for Grid layout")]
-    public float gridCellHeight = 180f;
-
-        [Tooltip("Horizontal spacing between cells in Grid layout")]
-        public float gridHorizontalSpacing = 24f;
-
-        [Tooltip("Vertical spacing between cells in Grid layout")]
-        public float gridVerticalSpacing = 24f;
-
-        [Tooltip("Grid padding: Left, Right, Top, Bottom")]
-        public int gridPaddingLeft = 24, gridPaddingRight = 24, gridPaddingTop = 24, gridPaddingBottom = 24;
-
-        [Tooltip("Compute cell width to evenly fill the container for Grid layout")]
-        public bool responsiveGridCellWidth = true;
-
-    [Tooltip("Enable simple responsive rules to choose columns based on container width")]
-    public bool enableResponsiveColumns = false;
-
-    [Tooltip("Max container width for 1 column (if responsive enabled)")]
-    public float oneColumnMaxWidth = 680f;
-
-    [Tooltip("Max container width for 2 columns (if responsive enabled); above uses 3+")]
-    public float twoColumnMaxWidth = 1080f;
-
-        [Header("Lock Visuals")]
-        [Tooltip("Sprite applied to the lock overlay Image on each level button")]
-        public Sprite lockedLevelSprite;
-
-        [Header("Pagination")]
-        [Tooltip("Enable pagination when there are more buttons than fit in the grid at once")]
-        public bool enablePagination = true;
-
-        [Tooltip("Rows per page when laying out buttons as a grid (combined with columns)")]
-        public int gridRowsPerPage = 3;
-
-        [Tooltip("Optional button to move to the previous page of levels")]
-        public Button previousPageButton;
-
-        [Tooltip("Optional button to move to the next page of levels")]
-        public Button nextPageButton;
-
-    private List<GameObject> generatedButtons = new List<GameObject>();
-    private readonly List<DynamicLevelButton> generatedLevelButtons = new List<DynamicLevelButton>();
-    private readonly Dictionary<LevelManager.LevelInfo, DynamicLevelButton> levelInfoToButton = new Dictionary<LevelManager.LevelInfo, DynamicLevelButton>();
-    private readonly List<LevelManager.LevelInfo> orderedLevelSequence = new List<LevelManager.LevelInfo>();
-    private readonly List<LevelManager.LevelInfo> cachedDisplayLevels = new List<LevelManager.LevelInfo>();
-    private int currentPage;
-    private bool preferLastUnlockedSelection = true;
-
-        private int LevelsPerPage => Mathf.Max(1, gridColumns * Mathf.Max(1, gridRowsPerPage));
-
-        private void Start()
-        {
+                RecalculateGrid(grid);
+            }
             AutoBindScrollRectAndContainer();
             EnsureOrConfigureLayoutGroup();
             HookPaginationButtons();
