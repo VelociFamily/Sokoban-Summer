@@ -313,7 +313,7 @@ namespace Core
             List<LevelInfo> ordered = levelInfo.sceneType == SceneType.TutorialLevel ? tutorialLevels : gameplayLevels;
             if (ordered == null || ordered.Count == 0) return true; // fallback
 
-            // Find the previous level in progression (strictly lower sortOrder)
+            // Find the previous level in the same category (strictly lower sortOrder)
             LevelInfo previous = ordered
                 .Where(l => l.sortOrder < levelInfo.sortOrder)
                 .OrderByDescending(l => l.sortOrder)
@@ -322,6 +322,16 @@ namespace Core
             // If there is a previous level that itself requires unlock and is not completed, lock this one
             if (previous != null && previous.requiresUnlock && !IsLevelCompleted(previous.buildIndex))
                 return false;
+
+            // Special rule: first gameplay level requires completion of the last tutorial
+            if (levelInfo.sceneType == SceneType.GameplayLevel && previous == null)
+            {
+                var lastTutorial = (tutorialLevels != null)
+                    ? tutorialLevels.OrderByDescending(l => l.sortOrder).FirstOrDefault()
+                    : null;
+                if (lastTutorial != null && lastTutorial.requiresUnlock && !IsLevelCompleted(lastTutorial.buildIndex))
+                    return false;
+            }
 
             // Otherwise unlocked
             return true;
