@@ -129,7 +129,7 @@ namespace UI
         {
             if (completionBadge == null || levelInfo == null) return;
 
-            bool isCompleted = LevelManager.Instance.IsLevelCompleted(levelInfo.scenePath);
+            bool isCompleted = LevelManager.Instance.IsLevelCompleted(levelInfo);
             completionBadge.SetActive(isCompleted);
         }
 
