@@ -25,6 +25,10 @@ namespace Core
 
         [Header("Debug")]
         [SerializeField] private bool debugMode = false;
+        [Tooltip("If true, bypass locking and allow all levels to load.")]
+        [SerializeField] private bool unlockAllForTesting = false;
+        [Tooltip("Automatically mark gameplay levels (non-tutorial) as requiring unlock unless overridden by LevelData.")]
+        [SerializeField] private bool autoRequireUnlockForGameplay = true;
 
         // Cached level information
         private List<LevelInfo> allLevels = new List<LevelInfo>();
@@ -140,8 +144,8 @@ namespace Core
             // Try to extract order from filename (e.g., "01_Tutorial", "Level One" -> 1)
             levelInfo.sortOrder = ExtractSortOrderFromName(levelInfo.sceneName);
 
-            // Set default values
-            levelInfo.requiresUnlock = false; // Default to unlocked for easier testing
+            // Set default values: only first overall level unlocked, others locked unless LevelData overrides
+            levelInfo.requiresUnlock = true;
             levelInfo.parMoves = 0;
             levelInfo.parTime = 0f;
 
@@ -296,15 +300,40 @@ namespace Core
         {
             if (levelInfo == null) return false;
 
+            if (unlockAllForTesting) return true; // global override
+
             // If level doesn't require unlock, it's always available
             if (!levelInfo.requiresUnlock) return true;
 
-            // For the first tutorial, it's always unlocked
+            // Unlock only the very first tutorial (sortOrder 0) as the starting point
             if (levelInfo.sceneType == SceneType.TutorialLevel && levelInfo.sortOrder == 0)
                 return true;
 
-            // For now, make all levels available for testing
-            // TODO: Implement proper progression system based on level completion
+            // Determine the ordered list relevant for progression
+            List<LevelInfo> ordered = levelInfo.sceneType == SceneType.TutorialLevel ? tutorialLevels : gameplayLevels;
+            if (ordered == null || ordered.Count == 0) return true; // fallback
+
+            // Find the previous level in the same category (strictly lower sortOrder)
+            LevelInfo previous = ordered
+                .Where(l => l.sortOrder < levelInfo.sortOrder)
+                .OrderByDescending(l => l.sortOrder)
+                .FirstOrDefault();
+
+            // If there is a previous level that itself requires unlock and is not completed, lock this one
+            if (previous != null && previous.requiresUnlock && !IsLevelCompleted(previous.buildIndex))
+                return false;
+
+            // Special rule: first gameplay level requires completion of the last tutorial
+            if (levelInfo.sceneType == SceneType.GameplayLevel && previous == null)
+            {
+                var lastTutorial = (tutorialLevels != null)
+                    ? tutorialLevels.OrderByDescending(l => l.sortOrder).FirstOrDefault()
+                    : null;
+                if (lastTutorial != null && lastTutorial.requiresUnlock && !IsLevelCompleted(lastTutorial.buildIndex))
+                    return false;
+            }
+
+            // Otherwise unlocked
             return true;
         }
 
