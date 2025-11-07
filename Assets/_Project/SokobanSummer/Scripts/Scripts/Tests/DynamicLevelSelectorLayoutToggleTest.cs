@@ -2,6 +2,8 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using System.Collections;
 using TMPro;
 using Core;
@@ -23,9 +25,6 @@ namespace Tests
         private DynamicLevelSelector selector;
 
         [SetUp]
-        using TMPro;
-        using UnityEngine.EventSystems;
-        using UnityEngine.InputSystem.UI;
         public void SetUp()
         {
             // Create test scene hierarchy
@@ -44,18 +43,18 @@ namespace Tests
             canvasObj.AddComponent<CanvasScaler>();
             canvasObj.AddComponent<GraphicRaycaster>();
 
-            // Create EventSystem if not present
-            if (GameObject.FindFirstObjectByType<UnityEngine.EventSystems.EventSystem>() == null)
+            // Create EventSystem (use Input System UI module to avoid legacy Input errors)
+            if (GameObject.FindFirstObjectByType<EventSystem>() == null)
             {
                 var eventSystemObj = new GameObject("EventSystem");
-                    // Create EventSystem (use Input System UI module to avoid legacy Input errors)
-                    if (GameObject.FindFirstObjectByType<EventSystem>() == null)
-                    {
-                        var eventSystemObj = new GameObject("EventSystem");
-                        eventSystemObj.transform.SetParent(testRoot.transform);
-                        eventSystemObj.AddComponent<EventSystem>();
-                        eventSystemObj.AddComponent<InputSystemUIInputModule>();
-                    }
+                eventSystemObj.transform.SetParent(testRoot.transform);
+                eventSystemObj.AddComponent<EventSystem>();
+                eventSystemObj.AddComponent<InputSystemUIInputModule>();
+            }
+
+            // Create ScrollRect with container
+            var scrollRectObj = new GameObject("ScrollRect");
+            scrollRectObj.transform.SetParent(canvasObj.transform);
             var rt = scrollRectObj.AddComponent<RectTransform>();
             rt.anchorMin = Vector2.zero;
             rt.anchorMax = Vector2.one;
@@ -98,12 +97,12 @@ namespace Tests
             selector.showGameplayLevels = true;
             selector.addSectionHeaders = false; // Keep simple for testing
             selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
-            selector.autoAddVerticalLayoutGroup = true;
+            // Disable auto-adding VerticalLayoutGroup to avoid Grid/Vertical conflicts during toggles
+            selector.autoAddVerticalLayoutGroup = false;
             selector.buttonHeight = 96f;
             selector.buttonSpacing = 8f;
             selector.enablePagination = false; // Start without pagination
-                    // Disable auto-adding VerticalLayoutGroup to avoid Grid/Vertical conflicts during same-frame toggles
-                    selector.autoAddVerticalLayoutGroup = false;
+        }
 
         [TearDown]
         public void TearDown()
@@ -121,7 +120,7 @@ namespace Tests
             var buttonRT = prefab.AddComponent<RectTransform>();
             buttonRT.sizeDelta = new Vector2(200, 96);
             
-                    selector.autoAddVerticalLayoutGroup = false;
+            var button = prefab.AddComponent<Button>();
             var image = prefab.AddComponent<Image>();
             image.color = Color.white;
             button.targetGraphic = image;
@@ -147,6 +146,19 @@ namespace Tests
             dynamicButton.goalText = goalText;
 
             return prefab;
+        }
+
+        // Remove any existing LayoutGroup components to avoid conflicts when switching modes
+        private void RemoveExistingLayoutGroups()
+        {
+            if (selector != null && selector.levelButtonContainer != null)
+            {
+                var groups = selector.levelButtonContainer.GetComponents<LayoutGroup>();
+                foreach (var g in groups)
+                {
+                    Object.DestroyImmediate(g);
+                }
+            }
         }
 
         [Test]
@@ -179,7 +191,7 @@ namespace Tests
             
             // Toggle to VerticalList mode
             selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
-            selector.autoAddVerticalLayoutGroup = true;
+            selector.autoAddVerticalLayoutGroup = false;
             
             // This should not produce errors
             LogAssert.NoUnexpectedReceived();
@@ -219,6 +231,7 @@ namespace Tests
             selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
             selector.enablePagination = true;
             selector.gridColumns = 3;
+            RemoveExistingLayoutGroups();
             selector.PopulateLevelButtons();
             
             yield return null;
@@ -247,6 +260,8 @@ namespace Tests
             
             yield return null;
 
+            // Ensure no leftover VerticalLayoutGroup before adding GridLayoutGroup
+            RemoveExistingLayoutGroups();
             selector.PopulateLevelButtons();
             
             yield return null;

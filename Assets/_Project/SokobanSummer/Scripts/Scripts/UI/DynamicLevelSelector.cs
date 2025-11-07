@@ -739,21 +739,41 @@ namespace UI
 
             if (levelButtonContainer == null) return;
 
-            var existingVertical = levelButtonContainer.GetComponent<VerticalLayoutGroup>();
-            var existingGrid = levelButtonContainer.GetComponent<GridLayoutGroup>();
             var fitter = levelButtonContainer.GetComponent<ContentSizeFitter>();
 
-            // Remove non-target LayoutGroup first to avoid duplicate-group warnings
-            if (layoutMode == LayoutMode.VerticalList && existingGrid != null)
+            // Remove any LayoutGroup that is not the target type BEFORE adding the target.
+            // Use immediate destruction for layout groups in play mode to avoid race where
+            // a scheduled Destroy causes AddComponent(GridLayoutGroup) to fail due to the
+            // old VerticalLayoutGroup still existing in the same frame.
+            var allGroups = levelButtonContainer.GetComponents<LayoutGroup>();
+            if (allGroups != null && allGroups.Length > 0)
             {
-                SafeDestroy(existingGrid);
-                existingGrid = null;
+                foreach (var g in allGroups)
+                {
+                    if (g == null) continue;
+                    bool isTarget = (layoutMode == LayoutMode.Grid && g is GridLayoutGroup)
+                                    || (layoutMode == LayoutMode.VerticalList && g is VerticalLayoutGroup);
+                    if (!isTarget)
+                    {
+#if UNITY_EDITOR
+                        if (!Application.isPlaying)
+                        {
+                            UnityEngine.Object.DestroyImmediate(g);
+                        }
+                        else
+                        {
+                            UnityEngine.Object.DestroyImmediate(g);
+                        }
+#else
+                        UnityEngine.Object.DestroyImmediate(g);
+#endif
+                    }
+                }
             }
-            else if (layoutMode == LayoutMode.Grid && existingVertical != null)
-            {
-                SafeDestroy(existingVertical);
-                existingVertical = null;
-            }
+
+            // Re-query after potential removals
+            var existingVertical = levelButtonContainer.GetComponent<VerticalLayoutGroup>();
+            var existingGrid = levelButtonContainer.GetComponent<GridLayoutGroup>();
 
             if (layoutMode == LayoutMode.VerticalList)
             {
@@ -792,6 +812,24 @@ namespace UI
             }
             else // Grid
             {
+                // Ensure no lingering VerticalLayoutGroup remains (defensive double-check)
+                var lingeringVertical = levelButtonContainer.GetComponent<VerticalLayoutGroup>();
+                if (lingeringVertical != null)
+                {
+#if UNITY_EDITOR
+                    if (!Application.isPlaying)
+                    {
+                        UnityEngine.Object.DestroyImmediate(lingeringVertical);
+                    }
+                    else
+                    {
+                        UnityEngine.Object.DestroyImmediate(lingeringVertical);
+                    }
+#else
+                    UnityEngine.Object.DestroyImmediate(lingeringVertical);
+#endif
+                }
+
                 var grid = existingGrid;
                 if (grid == null)
                 {
