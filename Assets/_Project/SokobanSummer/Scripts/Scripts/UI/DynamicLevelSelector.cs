@@ -742,9 +742,9 @@ namespace UI
             var fitter = levelButtonContainer.GetComponent<ContentSizeFitter>();
 
             // Remove any LayoutGroup that is not the target type BEFORE adding the target.
-            // Use immediate destruction for layout groups in play mode to avoid race where
-            // a scheduled Destroy causes AddComponent(GridLayoutGroup) to fail due to the
-            // old VerticalLayoutGroup still existing in the same frame.
+            // IMPORTANT: Do NOT use DestroyImmediate in play mode inside OnValidate or other
+            // restricted callbacks (physics triggers, render callbacks). Use Destroy instead.
+            // We accept potential one-frame delay; Unity forbids DestroyImmediate here.
             var allGroups = levelButtonContainer.GetComponents<LayoutGroup>();
             if (allGroups != null && allGroups.Length > 0)
             {
@@ -762,10 +762,11 @@ namespace UI
                         }
                         else
                         {
-                            UnityEngine.Object.DestroyImmediate(g);
+                            // Runtime (play mode) – must use Destroy to satisfy Unity restrictions.
+                            UnityEngine.Object.Destroy(g);
                         }
 #else
-                        UnityEngine.Object.DestroyImmediate(g);
+                        UnityEngine.Object.Destroy(g);
 #endif
                     }
                 }
@@ -823,10 +824,10 @@ namespace UI
                     }
                     else
                     {
-                        UnityEngine.Object.DestroyImmediate(lingeringVertical);
+                        UnityEngine.Object.Destroy(lingeringVertical);
                     }
 #else
-                    UnityEngine.Object.DestroyImmediate(lingeringVertical);
+                    UnityEngine.Object.Destroy(lingeringVertical);
 #endif
                 }
 
