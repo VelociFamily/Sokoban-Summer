@@ -144,8 +144,8 @@ namespace Core
             // Try to extract order from filename (e.g., "01_Tutorial", "Level One" -> 1)
             levelInfo.sortOrder = ExtractSortOrderFromName(levelInfo.sceneName);
 
-            // Set default values (tutorials default unlocked; gameplay may auto require unlock)
-            levelInfo.requiresUnlock = levelInfo.sceneType == SceneType.GameplayLevel && autoRequireUnlockForGameplay;
+            // Set default values: only first overall level unlocked, others locked unless LevelData overrides
+            levelInfo.requiresUnlock = true;
             levelInfo.parMoves = 0;
             levelInfo.parTime = 0f;
 
@@ -305,7 +305,7 @@ namespace Core
             // If level doesn't require unlock, it's always available
             if (!levelInfo.requiresUnlock) return true;
 
-            // First item of its category is always unlocked
+            // Unlock only the very first tutorial (sortOrder 0) as the starting point
             if (levelInfo.sceneType == SceneType.TutorialLevel && levelInfo.sortOrder == 0)
                 return true;
 

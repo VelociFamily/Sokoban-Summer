@@ -90,7 +90,7 @@ namespace Editor
             // Root GameObject with Button, Image, and DynamicLevelButton
             GameObject root = new GameObject("LevelButton");
             RectTransform rootRect = root.AddComponent<RectTransform>();
-            rootRect.sizeDelta = new Vector2(400, 120);
+            rootRect.sizeDelta = new Vector2(400, 96); // reduced height for denser list
             
             Image rootImage = root.AddComponent<Image>();
             rootImage.color = Color.white;
@@ -116,8 +116,8 @@ namespace Editor
             RectTransform contentRect = contentWrapper.GetComponent<RectTransform>();
             contentRect.anchorMin = Vector2.zero;
             contentRect.anchorMax = Vector2.one;
-            contentRect.offsetMin = new Vector2(20, 16); // Padding
-            contentRect.offsetMax = new Vector2(-20, -16);
+            contentRect.offsetMin = new Vector2(16, 12); // tighter padding
+            contentRect.offsetMax = new Vector2(-16, -12);
             
             HorizontalLayoutGroup layout = contentWrapper.AddComponent<HorizontalLayoutGroup>();
             layout.childAlignment = TextAnchor.MiddleLeft;
@@ -130,7 +130,7 @@ namespace Editor
             // 2a. Preview Image (Thumbnail)
             GameObject preview = CreateChild(contentWrapper, "PreviewImage");
             RectTransform previewRect = preview.GetComponent<RectTransform>();
-            previewRect.sizeDelta = new Vector2(80, 80);
+            previewRect.sizeDelta = new Vector2(72, 72);
             Image previewImage = preview.AddComponent<Image>();
             Sprite fallbackSprite = LoadSprite("FallbackThumbnail.png");
             if (fallbackSprite != null)
@@ -142,7 +142,7 @@ namespace Editor
             // 2b. Text Column (Vertical Layout)
             GameObject textColumn = CreateChild(contentWrapper, "TextColumn");
             RectTransform textRect = textColumn.GetComponent<RectTransform>();
-            textRect.sizeDelta = new Vector2(250, 80);
+            textRect.sizeDelta = new Vector2(250, 72);
             
             VerticalLayoutGroup textLayout = textColumn.AddComponent<VerticalLayoutGroup>();
             textLayout.childAlignment = TextAnchor.UpperLeft;
@@ -156,7 +156,7 @@ namespace Editor
             GameObject levelNameObj = CreateChild(textColumn, "LevelNameText");
             TextMeshProUGUI levelName = levelNameObj.AddComponent<TextMeshProUGUI>();
             levelName.text = "Level Name";
-            levelName.fontSize = 28;
+            levelName.fontSize = 24;
             levelName.fontStyle = FontStyles.Bold;
             levelName.color = new Color(0.047f, 0.122f, 0.208f); // #0C1F35
             levelName.alignment = TextAlignmentOptions.Left;
@@ -165,7 +165,7 @@ namespace Editor
             GameObject goalTextObj = CreateChild(textColumn, "GoalText");
             TextMeshProUGUI goalText = goalTextObj.AddComponent<TextMeshProUGUI>();
             goalText.text = "Par: 10 moves";
-            goalText.fontSize = 18;
+            goalText.fontSize = 16;
             goalText.color = new Color(0.063f, 0.227f, 0.388f); // #103A63
             goalText.alignment = TextAlignmentOptions.Left;
             
@@ -175,7 +175,7 @@ namespace Editor
             badgeRect.anchorMin = new Vector2(1, 1);
             badgeRect.anchorMax = new Vector2(1, 1);
             badgeRect.anchoredPosition = new Vector2(-20, -20);
-            badgeRect.sizeDelta = new Vector2(48, 48);
+            badgeRect.sizeDelta = new Vector2(40, 40);
             
             Image badgeImage = badge.AddComponent<Image>();
             Sprite badgeSprite = LoadSprite("CompletionBadge.png");
@@ -208,7 +208,7 @@ namespace Editor
             lockIconRect.anchorMin = new Vector2(0.5f, 0.5f);
             lockIconRect.anchorMax = new Vector2(0.5f, 0.5f);
             lockIconRect.anchoredPosition = Vector2.zero;
-            lockIconRect.sizeDelta = new Vector2(48, 48);
+            lockIconRect.sizeDelta = new Vector2(40, 40);
             
             Image lockIconImage = lockIcon.AddComponent<Image>();
             Sprite lockSprite = LoadSprite("LockIcon.png");

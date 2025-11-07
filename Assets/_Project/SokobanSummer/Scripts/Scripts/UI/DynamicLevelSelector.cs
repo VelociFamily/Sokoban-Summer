@@ -57,13 +57,13 @@ namespace UI
 
         [Header("Layout")]
         [Tooltip("Spacing between level buttons")]
-        public float buttonSpacing = 24f;
+        public float buttonSpacing = 8f;
 
         [Tooltip("Auto-add a VerticalLayoutGroup to the container if none is present")]
         public bool autoAddVerticalLayoutGroup = true;
 
         [Tooltip("Preferred height for each level button when using layout groups")]
-        public float buttonHeight = 212f;
+        public float buttonHeight = 96f;
 
         [Tooltip("Preferred height for section headers when using layout groups")]
         public float headerHeight = 80f;
