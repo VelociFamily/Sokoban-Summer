@@ -16,12 +16,18 @@ namespace UI
     /// </summary>
     public class DynamicLevelSelector : MonoBehaviour
     {
-        // Use deferred destruction to avoid exceptions during OnValidate, render, physics, or animation callbacks.
+        // Destroy helper: use DestroyImmediate in edit mode (OnValidate, etc.) to avoid
+        // "Destroy may not be called from edit mode" warnings; fall back to Destroy when playing.
         private static void SafeDestroy(UnityEngine.Object obj)
         {
             if (obj == null) return;
-            // Unity warns: "Destroying components immediately is not permitted during ... or OnValidate. You must use Destroy instead."
-            // Always prefer deferred destroy; it's safe in both play mode and edit-time contexts.
+#if UNITY_EDITOR
+            if (!Application.isPlaying)
+            {
+                UnityEngine.Object.DestroyImmediate(obj);
+                return;
+            }
+#endif
             UnityEngine.Object.Destroy(obj);
         }
         public enum LayoutMode
@@ -53,27 +59,27 @@ namespace UI
         [Tooltip("Spacing between level buttons")]
         public float buttonSpacing = 24f;
 
-    [Tooltip("Auto-add a VerticalLayoutGroup to the container if none is present")]
-    public bool autoAddVerticalLayoutGroup = true;
+        [Tooltip("Auto-add a VerticalLayoutGroup to the container if none is present")]
+        public bool autoAddVerticalLayoutGroup = true;
 
-    [Tooltip("Preferred height for each level button when using layout groups")]
-    public float buttonHeight = 212f;
+        [Tooltip("Preferred height for each level button when using layout groups")]
+        public float buttonHeight = 212f;
 
-    [Tooltip("Preferred height for section headers when using layout groups")]
-    public float headerHeight = 80f;
+        [Tooltip("Preferred height for section headers when using layout groups")]
+        public float headerHeight = 80f;
 
-    [Tooltip("Stretch buttons to container width when using layout groups")]
-    public bool stretchButtonsToContainerWidth = true;
+        [Tooltip("Stretch buttons to container width when using layout groups")]
+        public bool stretchButtonsToContainerWidth = true;
 
         [Tooltip("Choose how to lay out the items")]
         public LayoutMode layoutMode = LayoutMode.VerticalList;
 
         [Header("Grid Settings")]
-    [Tooltip("Number of columns for Grid layout")]
-    public int gridColumns = 5;
+        [Tooltip("Number of columns for Grid layout")]
+        public int gridColumns = 5;
 
         [Tooltip("Cell height for Grid layout")]
-    public float gridCellHeight = 180f;
+        public float gridCellHeight = 180f;
 
         [Tooltip("Horizontal spacing between cells in Grid layout")]
         public float gridHorizontalSpacing = 24f;
@@ -87,14 +93,14 @@ namespace UI
         [Tooltip("Compute cell width to evenly fill the container for Grid layout")]
         public bool responsiveGridCellWidth = true;
 
-    [Tooltip("Enable simple responsive rules to choose columns based on container width")]
-    public bool enableResponsiveColumns = false;
+        [Tooltip("Enable simple responsive rules to choose columns based on container width")]
+        public bool enableResponsiveColumns = false;
 
-    [Tooltip("Max container width for 1 column (if responsive enabled)")]
-    public float oneColumnMaxWidth = 680f;
+        [Tooltip("Max container width for 1 column (if responsive enabled)")]
+        public float oneColumnMaxWidth = 680f;
 
-    [Tooltip("Max container width for 2 columns (if responsive enabled); above uses 3+")]
-    public float twoColumnMaxWidth = 1080f;
+        [Tooltip("Max container width for 2 columns (if responsive enabled); above uses 3+")]
+        public float twoColumnMaxWidth = 1080f;
 
         [Header("Lock Visuals")]
         [Tooltip("Sprite applied to the lock overlay Image on each level button")]
@@ -113,13 +119,13 @@ namespace UI
         [Tooltip("Optional button to move to the next page of levels")]
         public Button nextPageButton;
 
-    private List<GameObject> generatedButtons = new List<GameObject>();
-    private readonly List<DynamicLevelButton> generatedLevelButtons = new List<DynamicLevelButton>();
-    private readonly Dictionary<LevelManager.LevelInfo, DynamicLevelButton> levelInfoToButton = new Dictionary<LevelManager.LevelInfo, DynamicLevelButton>();
-    private readonly List<LevelManager.LevelInfo> orderedLevelSequence = new List<LevelManager.LevelInfo>();
-    private readonly List<LevelManager.LevelInfo> cachedDisplayLevels = new List<LevelManager.LevelInfo>();
-    private int currentPage;
-    private bool preferLastUnlockedSelection = true;
+        private List<GameObject> generatedButtons = new List<GameObject>();
+        private readonly List<DynamicLevelButton> generatedLevelButtons = new List<DynamicLevelButton>();
+        private readonly Dictionary<LevelManager.LevelInfo, DynamicLevelButton> levelInfoToButton = new Dictionary<LevelManager.LevelInfo, DynamicLevelButton>();
+        private readonly List<LevelManager.LevelInfo> orderedLevelSequence = new List<LevelManager.LevelInfo>();
+        private readonly List<LevelManager.LevelInfo> cachedDisplayLevels = new List<LevelManager.LevelInfo>();
+        private int currentPage;
+        private bool preferLastUnlockedSelection = true;
 
         private int LevelsPerPage => Mathf.Max(1, gridColumns * Mathf.Max(1, gridRowsPerPage));
 
@@ -650,8 +656,6 @@ namespace UI
             // DestroyImmediate / AddComponent to throw or trigger unexpected editor state.
             // Skip layout modifications when running in batch mode to keep automation stable.
 #if UNITY_EDITOR
-            // EditorApplication.isBatchMode is not available on all Editor versions; detect
-            // batch mode by checking command line args instead.
             if (System.Array.IndexOf(System.Environment.GetCommandLineArgs(), "-batchmode") >= 0)
             {
                 return;
@@ -664,19 +668,29 @@ namespace UI
             var existingGrid = levelButtonContainer.GetComponent<GridLayoutGroup>();
             var fitter = levelButtonContainer.GetComponent<ContentSizeFitter>();
 
+            // Remove non-target LayoutGroup first to avoid duplicate-group warnings
+            if (layoutMode == LayoutMode.VerticalList && existingGrid != null)
+            {
+                SafeDestroy(existingGrid);
+                existingGrid = null;
+            }
+            else if (layoutMode == LayoutMode.Grid && existingVertical != null)
+            {
+                SafeDestroy(existingVertical);
+                existingVertical = null;
+            }
+
             if (layoutMode == LayoutMode.VerticalList)
             {
-                // Switch to vertical
-                if (existingGrid != null)
-                {
-                    if (autoAddVerticalLayoutGroup)
-                        SafeDestroy(existingGrid);
-                }
-
                 var v = existingVertical;
                 if (v == null && autoAddVerticalLayoutGroup)
                 {
                     v = levelButtonContainer.gameObject.AddComponent<VerticalLayoutGroup>();
+                    if (v == null)
+                    {
+                        // If component couldn't be added (e.g., pending destroy), bail out safely
+                        return;
+                    }
                 }
                 if (v != null)
                 {
@@ -688,29 +702,30 @@ namespace UI
                     v.spacing = buttonSpacing;
                 }
 
-                if (fitter == null && autoAddVerticalLayoutGroup)
+                if (autoAddVerticalLayoutGroup)
                 {
-                    fitter = levelButtonContainer.gameObject.AddComponent<ContentSizeFitter>();
-                }
-                if (fitter != null)
-                {
-                    fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
-                    fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+                    if (fitter == null)
+                    {
+                        fitter = levelButtonContainer.gameObject.AddComponent<ContentSizeFitter>();
+                    }
+                    if (fitter != null)
+                    {
+                        fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+                        fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
+                    }
                 }
             }
             else // Grid
             {
-                // Remove vertical if present
-                if (existingVertical != null)
-                {
-                    SafeDestroy(existingVertical);
-                }
-
-                // Grid
                 var grid = existingGrid;
                 if (grid == null)
                 {
                     grid = levelButtonContainer.gameObject.AddComponent<GridLayoutGroup>();
+                    if (grid == null)
+                    {
+                        // If grid couldn't be added (e.g., pending destroy), bail out safely
+                        return;
+                    }
                 }
                 grid.childAlignment = TextAnchor.UpperCenter;
                 grid.spacing = new Vector2(gridHorizontalSpacing, gridVerticalSpacing);
@@ -718,13 +733,16 @@ namespace UI
                 grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
                 grid.constraintCount = Mathf.Max(1, gridColumns);
 
-                // Content size fitter can create loops with grids – disable vertical fit
+                // For grids, ensure ContentSizeFitter exists, disable vertical fit to avoid loops
                 if (fitter == null)
                 {
                     fitter = levelButtonContainer.gameObject.AddComponent<ContentSizeFitter>();
                 }
-                fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
-                fitter.verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+                if (fitter != null)
+                {
+                    fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+                    fitter.verticalFit = ContentSizeFitter.FitMode.Unconstrained;
+                }
 
                 RecalculateGrid(grid);
             }
