@@ -4,6 +4,7 @@ using UnityEngine.TestTools;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
+using TMPro;
 using Core;
 using UI;
 
@@ -178,17 +179,15 @@ namespace Tests
 
             var nameTextObj = new GameObject("NameText");
             nameTextObj.transform.SetParent(prefab.transform);
-            var nameText = nameTextObj.AddComponent<Text>();
+            var nameText = nameTextObj.AddComponent<TextMeshProUGUI>();
             nameText.text = "Level Name";
-            nameText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            nameText.alignment = TextAnchor.MiddleCenter;
+            nameText.alignment = TextAlignmentOptions.Center;
 
             var goalTextObj = new GameObject("GoalText");
             goalTextObj.transform.SetParent(prefab.transform);
-            var goalText = goalTextObj.AddComponent<Text>();
+            var goalText = goalTextObj.AddComponent<TextMeshProUGUI>();
             goalText.text = "Goals";
-            goalText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            goalText.alignment = TextAnchor.MiddleCenter;
+            goalText.alignment = TextAlignmentOptions.Center;
 
             dynamicButton.levelNameText = nameText;
             dynamicButton.goalText = goalText;

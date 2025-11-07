@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 using Core;
 using UI;
 
@@ -127,17 +128,15 @@ namespace Tests
             // Add required child elements
             var nameTextObj = new GameObject("NameText");
             nameTextObj.transform.SetParent(prefab.transform);
-            var nameText = nameTextObj.AddComponent<Text>();
+            var nameText = nameTextObj.AddComponent<TextMeshProUGUI>();
             nameText.text = "Level Name";
-            nameText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            nameText.alignment = TextAnchor.MiddleCenter;
+            nameText.alignment = TextAlignmentOptions.Center;
 
             var goalTextObj = new GameObject("GoalText");
             goalTextObj.transform.SetParent(prefab.transform);
-            var goalText = goalTextObj.AddComponent<Text>();
+            var goalText = goalTextObj.AddComponent<TextMeshProUGUI>();
             goalText.text = "Goals";
-            goalText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-            goalText.alignment = TextAnchor.MiddleCenter;
+            goalText.alignment = TextAlignmentOptions.Center;
 
             // Assign to DynamicLevelButton
             dynamicButton.levelNameText = nameText;
@@ -263,9 +262,8 @@ namespace Tests
             
             // Create a simple section header prefab
             var headerPrefab = new GameObject("HeaderPrefab");
-            var headerText = headerPrefab.AddComponent<Text>();
+            var headerText = headerPrefab.AddComponent<TextMeshProUGUI>();
             headerText.text = "Section";
-            headerText.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
             selector.sectionHeaderPrefab = headerPrefab;
             
             yield return null;
