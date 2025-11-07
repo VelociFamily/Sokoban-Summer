@@ -2314,7 +2314,7 @@ MonoBehaviour:
   buttonHeight: 212
   headerHeight: 80
   stretchButtonsToContainerWidth: 1
-  layoutMode: 1
+  layoutMode: 0
   gridColumns: 5
   gridCellHeight: 180
   gridHorizontalSpacing: 24
@@ -6458,7 +6458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &971234567849123457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6517,7 +6517,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 971234567849123459}
   m_OnClick:
     m_PersistentCalls:
@@ -6579,7 +6579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &981234567849123457
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6638,7 +6638,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 981234567849123459}
   m_OnClick:
     m_PersistentCalls:
