@@ -23,6 +23,9 @@ namespace Tests
         private DynamicLevelSelector selector;
 
         [SetUp]
+        using TMPro;
+        using UnityEngine.EventSystems;
+        using UnityEngine.InputSystem.UI;
         public void SetUp()
         {
             // Create test scene hierarchy
@@ -45,14 +48,14 @@ namespace Tests
             if (GameObject.FindFirstObjectByType<UnityEngine.EventSystems.EventSystem>() == null)
             {
                 var eventSystemObj = new GameObject("EventSystem");
-                eventSystemObj.transform.SetParent(testRoot.transform);
-                eventSystemObj.AddComponent<UnityEngine.EventSystems.EventSystem>();
-                eventSystemObj.AddComponent<UnityEngine.EventSystems.StandaloneInputModule>();
-            }
-
-            // Create ScrollRect with container
-            var scrollRectObj = new GameObject("ScrollRect");
-            scrollRectObj.transform.SetParent(canvasObj.transform);
+                    // Create EventSystem (use Input System UI module to avoid legacy Input errors)
+                    if (GameObject.FindFirstObjectByType<EventSystem>() == null)
+                    {
+                        var eventSystemObj = new GameObject("EventSystem");
+                        eventSystemObj.transform.SetParent(testRoot.transform);
+                        eventSystemObj.AddComponent<EventSystem>();
+                        eventSystemObj.AddComponent<InputSystemUIInputModule>();
+                    }
             var rt = scrollRectObj.AddComponent<RectTransform>();
             rt.anchorMin = Vector2.zero;
             rt.anchorMax = Vector2.one;
@@ -99,7 +102,8 @@ namespace Tests
             selector.buttonHeight = 96f;
             selector.buttonSpacing = 8f;
             selector.enablePagination = false; // Start without pagination
-        }
+                    // Disable auto-adding VerticalLayoutGroup to avoid Grid/Vertical conflicts during same-frame toggles
+                    selector.autoAddVerticalLayoutGroup = false;
 
         [TearDown]
         public void TearDown()
@@ -117,7 +121,7 @@ namespace Tests
             var buttonRT = prefab.AddComponent<RectTransform>();
             buttonRT.sizeDelta = new Vector2(200, 96);
             
-            var button = prefab.AddComponent<Button>();
+                    selector.autoAddVerticalLayoutGroup = false;
             var image = prefab.AddComponent<Image>();
             image.color = Color.white;
             button.targetGraphic = image;

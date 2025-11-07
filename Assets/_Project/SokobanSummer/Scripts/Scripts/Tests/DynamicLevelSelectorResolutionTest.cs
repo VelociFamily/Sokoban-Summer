@@ -42,6 +42,8 @@ namespace Tests
             Screen.SetResolution(originalWidth, originalHeight, Screen.fullScreen);
         }
 
+            using TMPro;
+            using UnityEngine.InputSystem.UI;
         [SetUp]
         public void SetUp()
         {
@@ -108,7 +110,7 @@ namespace Tests
             contentRT.anchorMin = new Vector2(0, 1);
             contentRT.anchorMax = new Vector2(1, 1);
             contentRT.pivot = new Vector2(0.5f, 1);
-            contentRT.sizeDelta = new Vector2(0, 2000);
+                            eventSystemObj.AddComponent<InputSystemUIInputModule>();
             scrollRect.content = contentRT;
 
             // Create pagination buttons
@@ -163,6 +165,8 @@ namespace Tests
             return button;
         }
 
+                        // Avoid Vertical/GridLayoutGroup same-frame conflicts
+                        selector.autoAddVerticalLayoutGroup = false;
         private GameObject CreateLevelButtonPrefab()
         {
             var prefab = new GameObject("LevelButtonPrefab");
