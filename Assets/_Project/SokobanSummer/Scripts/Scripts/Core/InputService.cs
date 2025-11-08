@@ -19,6 +19,11 @@ namespace Core
         public event Action<UnityEngine.InputSystem.InputAction.CallbackContext> OnPlayerMove;
         public event Action<UnityEngine.InputSystem.InputAction.CallbackContext> OnUICancel;
 
+        // Cached delegates for proper unsubscription
+        private Action<UnityEngine.InputSystem.InputAction.CallbackContext> _movePerformedHandler;
+        private Action<UnityEngine.InputSystem.InputAction.CallbackContext> _moveCanceledHandler;
+        private Action<UnityEngine.InputSystem.InputAction.CallbackContext> _uiCancelPerformedHandler;
+
         private InputService() { }
 
         public async Task InitializeAsync()
@@ -36,10 +41,15 @@ namespace Core
             {
                 InputActions = new InputSystem_Actions();
 
-                // Set up common event forwarding to reduce coupling
-                InputActions.Player.Move.performed += ctx => OnPlayerMove?.Invoke(ctx);
-                InputActions.Player.Move.canceled += ctx => OnPlayerMove?.Invoke(ctx);
-                InputActions.UI.Cancel.performed += ctx => OnUICancel?.Invoke(ctx);
+                // Initialize cached delegates
+                _movePerformedHandler = ctx => OnPlayerMove?.Invoke(ctx);
+                _moveCanceledHandler = ctx => OnPlayerMove?.Invoke(ctx);
+                _uiCancelPerformedHandler = ctx => OnUICancel?.Invoke(ctx);
+
+                // Set up common event forwarding to reduce coupling using cached delegates
+                InputActions.Player.Move.performed += _movePerformedHandler;
+                InputActions.Player.Move.canceled += _moveCanceledHandler;
+                InputActions.UI.Cancel.performed += _uiCancelPerformedHandler;
             }
 
             await Task.Yield(); // Ensure async behavior
@@ -69,12 +79,27 @@ namespace Core
         {
             if (InputActions != null)
             {
-                InputActions.Player.Move.performed -= ctx => OnPlayerMove?.Invoke(ctx);
-                InputActions.Player.Move.canceled -= ctx => OnPlayerMove?.Invoke(ctx);
-                InputActions.UI.Cancel.performed -= ctx => OnUICancel?.Invoke(ctx);
+                // Unsubscribe using the same cached delegate instances
+                if (_movePerformedHandler != null)
+                {
+                    InputActions.Player.Move.performed -= _movePerformedHandler;
+                }
+                if (_moveCanceledHandler != null)
+                {
+                    InputActions.Player.Move.canceled -= _moveCanceledHandler;
+                }
+                if (_uiCancelPerformedHandler != null)
+                {
+                    InputActions.UI.Cancel.performed -= _uiCancelPerformedHandler;
+                }
 
                 InputActions.Dispose();
                 InputActions = null;
+
+                // Clear cached delegates
+                _movePerformedHandler = null;
+                _moveCanceledHandler = null;
+                _uiCancelPerformedHandler = null;
             }
         }
     }
