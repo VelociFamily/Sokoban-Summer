@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Gameplay
@@ -21,6 +22,11 @@ namespace Gameplay
         /// Gets the name of this power-up for logging purposes
         /// </summary>
         string PowerUpName { get; }
+
+        /// <summary>
+        /// Event raised when the power-up state changes (activated, consumed, deactivated)
+        /// </summary>
+        event EventHandler<PowerUpEventArgs> OnStateChanged;
     
         /// <summary>
         /// Activates the power-up with the specified number of uses

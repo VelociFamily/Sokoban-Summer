@@ -1,3 +1,4 @@
+using System;
 using Core;
 using UnityEngine;
 
@@ -8,24 +9,53 @@ namespace Gameplay
     /// </summary>
     public class TeleportationPowerUp : IPowerUp
     {
-        public int RemainingUses => TeleportTimes;
-        public bool IsActive => TeleportTimes > 0;
+        private int _teleportTimes;
+
+        public int RemainingUses => _teleportTimes;
+        public bool IsActive => _teleportTimes > 0;
         public string PowerUpName => "TeleportationPowerUp";
     
-        // Static accessor for backward compatibility
+        /// <summary>
+        /// Event raised when the power-up state changes
+        /// </summary>
+        public event EventHandler<PowerUpEventArgs> OnStateChanged;
+
+        // Static accessor for backward compatibility - marked as obsolete
+        [Obsolete("Use PowerUpManager events instead of accessing static fields directly")]
         public static int TeleportTimes { get; set; }
 
         public void Activate(int uses)
         {
-            TeleportTimes = uses;
+            _teleportTimes = uses;
+            TeleportTimes = uses; // Keep static field in sync for backward compatibility
+            
+            OnStateChanged?.Invoke(this, new PowerUpEventArgs
+            {
+                PowerUpName = PowerUpName,
+                RemainingUses = _teleportTimes,
+                IsActive = true,
+                EventType = PowerUpEventType.Activated
+            });
         }
     
         public bool ConsumeUse()
         {
-            if (TeleportTimes > 0)
+            if (_teleportTimes > 0)
             {
-                TeleportTimes--;
-                return TeleportTimes > 0;
+                _teleportTimes--;
+                TeleportTimes = _teleportTimes; // Keep static field in sync
+                
+                var eventType = _teleportTimes > 0 ? PowerUpEventType.Consumed : PowerUpEventType.Deactivated;
+                
+                OnStateChanged?.Invoke(this, new PowerUpEventArgs
+                {
+                    PowerUpName = PowerUpName,
+                    RemainingUses = _teleportTimes,
+                    IsActive = _teleportTimes > 0,
+                    EventType = eventType
+                });
+                
+                return _teleportTimes > 0;
             }
             return false;
         }
