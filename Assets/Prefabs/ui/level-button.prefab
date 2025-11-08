@@ -437,7 +437,7 @@ GameObject:
   - component: {fileID: 3880215219275996672}
   - component: {fileID: 6855193413315660025}
   m_Layer: 5
-  m_Name: Level Button
+  m_Name: level-button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,8 +564,12 @@ MonoBehaviour:
   levelNameText: {fileID: 5958192613886745725}
   goalText: {fileID: 7777777777777777777}
   previewImage: {fileID: 5061357311040490703}
+  fallbackThumbnail: {fileID: 0}
   lockOverlay: {fileID: 6511752640106812837}
   lockOverlayImage: {fileID: 4845665232938289962}
+  completionBadge: {fileID: 0}
+  lockIconSizeRatio: 0.45
+  clickSfx: {fileID: 0}
   levelInfo:
     sceneName: 
     scenePath: 
