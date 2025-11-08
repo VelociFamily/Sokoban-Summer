@@ -9,10 +9,11 @@ namespace UI
         public Transform hatsFolder;
         void Start()
         {
-            if (AchievementManager.Instance == null || string.IsNullOrEmpty(AchievementManager.Instance.selectedHatName))
+            var achievementManager = ServiceLocator.Get<AchievementManager>();
+            if (achievementManager == null || string.IsNullOrEmpty(achievementManager.selectedHatName))
                 return;
 
-            var hatToActivate = AchievementManager.Instance.selectedHatName;
+            var hatToActivate = achievementManager.selectedHatName;
 
             // Disable all hats first
             foreach (Transform hat in hatsFolder)

@@ -27,21 +27,22 @@ namespace Tests
             Debug.Log("=== Level System Test Started ===");
 
             // Test 1: Check if LevelManager exists
-            if (LevelManager.Instance == null)
+            var levelManager = ServiceLocator.Get<LevelManager>();
+            if (levelManager == null)
             {
-                Debug.LogError("TEST FAILED: LevelManager.Instance is null");
+                Debug.LogError("TEST FAILED: LevelManager not registered in ServiceLocator");
                 return;
             }
             Debug.Log("✓ LevelManager instance found");
 
             // Test 2: Check level discovery
-            var allLevels = LevelManager.Instance.GetAllLevels();
+            var allLevels = levelManager.GetAllLevels();
             Debug.Log($"✓ Found {allLevels.Count} total levels");
 
-            var tutorials = LevelManager.Instance.GetLevels(SceneType.TutorialLevel);
+            var tutorials = levelManager.GetLevels(SceneType.TutorialLevel);
             Debug.Log($"✓ Found {tutorials.Count} tutorial levels");
 
-            var gameplayLevels = LevelManager.Instance.GetLevels(SceneType.GameplayLevel);
+            var gameplayLevels = levelManager.GetLevels(SceneType.GameplayLevel);
             Debug.Log($"✓ Found {gameplayLevels.Count} gameplay levels");
 
             // Test 3: List all discovered levels
@@ -50,7 +51,7 @@ namespace Tests
                 Debug.Log("--- Discovered Levels ---");
                 foreach (var level in allLevels)
                 {
-                    string canLoad = LevelManager.Instance.CanLoadLevel(level) ? "UNLOCKED" : "LOCKED";
+                    string canLoad = levelManager.CanLoadLevel(level) ? "UNLOCKED" : "LOCKED";
                     Debug.Log($"  {level.displayName} [{level.sceneType}] - Build Index: {level.buildIndex} - {canLoad}");
                 }
             }
@@ -75,24 +76,25 @@ namespace Tests
         {
             Debug.Log("=== Testing Level Progression ===");
 
-            var tutorials = LevelManager.Instance.GetLevels(SceneType.TutorialLevel);
+            var levelManager = ServiceLocator.Get<LevelManager>();
+            var tutorials = levelManager.GetLevels(SceneType.TutorialLevel);
             if (tutorials.Count > 0)
             {
                 var firstTutorial = tutorials[0];
-                Debug.Log($"First tutorial: {firstTutorial.displayName} - Can load: {LevelManager.Instance.CanLoadLevel(firstTutorial)}");
+                Debug.Log($"First tutorial: {firstTutorial.displayName} - Can load: {levelManager.CanLoadLevel(firstTutorial)}");
 
-                var nextLevel = LevelManager.Instance.GetNextLevel(firstTutorial);
+                var nextLevel = levelManager.GetNextLevel(firstTutorial);
                 if (nextLevel != null)
                 {
                     Debug.Log($"Next level after first tutorial: {nextLevel.displayName}");
                 }
             }
 
-            var gameplayLevels = LevelManager.Instance.GetLevels(SceneType.GameplayLevel);
+            var gameplayLevels = levelManager.GetLevels(SceneType.GameplayLevel);
             if (gameplayLevels.Count > 0)
             {
                 var firstLevel = gameplayLevels[0];
-                Debug.Log($"First gameplay level: {firstLevel.displayName} - Can load: {LevelManager.Instance.CanLoadLevel(firstLevel)}");
+                Debug.Log($"First gameplay level: {firstLevel.displayName} - Can load: {levelManager.CanLoadLevel(firstLevel)}");
             }
 
             Debug.Log("=== Level Progression Test Completed ===");

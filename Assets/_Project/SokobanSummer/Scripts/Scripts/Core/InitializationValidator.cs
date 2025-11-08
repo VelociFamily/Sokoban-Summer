@@ -36,7 +36,7 @@ namespace Core
             ValidateInputService(validationResults);
 
             // Validate AchievementManager
-            ValidateAchievementManager(validationResults);
+            ValidateAchievements(validationResults);
 
             // Validate MoveCounter
             ValidateMoveCounter(validationResults);
@@ -51,7 +51,12 @@ namespace Core
         {
             try
             {
-                var inputService = InputService.Instance;
+                if (!ServiceLocator.TryGet<InputService>(out var inputService) || inputService == null)
+                {
+                    results.AppendLine("✗ InputService: Not registered in ServiceLocator");
+                    return;
+                }
+                
                 var inputActions = inputService.InputActions;
 
                 results.AppendLine($"✓ InputService: Initialized");
@@ -63,13 +68,17 @@ namespace Core
             }
         }
 
-        private void ValidateAchievementManager(System.Text.StringBuilder results)
+        private void ValidateAchievements(System.Text.StringBuilder results)
         {
             try
             {
-                var achievementManager = AchievementManager.Instance;
+                if (!ServiceLocator.TryGet<AchievementManager>(out var achievementManager) || achievementManager == null)
+                {
+                    results.AppendLine("✗ AchievementManager: Not registered in ServiceLocator");
+                    return;
+                }
             
-                results.AppendLine($"✓ AchievementManager: {(achievementManager != null ? "✓ Found" : "✗ Missing")}");
+                results.AppendLine($"✓ AchievementManager: ✓ Found");
             }
             catch (System.Exception ex)
             {
@@ -81,9 +90,13 @@ namespace Core
         {
             try
             {
-                var moveCounter = MoveCounter.Instance;
+                if (!ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null)
+                {
+                    results.AppendLine("✗ MoveCounter: Not registered in ServiceLocator");
+                    return;
+                }
             
-                results.AppendLine($"✓ MoveCounter: {(moveCounter != null ? "✓ Found" : "✗ Missing")}");
+                results.AppendLine($"✓ MoveCounter: ✓ Found");
             }
             catch (System.Exception ex)
             {

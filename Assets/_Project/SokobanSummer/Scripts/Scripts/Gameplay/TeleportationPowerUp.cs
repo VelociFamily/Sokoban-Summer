@@ -63,7 +63,8 @@ namespace Gameplay
             if (playerController.teleportSound != null)
             {
                 // Use centralized AudioService instead of player's individual audioSource
-                ModernAudioService.Instance.PlaySFX(playerController.teleportSound);
+                var audioService = ServiceLocator.Get<ModernAudioService>();
+                audioService.PlaySFX(playerController.teleportSound);
             }
             else
             {

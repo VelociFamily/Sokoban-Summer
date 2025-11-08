@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 namespace Core
 {
+    /// <summary>
+    /// Manages move counting and timer for gameplay levels
+    /// Access via ServiceLocator.Get&lt;MoveCounter&gt;()
+    /// </summary>
     public class MoveCounter : MonoBehaviour
     {
-        public static MoveCounter Instance;
-
         [Header("Move Counter")]
         public int moveCount;
         public TextMeshProUGUI moveText;
@@ -25,21 +27,12 @@ namespace Core
         /// </summary>
         public void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-                timer = 0f;
-                timerRunning = true;
-                // Subscribe to scene changes to reset UI references
-                SceneManager.sceneLoaded += OnSceneLoaded;
-                Debug.Log("[MoveCounter]: Instance initialized and persisted across scenes");
-            }
-            else
-            {
-                Debug.LogWarning($"[MoveCounter]: Duplicate instance detected on '{gameObject.name}' - destroying");
-                Destroy(gameObject);
-            }
+            DontDestroyOnLoad(gameObject);
+            timer = 0f;
+            timerRunning = true;
+            // Subscribe to scene changes to reset UI references
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            Debug.Log("[MoveCounter]: Instance initialized and persisted across scenes");
         }
 
         private void Start()
@@ -316,12 +309,8 @@ namespace Core
 
         private void OnDestroy()
         {
-            if (Instance == this)
-            {
-                SceneManager.sceneLoaded -= OnSceneLoaded;
-                Debug.Log("[MoveCounter]: Primary instance destroyed - clearing static reference");
-                Instance = null;
-            }
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            Debug.Log("[MoveCounter]: Primary instance destroyed");
         }
 
         /// <summary>
@@ -329,11 +318,7 @@ namespace Core
         /// </summary>
         public void Shutdown()
         {
-            if (Instance == this)
-            {
-                SceneManager.sceneLoaded -= OnSceneLoaded;
-                Instance = null;
-            }
+            SceneManager.sceneLoaded -= OnSceneLoaded;
             if (this != null && gameObject != null)
             {
                 Destroy(gameObject);

@@ -50,7 +50,7 @@ namespace Tests
                 _uiCancelCallCount = 0;
 
                 // Initialize InputService
-                var inputService = InputService.Instance;
+                var inputService = ServiceLocator.Get<InputService>();
                 await inputService.InitializeAsync();
 
                 // Subscribe to events
@@ -97,7 +97,7 @@ namespace Tests
                 _playerMoveCallCount = 0;
                 _uiCancelCallCount = 0;
 
-                var inputService = InputService.Instance;
+                var inputService = ServiceLocator.Get<InputService>();
                 await inputService.InitializeAsync();
                 inputService.OnPlayerMove += OnPlayerMoveHandler;
                 inputService.OnUICancel += OnUICancelHandler;
@@ -187,7 +187,7 @@ namespace Tests
 
             _playerMoveCallCount = 0;
 
-            var inputService = InputService.Instance;
+            var inputService = ServiceLocator.Get<InputService>();
             await inputService.InitializeAsync();
             inputService.OnPlayerMove += OnPlayerMoveHandler;
 

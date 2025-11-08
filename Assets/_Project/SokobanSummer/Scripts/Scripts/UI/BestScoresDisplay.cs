@@ -12,7 +12,7 @@ namespace UI
         {
             textBox = GetComponent<TextMeshProUGUI>();
 
-            if (LevelLogger.Instance == null)
+            if (!ServiceLocator.TryGet<LevelLogger>(out var logger) || logger == null)
             {
                 textBox.text = "No scores to display.";
                 return;
@@ -23,7 +23,9 @@ namespace UI
 
         private string GetFormattedScores()
         {
-            var logger = LevelLogger.Instance;
+            if (!ServiceLocator.TryGet<LevelLogger>(out var logger) || logger == null)
+                return "No scores to display.";
+            
             var results = logger.GetAllResults(); // We need to add this method to LevelLogger
 
             if (results.Count == 0)

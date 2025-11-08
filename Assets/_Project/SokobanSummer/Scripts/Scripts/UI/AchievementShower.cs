@@ -12,7 +12,8 @@ namespace UI
 
         private void Update()
         {
-            if (AchievementManager.Instance == null)
+            var achievementManager = ServiceLocator.Get<AchievementManager>();
+            if (achievementManager == null)
             {
                 Debug.LogWarning("[AchievementShower]: AchievementManager instance not found - badges will not update");
                 return;
@@ -21,21 +22,21 @@ namespace UI
             // Update each badge's active state based on AchievementManager
             if (confuseAndSpeedBadge != null)
             {
-                var shouldShow = AchievementManager.Instance.ConfuseAndSpeed;
+                var shouldShow = achievementManager.ConfuseAndSpeed;
                 if (confuseAndSpeedBadge.activeSelf != shouldShow)
                     confuseAndSpeedBadge.SetActive(shouldShow);
             }
 
             if (completeTutorialBadge != null)
             {
-                var shouldShow = AchievementManager.Instance.CompleteTutorial;
+                var shouldShow = achievementManager.CompleteTutorial;
                 if (completeTutorialBadge.activeSelf != shouldShow)
                     completeTutorialBadge.SetActive(shouldShow);
             }
 
             if (completeLevelTwoBadge != null)
             {
-                var shouldShow = AchievementManager.Instance.CompleteLevelTwo;
+                var shouldShow = achievementManager.CompleteLevelTwo;
                 if (completeLevelTwoBadge.activeSelf != shouldShow)
                     completeLevelTwoBadge.SetActive(shouldShow);
             }

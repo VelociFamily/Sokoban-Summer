@@ -11,11 +11,10 @@ namespace Core
     /// <summary>
     /// Manages dynamic level discovery, loading, and progression tracking
     /// Scans for scenes in the Levels folder and provides level management functionality
+    /// Access via ServiceLocator.Get&lt;LevelManager&gt;()
     /// </summary>
     public class LevelManager : MonoBehaviour
     {
-        public static LevelManager Instance { get; private set; }
-
         [Header("Configuration")]
         [Tooltip("Path to the levels folder relative to Assets/Scenes/")]
         public string levelsFolder = "Levels";
@@ -60,17 +59,9 @@ namespace Core
 
         private void Awake()
         {
-            // Singleton pattern
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-                ScanForLevels();
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            // Singleton pattern removed - managed by ServiceLocator
+            DontDestroyOnLoad(gameObject);
+            ScanForLevels();
         }
 
         /// <summary>
@@ -145,7 +136,8 @@ namespace Core
             levelInfo.sortOrder = ExtractSortOrderFromName(levelInfo.sceneName);
 
             // Set default values: only first overall level unlocked, others locked unless LevelData overrides
-            levelInfo.requiresUnlock = true;
+            // Apply autoRequireUnlockForGameplay: gameplay levels locked by default, tutorials can be freely set
+            levelInfo.requiresUnlock = (levelInfo.sceneType == SceneType.GameplayLevel && autoRequireUnlockForGameplay);
             levelInfo.parMoves = 0;
             levelInfo.parTime = 0f;
 

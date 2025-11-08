@@ -7,12 +7,10 @@ namespace Core
     /// <summary>
     /// Centralized input service to manage input actions across the game
     /// Reduces duplication of InputSystem_Actions creation in multiple classes
+    /// Access via ServiceLocator.Get&lt;InputService&gt;()
     /// </summary>
     public class InputService
     {
-        private static InputService _instance;
-        public static InputService Instance => _instance ??= new InputService();
-
     public InputSystem_Actions InputActions { get; private set; }
 
         // Events for common input actions to reduce coupling
@@ -24,7 +22,7 @@ namespace Core
         private Action<UnityEngine.InputSystem.InputAction.CallbackContext> _moveCanceledHandler;
         private Action<UnityEngine.InputSystem.InputAction.CallbackContext> _uiCancelPerformedHandler;
 
-        private InputService() { }
+        public InputService() { }
 
         public async Task InitializeAsync()
         {

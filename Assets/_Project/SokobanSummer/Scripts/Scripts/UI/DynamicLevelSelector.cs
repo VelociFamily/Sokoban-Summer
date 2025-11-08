@@ -161,7 +161,8 @@ namespace UI
             // Clear existing buttons
             ClearGeneratedButtons();
 
-            if (LevelManager.Instance == null)
+            var levelManager = ServiceLocator.Get<LevelManager>();
+            if (levelManager == null)
             {
                 Debug.LogError("[DynamicLevelSelector] LevelManager instance not found!");
                 return;
@@ -426,12 +427,13 @@ namespace UI
         {
             targetList.Clear();
 
-            if (LevelManager.Instance == null)
+            var levelManager = ServiceLocator.Get<LevelManager>();
+            if (levelManager == null)
                 return;
 
             if (showTutorials)
             {
-                var tutorials = LevelManager.Instance.GetLevels(SceneType.TutorialLevel);
+                var tutorials = levelManager.GetLevels(SceneType.TutorialLevel);
                 if (tutorials != null && tutorials.Count > 0)
                 {
                     targetList.AddRange(tutorials);
@@ -440,7 +442,7 @@ namespace UI
 
             if (showGameplayLevels)
             {
-                var levels = LevelManager.Instance.GetLevels(SceneType.GameplayLevel);
+                var levels = levelManager.GetLevels(SceneType.GameplayLevel);
                 if (levels != null && levels.Count > 0)
                 {
                     targetList.AddRange(levels);
@@ -450,14 +452,15 @@ namespace UI
 
         private int ResolveDefaultSelectionIndex(List<LevelManager.LevelInfo> orderedLevels)
         {
-            if (orderedLevels == null || orderedLevels.Count == 0 || LevelManager.Instance == null)
+            var levelManager = ServiceLocator.Get<LevelManager>();
+            if (orderedLevels == null || orderedLevels.Count == 0 || levelManager == null)
                 return -1;
 
             int lastUnlockedIndex = -1;
             for (int i = 0; i < orderedLevels.Count; i++)
             {
                 var info = orderedLevels[i];
-                if (info != null && LevelManager.Instance.CanLoadLevel(info))
+                if (info != null && levelManager.CanLoadLevel(info))
                 {
                     lastUnlockedIndex = i;
                 }
@@ -746,6 +749,7 @@ namespace UI
             // restricted callbacks (physics triggers, render callbacks). Use Destroy instead.
             // We accept potential one-frame delay; Unity forbids DestroyImmediate here.
             var allGroups = levelButtonContainer.GetComponents<LayoutGroup>();
+            bool needsCleanup = false;
             if (allGroups != null && allGroups.Length > 0)
             {
                 foreach (var g in allGroups)
@@ -764,12 +768,21 @@ namespace UI
                         {
                             // Runtime (play mode) – must use Destroy to satisfy Unity restrictions.
                             UnityEngine.Object.Destroy(g);
+                            needsCleanup = true; // Mark that we need to wait for destruction
                         }
 #else
                         UnityEngine.Object.Destroy(g);
+                        needsCleanup = true;
 #endif
                     }
                 }
+            }
+
+            // If we destroyed a component in play mode, it's still present until end of frame
+            // Cannot add new layout component this frame - bail out and try again next frame
+            if (needsCleanup)
+            {
+                return;
             }
 
             // Re-query after potential removals
@@ -825,9 +838,14 @@ namespace UI
                     else
                     {
                         UnityEngine.Object.Destroy(lingeringVertical);
+                        // In play mode, component is marked for destruction but still exists this frame
+                        // Cannot add GridLayoutGroup until next frame - bail out to avoid conflict
+                        return;
                     }
 #else
                     UnityEngine.Object.Destroy(lingeringVertical);
+                    // In build, component is marked for destruction but still exists this frame
+                    return;
 #endif
                 }
 

@@ -110,7 +110,8 @@ namespace UI
         {
             if (levelInfo == null) return;
 
-            bool canLoad = LevelManager.Instance.CanLoadLevel(levelInfo);
+            var levelManager = ServiceLocator.Get<LevelManager>();
+            bool canLoad = levelManager.CanLoadLevel(levelInfo);
 
             // Update button interactability
             if (button != null)
@@ -137,7 +138,8 @@ namespace UI
         {
             if (completionBadge == null || levelInfo == null) return;
 
-            bool isCompleted = LevelManager.Instance.IsLevelCompleted(levelInfo);
+            var levelManager = ServiceLocator.Get<LevelManager>();
+            bool isCompleted = levelManager.IsLevelCompleted(levelInfo);
             completionBadge.SetActive(isCompleted);
         }
 
@@ -191,7 +193,8 @@ namespace UI
                 return;
             }
 
-            if (!LevelManager.Instance.CanLoadLevel(levelInfo))
+            var levelManager = ServiceLocator.Get<LevelManager>();
+            if (!levelManager.CanLoadLevel(levelInfo))
             {
                 Debug.Log($"[DynamicLevelButton] Level {levelInfo.displayName} is locked");
                 return;
@@ -203,10 +206,14 @@ namespace UI
                 if (_clicked) return;
                 _clicked = true;
 
-                if (clickSfx) ModernAudioService.Instance?.PlaySFX(clickSfx);
+                if (clickSfx)
+                {
+                    var audioService = ServiceLocator.Get<ModernAudioService>();
+                    audioService?.PlaySFX(clickSfx);
+                }
 
                 // Delegate to LevelManager so loading respects additive/persistence rules.
-                LevelManager.Instance?.LoadLevel(levelInfo);
+                levelManager?.LoadLevel(levelInfo);
         }
 
         /// <summary>

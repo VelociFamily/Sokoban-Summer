@@ -46,11 +46,12 @@ namespace Tests
             try
             {
                 // Initialize modern audio service
-                await ModernAudioService.Instance.InitializeAsync();
+                var audioService = ServiceLocator.Get<ModernAudioService>();
+                await audioService.InitializeAsync();
                 Debug.Log("✓ ModernAudioService initialized without errors");
 
                 // Check UnifiedAudioManager instance
-                var audioManager = ModernAudioService.Instance.GetAudioManager();
+                var audioManager = audioService.GetAudioManager();
                 if (audioManager != null)
                 {
                     Debug.Log("✓ UnifiedAudioManager instance available");
@@ -151,19 +152,26 @@ namespace Tests
         {
             Debug.Log("--- Testing Volume Changes ---");
 
-            var audioManager = ModernAudioService.Instance.GetAudioManager();
-            if (audioManager != null)
+            if (ServiceLocator.TryGet<ModernAudioService>(out var audioService))
             {
-                // Test different volume levels
-                audioManager.SetVolume((int)AudioChannelType.Master, 1.0f);
-                audioManager.SetVolume((int)AudioChannelType.SFX, 0.8f);
-                audioManager.SetVolume((int)AudioChannelType.Music, 0.6f);
+                var audioManager = audioService.GetAudioManager();
+                if (audioManager != null)
+                {
+                    // Test different volume levels
+                    audioManager.SetVolume((int)AudioChannelType.Master, 1.0f);
+                    audioManager.SetVolume((int)AudioChannelType.SFX, 0.8f);
+                    audioManager.SetVolume((int)AudioChannelType.Music, 0.6f);
 
-                Debug.Log("✓ Set test volume levels - check UI sliders for updates");
+                    Debug.Log("✓ Set test volume levels - check UI sliders for updates");
+                }
+                else
+                {
+                    Debug.LogError("✗ UnifiedAudioManager not available for volume testing");
+                }
             }
             else
             {
-                Debug.LogError("✗ UnifiedAudioManager not available for volume testing");
+                Debug.LogError("✗ ModernAudioService not found in ServiceLocator");
             }
         }
 

@@ -20,7 +20,8 @@ namespace Gameplay
                 // Use centralized AudioService instead of local AudioSource
                 if (portalSound != null)
                 {
-                    ModernAudioService.Instance.PlaySFX(portalSound);
+                    var audioService = ServiceLocator.Get<ModernAudioService>();
+                    audioService.PlaySFX(portalSound);
                 }
                 else
                 {
@@ -47,9 +48,10 @@ namespace Gameplay
 
                 // Notify LevelManager of completion to unlock progression
                 var currentScene = SceneManager.GetActiveScene();
-                if (LevelManager.Instance != null)
+                var levelManager = ServiceLocator.Get<LevelManager>();
+                if (levelManager != null)
                 {
-                    LevelManager.Instance.MarkLevelCompleted(currentScene.buildIndex);
+                    levelManager.MarkLevelCompleted(currentScene.buildIndex);
                 }
 
                 Debug.Log($"[PortalTrigger]: Scene '{currentScene.name}' marked as completed");
