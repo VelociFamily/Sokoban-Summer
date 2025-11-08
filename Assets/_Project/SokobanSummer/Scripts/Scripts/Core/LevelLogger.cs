@@ -129,12 +129,8 @@ namespace Core
 
         private void OnDestroy()
         {
-            if (Instance == this)
-            {
-                SceneManager.sceneLoaded -= OnSceneLoaded;
-                Debug.Log("[LevelLogger]: Primary instance destroyed - clearing static reference");
-                Instance = null;
-            }
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+            Debug.Log("[LevelLogger]: Instance destroyed - unsubscribing from scene events");
         }
     }
 }

@@ -749,6 +749,7 @@ namespace UI
             // restricted callbacks (physics triggers, render callbacks). Use Destroy instead.
             // We accept potential one-frame delay; Unity forbids DestroyImmediate here.
             var allGroups = levelButtonContainer.GetComponents<LayoutGroup>();
+            bool needsCleanup = false;
             if (allGroups != null && allGroups.Length > 0)
             {
                 foreach (var g in allGroups)
@@ -767,12 +768,21 @@ namespace UI
                         {
                             // Runtime (play mode) – must use Destroy to satisfy Unity restrictions.
                             UnityEngine.Object.Destroy(g);
+                            needsCleanup = true; // Mark that we need to wait for destruction
                         }
 #else
                         UnityEngine.Object.Destroy(g);
+                        needsCleanup = true;
 #endif
                     }
                 }
+            }
+
+            // If we destroyed a component in play mode, it's still present until end of frame
+            // Cannot add new layout component this frame - bail out and try again next frame
+            if (needsCleanup)
+            {
+                return;
             }
 
             // Re-query after potential removals
@@ -828,9 +838,14 @@ namespace UI
                     else
                     {
                         UnityEngine.Object.Destroy(lingeringVertical);
+                        // In play mode, component is marked for destruction but still exists this frame
+                        // Cannot add GridLayoutGroup until next frame - bail out to avoid conflict
+                        return;
                     }
 #else
                     UnityEngine.Object.Destroy(lingeringVertical);
+                    // In build, component is marked for destruction but still exists this frame
+                    return;
 #endif
                 }
 

@@ -12,7 +12,7 @@ namespace UI
         {
             textBox = GetComponent<TextMeshProUGUI>();
 
-            if (!SokobanSummer.Core.ServiceLocator.TryGet<LevelLogger>(out var logger) || logger == null)
+            if (!ServiceLocator.TryGet<LevelLogger>(out var logger) || logger == null)
             {
                 textBox.text = "No scores to display.";
                 return;
@@ -23,7 +23,7 @@ namespace UI
 
         private string GetFormattedScores()
         {
-            if (!SokobanSummer.Core.ServiceLocator.TryGet<LevelLogger>(out var logger) || logger == null)
+            if (!ServiceLocator.TryGet<LevelLogger>(out var logger) || logger == null)
                 return "No scores to display.";
             
             var results = logger.GetAllResults(); // We need to add this method to LevelLogger

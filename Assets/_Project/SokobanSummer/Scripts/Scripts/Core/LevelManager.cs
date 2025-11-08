@@ -136,7 +136,8 @@ namespace Core
             levelInfo.sortOrder = ExtractSortOrderFromName(levelInfo.sceneName);
 
             // Set default values: only first overall level unlocked, others locked unless LevelData overrides
-            levelInfo.requiresUnlock = true;
+            // Apply autoRequireUnlockForGameplay: gameplay levels locked by default, tutorials can be freely set
+            levelInfo.requiresUnlock = (levelInfo.sceneType == SceneType.GameplayLevel && autoRequireUnlockForGameplay);
             levelInfo.parMoves = 0;
             levelInfo.parTime = 0f;
 
