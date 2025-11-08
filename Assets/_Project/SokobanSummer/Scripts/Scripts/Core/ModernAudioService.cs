@@ -7,15 +7,13 @@ namespace Core
     /// <summary>
     /// Modernized AudioService that works with the new UnifiedAudioManager
     /// Provides a clean interface for the game initialization system
+    /// Access via ServiceLocator.Get&lt;ModernAudioService&gt;()
     /// </summary>
     public class ModernAudioService
     {
-        private static ModernAudioService _instance;
-        public static ModernAudioService Instance => _instance ??= new ModernAudioService();
-
     private IAudioManager _audioManager; // Use shared interface to avoid asmdef cycles
 
-        private ModernAudioService() { }
+        public ModernAudioService() { }
 
         /// <summary>
         /// Initialize the modern audio system

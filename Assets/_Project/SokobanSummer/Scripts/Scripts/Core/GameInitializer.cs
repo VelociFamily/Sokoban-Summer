@@ -69,6 +69,13 @@ namespace Core
             private GameObject backgroundClone;
             private ForegroundAmbientManager foregroundAmbientManager;
 
+        // Service instances managed by this initializer
+        private ModernAudioService _audioService;
+        private InputService _inputService;
+        private MoveCounter _moveCounter;
+        private AchievementManager _achievementManager;
+        private LevelManager _levelManager;
+
         private async void Start()
         {
             try
@@ -162,13 +169,31 @@ namespace Core
                 InitializeAudioSystemAsync(),
                 InitializeInputSystemAsync(),
                 InitializeAchievementSystemAsync(),
-                InitializeMoveCounterAsync()
+                InitializeMoveCounterAsync(),
+                InitializeLevelManagerAsync()
             };
 
             // Wait for all core systems to initialize
             await Task.WhenAll(initTasks);
 
-            Debug.Log("[GameInitializer]: Core systems initialized");
+            // Register all services in ServiceLocator after initialization
+            RegisterServicesInLocator();
+
+            Debug.Log("[GameInitializer]: Core systems initialized and registered in ServiceLocator");
+        }
+
+        /// <summary>
+        /// Register all initialized services in the ServiceLocator
+        /// </summary>
+        private void RegisterServicesInLocator()
+        {
+            if (_audioService != null) SokobanSummer.Core.ServiceLocator.Register(_audioService);
+            if (_inputService != null) SokobanSummer.Core.ServiceLocator.Register(_inputService);
+            if (_moveCounter != null) SokobanSummer.Core.ServiceLocator.Register(_moveCounter);
+            if (_achievementManager != null) SokobanSummer.Core.ServiceLocator.Register(_achievementManager);
+            if (_levelManager != null) SokobanSummer.Core.ServiceLocator.Register(_levelManager);
+
+            Debug.Log($"[GameInitializer]: {SokobanSummer.Core.ServiceLocator.Count} services registered in ServiceLocator");
         }
 
         /// <summary>
@@ -176,30 +201,36 @@ namespace Core
         /// </summary>
         private async Task InitializeAudioSystemAsync()
         {
+            // Create ModernAudioService instance
+            _audioService = new ModernAudioService();
+            
             // Use modern audio system if available, otherwise fallback to legacy
             if (UnifiedAudioManagerPrefab != null)
             {
-                await ModernAudioService.Instance.InitializeWithPrefabAsync(UnifiedAudioManagerPrefab);
+                await _audioService.InitializeWithPrefabAsync(UnifiedAudioManagerPrefab);
             }
         }
 
         /// <summary>
         /// Initialize input systems asynchronously
         /// </summary>
-        private static async Task InitializeInputSystemAsync()
+        private async Task InitializeInputSystemAsync()
         {
-            await InputService.Instance.InitializeAsync();
+            // Create InputService instance
+            _inputService = new InputService();
+            await _inputService.InitializeAsync();
         }
 
         /// <summary>
         /// Initialize achievement system asynchronously
         /// </summary>
-        private static async Task InitializeAchievementSystemAsync()
+        private async Task InitializeAchievementSystemAsync()
         {
             // Initialize AchievementManager asynchronously
             var achievementManagerObj = FindFirstObjectByType<AchievementManager>();
             if (achievementManagerObj != null)
             {
+                _achievementManager = achievementManagerObj;
                 await achievementManagerObj.InitializeAsync();
                 Debug.Log("[GameInitializer]: AchievementManager initialized");
             }
@@ -207,10 +238,33 @@ namespace Core
             {
                 // Try to create an AchievementManager if none exists
                 var achievementManagerGameObject = new GameObject("AchievementManager");
-                var achievementManager = achievementManagerGameObject.AddComponent<AchievementManager>();
-                await achievementManager.InitializeAsync();
+                _achievementManager = achievementManagerGameObject.AddComponent<AchievementManager>();
+                await _achievementManager.InitializeAsync();
                 Debug.Log("[GameInitializer]: AchievementManager created and initialized");
             }
+        }
+
+        /// <summary>
+        /// Initialize LevelManager system asynchronously
+        /// </summary>
+        private async Task InitializeLevelManagerAsync()
+        {
+            // Check if LevelManager already exists in the scene
+            var existingLevelManager = FindFirstObjectByType<LevelManager>();
+            if (existingLevelManager != null)
+            {
+                _levelManager = existingLevelManager;
+                Debug.Log("[GameInitializer]: LevelManager already exists in scene");
+                await Task.Yield();
+                return;
+            }
+
+            // Create LevelManager if it doesn't exist
+            var levelManagerGameObject = new GameObject("LevelManager");
+            _levelManager = levelManagerGameObject.AddComponent<LevelManager>();
+            Debug.Log("[GameInitializer]: LevelManager created");
+
+            await Task.Yield();
         }
 
         /// <summary>
@@ -222,6 +276,7 @@ namespace Core
             var existingMoveCounter = FindFirstObjectByType<MoveCounter>();
             if (existingMoveCounter != null)
             {
+                _moveCounter = existingMoveCounter;
                 Debug.Log("[GameInitializer]: MoveCounter already exists in scene");
                 await Task.Yield();
                 return;
@@ -231,13 +286,14 @@ namespace Core
             if (MoveCounterPrefab != null)
             {
                 var moveCounterClone = Instantiate(MoveCounterPrefab);
+                _moveCounter = moveCounterClone;
                 Debug.Log($"[GameInitializer]: MoveCounter '{moveCounterClone.name}' created from prefab");
             }
             else
             {
                 // Create a basic MoveCounter if no prefab is assigned
                 var moveCounterGameObject = new GameObject("MoveCounter");
-                var moveCounter = moveCounterGameObject.AddComponent<MoveCounter>();
+                _moveCounter = moveCounterGameObject.AddComponent<MoveCounter>();
                 Debug.Log("[GameInitializer]: MoveCounter created programmatically - UI components will need to be assigned in scenes");
             }
 
@@ -415,10 +471,13 @@ namespace Core
             try
             {
                 Debug.Log("[GameInitializer]: Beginning coordinated service teardown...");
-                AchievementManager.Instance?.Shutdown();
-                MoveCounter.Instance?.Shutdown();
-                ModernAudioService.Instance?.Shutdown();
-                InputService.Instance?.Shutdown();
+                _achievementManager?.Shutdown();
+                _moveCounter?.Shutdown();
+                _audioService?.Shutdown();
+                _inputService?.Shutdown();
+                
+                // Clear ServiceLocator
+                SokobanSummer.Core.ServiceLocator.Clear();
             }
             finally
             {

@@ -7,10 +7,12 @@ using Core;
 
 namespace Core
 {
+    /// <summary>
+    /// Manages achievements and progression
+    /// Access via ServiceLocator.Get&lt;AchievementManager&gt;()
+    /// </summary>
     public class AchievementManager : MonoBehaviour
     {
-        public static AchievementManager Instance { get; private set; }
-
         // Public properties to access the state without allowing direct modification
         [Header("Achievement States")]
         public bool ConfuseAndSpeed { get; private set; }
@@ -38,12 +40,6 @@ namespace Core
         /// </summary>
         public async Task InitializeAsync()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-                return;
-            }
-            Instance = this;
             DontDestroyOnLoad(gameObject);
 
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -94,10 +90,6 @@ namespace Core
             {
                 StopCoroutine(hideAchievementCoroutine);
             }
-            if (Instance == this)
-            {
-                Instance = null;
-            }
         }
 
         /// <summary>
@@ -116,10 +108,6 @@ namespace Core
             }
             finally
             {
-                if (Instance == this)
-                {
-                    Instance = null;
-                }
                 if (this != null && gameObject != null)
                 {
                     Destroy(gameObject);
