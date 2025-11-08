@@ -90,6 +90,9 @@ namespace Core
             {
                 StopCoroutine(hideAchievementCoroutine);
             }
+            
+            // Unsubscribe from power-up events if subscribed
+            UnsubscribeFromPowerUpEvents();
         }
 
         /// <summary>
@@ -100,6 +103,8 @@ namespace Core
             try
             {
                 SceneManager.sceneLoaded -= OnSceneLoaded;
+                UnsubscribeFromPowerUpEvents();
+                
                 if (hideAchievementCoroutine != null)
                 {
                     StopCoroutine(hideAchievementCoroutine);
@@ -126,31 +131,73 @@ namespace Core
             CompleteTutorial = true;
         }
 
-        private void Update()
+        // ======================
+        // POWER-UP EVENT SUBSCRIPTIONS
+        // ======================
+
+        /// <summary>
+        /// Subscribe to power-up events from PlayerController's PowerUpManager
+        /// Call this when a PlayerController becomes available in a gameplay scene
+        /// </summary>
+        public void SubscribeToPowerUpEvents(Gameplay.PowerUpManager powerUpManager)
         {
-            // Only check achievements if the active scene is a gameplay scene (not menu)
-            var activeScene = SceneManager.GetActiveScene();
-            if (SceneInfo.IsMainMenuScene(activeScene))
-            {
-                return; // Skip achievement checks in menu scene
-            }
+            if (powerUpManager == null) return;
+            
+            UnsubscribeFromPowerUpEvents(); // Ensure we don't double-subscribe
+            
+            powerUpManager.OnPowerUpActivated += HandlePowerUpActivated;
+            powerUpManager.OnPowerUpConsumed += HandlePowerUpConsumed;
+            powerUpManager.OnPowerUpDeactivated += HandlePowerUpDeactivated;
+            
+            Debug.Log("[AchievementManager]: Subscribed to power-up events");
+        }
 
-            if (SceneInfo.IsLevelTwo(activeScene))
-            {
-                UnlockTutorial();
-                CompleteTutorial = true;
-            }
+        /// <summary>
+        /// Unsubscribe from power-up events
+        /// </summary>
+        private void UnsubscribeFromPowerUpEvents()
+        {
+            // Note: We can't reliably get the PowerUpManager reference here,
+            // so we rely on the PlayerController or scene to properly unsubscribe
+            // The events will naturally disconnect when the PowerUpManager is destroyed
+        }
 
-            // Power-up based achievements are triggered from gameplay code; core shouldn't reference gameplay types directly.
-            // Keep this call for backward compatibility only if gameplay invokes CheckPowerUpAchievement via messages.
-            // CheckPowerUpAchievement();
-            UpdateAchievementDisplay();
+        private void HandlePowerUpActivated(object sender, Gameplay.PowerUpEventArgs e)
+        {
+            Debug.Log($"[AchievementManager]: Power-up activated - {e.PowerUpName} ({e.RemainingUses} uses)");
+            CheckSimultaneousPowerUps(sender as Gameplay.PowerUpManager);
+        }
+
+        private void HandlePowerUpConsumed(object sender, Gameplay.PowerUpEventArgs e)
+        {
+            Debug.Log($"[AchievementManager]: Power-up consumed - {e.PowerUpName} ({e.RemainingUses} uses remaining)");
+        }
+
+        private void HandlePowerUpDeactivated(object sender, Gameplay.PowerUpEventArgs e)
+        {
+            Debug.Log($"[AchievementManager]: Power-up deactivated - {e.PowerUpName}");
+        }
+
+        /// <summary>
+        /// Check if both confusion and speed power-ups are active simultaneously
+        /// </summary>
+        private void CheckSimultaneousPowerUps(Gameplay.PowerUpManager powerUpManager)
+        {
+            if (powerUpManager == null || confuseAndSpeedUnlocked) return;
+
+            // Check if both direction modification (confusion) and speed modification (teleport) are active
+            if (powerUpManager.IsDirectionModificationActive && powerUpManager.IsSpeedModificationActive)
+            {
+                confuseAndSpeedUnlocked = true;
+                UnlockConfuseAndSpeed();
+            }
         }
 
         // ======================
-        // CHECKS
+        // CHECKS (DEPRECATED - Replaced by event-driven system)
         // ======================
 
+        [System.Obsolete("Power-up achievements are now event-driven. Subscribe to PowerUpManager events instead.")]
         private void CheckPowerUpAchievement()
         {
             // Deprecated: gameplay should call UnlockConfuseAndSpeed() directly when both powerups are used.

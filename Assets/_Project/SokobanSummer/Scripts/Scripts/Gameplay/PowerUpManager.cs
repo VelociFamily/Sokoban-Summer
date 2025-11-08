@@ -1,8 +1,30 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace Gameplay
 {
+    /// <summary>
+    /// Event data for power-up state changes
+    /// </summary>
+    public class PowerUpEventArgs : EventArgs
+    {
+        public string PowerUpName { get; set; }
+        public int RemainingUses { get; set; }
+        public bool IsActive { get; set; }
+        public PowerUpEventType EventType { get; set; }
+    }
+
+    /// <summary>
+    /// Type of power-up event
+    /// </summary>
+    public enum PowerUpEventType
+    {
+        Activated,
+        Consumed,
+        Deactivated
+    }
+
     /// <summary>
     /// Manages all power-up systems and their interactions with the player
     /// </summary>
@@ -14,6 +36,21 @@ namespace Gameplay
         // Power-up implementations
         private static readonly ConfusionPowerUp _confusionPowerUp = new ConfusionPowerUp();
         private static readonly TeleportationPowerUp _teleportationPowerUp = new TeleportationPowerUp();
+
+        /// <summary>
+        /// Event raised when a power-up is activated (collected)
+        /// </summary>
+        public event EventHandler<PowerUpEventArgs> OnPowerUpActivated;
+
+        /// <summary>
+        /// Event raised when a power-up is deactivated (uses exhausted)
+        /// </summary>
+        public event EventHandler<PowerUpEventArgs> OnPowerUpDeactivated;
+
+        /// <summary>
+        /// Event raised when a power-up use is consumed
+        /// </summary>
+        public event EventHandler<PowerUpEventArgs> OnPowerUpConsumed;
     
         public PowerUpManager(PlayerController playerController)
         {
@@ -23,6 +60,29 @@ namespace Gameplay
                 _confusionPowerUp,
                 _teleportationPowerUp
             };
+
+            // Subscribe to power-up implementations to forward their events
+            _confusionPowerUp.OnStateChanged += HandlePowerUpStateChanged;
+            _teleportationPowerUp.OnStateChanged += HandlePowerUpStateChanged;
+        }
+
+        /// <summary>
+        /// Handles state change events from power-up implementations
+        /// </summary>
+        private void HandlePowerUpStateChanged(object sender, PowerUpEventArgs e)
+        {
+            switch (e.EventType)
+            {
+                case PowerUpEventType.Activated:
+                    OnPowerUpActivated?.Invoke(this, e);
+                    break;
+                case PowerUpEventType.Consumed:
+                    OnPowerUpConsumed?.Invoke(this, e);
+                    break;
+                case PowerUpEventType.Deactivated:
+                    OnPowerUpDeactivated?.Invoke(this, e);
+                    break;
+            }
         }
     
         /// <summary>

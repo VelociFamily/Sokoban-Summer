@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Gameplay
@@ -7,24 +8,53 @@ namespace Gameplay
     /// </summary>
     public class ConfusionPowerUp : IPowerUp
     {
-        public int RemainingUses => ConfuseTurns;
-        public bool IsActive => ConfuseTurns > 0;
+        private int _confuseTurns;
+
+        public int RemainingUses => _confuseTurns;
+        public bool IsActive => _confuseTurns > 0;
         public string PowerUpName => "ConfusionPowerUp";
     
-        // Static accessor for backward compatibility
+        /// <summary>
+        /// Event raised when the power-up state changes
+        /// </summary>
+        public event EventHandler<PowerUpEventArgs> OnStateChanged;
+
+        // Static accessor for backward compatibility - marked as obsolete
+        [Obsolete("Use PowerUpManager events instead of accessing static fields directly")]
         public static int ConfuseTurns { get; set; }
 
         public void Activate(int uses)
         {
-            ConfuseTurns = uses;
+            _confuseTurns = uses;
+            ConfuseTurns = uses; // Keep static field in sync for backward compatibility
+            
+            OnStateChanged?.Invoke(this, new PowerUpEventArgs
+            {
+                PowerUpName = PowerUpName,
+                RemainingUses = _confuseTurns,
+                IsActive = true,
+                EventType = PowerUpEventType.Activated
+            });
         }
     
         public bool ConsumeUse()
         {
-            if (ConfuseTurns > 0)
+            if (_confuseTurns > 0)
             {
-                ConfuseTurns--;
-                return ConfuseTurns > 0;
+                _confuseTurns--;
+                ConfuseTurns = _confuseTurns; // Keep static field in sync
+                
+                var eventType = _confuseTurns > 0 ? PowerUpEventType.Consumed : PowerUpEventType.Deactivated;
+                
+                OnStateChanged?.Invoke(this, new PowerUpEventArgs
+                {
+                    PowerUpName = PowerUpName,
+                    RemainingUses = _confuseTurns,
+                    IsActive = _confuseTurns > 0,
+                    EventType = eventType
+                });
+                
+                return _confuseTurns > 0;
             }
             return false;
         }

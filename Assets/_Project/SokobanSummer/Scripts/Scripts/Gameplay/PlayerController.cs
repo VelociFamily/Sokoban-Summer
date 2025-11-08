@@ -37,6 +37,17 @@ namespace Gameplay
         
             // Use InputService instead of creating our own InputSystem_Actions
             InitializeInput();
+            
+            // Subscribe AchievementManager to power-up events
+            SubscribeAchievementManager();
+        }
+
+        private void SubscribeAchievementManager()
+        {
+            if (ServiceLocator.TryGet<AchievementManager>(out var achievementManager))
+            {
+                achievementManager.SubscribeToPowerUpEvents(_powerUpManager);
+            }
         }
 
         private void Start()
