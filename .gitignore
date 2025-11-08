@@ -99,3 +99,6 @@ InitTestScene*.unity*
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
 # NuGet
 .nuget/
+
+# Coplay MCP logs
+CoplayLogs/
