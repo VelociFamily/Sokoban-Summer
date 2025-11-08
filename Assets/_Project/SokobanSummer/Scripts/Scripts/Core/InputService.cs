@@ -102,5 +102,11 @@ namespace Core
                 _uiCancelPerformedHandler = null;
             }
         }
+
+        // Unified lifecycle API
+        public void Shutdown()
+        {
+            Dispose();
+        }
     }
 }

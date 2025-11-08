@@ -122,6 +122,24 @@ namespace Core
             OnReset?.Invoke("All");
         }
 
+        /// <summary>
+        /// Optional shutdown for SaveFacade to persist and release references.
+        /// </summary>
+        public void Shutdown()
+        {
+            try
+            {
+                SaveAll();
+            }
+            finally
+            {
+                _settings = null;
+                _achievements = null;
+                _progress = null;
+                _initialized = false;
+            }
+        }
+
         private void MigrateFromPlayerPrefs()
         {
             Debug.Log("[SaveFacade] Migrating PlayerPrefs to JSON saves...");

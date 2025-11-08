@@ -324,6 +324,22 @@ namespace Core
             }
         }
 
+        /// <summary>
+        /// Coordinated shutdown for MoveCounter: unsubscribe and destroy the GameObject.
+        /// </summary>
+        public void Shutdown()
+        {
+            if (Instance == this)
+            {
+                SceneManager.sceneLoaded -= OnSceneLoaded;
+                Instance = null;
+            }
+            if (this != null && gameObject != null)
+            {
+                Destroy(gameObject);
+            }
+        }
+
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             // Clear UI references when a new scene loads since they're no longer valid
