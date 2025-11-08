@@ -103,3 +103,6 @@ InitTestScene*.unity*
 # Coplay MCP logs
 CoplayLogs/
 Assets/Others/TextMesh Pro/Examples & Extras/Resources/Fonts & Materials/Bangers SDF.asset
+
+# Coplay editor checkpoints (do not version control)
+/Packages/Coplay/Editor/Checkpoints/
