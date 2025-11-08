@@ -36,7 +36,7 @@ namespace Core
             ValidateInputService(validationResults);
 
             // Validate AchievementManager
-            ValidateAchievementManager(validationResults);
+            ValidateAchievements(validationResults);
 
             // Validate MoveCounter
             ValidateMoveCounter(validationResults);
@@ -51,7 +51,7 @@ namespace Core
         {
             try
             {
-                if (!SokobanSummer.Core.ServiceLocator.TryGet<InputService>(out var inputService) || inputService == null)
+                if (!ServiceLocator.TryGet<InputService>(out var inputService) || inputService == null)
                 {
                     results.AppendLine("✗ InputService: Not registered in ServiceLocator");
                     return;
@@ -68,11 +68,11 @@ namespace Core
             }
         }
 
-        private void ValidateAchievementManager(System.Text.StringBuilder results)
+        private void ValidateAchievements(System.Text.StringBuilder results)
         {
             try
             {
-                if (!SokobanSummer.Core.ServiceLocator.TryGet<AchievementManager>(out var achievementManager) || achievementManager == null)
+                if (!ServiceLocator.TryGet<AchievementManager>(out var achievementManager) || achievementManager == null)
                 {
                     results.AppendLine("✗ AchievementManager: Not registered in ServiceLocator");
                     return;
@@ -90,7 +90,7 @@ namespace Core
         {
             try
             {
-                if (!SokobanSummer.Core.ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null)
+                if (!ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null)
                 {
                     results.AppendLine("✗ MoveCounter: Not registered in ServiceLocator");
                     return;

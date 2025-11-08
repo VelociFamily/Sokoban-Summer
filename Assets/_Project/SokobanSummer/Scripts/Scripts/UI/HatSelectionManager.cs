@@ -23,7 +23,7 @@ namespace UI
         void Start()
         {
             // unlocked only if tutorial is complete
-            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            var achievementManager = ServiceLocator.Get<AchievementManager>();
             unlocked = (achievementManager != null && achievementManager.CompleteTutorial);
             ShowHatsUI(unlocked);
 
@@ -47,7 +47,7 @@ namespace UI
 
         void Update()
         {
-            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            var achievementManager = ServiceLocator.Get<AchievementManager>();
             if (!unlocked && achievementManager != null && achievementManager.CompleteTutorial)
             {
                 unlocked = true;
@@ -65,7 +65,7 @@ namespace UI
             }
 
             // save selected hat name to AchievementManager
-            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            var achievementManager = ServiceLocator.Get<AchievementManager>();
             if (achievementManager != null && hats.Count > 0)
             {
                 achievementManager.SetSelectedHat(hats[currentIndex].name);

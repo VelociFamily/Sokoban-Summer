@@ -75,6 +75,7 @@ namespace Core
         private MoveCounter _moveCounter;
         private AchievementManager _achievementManager;
         private LevelManager _levelManager;
+        private LevelLogger _levelLogger;
 
         private async void Start()
         {
@@ -187,13 +188,14 @@ namespace Core
         /// </summary>
         private void RegisterServicesInLocator()
         {
-            if (_audioService != null) SokobanSummer.Core.ServiceLocator.Register(_audioService);
-            if (_inputService != null) SokobanSummer.Core.ServiceLocator.Register(_inputService);
-            if (_moveCounter != null) SokobanSummer.Core.ServiceLocator.Register(_moveCounter);
-            if (_achievementManager != null) SokobanSummer.Core.ServiceLocator.Register(_achievementManager);
-            if (_levelManager != null) SokobanSummer.Core.ServiceLocator.Register(_levelManager);
+            if (_audioService != null) ServiceLocator.Register(_audioService);
+            if (_inputService != null) ServiceLocator.Register(_inputService);
+            if (_moveCounter != null) ServiceLocator.Register(_moveCounter);
+            if (_achievementManager != null) ServiceLocator.Register(_achievementManager);
+            if (_levelManager != null) ServiceLocator.Register(_levelManager);
+            if (_levelLogger != null) ServiceLocator.Register(_levelLogger);
 
-            Debug.Log($"[GameInitializer]: {SokobanSummer.Core.ServiceLocator.Count} services registered in ServiceLocator");
+            Debug.Log($"[GameInitializer]: {ServiceLocator.Count} services registered in ServiceLocator");
         }
 
         /// <summary>
@@ -329,7 +331,7 @@ namespace Core
         {
             if (LevelLogger != null)
             {
-                Instantiate(LevelLogger);
+                _levelLogger = Instantiate(LevelLogger);
                 Debug.Log("[GameInitializer]: LevelLogger initialized");
             }
             await Task.Yield();
@@ -477,7 +479,7 @@ namespace Core
                 _inputService?.Shutdown();
                 
                 // Clear ServiceLocator
-                SokobanSummer.Core.ServiceLocator.Clear();
+                ServiceLocator.Clear();
             }
             finally
             {

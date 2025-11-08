@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SokobanSummer.Core
+namespace Core
 {
     /// <summary>
     /// Simple Service Locator for centralized singleton management.

@@ -110,7 +110,7 @@ namespace UI
         {
             if (levelInfo == null) return;
 
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             bool canLoad = levelManager.CanLoadLevel(levelInfo);
 
             // Update button interactability
@@ -138,7 +138,7 @@ namespace UI
         {
             if (completionBadge == null || levelInfo == null) return;
 
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             bool isCompleted = levelManager.IsLevelCompleted(levelInfo);
             completionBadge.SetActive(isCompleted);
         }
@@ -193,7 +193,7 @@ namespace UI
                 return;
             }
 
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             if (!levelManager.CanLoadLevel(levelInfo))
             {
                 Debug.Log($"[DynamicLevelButton] Level {levelInfo.displayName} is locked");
@@ -208,7 +208,7 @@ namespace UI
 
                 if (clickSfx)
                 {
-                    var audioService = SokobanSummer.Core.ServiceLocator.Get<ModernAudioService>();
+                    var audioService = ServiceLocator.Get<ModernAudioService>();
                     audioService?.PlaySFX(clickSfx);
                 }
 

@@ -75,7 +75,7 @@ namespace Gameplay
         {
             Debug.Log("[RestartLevel]: Reloading current level for new attempt (via LevelManager)");
             var currentScene = SceneManager.GetActiveScene();
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             var level = levelManager?.GetLevelByBuildIndex(currentScene.buildIndex);
             if (level != null)
             {

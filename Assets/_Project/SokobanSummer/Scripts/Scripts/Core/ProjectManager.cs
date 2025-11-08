@@ -32,7 +32,7 @@ namespace Core
 
         public void EvaluatePerformance()
         {
-            if (!SokobanSummer.Core.ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null)
+            if (!ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null)
             {
                 Debug.LogError("[ProjectManager]: MoveCounter not registered in ServiceLocator - cannot evaluate performance");
                 return;

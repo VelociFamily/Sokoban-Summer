@@ -4,10 +4,12 @@ using UnityEngine.SceneManagement;
 
 namespace Core
 {
+    /// <summary>
+    /// Logs level completion and best scores.
+    /// Access via ServiceLocator.Get<LevelLogger>()
+    /// </summary>
     public class LevelLogger : MonoBehaviour
     {
-        public static LevelLogger Instance;
-
         public class LevelResult
         {
             public int bestMoves = int.MaxValue;
@@ -19,18 +21,9 @@ namespace Core
 
         private void Awake()
         {
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-                SceneManager.sceneLoaded += OnSceneLoaded;
-                Debug.Log("[LevelLogger]: Instance initialized and persisted across scenes");
-            }
-            else
-            {
-                Debug.LogWarning($"[LevelLogger]: Duplicate instance detected on '{gameObject.name}' - destroying");
-                Destroy(gameObject);
-            }
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            Debug.Log("[LevelLogger]: Initialized and persisted across scenes");
         }
 
         private void Update()
@@ -38,7 +31,7 @@ namespace Core
             if (SceneInfo.IsMainMenuScene())
                 return;
 
-            if (!SokobanSummer.Core.ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null || hasLogged)
+            if (!ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null || hasLogged)
                 return;
 
             if (moveCounter.levelCompleteCanvas != null && moveCounter.levelCompleteCanvas.activeSelf)
@@ -80,7 +73,7 @@ namespace Core
             Debug.Log($"[LevelLogger]: Level '{GetLevelName(sceneIndex)}' completed - Moves: {moves}, Time: {FormatTime(time)}{(newBest ? " (New Best!)" : "")}");
 
             // Notify LevelManager about completion to unlock next level
-            if (SokobanSummer.Core.ServiceLocator.TryGet<LevelManager>(out var levelManager) && levelManager != null)
+            if (ServiceLocator.TryGet<LevelManager>(out var levelManager) && levelManager != null)
             {
                 levelManager.MarkLevelCompleted(sceneIndex);
             }
@@ -112,7 +105,7 @@ namespace Core
         public string GetLevelName(int index)
         {
             // Try to get level name from LevelManager first
-            if (SokobanSummer.Core.ServiceLocator.TryGet<LevelManager>(out var levelManager) && levelManager != null)
+            if (ServiceLocator.TryGet<LevelManager>(out var levelManager) && levelManager != null)
             {
                 var levelInfo = levelManager.GetLevelByBuildIndex(index);
                 if (levelInfo != null)

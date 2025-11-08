@@ -9,7 +9,7 @@ namespace UI
         public Transform hatsFolder;
         void Start()
         {
-            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            var achievementManager = ServiceLocator.Get<AchievementManager>();
             if (achievementManager == null || string.IsNullOrEmpty(achievementManager.selectedHatName))
                 return;
 

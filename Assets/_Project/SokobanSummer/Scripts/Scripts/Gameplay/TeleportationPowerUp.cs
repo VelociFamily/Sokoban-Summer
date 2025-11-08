@@ -63,7 +63,7 @@ namespace Gameplay
             if (playerController.teleportSound != null)
             {
                 // Use centralized AudioService instead of player's individual audioSource
-                var audioService = SokobanSummer.Core.ServiceLocator.Get<ModernAudioService>();
+                var audioService = ServiceLocator.Get<ModernAudioService>();
                 audioService.PlaySFX(playerController.teleportSound);
             }
             else

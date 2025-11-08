@@ -161,7 +161,7 @@ namespace UI
             // Clear existing buttons
             ClearGeneratedButtons();
 
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             if (levelManager == null)
             {
                 Debug.LogError("[DynamicLevelSelector] LevelManager instance not found!");
@@ -427,7 +427,7 @@ namespace UI
         {
             targetList.Clear();
 
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             if (levelManager == null)
                 return;
 
@@ -452,7 +452,7 @@ namespace UI
 
         private int ResolveDefaultSelectionIndex(List<LevelManager.LevelInfo> orderedLevels)
         {
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             if (orderedLevels == null || orderedLevels.Count == 0 || levelManager == null)
                 return -1;
 

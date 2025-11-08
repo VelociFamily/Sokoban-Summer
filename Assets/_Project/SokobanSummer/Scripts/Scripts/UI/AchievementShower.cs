@@ -12,7 +12,7 @@ namespace UI
 
         private void Update()
         {
-            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            var achievementManager = ServiceLocator.Get<AchievementManager>();
             if (achievementManager == null)
             {
                 Debug.LogWarning("[AchievementShower]: AchievementManager instance not found - badges will not update");

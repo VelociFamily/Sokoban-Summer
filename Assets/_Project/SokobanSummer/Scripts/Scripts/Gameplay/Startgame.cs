@@ -25,7 +25,7 @@ namespace Gameplay
         private void InitializeInput()
         {
             // Use centralized input service
-            var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();
+            var inputService = ServiceLocator.Get<InputService>();
             if (inputService.InputActions != null)
             {
                 _inputActions = inputService.InputActions;
@@ -35,13 +35,13 @@ namespace Gameplay
 
         private void OnEnable()
         {
-            var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();
+            var inputService = ServiceLocator.Get<InputService>();
             inputService?.EnableUIInput();
         }
 
         private void OnDisable()
         {
-            var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();
+            var inputService = ServiceLocator.Get<InputService>();
             inputService?.DisableUIInput();
         }
 

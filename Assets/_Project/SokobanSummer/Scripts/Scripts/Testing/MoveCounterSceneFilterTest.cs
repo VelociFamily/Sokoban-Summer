@@ -77,10 +77,9 @@ namespace Testing
 
         private bool TestUIAssignmentBySceneType()
         {
-            var instance = MoveCounter.Instance;
-            if (instance == null)
+            if (!ServiceLocator.TryGet<MoveCounter>(out var instance) || instance == null)
             {
-                Debug.LogError("✗ MoveCounter.Instance is null - cannot test UI assignment");
+                Debug.LogError("✗ MoveCounter not found in ServiceLocator - cannot test UI assignment");
                 return false;
             }
 
@@ -124,10 +123,9 @@ namespace Testing
 
         private bool TestUIDiscoveryRespectfulness()
         {
-            var instance = MoveCounter.Instance;
-            if (instance == null)
+            if (!ServiceLocator.TryGet<MoveCounter>(out var instance) || instance == null)
             {
-                Debug.LogError("✗ MoveCounter.Instance is null - cannot test UI discovery");
+                Debug.LogError("✗ MoveCounter not found in ServiceLocator - cannot test UI discovery");
                 return false;
             }
 
@@ -188,8 +186,7 @@ namespace Testing
         [ContextMenu("Force Rediscover UI Components")]
         public void ForceRediscoverUIComponents()
         {
-            var instance = MoveCounter.Instance;
-            if (instance != null)
+            if (ServiceLocator.TryGet<MoveCounter>(out var instance) && instance != null)
             {
                 // Enable verbose logging temporarily to see the discovery process
                 bool originalVerbose = instance.verboseLogging;
@@ -203,7 +200,7 @@ namespace Testing
             }
             else
             {
-                Debug.LogError("Cannot force rediscovery - MoveCounter.Instance is null");
+                Debug.LogError("Cannot force rediscovery - MoveCounter not found in ServiceLocator");
             }
         }
 

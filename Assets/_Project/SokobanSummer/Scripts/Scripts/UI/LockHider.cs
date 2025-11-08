@@ -7,7 +7,7 @@ namespace UI
     {
         void Update()
         {
-            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            var achievementManager = ServiceLocator.Get<AchievementManager>();
             if (achievementManager != null && achievementManager.CompleteTutorial)
             {
                 gameObject.SetActive(false);

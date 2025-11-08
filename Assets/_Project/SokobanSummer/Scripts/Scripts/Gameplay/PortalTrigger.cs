@@ -20,7 +20,7 @@ namespace Gameplay
                 // Use centralized AudioService instead of local AudioSource
                 if (portalSound != null)
                 {
-                    var audioService = SokobanSummer.Core.ServiceLocator.Get<ModernAudioService>();
+                    var audioService = ServiceLocator.Get<ModernAudioService>();
                     audioService.PlaySFX(portalSound);
                 }
                 else
@@ -48,7 +48,7 @@ namespace Gameplay
 
                 // Notify LevelManager of completion to unlock progression
                 var currentScene = SceneManager.GetActiveScene();
-                var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+                var levelManager = ServiceLocator.Get<LevelManager>();
                 if (levelManager != null)
                 {
                     levelManager.MarkLevelCompleted(currentScene.buildIndex);

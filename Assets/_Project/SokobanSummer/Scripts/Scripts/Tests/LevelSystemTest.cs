@@ -27,7 +27,7 @@ namespace Tests
             Debug.Log("=== Level System Test Started ===");
 
             // Test 1: Check if LevelManager exists
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             if (levelManager == null)
             {
                 Debug.LogError("TEST FAILED: LevelManager not registered in ServiceLocator");
@@ -76,7 +76,7 @@ namespace Tests
         {
             Debug.Log("=== Testing Level Progression ===");
 
-            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            var levelManager = ServiceLocator.Get<LevelManager>();
             var tutorials = levelManager.GetLevels(SceneType.TutorialLevel);
             if (tutorials.Count > 0)
             {

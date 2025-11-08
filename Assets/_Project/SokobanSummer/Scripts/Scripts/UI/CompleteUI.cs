@@ -10,7 +10,7 @@ namespace UI
 
         private void Awake()
         {
-            achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            achievementManager = ServiceLocator.Get<AchievementManager>();
         }
 
         public void LoadNextScene()
@@ -24,7 +24,7 @@ namespace UI
                 // Call achievement unlock logic based on current level completion
                 UnlockNextLevel(currentScene);
 
-                var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+                var levelManager = ServiceLocator.Get<LevelManager>();
                 var nextLevel = levelManager.GetLevelByBuildIndex(nextSceneIndex);
                 if (nextLevel != null)
                 {
@@ -98,7 +98,7 @@ namespace UI
 
         public void LoadMenu()
         {
-            SokobanSummer.Core.ServiceLocator.Get<LevelManager>().LoadMainMenu();
+            ServiceLocator.Get<LevelManager>().LoadMainMenu();
             // Example usage: achievementManager?.UnlockTutorial();
         }
     }
