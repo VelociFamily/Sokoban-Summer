@@ -75,14 +75,23 @@ namespace Core
             {
                 Debug.Log("[GameInitializer]: Starting async game initialization...");
 
+                if (_servicesStarted)
+                {
+                    Debug.Log("[GameInitializer]: Services already started - skipping duplicate startup.");
+                }
+
                 // Step 1: Initialize background first (like original timing)
                 await InitializeBackgroundAsync();
 
                 // Step 2: Initialize music player (needed before VolumeControl)
                 await InitializeMusicPlayerAsync();
 
-                // Step 3: Initialize core systems in parallel
-                await InitializeCoreSystemsAsync();
+                // Step 3: Initialize core systems in parallel (guarded)
+                if (!_servicesStarted)
+                {
+                    await InitializeCoreSystemsAsync();
+                    _servicesStarted = true;
+                }
 
                 // Step 4: Initialize remaining scene-specific systems
                 await InitializeLevelLoggerAsync();
@@ -402,8 +411,23 @@ namespace Core
 
         private void OnDestroy()
         {
-            // Clean up input service when GameInitializer is destroyed
-            InputService.Instance?.Dispose();
+            // Coordinated teardown in reverse init order
+            try
+            {
+                Debug.Log("[GameInitializer]: Beginning coordinated service teardown...");
+                AchievementManager.Instance?.Shutdown();
+                MoveCounter.Instance?.Shutdown();
+                ModernAudioService.Instance?.Shutdown();
+                InputService.Instance?.Shutdown();
+            }
+            finally
+            {
+                _servicesStarted = false;
+                Debug.Log("[GameInitializer]: Service teardown completed.");
+            }
         }
+
+        // Track whether services have already been started (prevents duplication on play-mode reentry)
+        private static bool _servicesStarted;
     }
 }

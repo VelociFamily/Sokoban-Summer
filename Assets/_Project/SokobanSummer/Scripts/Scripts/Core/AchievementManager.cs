@@ -94,6 +94,37 @@ namespace Core
             {
                 StopCoroutine(hideAchievementCoroutine);
             }
+            if (Instance == this)
+            {
+                Instance = null;
+            }
+        }
+
+        /// <summary>
+        /// Coordinated shutdown: unsubscribe, stop coroutines, clear instance and destroy object.
+        /// </summary>
+        public void Shutdown()
+        {
+            try
+            {
+                SceneManager.sceneLoaded -= OnSceneLoaded;
+                if (hideAchievementCoroutine != null)
+                {
+                    StopCoroutine(hideAchievementCoroutine);
+                    hideAchievementCoroutine = null;
+                }
+            }
+            finally
+            {
+                if (Instance == this)
+                {
+                    Instance = null;
+                }
+                if (this != null && gameObject != null)
+                {
+                    Destroy(gameObject);
+                }
+            }
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

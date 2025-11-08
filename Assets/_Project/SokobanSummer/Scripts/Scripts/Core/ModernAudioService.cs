@@ -173,5 +173,13 @@ namespace Core
             Debug.LogWarning("[ModernAudioService]: IAudioManager not available for volume query");
             return 1f;
         }
+
+        /// <summary>
+        /// Shutdown and release audio manager references
+        /// </summary>
+        public void Shutdown()
+        {
+            _audioManager = null;
+        }
     }
 }
