@@ -49,20 +49,23 @@ namespace Gameplay
         private void InitializeInput()
         {
             // Use centralized input service instead of creating our own
-            if (InputService.Instance.InputActions == null) return;
-            inputActions = InputService.Instance.InputActions;
+            var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();
+            if (inputService.InputActions == null) return;
+            inputActions = inputService.InputActions;
             inputActions.Player.Move.performed += OnMovePerformed;
             inputActions.Player.Move.canceled += OnMoveCanceled;
         }
 
         private void OnEnable()
         {
-            InputService.Instance?.EnablePlayerInput();
+            var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();
+            inputService?.EnablePlayerInput();
         }
 
         private void OnDisable()
         {
-            InputService.Instance?.DisablePlayerInput();
+            var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();
+            inputService?.DisablePlayerInput();
         }
 
         private void OnDestroy()
@@ -113,7 +116,8 @@ namespace Gameplay
             moveDirection = dir;
             canChangeDirection = false;
 
-            MoveCounter.Instance?.IncrementMove();
+            var moveCounter = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
+            moveCounter?.IncrementMove();
 
             return true;
         }

@@ -49,7 +49,8 @@ namespace UI
         private void EnableDynamicSystem()
         {
             // Ensure LevelManager is available
-            if (LevelManager.Instance == null)
+            var levelManager = SokobanSummer.Core.ServiceLocator.Get<LevelManager>();
+            if (levelManager == null)
             {
                 Debug.LogError("[MainMenuLevelSelector] LevelManager not found! Make sure it's in the Game scene.");
                 EnableLegacySystem();

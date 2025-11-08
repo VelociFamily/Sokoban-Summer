@@ -20,7 +20,7 @@ namespace Testing
         public void InputService_Shutdown_ExecutesWithoutError()
         {
             // Arrange
-            var inputService = InputService.Instance;
+            var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();
 
             // Act & Assert: shutdown should not throw
             Assert.DoesNotThrow(() => inputService.Shutdown(), "InputService.Shutdown() should execute cleanly");
@@ -34,7 +34,7 @@ namespace Testing
         public void ModernAudioService_Shutdown_ExecutesWithoutError()
         {
             // Arrange
-            var audioService = ModernAudioService.Instance;
+            var audioService = SokobanSummer.Core.ServiceLocator.Get<ModernAudioService>();
 
             // Act & Assert: shutdown should not throw
             Assert.DoesNotThrow(() => audioService.Shutdown(), "ModernAudioService.Shutdown() should execute cleanly");
@@ -47,7 +47,7 @@ namespace Testing
         public void SaveFacade_Shutdown_PersistsAndClearsState()
         {
             // Arrange
-            var saveFacade = SaveFacade.Instance;
+            var saveFacade = SokobanSummer.Core.ServiceLocator.Get<SaveFacade>();
             saveFacade.InitializeAndMaybeMigrate();
             var initialVolume = saveFacade.Settings.masterVolume;
 
@@ -56,7 +56,7 @@ namespace Testing
             saveFacade.Shutdown();
 
             // Assert: re-initialize and check persistence
-            var newInstance = SaveFacade.Instance;
+            var newInstance = SokobanSummer.Core.ServiceLocator.Get<SaveFacade>();
             newInstance.InitializeAndMaybeMigrate();
             Assert.AreEqual(0.75f, newInstance.Settings.masterVolume, 0.01f, "Settings should persist after Shutdown");
         }
@@ -217,8 +217,10 @@ namespace Testing
             }
 
             // Clean up service instances (non-MonoBehaviour singletons)
-            InputService.Instance?.Shutdown();
-            ModernAudioService.Instance?.Shutdown();
+            var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();
+            inputService?.Shutdown();
+            var audioService = SokobanSummer.Core.ServiceLocator.Get<ModernAudioService>();
+            audioService?.Shutdown();
         }
     }
 }

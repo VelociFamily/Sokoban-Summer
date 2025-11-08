@@ -23,7 +23,8 @@ namespace UI
         void Start()
         {
             // unlocked only if tutorial is complete
-            unlocked = (AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial);
+            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            unlocked = (achievementManager != null && achievementManager.CompleteTutorial);
             ShowHatsUI(unlocked);
 
             if (unlocked)
@@ -32,9 +33,9 @@ namespace UI
                 UpdateHatVisibility();
 
                 // Load saved hat if exists
-                if (!string.IsNullOrEmpty(AchievementManager.Instance.selectedHatName))
+                if (!string.IsNullOrEmpty(achievementManager.selectedHatName))
                 {
-                    var index = hats.FindIndex(h => h.name == AchievementManager.Instance.selectedHatName);
+                    var index = hats.FindIndex(h => h.name == achievementManager.selectedHatName);
                     if (index >= 0)
                     {
                         currentIndex = index;
@@ -46,7 +47,8 @@ namespace UI
 
         void Update()
         {
-            if (!unlocked && AchievementManager.Instance != null && AchievementManager.Instance.CompleteTutorial)
+            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            if (!unlocked && achievementManager != null && achievementManager.CompleteTutorial)
             {
                 unlocked = true;
                 Debug.Log("[HatSelectionManager]: Hat system newly unlocked during gameplay");
@@ -63,9 +65,10 @@ namespace UI
             }
 
             // save selected hat name to AchievementManager
-            if (AchievementManager.Instance != null && hats.Count > 0)
+            var achievementManager = SokobanSummer.Core.ServiceLocator.Get<AchievementManager>();
+            if (achievementManager != null && hats.Count > 0)
             {
-                AchievementManager.Instance.SetSelectedHat(hats[currentIndex].name);
+                achievementManager.SetSelectedHat(hats[currentIndex].name);
             }
         }
 

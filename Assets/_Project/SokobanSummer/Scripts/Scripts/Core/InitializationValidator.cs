@@ -51,7 +51,12 @@ namespace Core
         {
             try
             {
-                var inputService = InputService.Instance;
+                if (!SokobanSummer.Core.ServiceLocator.TryGet<InputService>(out var inputService) || inputService == null)
+                {
+                    results.AppendLine("✗ InputService: Not registered in ServiceLocator");
+                    return;
+                }
+                
                 var inputActions = inputService.InputActions;
 
                 results.AppendLine($"✓ InputService: Initialized");
@@ -67,9 +72,13 @@ namespace Core
         {
             try
             {
-                var achievementManager = AchievementManager.Instance;
+                if (!SokobanSummer.Core.ServiceLocator.TryGet<AchievementManager>(out var achievementManager) || achievementManager == null)
+                {
+                    results.AppendLine("✗ AchievementManager: Not registered in ServiceLocator");
+                    return;
+                }
             
-                results.AppendLine($"✓ AchievementManager: {(achievementManager != null ? "✓ Found" : "✗ Missing")}");
+                results.AppendLine($"✓ AchievementManager: ✓ Found");
             }
             catch (System.Exception ex)
             {
@@ -81,9 +90,13 @@ namespace Core
         {
             try
             {
-                var moveCounter = MoveCounter.Instance;
+                if (!SokobanSummer.Core.ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null)
+                {
+                    results.AppendLine("✗ MoveCounter: Not registered in ServiceLocator");
+                    return;
+                }
             
-                results.AppendLine($"✓ MoveCounter: {(moveCounter != null ? "✓ Found" : "✗ Missing")}");
+                results.AppendLine($"✓ MoveCounter: ✓ Found");
             }
             catch (System.Exception ex)
             {

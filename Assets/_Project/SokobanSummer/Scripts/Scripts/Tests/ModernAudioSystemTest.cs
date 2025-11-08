@@ -46,11 +46,12 @@ namespace Tests
             try
             {
                 // Initialize modern audio service
-                await ModernAudioService.Instance.InitializeAsync();
+                var audioService = SokobanSummer.Core.ServiceLocator.Get<ModernAudioService>();
+                await audioService.InitializeAsync();
                 Debug.Log("✓ ModernAudioService initialized without errors");
 
                 // Check UnifiedAudioManager instance
-                var audioManager = ModernAudioService.Instance.GetAudioManager();
+                var audioManager = audioService.GetAudioManager();
                 if (audioManager != null)
                 {
                     Debug.Log("✓ UnifiedAudioManager instance available");

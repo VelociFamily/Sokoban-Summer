@@ -38,8 +38,7 @@ namespace Core
             if (SceneInfo.IsMainMenuScene())
                 return;
 
-            var moveCounter = MoveCounter.Instance;
-            if (moveCounter == null || hasLogged)
+            if (!SokobanSummer.Core.ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null || hasLogged)
                 return;
 
             if (moveCounter.levelCompleteCanvas != null && moveCounter.levelCompleteCanvas.activeSelf)
@@ -81,9 +80,9 @@ namespace Core
             Debug.Log($"[LevelLogger]: Level '{GetLevelName(sceneIndex)}' completed - Moves: {moves}, Time: {FormatTime(time)}{(newBest ? " (New Best!)" : "")}");
 
             // Notify LevelManager about completion to unlock next level
-            if (LevelManager.Instance != null)
+            if (SokobanSummer.Core.ServiceLocator.TryGet<LevelManager>(out var levelManager) && levelManager != null)
             {
-                LevelManager.Instance.MarkLevelCompleted(sceneIndex);
+                levelManager.MarkLevelCompleted(sceneIndex);
             }
 
             if (bestResults.Count > 1)
@@ -113,9 +112,9 @@ namespace Core
         public string GetLevelName(int index)
         {
             // Try to get level name from LevelManager first
-            if (LevelManager.Instance != null)
+            if (SokobanSummer.Core.ServiceLocator.TryGet<LevelManager>(out var levelManager) && levelManager != null)
             {
-                var levelInfo = LevelManager.Instance.GetLevelByBuildIndex(index);
+                var levelInfo = levelManager.GetLevelByBuildIndex(index);
                 if (levelInfo != null)
                 {
                     return levelInfo.displayName;

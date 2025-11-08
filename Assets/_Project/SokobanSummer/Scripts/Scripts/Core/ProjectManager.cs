@@ -32,14 +32,14 @@ namespace Core
 
         public void EvaluatePerformance()
         {
-            if (MoveCounter.Instance == null)
+            if (!SokobanSummer.Core.ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null)
             {
-                Debug.LogError("[ProjectManager]: MoveCounter instance not found - cannot evaluate performance");
+                Debug.LogError("[ProjectManager]: MoveCounter not registered in ServiceLocator - cannot evaluate performance");
                 return;
             }
 
-            var movesUsed = MoveCounter.Instance.moveCount;
-            var timeUsed = MoveCounter.Instance.GetElapsedTime();
+            var movesUsed = moveCounter.moveCount;
+            var timeUsed = moveCounter.GetElapsedTime();
 
             // Award base 1 star
             if (stars.Length > 0 && stars[0] != null)

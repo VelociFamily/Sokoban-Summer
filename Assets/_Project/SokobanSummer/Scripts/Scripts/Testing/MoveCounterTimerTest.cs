@@ -66,22 +66,22 @@ namespace Testing
 
         private bool TestMoveCounterInstance()
         {
-            var instance = MoveCounter.Instance;
+            var instance = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
             if (instance != null)
             {
-                if (verboseLogging) Debug.Log($"✓ MoveCounter.Instance found on '{instance.gameObject.name}'");
+                if (verboseLogging) Debug.Log($"✓ MoveCounter instance found on '{instance.gameObject.name}'");
                 return true;
             }
             else
             {
-                Debug.LogError("✗ MoveCounter.Instance is null - MoveCounter not initialized");
+                Debug.LogError("✗ MoveCounter not registered in ServiceLocator - MoveCounter not initialized");
                 return false;
             }
         }
 
         private bool TestUIComponentAssignments()
         {
-            var instance = MoveCounter.Instance;
+            var instance = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
             if (instance == null) return false;
 
             bool moveTextAssigned = instance.moveText != null;
@@ -111,7 +111,7 @@ namespace Testing
 
         private bool TestMoveIncrement()
         {
-            var instance = MoveCounter.Instance;
+            var instance = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
             if (instance == null) return false;
 
             int initialCount = instance.moveCount;
@@ -129,7 +129,7 @@ namespace Testing
 
         private bool TestTimer()
         {
-            var instance = MoveCounter.Instance;
+            var instance = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
             if (instance == null) return false;
 
             // Timer should be running by default and should return a positive elapsed time
@@ -146,7 +146,7 @@ namespace Testing
 
         private bool TestReset()
         {
-            var instance = MoveCounter.Instance;
+            var instance = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
             if (instance == null) return false;
 
             // Increment counter first
@@ -172,40 +172,42 @@ namespace Testing
         [ContextMenu("Test Move Increment (Simulate Player Movement)")]
         public void TestPlayerMovement()
         {
-            if (MoveCounter.Instance != null)
+            var moveCounter = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
+            if (moveCounter != null)
             {
-                Debug.Log($"Simulating player movement - Current moves: {MoveCounter.Instance.moveCount}");
-                MoveCounter.Instance.IncrementMove();
-                Debug.Log($"After movement - Moves: {MoveCounter.Instance.moveCount}");
+                Debug.Log($"Simulating player movement - Current moves: {moveCounter.moveCount}");
+                moveCounter.IncrementMove();
+                Debug.Log($"After movement - Moves: {moveCounter.moveCount}");
             }
             else
             {
-                Debug.LogError("Cannot test player movement - MoveCounter.Instance is null");
+                Debug.LogError("Cannot test player movement - MoveCounter not registered in ServiceLocator");
             }
         }
 
         [ContextMenu("Test Counter Reset")]
         public void TestCounterReset()
         {
-            if (MoveCounter.Instance != null)
+            var moveCounter = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
+            if (moveCounter != null)
             {
-                Debug.Log($"Before reset - Moves: {MoveCounter.Instance.moveCount}, Time: {MoveCounter.Instance.GetElapsedTime():F2}s");
-                MoveCounter.Instance.ResetCounter();
-                Debug.Log($"After reset - Moves: {MoveCounter.Instance.moveCount}, Time: {MoveCounter.Instance.GetElapsedTime():F2}s");
+                Debug.Log($"Before reset - Moves: {moveCounter.moveCount}, Time: {moveCounter.GetElapsedTime():F2}s");
+                moveCounter.ResetCounter();
+                Debug.Log($"After reset - Moves: {moveCounter.moveCount}, Time: {moveCounter.GetElapsedTime():F2}s");
             }
             else
             {
-                Debug.LogError("Cannot test counter reset - MoveCounter.Instance is null");
+                Debug.LogError("Cannot test counter reset - MoveCounter not registered in ServiceLocator");
             }
         }
 
         [ContextMenu("Debug UI Component Discovery")]
         public void DebugUIComponentDiscovery()
         {
-            var instance = MoveCounter.Instance;
+            var instance = SokobanSummer.Core.ServiceLocator.Get<MoveCounter>();
             if (instance == null)
             {
-                Debug.LogError("Cannot debug UI discovery - MoveCounter.Instance is null");
+                Debug.LogError("Cannot debug UI discovery - MoveCounter not registered in ServiceLocator");
                 return;
             }
 
