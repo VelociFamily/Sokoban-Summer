@@ -171,10 +171,11 @@ namespace Tests
             // Enable player input to ensure the action is active
             inputService.EnablePlayerInput();
 
-            // Simulate a move event by manually invoking the internal event
-            // Since we can't easily trigger actual input in a test, we'll trigger the forwarded event
+            // NOTE: We cannot legally invoke the InputService's event outside its declaring type (CS0079).
+            // For this disposal verification we only need a single callback invocation, so we directly
+            // call the subscribed handler to simulate one move action occurrence.
             var context = new InputAction.CallbackContext();
-            inputService.OnPlayerMove?.Invoke(context);
+            OnPlayerMoveHandler(context);
 
             inputService.DisablePlayerInput();
         }
