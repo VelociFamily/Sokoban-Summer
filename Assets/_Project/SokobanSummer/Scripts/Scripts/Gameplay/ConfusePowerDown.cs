@@ -20,7 +20,9 @@ namespace Gameplay
         public static int confuseTurns
         {
             get => _confusionImplementation.RemainingUses;
+#pragma warning disable CS0618
             set => ConfusionPowerUp.ConfuseTurns = value;
+#pragma warning restore CS0618
         }
     }
 }

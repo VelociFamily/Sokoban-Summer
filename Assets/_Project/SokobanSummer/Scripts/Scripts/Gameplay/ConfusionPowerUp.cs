@@ -26,7 +26,9 @@ namespace Gameplay
         public void Activate(int uses)
         {
             _confuseTurns = uses;
+#pragma warning disable CS0618
             ConfuseTurns = uses; // Keep static field in sync for backward compatibility
+#pragma warning restore CS0618
             
             OnStateChanged?.Invoke(this, new PowerUpEventArgs
             {
@@ -42,7 +44,9 @@ namespace Gameplay
             if (_confuseTurns > 0)
             {
                 _confuseTurns--;
+#pragma warning disable CS0618
                 ConfuseTurns = _confuseTurns; // Keep static field in sync
+#pragma warning restore CS0618
                 
                 var eventType = _confuseTurns > 0 ? PowerUpEventType.Consumed : PowerUpEventType.Deactivated;
                 

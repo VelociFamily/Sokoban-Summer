@@ -43,7 +43,9 @@ namespace Gameplay
         public static int teleportTimes
         {
             get => _teleportImplementation.RemainingUses;
+#pragma warning disable CS0618
             set => TeleportationPowerUp.TeleportTimes = value;
+#pragma warning restore CS0618
         }
     }
 }

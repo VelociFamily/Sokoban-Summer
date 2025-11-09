@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Core;
 
 namespace Gameplay
 {
@@ -75,6 +76,8 @@ namespace Gameplay
             {
                 case PowerUpEventType.Activated:
                     OnPowerUpActivated?.Invoke(this, e);
+                    // Check if both power-ups are now active simultaneously
+                    CheckSimultaneousPowerUpAchievement();
                     break;
                 case PowerUpEventType.Consumed:
                     OnPowerUpConsumed?.Invoke(this, e);
@@ -82,6 +85,23 @@ namespace Gameplay
                 case PowerUpEventType.Deactivated:
                     OnPowerUpDeactivated?.Invoke(this, e);
                     break;
+            }
+        }
+
+        /// <summary>
+        /// Checks if both confusion and speed power-ups are active simultaneously
+        /// and unlocks the achievement if so
+        /// </summary>
+        private void CheckSimultaneousPowerUpAchievement()
+        {
+            // Check if both direction modification (confusion) and speed modification (teleport) are active
+            if (IsDirectionModificationActive && IsSpeedModificationActive)
+            {
+                // Unlock the achievement via AchievementManager
+                if (ServiceLocator.TryGet<AchievementManager>(out var achievementManager))
+                {
+                    achievementManager.UnlockConfuseAndSpeed();
+                }
             }
         }
     

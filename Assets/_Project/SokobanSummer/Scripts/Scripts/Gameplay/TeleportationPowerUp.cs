@@ -27,7 +27,9 @@ namespace Gameplay
         public void Activate(int uses)
         {
             _teleportTimes = uses;
+#pragma warning disable CS0618
             TeleportTimes = uses; // Keep static field in sync for backward compatibility
+#pragma warning restore CS0618
             
             OnStateChanged?.Invoke(this, new PowerUpEventArgs
             {
@@ -43,7 +45,9 @@ namespace Gameplay
             if (_teleportTimes > 0)
             {
                 _teleportTimes--;
+#pragma warning disable CS0618
                 TeleportTimes = _teleportTimes; // Keep static field in sync
+#pragma warning restore CS0618
                 
                 var eventType = _teleportTimes > 0 ? PowerUpEventType.Consumed : PowerUpEventType.Deactivated;
                 
