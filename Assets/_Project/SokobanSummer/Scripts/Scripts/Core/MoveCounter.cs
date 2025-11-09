@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Core.Events;
 
 namespace Core
 {
@@ -39,6 +40,10 @@ namespace Core
         /// Event raised when the timer updates (approximately 10 times per second to reduce overhead)
         /// </summary>
         public event EventHandler<TimerChangedEventArgs> OnTimerChanged;
+
+        [Header("Event Channels")]
+        [Tooltip("ScriptableObject event channel raised when moves change (optional, complements C# events)")]
+        [SerializeField] private IntGameEvent movesChangedEvent;
 
         [Header("Move Counter")]
         public int moveCount;
@@ -97,6 +102,7 @@ namespace Core
         {
             moveCount++;
             OnMovesChanged?.Invoke(this, new MoveCountChangedEventArgs(moveCount));
+            movesChangedEvent?.Raise(moveCount);
         }
 
         public void ResetCounter()
@@ -111,6 +117,9 @@ namespace Core
             // Notify subscribers of the reset
             OnMovesChanged?.Invoke(this, new MoveCountChangedEventArgs(moveCount));
             OnTimerChanged?.Invoke(this, new TimerChangedEventArgs(timer));
+            
+            // Raise ScriptableObject events
+            movesChangedEvent?.Raise(moveCount);
         }
         public float GetElapsedTime()
         {

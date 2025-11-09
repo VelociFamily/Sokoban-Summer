@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Core;
+using Core.Events;
 
 namespace Core
 {
@@ -21,6 +22,10 @@ namespace Core
 
         [Tooltip("Path to the tutorials folder relative to Assets/Scenes/")]
         public string tutorialsFolder = "Tutorials";
+
+        [Header("Event Channels")]
+        [Tooltip("Event raised when a level is loaded (passes level name)")]
+        [SerializeField] private StringGameEvent levelLoadedEvent;
 
         [Header("Debug")]
         [SerializeField] private bool debugMode = false;
@@ -359,6 +364,9 @@ namespace Core
             {
                 SceneManager.SetActiveScene(loadedScene);
                 Debug.Log($"[LevelManager] Active scene set: {loadedScene.name}");
+                
+                // Raise level loaded event
+                levelLoadedEvent?.Raise(levelInfo.displayName);
             }
             else
             {

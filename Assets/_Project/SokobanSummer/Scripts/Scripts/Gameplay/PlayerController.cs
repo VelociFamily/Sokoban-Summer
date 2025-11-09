@@ -1,5 +1,6 @@
 using System.Linq;
 using Core;
+using Core.Events;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -27,13 +28,17 @@ namespace Gameplay
 
         public LayerMask wallLayer;
 
+        [Header("Event Channels")]
+        [Tooltip("Optional ScriptableObject event raised when power-ups are consumed")]
+        [SerializeField] private StringGameEvent powerUpConsumedEvent;
+
         private PowerUpManager _powerUpManager;
 
         private void Awake()
         {
             rb = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
-            _powerUpManager = new PowerUpManager(this);
+            _powerUpManager = new PowerUpManager(this, powerUpConsumedEvent);
         
             // Use InputService instead of creating our own InputSystem_Actions
             InitializeInput();

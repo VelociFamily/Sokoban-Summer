@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Core;
+using Core.Events;
 
 namespace Gameplay
 {
@@ -33,6 +34,7 @@ namespace Gameplay
     {
         private readonly List<IPowerUp> _activePowerUps;
         private readonly PlayerController _playerController;
+        private readonly StringGameEvent _powerUpConsumedEvent;
     
         // Power-up implementations
         private static readonly ConfusionPowerUp _confusionPowerUp = new ConfusionPowerUp();
@@ -53,9 +55,10 @@ namespace Gameplay
         /// </summary>
         public event EventHandler<PowerUpEventArgs> OnPowerUpConsumed;
     
-        public PowerUpManager(PlayerController playerController)
+        public PowerUpManager(PlayerController playerController, StringGameEvent powerUpConsumedEvent = null)
         {
             _playerController = playerController;
+            _powerUpConsumedEvent = powerUpConsumedEvent;
             _activePowerUps = new List<IPowerUp>
             {
                 _confusionPowerUp,
@@ -81,6 +84,7 @@ namespace Gameplay
                     break;
                 case PowerUpEventType.Consumed:
                     OnPowerUpConsumed?.Invoke(this, e);
+                    _powerUpConsumedEvent?.Raise(e.PowerUpName);
                     break;
                 case PowerUpEventType.Deactivated:
                     OnPowerUpDeactivated?.Invoke(this, e);
