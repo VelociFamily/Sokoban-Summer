@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 namespace Testing
 {
     /// <summary>
-    /// Test script to validate that MoveCounter only searches for UI components in gameplay scenes
-    /// and ignores menus, settings, and other non-gameplay scenes
+    /// Test script to validate MoveCounter event-driven architecture
+    /// Verifies that events are raised correctly and scene handling works as expected
     /// </summary>
     public class MoveCounterSceneFilterTest : MonoBehaviour
     {
@@ -18,6 +18,11 @@ namespace Testing
         
         [Tooltip("Include detailed logging for debugging")]
         public bool verboseLogging = true;
+
+        private int moveEventCount = 0;
+        private int timerEventCount = 0;
+        private int lastMoveValue = -1;
+        private float lastTimerValue = -1f;
 
         private void Start()
         {
@@ -37,24 +42,24 @@ namespace Testing
         [ContextMenu("Run Scene Filter Test")]
         public void RunSceneFilterTest()
         {
-            Debug.Log("=== MoveCounter Scene Filter Test Started ===");
+            Debug.Log("=== MoveCounter Event-Driven Test Started ===");
 
             // Test 1: Verify current scene type
             bool sceneTypeCorrect = TestSceneTypeDetection();
             
-            // Test 2: Check if UI components are assigned based on scene type
-            bool uiAssignmentCorrect = TestUIAssignmentBySceneType();
+            // Test 2: Check if events are subscribed and functioning
+            bool eventsWorkCorrectly = TestEventSubscription();
             
-            // Test 3: Verify that UI discovery respects scene type
-            bool discoveryRespectsSceneType = TestUIDiscoveryRespectfulness();
+            // Test 3: Verify event counts after actions
+            bool eventCountsCorrect = TestEventCounts();
 
             // Summary
             Debug.Log("=== Test Results ===");
             Debug.Log($"✓ Scene Type Detection: {(sceneTypeCorrect ? "PASS" : "FAIL")}");
-            Debug.Log($"✓ UI Assignment Based on Scene Type: {(uiAssignmentCorrect ? "PASS" : "FAIL")}");
-            Debug.Log($"✓ Discovery Respects Scene Type: {(discoveryRespectsSceneType ? "PASS" : "FAIL")}");
+            Debug.Log($"✓ Event Subscription Works: {(eventsWorkCorrectly ? "PASS" : "FAIL")}");
+            Debug.Log($"✓ Event Counts Correct: {(eventCountsCorrect ? "PASS" : "FAIL")}");
             
-            bool allTestsPassed = sceneTypeCorrect && uiAssignmentCorrect && discoveryRespectsSceneType;
+            bool allTestsPassed = sceneTypeCorrect && eventsWorkCorrectly && eventCountsCorrect;
             Debug.Log($"=== Overall Result: {(allTestsPassed ? "ALL TESTS PASSED ✓" : "SOME TESTS FAILED ✗")} ===");
         }
 
@@ -75,132 +80,117 @@ namespace Testing
             return true;
         }
 
-        private bool TestUIAssignmentBySceneType()
+        private bool TestEventSubscription()
         {
             if (!ServiceLocator.TryGet<MoveCounter>(out var instance) || instance == null)
             {
-                Debug.LogError("✗ MoveCounter not found in ServiceLocator - cannot test UI assignment");
+                Debug.LogError("✗ MoveCounter not found in ServiceLocator - cannot test events");
                 return false;
             }
 
-            var activeScene = SceneManager.GetActiveScene();
-            var isGameplayScene = SceneInfo.IsGameplayScene(activeScene);
-            var sceneType = SceneInfo.GetSceneType(activeScene);
+            // Reset counters
+            moveEventCount = 0;
+            timerEventCount = 0;
+            lastMoveValue = -1;
+            lastTimerValue = -1f;
 
-            bool moveTextAssigned = instance.moveText != null;
-            bool timerTextAssigned = instance.timerText != null;
+            // Subscribe to events
+            instance.OnMovesChanged += OnTestMoveChanged;
+            instance.OnTimerChanged += OnTestTimerChanged;
 
+            // Trigger a move
+            var currentMoveCount = instance.moveCount;
+            instance.IncrementMove();
+
+            // Wait a frame
             if (verboseLogging)
             {
-                Debug.Log($"Scene: '{activeScene.name}' (Type: {sceneType}, IsGameplay: {isGameplayScene})");
-                Debug.Log($"Move Text Assigned: {moveTextAssigned}");
-                Debug.Log($"Timer Text Assigned: {timerTextAssigned}");
+                Debug.Log($"Move event fired {moveEventCount} times after IncrementMove");
+                Debug.Log($"Last move value: {lastMoveValue}, Expected: {currentMoveCount + 1}");
             }
 
-            // In gameplay scenes, UI components may or may not be assigned (depends on scene content)
-            // In non-gameplay scenes (menus, settings), UI components should NOT be assigned by MoveCounter
-            if (!isGameplayScene)
-            {
-                // For non-gameplay scenes, we expect UI components to NOT be assigned
-                // (unless they were manually assigned, which we can't test for)
-                // The key is that TryFindUIComponents should have returned early
-                if (verboseLogging)
-                {
-                    Debug.Log($"Non-gameplay scene detected - UI components should not be auto-discovered");
-                }
-                return true; // Test passes if we reach here without errors
-            }
-            else
-            {
-                // For gameplay scenes, UI components may be found if they exist
-                if (verboseLogging)
-                {
-                    Debug.Log($"Gameplay scene detected - UI components may be auto-discovered if present");
-                }
-                return true; // Test passes - the behavior is as expected
-            }
-        }
+            // Unsubscribe
+            instance.OnMovesChanged -= OnTestMoveChanged;
+            instance.OnTimerChanged -= OnTestTimerChanged;
 
-        private bool TestUIDiscoveryRespectfulness()
-        {
-            if (!ServiceLocator.TryGet<MoveCounter>(out var instance) || instance == null)
-            {
-                Debug.LogError("✗ MoveCounter not found in ServiceLocator - cannot test UI discovery");
-                return false;
-            }
-
-            var activeScene = SceneManager.GetActiveScene();
-            var isGameplayScene = SceneInfo.IsGameplayScene(activeScene);
-
-            // List all TextMeshProUGUI components in the scene
-            var allTexts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
+            bool moveEventFired = moveEventCount > 0 && lastMoveValue == currentMoveCount + 1;
             
-            if (verboseLogging)
+            if (!moveEventFired)
             {
-                Debug.Log($"=== All TextMeshProUGUI components in scene ({allTexts.Length}) ===");
-                foreach (var text in allTexts)
-                {
-                    Debug.Log($"- '{text.name}' (parent: '{text.transform.parent?.name}') - Text: '{text.text}'");
-                }
-                Debug.Log("=== End of TextMeshProUGUI list ===");
-            }
-
-            // Check that MoveCounter didn't inappropriately assign UI from non-gameplay scenes
-            if (!isGameplayScene && allTexts.Length > 0)
-            {
-                // If this is not a gameplay scene but has TextMeshProUGUI components,
-                // MoveCounter should NOT have assigned them
-                bool moveTextAssigned = instance.moveText != null;
-                bool timerTextAssigned = instance.timerText != null;
-
-                if (moveTextAssigned || timerTextAssigned)
-                {
-                    // Check if these were assigned in this scene or a previous scene
-                    bool assignedInThisScene = false;
-                    foreach (var text in allTexts)
-                    {
-                        if (text == instance.moveText || text == instance.timerText)
-                        {
-                            assignedInThisScene = true;
-                            Debug.LogWarning($"✗ UI component '{text.name}' from non-gameplay scene '{activeScene.name}' was assigned to MoveCounter");
-                            break;
-                        }
-                    }
-
-                    if (assignedInThisScene)
-                    {
-                        Debug.LogError($"✗ FAIL: MoveCounter assigned UI components in non-gameplay scene '{activeScene.name}'");
-                        return false;
-                    }
-                }
+                Debug.LogError($"✗ Move event did not fire correctly. Event count: {moveEventCount}, Last value: {lastMoveValue}");
+                return false;
             }
 
             if (verboseLogging)
             {
-                Debug.Log($"✓ UI discovery correctly respects scene type (IsGameplay: {isGameplayScene})");
+                Debug.Log("✓ Events are working correctly");
             }
 
             return true;
         }
 
-        [ContextMenu("Force Rediscover UI Components")]
-        public void ForceRediscoverUIComponents()
+        private bool TestEventCounts()
         {
-            if (ServiceLocator.TryGet<MoveCounter>(out var instance) && instance != null)
+            if (!ServiceLocator.TryGet<MoveCounter>(out var instance) || instance == null)
             {
-                // Enable verbose logging temporarily to see the discovery process
-                bool originalVerbose = instance.verboseLogging;
-                instance.verboseLogging = true;
-                
-                Debug.Log("=== Forcing UI Component Rediscovery ===");
-                instance.RediscoverUIComponents();
-                
-                // Restore original verbose setting
-                instance.verboseLogging = originalVerbose;
+                Debug.LogError("✗ MoveCounter not found in ServiceLocator");
+                return false;
             }
-            else
+
+            // Reset counters
+            moveEventCount = 0;
+            timerEventCount = 0;
+
+            // Subscribe to events
+            instance.OnMovesChanged += OnTestMoveChanged;
+            instance.OnTimerChanged += OnTestTimerChanged;
+
+            // Reset the counter (should fire events)
+            instance.ResetCounter();
+
+            if (verboseLogging)
             {
-                Debug.LogError("Cannot force rediscovery - MoveCounter not found in ServiceLocator");
+                Debug.Log($"After ResetCounter - Move events: {moveEventCount}, Timer events: {timerEventCount}");
+            }
+
+            // Unsubscribe
+            instance.OnMovesChanged -= OnTestMoveChanged;
+            instance.OnTimerChanged -= OnTestTimerChanged;
+
+            // Both events should have fired at least once
+            bool eventsFiredOnReset = moveEventCount > 0 && timerEventCount > 0;
+            
+            if (!eventsFiredOnReset)
+            {
+                Debug.LogError($"✗ Events did not fire on reset. Move: {moveEventCount}, Timer: {timerEventCount}");
+                return false;
+            }
+
+            if (verboseLogging)
+            {
+                Debug.Log("✓ Event counts are correct");
+            }
+
+            return true;
+        }
+
+        private void OnTestMoveChanged(object sender, MoveCountChangedEventArgs e)
+        {
+            moveEventCount++;
+            lastMoveValue = e.MoveCount;
+            if (verboseLogging)
+            {
+                Debug.Log($"[Test] Move changed event received: {e.MoveCount}");
+            }
+        }
+
+        private void OnTestTimerChanged(object sender, TimerChangedEventArgs e)
+        {
+            timerEventCount++;
+            lastTimerValue = e.ElapsedTime;
+            if (verboseLogging)
+            {
+                Debug.Log($"[Test] Timer changed event received: {e.ElapsedTime:F2}s");
             }
         }
 

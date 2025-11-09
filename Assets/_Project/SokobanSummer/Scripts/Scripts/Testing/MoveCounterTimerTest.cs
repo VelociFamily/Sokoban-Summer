@@ -5,7 +5,7 @@ using TMPro;
 namespace Testing
 {
     /// <summary>
-    /// Test script to validate MoveCounter and timer functionality
+    /// Test script to validate MoveCounter event-driven functionality
     /// Attach to any GameObject in a test scene and run tests via context menu or on Start
     /// </summary>
     public class MoveCounterTimerTest : MonoBehaviour
@@ -16,6 +16,9 @@ namespace Testing
         
         [Tooltip("Include detailed logging for debugging")]
         public bool verboseLogging = true;
+
+        private int testMoveEventCount = 0;
+        private int testTimerEventCount = 0;
 
         private void Start()
         {
@@ -35,13 +38,13 @@ namespace Testing
         [ContextMenu("Run MoveCounter Test")]
         public void RunMoveCounterTest()
         {
-            Debug.Log("=== MoveCounter and Timer Test Started ===");
+            Debug.Log("=== MoveCounter Event-Driven Test Started ===");
 
             // Test 1: Check if MoveCounter instance exists
             bool instanceExists = TestMoveCounterInstance();
             
-            // Test 2: Check UI component assignments
-            bool uiAssigned = TestUIComponentAssignments();
+            // Test 2: Test event subscription and firing
+            bool eventsWork = TestEventFiring();
             
             // Test 3: Test move increment functionality
             bool moveIncrementWorks = TestMoveIncrement();
@@ -55,12 +58,12 @@ namespace Testing
             // Summary
             Debug.Log("=== Test Results ===");
             Debug.Log($"✓ MoveCounter Instance: {(instanceExists ? "PASS" : "FAIL")}");
-            Debug.Log($"✓ UI Components: {(uiAssigned ? "PASS" : "FAIL")}");
+            Debug.Log($"✓ Event Firing: {(eventsWork ? "PASS" : "FAIL")}");
             Debug.Log($"✓ Move Increment: {(moveIncrementWorks ? "PASS" : "FAIL")}");
             Debug.Log($"✓ Timer Functionality: {(timerWorks ? "PASS" : "FAIL")}");
             Debug.Log($"✓ Reset Functionality: {(resetWorks ? "PASS" : "FAIL")}");
             
-            bool allTestsPassed = instanceExists && uiAssigned && moveIncrementWorks && timerWorks && resetWorks;
+            bool allTestsPassed = instanceExists && eventsWork && moveIncrementWorks && timerWorks && resetWorks;
             Debug.Log($"=== Overall Result: {(allTestsPassed ? "ALL TESTS PASSED ✓" : "SOME TESTS FAILED ✗")} ===");
         }
 
@@ -79,34 +82,68 @@ namespace Testing
             }
         }
 
-        private bool TestUIComponentAssignments()
+        private bool TestEventFiring()
         {
             var instance = ServiceLocator.Get<MoveCounter>();
             if (instance == null) return false;
 
-            bool moveTextAssigned = instance.moveText != null;
-            bool timerTextAssigned = instance.timerText != null;
-            bool levelCompleteAssigned = instance.levelCompleteCanvas != null;
+            // Reset test counters
+            testMoveEventCount = 0;
+            testTimerEventCount = 0;
+
+            // Subscribe to events
+            instance.OnMovesChanged += OnTestMoveChanged;
+            instance.OnTimerChanged += OnTestTimerChanged;
+
+            // Trigger move event
+            var currentMoveCount = instance.moveCount;
+            instance.IncrementMove();
+
+            // Wait for timer event (it fires every 0.1s)
+            var timeout = Time.time + 1f;
+            while (testTimerEventCount == 0 && Time.time < timeout)
+            {
+                // Waiting...
+            }
+
+            // Unsubscribe
+            instance.OnMovesChanged -= OnTestMoveChanged;
+            instance.OnTimerChanged -= OnTestTimerChanged;
+
+            bool moveEventFired = testMoveEventCount > 0;
+            bool timerEventFired = testTimerEventCount > 0;
 
             if (verboseLogging)
             {
-                Debug.Log($"Move Text: {(moveTextAssigned ? $"Assigned to '{instance.moveText.name}' (parent: '{instance.moveText.transform.parent?.name}', current text: '{instance.moveText.text}')" : "Not assigned")}");
-                Debug.Log($"Timer Text: {(timerTextAssigned ? $"Assigned to '{instance.timerText.name}' (parent: '{instance.timerText.transform.parent?.name}', current text: '{instance.timerText.text}')" : "Not assigned")}");
-                Debug.Log($"Level Complete Canvas: {(levelCompleteAssigned ? $"Assigned to '{instance.levelCompleteCanvas.name}'" : "Not assigned")}");
-                
-                // List all TextMeshProUGUI components in the scene for debugging
-                var allTexts = FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None);
-                Debug.Log($"=== All TextMeshProUGUI components in scene ({allTexts.Length}) ===");
-                for (int i = 0; i < allTexts.Length; i++)
-                {
-                    var text = allTexts[i];
-                    Debug.Log($"[{i}] '{text.name}' (parent: '{text.transform.parent?.name}') - Text: '{text.text}'");
-                }
-                Debug.Log("=== End of TextMeshProUGUI list ===");
+                Debug.Log($"Move events fired: {testMoveEventCount}");
+                Debug.Log($"Timer events fired: {testTimerEventCount}");
             }
 
-            // At least move text or timer text should be assigned for the counter to be functional
-            return moveTextAssigned || timerTextAssigned;
+            if (!moveEventFired)
+            {
+                Debug.LogError("✗ OnMovesChanged event did not fire");
+            }
+
+            // Timer events should fire automatically
+            return moveEventFired && timerEventFired;
+        }
+
+        private void OnTestMoveChanged(object sender, MoveCountChangedEventArgs e)
+        {
+            testMoveEventCount++;
+            if (verboseLogging)
+            {
+                Debug.Log($"[Test Event] Move changed: {e.MoveCount}");
+            }
+        }
+
+        private void OnTestTimerChanged(object sender, TimerChangedEventArgs e)
+        {
+            testTimerEventCount++;
+            if (verboseLogging)
+            {
+                Debug.Log($"[Test Event] Timer changed: {e.ElapsedTime:F2}s");
+            }
         }
 
         private bool TestMoveIncrement()
@@ -201,29 +238,43 @@ namespace Testing
             }
         }
 
-        [ContextMenu("Debug UI Component Discovery")]
-        public void DebugUIComponentDiscovery()
+        [ContextMenu("Test Event Subscription")]
+        public void TestEventSubscription()
         {
             var instance = ServiceLocator.Get<MoveCounter>();
             if (instance == null)
             {
-                Debug.LogError("Cannot debug UI discovery - MoveCounter not registered in ServiceLocator");
+                Debug.LogError("Cannot test events - MoveCounter not registered in ServiceLocator");
                 return;
             }
 
-            Debug.Log("=== UI Component Discovery Debug ===");
+            Debug.Log("=== Event Subscription Test ===");
             
-            // Enable verbose logging temporarily
-            bool originalVerbose = instance.verboseLogging;
-            instance.verboseLogging = true;
+            testMoveEventCount = 0;
+            testTimerEventCount = 0;
+
+            // Subscribe
+            instance.OnMovesChanged += OnTestMoveChanged;
+            instance.OnTimerChanged += OnTestTimerChanged;
+
+            Debug.Log("Subscribed to events. Incrementing move...");
+            instance.IncrementMove();
+
+            // Wait a moment for timer events
+            StartCoroutine(WaitAndReportEvents(instance));
+        }
+
+        private System.Collections.IEnumerator WaitAndReportEvents(MoveCounter instance)
+        {
+            yield return new WaitForSeconds(0.5f);
             
-            // Force re-discovery
-            instance.RediscoverUIComponents();
+            Debug.Log($"Event counts - Moves: {testMoveEventCount}, Timer: {testTimerEventCount}");
             
-            // Restore original verbose setting
-            instance.verboseLogging = originalVerbose;
+            // Unsubscribe
+            instance.OnMovesChanged -= OnTestMoveChanged;
+            instance.OnTimerChanged -= OnTestTimerChanged;
             
-            Debug.Log("=== UI Discovery Debug Complete ===");
+            Debug.Log("=== Event Test Complete ===");
         }
     }
 }
