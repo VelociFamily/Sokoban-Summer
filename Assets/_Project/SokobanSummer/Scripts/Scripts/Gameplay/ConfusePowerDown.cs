@@ -5,9 +5,7 @@ namespace Gameplay
     /// </summary>
     public class ConfusePowerDown : PowerUpBase
     {
-        private static readonly ConfusionPowerUp _confusionImplementation = new ConfusionPowerUp();
-    
-        protected override IPowerUp PowerUpImplementation => _confusionImplementation;
+        protected override IPowerUp PowerUpImplementation => PowerUpManager.ConfusionPowerUp;
     
         private void Awake()
         {
@@ -19,7 +17,7 @@ namespace Gameplay
         // Static accessors for backward compatibility with existing code
         public static int confuseTurns
         {
-            get => _confusionImplementation.RemainingUses;
+            get => PowerUpManager.ConfusionPowerUp.RemainingUses;
 #pragma warning disable CS0618
             set => ConfusionPowerUp.ConfuseTurns = value;
 #pragma warning restore CS0618

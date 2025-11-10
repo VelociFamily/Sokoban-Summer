@@ -7,9 +7,7 @@ namespace Gameplay
     /// </summary>
     public class TeleportPowerUp : PowerUpBase
     {
-        private static readonly TeleportationPowerUp _teleportImplementation = new TeleportationPowerUp();
-    
-        protected override IPowerUp PowerUpImplementation => _teleportImplementation;
+        protected override IPowerUp PowerUpImplementation => PowerUpManager.TeleportationPowerUp;
     
         // For backward compatibility, keep the teleportItem field
         [Header("Teleport Specific")]
@@ -42,7 +40,7 @@ namespace Gameplay
         // Static accessors for backward compatibility with existing code
         public static int teleportTimes
         {
-            get => _teleportImplementation.RemainingUses;
+            get => PowerUpManager.TeleportationPowerUp.RemainingUses;
 #pragma warning disable CS0618
             set => TeleportationPowerUp.TeleportTimes = value;
 #pragma warning restore CS0618

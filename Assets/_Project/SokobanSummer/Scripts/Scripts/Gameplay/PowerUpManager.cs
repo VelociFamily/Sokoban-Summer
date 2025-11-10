@@ -36,9 +36,9 @@ namespace Gameplay
         private readonly PlayerController _playerController;
         private readonly StringGameEvent _powerUpConsumedEvent;
     
-        // Power-up implementations
-        private static readonly ConfusionPowerUp _confusionPowerUp = new ConfusionPowerUp();
-        private static readonly TeleportationPowerUp _teleportationPowerUp = new TeleportationPowerUp();
+        // Power-up implementations - exposed as public static so PowerUpBase can access the same instances
+        public static readonly ConfusionPowerUp ConfusionPowerUp = new ConfusionPowerUp();
+        public static readonly TeleportationPowerUp TeleportationPowerUp = new TeleportationPowerUp();
 
         /// <summary>
         /// Event raised when a power-up is activated (collected)
@@ -61,13 +61,13 @@ namespace Gameplay
             _powerUpConsumedEvent = powerUpConsumedEvent;
             _activePowerUps = new List<IPowerUp>
             {
-                _confusionPowerUp,
-                _teleportationPowerUp
+                ConfusionPowerUp,
+                TeleportationPowerUp
             };
 
             // Subscribe to power-up implementations to forward their events
-            _confusionPowerUp.OnStateChanged += HandlePowerUpStateChanged;
-            _teleportationPowerUp.OnStateChanged += HandlePowerUpStateChanged;
+            ConfusionPowerUp.OnStateChanged += HandlePowerUpStateChanged;
+            TeleportationPowerUp.OnStateChanged += HandlePowerUpStateChanged;
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Gameplay
             }
         
             // Apply persistent effects that should be active immediately when level starts
-            if (_teleportationPowerUp.IsActive)
+            if (TeleportationPowerUp.IsActive)
             {
                 _playerController.moveSpeed = _playerController.teleportSpeed;
                 Debug.Log($"[PowerUpManager]: Teleport speed boost applied on level start");
@@ -191,7 +191,7 @@ namespace Gameplay
             }
         
             // Reset move speed to normal if no teleport is active
-            if (!_teleportationPowerUp.IsActive)
+            if (!TeleportationPowerUp.IsActive)
             {
                 _playerController.moveSpeed = _playerController.normalMoveSpeed;
             }
@@ -200,11 +200,11 @@ namespace Gameplay
         /// <summary>
         /// Gets whether any power-up that affects movement direction is active
         /// </summary>
-        public bool IsDirectionModificationActive => _confusionPowerUp.IsActive;
+        public bool IsDirectionModificationActive => ConfusionPowerUp.IsActive;
     
         /// <summary>
         /// Gets whether any power-up that affects movement speed is active
         /// </summary>
-        public bool IsSpeedModificationActive => _teleportationPowerUp.IsActive;
+        public bool IsSpeedModificationActive => TeleportationPowerUp.IsActive;
     }
 }
