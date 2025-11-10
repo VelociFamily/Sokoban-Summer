@@ -1,0 +1,20 @@
+﻿<Solution>
+  <Project Path="SokobanSummer.Testing.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="SokobanSummer.Core.csproj" />
+  <Project Path="SokobanSummer.UI.csproj" />
+  <Project Path="SokobanSummer.Editor.csproj" />
+  <Project Path="SokobanSummer.Gameplay.csproj" />
+  <Project Path="ToonyColorsPro.Demo.Editor.csproj" />
+  <Project Path="SokobanSummer.Tests.csproj" />
+  <Project Path="SokobanSummer.Input.csproj" />
+  <Project Path="CFXRRuntime.csproj" />
+  <Project Path="SokobanSummer.Audio.csproj" />
+  <Project Path="CFXREditor.csproj" />
+  <Project Path="KinoBloom.Runtime.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="SokobanSummer.CoreShared.csproj" />
+  <Project Path="CFXRDemo.csproj" />
+  <Project Path="SokobanSummer.Effects.csproj" />
+  <Project Path="CFXR.WelcomeScreen.csproj" />
+</Solution>

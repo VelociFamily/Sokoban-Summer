@@ -157,7 +157,8 @@ MonoBehaviour:
     type: 3}
   LevelLogger: {fileID: 7322051495895024113, guid: 8f10432bbd156e44ba6569edb1f1fbd9,
     type: 3}
-  MoveCounterPrefab: {fileID: 0}
+  MoveCounterPrefab: {fileID: 5845952653526730329, guid: f67f088a84bdda14293342db0ae81bed,
+    type: 3}
   MusicPlayer: {fileID: 5260749598366790734, guid: ffe1261ba03f3154e8dddfda3970f90f,
     type: 3}
   SceneInfo: {fileID: 1784882817430136078, guid: 13fbbece91bfc0141a4a9e7dd92f22df,
@@ -268,7 +269,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Core.LevelManager
   levelsFolder: Levels
   tutorialsFolder: Tutorials
+  levelLoadedEvent: {fileID: 11400000, guid: d480d711dfd2f92409e6ee0b6ba7e07e, type: 2}
   debugMode: 1
+  unlockAllForTesting: 0
+  autoRequireUnlockForGameplay: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -288,7 +288,7 @@ GameObject:
   - component: {fileID: 5074137361709384691}
   - component: {fileID: 7282986923461714840}
   m_Layer: 20
-  m_Name: PF Player
+  m_Name: pf-player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -479,7 +479,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 132b30e03dbd3b745be8fb0e646a3489, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
   confuseEffect: {fileID: 4547901574923660208}
   controllerDeadZone: 0.2
   moveSpeed: 5
@@ -488,6 +487,8 @@ MonoBehaviour:
   wallLayer:
     serializedVersion: 2
     m_Bits: 8
+  powerUpConsumedEvent: {fileID: 11400000, guid: 6fece1e1a04806d4e93ad9d978126bff,
+    type: 2}
 --- !u!114 &7282986923461714840
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1532,11 +1532,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5074137361709384691, guid: b8e48fd69ff1d7843ad407edc738aea7,
-        type: 3}
-      propertyPath: wallLayer.m_Bits
-      value: 8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
