@@ -51,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: SokobanSummer.Core::Core.MoveCounter
   movesChangedEvent: {fileID: 11400000, guid: e5708e7a970e5914c902f895c1bca917, type: 2}
+  timerChangedEvent: {fileID: 11400000, guid: e2b84bcbfd081d84d89d9daf3de97ac7, type: 2}
   moveCount: 0
   moveText: {fileID: 2918505160535373683}
   timerText: {fileID: 8417814079542603632}
@@ -66,6 +67,7 @@ GameObject:
   - component: {fileID: 3618374988066350108}
   - component: {fileID: 2853925356251569221}
   - component: {fileID: 2918505160535373683}
+  - component: {fileID: 7496120944240095723}
   m_Layer: 5
   m_Name: Moves
   m_TagString: Untagged
@@ -191,6 +193,20 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &7496120944240095723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7496120944240095722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c575dd437c7f5e429bf170c81ef7c4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SokobanSummer.UI::UI.MoveCounterUIBinding
+  moveText: {fileID: 2918505160535373683}
+  formatString: 'Moves: {0}'
 --- !u!1 &8525533241059050795
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +218,7 @@ GameObject:
   - component: {fileID: 3375209152500022545}
   - component: {fileID: 140489185074374243}
   - component: {fileID: 8417814079542603632}
+  - component: {fileID: 8525533241059050796}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -327,3 +344,17 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &8525533241059050796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8525533241059050795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037066e379bc0c44ca10f6e49466882f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SokobanSummer.UI::UI.TimerUIBinding
+  timerText: {fileID: 8417814079542603632}
+  formatString: 'Time: {0:00}:{1:00}.{2:00}'

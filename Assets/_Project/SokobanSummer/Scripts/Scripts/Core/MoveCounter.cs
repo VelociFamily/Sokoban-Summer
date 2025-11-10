@@ -44,6 +44,9 @@ namespace Core
         [Header("Event Channels")]
         [Tooltip("ScriptableObject event channel raised when moves change (optional, complements C# events)")]
         [SerializeField] private IntGameEvent movesChangedEvent;
+        
+        [Tooltip("ScriptableObject event channel raised when timer changes (optional, complements C# events)")]
+        [SerializeField] private FloatGameEvent timerChangedEvent;
 
         [Header("Move Counter")]
         public int moveCount;
@@ -86,6 +89,7 @@ namespace Core
                 {
                     lastTimerUpdate = timer;
                     OnTimerChanged?.Invoke(this, new TimerChangedEventArgs(timer));
+                    timerChangedEvent?.Raise(timer);
                 }
 
                 // Stop timer if levelCompleteCanvas is active
@@ -94,6 +98,7 @@ namespace Core
                     timerRunning = false;
                     // Final timer update
                     OnTimerChanged?.Invoke(this, new TimerChangedEventArgs(timer));
+                    timerChangedEvent?.Raise(timer);
                 }
             }
         }
@@ -120,6 +125,7 @@ namespace Core
             
             // Raise ScriptableObject events
             movesChangedEvent?.Raise(moveCount);
+            timerChangedEvent?.Raise(timer);
         }
         public float GetElapsedTime()
         {
