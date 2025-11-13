@@ -824,8 +824,11 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Standalone: AMPLIFY_SHADER_EDITOR;USE_ROSLYN
-    WebGL: AMPLIFY_SHADER_EDITOR
+    Android: GLTFAST_FORCE_DEFAULT_IMPORTER_OFF
+    Standalone: AMPLIFY_SHADER_EDITOR;USE_ROSLYN;GLTFAST_FORCE_DEFAULT_IMPORTER_OFF
+    WebGL: AMPLIFY_SHADER_EDITOR;GLTFAST_FORCE_DEFAULT_IMPORTER_OFF
+    Windows Store Apps: GLTFAST_FORCE_DEFAULT_IMPORTER_OFF
+    iPhone: GLTFAST_FORCE_DEFAULT_IMPORTER_OFF
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
