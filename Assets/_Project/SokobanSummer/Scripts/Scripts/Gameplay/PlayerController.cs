@@ -51,6 +51,17 @@ namespace Gameplay
         
             // Use InputService instead of creating our own InputSystem_Actions
             InitializeInput();
+
+            // Auto-bind pushable layer if unset and layer exists
+            if (pushableLayer.value == 0)
+            {
+                int layerIndex = LayerMask.NameToLayer("Pushable");
+                if (layerIndex != -1)
+                {
+                    pushableLayer = 1 << layerIndex;
+                    Debug.Log("[PlayerController]: Assigned Pushable layer automatically.");
+                }
+            }
             
             // Power-up achievement tracking is now handled directly by PowerUpManager
             // via ServiceLocator when conditions are met (no event subscription needed)
