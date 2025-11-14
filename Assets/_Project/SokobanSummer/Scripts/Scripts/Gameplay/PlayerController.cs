@@ -156,7 +156,7 @@ namespace Gameplay
 
         private static Vector3 SnapToGrid(Vector3 pos)
         {
-            return new Vector3(Mathf.Round(pos.x), Mathf.Round(pos.y), pos.z);
+            return new Vector3(Mathf.Round(pos.x * 2f) / 2f, Mathf.Round(pos.y * 2f) / 2f, pos.z);
         }
 
         private System.Collections.IEnumerator TweenToPosition(Vector3 from, Vector3 to, float duration)
