@@ -22,7 +22,7 @@ This guide provides step-by-step instructions to complete the manual testing sec
 2. **Create Test GameObject**
    - Right-click in Hierarchy → `Create Empty`
    - Name it: `Test_LevelLoadedEvent`
-   - **Important:** Add tag "[TEST]" to the name so it can be easily identified and removed later
+   - **Important:** Set the tag to "[TEST]" using the Tag dropdown in the Inspector so it can be easily identified and removed later
 
 3. **Add EventChannelTestLogger Component**
    - Select `Test_LevelLoadedEvent` GameObject
