@@ -1,20 +1,21 @@
 # Unity Version Upgrade to 6000.2.12f1
 
 Target Editor: Unity 6.2 (6000.2.12f1)
+Revision Hash: e89d5df0e333
 
-## Actions
-- Updated `ProjectSettings/ProjectVersion.txt` version lines.
-- Placeholder revision hash used; will be replaced automatically after opening the project in the new Unity editor.
+## Completed Actions
+- Updated `ProjectSettings/ProjectVersion.txt` to 6000.2.12f1 with real revision hash.
+- Project opened in new Unity version; conversion succeeded.
 
-## Next Steps
-1. Open the project in Unity 6000.2.12f1 so it regenerates the correct revision hash and any package updates.
-2. Review the auto-updated `ProjectVersion.txt` and commit the real hash.
-3. Check Package Manager for outdated / auto-upgraded packages and ensure no compile errors.
-4. Run CI workflow to confirm successful build with new version.
-5. Remove this file or convert to a changelog entry if desired.
+## Remaining Validation
+- [ ] Open Package Manager and confirm no warnings / unresolved dependencies.
+- [ ] Run play mode test of `GameInitializer` for clean startup.
+- [ ] Execute existing automated tests (if any) under new version.
+- [ ] Run CI pipeline to confirm build & test pass.
+- [ ] Review any newly generated files for inclusion/exclusion (.meta, packages).
 
-## Validation Checklist
-- [ ] Project opens with no domain reload errors.
-- [ ] All scripts compile.
-- [ ] Play Mode initializes via `GameInitializer` without warnings.
-- [ ] CI passes on Unity 6000.2.12f1.
+## Notes
+If additional API changes surface, create follow-up issues referencing PR #89.
+
+## Post-Merge Cleanup
+You may remove this file or move its contents into CHANGELOG.
