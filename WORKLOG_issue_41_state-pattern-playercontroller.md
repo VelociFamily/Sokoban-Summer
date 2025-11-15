@@ -66,4 +66,64 @@ Mocks/fakes: If movement or teleport systems are asynchronous, create lightweigh
 - Teleport logic may require an event hook if synchronous today; will abstract if needed.
 - Avoid premature optimization; focus clarity & testability.
 
+---
+
+## Implementation Complete (2025-01-15)
+
+### Files Created
+- `IPlayerState.cs` - Interface with Enter/Exit/HandleInput/Tick methods
+- `PlayerStateType.cs` - Enum for Idle, Move, Pushing, Teleporting states
+- `PlayerStateMachine.cs` - State machine manager with registration and transition logic
+- `IdleState.cs` - Idle state implementation (waits for input, enables direction change)
+- `MoveState.cs` - Move state implementation (handles continuous movement, collision)
+- `PushingState.cs` - Pushing state skeleton (ready for push animation/physics)
+- `TeleportingState.cs` - Teleporting state with effect/sound integration
+- `PlayerStateTransitionTests.cs` - Comprehensive play mode tests (8 test cases)
+
+### Files Modified
+- `PlayerController.cs`:
+  - Added `_stateMachine` field
+  - Added `InitializeStateMachine()` to register and initialize states
+  - Updated `Awake()` to call state machine initialization
+  - Updated `Update()` to delegate to `_stateMachine.Tick()`
+  - Updated `OnMovePerformed()` to transition to Move state after successful TryMove
+  - Updated `OnCollisionEnter2D()` to transition to Idle state on direct wall hit
+  - Added public helper methods: `StopMovement()`, `EnableDirectionChange()`, `DisableDirectionChange()`, `SetMoveDirection()`, `GetMoveDirection()`, `GetStateMachine()`
+  - Removed explicit flag management in favor of state-driven behavior
+
+### Key Design Decisions
+1. **Embedded State Machine**: State machine is embedded in `PlayerController` rather than a separate component to avoid reference scattering and maintain cohesion.
+2. **Helper Methods**: Added public methods to `PlayerController` for states to call (StopMovement, EnableDirectionChange, etc.) instead of exposing private fields.
+3. **Movement Preservation**: Kept movement logic in `PlayerController.Update()` for now to maintain existing smooth physics behavior. States control when movement starts/stops via `moveDirection`.
+4. **Input Delegation**: Input continues to flow through `InputService` callbacks; states don't directly subscribe to input events. State transitions are triggered from those callbacks.
+5. **Test Coverage**: Added 8 play mode tests covering all state transitions and verifying state isolation.
+
+### Architecture Benefits Achieved
+✅ **Eliminated multi-flag logic**: No more complex conditional chains in `PlayerController`  
+✅ **State isolation**: Each behavior (idle, move, push, teleport) is in its own class  
+✅ **Testable states**: Each state can be tested independently via state machine  
+✅ **Extensible**: New states (Sliding, Falling, Charging) can be added without modifying existing states  
+✅ **Clear transitions**: All transitions use `stateMachine.ChangeState(newState)` instead of flag manipulation  
+
+### Future Extensions (Not Included)
+- Push detection and animation logic (PushingState is a skeleton)
+- Portal trigger integration (TeleportingState has foundation but needs portal hookup)
+- Optional state behaviors (e.g., SlidingState for ice tiles, FallingState for pits)
+- State history tracking for debugging/analytics
+- State duration metrics
+
+### Testing Status
+- All 8 play mode tests written
+- Tests cover: initial state, idle→move, move→idle, idle→teleporting, teleporting→idle, idle→pushing, pushing→idle, sequential transitions
+- Tests verify state machine initialization, transition logic, and movement control
+- Manual testing recommended: play a level and verify movement, collision, and any teleport triggers still work
+
+### Remaining Work (If Any)
+1. **Manual Verification**: Load a gameplay scene and verify:
+   - Player movement works as before
+   - Wall collision returns to idle state
+   - Teleport triggers still function (if implemented)
+2. **Optional**: Add push detection logic to trigger `PushingState` when crate is ahead
+3. **Optional**: Wire up portal triggers to call `stateMachine.ChangeState(PlayerStateType.Teleporting)`
+
 (Initial placeholder commit to enable draft PR.)
