@@ -180,15 +180,34 @@ namespace Gameplay
             var collisionNormal = contact.normal;
             var impactDirection = -collisionNormal;
 
-            if (!(Vector2.Dot(impactDirection.normalized, moveDirection.normalized) > 0.9f)) return;
-            moveDirection = Vector2.zero;
-            canChangeDirection = true;
+            // Check if hitting wall head-on (dot > 0.7 means roughly aligned)
+            float alignment = Vector2.Dot(impactDirection.normalized, moveDirection.normalized);
+            
+            if (alignment > 0.7f)
+            {
+                // Direct hit - stop completely
+                moveDirection = Vector2.zero;
+                canChangeDirection = true;
 
-            // Snap-tween to nearest grid center to avoid wedging between objects
-            var current = transform.position;
-            var snapped = SnapToGrid(current);
-            if ((snapped - current).sqrMagnitude > 1e-6f)
-                StartCoroutine(TweenToPosition(current, snapped, collisionSnapDuration));
+                // Snap-tween to nearest grid center to avoid wedging between objects
+                var current = transform.position;
+                var snapped = SnapToGrid(current);
+                if ((snapped - current).sqrMagnitude > 1e-6f)
+                    StartCoroutine(TweenToPosition(current, snapped, collisionSnapDuration));
+            }
+            else if (alignment > 0.1f)
+            {
+                // Glancing hit - slide along the wall by projecting movement onto the wall surface
+                // Get the tangent (perpendicular to normal)
+                Vector2 tangent = new Vector2(-collisionNormal.y, collisionNormal.x);
+                
+                // Project current movement direction onto the tangent
+                float dotProduct = Vector2.Dot(moveDirection.normalized, tangent);
+                moveDirection = tangent * Mathf.Sign(dotProduct);
+                
+                // Don't allow direction change while sliding
+                canChangeDirection = false;
+            }
         }
     }
 }
