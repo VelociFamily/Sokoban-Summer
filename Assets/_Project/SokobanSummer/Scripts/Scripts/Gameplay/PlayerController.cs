@@ -17,6 +17,7 @@ namespace Gameplay
 
         private InputSystem_Actions inputActions;
 
+        // Continuous movement fields (original behavior)
         private Vector2 moveDirection = Vector2.zero;
         public float moveSpeed = 5f;
         public readonly float normalMoveSpeed = 5f;
@@ -151,6 +152,27 @@ namespace Gameplay
             return hits.Any(hit => hit != col);
         }
 
+        [SerializeField] private float collisionSnapDuration = 0.08f;
+
+        private static Vector3 SnapToGrid(Vector3 pos)
+        {
+            return new Vector3(Mathf.Round(pos.x * 2f) / 2f, Mathf.Round(pos.y * 2f) / 2f, pos.z);
+        }
+
+        private System.Collections.IEnumerator TweenToPosition(Vector3 from, Vector3 to, float duration)
+        {
+            float elapsed = 0f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                var p = Vector3.Lerp(from, to, t);
+                if (rb != null) rb.MovePosition((Vector2)p); else transform.position = p;
+                yield return null;
+            }
+            if (rb != null) rb.MovePosition((Vector2)to); else transform.position = to;
+        }
+
         private void OnCollisionEnter2D(Collision2D collision)
         {
             if (!collision.collider.CompareTag("Wall")) return;
@@ -158,9 +180,34 @@ namespace Gameplay
             var collisionNormal = contact.normal;
             var impactDirection = -collisionNormal;
 
-            if (!(Vector2.Dot(impactDirection.normalized, moveDirection.normalized) > 0.9f)) return;
-            moveDirection = Vector2.zero;
-            canChangeDirection = true;
+            // Check if hitting wall head-on (dot > 0.7 means roughly aligned)
+            float alignment = Vector2.Dot(impactDirection.normalized, moveDirection.normalized);
+            
+            if (alignment > 0.7f)
+            {
+                // Direct hit - stop completely
+                moveDirection = Vector2.zero;
+                canChangeDirection = true;
+
+                // Snap-tween to nearest grid center to avoid wedging between objects
+                var current = transform.position;
+                var snapped = SnapToGrid(current);
+                if ((snapped - current).sqrMagnitude > 1e-6f)
+                    StartCoroutine(TweenToPosition(current, snapped, collisionSnapDuration));
+            }
+            else if (alignment > 0.1f)
+            {
+                // Glancing hit - slide along the wall by projecting movement onto the wall surface
+                // Get the tangent (perpendicular to normal)
+                Vector2 tangent = new Vector2(-collisionNormal.y, collisionNormal.x);
+                
+                // Project current movement direction onto the tangent
+                float dotProduct = Vector2.Dot(moveDirection.normalized, tangent);
+                moveDirection = tangent * Mathf.Sign(dotProduct);
+                
+                // Don't allow direction change while sliding
+                canChangeDirection = false;
+            }
         }
     }
 }
