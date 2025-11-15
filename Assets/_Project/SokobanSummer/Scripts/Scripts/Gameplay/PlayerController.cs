@@ -8,6 +8,9 @@ namespace Gameplay
 {
     public class PlayerController : MonoBehaviour
     {
+        // State Machine
+        private PlayerStateMachine _stateMachine;
+        
         // Removed: public AudioSource audioSource; - now using centralized AudioService
         private bool canChangeDirection = true;
         private Collider2D col;
@@ -40,6 +43,9 @@ namespace Gameplay
             rb = GetComponent<Rigidbody2D>();
             col = GetComponent<Collider2D>();
             _powerUpManager = new PowerUpManager(this, powerUpConsumedEvent);
+        
+            // Initialize state machine
+            InitializeStateMachine();
         
             // Use InputService instead of creating our own InputSystem_Actions
             InitializeInput();
@@ -100,6 +106,9 @@ namespace Gameplay
 
             if (!TryMove(inputDirection)) return;
         
+            // Transition to Move state
+            _stateMachine?.ChangeState(PlayerStateType.Move);
+        
             // Process power-up consumption after successful move
             _powerUpManager.ProcessPostMove();
         }
@@ -110,6 +119,11 @@ namespace Gameplay
 
         private void Update()
         {
+            // Delegate to state machine
+            _stateMachine?.Tick();
+            
+            // Movement is still handled here for now to maintain existing behavior
+            // States control when movement starts/stops via moveDirection
             transform.position += (Vector3)(moveDirection * (moveSpeed * Time.deltaTime));
         }
 
@@ -189,6 +203,9 @@ namespace Gameplay
                 moveDirection = Vector2.zero;
                 canChangeDirection = true;
 
+                // Transition back to Idle state
+                _stateMachine?.ChangeState(PlayerStateType.Idle);
+
                 // Snap-tween to nearest grid center to avoid wedging between objects
                 var current = transform.position;
                 var snapped = SnapToGrid(current);
@@ -208,6 +225,52 @@ namespace Gameplay
                 // Don't allow direction change while sliding
                 canChangeDirection = false;
             }
+        }
+
+        // State Machine initialization and helper methods
+        private void InitializeStateMachine()
+        {
+            _stateMachine = new PlayerStateMachine(this);
+            
+            // Register all states
+            _stateMachine.RegisterState(PlayerStateType.Idle, new IdleState(this, _stateMachine));
+            _stateMachine.RegisterState(PlayerStateType.Move, new MoveState(this, _stateMachine));
+            _stateMachine.RegisterState(PlayerStateType.Pushing, new PushingState(this, _stateMachine));
+            _stateMachine.RegisterState(PlayerStateType.Teleporting, new TeleportingState(this, _stateMachine));
+            
+            // Start in Idle state
+            _stateMachine.Initialize(PlayerStateType.Idle);
+        }
+
+        // Public methods for states to call
+        public void StopMovement()
+        {
+            moveDirection = Vector2.zero;
+        }
+
+        public void EnableDirectionChange()
+        {
+            canChangeDirection = true;
+        }
+
+        public void DisableDirectionChange()
+        {
+            canChangeDirection = false;
+        }
+
+        public void SetMoveDirection(Vector2 direction)
+        {
+            moveDirection = direction;
+        }
+
+        public Vector2 GetMoveDirection()
+        {
+            return moveDirection;
+        }
+
+        public PlayerStateMachine GetStateMachine()
+        {
+            return _stateMachine;
         }
     }
 }
