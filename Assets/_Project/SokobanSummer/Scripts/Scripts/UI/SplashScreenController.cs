@@ -111,8 +111,6 @@ namespace Core
                 targetCanvas.sortingOrder = 999;
             }
 
-            cameraResolved = AssignCameraIfAvailable();
-
             if (canvasGroup == null)
             {
                 canvasGroup = GetComponent<CanvasGroup>();
