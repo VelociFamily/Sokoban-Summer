@@ -76,6 +76,15 @@ namespace Core
                 Debug.Log($"[PersistentUIManager]: Auto-discovered {persistentUIGroups.Count} CanvasGroups");
             }
 
+            // Initialize UI as visible by default (will be hidden when gameplay scenes load)
+            foreach (var canvasGroup in persistentUIGroups)
+            {
+                if (canvasGroup != null)
+                {
+                    SetCanvasGroupVisibility(canvasGroup, true);
+                }
+            }
+
             // Subscribe to scene events
             SceneManager.sceneLoaded += OnSceneLoaded;
             SceneManager.sceneUnloaded += OnSceneUnloaded;
@@ -100,6 +109,13 @@ namespace Core
             {
                 RemoveDuplicateEventSystems();
                 RemoveDuplicateAudioListeners();
+            }
+
+            // Don't update visibility when the PersistentUI scene itself is loaded
+            if (scene.buildIndex == gameObject.scene.buildIndex)
+            {
+                Debug.Log($"[PersistentUIManager]: Skipping visibility update for own scene '{scene.name}'");
+                return;
             }
 
             // Update UI visibility based on scene type
