@@ -16,7 +16,7 @@ namespace Core
 
         [Header("Persistent UI")]
         [Tooltip("Name of the persistent UI scene to load (optional - if not set, uses legacy MenuPersistence)")]
-        public string PersistentUISceneName = "PersistentUI";
+        public string PersistentUISceneName = "Persistence UI";
 
         [Tooltip("Load persistent UI scene instead of using legacy MenuPersistence")]
         public bool UsePersistentUIScene = false;
