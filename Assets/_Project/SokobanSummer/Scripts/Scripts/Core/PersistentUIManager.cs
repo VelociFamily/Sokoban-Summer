@@ -104,6 +104,8 @@ namespace Core
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
+            Debug.Log($"[PersistentUIManager]: OnSceneLoaded - Scene: '{scene.name}', Mode: {mode}, BuildIndex: {scene.buildIndex}, MyBuildIndex: {gameObject.scene.buildIndex}");
+            
             // Remove any duplicate EventSystems or AudioListeners from newly loaded scenes
             if (mode == LoadSceneMode.Additive)
             {
@@ -167,10 +169,18 @@ namespace Core
         /// </summary>
         public void ShowUI(bool animated = true)
         {
+            Debug.Log($"[PersistentUIManager]: ShowUI called - CanvasGroups count: {persistentUIGroups.Count}, Animated: {animated}");
+            
             foreach (var canvasGroup in persistentUIGroups)
             {
-                if (canvasGroup == null) continue;
+                if (canvasGroup == null)
+                {
+                    Debug.LogWarning("[PersistentUIManager]: Null CanvasGroup in list");
+                    continue;
+                }
 
+                Debug.Log($"[PersistentUIManager]: Setting CanvasGroup '{canvasGroup.name}' to visible");
+                
                 if (animated && fadeDuration > 0)
                 {
                     StartTransition(canvasGroup, 1f);
@@ -181,7 +191,7 @@ namespace Core
                 }
             }
 
-            Debug.Log("[PersistentUIManager]: Showing UI");
+            Debug.Log("[PersistentUIManager]: ShowUI completed");
         }
 
         /// <summary>
@@ -189,10 +199,14 @@ namespace Core
         /// </summary>
         public void HideUI(bool animated = true)
         {
+            Debug.Log($"[PersistentUIManager]: HideUI called - CanvasGroups count: {persistentUIGroups.Count}, Animated: {animated}");
+            
             foreach (var canvasGroup in persistentUIGroups)
             {
                 if (canvasGroup == null) continue;
 
+                Debug.Log($"[PersistentUIManager]: Setting CanvasGroup '{canvasGroup.name}' to hidden");
+                
                 if (animated && fadeDuration > 0)
                 {
                     StartTransition(canvasGroup, 0f);
@@ -203,7 +217,7 @@ namespace Core
                 }
             }
 
-            Debug.Log("[PersistentUIManager]: Hiding UI");
+            Debug.Log("[PersistentUIManager]: HideUI completed");
         }
 
         /// <summary>
