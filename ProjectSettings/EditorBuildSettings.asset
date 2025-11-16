@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/_Project/SokobanSummer/Scenes/Main Menu.unity
     guid: 64c8dc9c90e63cf4d963e359a517e0ca
   - enabled: 1
+    path: Assets/_Project/SokobanSummer/Scenes/Persistence UI.unity
+    guid: a7065ed15c29e8246ba763bd3155b5b5
+  - enabled: 1
     path: Assets/_Project/SokobanSummer/Scenes/Tutorials/Moving Tutorial.unity
     guid: db4bf80b9453419449cdcbd7fbf1ad84
   - enabled: 1

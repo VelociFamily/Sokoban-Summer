@@ -115,14 +115,15 @@ namespace Core
                 // Step 4b: Prepare ambient foreground effects (if configured)
                 await InitializeForegroundEffectsAsync();
 
-                // Step 4c: Load persistent UI scene if configured
+                // Step 5: Load UI scene - either persistent (modern) or main menu (legacy)
                 if (UsePersistentUIScene)
                 {
                     await LoadPersistentUISceneAsync();
                 }
-
-                // Step 5: Load the main menu scene so its camera becomes available
-                await LoadMainMenuAsync();
+                else
+                {
+                    await LoadMainMenuAsync();
+                }
 
                 // Step 6: Show splash/title screen (UIService already handled camera resolution)
                 await ShowSplashScreenAsync();
