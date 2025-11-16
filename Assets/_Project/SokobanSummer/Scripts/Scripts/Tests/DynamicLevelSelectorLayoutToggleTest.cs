@@ -96,7 +96,7 @@ namespace Tests
             selector.showTutorials = true;
             selector.showGameplayLevels = true;
             selector.addSectionHeaders = false; // Keep simple for testing
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
+            selector.layoutMode = LayoutController.LayoutMode.VerticalList;
             // Disable auto-adding VerticalLayoutGroup to avoid Grid/Vertical conflicts during toggles
             selector.autoAddVerticalLayoutGroup = false;
             selector.buttonHeight = 96f;
@@ -166,11 +166,11 @@ namespace Tests
         {
             LogAssert.NoUnexpectedReceived();
             
-            // Start in VerticalList mode (default from SetUp)
-            Assert.AreEqual(DynamicLevelSelector.LayoutMode.VerticalList, selector.layoutMode);
+                // Start in VerticalList mode (default from SetUp)
+                Assert.AreEqual(LayoutController.LayoutMode.VerticalList, selector.layoutMode);
 
             // Toggle to Grid mode
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
+            selector.layoutMode = LayoutController.LayoutMode.Grid;
             selector.enablePagination = true;
             selector.gridColumns = 3;
             selector.gridRowsPerPage = 2;
@@ -185,12 +185,12 @@ namespace Tests
             LogAssert.NoUnexpectedReceived();
 
             // Start in Grid mode
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
+            selector.layoutMode = LayoutController.LayoutMode.Grid;
             selector.enablePagination = true;
             selector.gridColumns = 3;
             
             // Toggle to VerticalList mode
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
+                selector.layoutMode = LayoutController.LayoutMode.VerticalList;
             selector.autoAddVerticalLayoutGroup = false;
             
             // This should not produce errors
@@ -205,8 +205,8 @@ namespace Tests
             // Perform multiple toggles
             for (int i = 0; i < 5; i++)
             {
-                selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
-                selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
+                    selector.layoutMode = LayoutController.LayoutMode.Grid;
+                    selector.layoutMode = LayoutController.LayoutMode.VerticalList;
             }
             
             // This should not produce errors
@@ -222,13 +222,13 @@ namespace Tests
             yield return null;
 
             // Populate in VerticalList mode
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
+                selector.layoutMode = LayoutController.LayoutMode.VerticalList;
             selector.PopulateLevelButtons();
             
             yield return null;
 
             // Toggle to Grid and repopulate
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
+                selector.layoutMode = LayoutController.LayoutMode.Grid;
             selector.enablePagination = true;
             selector.gridColumns = 3;
             RemoveExistingLayoutGroups();
@@ -237,7 +237,7 @@ namespace Tests
             yield return null;
 
             // Toggle back to VerticalList and repopulate
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
+                selector.layoutMode = LayoutController.LayoutMode.VerticalList;
             selector.PopulateLevelButtons();
             
             yield return null;
@@ -252,7 +252,7 @@ namespace Tests
             LogAssert.NoUnexpectedReceived();
 
             // Configure Grid mode with pagination
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
+                selector.layoutMode = LayoutController.LayoutMode.Grid;
             selector.enablePagination = true;
             selector.gridColumns = 3;
             selector.gridRowsPerPage = 2;
@@ -276,7 +276,7 @@ namespace Tests
             LogAssert.NoUnexpectedReceived();
 
             // Configure VerticalList mode with section headers
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
+                selector.layoutMode = LayoutController.LayoutMode.VerticalList;
             selector.addSectionHeaders = true;
             
             // Create a simple section header prefab
@@ -304,7 +304,7 @@ namespace Tests
             LogAssert.NoUnexpectedReceived();
 
             // Configure Grid mode with responsive columns
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
+                selector.layoutMode = LayoutController.LayoutMode.Grid;
             selector.enableResponsiveColumns = true;
             selector.responsiveGridCellWidth = true;
             selector.oneColumnMaxWidth = 680f;
@@ -314,7 +314,7 @@ namespace Tests
             LogAssert.NoUnexpectedReceived();
 
             // Toggle back to vertical
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.VerticalList;
+                selector.layoutMode = LayoutController.LayoutMode.VerticalList;
             
             // This should not produce errors
             LogAssert.NoUnexpectedReceived();

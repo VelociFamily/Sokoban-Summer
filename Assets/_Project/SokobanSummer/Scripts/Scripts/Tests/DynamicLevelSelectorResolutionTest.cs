@@ -117,7 +117,7 @@ namespace Tests
             selector.showGameplayLevels = true;
             selector.addSectionHeaders = false;
             // Configure directly for Grid before Start executes so no VerticalLayoutGroup is ever added.
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
+            selector.layoutMode = LayoutController.LayoutMode.Grid;
             selector.enablePagination = true;
             selector.gridColumns = 5;
             selector.gridRowsPerPage = 3;
@@ -422,7 +422,7 @@ namespace Tests
             if (selector == null) return;
             RemoveExistingLayoutGroups();
             selector.autoAddVerticalLayoutGroup = false;
-            selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
+            selector.layoutMode = LayoutController.LayoutMode.Grid;
         }
     }
 }

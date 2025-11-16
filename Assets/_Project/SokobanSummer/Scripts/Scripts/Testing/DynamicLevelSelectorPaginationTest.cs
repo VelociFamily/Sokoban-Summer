@@ -42,10 +42,10 @@ namespace Testing
                 return;
             }
 
-            if (selector.layoutMode != DynamicLevelSelector.LayoutMode.Grid)
+            if (selector.layoutMode != LayoutController.LayoutMode.Grid)
             {
                 Debug.LogWarning("[DynamicLevelSelectorPaginationTest] Selector not in Grid mode; switching.");
-                selector.layoutMode = DynamicLevelSelector.LayoutMode.Grid;
+                selector.layoutMode = LayoutController.LayoutMode.Grid;
                 selector.PopulateLevelButtons();
             }
 
