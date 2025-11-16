@@ -14,6 +14,13 @@ namespace Core
         [Header("Modern Audio System")]
     public UnityEngine.Object UnifiedAudioManagerPrefab; // Use UnityEngine.Object for prefab references
 
+        [Header("Persistent UI")]
+        [Tooltip("Name of the persistent UI scene to load (optional - if not set, uses legacy MenuPersistence)")]
+        public string PersistentUISceneName = "PersistentUI";
+
+        [Tooltip("Load persistent UI scene instead of using legacy MenuPersistence")]
+        public bool UsePersistentUIScene = false;
+
         [Header("Other Systems")]
         public LevelLogger LevelLogger;
         public MoveCounter MoveCounterPrefab;
@@ -107,6 +114,12 @@ namespace Core
 
                 // Step 4b: Prepare ambient foreground effects (if configured)
                 await InitializeForegroundEffectsAsync();
+
+                // Step 4c: Load persistent UI scene if configured
+                if (UsePersistentUIScene)
+                {
+                    await LoadPersistentUISceneAsync();
+                }
 
                 // Step 5: Load the main menu scene so its camera becomes available
                 await LoadMainMenuAsync();
@@ -439,6 +452,30 @@ namespace Core
             Debug.Log("[GameInitializer]: Loading Main Menu scene...");
             await SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
             Debug.Log("[GameInitializer]: Main Menu scene loaded");
+        }
+
+        /// <summary>
+        /// Load persistent UI scene asynchronously
+        /// </summary>
+        private async Task LoadPersistentUISceneAsync()
+        {
+            if (string.IsNullOrEmpty(PersistentUISceneName))
+            {
+                Debug.LogWarning("[GameInitializer]: PersistentUISceneName is empty - skipping persistent UI scene load");
+                return;
+            }
+
+            Debug.Log($"[GameInitializer]: Loading Persistent UI scene '{PersistentUISceneName}'...");
+            
+            try
+            {
+                await SceneManager.LoadSceneAsync(PersistentUISceneName, LoadSceneMode.Additive);
+                Debug.Log($"[GameInitializer]: Persistent UI scene '{PersistentUISceneName}' loaded successfully");
+            }
+            catch (System.Exception ex)
+            {
+                Debug.LogError($"[GameInitializer]: Failed to load Persistent UI scene '{PersistentUISceneName}': {ex.Message}");
+            }
         }
 
         /// <summary>
