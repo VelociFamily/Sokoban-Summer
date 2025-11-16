@@ -11,30 +11,11 @@ using UnityEditor;
 namespace UI
 {
     /// <summary>
-    /// Dynamically populates level selection UI based on available levels
-    /// Replaces hardcoded level buttons with dynamic generation
+    /// Orchestrates level selection UI by coordinating data, button pooling, and layout.
+    /// Refactored to use single-responsibility components for better maintainability.
     /// </summary>
     public class DynamicLevelSelector : MonoBehaviour
     {
-        // Destroy helper: use DestroyImmediate in edit mode (OnValidate, etc.) to avoid
-        // "Destroy may not be called from edit mode" warnings; fall back to Destroy when playing.
-        private static void SafeDestroy(UnityEngine.Object obj)
-        {
-            if (obj == null) return;
-#if UNITY_EDITOR
-            if (!Application.isPlaying)
-            {
-                UnityEngine.Object.DestroyImmediate(obj);
-                return;
-            }
-#endif
-            UnityEngine.Object.Destroy(obj);
-        }
-        public enum LayoutMode
-        {
-            VerticalList,
-            Grid
-        }
         [Header("UI References")]
         [Tooltip("Parent container where level buttons will be instantiated")]
         public Transform levelButtonContainer;
@@ -72,7 +53,7 @@ namespace UI
         public bool stretchButtonsToContainerWidth = true;
 
         [Tooltip("Choose how to lay out the items")]
-        public LayoutMode layoutMode = LayoutMode.VerticalList;
+        public LayoutController.LayoutMode layoutMode = LayoutController.LayoutMode.VerticalList;
 
         [Header("Grid Settings")]
         [Tooltip("Number of columns for Grid layout")]
@@ -118,22 +99,17 @@ namespace UI
 
         [Tooltip("Optional button to move to the next page of levels")]
         public Button nextPageButton;
-    private List<GameObject> generatedButtons = new List<GameObject>();
-    private readonly List<DynamicLevelButton> generatedLevelButtons = new List<DynamicLevelButton>();
-    private readonly Dictionary<LevelManager.LevelInfo, DynamicLevelButton> levelInfoToButton = new Dictionary<LevelManager.LevelInfo, DynamicLevelButton>();
-    private readonly List<LevelManager.LevelInfo> orderedLevelSequence = new List<LevelManager.LevelInfo>();
-    private readonly List<LevelManager.LevelInfo> cachedDisplayLevels = new List<LevelManager.LevelInfo>();
-    private int currentPage;
-    private bool preferLastUnlockedSelection = true;
-    // Effective columns after responsive calculation. Falls back to configured gridColumns until first grid pass.
-    private int effectiveColumns = 0;
-    private bool needsGridPaginationRefresh = false; // set when resize changes columns/page size
-    private bool isRefreshingForResize = false; // guard to prevent recursive refresh loops
 
-        private int LevelsPerPage => Mathf.Max(1, Mathf.Max(1, (effectiveColumns > 0 ? effectiveColumns : gridColumns)) * Mathf.Max(1, gridRowsPerPage));
+        // Component instances
+        private LevelDataProvider dataProvider;
+        private ButtonPoolManager buttonPool;
+        private LayoutController layoutController;
+
+        private bool preferLastUnlockedSelection = true;
 
         private void Start()
         {
+            InitializeComponents();
             AutoBindScrollRectAndContainer();
             AutoBindPaginationButtonsIfMissing();
             EnsureOrConfigureLayoutGroup();
@@ -154,12 +130,49 @@ namespace UI
         }
 
         /// <summary>
+        /// Initialize component instances
+        /// </summary>
+        private void InitializeComponents()
+        {
+            dataProvider = new LevelDataProvider();
+            buttonPool = new ButtonPoolManager(levelButtonContainer, levelButtonPrefab, sectionHeaderPrefab, lockedLevelSprite);
+            layoutController = new LayoutController(levelButtonContainer);
+
+            // Configure layout controller
+            layoutController.Configure(
+                layoutMode,
+                buttonSpacing,
+                buttonHeight,
+                headerHeight,
+                stretchButtonsToContainerWidth,
+                gridColumns,
+                gridCellHeight,
+                gridHorizontalSpacing,
+                gridVerticalSpacing,
+                gridPaddingLeft, gridPaddingRight, gridPaddingTop, gridPaddingBottom,
+                responsiveGridCellWidth,
+                enableResponsiveColumns,
+                oneColumnMaxWidth,
+                twoColumnMaxWidth,
+                enablePagination,
+                gridRowsPerPage
+            );
+        }
+
+        /// <summary>
         /// Clear and regenerate all level buttons
         /// </summary>
         public void PopulateLevelButtons()
         {
-            // Clear existing buttons
-            ClearGeneratedButtons();
+            // Ensure components are initialized
+            if (dataProvider == null || buttonPool == null || layoutController == null)
+            {
+                InitializeComponents();
+            }
+
+            // Return buttons to pool instead of destroying
+            buttonPool.ReturnAllToPool();
+            dataProvider.ClearButtonRegistrations();
 
             var levelManager = ServiceLocator.Get<LevelManager>();
             if (levelManager == null)
@@ -176,60 +189,95 @@ namespace UI
 
             EnsureOrConfigureLayoutGroup();
 
-            GatherDisplayLevels(orderedLevelSequence);
-            int defaultSelectionIndex = ResolveDefaultSelectionIndex(orderedLevelSequence);
+            // Gather levels using data provider
+            dataProvider.GatherLevels(showTutorials, showGameplayLevels);
+            int defaultSelectionIndex = dataProvider.GetDefaultSelectionIndex();
             bool useLastUnlocked = preferLastUnlockedSelection && defaultSelectionIndex >= 0;
 
-            if (layoutMode == LayoutMode.Grid)
+            if (layoutMode == LayoutController.LayoutMode.Grid)
             {
-                cachedDisplayLevels.Clear();
-                cachedDisplayLevels.AddRange(orderedLevelSequence);
-
+                // Grid layout with pagination
                 if (!enablePagination)
                 {
-                    currentPage = 0;
+                    layoutController.SetCurrentPage(0, dataProvider.GetLevelCount());
                 }
                 else if (useLastUnlocked)
                 {
-                    currentPage = Mathf.Clamp(defaultSelectionIndex / LevelsPerPage, 0, Mathf.Max(0, GetTotalPages() - 1));
+                    int targetPage = layoutController.GetPageForIndex(defaultSelectionIndex);
+                    layoutController.SetCurrentPage(targetPage, dataProvider.GetLevelCount());
                 }
                 else
                 {
-                    currentPage = Mathf.Clamp(currentPage, 0, Mathf.Max(0, GetTotalPages() - 1));
+                    layoutController.SetCurrentPage(layoutController.CurrentPage, dataProvider.GetLevelCount());
                 }
 
                 RenderCurrentGridPage();
             }
             else
             {
-                bool tutorialHeaderAdded = false;
-                bool gameplayHeaderAdded = false;
-
-                foreach (var levelInfo in orderedLevelSequence)
-                {
-                    if (addSectionHeaders)
-                    {
-                        if (levelInfo.sceneType == SceneType.TutorialLevel && !tutorialHeaderAdded)
-                        {
-                            CreateSectionHeader("Tutorials");
-                            tutorialHeaderAdded = true;
-                        }
-                        else if (levelInfo.sceneType == SceneType.GameplayLevel && !gameplayHeaderAdded)
-                        {
-                            CreateSectionHeader("Levels");
-                            gameplayHeaderAdded = true;
-                        }
-                    }
-
-                    CreateLevelButton(levelInfo);
-                }
-
-                UpdateLayout();
+                // Vertical list layout with optional section headers
+                RenderVerticalList();
             }
 
+            UpdateLayout();
             UpdatePaginationControls();
             SelectDefaultLevelButton(defaultSelectionIndex, useLastUnlocked);
             preferLastUnlockedSelection = true;
+        }
+
+        /// <summary>
+        /// Render vertical list with optional section headers
+        /// </summary>
+        private void RenderVerticalList()
+        {
+            bool tutorialHeaderAdded = false;
+            bool gameplayHeaderAdded = false;
+
+            var levels = dataProvider.OrderedLevels;
+            foreach (var levelInfo in levels)
+            {
+                if (addSectionHeaders)
+                {
+                    if (levelInfo.sceneType == SceneType.TutorialLevel && !tutorialHeaderAdded)
+                    {
+                        CreateSectionHeader("Tutorials");
+                        tutorialHeaderAdded = true;
+                    }
+                    else if (levelInfo.sceneType == SceneType.GameplayLevel && !gameplayHeaderAdded)
+                    {
+                        CreateSectionHeader("Levels");
+                        gameplayHeaderAdded = true;
+                    }
+                }
+
+                CreateLevelButton(levelInfo);
+            }
+        }
+
+        /// <summary>
+        /// Render current page of grid layout
+        /// </summary>
+        private void RenderCurrentGridPage()
+        {
+            int levelCount = dataProvider.GetLevelCount();
+            if (levelCount == 0)
+            {
+                UpdateLayout();
+                return;
+            }
+
+            var (startIndex, endIndex) = layoutController.GetCurrentPageRange(levelCount);
+
+            for (int i = startIndex; i < endIndex; i++)
+            {
+                var levelInfo = dataProvider.GetLevelAt(i);
+                if (levelInfo != null)
+                {
+                    CreateLevelButton(levelInfo);
+                }
+            }
+
+            UpdateLayout();
         }
 
         /// <summary>
@@ -237,15 +285,14 @@ namespace UI
         /// </summary>
         private void CreateSectionHeader(string title)
         {
-            if (sectionHeaderPrefab == null) return;
+            var headerObj = buttonPool.GetHeader();
+            if (headerObj == null) return;
 
-            var headerObj = Instantiate(sectionHeaderPrefab, levelButtonContainer);
             var headerText = headerObj.GetComponentInChildren<Text>();
             if (headerText != null)
                 headerText.text = title;
 
-            ConfigureChildForLayout(headerObj, isHeader: true);
-            generatedButtons.Add(headerObj);
+            layoutController.ConfigureChildForLayout(headerObj, isHeader: true);
         }
 
         /// <summary>
@@ -253,42 +300,12 @@ namespace UI
         /// </summary>
         private void CreateLevelButton(LevelManager.LevelInfo levelInfo)
         {
-            var buttonObj = Instantiate(levelButtonPrefab, levelButtonContainer);
-            generatedButtons.Add(buttonObj);
-
-            // Require the new DynamicLevelButton component
-            var dynamicButton = buttonObj.GetComponent<DynamicLevelButton>();
+            var dynamicButton = buttonPool.CreateLevelButton(levelInfo);
             if (dynamicButton == null)
-            {
-                Debug.LogError("[DynamicLevelSelector] Level button prefab must have DynamicLevelButton component. See LEVEL_BUTTON_SETUP_GUIDE.md.");
                 return;
-            }
 
-            if (lockedLevelSprite != null)
-            {
-                dynamicButton.SetLockSprite(lockedLevelSprite);
-            }
-
-            dynamicButton.SetupLevel(levelInfo);
-            generatedLevelButtons.Add(dynamicButton);
-            levelInfoToButton[levelInfo] = dynamicButton;
-
-            ConfigureChildForLayout(buttonObj, isHeader: false);
-        }
-
-        /// <summary>
-        /// Clear all generated buttons
-        /// </summary>
-        private void ClearGeneratedButtons()
-        {
-            foreach (var button in generatedButtons)
-            {
-                if (button != null)
-                    SafeDestroy(button);
-            }
-            generatedButtons.Clear();
-            generatedLevelButtons.Clear();
-            levelInfoToButton.Clear();
+            dataProvider.RegisterButton(levelInfo, dynamicButton);
+            layoutController.ConfigureChildForLayout(dynamicButton.gameObject, isHeader: false);
         }
 
         /// <summary>
@@ -296,87 +313,39 @@ namespace UI
         /// </summary>
         private void UpdateLayout()
         {
-            // If using a layout group, force rebuild
-            var layoutGroup = levelButtonContainer.GetComponent<LayoutGroup>();
-            if (layoutGroup != null)
-            {
-                var rt = levelButtonContainer.GetComponent<RectTransform>();
-                LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
-                LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
-                // If grid, recalc cell width and content height
-                var grid = levelButtonContainer.GetComponent<GridLayoutGroup>();
-                if (grid != null)
-                {
-                    RecalculateGrid(grid);
-                    LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
-                    // If responsive columns changed the page capacity, rebuild current page & selection.
-                    if (needsGridPaginationRefresh && !isRefreshingForResize)
-                    {
-                        isRefreshingForResize = true;
-                        needsGridPaginationRefresh = false;
-                        ClearGeneratedButtons();
-                        // Re-render page with updated LevelsPerPage
-                        if (layoutMode == LayoutMode.Grid)
-                        {
-                            RenderCurrentGridPage();
-                            UpdatePaginationControls();
-                            int defaultSelectionIndex = ResolveDefaultSelectionIndex(orderedLevelSequence);
-                            SelectDefaultLevelButton(defaultSelectionIndex, preferLastUnlockedSelection);
-                        }
-                        isRefreshingForResize = false;
-                        LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
-                    }
-                }
+            if (layoutController == null)
                 return;
-            }
 
-            // Fallback: Manual vertical positioning if no layout group
-            float currentY = 0f;
-            foreach (var go in generatedButtons)
+            int itemCount = buttonPool.ActiveButtons.Count;
+            layoutController.ApplyLayout(itemCount);
+
+            // Check if pagination refresh is needed after layout
+            if (layoutController.NeedsPaginationRefresh)
             {
-                if (go == null) continue;
-                var rt = go.GetComponent<RectTransform>();
-                if (rt == null) continue;
+                layoutController.SetRefreshingForResize(true);
+                layoutController.ClearRefreshFlags();
+                
+                // Re-render page with updated capacity
+                buttonPool.ReturnAllToPool();
+                dataProvider.ClearButtonRegistrations();
 
-                // Ensure anchored to top-center for predictable layout
-                rt.anchorMin = new Vector2(0.5f, 1f);
-                rt.anchorMax = new Vector2(0.5f, 1f);
-                rt.pivot = new Vector2(0.5f, 1f);
-
-                // Determine element height
-                float h = buttonHeight;
-                var le = go.GetComponent<LayoutElement>();
-                if (le != null && le.preferredHeight > 0)
-                    h = le.preferredHeight;
-
-                // Position element
-                rt.anchoredPosition = new Vector2(0f, -currentY);
-
-                // Stretch width if requested
-                if (stretchButtonsToContainerWidth)
+                if (layoutMode == LayoutController.LayoutMode.Grid)
                 {
-                    rt.sizeDelta = new Vector2(0f, h);
-                    rt.offsetMin = new Vector2(rt.offsetMin.x, rt.offsetMin.y); // no-op, keep
-                }
-                else
-                {
-                    var size = rt.sizeDelta;
-                    size.y = h;
-                    rt.sizeDelta = size;
+                    RenderCurrentGridPage();
+                    UpdatePaginationControls();
+                    int defaultSelectionIndex = dataProvider.GetDefaultSelectionIndex();
+                    SelectDefaultLevelButton(defaultSelectionIndex, preferLastUnlockedSelection);
                 }
 
-                currentY += h + buttonSpacing;
+                layoutController.SetRefreshingForResize(false);
+                
+                // Apply layout again after refresh
+                var rt = levelButtonContainer.GetComponent<RectTransform>();
+                if (rt != null)
+                {
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(rt);
+                }
             }
-        }
-
-        /// <summary>
-        /// Format time in MM:SS format
-        /// </summary>
-        private string FormatTime(float time)
-        {
-            var minutes = Mathf.FloorToInt(time / 60f);
-            var seconds = Mathf.FloorToInt(time % 60f);
-            return $"{minutes:00}:{seconds:00}";
         }
 
         /// <summary>
@@ -384,9 +353,9 @@ namespace UI
         /// </summary>
         public void RefreshLevelSelection()
         {
-            if (layoutMode == LayoutMode.Grid)
+            if (layoutMode == LayoutController.LayoutMode.Grid && layoutController != null)
             {
-                currentPage = Mathf.Clamp(currentPage, 0, GetTotalPages() - 1);
+                layoutController.SetCurrentPage(layoutController.CurrentPage, dataProvider.GetLevelCount());
             }
             preferLastUnlockedSelection = true;
             PopulateLevelButtons();
@@ -398,88 +367,27 @@ namespace UI
         public void OnLevelCompleted()
         {
             // Refresh lock states without fully regenerating
-            if (generatedButtons.Count > 0)
+            if (buttonPool != null && buttonPool.ActiveButtons.Count > 0)
             {
-                RefreshButtonStates();
+                buttonPool.RefreshButtonStates();
             }
             UpdatePaginationControls();
 
-            var defaultIndex = ResolveDefaultSelectionIndex(orderedLevelSequence);
+            var defaultIndex = dataProvider?.GetDefaultSelectionIndex() ?? -1;
             SelectDefaultLevelButton(defaultIndex, true);
         }
 
         /// <summary>
-        /// Refresh just the button states without regenerating
+        /// Select the default level button based on progression
         /// </summary>
-        private void RefreshButtonStates()
-        {
-            foreach (var buttonObj in generatedButtons)
-            {
-                var dynamicButton = buttonObj.GetComponent<DynamicLevelButton>();
-                if (dynamicButton != null)
-                {
-                    dynamicButton.UpdateLockState();
-                }
-            }
-        }
-
-        private void GatherDisplayLevels(List<LevelManager.LevelInfo> targetList)
-        {
-            targetList.Clear();
-
-            var levelManager = ServiceLocator.Get<LevelManager>();
-            if (levelManager == null)
-                return;
-
-            if (showTutorials)
-            {
-                var tutorials = levelManager.GetLevels(SceneType.TutorialLevel);
-                if (tutorials != null && tutorials.Count > 0)
-                {
-                    targetList.AddRange(tutorials);
-                }
-            }
-
-            if (showGameplayLevels)
-            {
-                var levels = levelManager.GetLevels(SceneType.GameplayLevel);
-                if (levels != null && levels.Count > 0)
-                {
-                    targetList.AddRange(levels);
-                }
-            }
-        }
-
-        private int ResolveDefaultSelectionIndex(List<LevelManager.LevelInfo> orderedLevels)
-        {
-            var levelManager = ServiceLocator.Get<LevelManager>();
-            if (orderedLevels == null || orderedLevels.Count == 0 || levelManager == null)
-                return -1;
-
-            int lastUnlockedIndex = -1;
-            for (int i = 0; i < orderedLevels.Count; i++)
-            {
-                var info = orderedLevels[i];
-                if (info != null && levelManager.CanLoadLevel(info))
-                {
-                    lastUnlockedIndex = i;
-                }
-            }
-
-            if (lastUnlockedIndex >= 0)
-                return lastUnlockedIndex;
-
-            return orderedLevels.Count > 0 ? 0 : -1;
-        }
-
         private void SelectDefaultLevelButton(int defaultSelectionIndex, bool useLastUnlocked)
         {
             DynamicLevelButton targetButton = null;
 
-            if (useLastUnlocked && defaultSelectionIndex >= 0 && defaultSelectionIndex < orderedLevelSequence.Count)
+            if (useLastUnlocked && defaultSelectionIndex >= 0 && dataProvider != null)
             {
-                var targetLevel = orderedLevelSequence[defaultSelectionIndex];
-                if (targetLevel != null && levelInfoToButton.TryGetValue(targetLevel, out var mappedButton))
+                var targetLevel = dataProvider.GetLevelAt(defaultSelectionIndex);
+                if (targetLevel != null && dataProvider.LevelToButtonMap.TryGetValue(targetLevel, out var mappedButton))
                 {
                     if (mappedButton != null && mappedButton.button != null && mappedButton.button.interactable)
                     {
@@ -488,14 +396,14 @@ namespace UI
                 }
             }
 
-            if (targetButton == null)
+            if (targetButton == null && buttonPool != null)
             {
-                targetButton = FindFirstInteractableButtonOnPage();
+                targetButton = buttonPool.FindFirstInteractableButton();
             }
 
-            if (targetButton == null && generatedLevelButtons.Count > 0)
+            if (targetButton == null && buttonPool != null && buttonPool.ActiveLevelButtons.Count > 0)
             {
-                targetButton = generatedLevelButtons[0];
+                targetButton = buttonPool.ActiveLevelButtons[0];
             }
 
             if (targetButton != null)
@@ -516,40 +424,9 @@ namespace UI
             }
         }
 
-        private DynamicLevelButton FindFirstInteractableButtonOnPage()
-        {
-            foreach (var button in generatedLevelButtons)
-            {
-                if (button == null || button.button == null)
-                    continue;
-
-                if (button.button.interactable)
-                    return button;
-            }
-
-            return null;
-        }
-
-        private void RenderCurrentGridPage()
-        {
-            if (cachedDisplayLevels.Count == 0)
-            {
-                UpdateLayout();
-                return;
-            }
-
-            int startIndex = enablePagination ? currentPage * LevelsPerPage : 0;
-            int endIndex = enablePagination ? Mathf.Min(cachedDisplayLevels.Count, startIndex + LevelsPerPage) : cachedDisplayLevels.Count;
-
-            startIndex = Mathf.Clamp(startIndex, 0, Mathf.Max(0, cachedDisplayLevels.Count - 1));
-            for (int i = startIndex; i < endIndex; i++)
-            {
-                CreateLevelButton(cachedDisplayLevels[i]);
-            }
-
-            UpdateLayout();
-        }
-
+        /// <summary>
+        /// Hook up pagination button listeners
+        /// </summary>
         private void HookPaginationButtons()
         {
             if (previousPageButton != null)
@@ -567,19 +444,15 @@ namespace UI
 
         /// <summary>
         /// Attempt to auto-bind pagination buttons by name if they are not explicitly assigned.
-        /// Looks for children under this GameObject or its parent canvas whose names contain
-        /// "prev" / "previous" and "next". Keeps existing assignments if already set.
         /// </summary>
         private void AutoBindPaginationButtonsIfMissing()
         {
-            if (!enablePagination || layoutMode != LayoutMode.Grid)
+            if (!enablePagination || layoutMode != LayoutController.LayoutMode.Grid)
                 return;
 
-            // If both already assigned, skip.
             if (previousPageButton != null && nextPageButton != null)
                 return;
 
-            // Search breadth: this selector's transform, then its parent hierarchy up to 2 levels.
             List<Transform> searchRoots = new List<Transform>();
             searchRoots.Add(transform);
             if (transform.parent != null)
@@ -615,41 +488,41 @@ namespace UI
 
         private void GoToPreviousPage()
         {
-            if (currentPage <= 0) return;
-            currentPage--;
+            if (layoutController == null || !layoutController.GoToPreviousPage())
+                return;
+
             preferLastUnlockedSelection = false;
             PopulateLevelButtons();
         }
 
         private void GoToNextPage()
         {
-            var totalPages = GetTotalPages();
-            if (currentPage >= totalPages - 1) return;
-            currentPage++;
+            if (layoutController == null || dataProvider == null)
+                return;
+
+            if (!layoutController.GoToNextPage(dataProvider.GetLevelCount()))
+                return;
+
             preferLastUnlockedSelection = false;
             PopulateLevelButtons();
         }
 
-        private int GetTotalPages()
-        {
-            if (!enablePagination || layoutMode != LayoutMode.Grid)
-                return Mathf.Max(1, cachedDisplayLevels.Count > 0 ? 1 : 0);
-
-            int perPage = LevelsPerPage;
-            if (perPage <= 0) return 1;
-            int count = Mathf.Max(0, cachedDisplayLevels.Count);
-            return Mathf.Max(1, Mathf.CeilToInt(count / (float)perPage));
-        }
-
         private void UpdatePaginationControls()
         {
-            // Always clamp current page to valid bounds before updating controls
-            if (layoutMode == LayoutMode.Grid)
-            {
-                currentPage = Mathf.Clamp(currentPage, 0, Mathf.Max(0, GetTotalPages() - 1));
-            }
-            bool shouldShow = enablePagination && layoutMode == LayoutMode.Grid && cachedDisplayLevels.Count > LevelsPerPage;
-            int totalPages = Mathf.Max(1, GetTotalPages());
+            if (layoutController == null || dataProvider == null)
+                return;
+
+            // Clamp current page
+            layoutController.SetCurrentPage(layoutController.CurrentPage, dataProvider.GetLevelCount());
+
+            int levelCount = dataProvider.GetLevelCount();
+            int itemsPerPage = layoutController.GetItemsPerPage();
+            bool shouldShow = enablePagination && 
+                             layoutMode == LayoutController.LayoutMode.Grid && 
+                             levelCount > itemsPerPage;
+            
+            int totalPages = layoutController.GetTotalPages(levelCount);
+            int currentPage = layoutController.CurrentPage;
 
             if (previousPageButton != null)
             {
@@ -673,7 +546,6 @@ namespace UI
 
         /// <summary>
         /// Ensure a layout group exists on the container for automatic spacing.
-        /// Adds VerticalLayoutGroup + ContentSizeFitter when enabled and missing.
         /// </summary>
         private void EnsureLayoutGroup()
         {
@@ -699,40 +571,10 @@ namespace UI
         }
 
         /// <summary>
-        /// Configure a child (button/header) for layout groups: stretch width and set preferred height.
-        /// </summary>
-        private void ConfigureChildForLayout(GameObject go, bool isHeader)
-        {
-            if (go == null) return;
-            var rt = go.GetComponent<RectTransform>();
-            if (rt != null && stretchButtonsToContainerWidth && layoutMode == LayoutMode.VerticalList)
-            {
-                // Stretch horizontally within container
-                rt.anchorMin = new Vector2(0f, rt.anchorMin.y);
-                rt.anchorMax = new Vector2(1f, rt.anchorMax.y);
-                rt.offsetMin = new Vector2(0f, rt.offsetMin.y);
-                rt.offsetMax = new Vector2(0f, rt.offsetMax.y);
-            }
-
-            if (layoutMode == LayoutMode.VerticalList)
-            {
-                var le = go.GetComponent<LayoutElement>();
-                if (le == null) le = go.AddComponent<LayoutElement>();
-                le.preferredHeight = isHeader ? headerHeight : buttonHeight;
-                le.flexibleHeight = 0f;
-                le.flexibleWidth = 0f;
-            }
-        }
-
-        /// <summary>
         /// Ensure or configure the container to use the selected layout mode.
         /// </summary>
         private void EnsureOrConfigureLayoutGroup()
         {
-            // During batch editor automation (validation / autofix) OnValidate and other editor
-            // callbacks can run in a context where adding/removing components causes
-            // DestroyImmediate / AddComponent to throw or trigger unexpected editor state.
-            // Skip layout modifications when running in batch mode to keep automation stable.
 #if UNITY_EDITOR
             if (System.Array.IndexOf(System.Environment.GetCommandLineArgs(), "-batchmode") >= 0)
             {
@@ -744,10 +586,7 @@ namespace UI
 
             var fitter = levelButtonContainer.GetComponent<ContentSizeFitter>();
 
-            // Remove any LayoutGroup that is not the target type BEFORE adding the target.
-            // IMPORTANT: Do NOT use DestroyImmediate in play mode inside OnValidate or other
-            // restricted callbacks (physics triggers, render callbacks). Use Destroy instead.
-            // We accept potential one-frame delay; Unity forbids DestroyImmediate here.
+            // Remove incorrect layout groups
             var allGroups = levelButtonContainer.GetComponents<LayoutGroup>();
             bool needsCleanup = false;
             if (allGroups != null && allGroups.Length > 0)
@@ -755,8 +594,8 @@ namespace UI
                 foreach (var g in allGroups)
                 {
                     if (g == null) continue;
-                    bool isTarget = (layoutMode == LayoutMode.Grid && g is GridLayoutGroup)
-                                    || (layoutMode == LayoutMode.VerticalList && g is VerticalLayoutGroup);
+                    bool isTarget = (layoutMode == LayoutController.LayoutMode.Grid && g is GridLayoutGroup)
+                                    || (layoutMode == LayoutController.LayoutMode.VerticalList && g is VerticalLayoutGroup);
                     if (!isTarget)
                     {
 #if UNITY_EDITOR
@@ -766,9 +605,8 @@ namespace UI
                         }
                         else
                         {
-                            // Runtime (play mode) – must use Destroy to satisfy Unity restrictions.
                             UnityEngine.Object.Destroy(g);
-                            needsCleanup = true; // Mark that we need to wait for destruction
+                            needsCleanup = true;
                         }
 #else
                         UnityEngine.Object.Destroy(g);
@@ -778,18 +616,15 @@ namespace UI
                 }
             }
 
-            // If we destroyed a component in play mode, it's still present until end of frame
-            // Cannot add new layout component this frame - bail out and try again next frame
             if (needsCleanup)
             {
                 return;
             }
 
-            // Re-query after potential removals
             var existingVertical = levelButtonContainer.GetComponent<VerticalLayoutGroup>();
             var existingGrid = levelButtonContainer.GetComponent<GridLayoutGroup>();
 
-            if (layoutMode == LayoutMode.VerticalList)
+            if (layoutMode == LayoutController.LayoutMode.VerticalList)
             {
                 var v = existingVertical;
                 if (v == null && autoAddVerticalLayoutGroup)
@@ -797,7 +632,6 @@ namespace UI
                     v = levelButtonContainer.gameObject.AddComponent<VerticalLayoutGroup>();
                     if (v == null)
                     {
-                        // If component couldn't be added (e.g., pending destroy), bail out safely
                         return;
                     }
                 }
@@ -826,7 +660,6 @@ namespace UI
             }
             else // Grid
             {
-                // Ensure no lingering VerticalLayoutGroup remains (defensive double-check)
                 var lingeringVertical = levelButtonContainer.GetComponent<VerticalLayoutGroup>();
                 if (lingeringVertical != null)
                 {
@@ -838,13 +671,10 @@ namespace UI
                     else
                     {
                         UnityEngine.Object.Destroy(lingeringVertical);
-                        // In play mode, component is marked for destruction but still exists this frame
-                        // Cannot add GridLayoutGroup until next frame - bail out to avoid conflict
                         return;
                     }
 #else
                     UnityEngine.Object.Destroy(lingeringVertical);
-                    // In build, component is marked for destruction but still exists this frame
                     return;
 #endif
                 }
@@ -855,7 +685,6 @@ namespace UI
                     grid = levelButtonContainer.gameObject.AddComponent<GridLayoutGroup>();
                     if (grid == null)
                     {
-                        // If grid couldn't be added (e.g., pending destroy), bail out safely
                         return;
                     }
                 }
@@ -865,7 +694,6 @@ namespace UI
                 grid.constraint = GridLayoutGroup.Constraint.FixedColumnCount;
                 grid.constraintCount = Mathf.Max(1, gridColumns);
 
-                // For grids, ensure ContentSizeFitter exists, disable vertical fit to avoid loops
                 if (fitter == null)
                 {
                     fitter = levelButtonContainer.gameObject.AddComponent<ContentSizeFitter>();
@@ -875,111 +703,41 @@ namespace UI
                     fitter.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
                     fitter.verticalFit = ContentSizeFitter.FitMode.Unconstrained;
                 }
-
-                RecalculateGrid(grid);
-            }
-        }
-
-        /// <summary>
-        /// Compute responsive grid cell width and content height.
-        /// </summary>
-        private void RecalculateGrid(GridLayoutGroup grid)
-        {
-            if (grid == null) return;
-            var rt = levelButtonContainer as RectTransform;
-            if (rt == null) return;
-
-            // Responsive columns
-            int previousColumns = effectiveColumns > 0 ? effectiveColumns : gridColumns;
-            int previousPerPage = LevelsPerPage;
-            int cols = Mathf.Max(1, gridColumns);
-            if (enableResponsiveColumns)
-            {
-                float w = rt.rect.width;
-                if (w <= oneColumnMaxWidth) cols = 1;
-                else if (w <= twoColumnMaxWidth) cols = 2;
-                else cols = Mathf.Max(cols, 3);
-            }
-            float containerWidth = rt.rect.width;
-            float totalPadding = gridPaddingLeft + gridPaddingRight;
-            float totalSpacing = gridHorizontalSpacing * (cols - 1);
-            float cellWidth = responsiveGridCellWidth && containerWidth > 0
-                ? Mathf.Max(1f, (containerWidth - totalPadding - totalSpacing) / cols)
-                : rt.rect.width / cols;
-
-            grid.cellSize = new Vector2(cellWidth, gridCellHeight);
-            grid.constraintCount = cols; // ensure constraint count matches effective columns
-            effectiveColumns = cols;
-
-            // Calculate rows and set a preferred height via sizeDelta
-            int itemCount = generatedButtons.Count;
-            int rows = Mathf.CeilToInt(itemCount / (float)cols);
-            float contentHeight = gridPaddingTop + gridPaddingBottom + rows * gridCellHeight + Mathf.Max(0, rows - 1) * gridVerticalSpacing;
-
-            var size = rt.sizeDelta;
-            // Keep width delta, only adjust height to enable scrolling
-            size.y = contentHeight;
-            rt.sizeDelta = size;
-
-            // Detect pagination capacity change and schedule refresh.
-            if (layoutMode == LayoutMode.Grid && enablePagination)
-            {
-                int newPerPage = LevelsPerPage;
-                if (newPerPage != previousPerPage || cols != previousColumns)
-                {
-                    // Clamp current page to new total pages.
-                    currentPage = Mathf.Clamp(currentPage, 0, Mathf.Max(0, GetTotalPages() - 1));
-                    // Avoid jumping pages to last unlocked after a resize; keep current page stable.
-                    preferLastUnlockedSelection = false;
-                    // Flag for rebuild after current layout pass.
-                    if (!isRefreshingForResize)
-                    {
-                        needsGridPaginationRefresh = true;
-                    }
-                }
             }
         }
 
         /// <summary>
         /// Auto-detect ScrollRect and content/viewport under this object and wire them up.
-        /// Also assigns levelButtonContainer from ScrollRect.content or a child named "Content".
         /// </summary>
         private void AutoBindScrollRectAndContainer()
         {
             var sr = GetComponent<ScrollRect>();
             if (sr != null)
             {
-                // Ensure viewport
                 if (sr.viewport == null)
                 {
                     var vp = transform.Find("Viewport") as RectTransform;
                     if (vp == null && transform.childCount > 0)
                     {
-                        // Try first child as viewport
                         vp = transform.GetChild(0) as RectTransform;
                     }
                     if (vp != null) sr.viewport = vp;
                 }
 
-                // Ensure content
                 if (sr.content == null && sr.viewport != null)
                 {
-                    // Look for Content under viewport
                     var content = sr.viewport.Find("Content") as RectTransform;
                     if (content == null && sr.viewport.childCount > 0)
                     {
-                        // Try first child
                         content = sr.viewport.GetChild(0) as RectTransform;
                     }
                     if (content != null) sr.content = content;
                 }
 
-                // Prefer vertical scroll-only for level list
                 sr.horizontal = false;
                 sr.vertical = true;
             }
 
-            // Assign levelButtonContainer if not set
             if (levelButtonContainer == null)
             {
                 if (sr != null && sr.content != null)
@@ -988,33 +746,32 @@ namespace UI
                 }
                 else
                 {
-                    // Fallback to a child named Content
                     var t = transform.Find("Viewport/Content") ?? transform.Find("Content");
                     if (t != null) levelButtonContainer = t;
-                    else levelButtonContainer = transform; // last resort
+                    else levelButtonContainer = transform;
                 }
             }
         }
 
         private void OnRectTransformDimensionsChange()
         {
-            if (layoutMode == LayoutMode.Grid)
+            if (layoutMode == LayoutController.LayoutMode.Grid && layoutController != null && dataProvider != null)
             {
-                var grid = levelButtonContainer != null ? levelButtonContainer.GetComponent<GridLayoutGroup>() : null;
-                if (grid != null)
-                {
-                    RecalculateGrid(grid);
-                    // Trigger a layout refresh so pagination/selection stays in sync after resize
-                    UpdateLayout();
-                    UpdatePaginationControls();
-                }
+                layoutController.OnDimensionsChanged(dataProvider.GetLevelCount());
+                UpdateLayout();
+                UpdatePaginationControls();
             }
+        }
+
+        private void OnDestroy()
+        {
+            // Clean up pooled objects
+            buttonPool?.DestroyAll();
         }
 
 #if UNITY_EDITOR
         private void AssignDefaultPrefabsInEditor()
         {
-            // Auto-assign default level button prefab if missing
             if (levelButtonPrefab == null)
             {
                 var go = UnityEditor.AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Level Button.prefab");
