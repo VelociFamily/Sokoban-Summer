@@ -135,7 +135,13 @@ namespace Core
         {
             bool shouldShow = false;
 
-            if (SceneInfo.IsMainMenuScene(scene))
+            // Always show in the Game initialization scene
+            if (scene.name == "Game" || scene.name == "game")
+            {
+                shouldShow = true;
+                Debug.Log($"[PersistentUIManager]: Game initialization scene detected - keeping UI visible");
+            }
+            else if (SceneInfo.IsMainMenuScene(scene))
             {
                 shouldShow = showInMainMenu;
             }
