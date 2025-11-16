@@ -72,6 +72,7 @@ namespace Core
         // Service instances managed by this initializer
         private ModernAudioService _audioService;
         private InputService _inputService;
+        private UIService _uiService;
         private MoveCounter _moveCounter;
         private AchievementManager _achievementManager;
         private LevelManager _levelManager;
@@ -110,10 +111,7 @@ namespace Core
                 // Step 5: Load the main menu scene so its camera becomes available
                 await LoadMainMenuAsync();
 
-                // Step 6: Wait for a primary camera before showing the splash
-                await WaitForPrimaryCameraAsync();
-
-                // Step 7: Show splash/title screen once the camera is ready
+                // Step 6: Show splash/title screen (UIService already handled camera resolution)
                 await ShowSplashScreenAsync();
 
                 Debug.Log("[GameInitializer]: Game initialization completed successfully");
@@ -169,6 +167,7 @@ namespace Core
             {
                 InitializeAudioSystemAsync(),
                 InitializeInputSystemAsync(),
+                InitializeUIServiceAsync(),
                 InitializeAchievementSystemAsync(),
                 InitializeMoveCounterAsync(),
                 InitializeLevelManagerAsync()
@@ -190,6 +189,7 @@ namespace Core
         {
             if (_audioService != null) ServiceLocator.Register(_audioService);
             if (_inputService != null) ServiceLocator.Register(_inputService);
+            if (_uiService != null) ServiceLocator.Register(_uiService);
             if (_moveCounter != null) ServiceLocator.Register(_moveCounter);
             if (_achievementManager != null) ServiceLocator.Register(_achievementManager);
             if (_levelManager != null) ServiceLocator.Register(_levelManager);
@@ -221,6 +221,16 @@ namespace Core
             // Create InputService instance
             _inputService = new InputService();
             await _inputService.InitializeAsync();
+        }
+
+        /// <summary>
+        /// Initialize UI systems asynchronously
+        /// </summary>
+        private async Task InitializeUIServiceAsync()
+        {
+            // Create UIService instance
+            _uiService = new UIService();
+            await _uiService.InitializeAsync();
         }
 
         /// <summary>
@@ -433,7 +443,10 @@ namespace Core
 
         /// <summary>
         /// Wait for a camera to exist so UI canvases can target it.
+        /// NOTE: This method is now deprecated in favor of UIService.InitializeAsync().
+        /// Kept for backward compatibility in case it's called elsewhere.
         /// </summary>
+        [Obsolete("Use UIService.InitializeAsync() instead - camera resolution is handled there")]
         private static async Task WaitForPrimaryCameraAsync(float timeoutSeconds = 5f)
         {
             var startTime = Time.realtimeSinceStartup;

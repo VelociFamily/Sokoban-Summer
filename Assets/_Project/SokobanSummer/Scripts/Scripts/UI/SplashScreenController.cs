@@ -15,7 +15,7 @@ namespace Core
         [SerializeField] private TMP_Text titleLabel;
         [SerializeField] private Image backgroundImage;
 
-        private bool cameraResolved;
+        private UIService _uiService;
 
         /// <summary>
         /// Sets the displayed title text. Falls back to a default when the provided value is null or whitespace.
@@ -51,6 +51,9 @@ namespace Core
                 Destroy(gameObject);
                 return;
             }
+
+            // Bind canvas to UIService camera if available
+            BindCanvasToUIService();
 
             canvasGroup.alpha = 1f;
             canvasGroup.interactable = false;
@@ -189,41 +192,33 @@ namespace Core
             return true;
         }
 
-        private void LateUpdate()
+        /// <summary>
+        /// Binds the target canvas to the UIService primary camera.
+        /// Replaces the old LateUpdate/AssignCameraIfAvailable pattern.
+        /// </summary>
+        private void BindCanvasToUIService()
         {
-            if (cameraResolved)
+            if (targetCanvas == null)
             {
                 return;
             }
 
-            cameraResolved = AssignCameraIfAvailable();
-        }
-
-        private bool AssignCameraIfAvailable()
-        {
-            if (targetCanvas == null)
+            // Skip if canvas is overlay mode or already has a camera
+            if (targetCanvas.renderMode == RenderMode.ScreenSpaceOverlay || targetCanvas.worldCamera != null)
             {
-                return false;
+                return;
             }
 
-            if (targetCanvas.renderMode == RenderMode.ScreenSpaceOverlay)
+            // Get UIService and bind canvas
+            if (ServiceLocator.TryGet(out _uiService) && _uiService.IsReady())
             {
-                return true;
+                _uiService.BindCanvas(targetCanvas);
+                Debug.Log($"[SplashScreenController]: Bound splash canvas to UIService primary camera");
             }
-
-            if (targetCanvas.worldCamera != null)
+            else
             {
-                return true;
+                Debug.LogWarning($"[SplashScreenController]: UIService not ready. Splash canvas may not render correctly.");
             }
-
-            var candidateCamera = Camera.main ?? FindFirstObjectByType<Camera>();
-            if (candidateCamera != null)
-            {
-                targetCanvas.worldCamera = candidateCamera;
-                return true;
-            }
-
-            return false;
         }
     }
 }
