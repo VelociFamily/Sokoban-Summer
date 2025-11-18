@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UI;
 
 namespace UI
 {
@@ -13,6 +14,8 @@ namespace UI
         public GameObject pauseMenu;
         public CanvasGroup pauseMenuCanvasGroup; // Optional: use CanvasGroup for fade instead of SetActive
         public GameObject blocker; // This object blocks pause menu when active
+        [Tooltip("Name of the pause panel managed by MenuNavigator")] public string pausePanelName = "Pause";
+        private MenuNavigator menuNavigator;
 
         // --- NEW VARIABLES FOR BLUR ---
         public Volume volume; // Reference to the Volume component
@@ -35,6 +38,9 @@ namespace UI
             inputActions.UI.Click.performed += OnClickPerformed;
             inputActions.UI.Enable();
 
+            // Find MenuNavigator in the persistent UI (if configured)
+            menuNavigator = FindFirstObjectByType<MenuNavigator>();
+
             // Auto-discover CanvasGroup if not assigned
             if (pauseMenuCanvasGroup == null && pauseMenu != null)
             {
@@ -46,15 +52,8 @@ namespace UI
                 }
             }
 
-            // Initialize pause menu as hidden
-            if (pauseMenuCanvasGroup != null)
-            {
-                SetPauseMenuVisibility(false, instant: true);
-            }
-            else if (pauseMenu != null)
-            {
-                pauseMenu.SetActive(false);
-            }
+            // Initialize pause menu as hidden (MenuNavigator path preferred)
+            SetPauseMenuVisibility(false, instant: true);
 
             // Get main camera for mouse position conversion
             mainCamera = Camera.main;
@@ -213,7 +212,21 @@ namespace UI
         /// </summary>
         private void SetPauseMenuVisibility(bool visible, bool instant = false)
         {
-            if (pauseMenuCanvasGroup != null)
+            // Prefer MenuNavigator if available (Persistent UI)
+            if (menuNavigator != null)
+            {
+                if (visible)
+                {
+                    menuNavigator.ShowPanel(pausePanelName, instant);
+                }
+                else
+                {
+                    // Hide all panels on resume to ensure no UI persists over gameplay
+                    menuNavigator.HideAllPanels(instant);
+                }
+            }
+            // Fallback to CanvasGroup or SetActive when MenuNavigator isn't present
+            else if (pauseMenuCanvasGroup != null)
             {
                 // Use CanvasGroup for smooth transitions
                 pauseMenuCanvasGroup.alpha = visible ? 1f : 0f;
