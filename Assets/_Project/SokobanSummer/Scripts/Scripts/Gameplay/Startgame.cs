@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Core;
-using UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,15 +15,11 @@ namespace Gameplay
         public GameObject menu;
 
         private InputSystem_Actions _inputActions;
-        private MenuNavigator menuNavigator;
 
         private void Awake()
         {
             // Use InputService instead of creating our own InputSystem_Actions
             InitializeInput();
-
-            // Discover MenuNavigator in the Persistent UI
-            menuNavigator = FindFirstObjectByType<MenuNavigator>();
         }
 
         private void InitializeInput()
@@ -70,8 +65,8 @@ namespace Gameplay
 
             if (anyActive)
             {
-                // Switch back to Main Menu via MenuNavigator instead of SetActive
-                menuNavigator?.ShowMainMenu();
+                // Ensure persistent UI is visible (centralized UI flow)
+                PersistentUIManager.Show(true);
             }
         }
 
@@ -79,8 +74,8 @@ namespace Gameplay
         {
             foreach (var obj in startObjects.Where(obj => obj != null)) obj.SetActive(false);
 
-            // Ensure Main Menu is shown via MenuNavigator (Persistent UI flow)
-            menuNavigator?.ShowMainMenu();
+            // Ensure persistent UI is visible (centralized UI flow)
+            PersistentUIManager.Show(true);
         }
     }
 }

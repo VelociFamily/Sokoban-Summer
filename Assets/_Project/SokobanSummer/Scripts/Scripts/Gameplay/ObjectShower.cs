@@ -1,5 +1,4 @@
 using UnityEngine;
-using UI;
 
 namespace Gameplay
 {
@@ -7,12 +6,10 @@ namespace Gameplay
     {
         public GameObject objectToShow;
         public GameObject menu;
-        private MenuNavigator menuNavigator;
 
         private void Awake()
         {
-            // Discover MenuNavigator in the persistent UI scene
-            menuNavigator = FindFirstObjectByType<MenuNavigator>();
+            // No-op: UI is managed centrally by PersistentUIManager
         }
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -23,8 +20,8 @@ namespace Gameplay
                     objectToShow.SetActive(true);
                     Debug.Log($"[ObjectShower]: Player revealed object '{objectToShow.name}'");
 
-                    // Drive UI via MenuNavigator instead of SetActive
-                    menuNavigator?.ShowMainMenu();
+                    // Ensure persistent UI is visible (centralized UI flow)
+                    Core.PersistentUIManager.Show(true);
                 }
                 else
                 {
@@ -39,8 +36,8 @@ namespace Gameplay
                 objectToShow.SetActive(true);
                 Debug.Log($"[ObjectShower]: Manually activated object '{objectToShow.name}'");
 
-                // Ensure UI state via MenuNavigator; avoid SetActive toggling
-                menuNavigator?.ShowMainMenu();
+                // Ensure persistent UI is visible (centralized UI flow)
+                Core.PersistentUIManager.Show(true);
             }
             else
             {
