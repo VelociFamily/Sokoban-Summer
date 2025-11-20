@@ -21,6 +21,7 @@ Short, actionable rules to get productive fast. Follow the existing service sing
 - For UI visibility in persistent scenes, prefer CanvasGroup alpha over SetActive to avoid flicker and state loss. Use `PersistentUIManager.Show()`/`.Hide()` if available.
 - For Move/Timer UI, prefer exact names "Moves" and "Timer"; otherwise include terms: moves: move|moves|step; time: time|timer|clock; completion Canvas name contains "complete".
 - Level select UI: use `UI/DynamicLevelSelector.cs` with a prefab that has `UI/DynamicLevelButton.cs`.
+- Achievement UI (badges/text): subscribe to `AchievementManager.AchievementsChanged` in `OnEnable` (unsubscribe in `OnDisable`); avoid per-frame polling. Acquire via `ServiceLocator.TryGet<AchievementManager>` and call a local `RefreshBadges()` method on change.
 
 ## Common APIs (copy/paste)
 - Service access: `var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();` then `inputService.EnablePlayerInput();`

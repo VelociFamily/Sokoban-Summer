@@ -19,56 +19,73 @@ namespace UI
 
         private int currentIndex;
         private bool unlocked;
+        private AchievementManager achievementManager; // cached when available
+        private bool subscribed;
 
         void Start()
         {
-            // unlocked only if tutorial is complete
-            var achievementManager = ServiceLocator.Get<AchievementManager>();
-            unlocked = (achievementManager != null && achievementManager.CompleteTutorial);
-            ShowHatsUI(unlocked);
-
-            if (unlocked)
+            // Attempt to acquire AchievementManager; may not be registered yet at Start.
+            if (ServiceLocator.TryGet<AchievementManager>(out achievementManager))
             {
-                Debug.Log("[HatSelectionManager]: Hat system unlocked - tutorial completed");
-                UpdateHatVisibility();
+                unlocked = achievementManager.CompleteTutorial;
+                ShowHatsUI(unlocked);
 
-                // Load saved hat if exists
-                if (!string.IsNullOrEmpty(achievementManager.selectedHatName))
+                if (unlocked)
                 {
-                    var index = hats.FindIndex(h => h.name == achievementManager.selectedHatName);
-                    if (index >= 0)
-                    {
-                        currentIndex = index;
-                        UpdateHatVisibility();
-                    }
+                    Debug.Log("[HatSelectionManager]: Hat system unlocked - tutorial completed");
+                    LoadSavedHat();
+                    UpdateHatVisibility();
                 }
+            }
+            else
+            {
+                unlocked = false;
+                ShowHatsUI(false); // show lock until tutorial completion & service available
             }
         }
 
         void Update()
         {
-            var achievementManager = ServiceLocator.Get<AchievementManager>();
-            if (!unlocked && achievementManager != null && achievementManager.CompleteTutorial)
+            // Fallback acquisition if started before AchievementManager was registered.
+            if (!subscribed && achievementManager == null && ServiceLocator.TryGet<AchievementManager>(out achievementManager))
             {
-                unlocked = true;
-                Debug.Log("[HatSelectionManager]: Hat system newly unlocked during gameplay");
-                ShowHatsUI(true);
-                UpdateHatVisibility();
+                SubscribeToAchievements();
+            }
+        }
+
+        void OnEnable()
+        {
+            if (achievementManager == null && ServiceLocator.TryGet<AchievementManager>(out achievementManager))
+            {
+                SubscribeToAchievements();
+            }
+        }
+
+        void OnDisable()
+        {
+            if (achievementManager != null && subscribed)
+            {
+                achievementManager.AchievementsChanged -= OnAchievementsChanged;
+                subscribed = false;
             }
         }
 
         void UpdateHatVisibility()
         {
-            for (var i = 0; i < hats.Count; i++)
-            {
-                hats[i].SetActive(i == currentIndex);
-            }
+            if (hats == null || hats.Count == 0) return;
+            if (currentIndex < 0 || currentIndex >= hats.Count) currentIndex = 0;
 
-            // save selected hat name to AchievementManager
-            var achievementManager = ServiceLocator.Get<AchievementManager>();
-            if (achievementManager != null && hats.Count > 0)
+            for (var i = 0; i < hats.Count; i++)
+                hats[i].SetActive(i == currentIndex);
+
+            // Persist selection only if service exists, unlocked, and changed to avoid recursive event loop
+            if (achievementManager != null && unlocked)
             {
-                achievementManager.SetSelectedHat(hats[currentIndex].name);
+                var hatName = hats[currentIndex].name;
+                if (achievementManager.selectedHatName != hatName)
+                {
+                    achievementManager.SetSelectedHat(hatName);
+                }
             }
         }
 
@@ -90,10 +107,51 @@ namespace UI
 
         void ShowHatsUI(bool show)
         {
-            character.SetActive(show);
-            leftArrow.SetActive(show);
-            rightArrow.SetActive(show);
-            lockObject.SetActive(!show);
+            if (character != null) character.SetActive(show);
+            if (leftArrow != null) leftArrow.SetActive(show);
+            if (rightArrow != null) rightArrow.SetActive(show);
+            if (lockObject != null) lockObject.SetActive(!show);
+        }
+
+        void LoadSavedHat()
+        {
+            if (achievementManager == null || hats == null || hats.Count == 0) return;
+            if (string.IsNullOrEmpty(achievementManager.selectedHatName)) return;
+            var index = hats.FindIndex(h => h != null && h.name == achievementManager.selectedHatName);
+            if (index >= 0)
+                currentIndex = index;
+        }
+
+        void SubscribeToAchievements()
+        {
+            if (achievementManager == null || subscribed) return;
+            achievementManager.AchievementsChanged += OnAchievementsChanged;
+            subscribed = true;
+            // Initialize current state based on existing achievement data
+            unlocked = achievementManager.CompleteTutorial;
+            ShowHatsUI(unlocked);
+            if (unlocked)
+            {
+                LoadSavedHat();
+                UpdateHatVisibility();
+            }
+        }
+
+        void OnAchievementsChanged()
+        {
+            if (achievementManager == null) return;
+            var wasUnlocked = unlocked;
+            unlocked = achievementManager.CompleteTutorial;
+            if (unlocked != wasUnlocked)
+            {
+                ShowHatsUI(unlocked);
+            }
+            if (unlocked)
+            {
+                // Ensure hat selection reflects persisted choice
+                LoadSavedHat();
+                UpdateHatVisibility();
+            }
         }
     }
 }

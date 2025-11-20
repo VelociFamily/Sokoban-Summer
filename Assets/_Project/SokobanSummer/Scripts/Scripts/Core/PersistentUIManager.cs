@@ -145,10 +145,12 @@ namespace Core
             }
             else if (SceneInfo.IsMainMenuScene(scene))
             {
+                Debug.Log($"[PersistentUIManager]: MainMenu scene detected - showInMainMenu setting is '{showInMainMenu}'");
                 shouldShow = showInMainMenu;
             }
             else if (SceneInfo.IsGameplayScene(scene))
             {
+                Debug.Log($"[PersistentUIManager]: Gameplay scene detected - showInGameplay setting is '{showInGameplay}'");
                 shouldShow = showInGameplay;
             }
 

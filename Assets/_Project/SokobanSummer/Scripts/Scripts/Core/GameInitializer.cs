@@ -125,6 +125,10 @@ namespace Core
                     await LoadMainMenuAsync();
                 }
 
+                // Step 5b: Now that a camera/UI scene likely created an AudioListener, initialize audio
+                await InitializeAudioSystemAsync();
+                RegisterAudioServiceIfNeeded();
+
                 // Step 6: Show splash/title screen (UIService already handled camera resolution)
                 await ShowSplashScreenAsync();
 
@@ -179,7 +183,6 @@ namespace Core
             // Start all async initializations in parallel
             var initTasks = new List<Task>
             {
-                InitializeAudioSystemAsync(),
                 InitializeInputSystemAsync(),
                 InitializeUIServiceAsync(),
                 InitializeAchievementSystemAsync(),
@@ -201,7 +204,7 @@ namespace Core
         /// </summary>
         private void RegisterServicesInLocator()
         {
-            if (_audioService != null) ServiceLocator.Register(_audioService);
+            // Audio is now initialized later (after UI load); defer its registration
             if (_inputService != null) ServiceLocator.Register(_inputService);
             if (_uiService != null) ServiceLocator.Register(_uiService);
             if (_moveCounter != null) ServiceLocator.Register(_moveCounter);
@@ -213,18 +216,65 @@ namespace Core
         }
 
         /// <summary>
+        /// Register audio service after it has been initialized (post UI scene load)
+        /// </summary>
+        private void RegisterAudioServiceIfNeeded()
+        {
+            if (_audioService == null)
+                return;
+
+            // Attempt registration only if not already present
+            if (!ServiceLocator.TryGet<ModernAudioService>(out var _))
+            {
+                ServiceLocator.Register(_audioService);
+                Debug.Log("[GameInitializer]: Audio service registered in ServiceLocator (post UI load)");
+            }
+        }
+
+        /// <summary>
         /// Initialize audio systems asynchronously
         /// </summary>
         private async Task InitializeAudioSystemAsync()
         {
-            // Create ModernAudioService instance
-            _audioService = new ModernAudioService();
-            
+            // Wait for an AudioListener so we avoid startup warnings.
+            await WaitForAudioListenerAsync();
+
+            // Create ModernAudioService instance (only once)
+            if (_audioService == null)
+            {
+                _audioService = new ModernAudioService();
+            }
+
             // Use modern audio system if available, otherwise fallback to legacy
             if (UnifiedAudioManagerPrefab != null)
             {
                 await _audioService.InitializeWithPrefabAsync(UnifiedAudioManagerPrefab);
             }
+            Debug.Log("[GameInitializer]: Audio system initialized after AudioListener became available");
+        }
+
+        /// <summary>
+        /// Wait until an AudioListener exists (likely created with a Camera in a loaded UI/Main Menu scene).
+        /// If none appears within the timeout, create a temporary one to suppress warnings.
+        /// </summary>
+        private async Task WaitForAudioListenerAsync(float timeoutSeconds = 5f)
+        {
+            var startTime = Time.realtimeSinceStartup;
+            while (Time.realtimeSinceStartup - startTime < timeoutSeconds)
+            {
+                var listener = FindFirstObjectByType<AudioListener>();
+                if (listener != null)
+                {
+                    Debug.Log("[GameInitializer]: AudioListener detected; proceeding with audio initialization.");
+                    return;
+                }
+                await Task.Yield();
+            }
+
+            Debug.LogWarning("[GameInitializer]: Timed out waiting for AudioListener; creating a temporary one.");
+            var temp = new GameObject("TempAudioListener");
+            temp.AddComponent<AudioListener>();
+            DontDestroyOnLoad(temp);
         }
 
         /// <summary>

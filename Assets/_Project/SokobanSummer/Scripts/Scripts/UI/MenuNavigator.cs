@@ -25,7 +25,7 @@ namespace UI
 
         [Header("Settings")]
         [Tooltip("Default panel to show when starting")]
-        public string defaultPanelName = "MainMenu";
+        public string defaultPanelName = "Main Menu";
 
         [Tooltip("Transition duration for fading panels")]
         public float transitionDuration = 0.2f;
@@ -58,6 +58,7 @@ namespace UI
         private void Start()
         {
             // Show default panel
+            Debug.Log($"[MenuNavigator]: Showing default panel '{defaultPanelName}' on Start");
             ShowPanel(defaultPanelName, instant: true);
         }
 
@@ -72,13 +73,20 @@ namespace UI
                 return;
             }
 
-            // Hide current panel
-            if (currentPanel != null && currentPanel != panel)
+            // If already showing this panel, do nothing
+            if (currentPanel == panel)
             {
+                Debug.Log($"[MenuNavigator]: Panel '{panelName}' is already showing");
+                return;
+            }
+
+            // Hide current panel and show new panel
+            if (currentPanel != null)
+            {
+                Debug.Log($"[MenuNavigator]: Hiding panel '{currentPanel.panelName}'");
                 SetPanelVisibility(currentPanel, false, instant);
             }
 
-            // Show new panel
             SetPanelVisibility(panel, true, instant);
             currentPanel = panel;
 
@@ -94,7 +102,7 @@ namespace UI
         /// <summary>
         /// Show main menu panel
         /// </summary>
-        public void ShowMainMenu() => ShowPanel("MainMenu");
+        public void ShowMainMenu() => ShowPanel("Main Menu");
 
         /// <summary>
         /// Show settings panel
@@ -104,7 +112,7 @@ namespace UI
         /// <summary>
         /// Show level selection panel
         /// </summary>
-        public void ShowLevelSelection() => ShowPanel("LevelSelection");
+        public void ShowLevelSelection() => ShowPanel("Level Selection Menu");
 
         /// <summary>
         /// Show credits panel
@@ -117,6 +125,11 @@ namespace UI
         public void ShowAchievements() => ShowPanel("Achievements");
 
         /// <summary>
+        /// Show accessories manager panel
+        /// </summary>
+        public void ShowAccessoriesManager() => ShowPanel("Accessories manager");
+
+        /// <summary>
         /// Go back to main menu (common back button action)
         /// </summary>
         public void BackToMainMenu() => ShowMainMenu();
@@ -126,15 +139,19 @@ namespace UI
         /// </summary>
         private void SetPanelVisibility(MenuPanel panel, bool visible, bool instant = false)
         {
-            if (panel.canvasGroup == null) return;
+            if (panel.canvasGroup == null)
+                return;
 
             float targetAlpha = visible ? 1f : 0f;
+
+            Debug.Log($"[MenuNavigator]: SetPanelVisibility request panel='{panel.panelName}' visible={visible} instant={instant} targetAlpha={targetAlpha}");
 
             if (instant || transitionDuration <= 0f)
             {
                 panel.canvasGroup.alpha = targetAlpha;
                 panel.canvasGroup.interactable = visible;
                 panel.canvasGroup.blocksRaycasts = visible;
+                Debug.Log($"[MenuNavigator]: Instant visibility applied to '{panel.panelName}' alpha={panel.canvasGroup.alpha} interactable={panel.canvasGroup.interactable}");
             }
             else
             {
@@ -143,11 +160,13 @@ namespace UI
                 {
                     StopCoroutine(existingCoroutine);
                     activeTransitions.Remove(panel.canvasGroup);
+                    Debug.Log($"[MenuNavigator]: Stopped existing transition for '{panel.panelName}' to start new one");
                 }
 
                 // Start new transition
                 var coroutine = StartCoroutine(FadePanel(panel.canvasGroup, targetAlpha, visible));
                 activeTransitions[panel.canvasGroup] = coroutine;
+                Debug.Log($"[MenuNavigator]: Started fade transition for '{panel.panelName}' -> targetAlpha={targetAlpha}");
             }
         }
 
@@ -159,11 +178,14 @@ namespace UI
             float startAlpha = canvasGroup.alpha;
             float elapsed = 0f;
 
+            Debug.Log($"[MenuNavigator]: FadePanel begin (visible={visible}) startAlpha={startAlpha} targetAlpha={targetAlpha}");
+
             // Enable interaction immediately if showing
             if (visible)
             {
                 canvasGroup.interactable = true;
                 canvasGroup.blocksRaycasts = true;
+                Debug.Log($"[MenuNavigator]: Interaction enabled at fade start");
             }
 
             while (elapsed < transitionDuration)
@@ -181,10 +203,12 @@ namespace UI
             {
                 canvasGroup.interactable = false;
                 canvasGroup.blocksRaycasts = false;
+                Debug.Log($"[MenuNavigator]: Interaction disabled after hide");
             }
 
             // Remove from active transitions
             activeTransitions.Remove(canvasGroup);
+            Debug.Log($"[MenuNavigator]: FadePanel complete finalAlpha={canvasGroup.alpha}");
         }
 
         /// <summary>

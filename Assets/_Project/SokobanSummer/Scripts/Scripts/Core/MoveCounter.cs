@@ -41,6 +41,11 @@ namespace Core
         /// </summary>
         public event EventHandler<TimerChangedEventArgs> OnTimerChanged;
 
+        /// <summary>
+        /// Event raised when the level is completed (timer stops due to completion canvas)
+        /// </summary>
+        public event EventHandler OnLevelCompleted;
+
         [Header("Event Channels")]
         [Tooltip("ScriptableObject event channel raised when moves change (optional, complements C# events)")]
         [SerializeField] private IntGameEvent movesChangedEvent;
@@ -99,6 +104,9 @@ namespace Core
                     // Final timer update
                     OnTimerChanged?.Invoke(this, new TimerChangedEventArgs(timer));
                     timerChangedEvent?.Raise(timer);
+                    // Notify level completion
+                    OnLevelCompleted?.Invoke(this, EventArgs.Empty);
+                    Debug.Log($"[MoveCounter]: Level completed - Moves: {moveCount}, Time: {timer:F2}s");
                 }
             }
         }
