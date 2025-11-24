@@ -1,0 +1,4511 @@
+fileFormatVersion: 2
+guid: 51622fecd9caadf44946c2a8dbfe61a5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8284714841402956658
+    second: RA_Atlantis_Animated01_0
+  - first:
+      213: 6676690875201574467
+    second: RA_Atlantis_Animated01_1
+  - first:
+      213: 4586105375004022047
+    second: RA_Atlantis_Animated01_2
+  - first:
+      213: -895317310271371690
+    second: RA_Atlantis_Animated01_3
+  - first:
+      213: 3641120839965063368
+    second: RA_Atlantis_Animated01_4
+  - first:
+      213: -6630350139815129359
+    second: RA_Atlantis_Animated01_5
+  - first:
+      213: 3834391052642429989
+    second: RA_Atlantis_Animated01_6
+  - first:
+      213: 2488755311497857673
+    second: RA_Atlantis_Animated01_7
+  - first:
+      213: 5588763821127672206
+    second: RA_Atlantis_Animated01_8
+  - first:
+      213: -348014031249746910
+    second: RA_Atlantis_Animated01_9
+  - first:
+      213: 6092289785016451831
+    second: RA_Atlantis_Animated01_10
+  - first:
+      213: -5642647741984467119
+    second: RA_Atlantis_Animated01_11
+  - first:
+      213: 9042789566020831990
+    second: RA_Atlantis_Animated01_12
+  - first:
+      213: -697508808693215901
+    second: RA_Atlantis_Animated01_13
+  - first:
+      213: -8400317591464428641
+    second: RA_Atlantis_Animated01_14
+  - first:
+      213: 7830278396466199872
+    second: RA_Atlantis_Animated01_15
+  - first:
+      213: -5627685610892522309
+    second: RA_Atlantis_Animated01_16
+  - first:
+      213: -6632598722465981262
+    second: RA_Atlantis_Animated01_17
+  - first:
+      213: -3902855877069705749
+    second: RA_Atlantis_Animated01_18
+  - first:
+      213: -1547794577550126843
+    second: RA_Atlantis_Animated01_19
+  - first:
+      213: 5023267207313640510
+    second: RA_Atlantis_Animated01_20
+  - first:
+      213: -5501914411125527553
+    second: RA_Atlantis_Animated01_21
+  - first:
+      213: -3581617013175544032
+    second: RA_Atlantis_Animated01_22
+  - first:
+      213: 2863887623416468384
+    second: RA_Atlantis_Animated01_23
+  - first:
+      213: 605995630284599244
+    second: RA_Atlantis_Animated01_24
+  - first:
+      213: -8495766117475583444
+    second: RA_Atlantis_Animated01_25
+  - first:
+      213: -287883308943951915
+    second: RA_Atlantis_Animated01_26
+  - first:
+      213: -1877468628588345956
+    second: RA_Atlantis_Animated01_27
+  - first:
+      213: 1303198744696999324
+    second: RA_Atlantis_Animated01_28
+  - first:
+      213: -3698672150693322484
+    second: RA_Atlantis_Animated01_29
+  - first:
+      213: 7993504719747908885
+    second: RA_Atlantis_Animated01_30
+  - first:
+      213: 2743570442603529400
+    second: RA_Atlantis_Animated01_31
+  - first:
+      213: -4033899885029535019
+    second: RA_Atlantis_Animated01_32
+  - first:
+      213: -6432503986926131156
+    second: RA_Atlantis_Animated01_33
+  - first:
+      213: 3971529934776708142
+    second: RA_Atlantis_Animated01_34
+  - first:
+      213: 3213901311733878277
+    second: RA_Atlantis_Animated01_35
+  - first:
+      213: -5686352158925133781
+    second: RA_Atlantis_Animated01_36
+  - first:
+      213: 2140151347067825984
+    second: RA_Atlantis_Animated01_37
+  - first:
+      213: 6459778735759638571
+    second: RA_Atlantis_Animated01_38
+  - first:
+      213: -6523410252208700388
+    second: RA_Atlantis_Animated01_39
+  - first:
+      213: 7472010057332216613
+    second: RA_Atlantis_Animated01_40
+  - first:
+      213: 6564968565365214496
+    second: RA_Atlantis_Animated01_41
+  - first:
+      213: 8811493102760026545
+    second: RA_Atlantis_Animated01_42
+  - first:
+      213: 2402699804020732559
+    second: RA_Atlantis_Animated01_43
+  - first:
+      213: -2384137299986094170
+    second: RA_Atlantis_Animated01_44
+  - first:
+      213: -6698117646659596762
+    second: RA_Atlantis_Animated01_45
+  - first:
+      213: -6355638326444797649
+    second: RA_Atlantis_Animated01_46
+  - first:
+      213: 6435427835453015466
+    second: RA_Atlantis_Animated01_47
+  - first:
+      213: -882858139566513147
+    second: RA_Atlantis_Animated01_48
+  - first:
+      213: 68984240216099496
+    second: RA_Atlantis_Animated01_49
+  - first:
+      213: 8560574263031338339
+    second: RA_Atlantis_Animated01_50
+  - first:
+      213: -6938345084015906207
+    second: RA_Atlantis_Animated01_51
+  - first:
+      213: 3228698007099540984
+    second: RA_Atlantis_Animated01_52
+  - first:
+      213: -7350917116474971485
+    second: RA_Atlantis_Animated01_53
+  - first:
+      213: 7762083694807533174
+    second: RA_Atlantis_Animated01_54
+  - first:
+      213: -298500743026717648
+    second: RA_Atlantis_Animated01_55
+  - first:
+      213: 5331020029843931039
+    second: RA_Atlantis_Animated01_56
+  - first:
+      213: -4159702566263802008
+    second: RA_Atlantis_Animated01_57
+  - first:
+      213: 4791690444407235187
+    second: RA_Atlantis_Animated01_58
+  - first:
+      213: -6550148987353994049
+    second: RA_Atlantis_Animated01_59
+  - first:
+      213: -2766288682323154056
+    second: RA_Atlantis_Animated01_60
+  - first:
+      213: -8612160687969591423
+    second: RA_Atlantis_Animated01_61
+  - first:
+      213: -8724263311450035704
+    second: RA_Atlantis_Animated01_62
+  - first:
+      213: 3329131523673662273
+    second: RA_Atlantis_Animated01_63
+  - first:
+      213: -7715543385167118982
+    second: RA_Atlantis_Animated01_64
+  - first:
+      213: -1225303920405580279
+    second: RA_Atlantis_Animated01_65
+  - first:
+      213: 4926892492767347079
+    second: RA_Atlantis_Animated01_66
+  - first:
+      213: -7000742994507417271
+    second: RA_Atlantis_Animated01_67
+  - first:
+      213: -7165218081367901179
+    second: RA_Atlantis_Animated01_68
+  - first:
+      213: -1865756116488740195
+    second: RA_Atlantis_Animated01_69
+  - first:
+      213: -3412835427231637760
+    second: RA_Atlantis_Animated01_70
+  - first:
+      213: 7792028128453311428
+    second: RA_Atlantis_Animated01_71
+  - first:
+      213: 8171407101227165230
+    second: RA_Atlantis_Animated01_72
+  - first:
+      213: 7290529865797156283
+    second: RA_Atlantis_Animated01_73
+  - first:
+      213: -565981315479883274
+    second: RA_Atlantis_Animated01_74
+  - first:
+      213: 7932584535474855136
+    second: RA_Atlantis_Animated01_75
+  - first:
+      213: -3059377644503671313
+    second: RA_Atlantis_Animated01_76
+  - first:
+      213: 4538155634053157664
+    second: RA_Atlantis_Animated01_77
+  - first:
+      213: 4634050962079365957
+    second: RA_Atlantis_Animated01_78
+  - first:
+      213: 1465367963874112632
+    second: RA_Atlantis_Animated01_79
+  - first:
+      213: -6682885031439006198
+    second: RA_Atlantis_Animated01_80
+  - first:
+      213: 6498177312659956105
+    second: RA_Atlantis_Animated01_81
+  - first:
+      213: -2509217440301268850
+    second: RA_Atlantis_Animated01_82
+  - first:
+      213: 7235975550527577895
+    second: RA_Atlantis_Animated01_83
+  - first:
+      213: -2505200170374984215
+    second: RA_Atlantis_Animated01_84
+  - first:
+      213: 6858625035852399871
+    second: RA_Atlantis_Animated01_85
+  - first:
+      213: 4545602540468085343
+    second: RA_Atlantis_Animated01_86
+  - first:
+      213: -6698443689138123866
+    second: RA_Atlantis_Animated01_87
+  - first:
+      213: 2992209397056457573
+    second: RA_Atlantis_Animated01_88
+  - first:
+      213: -3472098758459156060
+    second: RA_Atlantis_Animated01_89
+  - first:
+      213: 6550998869813558260
+    second: RA_Atlantis_Animated01_90
+  - first:
+      213: 4464279066295484473
+    second: RA_Atlantis_Animated01_91
+  - first:
+      213: 4218923879825045098
+    second: RA_Atlantis_Animated01_92
+  - first:
+      213: -3971125543746811762
+    second: RA_Atlantis_Animated01_93
+  - first:
+      213: 1048240973015179402
+    second: RA_Atlantis_Animated01_94
+  - first:
+      213: 3009777219684473100
+    second: RA_Atlantis_Animated01_95
+  - first:
+      213: 743055575454868999
+    second: RA_Atlantis_Animated01_96
+  - first:
+      213: 7373283856489376086
+    second: RA_Atlantis_Animated01_97
+  - first:
+      213: -4627916560636171158
+    second: RA_Atlantis_Animated01_98
+  - first:
+      213: 4630065817135482080
+    second: RA_Atlantis_Animated01_99
+  - first:
+      213: -4514706422338309410
+    second: RA_Atlantis_Animated01_100
+  - first:
+      213: 961190719255094397
+    second: RA_Atlantis_Animated01_101
+  - first:
+      213: 1829405030523671355
+    second: RA_Atlantis_Animated01_102
+  - first:
+      213: 5142501068560034966
+    second: RA_Atlantis_Animated01_103
+  - first:
+      213: -1132157062980971532
+    second: RA_Atlantis_Animated01_104
+  - first:
+      213: 3591985275537583886
+    second: RA_Atlantis_Animated01_105
+  - first:
+      213: -3751569103407475648
+    second: RA_Atlantis_Animated01_106
+  - first:
+      213: -3703917210785926918
+    second: RA_Atlantis_Animated01_107
+  - first:
+      213: -442399499128614595
+    second: RA_Atlantis_Animated01_108
+  - first:
+      213: -7265547013113086712
+    second: RA_Atlantis_Animated01_109
+  - first:
+      213: 3510343741346531758
+    second: RA_Atlantis_Animated01_110
+  - first:
+      213: -7969349385592883915
+    second: RA_Atlantis_Animated01_111
+  - first:
+      213: -2040117911424467979
+    second: RA_Atlantis_Animated01_112
+  - first:
+      213: 5796118070592664224
+    second: RA_Atlantis_Animated01_113
+  - first:
+      213: 3151068968964666405
+    second: RA_Atlantis_Animated01_114
+  - first:
+      213: -511731817100663521
+    second: RA_Atlantis_Animated01_115
+  - first:
+      213: -474302694107047984
+    second: RA_Atlantis_Animated01_116
+  - first:
+      213: -4850877979420436488
+    second: RA_Atlantis_Animated01_117
+  - first:
+      213: -7424827275178994910
+    second: RA_Atlantis_Animated01_118
+  - first:
+      213: -4659436915890753966
+    second: RA_Atlantis_Animated01_119
+  - first:
+      213: 3963243105485038821
+    second: RA_Atlantis_Animated01_120
+  - first:
+      213: -3943742566168048508
+    second: RA_Atlantis_Animated01_121
+  - first:
+      213: -7007187238067575711
+    second: RA_Atlantis_Animated01_122
+  - first:
+      213: 6420943021733102032
+    second: RA_Atlantis_Animated01_123
+  - first:
+      213: 4956444016118280153
+    second: RA_Atlantis_Animated01_124
+  - first:
+      213: -3352429209407477134
+    second: RA_Atlantis_Animated01_125
+  - first:
+      213: -8532857534993911574
+    second: RA_Atlantis_Animated01_126
+  - first:
+      213: 3317080995504212730
+    second: RA_Atlantis_Animated01_127
+  - first:
+      213: -2487325067041124448
+    second: RA_Atlantis_Animated01_128
+  - first:
+      213: -7641008648072321949
+    second: RA_Atlantis_Animated01_129
+  - first:
+      213: 5468218412047390183
+    second: RA_Atlantis_Animated01_130
+  - first:
+      213: 5699562577497695873
+    second: RA_Atlantis_Animated01_131
+  - first:
+      213: -1291066269602142732
+    second: RA_Atlantis_Animated01_132
+  - first:
+      213: -2362849757231375345
+    second: RA_Atlantis_Animated01_133
+  - first:
+      213: 5943187780368727107
+    second: RA_Atlantis_Animated01_134
+  - first:
+      213: 114091793796532499
+    second: RA_Atlantis_Animated01_135
+  - first:
+      213: 1610442612314069844
+    second: RA_Atlantis_Animated01_136
+  - first:
+      213: 717993000895217142
+    second: RA_Atlantis_Animated01_137
+  - first:
+      213: -599889441304500978
+    second: RA_Atlantis_Animated01_138
+  - first:
+      213: -3595265164945345854
+    second: RA_Atlantis_Animated01_139
+  - first:
+      213: -2175449398487690922
+    second: RA_Atlantis_Animated01_140
+  - first:
+      213: -6217235845263266593
+    second: RA_Atlantis_Animated01_141
+  - first:
+      213: 3812009375083285690
+    second: RA_Atlantis_Animated01_142
+  - first:
+      213: 6102940747356523514
+    second: RA_Atlantis_Animated01_143
+  - first:
+      213: 1115729234681300123
+    second: RA_Atlantis_Animated01_144
+  - first:
+      213: -1821805451126031995
+    second: RA_Atlantis_Animated01_145
+  - first:
+      213: 827355885899705876
+    second: RA_Atlantis_Animated01_146
+  - first:
+      213: -6401279863610633895
+    second: RA_Atlantis_Animated01_147
+  - first:
+      213: -5623594735620790683
+    second: RA_Atlantis_Animated01_148
+  - first:
+      213: -6702408714706691569
+    second: RA_Atlantis_Animated01_149
+  - first:
+      213: -3014645298585503076
+    second: RA_Atlantis_Animated01_150
+  - first:
+      213: 1615696408178585073
+    second: RA_Atlantis_Animated01_151
+  - first:
+      213: 5228462344674742125
+    second: RA_Atlantis_Animated01_152
+  - first:
+      213: -4396900753315627429
+    second: RA_Atlantis_Animated01_153
+  - first:
+      213: -5438098888512544448
+    second: RA_Atlantis_Animated01_154
+  - first:
+      213: -6205910441046826569
+    second: RA_Atlantis_Animated01_155
+  - first:
+      213: 6209712136947543674
+    second: RA_Atlantis_Animated01_156
+  - first:
+      213: 6624934933276601099
+    second: RA_Atlantis_Animated01_157
+  - first:
+      213: 1826527205625552881
+    second: RA_Atlantis_Animated01_158
+  - first:
+      213: 8941949131461534489
+    second: RA_Atlantis_Animated01_159
+  - first:
+      213: -9060157798221052319
+    second: RA_Atlantis_Animated01_160
+  - first:
+      213: 4206829443489884994
+    second: RA_Atlantis_Animated01_161
+  - first:
+      213: -8657230334303786727
+    second: RA_Atlantis_Animated01_162
+  - first:
+      213: -4346112402351789230
+    second: RA_Atlantis_Animated01_163
+  - first:
+      213: 7618320723357230707
+    second: RA_Atlantis_Animated01_164
+  - first:
+      213: 8865625269627481767
+    second: RA_Atlantis_Animated01_165
+  - first:
+      213: 6701648228838040570
+    second: RA_Atlantis_Animated01_166
+  - first:
+      213: 496436301245862066
+    second: RA_Atlantis_Animated01_167
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27bda33014839f270800000000000000
+      internalID: 8284714841402956658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_1
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 130
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3465b73f9fe58ac50800000000000000
+      internalID: 6676690875201574467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_2
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 132
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f15df935a8e15af30800000000000000
+      internalID: 4586105375004022047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_3
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 130
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 656440066a13393f0800000000000000
+      internalID: -895317310271371690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_4
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 132
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c8b36acc1cd78230800000000000000
+      internalID: 3641120839965063368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_5
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 130
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe8bdb4da34cf3a0800000000000000
+      internalID: -6630350139815129359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_6
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 132
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52c20bec85e763530800000000000000
+      internalID: 3834391052642429989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_7
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 79
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98a42b215c5d98220800000000000000
+      internalID: 2488755311497857673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_8
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 130
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e81aed3b5174f8d40800000000000000
+      internalID: 5588763821127672206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_9
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 130
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 224d18a151b9b2bf0800000000000000
+      internalID: -348014031249746910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_10
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 130
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f285a8f7492c8450800000000000000
+      internalID: 6092289785016451831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_11
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 79
+        width: 45
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1571b5256c941b1b0800000000000000
+      internalID: -5642647741984467119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_12
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 132
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fac74513317e7d70800000000000000
+      internalID: 9042789566020831990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_13
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 128
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d822e1f63f156f0800000000000000
+      internalID: -697508808693215901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_14
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 132
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9b3c4848a31c6b80800000000000000
+      internalID: -8400317591464428641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_15
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 128
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d78c907bcbaac60800000000000000
+      internalID: 7830278396466199872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_16
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 132
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbc8c2fe0c176e1b0800000000000000
+      internalID: -5627685610892522309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_17
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 79
+        width: 41
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bc94b95a9644f3a0800000000000000
+      internalID: -6632598722465981262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_18
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 131
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bede6bd024546d9c0800000000000000
+      internalID: -3902855877069705749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_19
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 131
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50159d34801258ae0800000000000000
+      internalID: -1547794577550126843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_20
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 131
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3c4ccf19ea36b540800000000000000
+      internalID: 5023267207313640510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_21
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 95
+        width: 25
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffba2445ef545a3b0800000000000000
+      internalID: -5501914411125527553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 119
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0271d208d4a8b4ec0800000000000000
+      internalID: -3581617013175544032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_23
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 112
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a35066be929eb720800000000000000
+      internalID: 2863887623416468384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_24
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 119
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccf6d86a0dde86800800000000000000
+      internalID: 605995630284599244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_25
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 112
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a71198ab9f81a80800000000000000
+      internalID: -8495766117475583444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_26
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 119
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d7b1a1e7ab310cf0800000000000000
+      internalID: -287883308943951915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_27
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c954d04ca34e1f5e0800000000000000
+      internalID: -1877468628588345956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_28
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 119
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9d46698a54e51210800000000000000
+      internalID: 1303198744696999324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_29
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c016b4d764dabacc0800000000000000
+      internalID: -3698672150693322484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_30
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 112
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5158bf2f032aeee60800000000000000
+      internalID: 7993504719747908885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_31
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 120
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b405af08ce131620800000000000000
+      internalID: 2743570442603529400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_32
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 112
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d253555d65b408c0800000000000000
+      internalID: -4033899885029535019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_33
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 120
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c28ebfa64b72bb6a0800000000000000
+      internalID: -6432503986926131156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_34
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 114
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2c22310f65bd1730800000000000000
+      internalID: 3971529934776708142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_35
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 112
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e4f0d07321a9c20800000000000000
+      internalID: 3213901311733878277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_36
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 115
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28ed7bc6d40611b0800000000000000
+      internalID: -5686352158925133781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_37
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 115
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f2d87af4853bd10800000000000000
+      internalID: 2140151347067825984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_38
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 115
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b204398e88eb5a950800000000000000
+      internalID: 6459778735759638571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_39
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 119
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1485f820f03875a0800000000000000
+      internalID: -6523410252208700388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_40
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 112
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 523de690f89e1b760800000000000000
+      internalID: 7472010057332216613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_41
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 119
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d0334a0247b1b50800000000000000
+      internalID: 6564968565365214496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_42
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 112
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b1e0daaa46b84a70800000000000000
+      internalID: 8811493102760026545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_43
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 119
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f827e80edba185120800000000000000
+      internalID: 2402699804020732559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7e192e1c7d9eed0800000000000000
+      internalID: -2384137299986094170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_45
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 96
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e441f0d718b03a0800000000000000
+      internalID: -6698117646659596762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_46
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 104
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f21566f9d9c3cc7a0800000000000000
+      internalID: -6355638326444797649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_47
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 96
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa586dd158b3f4950800000000000000
+      internalID: 6435427835453015466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_48
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 104
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504631c13357fb3f0800000000000000
+      internalID: -882858139566513147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_49
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 98
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa4e2d0dc415f000800000000000000
+      internalID: 68984240216099496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_50
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 96
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3659555bfe44dc670800000000000000
+      internalID: 8560574263031338339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_51
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 100
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 162772238eb06bf90800000000000000
+      internalID: -6938345084015906207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_52
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 100
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f50e282bb3aecc20800000000000000
+      internalID: 3228698007099540984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_53
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 100
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aaab2354db4cf990800000000000000
+      internalID: -7350917116474971485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_54
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 96
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 676cad1cef578bb60800000000000000
+      internalID: 7762083694807533174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_55
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 103
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cc3bed7238bdbf0800000000000000
+      internalID: -298500743026717648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_56
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 96
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ff651e8769bf940800000000000000
+      internalID: 5331020029843931039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_57
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 103
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867b0961e84c546c0800000000000000
+      internalID: -4159702566263802008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_58
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 96
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372e68c52118f7240800000000000000
+      internalID: 4791690444407235187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_59
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 103
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbc61ee33323915a0800000000000000
+      internalID: -6550148987353994049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_60
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 100
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87be1ff891b2c99d0800000000000000
+      internalID: -2766288682323154056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_61
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 104
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f1df4cb757b7880800000000000000
+      internalID: -8612160687969591423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_62
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 96
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80a2c0acdb03de680800000000000000
+      internalID: -8724263311450035704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_63
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 100
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 143af177b73733e20800000000000000
+      internalID: 3329131523673662273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_64
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 104
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7dbffd7b22ece490800000000000000
+      internalID: -7715543385167118982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_65
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 96
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 906f45a8398defee0800000000000000
+      internalID: -1225303920405580279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_66
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 100
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 781cfed4e96df5440800000000000000
+      internalID: 4926892492767347079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_67
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 84
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 949b498865d58de90800000000000000
+      internalID: -7000742994507417271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_68
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 84
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50c3cd13e18009c90800000000000000
+      internalID: -7165218081367901179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_69
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 84
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d922d2f72b08b16e0800000000000000
+      internalID: -1865756116488740195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_70
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f5dfac24c23a0d0800000000000000
+      internalID: -3412835427231637760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_71
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 87
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cbbf448c48d22c60800000000000000
+      internalID: 7792028128453311428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_72
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 80
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e26efbfe67ba66170800000000000000
+      internalID: 8171407101227165230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_73
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 87
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbd373b394a2d2560800000000000000
+      internalID: 7290529865797156283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_74
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 80
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f130550efa3528f0800000000000000
+      internalID: -565981315479883274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_75
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 87
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec5cbb3b93361e60800000000000000
+      internalID: 7932584535474855136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_76
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 80
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fed5699dd38ea85d0800000000000000
+      internalID: -3059377644503671313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_77
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 84
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0231d274184cafe30800000000000000
+      internalID: 4538155634053157664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_78
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 88
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54b3cc93cc47f4040800000000000000
+      internalID: 4634050962079365957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_79
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 80
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87434f73668065410800000000000000
+      internalID: 1465367963874112632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_80
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 84
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a068d4aa87f9143a0800000000000000
+      internalID: -6682885031439006198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_81
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 88
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 981699846d92e2a50800000000000000
+      internalID: 6498177312659956105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_82
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 80
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e80c0ae48087d2dd0800000000000000
+      internalID: -2509217440301268850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_83
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 84
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72f9b94ec695b6460800000000000000
+      internalID: 7235975550527577895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 52
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ed0d89d7bdbb3dd0800000000000000
+      internalID: -2505200170374984215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_85
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff4459da12bbe2f50800000000000000
+      internalID: 6858625035852399871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_86
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 52
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f52a6ba4d69351f30800000000000000
+      internalID: 4545602540468085343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_87
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 50
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab07f064f85a03a0800000000000000
+      internalID: -6698443689138123866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_88
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 52
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56bc22dd796768920800000000000000
+      internalID: 2992209397056457573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_89
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a997fc3390a0dfc0800000000000000
+      internalID: -3472098758459156060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_90
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 52
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fbf83f63c2d9ea50800000000000000
+      internalID: 6550998869813558260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_91
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 30
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93041c4782e44fd30800000000000000
+      internalID: 4464279066295484473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_92
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6672677ae0ac8a30800000000000000
+      internalID: 4218923879825045098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_93
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88cd7e9b5ab3e8c0800000000000000
+      internalID: -3971125543746811762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_94
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 50
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8064937c991c8e00800000000000000
+      internalID: 1048240973015179402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_95
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 45
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c091b505f60e4c920800000000000000
+      internalID: 3009777219684473100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_96
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 52
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7066c57eb1ddf4a00800000000000000
+      internalID: 743055575454868999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_97
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 48
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 659eb262a9a235660800000000000000
+      internalID: 7373283856489376086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_98
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 52
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c2229686656cfb0800000000000000
+      internalID: -4627916560636171158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_99
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 48
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e40a0d545c414040800000000000000
+      internalID: 4630065817135482080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_100
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 52
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed2b957cd6a8851c0800000000000000
+      internalID: -4514706422338309410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_101
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 0
+        width: 41
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d742a96ddd5d65d00800000000000000
+      internalID: 961190719255094397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_102
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 51
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b331da2ce2a536910800000000000000
+      internalID: 1829405030523671355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_103
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 51
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69c6698c975dd5740800000000000000
+      internalID: 5142501068560034966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_104
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 51
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f3d11f4625c940f0800000000000000
+      internalID: -1132157062980971532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_105
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 15
+        width: 25
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fe9d2b39b49d130800000000000000
+      internalID: 3591985275537583886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_106
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 39
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0441111f6cfbfebc0800000000000000
+      internalID: -3751569103407475648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_107
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 32
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af036a5cbea099cc0800000000000000
+      internalID: -3703917210785926918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_108
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d31d0addff74cd9f0800000000000000
+      internalID: -442399499128614595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_109
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 32
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80d7e707c779b2b90800000000000000
+      internalID: -7265547013113086712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_110
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea9c97eb80f37b030800000000000000
+      internalID: 3510343741346531758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_111
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 32
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53532cc05fe276190800000000000000
+      internalID: -7969349385592883915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_112
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fbf1ad819b00b3e0800000000000000
+      internalID: -2040117911424467979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_113
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a2f5e11da2ff6050800000000000000
+      internalID: 5796118070592664224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_114
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 32
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52435ed3888dabb20800000000000000
+      internalID: 3151068968964666405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_115
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 40
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f152375af96f5e8f0800000000000000
+      internalID: -511731817100663521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_116
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 32
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d71db17630fa69f0800000000000000
+      internalID: -474302694107047984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_117
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 40
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f751e3cd283eacb0800000000000000
+      internalID: -4850877979420436488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_118
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 34
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22313508ee6b5f890800000000000000
+      internalID: -7424827275178994910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_119
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 32
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25e6dfecfca565fb0800000000000000
+      internalID: -4659436915890753966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_120
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e4a3f43b94400730800000000000000
+      internalID: 3963243105485038821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_121
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48c47f9e7030549c0800000000000000
+      internalID: -3943742566168048508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_122
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 35
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164e458255871ce90800000000000000
+      internalID: -7007187238067575711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_123
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1cc6d98a5cb1950800000000000000
+      internalID: 6420943021733102032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_124
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 32
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df27d18293d8c440800000000000000
+      internalID: 4956444016118280153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_125
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27aaf9e5567c971d0800000000000000
+      internalID: -3352429209407477134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_126
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 32
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae03cabe743359980800000000000000
+      internalID: -8532857534993911574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_127
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 39
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afa4a3c3793a80e20800000000000000
+      internalID: 3317080995504212730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afc61aa70f3b7dd0800000000000000
+      internalID: -2487325067041124448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_129
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 16
+        width: 21
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36426fd4e1fa5f590800000000000000
+      internalID: -7641008648072321949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_130
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 24
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e5d5548ca303eb40800000000000000
+      internalID: 5468218412047390183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_131
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 16
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1862cd677f9e81f40800000000000000
+      internalID: 5699562577497695873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_132
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 24
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f520e27116351ee0800000000000000
+      internalID: -1291066269602142732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_133
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 18
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c1b9a2aa8753fd0800000000000000
+      internalID: -2362849757231375345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_134
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 16
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34cf1524cc17a7250800000000000000
+      internalID: 5943187780368727107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_135
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 20
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3198709c1e5559100800000000000000
+      internalID: 114091793796532499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_136
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 20
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45bd12ef501795610800000000000000
+      internalID: 1610442612314069844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_137
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 20
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fd739984d2d6f900800000000000000
+      internalID: 717993000895217142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_138
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 16
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e05a9824bb3cca7f0800000000000000
+      internalID: -599889441304500978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_139
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 23
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c2b81a816d0b1ec0800000000000000
+      internalID: -3595265164945345854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_140
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 16
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 651dd405c404fc1e0800000000000000
+      internalID: -2175449398487690922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_141
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 23
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdce14660f0f7b9a0800000000000000
+      internalID: -6217235845263266593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_142
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 16
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc4c4a645af6e430800000000000000
+      internalID: 3812009375083285690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_143
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 23
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afb4173664002b450800000000000000
+      internalID: 6102940747356523514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_144
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 20
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9482bad3dddb7f00800000000000000
+      internalID: 1115729234681300123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_145
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 24
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58933c33895a7b6e0800000000000000
+      internalID: -1821805451126031995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_146
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 16
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e61e17bcb5b7b00800000000000000
+      internalID: 827355885899705876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_147
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 20
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95190a521e51a27a0800000000000000
+      internalID: -6401279863610633895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_148
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 24
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 566e09e026af4f1b0800000000000000
+      internalID: -5623594735620790683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_149
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 16
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0adc6ce8c24cf2a0800000000000000
+      internalID: -6702408714706691569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_150
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 20
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a720eb214d926d0800000000000000
+      internalID: -3014645298585503076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_151
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 4
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fdeb5aa25b1c6610800000000000000
+      internalID: 1615696408178585073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_152
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 4
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f08d70dca3f8840800000000000000
+      internalID: 5228462344674742125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_153
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 4
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e79f58f021bf2c0800000000000000
+      internalID: -4396900753315627429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_154
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04163c88fddf784b0800000000000000
+      internalID: -5438098888512544448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_155
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 7
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b1248d855d20e9a0800000000000000
+      internalID: -6205910441046826569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_156
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ea030c9445d2650800000000000000
+      internalID: 6209712136947543674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_157
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 7
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0b270ea83f70fb50800000000000000
+      internalID: 6624934933276601099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_158
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffd5efe0d0295910800000000000000
+      internalID: 1826527205625552881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_159
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 7
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 913a06ccb5f281c70800000000000000
+      internalID: 8941949131461534489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_160
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1668c0c3c7ad34280800000000000000
+      internalID: -9060157798221052319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_161
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 4
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24b6ed11719a16a30800000000000000
+      internalID: 4206829443489884994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_162
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 8
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 919261101e65bd780800000000000000
+      internalID: -8657230334303786727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_163
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25be6e7fbc18fa3c0800000000000000
+      internalID: -4346112402351789230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_164
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 4
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37664b49556b9b960800000000000000
+      internalID: 7618320723357230707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_165
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 8
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae6fdbe537090b70800000000000000
+      internalID: 8865625269627481767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_166
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af36489ae89010d50800000000000000
+      internalID: 6701648228838040570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_Animated01_167
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 4
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b05e5d8f22b3e600800000000000000
+      internalID: 496436301245862066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Atlantis_Animated01_0: 8284714841402956658
+      RA_Atlantis_Animated01_1: 6676690875201574467
+      RA_Atlantis_Animated01_10: 6092289785016451831
+      RA_Atlantis_Animated01_100: -4514706422338309410
+      RA_Atlantis_Animated01_101: 961190719255094397
+      RA_Atlantis_Animated01_102: 1829405030523671355
+      RA_Atlantis_Animated01_103: 5142501068560034966
+      RA_Atlantis_Animated01_104: -1132157062980971532
+      RA_Atlantis_Animated01_105: 3591985275537583886
+      RA_Atlantis_Animated01_106: -3751569103407475648
+      RA_Atlantis_Animated01_107: -3703917210785926918
+      RA_Atlantis_Animated01_108: -442399499128614595
+      RA_Atlantis_Animated01_109: -7265547013113086712
+      RA_Atlantis_Animated01_11: -5642647741984467119
+      RA_Atlantis_Animated01_110: 3510343741346531758
+      RA_Atlantis_Animated01_111: -7969349385592883915
+      RA_Atlantis_Animated01_112: -2040117911424467979
+      RA_Atlantis_Animated01_113: 5796118070592664224
+      RA_Atlantis_Animated01_114: 3151068968964666405
+      RA_Atlantis_Animated01_115: -511731817100663521
+      RA_Atlantis_Animated01_116: -474302694107047984
+      RA_Atlantis_Animated01_117: -4850877979420436488
+      RA_Atlantis_Animated01_118: -7424827275178994910
+      RA_Atlantis_Animated01_119: -4659436915890753966
+      RA_Atlantis_Animated01_12: 9042789566020831990
+      RA_Atlantis_Animated01_120: 3963243105485038821
+      RA_Atlantis_Animated01_121: -3943742566168048508
+      RA_Atlantis_Animated01_122: -7007187238067575711
+      RA_Atlantis_Animated01_123: 6420943021733102032
+      RA_Atlantis_Animated01_124: 4956444016118280153
+      RA_Atlantis_Animated01_125: -3352429209407477134
+      RA_Atlantis_Animated01_126: -8532857534993911574
+      RA_Atlantis_Animated01_127: 3317080995504212730
+      RA_Atlantis_Animated01_128: -2487325067041124448
+      RA_Atlantis_Animated01_129: -7641008648072321949
+      RA_Atlantis_Animated01_13: -697508808693215901
+      RA_Atlantis_Animated01_130: 5468218412047390183
+      RA_Atlantis_Animated01_131: 5699562577497695873
+      RA_Atlantis_Animated01_132: -1291066269602142732
+      RA_Atlantis_Animated01_133: -2362849757231375345
+      RA_Atlantis_Animated01_134: 5943187780368727107
+      RA_Atlantis_Animated01_135: 114091793796532499
+      RA_Atlantis_Animated01_136: 1610442612314069844
+      RA_Atlantis_Animated01_137: 717993000895217142
+      RA_Atlantis_Animated01_138: -599889441304500978
+      RA_Atlantis_Animated01_139: -3595265164945345854
+      RA_Atlantis_Animated01_14: -8400317591464428641
+      RA_Atlantis_Animated01_140: -2175449398487690922
+      RA_Atlantis_Animated01_141: -6217235845263266593
+      RA_Atlantis_Animated01_142: 3812009375083285690
+      RA_Atlantis_Animated01_143: 6102940747356523514
+      RA_Atlantis_Animated01_144: 1115729234681300123
+      RA_Atlantis_Animated01_145: -1821805451126031995
+      RA_Atlantis_Animated01_146: 827355885899705876
+      RA_Atlantis_Animated01_147: -6401279863610633895
+      RA_Atlantis_Animated01_148: -5623594735620790683
+      RA_Atlantis_Animated01_149: -6702408714706691569
+      RA_Atlantis_Animated01_15: 7830278396466199872
+      RA_Atlantis_Animated01_150: -3014645298585503076
+      RA_Atlantis_Animated01_151: 1615696408178585073
+      RA_Atlantis_Animated01_152: 5228462344674742125
+      RA_Atlantis_Animated01_153: -4396900753315627429
+      RA_Atlantis_Animated01_154: -5438098888512544448
+      RA_Atlantis_Animated01_155: -6205910441046826569
+      RA_Atlantis_Animated01_156: 6209712136947543674
+      RA_Atlantis_Animated01_157: 6624934933276601099
+      RA_Atlantis_Animated01_158: 1826527205625552881
+      RA_Atlantis_Animated01_159: 8941949131461534489
+      RA_Atlantis_Animated01_16: -5627685610892522309
+      RA_Atlantis_Animated01_160: -9060157798221052319
+      RA_Atlantis_Animated01_161: 4206829443489884994
+      RA_Atlantis_Animated01_162: -8657230334303786727
+      RA_Atlantis_Animated01_163: -4346112402351789230
+      RA_Atlantis_Animated01_164: 7618320723357230707
+      RA_Atlantis_Animated01_165: 8865625269627481767
+      RA_Atlantis_Animated01_166: 6701648228838040570
+      RA_Atlantis_Animated01_167: 496436301245862066
+      RA_Atlantis_Animated01_17: -6632598722465981262
+      RA_Atlantis_Animated01_18: -3902855877069705749
+      RA_Atlantis_Animated01_19: -1547794577550126843
+      RA_Atlantis_Animated01_2: 4586105375004022047
+      RA_Atlantis_Animated01_20: 5023267207313640510
+      RA_Atlantis_Animated01_21: -5501914411125527553
+      RA_Atlantis_Animated01_22: -3581617013175544032
+      RA_Atlantis_Animated01_23: 2863887623416468384
+      RA_Atlantis_Animated01_24: 605995630284599244
+      RA_Atlantis_Animated01_25: -8495766117475583444
+      RA_Atlantis_Animated01_26: -287883308943951915
+      RA_Atlantis_Animated01_27: -1877468628588345956
+      RA_Atlantis_Animated01_28: 1303198744696999324
+      RA_Atlantis_Animated01_29: -3698672150693322484
+      RA_Atlantis_Animated01_3: -895317310271371690
+      RA_Atlantis_Animated01_30: 7993504719747908885
+      RA_Atlantis_Animated01_31: 2743570442603529400
+      RA_Atlantis_Animated01_32: -4033899885029535019
+      RA_Atlantis_Animated01_33: -6432503986926131156
+      RA_Atlantis_Animated01_34: 3971529934776708142
+      RA_Atlantis_Animated01_35: 3213901311733878277
+      RA_Atlantis_Animated01_36: -5686352158925133781
+      RA_Atlantis_Animated01_37: 2140151347067825984
+      RA_Atlantis_Animated01_38: 6459778735759638571
+      RA_Atlantis_Animated01_39: -6523410252208700388
+      RA_Atlantis_Animated01_4: 3641120839965063368
+      RA_Atlantis_Animated01_40: 7472010057332216613
+      RA_Atlantis_Animated01_41: 6564968565365214496
+      RA_Atlantis_Animated01_42: 8811493102760026545
+      RA_Atlantis_Animated01_43: 2402699804020732559
+      RA_Atlantis_Animated01_44: -2384137299986094170
+      RA_Atlantis_Animated01_45: -6698117646659596762
+      RA_Atlantis_Animated01_46: -6355638326444797649
+      RA_Atlantis_Animated01_47: 6435427835453015466
+      RA_Atlantis_Animated01_48: -882858139566513147
+      RA_Atlantis_Animated01_49: 68984240216099496
+      RA_Atlantis_Animated01_5: -6630350139815129359
+      RA_Atlantis_Animated01_50: 8560574263031338339
+      RA_Atlantis_Animated01_51: -6938345084015906207
+      RA_Atlantis_Animated01_52: 3228698007099540984
+      RA_Atlantis_Animated01_53: -7350917116474971485
+      RA_Atlantis_Animated01_54: 7762083694807533174
+      RA_Atlantis_Animated01_55: -298500743026717648
+      RA_Atlantis_Animated01_56: 5331020029843931039
+      RA_Atlantis_Animated01_57: -4159702566263802008
+      RA_Atlantis_Animated01_58: 4791690444407235187
+      RA_Atlantis_Animated01_59: -6550148987353994049
+      RA_Atlantis_Animated01_6: 3834391052642429989
+      RA_Atlantis_Animated01_60: -2766288682323154056
+      RA_Atlantis_Animated01_61: -8612160687969591423
+      RA_Atlantis_Animated01_62: -8724263311450035704
+      RA_Atlantis_Animated01_63: 3329131523673662273
+      RA_Atlantis_Animated01_64: -7715543385167118982
+      RA_Atlantis_Animated01_65: -1225303920405580279
+      RA_Atlantis_Animated01_66: 4926892492767347079
+      RA_Atlantis_Animated01_67: -7000742994507417271
+      RA_Atlantis_Animated01_68: -7165218081367901179
+      RA_Atlantis_Animated01_69: -1865756116488740195
+      RA_Atlantis_Animated01_7: 2488755311497857673
+      RA_Atlantis_Animated01_70: -3412835427231637760
+      RA_Atlantis_Animated01_71: 7792028128453311428
+      RA_Atlantis_Animated01_72: 8171407101227165230
+      RA_Atlantis_Animated01_73: 7290529865797156283
+      RA_Atlantis_Animated01_74: -565981315479883274
+      RA_Atlantis_Animated01_75: 7932584535474855136
+      RA_Atlantis_Animated01_76: -3059377644503671313
+      RA_Atlantis_Animated01_77: 4538155634053157664
+      RA_Atlantis_Animated01_78: 4634050962079365957
+      RA_Atlantis_Animated01_79: 1465367963874112632
+      RA_Atlantis_Animated01_8: 5588763821127672206
+      RA_Atlantis_Animated01_80: -6682885031439006198
+      RA_Atlantis_Animated01_81: 6498177312659956105
+      RA_Atlantis_Animated01_82: -2509217440301268850
+      RA_Atlantis_Animated01_83: 7235975550527577895
+      RA_Atlantis_Animated01_84: -2505200170374984215
+      RA_Atlantis_Animated01_85: 6858625035852399871
+      RA_Atlantis_Animated01_86: 4545602540468085343
+      RA_Atlantis_Animated01_87: -6698443689138123866
+      RA_Atlantis_Animated01_88: 2992209397056457573
+      RA_Atlantis_Animated01_89: -3472098758459156060
+      RA_Atlantis_Animated01_9: -348014031249746910
+      RA_Atlantis_Animated01_90: 6550998869813558260
+      RA_Atlantis_Animated01_91: 4464279066295484473
+      RA_Atlantis_Animated01_92: 4218923879825045098
+      RA_Atlantis_Animated01_93: -3971125543746811762
+      RA_Atlantis_Animated01_94: 1048240973015179402
+      RA_Atlantis_Animated01_95: 3009777219684473100
+      RA_Atlantis_Animated01_96: 743055575454868999
+      RA_Atlantis_Animated01_97: 7373283856489376086
+      RA_Atlantis_Animated01_98: -4627916560636171158
+      RA_Atlantis_Animated01_99: 4630065817135482080
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
