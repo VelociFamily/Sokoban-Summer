@@ -1,0 +1,1001 @@
+fileFormatVersion: 2
+guid: a9727f4eac39ef84d926b443a97de717
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2144243781632992626
+    second: RA_Ancient_C1_0
+  - first:
+      213: 472114461782988024
+    second: RA_Ancient_C1_1
+  - first:
+      213: 829483974947482528
+    second: RA_Ancient_C1_2
+  - first:
+      213: 147623135834071960
+    second: RA_Ancient_C1_3
+  - first:
+      213: -3996557667792338838
+    second: RA_Ancient_C1_4
+  - first:
+      213: 4132277491770681645
+    second: RA_Ancient_C1_5
+  - first:
+      213: 295927648669519055
+    second: RA_Ancient_C1_6
+  - first:
+      213: -5110456882640620118
+    second: RA_Ancient_C1_7
+  - first:
+      213: 3425033424913052844
+    second: RA_Ancient_C1_8
+  - first:
+      213: 7533804807954643816
+    second: RA_Ancient_C1_9
+  - first:
+      213: 5713614717808375999
+    second: RA_Ancient_C1_10
+  - first:
+      213: 4177029919174304131
+    second: RA_Ancient_C1_11
+  - first:
+      213: -1018631494713263557
+    second: RA_Ancient_C1_12
+  - first:
+      213: 9019884629912127325
+    second: RA_Ancient_C1_13
+  - first:
+      213: -5126098961931696106
+    second: RA_Ancient_C1_14
+  - first:
+      213: 8565189356407831070
+    second: RA_Ancient_C1_15
+  - first:
+      213: -2954165494078971447
+    second: RA_Ancient_C1_16
+  - first:
+      213: -6233608597901472092
+    second: RA_Ancient_C1_17
+  - first:
+      213: 555634958717184188
+    second: RA_Ancient_C1_18
+  - first:
+      213: -6796949463039882183
+    second: RA_Ancient_C1_19
+  - first:
+      213: 7975327173933807438
+    second: RA_Ancient_C1_20
+  - first:
+      213: 5266970198005071451
+    second: RA_Ancient_C1_21
+  - first:
+      213: 5783327440234341346
+    second: RA_Ancient_C1_22
+  - first:
+      213: 4757714956503954896
+    second: RA_Ancient_C1_23
+  - first:
+      213: -1146225895229965188
+    second: RA_Ancient_C1_24
+  - first:
+      213: -4058504993721718936
+    second: RA_Ancient_C1_25
+  - first:
+      213: 4896590287301644465
+    second: RA_Ancient_C1_26
+  - first:
+      213: 4254397375695166454
+    second: RA_Ancient_C1_27
+  - first:
+      213: 3525608029172658573
+    second: RA_Ancient_C1_28
+  - first:
+      213: -3470542182121500420
+    second: RA_Ancient_C1_29
+  - first:
+      213: 6852300802480798771
+    second: RA_Ancient_C1_30
+  - first:
+      213: 6637888369055597432
+    second: RA_Ancient_C1_31
+  - first:
+      213: 6355720777356270415
+    second: RA_Ancient_C1_32
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Ancient_C1_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 447
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2752314db52e1cd10800000000000000
+      internalID: 2144243781632992626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_1
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 447
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f456e30a994d8600800000000000000
+      internalID: 472114461782988024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_2
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 447
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0abaf99c74be28b00800000000000000
+      internalID: 829483974947482528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_3
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 447
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893e40cb5767c0200800000000000000
+      internalID: 147623135834071960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_4
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 447
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a60cfdec9ff5988c0800000000000000
+      internalID: -3996557667792338838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 447
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d29655a2c7cc85930800000000000000
+      internalID: 4132277491770681645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_6
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 447
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fccc92ae0a85b1400800000000000000
+      internalID: 295927648669519055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_7
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 447
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa57146aa820419b0800000000000000
+      internalID: -5110456882640620118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_8
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 447
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca438cbd0c9288f20800000000000000
+      internalID: 3425033424913052844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_9
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 447
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b34499e837d8860800000000000000
+      internalID: 7533804807954643816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_10
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 447
+        width: 94
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb879665056da4f40800000000000000
+      internalID: 5713614717808375999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_11
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 385
+        width: 30
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3812094a49ac7f930800000000000000
+      internalID: 4177029919174304131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_12
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 419
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3a37907d081dd1f0800000000000000
+      internalID: -1018631494713263557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 319
+        width: 321
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d570be018411d2d70800000000000000
+      internalID: 9019884629912127325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_14
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 385
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 618009247207cd8b0800000000000000
+      internalID: -5126098961931696106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_15
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 255
+        width: 46
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1a35aed65aadd670800000000000000
+      internalID: 8565189356407831070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_16
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 385
+        width: 30
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c1e4bd8222b007d0800000000000000
+      internalID: -2954165494078971447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_17
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 323
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ae034dd106cd79a0800000000000000
+      internalID: -6233608597901472092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_18
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 355
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb860231d0306b700800000000000000
+      internalID: 555634958717184188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_19
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 223
+        width: 78
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93cc933a9726ca1a0800000000000000
+      internalID: -6796949463039882183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_20
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 287
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4738d14fcd0eae60800000000000000
+      internalID: 7975327173933807438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_21
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 255
+        width: 184
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5e39ae4d79081940800000000000000
+      internalID: 5266970198005071451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_22
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 291
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e3efee5aa1824050800000000000000
+      internalID: 5783327440234341346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_23
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 159
+        width: 129
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d53bf4ab8cc60240800000000000000
+      internalID: 4757714956503954896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_24
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 255
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7cb67a0f99c710f0800000000000000
+      internalID: -1146225895229965188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_25
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 127
+        width: 78
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 867611a063b4da7c0800000000000000
+      internalID: -4058504993721718936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_26
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 191
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b01e3d4cee24f340800000000000000
+      internalID: 4896590287301644465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_27
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 175
+        width: 184
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb1aa75fd7aa0b30800000000000000
+      internalID: 4254397375695166454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_28
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 159
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81f914b2d97de030800000000000000
+      internalID: 3525608029172658573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_29
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 0
+        width: 375
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf093a8e54826dfc0800000000000000
+      internalID: -3470542182121500420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_30
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 31
+        width: 78
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33cfdf95643481f50800000000000000
+      internalID: 6852300802480798771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_31
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 95
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87381487d448e1c50800000000000000
+      internalID: 6637888369055597432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_C1_32
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 63
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4bd3e97f5e043850800000000000000
+      internalID: 6355720777356270415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Ancient_C1_0: 2144243781632992626
+      RA_Ancient_C1_1: 472114461782988024
+      RA_Ancient_C1_10: 5713614717808375999
+      RA_Ancient_C1_11: 4177029919174304131
+      RA_Ancient_C1_12: -1018631494713263557
+      RA_Ancient_C1_13: 9019884629912127325
+      RA_Ancient_C1_14: -5126098961931696106
+      RA_Ancient_C1_15: 8565189356407831070
+      RA_Ancient_C1_16: -2954165494078971447
+      RA_Ancient_C1_17: -6233608597901472092
+      RA_Ancient_C1_18: 555634958717184188
+      RA_Ancient_C1_19: -6796949463039882183
+      RA_Ancient_C1_2: 829483974947482528
+      RA_Ancient_C1_20: 7975327173933807438
+      RA_Ancient_C1_21: 5266970198005071451
+      RA_Ancient_C1_22: 5783327440234341346
+      RA_Ancient_C1_23: 4757714956503954896
+      RA_Ancient_C1_24: -1146225895229965188
+      RA_Ancient_C1_25: -4058504993721718936
+      RA_Ancient_C1_26: 4896590287301644465
+      RA_Ancient_C1_27: 4254397375695166454
+      RA_Ancient_C1_28: 3525608029172658573
+      RA_Ancient_C1_29: -3470542182121500420
+      RA_Ancient_C1_3: 147623135834071960
+      RA_Ancient_C1_30: 6852300802480798771
+      RA_Ancient_C1_31: 6637888369055597432
+      RA_Ancient_C1_32: 6355720777356270415
+      RA_Ancient_C1_4: -3996557667792338838
+      RA_Ancient_C1_5: 4132277491770681645
+      RA_Ancient_C1_6: 295927648669519055
+      RA_Ancient_C1_7: -5110456882640620118
+      RA_Ancient_C1_8: 3425033424913052844
+      RA_Ancient_C1_9: 7533804807954643816
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

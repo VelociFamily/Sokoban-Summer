@@ -1,0 +1,2015 @@
+fileFormatVersion: 2
+guid: a3142f3cff632714f8859d29e56d62b4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5965103323595017981
+    second: RA_Ancient_Animations03_0
+  - first:
+      213: -7021393377681319470
+    second: RA_Ancient_Animations03_1
+  - first:
+      213: -1857788904666299228
+    second: RA_Ancient_Animations03_2
+  - first:
+      213: -3724776691963619356
+    second: RA_Ancient_Animations03_3
+  - first:
+      213: 6870949002612276971
+    second: RA_Ancient_Animations03_4
+  - first:
+      213: -7151771632390433339
+    second: RA_Ancient_Animations03_5
+  - first:
+      213: -8958776065973208145
+    second: RA_Ancient_Animations03_6
+  - first:
+      213: -4652793826786227569
+    second: RA_Ancient_Animations03_7
+  - first:
+      213: 8950999284291710101
+    second: RA_Ancient_Animations03_8
+  - first:
+      213: -6969764451800345369
+    second: RA_Ancient_Animations03_9
+  - first:
+      213: -2579427634034282767
+    second: RA_Ancient_Animations03_10
+  - first:
+      213: -7892729109921550882
+    second: RA_Ancient_Animations03_11
+  - first:
+      213: 8120562363669890552
+    second: RA_Ancient_Animations03_12
+  - first:
+      213: -9058558266858297402
+    second: RA_Ancient_Animations03_13
+  - first:
+      213: 4689875702913524918
+    second: RA_Ancient_Animations03_14
+  - first:
+      213: -5357704467908834945
+    second: RA_Ancient_Animations03_15
+  - first:
+      213: -2497205017386505021
+    second: RA_Ancient_Animations03_16
+  - first:
+      213: 6105348269089392491
+    second: RA_Ancient_Animations03_17
+  - first:
+      213: 4585976207525118210
+    second: RA_Ancient_Animations03_18
+  - first:
+      213: 7571986921877890881
+    second: RA_Ancient_Animations03_19
+  - first:
+      213: 6045424206448570711
+    second: RA_Ancient_Animations03_20
+  - first:
+      213: -5387730761833047271
+    second: RA_Ancient_Animations03_21
+  - first:
+      213: 6291546673300311819
+    second: RA_Ancient_Animations03_22
+  - first:
+      213: 3319275513223530589
+    second: RA_Ancient_Animations03_23
+  - first:
+      213: -1944936212296971274
+    second: RA_Ancient_Animations03_24
+  - first:
+      213: 3130690613968114950
+    second: RA_Ancient_Animations03_25
+  - first:
+      213: 9123467494893198403
+    second: RA_Ancient_Animations03_26
+  - first:
+      213: 2792518474222817170
+    second: RA_Ancient_Animations03_27
+  - first:
+      213: -1155675636048064584
+    second: RA_Ancient_Animations03_28
+  - first:
+      213: 6651803532812570280
+    second: RA_Ancient_Animations03_29
+  - first:
+      213: 4447162165514911117
+    second: RA_Ancient_Animations03_30
+  - first:
+      213: -7876984923668985217
+    second: RA_Ancient_Animations03_31
+  - first:
+      213: -6461095467583043292
+    second: RA_Ancient_Animations03_32
+  - first:
+      213: -4687525669259993101
+    second: RA_Ancient_Animations03_33
+  - first:
+      213: 477745246752484706
+    second: RA_Ancient_Animations03_34
+  - first:
+      213: -1375055517263800834
+    second: RA_Ancient_Animations03_35
+  - first:
+      213: -8840988519518640052
+    second: RA_Ancient_Animations03_36
+  - first:
+      213: -4002250730392796971
+    second: RA_Ancient_Animations03_37
+  - first:
+      213: -7277222009691251380
+    second: RA_Ancient_Animations03_38
+  - first:
+      213: -1484911395502597593
+    second: RA_Ancient_Animations03_39
+  - first:
+      213: -5720219801546377373
+    second: RA_Ancient_Animations03_40
+  - first:
+      213: 1555490598977963014
+    second: RA_Ancient_Animations03_41
+  - first:
+      213: -8505127339284042598
+    second: RA_Ancient_Animations03_42
+  - first:
+      213: -2883995783422185680
+    second: RA_Ancient_Animations03_43
+  - first:
+      213: -1498454982836465362
+    second: RA_Ancient_Animations03_44
+  - first:
+      213: 5962119720113501772
+    second: RA_Ancient_Animations03_45
+  - first:
+      213: 8241839669834766240
+    second: RA_Ancient_Animations03_46
+  - first:
+      213: 3907097452113010196
+    second: RA_Ancient_Animations03_47
+  - first:
+      213: 5410848806160209642
+    second: RA_Ancient_Animations03_48
+  - first:
+      213: -8768569952743368757
+    second: RA_Ancient_Animations03_49
+  - first:
+      213: 6665164779379490730
+    second: RA_Ancient_Animations03_50
+  - first:
+      213: 6473550320318791668
+    second: RA_Ancient_Animations03_51
+  - first:
+      213: 8677887150756181283
+    second: RA_Ancient_Animations03_52
+  - first:
+      213: -7009115642967109166
+    second: RA_Ancient_Animations03_53
+  - first:
+      213: -1954152508628335600
+    second: RA_Ancient_Animations03_54
+  - first:
+      213: 368575002054017706
+    second: RA_Ancient_Animations03_55
+  - first:
+      213: -2378963522414369973
+    second: RA_Ancient_Animations03_56
+  - first:
+      213: -5822992904147526346
+    second: RA_Ancient_Animations03_57
+  - first:
+      213: 4975993990302905347
+    second: RA_Ancient_Animations03_58
+  - first:
+      213: 1553644474007091333
+    second: RA_Ancient_Animations03_59
+  - first:
+      213: -5581733179815937268
+    second: RA_Ancient_Animations03_60
+  - first:
+      213: -75513005048365719
+    second: RA_Ancient_Animations03_61
+  - first:
+      213: 1728786306620477689
+    second: RA_Ancient_Animations03_62
+  - first:
+      213: -3280270497489493267
+    second: RA_Ancient_Animations03_63
+  - first:
+      213: 2222030599289629527
+    second: RA_Ancient_Animations03_64
+  - first:
+      213: -1045021098292648540
+    second: RA_Ancient_Animations03_65
+  - first:
+      213: -7601433609391414167
+    second: RA_Ancient_Animations03_66
+  - first:
+      213: 8662885983589530567
+    second: RA_Ancient_Animations03_67
+  - first:
+      213: -2017559621941689993
+    second: RA_Ancient_Animations03_68
+  - first:
+      213: 3409378658974469843
+    second: RA_Ancient_Animations03_69
+  - first:
+      213: 203527935923405220
+    second: RA_Ancient_Animations03_70
+  - first:
+      213: -7469835642100528958
+    second: RA_Ancient_Animations03_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 301fd94b122b73da0800000000000000
+      internalID: -5965103323595017981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_1
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d956078ceffe8e90800000000000000
+      internalID: -7021393377681319470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a404bd85dec736e0800000000000000
+      internalID: -1857788904666299228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e79ad7555fee4cc0800000000000000
+      internalID: -3724776691963619356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_4
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee778ac6b38a5f50800000000000000
+      internalID: 6870949002612276971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_5
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c517a0979dcfbc90800000000000000
+      internalID: -7151771632390433339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_6
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab356532a80ca380800000000000000
+      internalID: -8958776065973208145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_7
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8ac6458aa4fd6fb0800000000000000
+      internalID: -4652793826786227569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_8
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59cabf4bc66583c70800000000000000
+      internalID: 8950999284291710101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_9
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e49b42982c664f90800000000000000
+      internalID: -6969764451800345369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_10
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fe6f85bb38043cd0800000000000000
+      internalID: -2579427634034282767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_11
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 341
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eddadb621b4677290800000000000000
+      internalID: -7892729109921550882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f543f6f17802b070800000000000000
+      internalID: 8120562363669890552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_13
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c7abb62049894280800000000000000
+      internalID: -9058558266858297402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b465e09a19c51140800000000000000
+      internalID: 4689875702913524918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_15
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7945ca3c2c95a5b0800000000000000
+      internalID: -5357704467908834945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_16
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ccaa577445285dd0800000000000000
+      internalID: -2497205017386505021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_17
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b678e1937ed8ab450800000000000000
+      internalID: 6105348269089392491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_18
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2018ded2019a4af30800000000000000
+      internalID: 4585976207525118210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_19
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1476f62ccf9151960800000000000000
+      internalID: 7571986921877890881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_20
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7513ae52949a5e350800000000000000
+      internalID: 6045424206448570711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_21
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91b1f73ea6fea35b0800000000000000
+      internalID: -5387730761833047271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_22
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f0bd58d50105750800000000000000
+      internalID: 6291546673300311819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_23
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 293
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5847553e7f601e20800000000000000
+      internalID: 3319275513223530589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_24
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fbce33d1d23205e0800000000000000
+      internalID: -1944936212296971274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_25
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605183bb682727b20800000000000000
+      internalID: 3130690613968114950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_26
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c9ee039511d9e70800000000000000
+      internalID: 9123467494893198403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_27
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29f44c4c1c401c620800000000000000
+      internalID: 2792518474222817170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_28
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf08cdc12736ffe0800000000000000
+      internalID: -1155675636048064584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_29
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae4bf00214ff4c50800000000000000
+      internalID: 6651803532812570280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_30
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8db21e6d6e77bd30800000000000000
+      internalID: 4447162165514911117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_31
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a4a9b22f35fa290800000000000000
+      internalID: -7876984923668985217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_32
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42983d297e39556a0800000000000000
+      internalID: -6461095467583043292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_33
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ff9b384d3092feb0800000000000000
+      internalID: -4687525669259993101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_34
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d20dd45ca41a600800000000000000
+      internalID: 477745246752484706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_35
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 245
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5dc0bda42daece0800000000000000
+      internalID: -1375055517263800834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_36
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48e8c678cf7e4580800000000000000
+      internalID: -8840988519518640052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_37
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d0c3e06a262578c0800000000000000
+      internalID: -4002250730392796971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_38
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4dd2b8732d120b90800000000000000
+      internalID: -7277222009691251380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_39
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a532404f8846be0800000000000000
+      internalID: -1484911395502597593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_40
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3673ca3c562bd90b0800000000000000
+      internalID: -5720219801546377373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_41
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6048a8b5576369510800000000000000
+      internalID: 1555490598977963014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_42
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ce28c3fb7b7f980800000000000000
+      internalID: -8505127339284042598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_43
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03f65637d1df9f7d0800000000000000
+      internalID: -2883995783422185680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_44
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e215e1cd12b643be0800000000000000
+      internalID: -1498454982836465362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_45
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4677b9fb44bdb250800000000000000
+      internalID: 5962119720113501772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_46
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a759383385e06270800000000000000
+      internalID: 8241839669834766240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_47
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41e97089e6cc83630800000000000000
+      internalID: 3907097452113010196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_48
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae696804252371b40800000000000000
+      internalID: 5410848806160209642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_49
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc7519af518cf4680800000000000000
+      internalID: -8768569952743368757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_50
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aaffb54ad0c6f7c50800000000000000
+      internalID: 6665164779379490730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_51
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ffb73ec7bba6d950800000000000000
+      internalID: 6473550320318791668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_52
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 325bfbdd26c0e6870800000000000000
+      internalID: 8677887150756181283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_53
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d1df47657e9abe90800000000000000
+      internalID: -7009115642967109166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_54
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 014054e95a471e4e0800000000000000
+      internalID: -1954152508628335600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_55
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa2c486f2017d1500800000000000000
+      internalID: 368575002054017706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_56
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4321e8d7493cfed0800000000000000
+      internalID: -2378963522414369973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_57
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d9aa22ec2903fa0800000000000000
+      internalID: -5822992904147526346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_58
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304bb749b284e0540800000000000000
+      internalID: 4975993990302905347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_59
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588f074ea67af8510800000000000000
+      internalID: 1553644474007091333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_60
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b3f0a0f33b982b0800000000000000
+      internalID: -5581733179815937268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_61
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d7b2e6259b3fef0800000000000000
+      internalID: -75513005048365719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_62
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f05ca28cf1edf710800000000000000
+      internalID: 1728786306620477689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_63
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2e1f5bc532a72d0800000000000000
+      internalID: -3280270497489493267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_64
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75be4b6ae0d36de10800000000000000
+      internalID: 2222030599289629527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_65
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a56a7d09d65f71f0800000000000000
+      internalID: -1045021098292648540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_66
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96462880868428690800000000000000
+      internalID: -7601433609391414167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_67
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cb709577e0c83870800000000000000
+      internalID: 8662885983589530567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_68
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7718efc96303004e0800000000000000
+      internalID: -2017559621941689993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_69
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de88f0a3db805f20800000000000000
+      internalID: 3409378658974469843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_70
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a14592549313d200800000000000000
+      internalID: 203527935923405220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Animations03_71
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8cb067f00d55890800000000000000
+      internalID: -7469835642100528958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Ancient_Animations03_0: -5965103323595017981
+      RA_Ancient_Animations03_1: -7021393377681319470
+      RA_Ancient_Animations03_10: -2579427634034282767
+      RA_Ancient_Animations03_11: -7892729109921550882
+      RA_Ancient_Animations03_12: 8120562363669890552
+      RA_Ancient_Animations03_13: -9058558266858297402
+      RA_Ancient_Animations03_14: 4689875702913524918
+      RA_Ancient_Animations03_15: -5357704467908834945
+      RA_Ancient_Animations03_16: -2497205017386505021
+      RA_Ancient_Animations03_17: 6105348269089392491
+      RA_Ancient_Animations03_18: 4585976207525118210
+      RA_Ancient_Animations03_19: 7571986921877890881
+      RA_Ancient_Animations03_2: -1857788904666299228
+      RA_Ancient_Animations03_20: 6045424206448570711
+      RA_Ancient_Animations03_21: -5387730761833047271
+      RA_Ancient_Animations03_22: 6291546673300311819
+      RA_Ancient_Animations03_23: 3319275513223530589
+      RA_Ancient_Animations03_24: -1944936212296971274
+      RA_Ancient_Animations03_25: 3130690613968114950
+      RA_Ancient_Animations03_26: 9123467494893198403
+      RA_Ancient_Animations03_27: 2792518474222817170
+      RA_Ancient_Animations03_28: -1155675636048064584
+      RA_Ancient_Animations03_29: 6651803532812570280
+      RA_Ancient_Animations03_3: -3724776691963619356
+      RA_Ancient_Animations03_30: 4447162165514911117
+      RA_Ancient_Animations03_31: -7876984923668985217
+      RA_Ancient_Animations03_32: -6461095467583043292
+      RA_Ancient_Animations03_33: -4687525669259993101
+      RA_Ancient_Animations03_34: 477745246752484706
+      RA_Ancient_Animations03_35: -1375055517263800834
+      RA_Ancient_Animations03_36: -8840988519518640052
+      RA_Ancient_Animations03_37: -4002250730392796971
+      RA_Ancient_Animations03_38: -7277222009691251380
+      RA_Ancient_Animations03_39: -1484911395502597593
+      RA_Ancient_Animations03_4: 6870949002612276971
+      RA_Ancient_Animations03_40: -5720219801546377373
+      RA_Ancient_Animations03_41: 1555490598977963014
+      RA_Ancient_Animations03_42: -8505127339284042598
+      RA_Ancient_Animations03_43: -2883995783422185680
+      RA_Ancient_Animations03_44: -1498454982836465362
+      RA_Ancient_Animations03_45: 5962119720113501772
+      RA_Ancient_Animations03_46: 8241839669834766240
+      RA_Ancient_Animations03_47: 3907097452113010196
+      RA_Ancient_Animations03_48: 5410848806160209642
+      RA_Ancient_Animations03_49: -8768569952743368757
+      RA_Ancient_Animations03_5: -7151771632390433339
+      RA_Ancient_Animations03_50: 6665164779379490730
+      RA_Ancient_Animations03_51: 6473550320318791668
+      RA_Ancient_Animations03_52: 8677887150756181283
+      RA_Ancient_Animations03_53: -7009115642967109166
+      RA_Ancient_Animations03_54: -1954152508628335600
+      RA_Ancient_Animations03_55: 368575002054017706
+      RA_Ancient_Animations03_56: -2378963522414369973
+      RA_Ancient_Animations03_57: -5822992904147526346
+      RA_Ancient_Animations03_58: 4975993990302905347
+      RA_Ancient_Animations03_59: 1553644474007091333
+      RA_Ancient_Animations03_6: -8958776065973208145
+      RA_Ancient_Animations03_60: -5581733179815937268
+      RA_Ancient_Animations03_61: -75513005048365719
+      RA_Ancient_Animations03_62: 1728786306620477689
+      RA_Ancient_Animations03_63: -3280270497489493267
+      RA_Ancient_Animations03_64: 2222030599289629527
+      RA_Ancient_Animations03_65: -1045021098292648540
+      RA_Ancient_Animations03_66: -7601433609391414167
+      RA_Ancient_Animations03_67: 8662885983589530567
+      RA_Ancient_Animations03_68: -2017559621941689993
+      RA_Ancient_Animations03_69: 3409378658974469843
+      RA_Ancient_Animations03_7: -4652793826786227569
+      RA_Ancient_Animations03_70: 203527935923405220
+      RA_Ancient_Animations03_71: -7469835642100528958
+      RA_Ancient_Animations03_8: 8950999284291710101
+      RA_Ancient_Animations03_9: -6969764451800345369
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

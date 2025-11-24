@@ -201,7 +201,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -280,16 +280,34 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 399
-        width: 88
-        height: 113
+        y: 400
+        width: 87
+        height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
+      outline:
+      - - {x: -13.5, y: 56}
+        - {x: -43.5, y: 44}
+        - {x: -43.5, y: 6}
+        - {x: -11.5, y: 6}
+        - {x: -9.5, y: 8}
+        - {x: -13.5, y: -6}
+        - {x: -43.5, y: -6}
+        - {x: -43.5, y: -42}
+        - {x: -15.5, y: -56}
+        - {x: 43.5, y: -56}
+        - {x: 43.5, y: -8}
+        - {x: 41.5, y: -8}
+        - {x: 38.5, y: -7}
+        - {x: 32.5, y: 4}
+        - {x: 37.5, y: -3}
+        - {x: 41.5, y: -7}
+        - {x: 43.5, y: -7}
+        - {x: 43.5, y: 56}
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 2be74cc3bde606130800000000000000
       internalID: 3557965593519095474
@@ -301,17 +319,17 @@ TextureImporter:
       name: RA_Atlantis_01_1
       rect:
         serializedVersion: 2
-        x: 83
-        y: 0
-        width: 685
-        height: 512
+        x: 416
+        y: 157
+        width: 32
+        height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: b48402167a80799b0800000000000000
       internalID: -5073576940227508149
@@ -323,17 +341,17 @@ TextureImporter:
       name: RA_Atlantis_01_2
       rect:
         serializedVersion: 2
-        x: 84
-        y: 485
-        width: 7
-        height: 7
+        x: 85
+        y: 486
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: dda2a057a7f1fe850800000000000000
       internalID: 6408375405581576925
@@ -345,17 +363,17 @@ TextureImporter:
       name: RA_Atlantis_01_3
       rect:
         serializedVersion: 2
-        x: 97
-        y: 487
-        width: 11
-        height: 7
+        x: 98
+        y: 488
+        width: 9
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 914b17be123e95c10800000000000000
       internalID: 2042913640812753945
@@ -367,17 +385,17 @@ TextureImporter:
       name: RA_Atlantis_01_4
       rect:
         serializedVersion: 2
-        x: 105
-        y: 480
-        width: 7
-        height: 7
+        x: 106
+        y: 481
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: c2577fab6f2de3bc0800000000000000
       internalID: -3801369078313552596
@@ -389,17 +407,17 @@ TextureImporter:
       name: RA_Atlantis_01_5
       rect:
         serializedVersion: 2
-        x: 96
-        y: 473
-        width: 7
-        height: 7
+        x: 97
+        y: 474
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 2ef0a3f98ba939c20800000000000000
       internalID: 3212081076981338082
@@ -411,17 +429,17 @@ TextureImporter:
       name: RA_Atlantis_01_6
       rect:
         serializedVersion: 2
-        x: 105
-        y: 465
-        width: 7
-        height: 7
+        x: 106
+        y: 466
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: e8d0dca8e6144c290800000000000000
       internalID: -7871094305705882226
@@ -433,17 +451,17 @@ TextureImporter:
       name: RA_Atlantis_01_7
       rect:
         serializedVersion: 2
-        x: 82
-        y: 449
-        width: 13
-        height: 14
+        x: 83
+        y: 450
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 076ad6a231c2f4370800000000000000
       internalID: 8308908298349684336
@@ -455,17 +473,17 @@ TextureImporter:
       name: RA_Atlantis_01_8
       rect:
         serializedVersion: 2
-        x: 96
-        y: 449
-        width: 16
-        height: 14
+        x: 97
+        y: 450
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 674d963024fe50940800000000000000
       internalID: 5261874806456439926
@@ -477,17 +495,17 @@ TextureImporter:
       name: RA_Atlantis_01_9
       rect:
         serializedVersion: 2
-        x: 81
-        y: 433
-        width: 13
-        height: 14
+        x: 82
+        y: 434
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: d0674d715e6cc8150800000000000000
       internalID: 5876290301061264909
@@ -499,17 +517,17 @@ TextureImporter:
       name: RA_Atlantis_01_10
       rect:
         serializedVersion: 2
-        x: 96
-        y: 433
-        width: 16
-        height: 14
+        x: 97
+        y: 434
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 5f59e755958b0c580800000000000000
       internalID: -8808838177310730763
@@ -521,17 +539,17 @@ TextureImporter:
       name: RA_Atlantis_01_11
       rect:
         serializedVersion: 2
-        x: 79
-        y: 400
-        width: 17
-        height: 25
+        x: 80
+        y: 401
+        width: 15
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: c8f027887effc5710800000000000000
       internalID: 1683501730621427596
@@ -543,17 +561,17 @@ TextureImporter:
       name: RA_Atlantis_01_12
       rect:
         serializedVersion: 2
-        x: 96
-        y: 399
-        width: 97
-        height: 25
+        x: 97
+        y: 400
+        width: 95
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 18cf42f2c4d716340800000000000000
       internalID: 4855299639444044929
@@ -565,17 +583,17 @@ TextureImporter:
       name: RA_Atlantis_01_13
       rect:
         serializedVersion: 2
-        x: 3
-        y: 319
-        width: 42
-        height: 74
+        x: 4
+        y: 320
+        width: 40
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: d6c48946b52d2ab30800000000000000
       internalID: 4297228284436434029
@@ -587,17 +605,17 @@ TextureImporter:
       name: RA_Atlantis_01_14
       rect:
         serializedVersion: 2
-        x: 47
-        y: 367
-        width: 14
-        height: 26
+        x: 48
+        y: 368
+        width: 12
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 386fb7ed66429c5f0800000000000000
       internalID: -736017039860435325
@@ -609,17 +627,17 @@ TextureImporter:
       name: RA_Atlantis_01_15
       rect:
         serializedVersion: 2
-        x: 67
-        y: 335
-        width: 14
-        height: 58
+        x: 68
+        y: 336
+        width: 12
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: c47e39c51b2780110800000000000000
       internalID: 1227357004546434892
@@ -631,17 +649,17 @@ TextureImporter:
       name: RA_Atlantis_01_16
       rect:
         serializedVersion: 2
-        x: 83
-        y: 367
-        width: 10
-        height: 26
+        x: 84
+        y: 368
+        width: 8
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 7ccbdc3879d205720800000000000000
       internalID: 2832814294390652103
@@ -653,17 +671,17 @@ TextureImporter:
       name: RA_Atlantis_01_17
       rect:
         serializedVersion: 2
-        x: 95
-        y: 352
-        width: 33
-        height: 39
+        x: 96
+        y: 353
+        width: 31
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 8653c144b539b8960800000000000000
       internalID: 7605334415939220840
@@ -675,17 +693,17 @@ TextureImporter:
       name: RA_Atlantis_01_18
       rect:
         serializedVersion: 2
-        x: 51
-        y: 335
-        width: 10
-        height: 26
+        x: 52
+        y: 336
+        width: 8
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 86330ad26eb640520800000000000000
       internalID: 2667375515662300008
@@ -697,17 +715,17 @@ TextureImporter:
       name: RA_Atlantis_01_19
       rect:
         serializedVersion: 2
-        x: 79
-        y: 335
-        width: 18
-        height: 26
+        x: 80
+        y: 336
+        width: 16
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: a19dae10f9c34d410800000000000000
       internalID: 1500891229450852634
@@ -719,17 +737,17 @@ TextureImporter:
       name: RA_Atlantis_01_20
       rect:
         serializedVersion: 2
-        x: 96
-        y: 304
-        width: 64
-        height: 39
+        x: 97
+        y: 305
+        width: 62
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: adb16986041168ed0800000000000000
       internalID: -2412221582080074790
@@ -741,17 +759,17 @@ TextureImporter:
       name: RA_Atlantis_01_21
       rect:
         serializedVersion: 2
-        x: 0
-        y: 287
-        width: 31
-        height: 34
+        x: 1
+        y: 288
+        width: 29
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: ee97fd017d4f25930800000000000000
       internalID: 4130633012790393326
@@ -763,17 +781,17 @@ TextureImporter:
       name: RA_Atlantis_01_22
       rect:
         serializedVersion: 2
-        x: 32
-        y: 289
-        width: 33
-        height: 31
+        x: 33
+        y: 290
+        width: 31
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 3ce264e64b678f990800000000000000
       internalID: -7351995874366050621
@@ -785,17 +803,17 @@ TextureImporter:
       name: RA_Atlantis_01_23
       rect:
         serializedVersion: 2
-        x: 63
-        y: 241
-        width: 34
-        height: 80
+        x: 64
+        y: 242
+        width: 32
+        height: 78
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: b3327df6d6aaa88f0800000000000000
       internalID: -537429818512825541
@@ -808,16 +826,16 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 255
-        width: 32
-        height: 25
+        y: 256
+        width: 31
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: d09ebf3a90b4d4b70800000000000000
       internalID: 8884840144649840909
@@ -829,17 +847,17 @@ TextureImporter:
       name: RA_Atlantis_01_25
       rect:
         serializedVersion: 2
-        x: 0
-        y: 143
-        width: 85
-        height: 114
+        x: 33
+        y: 257
+        width: 30
+        height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: db041f41c1b59f980800000000000000
       internalID: -8504666245143904067
@@ -851,17 +869,17 @@ TextureImporter:
       name: RA_Atlantis_01_26
       rect:
         serializedVersion: 2
-        x: 32
-        y: 256
-        width: 32
-        height: 30
+        x: 0
+        y: 144
+        width: 84
+        height: 112
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: b5ff006db82538090800000000000000
       internalID: -8033486549754511525
@@ -873,17 +891,17 @@ TextureImporter:
       name: RA_Atlantis_01_27
       rect:
         serializedVersion: 2
-        x: 84
-        y: 229
-        width: 7
-        height: 7
+        x: 85
+        y: 230
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: eebacac51b6a507c0800000000000000
       internalID: -4105692204584096786
@@ -895,17 +913,17 @@ TextureImporter:
       name: RA_Atlantis_01_28
       rect:
         serializedVersion: 2
-        x: 97
-        y: 231
-        width: 11
-        height: 7
+        x: 98
+        y: 232
+        width: 9
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 1faa56b5a5714d630800000000000000
       internalID: 3950808449958652657
@@ -917,17 +935,17 @@ TextureImporter:
       name: RA_Atlantis_01_29
       rect:
         serializedVersion: 2
-        x: 105
-        y: 224
-        width: 7
-        height: 7
+        x: 106
+        y: 225
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: f1ad59b93489c5e30800000000000000
       internalID: 4493633944349432351
@@ -939,17 +957,17 @@ TextureImporter:
       name: RA_Atlantis_01_30
       rect:
         serializedVersion: 2
-        x: 96
-        y: 217
-        width: 7
-        height: 7
+        x: 97
+        y: 218
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 7e20aee955bd2c1b0800000000000000
       internalID: -5637702622729600281
@@ -961,17 +979,17 @@ TextureImporter:
       name: RA_Atlantis_01_31
       rect:
         serializedVersion: 2
-        x: 105
-        y: 209
-        width: 7
-        height: 7
+        x: 106
+        y: 210
+        width: 5
+        height: 5
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 27aa9483c08d7f0a0800000000000000
       internalID: -6847767161397990798
@@ -983,17 +1001,17 @@ TextureImporter:
       name: RA_Atlantis_01_32
       rect:
         serializedVersion: 2
-        x: 82
-        y: 193
-        width: 13
-        height: 14
+        x: 83
+        y: 194
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: c557515aec2313c10800000000000000
       internalID: 2031460770035103068
@@ -1005,17 +1023,17 @@ TextureImporter:
       name: RA_Atlantis_01_33
       rect:
         serializedVersion: 2
-        x: 96
-        y: 193
-        width: 16
-        height: 14
+        x: 97
+        y: 194
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 23c3a1ccca00e1f80800000000000000
       internalID: -8134063134825890766
@@ -1027,17 +1045,17 @@ TextureImporter:
       name: RA_Atlantis_01_34
       rect:
         serializedVersion: 2
-        x: 81
-        y: 177
-        width: 13
-        height: 14
+        x: 82
+        y: 178
+        width: 11
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 472b3825b498133c0800000000000000
       internalID: -4381570005854866828
@@ -1049,17 +1067,17 @@ TextureImporter:
       name: RA_Atlantis_01_35
       rect:
         serializedVersion: 2
-        x: 96
-        y: 177
-        width: 16
-        height: 14
+        x: 97
+        y: 178
+        width: 14
+        height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 9c5918e0b5b1dff30800000000000000
       internalID: 4610871671396603337
@@ -1071,17 +1089,17 @@ TextureImporter:
       name: RA_Atlantis_01_36
       rect:
         serializedVersion: 2
-        x: 79
-        y: 144
-        width: 17
-        height: 25
+        x: 80
+        y: 145
+        width: 15
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 554392dc2a6c8cc00800000000000000
       internalID: 921204526326297685
@@ -1093,17 +1111,17 @@ TextureImporter:
       name: RA_Atlantis_01_37
       rect:
         serializedVersion: 2
-        x: 96
-        y: 143
-        width: 97
-        height: 25
+        x: 97
+        y: 144
+        width: 95
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 399df9d4f8d743e90800000000000000
       internalID: -7046869462491866733
@@ -1115,17 +1133,17 @@ TextureImporter:
       name: RA_Atlantis_01_38
       rect:
         serializedVersion: 2
-        x: 3
-        y: 63
-        width: 42
-        height: 74
+        x: 4
+        y: 64
+        width: 40
+        height: 72
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: faf77a8edd470e090800000000000000
       internalID: -8007271641024856145
@@ -1137,17 +1155,17 @@ TextureImporter:
       name: RA_Atlantis_01_39
       rect:
         serializedVersion: 2
-        x: 47
-        y: 111
-        width: 14
-        height: 26
+        x: 48
+        y: 112
+        width: 12
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 03fee358c9902c0f0800000000000000
       internalID: -1098304791269937360
@@ -1159,17 +1177,17 @@ TextureImporter:
       name: RA_Atlantis_01_40
       rect:
         serializedVersion: 2
-        x: 67
-        y: 79
-        width: 14
-        height: 58
+        x: 68
+        y: 80
+        width: 8
+        height: 56
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 25, z: 0, w: 25}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: ebdf87699198f25c0800000000000000
       internalID: -4238017981340648002
@@ -1181,17 +1199,17 @@ TextureImporter:
       name: RA_Atlantis_01_41
       rect:
         serializedVersion: 2
-        x: 83
-        y: 111
-        width: 10
-        height: 26
+        x: 84
+        y: 112
+        width: 8
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 11}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: e4127a7bf45fc95d0800000000000000
       internalID: -3054296724531633842
@@ -1203,17 +1221,17 @@ TextureImporter:
       name: RA_Atlantis_01_42
       rect:
         serializedVersion: 2
-        x: 95
-        y: 96
-        width: 33
-        height: 39
+        x: 96
+        y: 97
+        width: 31
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: a098fe60a0df32c30800000000000000
       internalID: 4333585485968410890
@@ -1225,17 +1243,17 @@ TextureImporter:
       name: RA_Atlantis_01_43
       rect:
         serializedVersion: 2
-        x: 51
-        y: 79
-        width: 10
-        height: 26
+        x: 52
+        y: 80
+        width: 8
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 06fbeba983adf8120800000000000000
       internalID: 2418391461570461536
@@ -1247,17 +1265,17 @@ TextureImporter:
       name: RA_Atlantis_01_44
       rect:
         serializedVersion: 2
-        x: 79
-        y: 79
-        width: 18
-        height: 26
+        x: 80
+        y: 80
+        width: 16
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 325b5c339e0c57be0800000000000000
       internalID: -1480064794692831965
@@ -1269,17 +1287,17 @@ TextureImporter:
       name: RA_Atlantis_01_45
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
-        width: 64
-        height: 39
+        x: 97
+        y: 49
+        width: 62
+        height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 5a3546c08c710bd50800000000000000
       internalID: 6750921989397173157
@@ -1291,17 +1309,17 @@ TextureImporter:
       name: RA_Atlantis_01_46
       rect:
         serializedVersion: 2
-        x: 0
-        y: 31
-        width: 31
-        height: 34
+        x: 1
+        y: 32
+        width: 29
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: dc03e6443f0000280800000000000000
       internalID: -9079255803953794867
@@ -1313,17 +1331,17 @@ TextureImporter:
       name: RA_Atlantis_01_47
       rect:
         serializedVersion: 2
-        x: 32
-        y: 33
-        width: 33
-        height: 31
+        x: 33
+        y: 34
+        width: 31
+        height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: b1c150d6619d023f0800000000000000
       internalID: -927502832896762853
@@ -1335,17 +1353,17 @@ TextureImporter:
       name: RA_Atlantis_01_48
       rect:
         serializedVersion: 2
-        x: 63
+        x: 64
         y: 0
-        width: 34
-        height: 65
+        width: 32
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 18aa991ef5920bbb0800000000000000
       internalID: -4922388900932375935
@@ -1359,15 +1377,15 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 24
+        width: 31
+        height: 23
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: b9aa9815b0b2d1fb0800000000000000
       internalID: -4675533510528095589
@@ -1379,20 +1397,350 @@ TextureImporter:
       name: RA_Atlantis_01_50
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 33
+        y: 1
+        width: 30
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a89f1612c69d9610800000000000000
+      internalID: 1629624400516978854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_51
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 193
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c62d28922039a4d8345ca91dded7af
+      internalID: -629124571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_52
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eabd119897ca244088f6d6e8905968c
+      internalID: -1587336829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_53
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 167
+        width: 8
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42318a2add64fa844974b72a462cb262
+      internalID: -1184447991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_54
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 384
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c139971dc55a1b4c99ed24142b2d2e5
+      internalID: 1481075088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_55
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 192
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5042541cd1363814faf770a8cf996f17
+      internalID: 1919872219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_56
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 224
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 11, z: 0, w: 8}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6988b5f14b16a49a862b7598cc2c21
+      internalID: -2130056695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_57
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 255
         width: 32
         height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3e7e96eda49344a8889620239b489c
+      internalID: 2116636017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_58
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 352
+        width: 32
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7278e70f82b0df143aa76a8cccb3a2b3
+      internalID: 312870600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_59
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 224
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43040bfa3ece8064993eae1990d0947f
+      internalID: -671956077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_60
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 208
+        width: 47
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cc54cf1665449f4d8d6d0910dbbf977
+      internalID: 582211543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_61
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 480
+        width: 17
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 577d904298089a446bf3cc1c8091b432
+      internalID: 1022018398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_62
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 223
+        width: 16
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10bdedca4f9401f4982ea326c05ef359
+      internalID: -1331205328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_63
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 192
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8636fa36d1defcf4da699f0b72d8e161
+      internalID: -453335189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_64
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 96
+        width: 101
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5674e9c4a203c344397395baa4b39dba
+      internalID: -208152794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_65
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 174
+        width: 14
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6a89f1612c69d9610800000000000000
-      internalID: 1629624400516978854
+      spriteID: 710af698f0cb85b45af3c89ce35cc59f
+      internalID: 1873915523
       vertices: []
       indices: 
       edges: []
@@ -1401,7 +1749,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ce5061f512e43c244b0eb8ddc38ddf72
     internalID: 0
     vertices: []
     indices: 
@@ -1409,7 +1757,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: False
     nameFileIdTable:
       RA_Atlantis_01_0: 3557965593519095474
       RA_Atlantis_01_1: -5073576940227508149
@@ -1458,7 +1810,22 @@ TextureImporter:
       RA_Atlantis_01_49: -4675533510528095589
       RA_Atlantis_01_5: 3212081076981338082
       RA_Atlantis_01_50: 1629624400516978854
+      RA_Atlantis_01_51: -629124571
+      RA_Atlantis_01_52: -1587336829
+      RA_Atlantis_01_53: -1184447991
+      RA_Atlantis_01_54: 1481075088
+      RA_Atlantis_01_55: 1919872219
+      RA_Atlantis_01_56: -2130056695
+      RA_Atlantis_01_57: 2116636017
+      RA_Atlantis_01_58: 312870600
+      RA_Atlantis_01_59: -671956077
       RA_Atlantis_01_6: -7871094305705882226
+      RA_Atlantis_01_60: 582211543
+      RA_Atlantis_01_61: 1022018398
+      RA_Atlantis_01_62: -1331205328
+      RA_Atlantis_01_63: -453335189
+      RA_Atlantis_01_64: -208152794
+      RA_Atlantis_01_65: 1873915523
       RA_Atlantis_01_7: 8308908298349684336
       RA_Atlantis_01_8: 5261874806456439926
       RA_Atlantis_01_9: 5876290301061264909
