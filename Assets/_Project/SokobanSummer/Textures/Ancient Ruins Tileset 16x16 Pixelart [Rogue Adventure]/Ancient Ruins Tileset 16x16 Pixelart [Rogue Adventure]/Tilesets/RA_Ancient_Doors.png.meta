@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 263bac978bf9a1c4085235e60cc76355
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6380005113030429736
+    second: RA_Ancient_Doors_0
+  - first:
+      213: -6272859056288579159
+    second: RA_Ancient_Doors_1
+  - first:
+      213: 2564955838194585040
+    second: RA_Ancient_Doors_2
+  - first:
+      213: 1344455936161060204
+    second: RA_Ancient_Doors_3
+  - first:
+      213: 2450406930971618709
+    second: RA_Ancient_Doors_4
+  - first:
+      213: 1117299916254177174
+    second: RA_Ancient_Doors_5
+  - first:
+      213: -1196968542379357163
+    second: RA_Ancient_Doors_6
+  - first:
+      213: 5686769052874646196
+    second: RA_Ancient_Doors_7
+  - first:
+      213: -4102846023092873110
+    second: RA_Ancient_Doors_8
+  - first:
+      213: -7199745849432939799
+    second: RA_Ancient_Doors_9
+  - first:
+      213: 5696886807603715882
+    second: RA_Ancient_Doors_10
+  - first:
+      213: -7242261301425897483
+    second: RA_Ancient_Doors_11
+  - first:
+      213: 8848123036578190616
+    second: RA_Ancient_Doors_12
+  - first:
+      213: 6986380955577486862
+    second: RA_Ancient_Doors_13
+  - first:
+      213: -7585042487435880258
+    second: RA_Ancient_Doors_14
+  - first:
+      213: 515445324568177169
+    second: RA_Ancient_Doors_15
+  - first:
+      213: 1290819263381484667
+    second: RA_Ancient_Doors_16
+  - first:
+      213: -6336764884972037527
+    second: RA_Ancient_Doors_17
+  - first:
+      213: -1558953083382564374
+    second: RA_Ancient_Doors_18
+  - first:
+      213: 3870443948984599538
+    second: RA_Ancient_Doors_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 65
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d335a4072ba577a0800000000000000
+      internalID: -6380005113030429736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 207
+        width: 130
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1c3df5ce352f8a0800000000000000
+      internalID: -6272859056288579159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 207
+        width: 130
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd0720cebd889320800000000000000
+      internalID: 2564955838194585040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_3
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 207
+        width: 65
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c659b0bfc8778a210800000000000000
+      internalID: 1344455936161060204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 65
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59de7b3fe18910220800000000000000
+      internalID: 2450406930971618709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 175
+        width: 130
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69767e7aa52718f00800000000000000
+      internalID: 1117299916254177174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_6
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 175
+        width: 130
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c4928d373836fe0800000000000000
+      internalID: -1196968542379357163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_7
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 175
+        width: 65
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b22744e2567bee40800000000000000
+      internalID: 5686769052874646196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 143
+        width: 65
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a68dc61a743cf07c0800000000000000
+      internalID: -4102846023092873110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_9
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 143
+        width: 130
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e2e47bbb4d551c90800000000000000
+      internalID: -7199745849432939799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_10
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 143
+        width: 130
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f14dc3e586f0f40800000000000000
+      internalID: 5696886807603715882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_11
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 143
+        width: 65
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ff73fda7b15e7b90800000000000000
+      internalID: -7242261301425897483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_12
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 95
+        width: 66
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815913cb509daca70800000000000000
+      internalID: 8848123036578190616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_13
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 95
+        width: 66
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e00c2b67c94f060800000000000000
+      internalID: 6986380955577486862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_14
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 95
+        width: 66
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb893228b048cb690800000000000000
+      internalID: -7585042487435880258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_15
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 95
+        width: 66
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11aa500baca372700800000000000000
+      internalID: 515445324568177169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_16
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 47
+        width: 130
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74b51fe749e9e110800000000000000
+      internalID: 1290819263381484667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_17
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 47
+        width: 130
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a921629e94f08a0800000000000000
+      internalID: -6336764884972037527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_18
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 0
+        width: 130
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae97b7b2e6c7d5ae0800000000000000
+      internalID: -1558953083382564374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Ancient_Doors_19
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 0
+        width: 130
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f3894ed34496b530800000000000000
+      internalID: 3870443948984599538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Ancient_Doors_0: -6380005113030429736
+      RA_Ancient_Doors_1: -6272859056288579159
+      RA_Ancient_Doors_10: 5696886807603715882
+      RA_Ancient_Doors_11: -7242261301425897483
+      RA_Ancient_Doors_12: 8848123036578190616
+      RA_Ancient_Doors_13: 6986380955577486862
+      RA_Ancient_Doors_14: -7585042487435880258
+      RA_Ancient_Doors_15: 515445324568177169
+      RA_Ancient_Doors_16: 1290819263381484667
+      RA_Ancient_Doors_17: -6336764884972037527
+      RA_Ancient_Doors_18: -1558953083382564374
+      RA_Ancient_Doors_19: 3870443948984599538
+      RA_Ancient_Doors_2: 2564955838194585040
+      RA_Ancient_Doors_3: 1344455936161060204
+      RA_Ancient_Doors_4: 2450406930971618709
+      RA_Ancient_Doors_5: 1117299916254177174
+      RA_Ancient_Doors_6: -1196968542379357163
+      RA_Ancient_Doors_7: 5686769052874646196
+      RA_Ancient_Doors_8: -4102846023092873110
+      RA_Ancient_Doors_9: -7199745849432939799
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

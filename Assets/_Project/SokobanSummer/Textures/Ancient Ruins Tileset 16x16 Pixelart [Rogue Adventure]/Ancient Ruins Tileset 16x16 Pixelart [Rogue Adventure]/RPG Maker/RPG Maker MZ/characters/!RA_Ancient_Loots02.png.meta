@@ -1,0 +1,2015 @@
+fileFormatVersion: 2
+guid: acb855d7718bd8c45b1e9fba7c5aa8f5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2987149376524946826
+    second: '!RA_Ancient_Loots02_0'
+  - first:
+      213: 6324348950340338366
+    second: '!RA_Ancient_Loots02_1'
+  - first:
+      213: -4688065386083139493
+    second: '!RA_Ancient_Loots02_2'
+  - first:
+      213: -7072227578163601717
+    second: '!RA_Ancient_Loots02_3'
+  - first:
+      213: 595439744692265194
+    second: '!RA_Ancient_Loots02_4'
+  - first:
+      213: 1559023640267785874
+    second: '!RA_Ancient_Loots02_5'
+  - first:
+      213: -982702013654158611
+    second: '!RA_Ancient_Loots02_6'
+  - first:
+      213: 1729898070097093736
+    second: '!RA_Ancient_Loots02_7'
+  - first:
+      213: -5083659107774874366
+    second: '!RA_Ancient_Loots02_8'
+  - first:
+      213: 7958431632153984404
+    second: '!RA_Ancient_Loots02_9'
+  - first:
+      213: -4547380299536238646
+    second: '!RA_Ancient_Loots02_10'
+  - first:
+      213: 8513501561260071323
+    second: '!RA_Ancient_Loots02_11'
+  - first:
+      213: 5269654198009164882
+    second: '!RA_Ancient_Loots02_12'
+  - first:
+      213: 1307928380688577958
+    second: '!RA_Ancient_Loots02_13'
+  - first:
+      213: -8578813292029150876
+    second: '!RA_Ancient_Loots02_14'
+  - first:
+      213: 5022616242918482517
+    second: '!RA_Ancient_Loots02_15'
+  - first:
+      213: 8264036220637718518
+    second: '!RA_Ancient_Loots02_16'
+  - first:
+      213: -6317681036853816228
+    second: '!RA_Ancient_Loots02_17'
+  - first:
+      213: 6130512172438032496
+    second: '!RA_Ancient_Loots02_18'
+  - first:
+      213: 9158787081256032006
+    second: '!RA_Ancient_Loots02_19'
+  - first:
+      213: 6564652125333965850
+    second: '!RA_Ancient_Loots02_20'
+  - first:
+      213: 2263152538290777271
+    second: '!RA_Ancient_Loots02_21'
+  - first:
+      213: 1641400942919851459
+    second: '!RA_Ancient_Loots02_22'
+  - first:
+      213: 4460903772216033791
+    second: '!RA_Ancient_Loots02_23'
+  - first:
+      213: -8864368942469923456
+    second: '!RA_Ancient_Loots02_24'
+  - first:
+      213: -2960792188959412986
+    second: '!RA_Ancient_Loots02_25'
+  - first:
+      213: -899020200950473884
+    second: '!RA_Ancient_Loots02_26'
+  - first:
+      213: -1638278206966719057
+    second: '!RA_Ancient_Loots02_27'
+  - first:
+      213: -69930779626256656
+    second: '!RA_Ancient_Loots02_28'
+  - first:
+      213: 6583823078121870743
+    second: '!RA_Ancient_Loots02_29'
+  - first:
+      213: 5310326867886433541
+    second: '!RA_Ancient_Loots02_30'
+  - first:
+      213: 964758032811371092
+    second: '!RA_Ancient_Loots02_31'
+  - first:
+      213: 681352634763734136
+    second: '!RA_Ancient_Loots02_32'
+  - first:
+      213: 5505851358808403871
+    second: '!RA_Ancient_Loots02_33'
+  - first:
+      213: 6999200586773020517
+    second: '!RA_Ancient_Loots02_34'
+  - first:
+      213: 1242127646331756284
+    second: '!RA_Ancient_Loots02_35'
+  - first:
+      213: 4992539584963060522
+    second: '!RA_Ancient_Loots02_36'
+  - first:
+      213: -3153799120174230211
+    second: '!RA_Ancient_Loots02_37'
+  - first:
+      213: 6600026833789715966
+    second: '!RA_Ancient_Loots02_38'
+  - first:
+      213: -5113198313605512542
+    second: '!RA_Ancient_Loots02_39'
+  - first:
+      213: 4054601219197420653
+    second: '!RA_Ancient_Loots02_40'
+  - first:
+      213: 6722890817366355867
+    second: '!RA_Ancient_Loots02_41'
+  - first:
+      213: -6023616501704328523
+    second: '!RA_Ancient_Loots02_42'
+  - first:
+      213: -5004484991248635380
+    second: '!RA_Ancient_Loots02_43'
+  - first:
+      213: -57236238604972747
+    second: '!RA_Ancient_Loots02_44'
+  - first:
+      213: -4230494760988821868
+    second: '!RA_Ancient_Loots02_45'
+  - first:
+      213: 842088545585609483
+    second: '!RA_Ancient_Loots02_46'
+  - first:
+      213: 607136798989068841
+    second: '!RA_Ancient_Loots02_47'
+  - first:
+      213: -6465264133038142493
+    second: '!RA_Ancient_Loots02_48'
+  - first:
+      213: 8396933711483572054
+    second: '!RA_Ancient_Loots02_49'
+  - first:
+      213: 2831821314960396980
+    second: '!RA_Ancient_Loots02_50'
+  - first:
+      213: 132478197447439611
+    second: '!RA_Ancient_Loots02_51'
+  - first:
+      213: -3581662282853674296
+    second: '!RA_Ancient_Loots02_52'
+  - first:
+      213: -5988783101252965781
+    second: '!RA_Ancient_Loots02_53'
+  - first:
+      213: -1062548438454016981
+    second: '!RA_Ancient_Loots02_54'
+  - first:
+      213: -7953720101289314980
+    second: '!RA_Ancient_Loots02_55'
+  - first:
+      213: 8003154041037126930
+    second: '!RA_Ancient_Loots02_56'
+  - first:
+      213: -4369108020155318249
+    second: '!RA_Ancient_Loots02_57'
+  - first:
+      213: -4884126064969551704
+    second: '!RA_Ancient_Loots02_58'
+  - first:
+      213: -3865154816164435260
+    second: '!RA_Ancient_Loots02_59'
+  - first:
+      213: -6566647145558761080
+    second: '!RA_Ancient_Loots02_60'
+  - first:
+      213: 869907535070999934
+    second: '!RA_Ancient_Loots02_61'
+  - first:
+      213: 4708229401511265892
+    second: '!RA_Ancient_Loots02_62'
+  - first:
+      213: 292799866239661482
+    second: '!RA_Ancient_Loots02_63'
+  - first:
+      213: 2670175864201341738
+    second: '!RA_Ancient_Loots02_64'
+  - first:
+      213: 6484210530564463659
+    second: '!RA_Ancient_Loots02_65'
+  - first:
+      213: 6902317482445690555
+    second: '!RA_Ancient_Loots02_66'
+  - first:
+      213: -4251452944298815553
+    second: '!RA_Ancient_Loots02_67'
+  - first:
+      213: 8741374995413471616
+    second: '!RA_Ancient_Loots02_68'
+  - first:
+      213: 5402238541463435671
+    second: '!RA_Ancient_Loots02_69'
+  - first:
+      213: 1395063674074042981
+    second: '!RA_Ancient_Loots02_70'
+  - first:
+      213: -4745195666129491716
+    second: '!RA_Ancient_Loots02_71'
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_0'
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 674
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6727339f7738b86d0800000000000000
+      internalID: -2987149376524946826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_1'
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 674
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb286acccd994c750800000000000000
+      internalID: 6324348950340338366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_2'
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 674
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b50c5baae55a0feb0800000000000000
+      internalID: -4688065386083139493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_3'
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 674
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bce56d8ec766add90800000000000000
+      internalID: -7072227578163601717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_4'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 674
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae028830b4d634800800000000000000
+      internalID: 595439744692265194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_5'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 674
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2960992adb3c2a510800000000000000
+      internalID: 1559023640267785874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_6'
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 674
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de23514a9bdbc52f0800000000000000
+      internalID: -982702013654158611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_7'
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 674
+        width: 44
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86465cd1125d10810800000000000000
+      internalID: 1729898070097093736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_8'
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 674
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d36e1d9f63379b0800000000000000
+      internalID: -5083659107774874366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_9'
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49d35c36767027e60800000000000000
+      internalID: 7958431632153984404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_10'
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7788be5b574e0c0800000000000000
+      internalID: -4547380299536238646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_11'
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b99d3a14098062670800000000000000
+      internalID: 8513501561260071323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_12'
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2547b71c292912940800000000000000
+      internalID: 5269654198009164882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_13'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a5389abee1b62210800000000000000
+      internalID: 1307928380688577958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_14'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 469f33e63cee1f880800000000000000
+      internalID: -8578813292029150876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_15'
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 552634aacdae3b540800000000000000
+      internalID: 5022616242918482517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_16'
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f7a21e6821cfa270800000000000000
+      internalID: 8264036220637718518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_17'
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 578
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c545b1ac1961358a0800000000000000
+      internalID: -6317681036853816228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_18'
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 482
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07090690754f31550800000000000000
+      internalID: 6130512172438032496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_19'
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 482
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607d3b7335c8a1f70800000000000000
+      internalID: 9158787081256032006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_20'
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 482
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1c4b84b3545a1b50800000000000000
+      internalID: 6564652125333965850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_21'
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 482
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bc685d2e35586f10800000000000000
+      internalID: 2263152538290777271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_22'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 482
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cd9ab8067d67c610800000000000000
+      internalID: 1641400942919851459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_23'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 482
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff10320985058ed30800000000000000
+      internalID: 4460903772216033791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_24'
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 482
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08d331a896f6bf480800000000000000
+      internalID: -8864368942469923456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_25'
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 482
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60da25be03729e6d0800000000000000
+      internalID: -2960792188959412986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_26'
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 482
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46b5274f3e90683f0800000000000000
+      internalID: -899020200950473884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_27'
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 386
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fad1c7696aaa349e0800000000000000
+      internalID: -1638278206966719057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_28'
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 386
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f6c281935e870ff0800000000000000
+      internalID: -69930779626256656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_29'
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 386
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795197bf4307e5b50800000000000000
+      internalID: 6583823078121870743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_30'
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 386
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5056599a62212b940800000000000000
+      internalID: 5310326867886433541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_31'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 386
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45a2defb152836d00800000000000000
+      internalID: 964758032811371092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_32'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 386
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87c6ed18c96a47900800000000000000
+      internalID: 681352634763734136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_33'
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 386
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f60ebb3a6b86c40800000000000000
+      internalID: 5505851358808403871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_34'
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 386
+        width: 44
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56fbf4ea9d7222160800000000000000
+      internalID: 6999200586773020517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_35'
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 386
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfedb45638cec3110800000000000000
+      internalID: 1242127646331756284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_36'
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23acc80d40194540800000000000000
+      internalID: 4992539584963060522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_37'
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d355315e8647b34d0800000000000000
+      internalID: -3153799120174230211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_38'
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef50518df61089b50800000000000000
+      internalID: 6600026833789715966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_39'
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a2ca6389354a09b0800000000000000
+      internalID: -5113198313605512542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_40'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d64c020a356d44830800000000000000
+      internalID: 4054601219197420653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_41'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9f6bd834918c4d50800000000000000
+      internalID: 6722890817366355867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_42'
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ba7bb8c4b0d76ca0800000000000000
+      internalID: -6023616501704328523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_43'
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ae9d45a6f7c8ab0800000000000000
+      internalID: -5004484991248635380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_44'
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 290
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53dcba9b1f7a43ff0800000000000000
+      internalID: -57236238604972747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_45'
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4963c13dd634a45c0800000000000000
+      internalID: -4230494760988821868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_46'
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0b3e051213bfab00800000000000000
+      internalID: 842088545585609483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_47'
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92aafc1b3bbfc6800800000000000000
+      internalID: 607136798989068841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_48'
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb00338684c646a0800000000000000
+      internalID: -6465264133038142493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_49'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65f0b73c8b6e78470800000000000000
+      internalID: 8396933711483572054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_50'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b218997b76ac4720800000000000000
+      internalID: 2831821314960396980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_51'
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4b65bf738a6d100800000000000000
+      internalID: 132478197447439611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_52'
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c2971551216b4ec0800000000000000
+      internalID: -3581662282853674296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_53'
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 194
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6a64f4df7193eca0800000000000000
+      internalID: -5988783101252965781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_54'
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b246d4923d11141f0800000000000000
+      internalID: -1062548438454016981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_55'
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5534cf55b5be9190800000000000000
+      internalID: -7953720101289314980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_56'
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21dffb2a23ae01f60800000000000000
+      internalID: 8003154041037126930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_57'
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7100559776fcd53c0800000000000000
+      internalID: -4369108020155318249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_58'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a0734b9839183cb0800000000000000
+      internalID: -4884126064969551704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_59'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cae0a45c263c5ac0800000000000000
+      internalID: -3865154816164435260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_60'
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88123a376359ed4a0800000000000000
+      internalID: -6566647145558761080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_61'
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e75b75f4b48821c00800000000000000
+      internalID: 869907535070999934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_62'
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 98
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 466012602bdf65140800000000000000
+      internalID: 4708229401511265892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_63'
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa53f715deb301400800000000000000
+      internalID: 292799866239661482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_64'
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2bea812dce5e0520800000000000000
+      internalID: 2670175864201341738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_65'
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2c542b6f1b8cf950800000000000000
+      internalID: 6484210530564463659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_66'
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6d4242e25f9cf50800000000000000
+      internalID: 6902317482445690555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_67'
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbfc7c3821ecff4c0800000000000000
+      internalID: -4251452944298815553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_68'
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0811a1a9e3a9f4970800000000000000
+      internalID: 8741374995413471616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_69'
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7993ad7c45b98fa40800000000000000
+      internalID: 5402238541463435671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_70'
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5621c3c25034c5310800000000000000
+      internalID: 1395063674074042981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Ancient_Loots02_71'
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 2
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8e0aaceada52eb0800000000000000
+      internalID: -4745195666129491716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      '!RA_Ancient_Loots02_0': -2987149376524946826
+      '!RA_Ancient_Loots02_1': 6324348950340338366
+      '!RA_Ancient_Loots02_10': -4547380299536238646
+      '!RA_Ancient_Loots02_11': 8513501561260071323
+      '!RA_Ancient_Loots02_12': 5269654198009164882
+      '!RA_Ancient_Loots02_13': 1307928380688577958
+      '!RA_Ancient_Loots02_14': -8578813292029150876
+      '!RA_Ancient_Loots02_15': 5022616242918482517
+      '!RA_Ancient_Loots02_16': 8264036220637718518
+      '!RA_Ancient_Loots02_17': -6317681036853816228
+      '!RA_Ancient_Loots02_18': 6130512172438032496
+      '!RA_Ancient_Loots02_19': 9158787081256032006
+      '!RA_Ancient_Loots02_2': -4688065386083139493
+      '!RA_Ancient_Loots02_20': 6564652125333965850
+      '!RA_Ancient_Loots02_21': 2263152538290777271
+      '!RA_Ancient_Loots02_22': 1641400942919851459
+      '!RA_Ancient_Loots02_23': 4460903772216033791
+      '!RA_Ancient_Loots02_24': -8864368942469923456
+      '!RA_Ancient_Loots02_25': -2960792188959412986
+      '!RA_Ancient_Loots02_26': -899020200950473884
+      '!RA_Ancient_Loots02_27': -1638278206966719057
+      '!RA_Ancient_Loots02_28': -69930779626256656
+      '!RA_Ancient_Loots02_29': 6583823078121870743
+      '!RA_Ancient_Loots02_3': -7072227578163601717
+      '!RA_Ancient_Loots02_30': 5310326867886433541
+      '!RA_Ancient_Loots02_31': 964758032811371092
+      '!RA_Ancient_Loots02_32': 681352634763734136
+      '!RA_Ancient_Loots02_33': 5505851358808403871
+      '!RA_Ancient_Loots02_34': 6999200586773020517
+      '!RA_Ancient_Loots02_35': 1242127646331756284
+      '!RA_Ancient_Loots02_36': 4992539584963060522
+      '!RA_Ancient_Loots02_37': -3153799120174230211
+      '!RA_Ancient_Loots02_38': 6600026833789715966
+      '!RA_Ancient_Loots02_39': -5113198313605512542
+      '!RA_Ancient_Loots02_4': 595439744692265194
+      '!RA_Ancient_Loots02_40': 4054601219197420653
+      '!RA_Ancient_Loots02_41': 6722890817366355867
+      '!RA_Ancient_Loots02_42': -6023616501704328523
+      '!RA_Ancient_Loots02_43': -5004484991248635380
+      '!RA_Ancient_Loots02_44': -57236238604972747
+      '!RA_Ancient_Loots02_45': -4230494760988821868
+      '!RA_Ancient_Loots02_46': 842088545585609483
+      '!RA_Ancient_Loots02_47': 607136798989068841
+      '!RA_Ancient_Loots02_48': -6465264133038142493
+      '!RA_Ancient_Loots02_49': 8396933711483572054
+      '!RA_Ancient_Loots02_5': 1559023640267785874
+      '!RA_Ancient_Loots02_50': 2831821314960396980
+      '!RA_Ancient_Loots02_51': 132478197447439611
+      '!RA_Ancient_Loots02_52': -3581662282853674296
+      '!RA_Ancient_Loots02_53': -5988783101252965781
+      '!RA_Ancient_Loots02_54': -1062548438454016981
+      '!RA_Ancient_Loots02_55': -7953720101289314980
+      '!RA_Ancient_Loots02_56': 8003154041037126930
+      '!RA_Ancient_Loots02_57': -4369108020155318249
+      '!RA_Ancient_Loots02_58': -4884126064969551704
+      '!RA_Ancient_Loots02_59': -3865154816164435260
+      '!RA_Ancient_Loots02_6': -982702013654158611
+      '!RA_Ancient_Loots02_60': -6566647145558761080
+      '!RA_Ancient_Loots02_61': 869907535070999934
+      '!RA_Ancient_Loots02_62': 4708229401511265892
+      '!RA_Ancient_Loots02_63': 292799866239661482
+      '!RA_Ancient_Loots02_64': 2670175864201341738
+      '!RA_Ancient_Loots02_65': 6484210530564463659
+      '!RA_Ancient_Loots02_66': 6902317482445690555
+      '!RA_Ancient_Loots02_67': -4251452944298815553
+      '!RA_Ancient_Loots02_68': 8741374995413471616
+      '!RA_Ancient_Loots02_69': 5402238541463435671
+      '!RA_Ancient_Loots02_7': 1729898070097093736
+      '!RA_Ancient_Loots02_70': 1395063674074042981
+      '!RA_Ancient_Loots02_71': -4745195666129491716
+      '!RA_Ancient_Loots02_8': -5083659107774874366
+      '!RA_Ancient_Loots02_9': 7958431632153984404
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
