@@ -116,18 +116,24 @@ namespace Core
                 await InitializeForegroundEffectsAsync();
 
                 // Step 5: Load UI scene - either persistent (modern) or main menu (legacy)
+                Debug.Log($"[GameInitializer]: About to load UI scene - UsePersistentUIScene={UsePersistentUIScene}");
                 if (UsePersistentUIScene)
                 {
+                    Debug.Log($"[GameInitializer]: Attempting to load PersistentUI scene '{PersistentUISceneName}'");
                     await LoadPersistentUISceneAsync();
+                    Debug.Log($"[GameInitializer]: PersistentUI scene load completed");
                 }
                 else
                 {
+                    Debug.Log("[GameInitializer]: Loading Main Menu (legacy mode)");
                     await LoadMainMenuAsync();
                 }
 
                 // Step 5b: Now that a camera/UI scene likely created an AudioListener, initialize audio
+                Debug.Log("[GameInitializer]: About to initialize audio system");
                 await InitializeAudioSystemAsync();
                 RegisterAudioServiceIfNeeded();
+                Debug.Log("[GameInitializer]: Audio system initialization completed");
 
                 // Step 6: Show splash/title screen (UIService already handled camera resolution)
                 await ShowSplashScreenAsync();
@@ -512,20 +518,43 @@ namespace Core
         {
             if (string.IsNullOrEmpty(PersistentUISceneName))
             {
-                Debug.LogWarning("[GameInitializer]: PersistentUISceneName is empty - skipping persistent UI scene load");
+                Debug.LogError("[GameInitializer]: PersistentUISceneName is empty - cannot load persistent UI scene!");
                 return;
             }
 
-            Debug.Log($"[GameInitializer]: Loading Persistent UI scene '{PersistentUISceneName}'...");
+            // Check if scene is already loaded
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var loadedScene = SceneManager.GetSceneAt(i);
+                if (loadedScene.name == PersistentUISceneName)
+                {
+                    Debug.Log($"[GameInitializer]: Persistent UI scene '{PersistentUISceneName}' is already loaded, skipping");
+                    return;
+                }
+            }
+
+            Debug.Log($"[GameInitializer]: Loading Persistent UI scene '{PersistentUISceneName}' additively...");
             
             try
             {
-                await SceneManager.LoadSceneAsync(PersistentUISceneName, LoadSceneMode.Additive);
-                Debug.Log($"[GameInitializer]: Persistent UI scene '{PersistentUISceneName}' loaded successfully");
+                var asyncOp = SceneManager.LoadSceneAsync(PersistentUISceneName, LoadSceneMode.Additive);
+                if (asyncOp == null)
+                {
+                    Debug.LogError($"[GameInitializer]: LoadSceneAsync returned null for scene '{PersistentUISceneName}' - scene may not be in Build Settings!");
+                    return;
+                }
+                
+                Debug.Log($"[GameInitializer]: Scene load operation created, waiting for completion...");
+                while (!asyncOp.isDone)
+                {
+                    await Task.Yield();
+                }
+                
+                Debug.Log($"[GameInitializer]: Persistent UI scene '{PersistentUISceneName}' loaded successfully (isDone={asyncOp.isDone})");
             }
             catch (System.Exception ex)
             {
-                Debug.LogError($"[GameInitializer]: Failed to load Persistent UI scene '{PersistentUISceneName}': {ex.Message}");
+                Debug.LogError($"[GameInitializer]: Failed to load Persistent UI scene '{PersistentUISceneName}': {ex.Message}\nStack: {ex.StackTrace}");
             }
         }
 

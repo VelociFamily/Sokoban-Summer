@@ -44,6 +44,7 @@ namespace UI
                 {
                     panelLookup[panel.panelName] = panel;
                     // Initialize all panels as hidden
+                    Debug.Log($"[MenuNavigator]: Initializing panel '{panel.panelName}' as hidden");
                     SetPanelVisibility(panel, false, instant: true);
                 }
                 else
@@ -151,6 +152,13 @@ namespace UI
                 panel.canvasGroup.alpha = targetAlpha;
                 panel.canvasGroup.interactable = visible;
                 panel.canvasGroup.blocksRaycasts = visible;
+                
+                // Ensure active state matches visibility
+                if (visible && !panel.canvasGroup.gameObject.activeSelf)
+                {
+                    panel.canvasGroup.gameObject.SetActive(true);
+                }
+                
                 Debug.Log($"[MenuNavigator]: Instant visibility applied to '{panel.panelName}' alpha={panel.canvasGroup.alpha} interactable={panel.canvasGroup.interactable}");
             }
             else
@@ -185,6 +193,13 @@ namespace UI
             {
                 canvasGroup.interactable = true;
                 canvasGroup.blocksRaycasts = true;
+                
+                // Ensure the GameObject is active if it was disabled
+                if (!canvasGroup.gameObject.activeSelf)
+                {
+                    canvasGroup.gameObject.SetActive(true);
+                }
+                
                 Debug.Log($"[MenuNavigator]: Interaction enabled at fade start");
             }
 
@@ -203,6 +218,10 @@ namespace UI
             {
                 canvasGroup.interactable = false;
                 canvasGroup.blocksRaycasts = false;
+                
+                // Optionally disable the GameObject to save performance, but be careful if other scripts need it active
+                // canvasGroup.gameObject.SetActive(false); 
+                
                 Debug.Log($"[MenuNavigator]: Interaction disabled after hide");
             }
 

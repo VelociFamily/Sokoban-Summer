@@ -49,33 +49,6 @@ namespace Core
             _instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // Validate EventSystem
-            if (eventSystem == null)
-            {
-                eventSystem = GetComponentInChildren<EventSystem>();
-                if (eventSystem == null)
-                {
-                    Debug.LogWarning("[PersistentUIManager]: No EventSystem assigned or found in children - creating one");
-                    var esObj = new GameObject("EventSystem");
-                    esObj.transform.SetParent(transform);
-                    eventSystem = esObj.AddComponent<EventSystem>();
-                    esObj.AddComponent<StandaloneInputModule>();
-                }
-            }
-
-            // Validate AudioListener
-            if (audioListener == null)
-            {
-                audioListener = GetComponentInChildren<AudioListener>();
-            }
-
-            // Auto-discover CanvasGroups if none assigned
-            if (persistentUIGroups.Count == 0)
-            {
-                persistentUIGroups.AddRange(GetComponentsInChildren<CanvasGroup>());
-                Debug.Log($"[PersistentUIManager]: Auto-discovered {persistentUIGroups.Count} CanvasGroups");
-            }
-
             // Initialize UI as visible by default (will be hidden when gameplay scenes load)
             foreach (var canvasGroup in persistentUIGroups)
             {
@@ -90,16 +63,6 @@ namespace Core
             SceneManager.sceneUnloaded += OnSceneUnloaded;
 
             Debug.Log("[PersistentUIManager]: Initialized successfully");
-        }
-
-        private void OnDestroy()
-        {
-            if (_instance == this)
-            {
-                _instance = null;
-                SceneManager.sceneLoaded -= OnSceneLoaded;
-                SceneManager.sceneUnloaded -= OnSceneUnloaded;
-            }
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -120,8 +83,16 @@ namespace Core
                 return;
             }
 
-            // Update UI visibility based on scene type
-            UpdateUIVisibility(scene);
+            // Only update visibility for gameplay scenes - let MenuNavigator handle menu panels
+            if (SceneInfo.IsGameplayScene(scene))
+            {
+                Debug.Log($"[PersistentUIManager]: Updating UI visibility for gameplay scene '{scene.name}'");
+                UpdateUIVisibility(scene);
+            }
+            else
+            {
+                Debug.Log($"[PersistentUIManager]: Scene '{scene.name}' is not a gameplay scene - MenuNavigator will handle panel visibility");
+            }
         }
 
         private void OnSceneUnloaded(Scene scene)
@@ -158,10 +129,12 @@ namespace Core
 
             if (shouldShow)
             {
+                Debug.Log($"[PersistentUIManager]: Calling ShowUI() for scene '{scene.name}'");
                 ShowUI();
             }
             else
             {
+                Debug.Log($"[PersistentUIManager]: Calling HideUI() for scene '{scene.name}'");
                 HideUI();
             }
         }
@@ -185,10 +158,12 @@ namespace Core
                 
                 if (animated && fadeDuration > 0)
                 {
+                    Debug.Log($"[PersistentUIManager]: Starting fade transition for '{canvasGroup.name}' to alpha 1.0");
                     StartTransition(canvasGroup, 1f);
                 }
                 else
                 {
+                    Debug.Log($"[PersistentUIManager]: Setting '{canvasGroup.name}' visible immediately (no animation)");
                     SetCanvasGroupVisibility(canvasGroup, true);
                 }
             }
@@ -211,10 +186,12 @@ namespace Core
                 
                 if (animated && fadeDuration > 0)
                 {
+                    Debug.Log($"[PersistentUIManager]: Starting fade transition for '{canvasGroup.name}' to alpha 0.0");
                     StartTransition(canvasGroup, 0f);
                 }
                 else
                 {
+                    Debug.Log($"[PersistentUIManager]: Setting '{canvasGroup.name}' hidden immediately (no animation)");
                     SetCanvasGroupVisibility(canvasGroup, false);
                 }
             }
