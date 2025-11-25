@@ -73,6 +73,7 @@
   <Project Path="ToonyColorsPro.Demo.Editor.csproj" />
   <Project Path="Unity.Mathematics.Editor.csproj" />
   <Project Path="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
   <Project Path="SokobanSummer.Tests.csproj" />
   <Project Path="SokobanSummer.Input.csproj" />
   <Project Path="CFXRRuntime.csproj" />

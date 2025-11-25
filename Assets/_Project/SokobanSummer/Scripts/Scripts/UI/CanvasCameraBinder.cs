@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using Core;
 
@@ -11,6 +12,9 @@ namespace UI
     [RequireComponent(typeof(Canvas))]
     public class CanvasCameraBinder : MonoBehaviour
     {
+        [Tooltip("Maximum time in seconds to wait for UIService before giving up")]
+        [SerializeField] private float timeoutSeconds = 10f;
+
         private Canvas _canvas;
         private UIService _uiService;
 
@@ -21,15 +25,33 @@ namespace UI
 
         private void Start()
         {
-            // Get UIService from ServiceLocator
-            if (!ServiceLocator.TryGet(out _uiService))
+            StartCoroutine(WaitForUIServiceAndBind());
+        }
+
+        /// <summary>
+        /// Wait for UIService to be registered in ServiceLocator, then bind canvas.
+        /// Uses a coroutine to avoid blocking the main thread during initialization.
+        /// </summary>
+        private IEnumerator WaitForUIServiceAndBind()
+        {
+            var startTime = Time.realtimeSinceStartup;
+
+            while (Time.realtimeSinceStartup - startTime < timeoutSeconds)
             {
-                Debug.LogError($"[CanvasCameraBinder]: UIService not found in ServiceLocator. Canvas '{_canvas.name}' cannot be bound to camera. Ensure GameInitializer has initialized UIService.");
-                return;
+                if (ServiceLocator.TryGet(out _uiService))
+                {
+                    // UIService found - bind canvas
+                    _uiService.BindCanvas(_canvas);
+                    Debug.Log($"[CanvasCameraBinder]: Successfully bound canvas '{_canvas.name}' to UIService");
+                    yield break;
+                }
+
+                // Wait one frame before retrying
+                yield return null;
             }
 
-            // Register this canvas with UIService for automatic camera binding
-            _uiService.BindCanvas(_canvas);
+            // Timeout reached
+            Debug.LogError($"[CanvasCameraBinder]: Timed out waiting for UIService after {timeoutSeconds}s. Canvas '{_canvas.name}' cannot be bound to camera. Ensure GameInitializer has initialized UIService.");
         }
 
         private void OnDestroy()

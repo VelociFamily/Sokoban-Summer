@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 7892666778380424366}
+  pauseMenuCanvasGroup: {fileID: 0}
   blocker: {fileID: 0}
   volume: {fileID: 0}
 --- !u!61 &601036675436173503
@@ -223,8 +224,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -339,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 7892666778380424366}
+  pauseMenuCanvasGroup: {fileID: 6553220287329519946}
   blocker: {fileID: 1087338167439105163, guid: 1b7d83a15065f714f9982c24d806c8bc, type: 3}
   volume: {fileID: 8102048397111994184}
 --- !u!1 &2904366253249898242
@@ -408,8 +410,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: return to game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -546,8 +548,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -854,6 +856,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 7892666778380424366}
+  pauseMenuCanvasGroup: {fileID: 0}
   blocker: {fileID: 0}
   volume: {fileID: 0}
 --- !u!61 &4817027769471303989
@@ -964,13 +967,14 @@ GameObject:
   - component: {fileID: 5873717813218443256}
   - component: {fileID: 8068949278801890092}
   - component: {fileID: 9076842702657320737}
+  - component: {fileID: 6553220287329519946}
   m_Layer: 5
   m_Name: Pause Button Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2961896356080805684
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1069,6 +1073,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firstButton: {fileID: 8640325597692528480}
+--- !u!225 &6553220287329519946
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7892666778380424366}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &8503972236771561430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,7 +1095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3007740627958848874}
   m_Layer: 0
-  m_Name: Pause Components
+  m_Name: pause-components
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

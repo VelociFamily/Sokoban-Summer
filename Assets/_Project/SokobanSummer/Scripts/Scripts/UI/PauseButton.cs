@@ -5,13 +5,17 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using UI;
 
 namespace UI
 {
     public class PauseButton : MonoBehaviour
     {
         public GameObject pauseMenu;
+        public CanvasGroup pauseMenuCanvasGroup; // Optional: use CanvasGroup for fade instead of SetActive
         public GameObject blocker; // This object blocks pause menu when active
+        [Tooltip("Name of the pause panel managed by MenuNavigator")] public string pausePanelName = "Pause";
+        private MenuNavigator menuNavigator;
 
         // --- NEW VARIABLES FOR BLUR ---
         public Volume volume; // Reference to the Volume component
@@ -24,6 +28,8 @@ namespace UI
         private const int menuSceneBuildIndex = 1;
         private string menuSceneName;
 
+        private bool isPaused = false;
+
         private void Start()
         {
             Time.timeScale = 1f;
@@ -31,6 +37,23 @@ namespace UI
             inputActions.UI.EscapeStart.performed += OnPausePerformed;
             inputActions.UI.Click.performed += OnClickPerformed;
             inputActions.UI.Enable();
+
+            // Find MenuNavigator in the persistent UI (if configured)
+            menuNavigator = FindFirstObjectByType<MenuNavigator>();
+
+            // Auto-discover CanvasGroup if not assigned
+            if (pauseMenuCanvasGroup == null && pauseMenu != null)
+            {
+                pauseMenuCanvasGroup = pauseMenu.GetComponent<CanvasGroup>();
+                if (pauseMenuCanvasGroup == null)
+                {
+                    Debug.Log("[PauseButton]: No CanvasGroup found on pause menu - adding one for smooth transitions");
+                    pauseMenuCanvasGroup = pauseMenu.AddComponent<CanvasGroup>();
+                }
+            }
+
+            // Initialize pause menu as hidden (MenuNavigator path preferred)
+            SetPauseMenuVisibility(false, instant: true);
 
             // Get main camera for mouse position conversion
             mainCamera = Camera.main;
@@ -82,9 +105,7 @@ namespace UI
             var levelCompleteObject = GameObject.FindWithTag("levelcomplete");
             if (levelCompleteObject != null && levelCompleteObject.activeSelf) return;
 
-            var isActive = pauseMenu.activeSelf;
-
-            if (isActive)
+            if (isPaused)
                 ResumeGame();
             else
                 PauseGame();
@@ -170,18 +191,59 @@ namespace UI
 
         public void PauseGame()
         {
-            pauseMenu.SetActive(true);
+            SetPauseMenuVisibility(true);
             Time.timeScale = 0f;
+            isPaused = true;
 
             if (depthOfField != null) depthOfField.active = true;
         }
 
         public void ResumeGame()
         {
-            pauseMenu.SetActive(false);
+            SetPauseMenuVisibility(false);
             Time.timeScale = 1f;
+            isPaused = false;
 
             if (depthOfField != null) depthOfField.active = false;
+        }
+
+        /// <summary>
+        /// Sets pause menu visibility using CanvasGroup if available, otherwise falls back to SetActive
+        /// </summary>
+        private void SetPauseMenuVisibility(bool visible, bool instant = false)
+        {
+            // Prefer MenuNavigator if available (Persistent UI)
+            if (menuNavigator != null)
+            {
+                if (visible)
+                {
+                    menuNavigator.ShowPanel(pausePanelName, instant);
+                }
+                else
+                {
+                    // Hide all panels on resume to ensure no UI persists over gameplay
+                    menuNavigator.HideAllPanels(instant);
+                }
+            }
+            // Fallback to CanvasGroup or SetActive when MenuNavigator isn't present
+            else if (pauseMenuCanvasGroup != null)
+            {
+                // Use CanvasGroup for smooth transitions
+                pauseMenuCanvasGroup.alpha = visible ? 1f : 0f;
+                pauseMenuCanvasGroup.interactable = visible;
+                pauseMenuCanvasGroup.blocksRaycasts = visible;
+
+                // Ensure parent GameObject is active for CanvasGroup to work
+                if (pauseMenu != null && !pauseMenu.activeSelf)
+                {
+                    pauseMenu.SetActive(true);
+                }
+            }
+            else if (pauseMenu != null)
+            {
+                // Fallback to SetActive if no CanvasGroup
+                pauseMenu.SetActive(visible);
+            }
         }
     }
 }

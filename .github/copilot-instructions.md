@@ -3,10 +3,12 @@
 Short, actionable rules to get productive fast. Follow the existing service singletons and scene metadata; avoid re‑creating systems.
 
 ## Architecture (what runs and why)
-- Entry: `Core/GameInitializer.cs` instantiates Background and MusicPlayer, initializes in parallel: Audio (`ModernAudioService` → `Audio/UnifiedAudioManager`), Input (`InputService`), Achievements, and `MoveCounter`; then loads "Main Menu" additively. If you rename the menu, update `LoadMainMenuAsync()`.
+- Entry: `Core/GameInitializer.cs` instantiates Background and MusicPlayer, initializes in parallel: Audio (`ModernAudioService` → `Audio/UnifiedAudioManager`), Input (`InputService`), Achievements, and `MoveCounter`; optionally loads "PersistentUI" scene (if `UsePersistentUIScene` enabled), then loads "Main Menu" additively. If you rename the menu, update `LoadMainMenuAsync()`.
 - Scene metadata: `Core/SceneInfo.cs` + `Core/SceneType.cs` replace build-index logic (also decides if background shows). Always add a `SceneInfo` to scenes.
 - Dynamic levels: `Core/LevelManager.cs` scans Build Settings under `Assets/Scenes/Tutorials` and `Assets/Scenes/Levels`, derives ordering, and optionally enriches from `LevelData` ScriptableObjects (auto‑loaded via Resources name heuristics).
-- Persistence and additive loading: `Core/MenuPersistence.cs` keeps menu/audio objects across scenes and removes duplicate `EventSystem`/`AudioListener` when scenes are loaded additively.
+- Persistence and additive loading:
+  - **Modern (recommended)**: `Core/PersistentUIManager.cs` manages UI via CanvasGroup alpha (no SetActive flicker), ensures single EventSystem/AudioListener. Enable via `GameInitializer.UsePersistentUIScene`. See `PERSISTENT_UI_MIGRATION_GUIDE.md`.
+  - **Legacy**: `Core/MenuPersistence.cs` uses SetActive toggling and duplicate cleanup. Works but causes UI flicker during scene transitions.
 - UI counters: `Core/MoveCounter.cs` is a singleton that auto‑discovers TextMeshProUGUI for moves/timer using naming heuristics; stops timer when a Canvas with "complete" is active.
 
 ## Conventions and patterns
@@ -16,14 +18,17 @@ Short, actionable rules to get productive fast. Follow the existing service sing
 - Don't construct `new InputSystem_Actions()`; use `ServiceLocator.Get<InputService>().InputActions` and its forwarded events (`OnPlayerMove`, `OnUICancel`).
 - Don't hardcode `buildIndex`; use `SceneInfo.GetActiveSceneType()` / `SceneInfo.ShouldShowBackground()`.
 - Centralize audio through `ServiceLocator.Get<ModernAudioService>()`/`UnifiedAudioManager`; don't add stray `AudioSource`s.
+- For UI visibility in persistent scenes, prefer CanvasGroup alpha over SetActive to avoid flicker and state loss. Use `PersistentUIManager.Show()`/`.Hide()` if available.
 - For Move/Timer UI, prefer exact names "Moves" and "Timer"; otherwise include terms: moves: move|moves|step; time: time|timer|clock; completion Canvas name contains "complete".
 - Level select UI: use `UI/DynamicLevelSelector.cs` with a prefab that has `UI/DynamicLevelButton.cs`.
+- Achievement UI (badges/text): subscribe to `AchievementManager.AchievementsChanged` in `OnEnable` (unsubscribe in `OnDisable`); avoid per-frame polling. Acquire via `ServiceLocator.TryGet<AchievementManager>` and call a local `RefreshBadges()` method on change.
 
 ## Common APIs (copy/paste)
 - Service access: `var inputService = SokobanSummer.Core.ServiceLocator.Get<InputService>();` then `inputService.EnablePlayerInput();`
 - Audio: `SokobanSummer.Core.ServiceLocator.Get<ModernAudioService>().PlaySFX(clip);` `ServiceLocator.Get<ModernAudioService>().PlayMusic(clip, true);` `ServiceLocator.Get<ModernAudioService>().SetVolume(Audio.AudioChannelType.SFX, 0.5f);`
 - Scene/levels: `var t = Core.SceneInfo.GetActiveSceneType(); var showBg = Core.SceneInfo.ShouldShowBackground();` `var levels = SokobanSummer.Core.ServiceLocator.Get<LevelManager>().GetLevels(Core.SceneType.GameplayLevel);`
 - Moves/timer: `SokobanSummer.Core.ServiceLocator.Get<MoveCounter>().IncrementMove();` `ServiceLocator.Get<MoveCounter>().ResetCounter();`
+- Persistent UI: `Core.PersistentUIManager.Show(animated: true);` `Core.PersistentUIManager.Hide(animated: false);` `bool exists = Core.PersistentUIManager.Exists;`
 
 ## Editor & workflows
 - Play from the Game scene with `GameInitializer`. Inspector refs: `Background`, optional `UnifiedAudioManagerPrefab`, optional `MoveCounterPrefab`, `MusicPlayer`. Missing prefabs auto‑create sane defaults.
@@ -37,16 +42,17 @@ Short, actionable rules to get productive fast. Follow the existing service sing
 - Git LFS: extension‑based rules in `.gitattributes`; see root `README.md` for post‑move normalization.
 
 ## File map (start here)
-- Init/services: `Core/GameInitializer.cs`, `Core/ServiceLocator.cs`, `Core/ModernAudioService.cs`, `Core/InputService.cs`, `Core/MoveCounter.cs`, `Core/MenuPersistence.cs`
+- Init/services: `Core/GameInitializer.cs`, `Core/ServiceLocator.cs`, `Core/ModernAudioService.cs`, `Core/InputService.cs`, `Core/MoveCounter.cs`, `Core/PersistentUIManager.cs`, `Core/MenuPersistence.cs` (legacy)
 - Audio: `Audio/UnifiedAudioManager.cs`, `Audio/AudioVolumeSettings.cs`, `Audio/VolumeSlider.cs`
 - Scenes/levels: `Core/SceneInfo.cs`, `Core/SceneType.cs`, `Core/LevelManager.cs`, `Core/LevelData.cs`
 - UI: `UI/DynamicLevelSelector.cs`, `UI/DynamicLevelButton.cs`, `UI/CompleteUI.cs`, `UI/MainMenuLevelSelector.cs`
 - Tests/tools: `Core/InitializationValidator.cs`, `Testing/MoveCounterTimerTest.cs`
 
 ## Pitfalls
-- Don't duplicate input/audio singletons or add extra `EventSystem`/`AudioListener` in additively loaded scenes; `MenuPersistence` manages duplication.
+- Don't duplicate input/audio singletons or add extra `EventSystem`/`AudioListener` in additively loaded scenes; `PersistentUIManager` (modern) or `MenuPersistence` (legacy) manages duplication.
 - Don't hardcode scene indices; do update `GameInitializer.LoadMainMenuAsync()` if the menu scene name changes.
 - Don't use `.Instance` static properties; all services are accessed via `ServiceLocator.Get<T>()` or `ServiceLocator.TryGet<T>(out var service)` for null-safe optional access.
+- Prefer CanvasGroup alpha over SetActive for UI visibility when using PersistentUIManager to avoid flicker and state loss.
 
 Questions or gaps? If any part of the architecture isn’t clear (e.g., extending `LevelManager` or adding audio channels), ask and reference the specific target files you plan to modify.
 

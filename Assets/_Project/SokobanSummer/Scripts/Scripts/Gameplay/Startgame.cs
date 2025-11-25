@@ -63,14 +63,19 @@ namespace Gameplay
                 anyActive = true;
             }
 
-            if (anyActive && menu != null) menu.SetActive(true);
+            if (anyActive)
+            {
+                // Ensure persistent UI is visible (centralized UI flow)
+                PersistentUIManager.Show(true);
+            }
         }
 
         public void LoadNextScene()
         {
             foreach (var obj in startObjects.Where(obj => obj != null)) obj.SetActive(false);
-            if (menu != null)
-                menu.SetActive(true);
+
+            // Ensure persistent UI is visible (centralized UI flow)
+            PersistentUIManager.Show(true);
         }
     }
 }

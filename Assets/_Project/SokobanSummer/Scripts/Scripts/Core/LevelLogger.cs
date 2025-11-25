@@ -26,28 +26,40 @@ namespace Core
             Debug.Log("[LevelLogger]: Initialized and persisted across scenes");
         }
 
-        private void Update()
-        {
-            if (SceneInfo.IsMainMenuScene())
-                return;
-
-            if (!ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null || hasLogged)
-                return;
-
-            if (moveCounter.levelCompleteCanvas != null && moveCounter.levelCompleteCanvas.activeSelf)
-            {
-                var sceneIndex = SceneManager.GetActiveScene().buildIndex;
-                var moves = moveCounter.moveCount;
-                var time = moveCounter.GetElapsedTime();
-
-                LogLevel(sceneIndex, moves, time);
-                hasLogged = true;
-            }
-        }
-
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             hasLogged = false;
+            
+            // Subscribe to MoveCounter's completion event when it becomes available
+            if (ServiceLocator.TryGet<MoveCounter>(out var moveCounter) && moveCounter != null)
+            {
+                // Unsubscribe first to prevent duplicate subscriptions
+                moveCounter.OnLevelCompleted -= OnLevelCompleted;
+                moveCounter.OnLevelCompleted += OnLevelCompleted;
+                Debug.Log("[LevelLogger]: Subscribed to MoveCounter.OnLevelCompleted");
+            }
+        }
+
+        private void OnLevelCompleted(object sender, System.EventArgs e)
+        {
+            if (hasLogged)
+            {
+                Debug.Log("[LevelLogger]: Level already logged, skipping duplicate");
+                return;
+            }
+
+            if (!ServiceLocator.TryGet<MoveCounter>(out var moveCounter) || moveCounter == null)
+            {
+                Debug.LogWarning("[LevelLogger]: MoveCounter not available when level completed");
+                return;
+            }
+
+            var sceneIndex = SceneManager.GetActiveScene().buildIndex;
+            var moves = moveCounter.moveCount;
+            var time = moveCounter.GetElapsedTime();
+
+            LogLevel(sceneIndex, moves, time);
+            hasLogged = true;
         }
 
         private void LogLevel(int sceneIndex, int moves, float time)
@@ -130,6 +142,13 @@ namespace Core
         private void OnDestroy()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            
+            // Unsubscribe from MoveCounter if it exists
+            if (ServiceLocator.TryGet<MoveCounter>(out var moveCounter) && moveCounter != null)
+            {
+                moveCounter.OnLevelCompleted -= OnLevelCompleted;
+            }
+            
             Debug.Log("[LevelLogger]: Instance destroyed - unsubscribing from scene events");
         }
     }

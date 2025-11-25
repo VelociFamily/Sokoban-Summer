@@ -41,14 +41,21 @@ namespace Core
         public static SceneInfo FindSceneInfoInScene(Scene scene)
         {
             if (!scene.IsValid() || !scene.isLoaded)
+            {
+                Debug.Log($"[SceneInfo]: FindSceneInfoInScene('{scene.name}') -> Scene invalid or not loaded");
                 return null;
+            }
             
             var rootObjects = scene.GetRootGameObjects();
+            Debug.Log($"[SceneInfo]: FindSceneInfoInScene('{scene.name}') -> Searching {rootObjects.Length} root objects");
             foreach (var rootObj in rootObjects)
             {
                 var sceneInfo = rootObj.GetComponentInChildren<SceneInfo>();
                 if (sceneInfo != null)
+                {
+                    Debug.Log($"[SceneInfo]: FindSceneInfoInScene('{scene.name}') -> Found SceneInfo on '{rootObj.name}'");
                     return sceneInfo;
+                }
             }
             return null;
         }
@@ -89,11 +96,14 @@ namespace Core
             var sceneInfo = FindSceneInfoInScene(scene);
             if (sceneInfo != null)
             {
-                return sceneInfo.sceneType == SceneType.MainMenu;
+                bool isMenu = sceneInfo.sceneType == SceneType.MainMenu;
+                Debug.Log($"[SceneInfo]: IsMainMenuScene('{scene.name}') -> SceneInfo found (type={sceneInfo.sceneType}), result={isMenu}");
+                return isMenu;
             }
-        
             // Fallback to build index logic
-            return scene.buildIndex == 0;
+            bool fallback = scene.buildIndex == 0;
+            Debug.Log($"[SceneInfo]: IsMainMenuScene('{scene.name}') -> No SceneInfo component; fallback buildIndex={scene.buildIndex}, result={fallback}");
+            return fallback;
         }
 
         /// <summary>
@@ -116,11 +126,15 @@ namespace Core
             var sceneInfo = FindSceneInfoInScene(scene);
             if (sceneInfo != null)
             {
-                return sceneInfo.sceneType == SceneType.TutorialLevel || sceneInfo.sceneType == SceneType.GameplayLevel;
+                bool isGameplay = sceneInfo.sceneType == SceneType.TutorialLevel || sceneInfo.sceneType == SceneType.GameplayLevel;
+                Debug.Log($"[SceneInfo]: IsGameplayScene('{scene.name}') -> SceneInfo found (type={sceneInfo.sceneType}), result={isGameplay}");
+                return isGameplay;
             }
         
             // Fallback to build index logic (levels 1-6)
-            return scene.buildIndex is >= 1 and <= 6;
+            bool fallback = scene.buildIndex is >= 1 and <= 6;
+            Debug.Log($"[SceneInfo]: IsGameplayScene('{scene.name}') -> No SceneInfo component; fallback buildIndex={scene.buildIndex}, result={fallback}");
+            return fallback;
         }
 
         /// <summary>

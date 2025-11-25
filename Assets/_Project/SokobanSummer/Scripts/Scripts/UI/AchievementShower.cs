@@ -10,33 +10,61 @@ namespace UI
         public GameObject completeTutorialBadge;
         public GameObject completeLevelTwoBadge;
 
-        private void Update()
+        private AchievementManager _achievementManager;
+        private bool _warnedMissing;
+        private void OnEnable()
         {
-            var achievementManager = ServiceLocator.Get<AchievementManager>();
-            if (achievementManager == null)
-            {
-                Debug.LogWarning("[AchievementShower]: AchievementManager instance not found - badges will not update");
-                return;
-            }
+            TrySubscribe();
+        }
 
-            // Update each badge's active state based on AchievementManager
+        private void OnDisable()
+        {
+            if (_achievementManager != null)
+            {
+                _achievementManager.AchievementsChanged -= RefreshBadges;
+            }
+        }
+
+        private void TrySubscribe()
+        {
+            if (_achievementManager == null)
+            {
+                if (!ServiceLocator.TryGet<AchievementManager>(out _achievementManager))
+                {
+                    if (!_warnedMissing)
+                    {
+                        Debug.LogWarning("[AchievementShower]: AchievementManager not registered yet - will retry on next enable");
+                        _warnedMissing = true;
+                    }
+                    return;
+                }
+            }
+            _achievementManager.AchievementsChanged -= RefreshBadges; // avoid duplicate
+            _achievementManager.AchievementsChanged += RefreshBadges;
+            RefreshBadges(); // initial sync
+        }
+
+        private void RefreshBadges()
+        {
+            if (_achievementManager == null) return;
+
             if (confuseAndSpeedBadge != null)
             {
-                var shouldShow = achievementManager.ConfuseAndSpeed;
+                var shouldShow = _achievementManager.ConfuseAndSpeed;
                 if (confuseAndSpeedBadge.activeSelf != shouldShow)
                     confuseAndSpeedBadge.SetActive(shouldShow);
             }
 
             if (completeTutorialBadge != null)
             {
-                var shouldShow = achievementManager.CompleteTutorial;
+                var shouldShow = _achievementManager.CompleteTutorial;
                 if (completeTutorialBadge.activeSelf != shouldShow)
                     completeTutorialBadge.SetActive(shouldShow);
             }
 
             if (completeLevelTwoBadge != null)
             {
-                var shouldShow = achievementManager.CompleteLevelTwo;
+                var shouldShow = _achievementManager.CompleteLevelTwo;
                 if (completeLevelTwoBadge.activeSelf != shouldShow)
                     completeLevelTwoBadge.SetActive(shouldShow);
             }
