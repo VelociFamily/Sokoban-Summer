@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 5ffc608f308051c4aba0794ea06b4987
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7215873451692745576
+    second: '!RA_Pyramid_Doors03_0'
+  - first:
+      213: -3717578986913672391
+    second: '!RA_Pyramid_Doors03_1'
+  - first:
+      213: 8584544523185552795
+    second: '!RA_Pyramid_Doors03_2'
+  - first:
+      213: 9138832115759504258
+    second: '!RA_Pyramid_Doors03_3'
+  - first:
+      213: 7811420796321248008
+    second: '!RA_Pyramid_Doors03_4'
+  - first:
+      213: -6468808397785538690
+    second: '!RA_Pyramid_Doors03_5'
+  - first:
+      213: -3379543956531216048
+    second: '!RA_Pyramid_Doors03_6'
+  - first:
+      213: -8066135677989421922
+    second: '!RA_Pyramid_Doors03_7'
+  - first:
+      213: -5940621984581296901
+    second: '!RA_Pyramid_Doors03_8'
+  - first:
+      213: -7162732165243927050
+    second: '!RA_Pyramid_Doors03_9'
+  - first:
+      213: -8925379966223153463
+    second: '!RA_Pyramid_Doors03_10'
+  - first:
+      213: -5702481867731633672
+    second: '!RA_Pyramid_Doors03_11'
+  - first:
+      213: 6638311801446797708
+    second: '!RA_Pyramid_Doors03_12'
+  - first:
+      213: 7598344287746161581
+    second: '!RA_Pyramid_Doors03_13'
+  - first:
+      213: 7427975032228691789
+    second: '!RA_Pyramid_Doors03_14'
+  - first:
+      213: 6423457059328569595
+    second: '!RA_Pyramid_Doors03_15'
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_0'
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 287
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89c9ea7b3511cdb90800000000000000
+      internalID: -7215873451692745576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_1'
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 287
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933dd84ab91886cc0800000000000000
+      internalID: -3717578986913672391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_2'
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 287
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9dfffec2cd622770800000000000000
+      internalID: 8584544523185552795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_3'
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 287
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28bd6c1c367a3de70800000000000000
+      internalID: 9138832115759504258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_4'
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 191
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 803b3dbd3ddb76c60800000000000000
+      internalID: 7811420796321248008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_5'
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 191
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7fdde1190d2a36a0800000000000000
+      internalID: -6468808397785538690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_6'
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 191
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05183285da27911d0800000000000000
+      internalID: -3379543956531216048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_7'
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 191
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9cf55b46545f0090800000000000000
+      internalID: -8066135677989421922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_8'
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 95
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfcd720a7cbae8da0800000000000000
+      internalID: -5940621984581296901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_9'
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 95
+        width: 68
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f50f55ab0dd89c90800000000000000
+      internalID: -7162732165243927050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_10'
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 95
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c681eb953ea22480800000000000000
+      internalID: -8925379966223153463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_11'
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 95
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f9ffbf44f6bcd0b0800000000000000
+      internalID: -5702481867731633672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_12'
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8115818965002c50800000000000000
+      internalID: 6638311801446797708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_13'
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 0
+        width: 68
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab7a383fddb27960800000000000000
+      internalID: 7598344287746161581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_14'
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 0
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f367ccfe7751760800000000000000
+      internalID: 7427975032228691789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '!RA_Pyramid_Doors03_15'
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 0
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0314b9924b42950800000000000000
+      internalID: 6423457059328569595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      '!RA_Pyramid_Doors03_0': -7215873451692745576
+      '!RA_Pyramid_Doors03_1': -3717578986913672391
+      '!RA_Pyramid_Doors03_10': -8925379966223153463
+      '!RA_Pyramid_Doors03_11': -5702481867731633672
+      '!RA_Pyramid_Doors03_12': 6638311801446797708
+      '!RA_Pyramid_Doors03_13': 7598344287746161581
+      '!RA_Pyramid_Doors03_14': 7427975032228691789
+      '!RA_Pyramid_Doors03_15': 6423457059328569595
+      '!RA_Pyramid_Doors03_2': 8584544523185552795
+      '!RA_Pyramid_Doors03_3': 9138832115759504258
+      '!RA_Pyramid_Doors03_4': 7811420796321248008
+      '!RA_Pyramid_Doors03_5': -6468808397785538690
+      '!RA_Pyramid_Doors03_6': -3379543956531216048
+      '!RA_Pyramid_Doors03_7': -8066135677989421922
+      '!RA_Pyramid_Doors03_8': -5940621984581296901
+      '!RA_Pyramid_Doors03_9': -7162732165243927050
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
