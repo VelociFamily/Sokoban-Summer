@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Threading.Tasks;
 using TMPro;
@@ -34,6 +35,12 @@ namespace Core
 
         private bool confuseAndSpeedUnlocked;
 
+        /// <summary>
+        /// Fired whenever any achievement state or selected hat changes.
+        /// Subscribe UI elements (e.g., AchievementShower) instead of polling each frame.
+        /// </summary>
+        public event Action AchievementsChanged;
+
 
         /// <summary>
         /// Initialize the AchievementManager asynchronously
@@ -64,6 +71,9 @@ namespace Core
             await InitializeUIAsync();
 
             Debug.Log("[AchievementManager]: Initialized asynchronously with default unlocks");
+
+            // Notify listeners that initial state (including defaults & loaded saves) is ready.
+            RaiseChanged();
         }
 
         private async Task InitializeUIAsync()
@@ -158,6 +168,7 @@ namespace Core
                 SaveFacade.Instance.Achievements.confuseAndSpeed = true;
                 SaveFacade.Instance.SaveAchievements();
             }
+            RaiseChanged();
         }
 
         public void UnlockTutorial()
@@ -169,6 +180,7 @@ namespace Core
                 SaveFacade.Instance.Achievements.completeTutorial = true;
                 SaveFacade.Instance.SaveAchievements();
             }
+            RaiseChanged();
         }
 
         public void UnlockLevelTwo()
@@ -180,6 +192,7 @@ namespace Core
                 SaveFacade.Instance.Achievements.completeLevelTwo = true;
                 SaveFacade.Instance.SaveAchievements();
             }
+            RaiseChanged();
         }
 
         // ======================
@@ -195,6 +208,7 @@ namespace Core
                 SaveFacade.Instance.Achievements.selectedHatName = hatName ?? "";
                 SaveFacade.Instance.SaveAll();
             }
+            RaiseChanged();
         }
 
         // ======================
@@ -231,6 +245,11 @@ namespace Core
             yield return new WaitForSeconds(delay);
             if (achievementText != null) achievementText.text = "";
             hideAchievementCoroutine = null;
+        }
+
+        private void RaiseChanged()
+        {
+            AchievementsChanged?.Invoke();
         }
     }
 }

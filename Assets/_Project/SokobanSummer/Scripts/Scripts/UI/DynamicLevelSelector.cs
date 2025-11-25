@@ -122,11 +122,19 @@ namespace UI
             // Apply layout changes live in editor
             AutoBindScrollRectAndContainer();
             AutoBindPaginationButtonsIfMissing();
-            EnsureOrConfigureLayoutGroup();
-            AssignDefaultPrefabsInEditor();
-            HookPaginationButtons();
-            UpdateLayout();
-            UpdatePaginationControls();
+            
+#if UNITY_EDITOR
+            // Defer component modification to avoid "DestroyImmediate during OnValidate" errors
+            EditorApplication.delayCall += () =>
+            {
+                if (this == null) return;
+                EnsureOrConfigureLayoutGroup();
+                AssignDefaultPrefabsInEditor();
+                HookPaginationButtons();
+                UpdateLayout();
+                UpdatePaginationControls();
+            };
+#endif
         }
 
         /// <summary>
@@ -601,6 +609,9 @@ namespace UI
 #if UNITY_EDITOR
                         if (!Application.isPlaying)
                         {
+                            // Use DestroyImmediate only if safe (e.g. via delayCall in OnValidate, or direct call in Editor)
+                            // But here we are called from Start() too.
+                            // If called from OnValidate via delayCall, it's safe.
                             UnityEngine.Object.DestroyImmediate(g);
                         }
                         else

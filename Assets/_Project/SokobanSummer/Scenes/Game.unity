@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 1538283961}
   - component: {fileID: 1538283963}
   - component: {fileID: 1538283962}
+  - component: {fileID: 1538283964}
   m_Layer: 0
   m_Name: GameInitiator
   m_TagString: Untagged
@@ -230,6 +231,8 @@ MonoBehaviour:
     type: 3}
   UnifiedAudioManagerPrefab: {fileID: 3022072492611492690, guid: 2fac25f5d6ca84f4b9fb94f468a5c181,
     type: 3}
+  PersistentUISceneName: PersistentUI
+  UsePersistentUIScene: 1
   LevelLogger: {fileID: 7322051495895024113, guid: 8f10432bbd156e44ba6569edb1f1fbd9,
     type: 3}
   MoveCounterPrefab: {fileID: 5845952653526730329, guid: f67f088a84bdda14293342db0ae81bed,
@@ -348,6 +351,18 @@ MonoBehaviour:
   debugMode: 1
   unlockAllForTesting: 0
   autoRequireUnlockForGameplay: 1
+--- !u!225 &1538283964
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538283957}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
