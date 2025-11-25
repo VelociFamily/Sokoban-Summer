@@ -3627,7 +3627,7 @@ MonoBehaviour:
   sceneType: 3
   showBackground: 0
   levelNumber: 3
-  levelData: {fileID: 0}
+  levelData: {fileID: 11400000, guid: 06d5675d418c5d9449be778f748282b4, type: 2}
 --- !u!1001 &1562642879
 PrefabInstance:
   m_ObjectHideFlags: 0

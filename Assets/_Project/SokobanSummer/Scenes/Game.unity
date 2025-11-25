@@ -232,7 +232,7 @@ MonoBehaviour:
   UnifiedAudioManagerPrefab: {fileID: 3022072492611492690, guid: 2fac25f5d6ca84f4b9fb94f468a5c181,
     type: 3}
   PersistentUISceneName: PersistentUI
-  UsePersistentUIScene: 1
+  UsePersistentUIScene: 0
   LevelLogger: {fileID: 7322051495895024113, guid: 8f10432bbd156e44ba6569edb1f1fbd9,
     type: 3}
   MoveCounterPrefab: {fileID: 5845952653526730329, guid: f67f088a84bdda14293342db0ae81bed,
