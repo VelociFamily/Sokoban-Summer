@@ -1,0 +1,845 @@
+fileFormatVersion: 2
+guid: 4c85b3b7955e66249aa71194543fcc0c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2625643256558071529
+    second: RA_Pyramid_Doors_0
+  - first:
+      213: -604700162774512272
+    second: RA_Pyramid_Doors_1
+  - first:
+      213: 6003495254078952815
+    second: RA_Pyramid_Doors_2
+  - first:
+      213: -3803151582217023789
+    second: RA_Pyramid_Doors_3
+  - first:
+      213: -2662445544131500832
+    second: RA_Pyramid_Doors_4
+  - first:
+      213: -2698967144690057955
+    second: RA_Pyramid_Doors_5
+  - first:
+      213: -1621815358624950078
+    second: RA_Pyramid_Doors_6
+  - first:
+      213: -4652860141252209337
+    second: RA_Pyramid_Doors_7
+  - first:
+      213: -2773830693449575018
+    second: RA_Pyramid_Doors_8
+  - first:
+      213: -6652758405876448988
+    second: RA_Pyramid_Doors_9
+  - first:
+      213: -8016042070509057430
+    second: RA_Pyramid_Doors_10
+  - first:
+      213: 2152420136615069957
+    second: RA_Pyramid_Doors_11
+  - first:
+      213: -5368142210807713042
+    second: RA_Pyramid_Doors_12
+  - first:
+      213: 5795252129690854697
+    second: RA_Pyramid_Doors_13
+  - first:
+      213: 6434318890147377677
+    second: RA_Pyramid_Doors_14
+  - first:
+      213: -5214278944408325789
+    second: RA_Pyramid_Doors_15
+  - first:
+      213: 4504989564795959400
+    second: RA_Pyramid_Doors_16
+  - first:
+      213: 3496755933151135133
+    second: RA_Pyramid_Doors_17
+  - first:
+      213: -492127339224847838
+    second: RA_Pyramid_Doors_18
+  - first:
+      213: 1475699921544636888
+    second: RA_Pyramid_Doors_19
+  - first:
+      213: -5854228216678544908
+    second: RA_Pyramid_Doors_20
+  - first:
+      213: -7991665217155742420
+    second: RA_Pyramid_Doors_21
+  - first:
+      213: 2987648088012942959
+    second: RA_Pyramid_Doors_22
+  - first:
+      213: 7800248594635477721
+    second: RA_Pyramid_Doors_23
+  - first:
+      213: 2920360946522445854
+    second: RA_Pyramid_Doors_24
+  - first:
+      213: -1914767231085661441
+    second: RA_Pyramid_Doors_25
+  - first:
+      213: 6309051048827598770
+    second: RA_Pyramid_Doors_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 127
+        width: 46
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee2b0e61a8207420800000000000000
+      internalID: 2625643256558071529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_1
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 127
+        width: 46
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d4432e76cab97f0800000000000000
+      internalID: -604700162774512272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 127
+        width: 46
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f659e1e2023b05350800000000000000
+      internalID: 6003495254078952815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_3
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 351
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3de4df239cd783bc0800000000000000
+      internalID: -3803151582217023789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_4
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 319
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e4683442e71d0bd0800000000000000
+      internalID: -2662445544131500832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_5
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 287
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d7c408ea75b8ad0800000000000000
+      internalID: -2698967144690057955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_6
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 255
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c813e926872e79e0800000000000000
+      internalID: -1621815358624950078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_7
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 223
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 745961b7a58bd6fb0800000000000000
+      internalID: -4652860141252209337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_8
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 191
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695dcd14eaf5189d0800000000000000
+      internalID: -2773830693449575018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_9
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 159
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4218d394a77aca3a0800000000000000
+      internalID: -6652758405876448988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_10
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 127
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a88ba253c41c090800000000000000
+      internalID: -8016042070509057430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_11
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 95
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 509c652d5beeedd10800000000000000
+      internalID: 2152420136615069957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_12
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 95
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee2b605d9178085b0800000000000000
+      internalID: -5368142210807713042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_13
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 95
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 925ac0e7b1fdc6050800000000000000
+      internalID: 5795252129690854697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_14
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 95
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d02f1daa0fa4b4950800000000000000
+      internalID: 6434318890147377677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_15
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 63
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3613ebe2de823a7b0800000000000000
+      internalID: -5214278944408325789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_16
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 63
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86831860420f48e30800000000000000
+      internalID: 4504989564795959400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 63
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9586bd9ef8f68030800000000000000
+      internalID: 3496755933151135133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_18
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 63
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22aae39dacc9b29f0800000000000000
+      internalID: -492127339224847838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_19
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 31
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d96db2924dba7410800000000000000
+      internalID: 1475699921544636888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_20
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 31
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f98ec6347a91cea0800000000000000
+      internalID: -5854228216678544908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_21
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 31
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c25469f93d6e71190800000000000000
+      internalID: -7991665217155742420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_22
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 31
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6ee2e75b12467920800000000000000
+      internalID: 2987648088012942959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_23
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d2dcf2f4cc004c60800000000000000
+      internalID: 7800248594635477721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_24
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18d461eec4378820800000000000000
+      internalID: 2920360946522445854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_25
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff2b49329516d65e0800000000000000
+      internalID: -1914767231085661441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_Doors_26
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 0
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7bc2b80804e8750800000000000000
+      internalID: 6309051048827598770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Pyramid_Doors_0: 2625643256558071529
+      RA_Pyramid_Doors_1: -604700162774512272
+      RA_Pyramid_Doors_10: -8016042070509057430
+      RA_Pyramid_Doors_11: 2152420136615069957
+      RA_Pyramid_Doors_12: -5368142210807713042
+      RA_Pyramid_Doors_13: 5795252129690854697
+      RA_Pyramid_Doors_14: 6434318890147377677
+      RA_Pyramid_Doors_15: -5214278944408325789
+      RA_Pyramid_Doors_16: 4504989564795959400
+      RA_Pyramid_Doors_17: 3496755933151135133
+      RA_Pyramid_Doors_18: -492127339224847838
+      RA_Pyramid_Doors_19: 1475699921544636888
+      RA_Pyramid_Doors_2: 6003495254078952815
+      RA_Pyramid_Doors_20: -5854228216678544908
+      RA_Pyramid_Doors_21: -7991665217155742420
+      RA_Pyramid_Doors_22: 2987648088012942959
+      RA_Pyramid_Doors_23: 7800248594635477721
+      RA_Pyramid_Doors_24: 2920360946522445854
+      RA_Pyramid_Doors_25: -1914767231085661441
+      RA_Pyramid_Doors_26: 6309051048827598770
+      RA_Pyramid_Doors_3: -3803151582217023789
+      RA_Pyramid_Doors_4: -2662445544131500832
+      RA_Pyramid_Doors_5: -2698967144690057955
+      RA_Pyramid_Doors_6: -1621815358624950078
+      RA_Pyramid_Doors_7: -4652860141252209337
+      RA_Pyramid_Doors_8: -2773830693449575018
+      RA_Pyramid_Doors_9: -6652758405876448988
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
