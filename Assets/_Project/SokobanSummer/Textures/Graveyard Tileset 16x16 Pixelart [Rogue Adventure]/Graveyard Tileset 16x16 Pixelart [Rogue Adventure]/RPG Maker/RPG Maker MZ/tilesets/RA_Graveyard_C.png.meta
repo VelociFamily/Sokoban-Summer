@@ -1,0 +1,1339 @@
+fileFormatVersion: 2
+guid: 7281d33f0792c4e43a215d21de89e74c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7263074608103666830
+    second: RA_Graveyard_C_0
+  - first:
+      213: 3559742973909225372
+    second: RA_Graveyard_C_1
+  - first:
+      213: 6149097995316058127
+    second: RA_Graveyard_C_2
+  - first:
+      213: 4012677501415698519
+    second: RA_Graveyard_C_3
+  - first:
+      213: 7551074484748935176
+    second: RA_Graveyard_C_4
+  - first:
+      213: -3129894324110446621
+    second: RA_Graveyard_C_5
+  - first:
+      213: 2258264080225707975
+    second: RA_Graveyard_C_6
+  - first:
+      213: 9065464851202901591
+    second: RA_Graveyard_C_7
+  - first:
+      213: -247141359295768196
+    second: RA_Graveyard_C_8
+  - first:
+      213: -1627870611513754997
+    second: RA_Graveyard_C_9
+  - first:
+      213: 4104710683514367266
+    second: RA_Graveyard_C_10
+  - first:
+      213: -9020178563247327609
+    second: RA_Graveyard_C_11
+  - first:
+      213: -867683861701529584
+    second: RA_Graveyard_C_12
+  - first:
+      213: 9065667890698643895
+    second: RA_Graveyard_C_13
+  - first:
+      213: -2558670453002146658
+    second: RA_Graveyard_C_14
+  - first:
+      213: -7354521429336439047
+    second: RA_Graveyard_C_15
+  - first:
+      213: 7557665954452016276
+    second: RA_Graveyard_C_16
+  - first:
+      213: -8372429589467229424
+    second: RA_Graveyard_C_17
+  - first:
+      213: 6629845043367103235
+    second: RA_Graveyard_C_18
+  - first:
+      213: 755481181706904986
+    second: RA_Graveyard_C_19
+  - first:
+      213: -8291107141512041211
+    second: RA_Graveyard_C_20
+  - first:
+      213: 4823513213006029495
+    second: RA_Graveyard_C_21
+  - first:
+      213: -4297574537540893217
+    second: RA_Graveyard_C_22
+  - first:
+      213: 3698616043536594958
+    second: RA_Graveyard_C_23
+  - first:
+      213: -4679718552650621736
+    second: RA_Graveyard_C_24
+  - first:
+      213: -1729098402695511169
+    second: RA_Graveyard_C_25
+  - first:
+      213: 9005898282132665138
+    second: RA_Graveyard_C_26
+  - first:
+      213: 3153728601102057713
+    second: RA_Graveyard_C_27
+  - first:
+      213: 4824005279341311658
+    second: RA_Graveyard_C_28
+  - first:
+      213: 1722613178504802043
+    second: RA_Graveyard_C_29
+  - first:
+      213: 952850531820461998
+    second: RA_Graveyard_C_30
+  - first:
+      213: 7874328624002632577
+    second: RA_Graveyard_C_31
+  - first:
+      213: 41417492446720624
+    second: RA_Graveyard_C_32
+  - first:
+      213: 8388764706253243461
+    second: RA_Graveyard_C_33
+  - first:
+      213: 7139432073444300599
+    second: RA_Graveyard_C_34
+  - first:
+      213: 3541542004966525615
+    second: RA_Graveyard_C_35
+  - first:
+      213: -4578292924099273776
+    second: RA_Graveyard_C_36
+  - first:
+      213: 7530932754948035396
+    second: RA_Graveyard_C_37
+  - first:
+      213: -403236215028832496
+    second: RA_Graveyard_C_38
+  - first:
+      213: 3078291347032670981
+    second: RA_Graveyard_C_39
+  - first:
+      213: -7834305918269401237
+    second: RA_Graveyard_C_40
+  - first:
+      213: -2614891952790782539
+    second: RA_Graveyard_C_41
+  - first:
+      213: -2360161751428113040
+    second: RA_Graveyard_C_42
+  - first:
+      213: -4295073997374084160
+    second: RA_Graveyard_C_43
+  - first:
+      213: -1255823970286825783
+    second: RA_Graveyard_C_44
+  - first:
+      213: -205632721463105483
+    second: RA_Graveyard_C_45
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Graveyard_C_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 671
+        width: 289
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b42d61020643b90800000000000000
+      internalID: -7263074608103666830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_1
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 677
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f4d8bdf5fb66130800000000000000
+      internalID: 3559742973909225372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_2
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 677
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0851e32c0cf55550800000000000000
+      internalID: 6149097995316058127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_3
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 677
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 750b51e6de4efa730800000000000000
+      internalID: 4012677501415698519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_4
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 677
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 800e9ff8c3ecac860800000000000000
+      internalID: 7551074484748935176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_5
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 677
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3efa2e2f1b16094d0800000000000000
+      internalID: -3129894324110446621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_6
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 677
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7a0e65737f65f10800000000000000
+      internalID: 2258264080225707975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 575
+        width: 289
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7560db350400fcd70800000000000000
+      internalID: 9065464851202901591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_8
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 581
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c795edd3e3af19cf0800000000000000
+      internalID: -247141359295768196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_9
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 581
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8abc6cbd44a869e0800000000000000
+      internalID: -1627870611513754997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_10
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 581
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22def947e9cd6f830800000000000000
+      internalID: 4104710683514367266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_11
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 581
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 786bc0f3363e1d280800000000000000
+      internalID: -9020178563247327609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_12
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 581
+        width: 92
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 010f0fdff1e55f3f0800000000000000
+      internalID: -867683861701529584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_13
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 581
+        width: 92
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b9e1c42ae8bfcd70800000000000000
+      internalID: 9065667890698643895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 479
+        width: 481
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9ce48787c6cd7cd0800000000000000
+      internalID: -2558670453002146658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_15
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 533
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f64767d9bd7fe990800000000000000
+      internalID: -7354521429336439047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_16
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 485
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49c0d22b42932e860800000000000000
+      internalID: 7557665954452016276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_17
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 485
+        width: 38
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01316dcb5a72fcb80800000000000000
+      internalID: -8372429589467229424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_18
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 485
+        width: 26
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30bc7c5c0f0f10c50800000000000000
+      internalID: 6629845043367103235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_19
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 485
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a95e12ec1220c7a00800000000000000
+      internalID: 755481181706904986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_20
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 485
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50d6873abf110fc80800000000000000
+      internalID: -8291107141512041211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 383
+        width: 673
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b2a0ae06bf80f240800000000000000
+      internalID: 4823513213006029495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_22
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 389
+        width: 86
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd58c164ab2fb54c0800000000000000
+      internalID: -4297574537540893217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 287
+        width: 289
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e083f8b02bf145330800000000000000
+      internalID: 3698616043536594958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_24
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 293
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc547445cc4e0fb0800000000000000
+      internalID: -4679718552650621736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_25
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 293
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7383a5f9220108e0800000000000000
+      internalID: -1729098402695511169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_26
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 293
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23371d5b5c06bfc70800000000000000
+      internalID: 9005898282132665138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_27
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 293
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f08daa147b44cb20800000000000000
+      internalID: 3153728601102057713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_28
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 293
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa67fbd2e3f42f240800000000000000
+      internalID: 4824005279341311658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_29
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 293
+        width: 92
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfe6f2e1f83f7e710800000000000000
+      internalID: 1722613178504802043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 191
+        width: 289
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaf5331a284393d00800000000000000
+      internalID: 952850531820461998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_31
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 197
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b0e5ed92c374d60800000000000000
+      internalID: 7874328624002632577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_32
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 197
+        width: 86
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07236cc6df4239000800000000000000
+      internalID: 41417492446720624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_33
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 197
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5440f840e01ea6470800000000000000
+      internalID: 8388764706253243461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_34
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 197
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7379dabf4ab541360800000000000000
+      internalID: 7139432073444300599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_35
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 197
+        width: 92
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faa872b80b5162130800000000000000
+      internalID: 3541542004966525615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_36
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 197
+        width: 92
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dbd065a7d2a670c0800000000000000
+      internalID: -4578292924099273776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 481
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4431806a07f338860800000000000000
+      internalID: 7530932754948035396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_38
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01722a28cca676af0800000000000000
+      internalID: -403236215028832496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_39
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 101
+        width: 38
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5038a0faba948ba20800000000000000
+      internalID: 3078291347032670981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_40
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 101
+        width: 38
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b67dfc77644f64390800000000000000
+      internalID: -7834305918269401237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_41
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 101
+        width: 26
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bdb0eb8f9906bbd0800000000000000
+      internalID: -2614891952790782539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_42
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 101
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07dd9a944650f3fd0800000000000000
+      internalID: -2360161751428113040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_43
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 101
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cb2086a4f4d464c0800000000000000
+      internalID: -4295073997374084160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 673
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ce02aea0ca629ee0800000000000000
+      internalID: -1255823970286825783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_C_45
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 5
+        width: 86
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 538aefa1122752df0800000000000000
+      internalID: -205632721463105483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Graveyard_C_0: -7263074608103666830
+      RA_Graveyard_C_1: 3559742973909225372
+      RA_Graveyard_C_10: 4104710683514367266
+      RA_Graveyard_C_11: -9020178563247327609
+      RA_Graveyard_C_12: -867683861701529584
+      RA_Graveyard_C_13: 9065667890698643895
+      RA_Graveyard_C_14: -2558670453002146658
+      RA_Graveyard_C_15: -7354521429336439047
+      RA_Graveyard_C_16: 7557665954452016276
+      RA_Graveyard_C_17: -8372429589467229424
+      RA_Graveyard_C_18: 6629845043367103235
+      RA_Graveyard_C_19: 755481181706904986
+      RA_Graveyard_C_2: 6149097995316058127
+      RA_Graveyard_C_20: -8291107141512041211
+      RA_Graveyard_C_21: 4823513213006029495
+      RA_Graveyard_C_22: -4297574537540893217
+      RA_Graveyard_C_23: 3698616043536594958
+      RA_Graveyard_C_24: -4679718552650621736
+      RA_Graveyard_C_25: -1729098402695511169
+      RA_Graveyard_C_26: 9005898282132665138
+      RA_Graveyard_C_27: 3153728601102057713
+      RA_Graveyard_C_28: 4824005279341311658
+      RA_Graveyard_C_29: 1722613178504802043
+      RA_Graveyard_C_3: 4012677501415698519
+      RA_Graveyard_C_30: 952850531820461998
+      RA_Graveyard_C_31: 7874328624002632577
+      RA_Graveyard_C_32: 41417492446720624
+      RA_Graveyard_C_33: 8388764706253243461
+      RA_Graveyard_C_34: 7139432073444300599
+      RA_Graveyard_C_35: 3541542004966525615
+      RA_Graveyard_C_36: -4578292924099273776
+      RA_Graveyard_C_37: 7530932754948035396
+      RA_Graveyard_C_38: -403236215028832496
+      RA_Graveyard_C_39: 3078291347032670981
+      RA_Graveyard_C_4: 7551074484748935176
+      RA_Graveyard_C_40: -7834305918269401237
+      RA_Graveyard_C_41: -2614891952790782539
+      RA_Graveyard_C_42: -2360161751428113040
+      RA_Graveyard_C_43: -4295073997374084160
+      RA_Graveyard_C_44: -1255823970286825783
+      RA_Graveyard_C_45: -205632721463105483
+      RA_Graveyard_C_5: -3129894324110446621
+      RA_Graveyard_C_6: 2258264080225707975
+      RA_Graveyard_C_7: 9065464851202901591
+      RA_Graveyard_C_8: -247141359295768196
+      RA_Graveyard_C_9: -1627870611513754997
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

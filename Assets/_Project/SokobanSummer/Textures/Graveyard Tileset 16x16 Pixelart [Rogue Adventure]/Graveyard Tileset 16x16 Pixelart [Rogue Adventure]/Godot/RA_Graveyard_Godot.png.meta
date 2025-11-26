@@ -1,0 +1,5993 @@
+fileFormatVersion: 2
+guid: 58b1830e26485e14c80525abd48f326b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5666120192944329945
+    second: RA_Graveyard_Godot_0
+  - first:
+      213: 7201249197841614911
+    second: RA_Graveyard_Godot_1
+  - first:
+      213: -4833704935223403893
+    second: RA_Graveyard_Godot_2
+  - first:
+      213: 3816167408493698136
+    second: RA_Graveyard_Godot_3
+  - first:
+      213: -7322395273975343514
+    second: RA_Graveyard_Godot_4
+  - first:
+      213: -1435362067048901292
+    second: RA_Graveyard_Godot_5
+  - first:
+      213: 7098997976160295464
+    second: RA_Graveyard_Godot_6
+  - first:
+      213: -2855970924817810778
+    second: RA_Graveyard_Godot_7
+  - first:
+      213: -1878932533360955933
+    second: RA_Graveyard_Godot_8
+  - first:
+      213: 3195796517058683173
+    second: RA_Graveyard_Godot_9
+  - first:
+      213: 1696124768813683300
+    second: RA_Graveyard_Godot_10
+  - first:
+      213: 4896871203811606949
+    second: RA_Graveyard_Godot_11
+  - first:
+      213: 6366410249460214400
+    second: RA_Graveyard_Godot_12
+  - first:
+      213: 1599513975312009196
+    second: RA_Graveyard_Godot_13
+  - first:
+      213: -3217597354328883707
+    second: RA_Graveyard_Godot_14
+  - first:
+      213: 5468869360628189300
+    second: RA_Graveyard_Godot_15
+  - first:
+      213: -1701287709954485075
+    second: RA_Graveyard_Godot_16
+  - first:
+      213: -3133445039693678015
+    second: RA_Graveyard_Godot_17
+  - first:
+      213: 3165624385347147377
+    second: RA_Graveyard_Godot_18
+  - first:
+      213: 8582637438066855874
+    second: RA_Graveyard_Godot_19
+  - first:
+      213: -2932076363377533607
+    second: RA_Graveyard_Godot_20
+  - first:
+      213: 1476035020017722555
+    second: RA_Graveyard_Godot_21
+  - first:
+      213: 3442773358148932306
+    second: RA_Graveyard_Godot_22
+  - first:
+      213: 3274212529420104764
+    second: RA_Graveyard_Godot_23
+  - first:
+      213: -2757395298776093838
+    second: RA_Graveyard_Godot_24
+  - first:
+      213: -2547415292780071919
+    second: RA_Graveyard_Godot_25
+  - first:
+      213: -1526635295152555889
+    second: RA_Graveyard_Godot_26
+  - first:
+      213: -6378028459834773587
+    second: RA_Graveyard_Godot_27
+  - first:
+      213: -8139141765354181426
+    second: RA_Graveyard_Godot_28
+  - first:
+      213: 7201809486105155742
+    second: RA_Graveyard_Godot_29
+  - first:
+      213: 7540115315285861861
+    second: RA_Graveyard_Godot_30
+  - first:
+      213: -5335622472129495890
+    second: RA_Graveyard_Godot_31
+  - first:
+      213: -6006341039509678312
+    second: RA_Graveyard_Godot_32
+  - first:
+      213: -2451236309889112214
+    second: RA_Graveyard_Godot_33
+  - first:
+      213: 2376372065829779538
+    second: RA_Graveyard_Godot_34
+  - first:
+      213: 217406218478097466
+    second: RA_Graveyard_Godot_35
+  - first:
+      213: 5042701618009191154
+    second: RA_Graveyard_Godot_36
+  - first:
+      213: -680856914020759280
+    second: RA_Graveyard_Godot_37
+  - first:
+      213: -5775480877962653773
+    second: RA_Graveyard_Godot_38
+  - first:
+      213: -2559154908461259582
+    second: RA_Graveyard_Godot_39
+  - first:
+      213: 6891034501001484437
+    second: RA_Graveyard_Godot_40
+  - first:
+      213: -5275148079381730170
+    second: RA_Graveyard_Godot_41
+  - first:
+      213: -950619694690383876
+    second: RA_Graveyard_Godot_42
+  - first:
+      213: 3818250247934632735
+    second: RA_Graveyard_Godot_43
+  - first:
+      213: 5843004585685762117
+    second: RA_Graveyard_Godot_44
+  - first:
+      213: 6466770166193932769
+    second: RA_Graveyard_Godot_45
+  - first:
+      213: 5473112158502451774
+    second: RA_Graveyard_Godot_46
+  - first:
+      213: -3729612498992262987
+    second: RA_Graveyard_Godot_47
+  - first:
+      213: 3420753184660919532
+    second: RA_Graveyard_Godot_48
+  - first:
+      213: -7196393612942461091
+    second: RA_Graveyard_Godot_49
+  - first:
+      213: -1385933830626541984
+    second: RA_Graveyard_Godot_50
+  - first:
+      213: -342588627902838430
+    second: RA_Graveyard_Godot_51
+  - first:
+      213: 3029782990081837662
+    second: RA_Graveyard_Godot_52
+  - first:
+      213: 7070554987584387789
+    second: RA_Graveyard_Godot_53
+  - first:
+      213: -986417618116365034
+    second: RA_Graveyard_Godot_54
+  - first:
+      213: 6012203289638718944
+    second: RA_Graveyard_Godot_55
+  - first:
+      213: -1528500567545494524
+    second: RA_Graveyard_Godot_56
+  - first:
+      213: -3702550877240304598
+    second: RA_Graveyard_Godot_57
+  - first:
+      213: -7555301224996006483
+    second: RA_Graveyard_Godot_58
+  - first:
+      213: -5706087384485635545
+    second: RA_Graveyard_Godot_59
+  - first:
+      213: 5268203043800245758
+    second: RA_Graveyard_Godot_60
+  - first:
+      213: -869164143338256796
+    second: RA_Graveyard_Godot_61
+  - first:
+      213: 8023086936349288531
+    second: RA_Graveyard_Godot_62
+  - first:
+      213: -245643353425818304
+    second: RA_Graveyard_Godot_63
+  - first:
+      213: -6417125677935443727
+    second: RA_Graveyard_Godot_64
+  - first:
+      213: 7655889675996797612
+    second: RA_Graveyard_Godot_65
+  - first:
+      213: -8125134439350173136
+    second: RA_Graveyard_Godot_66
+  - first:
+      213: 8329841630994727951
+    second: RA_Graveyard_Godot_67
+  - first:
+      213: -6468482395061889675
+    second: RA_Graveyard_Godot_68
+  - first:
+      213: 3588607960092303671
+    second: RA_Graveyard_Godot_69
+  - first:
+      213: -4213633333498667744
+    second: RA_Graveyard_Godot_70
+  - first:
+      213: -62553338690971770
+    second: RA_Graveyard_Godot_71
+  - first:
+      213: 1023007244078894596
+    second: RA_Graveyard_Godot_72
+  - first:
+      213: -1763948633832249365
+    second: RA_Graveyard_Godot_73
+  - first:
+      213: -7353445645658105771
+    second: RA_Graveyard_Godot_74
+  - first:
+      213: -5344560768192933586
+    second: RA_Graveyard_Godot_75
+  - first:
+      213: 8592452888295728716
+    second: RA_Graveyard_Godot_76
+  - first:
+      213: 9177059523079289732
+    second: RA_Graveyard_Godot_77
+  - first:
+      213: -5252088601310418543
+    second: RA_Graveyard_Godot_78
+  - first:
+      213: 6113817034400016610
+    second: RA_Graveyard_Godot_79
+  - first:
+      213: -8086816601374291759
+    second: RA_Graveyard_Godot_80
+  - first:
+      213: 1483100676397632783
+    second: RA_Graveyard_Godot_81
+  - first:
+      213: -8001549987358261899
+    second: RA_Graveyard_Godot_82
+  - first:
+      213: -620868019916528976
+    second: RA_Graveyard_Godot_83
+  - first:
+      213: -2649564313425971417
+    second: RA_Graveyard_Godot_84
+  - first:
+      213: 7185242342352032194
+    second: RA_Graveyard_Godot_85
+  - first:
+      213: -398148667176252138
+    second: RA_Graveyard_Godot_86
+  - first:
+      213: -5977258511007788100
+    second: RA_Graveyard_Godot_87
+  - first:
+      213: 8753280270427414751
+    second: RA_Graveyard_Godot_88
+  - first:
+      213: 6786224878068059009
+    second: RA_Graveyard_Godot_89
+  - first:
+      213: 2924730978529806540
+    second: RA_Graveyard_Godot_90
+  - first:
+      213: 4184506987326785077
+    second: RA_Graveyard_Godot_91
+  - first:
+      213: 2795454582855217712
+    second: RA_Graveyard_Godot_92
+  - first:
+      213: 815711062532989864
+    second: RA_Graveyard_Godot_93
+  - first:
+      213: -4558569440636092889
+    second: RA_Graveyard_Godot_94
+  - first:
+      213: 6475786863067918336
+    second: RA_Graveyard_Godot_95
+  - first:
+      213: 2031187542645416390
+    second: RA_Graveyard_Godot_96
+  - first:
+      213: -4445528695424039742
+    second: RA_Graveyard_Godot_97
+  - first:
+      213: 1418831732305473387
+    second: RA_Graveyard_Godot_98
+  - first:
+      213: -5348295579692976783
+    second: RA_Graveyard_Godot_99
+  - first:
+      213: 1123889453176882677
+    second: RA_Graveyard_Godot_100
+  - first:
+      213: -8802264124167573560
+    second: RA_Graveyard_Godot_101
+  - first:
+      213: -943064639364909624
+    second: RA_Graveyard_Godot_102
+  - first:
+      213: -2133507022987871985
+    second: RA_Graveyard_Godot_103
+  - first:
+      213: -1237689555921811165
+    second: RA_Graveyard_Godot_104
+  - first:
+      213: 7385519465765451698
+    second: RA_Graveyard_Godot_105
+  - first:
+      213: -5172883841202945888
+    second: RA_Graveyard_Godot_106
+  - first:
+      213: -6589191433189095249
+    second: RA_Graveyard_Godot_107
+  - first:
+      213: 8061453125251994419
+    second: RA_Graveyard_Godot_108
+  - first:
+      213: 2049505969985153251
+    second: RA_Graveyard_Godot_109
+  - first:
+      213: 644701805301774254
+    second: RA_Graveyard_Godot_110
+  - first:
+      213: 3273562276618958310
+    second: RA_Graveyard_Godot_111
+  - first:
+      213: -777573432620097760
+    second: RA_Graveyard_Godot_112
+  - first:
+      213: -143555409961179975
+    second: RA_Graveyard_Godot_113
+  - first:
+      213: -4436786171779015763
+    second: RA_Graveyard_Godot_114
+  - first:
+      213: 9016823014160633265
+    second: RA_Graveyard_Godot_115
+  - first:
+      213: 8610436702341754467
+    second: RA_Graveyard_Godot_116
+  - first:
+      213: -8778733933705939068
+    second: RA_Graveyard_Godot_117
+  - first:
+      213: -3983245567947848918
+    second: RA_Graveyard_Godot_118
+  - first:
+      213: -8744053851883524171
+    second: RA_Graveyard_Godot_119
+  - first:
+      213: 1610540902032762509
+    second: RA_Graveyard_Godot_120
+  - first:
+      213: 7931550858487816848
+    second: RA_Graveyard_Godot_121
+  - first:
+      213: -1366374876297349555
+    second: RA_Graveyard_Godot_122
+  - first:
+      213: -7438904906395835695
+    second: RA_Graveyard_Godot_123
+  - first:
+      213: 8847407436575746481
+    second: RA_Graveyard_Godot_124
+  - first:
+      213: -3740451265169009704
+    second: RA_Graveyard_Godot_125
+  - first:
+      213: 4697666276173735288
+    second: RA_Graveyard_Godot_126
+  - first:
+      213: -6979114093195690137
+    second: RA_Graveyard_Godot_127
+  - first:
+      213: -2616855501332930355
+    second: RA_Graveyard_Godot_128
+  - first:
+      213: 4696294531045119707
+    second: RA_Graveyard_Godot_129
+  - first:
+      213: 1291159518351384664
+    second: RA_Graveyard_Godot_130
+  - first:
+      213: -12657693412287922
+    second: RA_Graveyard_Godot_131
+  - first:
+      213: -7654741395020440985
+    second: RA_Graveyard_Godot_132
+  - first:
+      213: 5744730868041621428
+    second: RA_Graveyard_Godot_133
+  - first:
+      213: 8990340661929462120
+    second: RA_Graveyard_Godot_134
+  - first:
+      213: 5067303382033929180
+    second: RA_Graveyard_Godot_135
+  - first:
+      213: 7033935205707714987
+    second: RA_Graveyard_Godot_136
+  - first:
+      213: -4519806084883045855
+    second: RA_Graveyard_Godot_137
+  - first:
+      213: 9164299991617958552
+    second: RA_Graveyard_Godot_138
+  - first:
+      213: 4433961884962130853
+    second: RA_Graveyard_Godot_139
+  - first:
+      213: 3807959899059968602
+    second: RA_Graveyard_Godot_140
+  - first:
+      213: -1987551144287433519
+    second: RA_Graveyard_Godot_141
+  - first:
+      213: -7360782264296691090
+    second: RA_Graveyard_Godot_142
+  - first:
+      213: -3988001410898735079
+    second: RA_Graveyard_Godot_143
+  - first:
+      213: 3793656357687611995
+    second: RA_Graveyard_Godot_144
+  - first:
+      213: -8264777196428327486
+    second: RA_Graveyard_Godot_145
+  - first:
+      213: 2170585686288974470
+    second: RA_Graveyard_Godot_146
+  - first:
+      213: -4448593469640625667
+    second: RA_Graveyard_Godot_147
+  - first:
+      213: -2639594199254542565
+    second: RA_Graveyard_Godot_148
+  - first:
+      213: 7083651106165416658
+    second: RA_Graveyard_Godot_149
+  - first:
+      213: -6194069021444259037
+    second: RA_Graveyard_Godot_150
+  - first:
+      213: -6034163405419991900
+    second: RA_Graveyard_Godot_151
+  - first:
+      213: -4940242967761322805
+    second: RA_Graveyard_Godot_152
+  - first:
+      213: -642900091457935704
+    second: RA_Graveyard_Godot_153
+  - first:
+      213: 5921549060531354682
+    second: RA_Graveyard_Godot_154
+  - first:
+      213: -5921299577633231425
+    second: RA_Graveyard_Godot_155
+  - first:
+      213: 2739578798829506709
+    second: RA_Graveyard_Godot_156
+  - first:
+      213: -4276769796581877088
+    second: RA_Graveyard_Godot_157
+  - first:
+      213: -4281402910175460743
+    second: RA_Graveyard_Godot_158
+  - first:
+      213: 2503906057849274106
+    second: RA_Graveyard_Godot_159
+  - first:
+      213: -4731017415976008801
+    second: RA_Graveyard_Godot_160
+  - first:
+      213: -7150800485591908254
+    second: RA_Graveyard_Godot_161
+  - first:
+      213: -4937463895528245955
+    second: RA_Graveyard_Godot_162
+  - first:
+      213: 5360685002297790189
+    second: RA_Graveyard_Godot_163
+  - first:
+      213: -8113964908259607466
+    second: RA_Graveyard_Godot_164
+  - first:
+      213: 6516141493599767797
+    second: RA_Graveyard_Godot_165
+  - first:
+      213: 3257874835650002479
+    second: RA_Graveyard_Godot_166
+  - first:
+      213: 6337812868288140650
+    second: RA_Graveyard_Godot_167
+  - first:
+      213: 1997311471577442960
+    second: RA_Graveyard_Godot_168
+  - first:
+      213: -1817798227545094228
+    second: RA_Graveyard_Godot_169
+  - first:
+      213: 8545473974415533670
+    second: RA_Graveyard_Godot_170
+  - first:
+      213: -4496731658515671531
+    second: RA_Graveyard_Godot_171
+  - first:
+      213: 3331019735134017664
+    second: RA_Graveyard_Godot_172
+  - first:
+      213: 3261646115146634285
+    second: RA_Graveyard_Godot_173
+  - first:
+      213: -7875196424329479740
+    second: RA_Graveyard_Godot_174
+  - first:
+      213: -1108864605588495518
+    second: RA_Graveyard_Godot_175
+  - first:
+      213: -8291273247596571916
+    second: RA_Graveyard_Godot_176
+  - first:
+      213: -2364299948940037933
+    second: RA_Graveyard_Godot_177
+  - first:
+      213: -1777212224982624406
+    second: RA_Graveyard_Godot_178
+  - first:
+      213: 3342297136012112078
+    second: RA_Graveyard_Godot_179
+  - first:
+      213: 6019974885552254845
+    second: RA_Graveyard_Godot_180
+  - first:
+      213: 4857357161520108475
+    second: RA_Graveyard_Godot_181
+  - first:
+      213: -2785356779517200997
+    second: RA_Graveyard_Godot_182
+  - first:
+      213: -777890189881989673
+    second: RA_Graveyard_Godot_183
+  - first:
+      213: 7451728328169424571
+    second: RA_Graveyard_Godot_184
+  - first:
+      213: 578829201840639218
+    second: RA_Graveyard_Godot_185
+  - first:
+      213: 1373495224731573001
+    second: RA_Graveyard_Godot_186
+  - first:
+      213: -3717917106939581490
+    second: RA_Graveyard_Godot_187
+  - first:
+      213: -3923085649484700981
+    second: RA_Graveyard_Godot_188
+  - first:
+      213: -4818152516271426700
+    second: RA_Graveyard_Godot_189
+  - first:
+      213: 5158503824664778435
+    second: RA_Graveyard_Godot_190
+  - first:
+      213: 7951149804352154429
+    second: RA_Graveyard_Godot_191
+  - first:
+      213: 4005329037153058876
+    second: RA_Graveyard_Godot_192
+  - first:
+      213: 8441575847266134033
+    second: RA_Graveyard_Godot_193
+  - first:
+      213: 7003522000085390367
+    second: RA_Graveyard_Godot_194
+  - first:
+      213: 4512243844981557342
+    second: RA_Graveyard_Godot_195
+  - first:
+      213: -8594942425931915042
+    second: RA_Graveyard_Godot_196
+  - first:
+      213: 2242258155750629148
+    second: RA_Graveyard_Godot_197
+  - first:
+      213: 464818529208139085
+    second: RA_Graveyard_Godot_198
+  - first:
+      213: -7882122029047414231
+    second: RA_Graveyard_Godot_199
+  - first:
+      213: 3906461524488959629
+    second: RA_Graveyard_Godot_200
+  - first:
+      213: -5300189256624813698
+    second: RA_Graveyard_Godot_201
+  - first:
+      213: 4487585823955256943
+    second: RA_Graveyard_Godot_202
+  - first:
+      213: -49948882832468605
+    second: RA_Graveyard_Godot_203
+  - first:
+      213: 5505618636661738600
+    second: RA_Graveyard_Godot_204
+  - first:
+      213: 4822142932917535401
+    second: RA_Graveyard_Godot_205
+  - first:
+      213: 4780873019854161872
+    second: RA_Graveyard_Godot_206
+  - first:
+      213: -6463899063972377242
+    second: RA_Graveyard_Godot_207
+  - first:
+      213: 4121367319700200843
+    second: RA_Graveyard_Godot_208
+  - first:
+      213: 6111218849252592112
+    second: RA_Graveyard_Godot_209
+  - first:
+      213: 2982613686605837168
+    second: RA_Graveyard_Godot_210
+  - first:
+      213: -8946404921231473257
+    second: RA_Graveyard_Godot_211
+  - first:
+      213: -6731612650900703076
+    second: RA_Graveyard_Godot_212
+  - first:
+      213: -7660488591759923190
+    second: RA_Graveyard_Godot_213
+  - first:
+      213: 6465363247446636462
+    second: RA_Graveyard_Godot_214
+  - first:
+      213: -1544091163809498804
+    second: RA_Graveyard_Godot_215
+  - first:
+      213: 431592486194116707
+    second: RA_Graveyard_Godot_216
+  - first:
+      213: 3449735400937997269
+    second: RA_Graveyard_Godot_217
+  - first:
+      213: -3154066242908432528
+    second: RA_Graveyard_Godot_218
+  - first:
+      213: 2051265585182503211
+    second: RA_Graveyard_Godot_219
+  - first:
+      213: 8676645656975702311
+    second: RA_Graveyard_Godot_220
+  - first:
+      213: 4690819010447638112
+    second: RA_Graveyard_Godot_221
+  - first:
+      213: -2159751790717902855
+    second: RA_Graveyard_Godot_222
+  - first:
+      213: -8757115600575344059
+    second: RA_Graveyard_Godot_223
+  - first:
+      213: 965287462803065304
+    second: RA_Graveyard_Godot_224
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 342
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d45d1b8b4a12ae40800000000000000
+      internalID: 5666120192944329945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 337
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f388a68ddf9ffe360800000000000000
+      internalID: 7201249197841614911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_2
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 336
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ad4f2b8fa3becb0800000000000000
+      internalID: -4833704935223403893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 341
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85c90b20a00c5f430800000000000000
+      internalID: 3816167408493698136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_4
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 339
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66653b54b40a16a90800000000000000
+      internalID: -7322395273975343514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_5
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 340
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 455da7d0ec1941ce0800000000000000
+      internalID: -1435362067048901292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_6
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 341
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a50461c05b48260800000000000000
+      internalID: 7098997976160295464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_7
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 337
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aaf361539d8d58d0800000000000000
+      internalID: -2855970924817810778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_8
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 319
+        width: 162
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ed6810e0d0bce5e0800000000000000
+      internalID: -1878932533360955933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_9
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 321
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521a6bd0000c95c20800000000000000
+      internalID: 3195796517058683173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_10
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 321
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46291e3ad78d98710800000000000000
+      internalID: 1696124768813683300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_11
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 321
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a1c7064a6e25f340800000000000000
+      internalID: 4896871203811606949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_12
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 321
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08a6b7524680a5850800000000000000
+      internalID: 6366410249460214400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_13
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 321
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce7ceb76c7d923610800000000000000
+      internalID: 1599513975312009196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_14
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 321
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e7df8f04cc853d0800000000000000
+      internalID: -3217597354328883707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_15
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 273
+        width: 58
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 478c24b45b355eb40800000000000000
+      internalID: 5468869360628189300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_16
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 321
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da4dc6377dfc368e0800000000000000
+      internalID: -1701287709954485075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_17
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 321
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14a39dd8654c384d0800000000000000
+      internalID: -3133445039693678015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_18
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 321
+        width: 162
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1765ee43b9e8eeb20800000000000000
+      internalID: 3165624385347147377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_19
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 289
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cf81f3f647ab1770800000000000000
+      internalID: 8582637438066855874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 324
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d1092151c2f47d0800000000000000
+      internalID: -2932076363377533607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_21
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 329
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb46134c70eeb7410800000000000000
+      internalID: 1476035020017722555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_22
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 321
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d255aee02037cf20800000000000000
+      internalID: 3442773358148932306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_23
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 329
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34f73fa2f6507d20800000000000000
+      internalID: 3274212529420104764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 320
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27b6e17c593cbb9d0800000000000000
+      internalID: -2757395298776093838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 329
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 114327ab943c5acd0800000000000000
+      internalID: -2547415292780071919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_26
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 324
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f88bbda994d40dae0800000000000000
+      internalID: -1526635295152555889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_27
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 328
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daf673478e0bc77a0800000000000000
+      internalID: -6378028459834773587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_28
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 320
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecca48bffa5fb0f80800000000000000
+      internalID: -8139141765354181426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_29
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 328
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98165f1297f1f360800000000000000
+      internalID: 7201809486105155742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_30
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 323
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5a8151eeed3a860800000000000000
+      internalID: 7540115315285861861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_31
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 328
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eac312581af04f5b0800000000000000
+      internalID: -5335622472129495890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_32
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 321
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 817dc24c5a035aca0800000000000000
+      internalID: -6006341039509678312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_33
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 320
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a67258830957bfdd0800000000000000
+      internalID: -2451236309889112214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_34
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 303
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258f1f5adc19af020800000000000000
+      internalID: 2376372065829779538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_35
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 320
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a341958cdc1640300800000000000000
+      internalID: 217406218478097466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_36
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 319
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f2b9b977664bf540800000000000000
+      internalID: 5042701618009191154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_37
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0198ce87e3c1d86f0800000000000000
+      internalID: -680856914020759280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_38
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 288
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf89f5cdbe59dfa0800000000000000
+      internalID: -5775480877962653773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_39
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 289
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c428f37b2e0c7cd0800000000000000
+      internalID: -2559154908461259582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_40
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 289
+        width: 50
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598972f4e5fd1af50800000000000000
+      internalID: 6891034501001484437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_41
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 289
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68c2ede45c8eac6b0800000000000000
+      internalID: -5275148079381730170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 312
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf74d7d9c68bec2f0800000000000000
+      internalID: -950619694690383876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_43
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 304
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f13e0bbde562df430800000000000000
+      internalID: 3818250247934632735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_44
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 308
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54047ce86b5861150800000000000000
+      internalID: 5843004585685762117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_45
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 289
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9451824359eb950800000000000000
+      internalID: 6466770166193932769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_46
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 289
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3af867a28664fb40800000000000000
+      internalID: 5473112158502451774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_47
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 287
+        width: 98
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b095b74131cd3cc0800000000000000
+      internalID: -3729612498992262987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_48
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 289
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce41004c5e4f87f20800000000000000
+      internalID: 3420753184660919532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_49
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 289
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d57bcac1326412c90800000000000000
+      internalID: -7196393612942461091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_50
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 289
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06efe47268c24cce0800000000000000
+      internalID: -1385933830626541984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_51
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 289
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26943c14571ee3bf0800000000000000
+      internalID: -342588627902838430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_52
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 287
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5a4956b393fb0a20800000000000000
+      internalID: 3029782990081837662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_53
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 223
+        width: 49
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dca75dfbc48af1260800000000000000
+      internalID: 7070554987584387789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_54
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 289
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 615bcff076a8f42f0800000000000000
+      internalID: -986417618116365034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_55
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 289
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0edc954b903af6350800000000000000
+      internalID: 6012203289638718944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_56
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 289
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 404c77805dca9cae0800000000000000
+      internalID: -1528500567545494524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_57
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 225
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2cd7471895ed9cc0800000000000000
+      internalID: -3702550877240304598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_58
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 229
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da51a09c09d262790800000000000000
+      internalID: -7555301224996006483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_59
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 255
+        width: 64
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72a556681c7efc0b0800000000000000
+      internalID: -5706087384485635545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_60
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 255
+        width: 162
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5685691ca6c1940800000000000000
+      internalID: 5268203043800245758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_61
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 273
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46601d011db10f3f0800000000000000
+      internalID: -869164143338256796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_62
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 257
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3582d2b7f0bb75f60800000000000000
+      internalID: 8023086936349288531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_63
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 257
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d4e99ebac479cf0800000000000000
+      internalID: -245643353425818304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_64
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 257
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f0ce9ff13ac1f6a0800000000000000
+      internalID: -6417125677935443727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_65
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 257
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa9e51091f2f3a60800000000000000
+      internalID: 7655889675996797612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_66
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 257
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0328d36b649bd3f80800000000000000
+      internalID: -8125134439350173136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_67
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 257
+        width: 82
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0483ba74da899370800000000000000
+      internalID: 8329841630994727951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_68
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 257
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 575d77e78855b36a0800000000000000
+      internalID: -6468482395061889675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_69
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 257
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731e07b2deb4dc130800000000000000
+      internalID: 3588607960092303671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_70
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 225
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02d1117deca2685c0800000000000000
+      internalID: -4213633333498667744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_71
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 193
+        width: 58
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6875fc3e114c12ff0800000000000000
+      internalID: -62553338690971770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_72
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 223
+        width: 66
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40e49f91ba3723e00800000000000000
+      internalID: 1023007244078894596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_73
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 223
+        width: 226
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be7a46630123587e0800000000000000
+      internalID: -1763948633832249365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_74
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 225
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558d76f352053f990800000000000000
+      internalID: -7353445645658105771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_75
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 223
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e211f5b4c4e44d5b0800000000000000
+      internalID: -5344560768192933586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_76
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 225
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c46652c80668e3770800000000000000
+      internalID: 8592452888295728716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_77
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 161
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bb1cb93077b5f70800000000000000
+      internalID: 9177059523079289732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_78
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 225
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 199a30e6e35dc17b0800000000000000
+      internalID: -5252088601310418543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_79
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 160
+        width: 40
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e8252d4334a8d450800000000000000
+      internalID: 6113817034400016610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_80
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 191
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d88a57952bd5cf80800000000000000
+      internalID: -8086816601374291759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_81
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 192
+        width: 8
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d82d61538059410800000000000000
+      internalID: 1483100676397632783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_82
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 200
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57dbaf63ea8c4f090800000000000000
+      internalID: -8001549987358261899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_83
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 192
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b2a97c43db3267f0800000000000000
+      internalID: -620868019916528976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_84
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 193
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72771b08b4bda3bd0800000000000000
+      internalID: -2649564313425971417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_85
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 193
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c11df067db17b360800000000000000
+      internalID: 7185242342352032194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_86
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 193
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61d0a2d85ed797af0800000000000000
+      internalID: -398148667176252138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_87
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 200
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb353b89d038c0da0800000000000000
+      internalID: -5977258511007788100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_88
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd0e2427706e97970800000000000000
+      internalID: 8753280270427414751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_89
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 200
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18b4a2752938d2e50800000000000000
+      internalID: 6786224878068059009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_90
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 192
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc889de345bb69820800000000000000
+      internalID: 2924730978529806540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_91
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 191
+        width: 98
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536c0cb3fea521a30800000000000000
+      internalID: 4184506987326785077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_92
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 193
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032b2d4d1237bc620800000000000000
+      internalID: 2795454582855217712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_93
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 193
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3a2a9b3ecf15b00800000000000000
+      internalID: 815711062532989864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_94
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 193
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e3feefe35bcb0c0800000000000000
+      internalID: -4558569440636092889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_95
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 193
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 000fd4e77dd9ed950800000000000000
+      internalID: 6475786863067918336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_96
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 193
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c1249fee4a303c10800000000000000
+      internalID: 2031187542645416390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_97
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 193
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c4c176743f4e42c0800000000000000
+      internalID: -4445528695424039742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_98
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 193
+        width: 82
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6fae1871f3b0b310800000000000000
+      internalID: 1418831732305473387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_99
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 161
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175bb9ab18907c5b0800000000000000
+      internalID: -5348295579692976783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_100
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 176
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f58a67c08bd89f00800000000000000
+      internalID: 1123889453176882677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_101
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 176
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cfa3db5a6318d580800000000000000
+      internalID: -8802264124167573560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_102
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 184
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c53c6205bf89e2f0800000000000000
+      internalID: -943064639364909624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_103
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 176
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09b1099aa24462e0800000000000000
+      internalID: -2133507022987871985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_104
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 176
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329c11d08e7d2dee0800000000000000
+      internalID: -1237689555921811165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_105
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 177
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b7beaee2d2ae7660800000000000000
+      internalID: 7385519465765451698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_106
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 177
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a08db4bd893638b0800000000000000
+      internalID: -5172883841202945888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_107
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 177
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa887b37d4d7e84a0800000000000000
+      internalID: -6589191433189095249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_108
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 159
+        width: 98
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3339b10f7e800ef60800000000000000
+      internalID: 8061453125251994419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_109
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 161
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8e10a22de417c10800000000000000
+      internalID: 2049505969985153251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_110
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 161
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea7b01b40e072f800800000000000000
+      internalID: 644701805301774254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_111
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 161
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5fdf7eb870e6d20800000000000000
+      internalID: 3273562276618958310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_112
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 161
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02fd5e135118535f0800000000000000
+      internalID: -777573432620097760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_113
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 161
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b4adaf7d1df10ef0800000000000000
+      internalID: -143555409961179975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_114
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 161
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dab1fbedb7e5d62c0800000000000000
+      internalID: -4436786171779015763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_115
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 161
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bd8c9912c0322d70800000000000000
+      internalID: 9016823014160633265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_116
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 160
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36ee01c8f8a6e7770800000000000000
+      internalID: 8610436702341754467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_117
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 168
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4873acfbffbab2680800000000000000
+      internalID: -8778733933705939068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_118
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 160
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23c155924ba8b8c0800000000000000
+      internalID: -3983245567947848918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_119
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 160
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfa8958951e6a680800000000000000
+      internalID: -8744053851883524171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_120
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 161
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8666e9da6ac95610800000000000000
+      internalID: 1610540902032762509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_121
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 164
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0926c1e8b77821e60800000000000000
+      internalID: 7931550858487816848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_122
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 161
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4637441a49a90de0800000000000000
+      internalID: -1366374876297349555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_123
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 161
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d2ad509663b3c890800000000000000
+      internalID: -7438904906395835695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_124
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 161
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b92f30203e48ca70800000000000000
+      internalID: 8847407436575746481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_125
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 161
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d3d0ff546f371cc0800000000000000
+      internalID: -3740451265169009704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_126
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 96
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 875eaa0c696713140800000000000000
+      internalID: 4697666276173735288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_127
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 112
+        width: 14
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ff52c85b4352f90800000000000000
+      internalID: -6979114093195690137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_128
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 128
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc0268649cf0fabd0800000000000000
+      internalID: -2616855501332930355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_129
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 127
+        width: 162
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd6dd837ef69c2140800000000000000
+      internalID: 4696294531045119707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_130
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 145
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850e2b7bdbe1be110800000000000000
+      internalID: 1291159518351384664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_131
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 129
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4a1c7815e703dff0800000000000000
+      internalID: -12657693412287922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_132
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 129
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76a145ef145e4c590800000000000000
+      internalID: -7654741395020440985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_133
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 129
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bf97df994269bf40800000000000000
+      internalID: 5744730868041621428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_134
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 97
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8694e0cf23b14cc70800000000000000
+      internalID: 8990340661929462120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_135
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 97
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd39447049da25640800000000000000
+      internalID: 5067303382033929180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_136
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 97
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba1925d5dce8d9160800000000000000
+      internalID: 7033935205707714987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_137
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 97
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122a5e0105c6641c0800000000000000
+      internalID: -4519806084883045855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_138
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 136
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 892f08fa9422e2f70800000000000000
+      internalID: 9164299991617958552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_139
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 128
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ab0acc97d8988d30800000000000000
+      internalID: 4433961884962130853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_140
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 129
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5ad66e4a5798d430800000000000000
+      internalID: 3807959899059968602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_141
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 129
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc83d7c3ccca64e0800000000000000
+      internalID: -1987551144287433519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_142
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6aa99b978f39d990800000000000000
+      internalID: -7360782264296691090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_143
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 136
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 910df9b98d5c7a8c0800000000000000
+      internalID: -3988001410898735079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_144
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b525fdf8b56c5a430800000000000000
+      internalID: 3793656357687611995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_145
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 136
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c50423bdec9d4d80800000000000000
+      internalID: -8264777196428327486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_146
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 128
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6824dc17e287f1e10800000000000000
+      internalID: 2170585686288974470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_147
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 129
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df1b2fb1fcb6342c0800000000000000
+      internalID: -4448593469640625667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_148
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 129
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b17504a9f074e5bd0800000000000000
+      internalID: -2639594199254542565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_149
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 112
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d2eac7762f2e4260800000000000000
+      internalID: 7083651106165416658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_150
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 120
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3234096ea0f3a0aa0800000000000000
+      internalID: -6194069021444259037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_151
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 112
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aca7476a58524ca0800000000000000
+      internalID: -6034163405419991900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_152
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 112
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bccf672023bb07bb0800000000000000
+      internalID: -4940242967761322805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_153
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 113
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a66596e5c5f317f0800000000000000
+      internalID: -642900091457935704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_154
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 113
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3cf4013f719d2250800000000000000
+      internalID: 5921549060531354682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_155
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 113
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd2082186153dda0800000000000000
+      internalID: -5921299577633231425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_156
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 95
+        width: 226
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5909c621760f40620800000000000000
+      internalID: 2739578798829506709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_157
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 97
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa1e90878cd5a4c0800000000000000
+      internalID: -4276769796581877088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_158
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 96
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9720baeacb66594c0800000000000000
+      internalID: -4281402910175460743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_159
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 104
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afefd091b49afb220800000000000000
+      internalID: 2503906057849274106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_160
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 96
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f934096e9bc085eb0800000000000000
+      internalID: -4731017415976008801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_161
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 96
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2608a9c48d043cc90800000000000000
+      internalID: -7150800485591908254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_162
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 97
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35f8bf2fba9a7bb0800000000000000
+      internalID: -4937463895528245955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_163
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 100
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee49b28b9af46a40800000000000000
+      internalID: 5360685002297790189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_164
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 97
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65c7333d7e7656f80800000000000000
+      internalID: -8113964908259607466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_165
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc82381a2cfd6a50800000000000000
+      internalID: 6516141493599767797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_166
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2e3a9de6eb463d20800000000000000
+      internalID: 3257874835650002479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_167
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 65
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a65d63b793f64f750800000000000000
+      internalID: 6337812868288140650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_168
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09aaf218330e7bb10800000000000000
+      internalID: 1997311471577442960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_169
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca707d5a422e5c6e0800000000000000
+      internalID: -1817798227545094228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_170
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 65
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 666226acd4f979670800000000000000
+      internalID: 8545473974415533670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_171
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5169beb91666891c0800000000000000
+      internalID: -4496731658515671531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_172
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0889a74fcc82a3e20800000000000000
+      internalID: 3331019735134017664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_173
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 65
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d24195c5cd1b34d20800000000000000
+      internalID: 3261646115146634285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_174
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c93a6f939ea5b290800000000000000
+      internalID: -7875196424329479740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_175
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 81
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263e4e724858c90f0800000000000000
+      internalID: -1108864605588495518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_176
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 65
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f29e4d09ea7fec80800000000000000
+      internalID: -8291273247596571916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_177
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 65
+        width: 130
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d074f819b1503fd0800000000000000
+      internalID: -2364299948940037933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_178
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 65
+        width: 130
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a67dd6fb5e21657e0800000000000000
+      internalID: -1777212224982624406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_179
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 65
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec0bec57989326e20800000000000000
+      internalID: 3342297136012112078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_180
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 65
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f6d12634f3b8350800000000000000
+      internalID: 6019974885552254845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_181
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 65
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb31b9f5a9cc86340800000000000000
+      internalID: 4857357161520108475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_182
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 65
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b95b62834cc6859d0800000000000000
+      internalID: -2785356779517200997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_183
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 65
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d5a2d56ef06435f0800000000000000
+      internalID: -777890189881989673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_184
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 49
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb6014bfe6bd96760800000000000000
+      internalID: 7451728328169424571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_185
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 65
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc8551a71a680800800000000000000
+      internalID: 578829201840639218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_186
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 49
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90b12da31a2af0310800000000000000
+      internalID: 1373495224731573001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_187
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 65
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecba480f61e476cc0800000000000000
+      internalID: -3717917106939581490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_188
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 49
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc2280f13666e89c0800000000000000
+      internalID: -3923085649484700981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_189
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 65
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473bcf960db722db0800000000000000
+      internalID: -4818152516271426700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_190
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 49
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c653a9c5efa69740800000000000000
+      internalID: 5158503824664778435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_191
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 33
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3ba35cbe98285e60800000000000000
+      internalID: 7951149804352154429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_192
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 33
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c30c014c989c59730800000000000000
+      internalID: 4005329037153058876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_193
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 33
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 118a0d8f180862570800000000000000
+      internalID: 8441575847266134033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_194
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 33
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1419bf1722813160800000000000000
+      internalID: 7003522000085390367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_195
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 49
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e588110ced5be9e30800000000000000
+      internalID: 4512243844981557342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_196
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 49
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed0e46dc661a8b880800000000000000
+      internalID: -8594942425931915042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_197
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 49
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f1d34a9e91e1f10800000000000000
+      internalID: 2242258155750629148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_198
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 49
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4d78765dfd537600800000000000000
+      internalID: 464818529208139085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_199
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 33
+        width: 130
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 922095e96c31d9290800000000000000
+      internalID: -7882122029047414231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_200
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 33
+        width: 130
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8635e72f0a863630800000000000000
+      internalID: 3906461524488959629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_201
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e794984e3f1f176b0800000000000000
+      internalID: -5300189256624813698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_202
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f668ee7d78b174e30800000000000000
+      internalID: 4487585823955256943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_203
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 1
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385d7d571cb8e4ff0800000000000000
+      internalID: -49948882832468605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_204
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86c4ef2eaf2e76c40800000000000000
+      internalID: 5505618636661738600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_205
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 1
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a2c5bcd271bbe240800000000000000
+      internalID: 4822142932917535401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_206
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 1
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d708a07ea2195240800000000000000
+      internalID: 4780873019854161872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_207
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 1
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66d42fb6c0e9b46a0800000000000000
+      internalID: -6463899063972377242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_208
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 1
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d52a7cdb9023930800000000000000
+      internalID: 4121367319700200843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_209
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 1
+        width: 10
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f94f5e2a296fc450800000000000000
+      internalID: 6111218849252592112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_210
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073fb5c685f546920800000000000000
+      internalID: 2982613686605837168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_211
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1
+        width: 10
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 795013dcf1cf7d380800000000000000
+      internalID: -8946404921231473257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_212
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98b989a5f18492a0800000000000000
+      internalID: -6731612650900703076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_213
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a08a73a763a70b590800000000000000
+      internalID: -7660488591759923190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_214
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 1
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea73ceb5e9599b950800000000000000
+      internalID: 6465363247446636462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_215
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 1
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c49b0587449429ae0800000000000000
+      internalID: -1544091163809498804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_216
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1
+        width: 14
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 368f35b54135df500800000000000000
+      internalID: 431592486194116707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_217
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d3cff5d11cefdf20800000000000000
+      internalID: 3449735400937997269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_218
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 1
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077546986718a34d0800000000000000
+      internalID: -3154066242908432528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_219
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2179c08e2f877c10800000000000000
+      internalID: 2051265585182503211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_220
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 1
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 729f8f11143a96870800000000000000
+      internalID: 8676645656975702311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_221
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 1
+        width: 10
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e71677903291140800000000000000
+      internalID: 4690819010447638112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_222
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffde3f60350702e0800000000000000
+      internalID: -2159751790717902855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_223
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 1
+        width: 10
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 542dcaa22c9787680800000000000000
+      internalID: -8757115600575344059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Godot_224
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d9c38645d3656d00800000000000000
+      internalID: 965287462803065304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Graveyard_Godot_0: 5666120192944329945
+      RA_Graveyard_Godot_1: 7201249197841614911
+      RA_Graveyard_Godot_10: 1696124768813683300
+      RA_Graveyard_Godot_100: 1123889453176882677
+      RA_Graveyard_Godot_101: -8802264124167573560
+      RA_Graveyard_Godot_102: -943064639364909624
+      RA_Graveyard_Godot_103: -2133507022987871985
+      RA_Graveyard_Godot_104: -1237689555921811165
+      RA_Graveyard_Godot_105: 7385519465765451698
+      RA_Graveyard_Godot_106: -5172883841202945888
+      RA_Graveyard_Godot_107: -6589191433189095249
+      RA_Graveyard_Godot_108: 8061453125251994419
+      RA_Graveyard_Godot_109: 2049505969985153251
+      RA_Graveyard_Godot_11: 4896871203811606949
+      RA_Graveyard_Godot_110: 644701805301774254
+      RA_Graveyard_Godot_111: 3273562276618958310
+      RA_Graveyard_Godot_112: -777573432620097760
+      RA_Graveyard_Godot_113: -143555409961179975
+      RA_Graveyard_Godot_114: -4436786171779015763
+      RA_Graveyard_Godot_115: 9016823014160633265
+      RA_Graveyard_Godot_116: 8610436702341754467
+      RA_Graveyard_Godot_117: -8778733933705939068
+      RA_Graveyard_Godot_118: -3983245567947848918
+      RA_Graveyard_Godot_119: -8744053851883524171
+      RA_Graveyard_Godot_12: 6366410249460214400
+      RA_Graveyard_Godot_120: 1610540902032762509
+      RA_Graveyard_Godot_121: 7931550858487816848
+      RA_Graveyard_Godot_122: -1366374876297349555
+      RA_Graveyard_Godot_123: -7438904906395835695
+      RA_Graveyard_Godot_124: 8847407436575746481
+      RA_Graveyard_Godot_125: -3740451265169009704
+      RA_Graveyard_Godot_126: 4697666276173735288
+      RA_Graveyard_Godot_127: -6979114093195690137
+      RA_Graveyard_Godot_128: -2616855501332930355
+      RA_Graveyard_Godot_129: 4696294531045119707
+      RA_Graveyard_Godot_13: 1599513975312009196
+      RA_Graveyard_Godot_130: 1291159518351384664
+      RA_Graveyard_Godot_131: -12657693412287922
+      RA_Graveyard_Godot_132: -7654741395020440985
+      RA_Graveyard_Godot_133: 5744730868041621428
+      RA_Graveyard_Godot_134: 8990340661929462120
+      RA_Graveyard_Godot_135: 5067303382033929180
+      RA_Graveyard_Godot_136: 7033935205707714987
+      RA_Graveyard_Godot_137: -4519806084883045855
+      RA_Graveyard_Godot_138: 9164299991617958552
+      RA_Graveyard_Godot_139: 4433961884962130853
+      RA_Graveyard_Godot_14: -3217597354328883707
+      RA_Graveyard_Godot_140: 3807959899059968602
+      RA_Graveyard_Godot_141: -1987551144287433519
+      RA_Graveyard_Godot_142: -7360782264296691090
+      RA_Graveyard_Godot_143: -3988001410898735079
+      RA_Graveyard_Godot_144: 3793656357687611995
+      RA_Graveyard_Godot_145: -8264777196428327486
+      RA_Graveyard_Godot_146: 2170585686288974470
+      RA_Graveyard_Godot_147: -4448593469640625667
+      RA_Graveyard_Godot_148: -2639594199254542565
+      RA_Graveyard_Godot_149: 7083651106165416658
+      RA_Graveyard_Godot_15: 5468869360628189300
+      RA_Graveyard_Godot_150: -6194069021444259037
+      RA_Graveyard_Godot_151: -6034163405419991900
+      RA_Graveyard_Godot_152: -4940242967761322805
+      RA_Graveyard_Godot_153: -642900091457935704
+      RA_Graveyard_Godot_154: 5921549060531354682
+      RA_Graveyard_Godot_155: -5921299577633231425
+      RA_Graveyard_Godot_156: 2739578798829506709
+      RA_Graveyard_Godot_157: -4276769796581877088
+      RA_Graveyard_Godot_158: -4281402910175460743
+      RA_Graveyard_Godot_159: 2503906057849274106
+      RA_Graveyard_Godot_16: -1701287709954485075
+      RA_Graveyard_Godot_160: -4731017415976008801
+      RA_Graveyard_Godot_161: -7150800485591908254
+      RA_Graveyard_Godot_162: -4937463895528245955
+      RA_Graveyard_Godot_163: 5360685002297790189
+      RA_Graveyard_Godot_164: -8113964908259607466
+      RA_Graveyard_Godot_165: 6516141493599767797
+      RA_Graveyard_Godot_166: 3257874835650002479
+      RA_Graveyard_Godot_167: 6337812868288140650
+      RA_Graveyard_Godot_168: 1997311471577442960
+      RA_Graveyard_Godot_169: -1817798227545094228
+      RA_Graveyard_Godot_17: -3133445039693678015
+      RA_Graveyard_Godot_170: 8545473974415533670
+      RA_Graveyard_Godot_171: -4496731658515671531
+      RA_Graveyard_Godot_172: 3331019735134017664
+      RA_Graveyard_Godot_173: 3261646115146634285
+      RA_Graveyard_Godot_174: -7875196424329479740
+      RA_Graveyard_Godot_175: -1108864605588495518
+      RA_Graveyard_Godot_176: -8291273247596571916
+      RA_Graveyard_Godot_177: -2364299948940037933
+      RA_Graveyard_Godot_178: -1777212224982624406
+      RA_Graveyard_Godot_179: 3342297136012112078
+      RA_Graveyard_Godot_18: 3165624385347147377
+      RA_Graveyard_Godot_180: 6019974885552254845
+      RA_Graveyard_Godot_181: 4857357161520108475
+      RA_Graveyard_Godot_182: -2785356779517200997
+      RA_Graveyard_Godot_183: -777890189881989673
+      RA_Graveyard_Godot_184: 7451728328169424571
+      RA_Graveyard_Godot_185: 578829201840639218
+      RA_Graveyard_Godot_186: 1373495224731573001
+      RA_Graveyard_Godot_187: -3717917106939581490
+      RA_Graveyard_Godot_188: -3923085649484700981
+      RA_Graveyard_Godot_189: -4818152516271426700
+      RA_Graveyard_Godot_19: 8582637438066855874
+      RA_Graveyard_Godot_190: 5158503824664778435
+      RA_Graveyard_Godot_191: 7951149804352154429
+      RA_Graveyard_Godot_192: 4005329037153058876
+      RA_Graveyard_Godot_193: 8441575847266134033
+      RA_Graveyard_Godot_194: 7003522000085390367
+      RA_Graveyard_Godot_195: 4512243844981557342
+      RA_Graveyard_Godot_196: -8594942425931915042
+      RA_Graveyard_Godot_197: 2242258155750629148
+      RA_Graveyard_Godot_198: 464818529208139085
+      RA_Graveyard_Godot_199: -7882122029047414231
+      RA_Graveyard_Godot_2: -4833704935223403893
+      RA_Graveyard_Godot_20: -2932076363377533607
+      RA_Graveyard_Godot_200: 3906461524488959629
+      RA_Graveyard_Godot_201: -5300189256624813698
+      RA_Graveyard_Godot_202: 4487585823955256943
+      RA_Graveyard_Godot_203: -49948882832468605
+      RA_Graveyard_Godot_204: 5505618636661738600
+      RA_Graveyard_Godot_205: 4822142932917535401
+      RA_Graveyard_Godot_206: 4780873019854161872
+      RA_Graveyard_Godot_207: -6463899063972377242
+      RA_Graveyard_Godot_208: 4121367319700200843
+      RA_Graveyard_Godot_209: 6111218849252592112
+      RA_Graveyard_Godot_21: 1476035020017722555
+      RA_Graveyard_Godot_210: 2982613686605837168
+      RA_Graveyard_Godot_211: -8946404921231473257
+      RA_Graveyard_Godot_212: -6731612650900703076
+      RA_Graveyard_Godot_213: -7660488591759923190
+      RA_Graveyard_Godot_214: 6465363247446636462
+      RA_Graveyard_Godot_215: -1544091163809498804
+      RA_Graveyard_Godot_216: 431592486194116707
+      RA_Graveyard_Godot_217: 3449735400937997269
+      RA_Graveyard_Godot_218: -3154066242908432528
+      RA_Graveyard_Godot_219: 2051265585182503211
+      RA_Graveyard_Godot_22: 3442773358148932306
+      RA_Graveyard_Godot_220: 8676645656975702311
+      RA_Graveyard_Godot_221: 4690819010447638112
+      RA_Graveyard_Godot_222: -2159751790717902855
+      RA_Graveyard_Godot_223: -8757115600575344059
+      RA_Graveyard_Godot_224: 965287462803065304
+      RA_Graveyard_Godot_23: 3274212529420104764
+      RA_Graveyard_Godot_24: -2757395298776093838
+      RA_Graveyard_Godot_25: -2547415292780071919
+      RA_Graveyard_Godot_26: -1526635295152555889
+      RA_Graveyard_Godot_27: -6378028459834773587
+      RA_Graveyard_Godot_28: -8139141765354181426
+      RA_Graveyard_Godot_29: 7201809486105155742
+      RA_Graveyard_Godot_3: 3816167408493698136
+      RA_Graveyard_Godot_30: 7540115315285861861
+      RA_Graveyard_Godot_31: -5335622472129495890
+      RA_Graveyard_Godot_32: -6006341039509678312
+      RA_Graveyard_Godot_33: -2451236309889112214
+      RA_Graveyard_Godot_34: 2376372065829779538
+      RA_Graveyard_Godot_35: 217406218478097466
+      RA_Graveyard_Godot_36: 5042701618009191154
+      RA_Graveyard_Godot_37: -680856914020759280
+      RA_Graveyard_Godot_38: -5775480877962653773
+      RA_Graveyard_Godot_39: -2559154908461259582
+      RA_Graveyard_Godot_4: -7322395273975343514
+      RA_Graveyard_Godot_40: 6891034501001484437
+      RA_Graveyard_Godot_41: -5275148079381730170
+      RA_Graveyard_Godot_42: -950619694690383876
+      RA_Graveyard_Godot_43: 3818250247934632735
+      RA_Graveyard_Godot_44: 5843004585685762117
+      RA_Graveyard_Godot_45: 6466770166193932769
+      RA_Graveyard_Godot_46: 5473112158502451774
+      RA_Graveyard_Godot_47: -3729612498992262987
+      RA_Graveyard_Godot_48: 3420753184660919532
+      RA_Graveyard_Godot_49: -7196393612942461091
+      RA_Graveyard_Godot_5: -1435362067048901292
+      RA_Graveyard_Godot_50: -1385933830626541984
+      RA_Graveyard_Godot_51: -342588627902838430
+      RA_Graveyard_Godot_52: 3029782990081837662
+      RA_Graveyard_Godot_53: 7070554987584387789
+      RA_Graveyard_Godot_54: -986417618116365034
+      RA_Graveyard_Godot_55: 6012203289638718944
+      RA_Graveyard_Godot_56: -1528500567545494524
+      RA_Graveyard_Godot_57: -3702550877240304598
+      RA_Graveyard_Godot_58: -7555301224996006483
+      RA_Graveyard_Godot_59: -5706087384485635545
+      RA_Graveyard_Godot_6: 7098997976160295464
+      RA_Graveyard_Godot_60: 5268203043800245758
+      RA_Graveyard_Godot_61: -869164143338256796
+      RA_Graveyard_Godot_62: 8023086936349288531
+      RA_Graveyard_Godot_63: -245643353425818304
+      RA_Graveyard_Godot_64: -6417125677935443727
+      RA_Graveyard_Godot_65: 7655889675996797612
+      RA_Graveyard_Godot_66: -8125134439350173136
+      RA_Graveyard_Godot_67: 8329841630994727951
+      RA_Graveyard_Godot_68: -6468482395061889675
+      RA_Graveyard_Godot_69: 3588607960092303671
+      RA_Graveyard_Godot_7: -2855970924817810778
+      RA_Graveyard_Godot_70: -4213633333498667744
+      RA_Graveyard_Godot_71: -62553338690971770
+      RA_Graveyard_Godot_72: 1023007244078894596
+      RA_Graveyard_Godot_73: -1763948633832249365
+      RA_Graveyard_Godot_74: -7353445645658105771
+      RA_Graveyard_Godot_75: -5344560768192933586
+      RA_Graveyard_Godot_76: 8592452888295728716
+      RA_Graveyard_Godot_77: 9177059523079289732
+      RA_Graveyard_Godot_78: -5252088601310418543
+      RA_Graveyard_Godot_79: 6113817034400016610
+      RA_Graveyard_Godot_8: -1878932533360955933
+      RA_Graveyard_Godot_80: -8086816601374291759
+      RA_Graveyard_Godot_81: 1483100676397632783
+      RA_Graveyard_Godot_82: -8001549987358261899
+      RA_Graveyard_Godot_83: -620868019916528976
+      RA_Graveyard_Godot_84: -2649564313425971417
+      RA_Graveyard_Godot_85: 7185242342352032194
+      RA_Graveyard_Godot_86: -398148667176252138
+      RA_Graveyard_Godot_87: -5977258511007788100
+      RA_Graveyard_Godot_88: 8753280270427414751
+      RA_Graveyard_Godot_89: 6786224878068059009
+      RA_Graveyard_Godot_9: 3195796517058683173
+      RA_Graveyard_Godot_90: 2924730978529806540
+      RA_Graveyard_Godot_91: 4184506987326785077
+      RA_Graveyard_Godot_92: 2795454582855217712
+      RA_Graveyard_Godot_93: 815711062532989864
+      RA_Graveyard_Godot_94: -4558569440636092889
+      RA_Graveyard_Godot_95: 6475786863067918336
+      RA_Graveyard_Godot_96: 2031187542645416390
+      RA_Graveyard_Godot_97: -4445528695424039742
+      RA_Graveyard_Godot_98: 1418831732305473387
+      RA_Graveyard_Godot_99: -5348295579692976783
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
