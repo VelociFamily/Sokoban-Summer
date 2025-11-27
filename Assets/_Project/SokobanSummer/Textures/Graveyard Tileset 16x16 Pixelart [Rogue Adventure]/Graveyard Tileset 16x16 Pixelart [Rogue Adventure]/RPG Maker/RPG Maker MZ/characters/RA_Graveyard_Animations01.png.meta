@@ -1,223 +1,223 @@
 fileFormatVersion: 2
-guid: 48b208537bc929445a8e5ad3eb946d9d
+guid: cfc234ec069524f4a822bf61a30cc9b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9178697501685378489
-    second: RA_Ground_Tiles_0
+      213: 6482718919935482680
+    second: RA_Graveyard_Animations01_0
   - first:
-      213: 64919407359616844
-    second: RA_Ground_Tiles_1
+      213: -5090448570212483903
+    second: RA_Graveyard_Animations01_1
   - first:
-      213: -4781585158232356169
-    second: RA_Ground_Tiles_2
+      213: -3021320066853966074
+    second: RA_Graveyard_Animations01_2
   - first:
-      213: 4600706518752425603
-    second: RA_Ground_Tiles_3
+      213: 8619865654993263947
+    second: RA_Graveyard_Animations01_3
   - first:
-      213: -2374362533708176291
-    second: RA_Ground_Tiles_4
+      213: 4308657415367781378
+    second: RA_Graveyard_Animations01_4
   - first:
-      213: -5282478129406858205
-    second: RA_Ground_Tiles_5
+      213: 7679729061849943885
+    second: RA_Graveyard_Animations01_5
   - first:
-      213: 3241338140262391465
-    second: RA_Ground_Tiles_6
+      213: 1605931739423624638
+    second: RA_Graveyard_Animations01_6
   - first:
-      213: -807374599884517454
-    second: RA_Ground_Tiles_7
+      213: -6267992564681939735
+    second: RA_Graveyard_Animations01_7
   - first:
-      213: -9005409454341440674
-    second: RA_Ground_Tiles_8
+      213: -3618956250033667756
+    second: RA_Graveyard_Animations01_8
   - first:
-      213: -5708837194060727748
-    second: RA_Ground_Tiles_9
+      213: 3867816649302881992
+    second: RA_Graveyard_Animations01_9
   - first:
-      213: 2507183887647172295
-    second: RA_Ground_Tiles_10
+      213: -8857753223279113152
+    second: RA_Graveyard_Animations01_10
   - first:
-      213: -4993501874843203960
-    second: RA_Ground_Tiles_11
+      213: -7490063429669855826
+    second: RA_Graveyard_Animations01_11
   - first:
-      213: 7674367420535924423
-    second: RA_Ground_Tiles_12
+      213: 2528975186482035875
+    second: RA_Graveyard_Animations01_12
   - first:
-      213: -7735529837827446862
-    second: RA_Ground_Tiles_13
+      213: 6003881904677967389
+    second: RA_Graveyard_Animations01_13
   - first:
-      213: -5353843549934509632
-    second: RA_Ground_Tiles_14
+      213: 6092278107476321971
+    second: RA_Graveyard_Animations01_14
   - first:
-      213: -121860654846326487
-    second: RA_Ground_Tiles_15
+      213: 7544466496542369346
+    second: RA_Graveyard_Animations01_15
   - first:
-      213: 5892334044933085414
-    second: RA_Ground_Tiles_16
+      213: -6073509762515325765
+    second: RA_Graveyard_Animations01_16
   - first:
-      213: -315968695127745359
-    second: RA_Ground_Tiles_17
+      213: -7950012758324593338
+    second: RA_Graveyard_Animations01_17
   - first:
-      213: -1824363607946816381
-    second: RA_Ground_Tiles_18
+      213: -1250163971368869015
+    second: RA_Graveyard_Animations01_18
   - first:
-      213: -4560264576031770794
-    second: RA_Ground_Tiles_19
+      213: -8321337878052493961
+    second: RA_Graveyard_Animations01_19
   - first:
-      213: 7640831944634898560
-    second: RA_Ground_Tiles_20
+      213: 3922886301843298161
+    second: RA_Graveyard_Animations01_20
   - first:
-      213: -3454132544598911018
-    second: RA_Ground_Tiles_21
+      213: 1667088611923398499
+    second: RA_Graveyard_Animations01_21
   - first:
-      213: -6467446262496698333
-    second: RA_Ground_Tiles_22
+      213: 9003092832903535804
+    second: RA_Graveyard_Animations01_22
   - first:
-      213: 265749463045612225
-    second: RA_Ground_Tiles_23
+      213: 703674820793064563
+    second: RA_Graveyard_Animations01_23
   - first:
-      213: 2096465700752016727
-    second: RA_Ground_Tiles_24
+      213: 4551704085432428739
+    second: RA_Graveyard_Animations01_24
   - first:
-      213: 6831366717704506008
-    second: RA_Ground_Tiles_25
+      213: 3104476679353151418
+    second: RA_Graveyard_Animations01_25
   - first:
-      213: 20061855725754613
-    second: RA_Ground_Tiles_26
+      213: -1464127350497693402
+    second: RA_Graveyard_Animations01_26
   - first:
-      213: -6980266294384900104
-    second: RA_Ground_Tiles_27
+      213: 4938300568103778048
+    second: RA_Graveyard_Animations01_27
   - first:
-      213: 2242880919881428187
-    second: RA_Ground_Tiles_28
+      213: 5528205314042816014
+    second: RA_Graveyard_Animations01_28
   - first:
-      213: 3600277105465449311
-    second: RA_Ground_Tiles_29
+      213: 370085018824209552
+    second: RA_Graveyard_Animations01_29
   - first:
-      213: 7577819546531447723
-    second: RA_Ground_Tiles_30
+      213: -4039513836849131702
+    second: RA_Graveyard_Animations01_30
   - first:
-      213: -4612741882914089387
-    second: RA_Ground_Tiles_31
+      213: 6872595001042918360
+    second: RA_Graveyard_Animations01_31
   - first:
-      213: 2019327240069419612
-    second: RA_Ground_Tiles_32
+      213: -593416251321293138
+    second: RA_Graveyard_Animations01_32
   - first:
-      213: -4041141101579856305
-    second: RA_Ground_Tiles_33
+      213: -3446076502387794868
+    second: RA_Graveyard_Animations01_33
   - first:
-      213: 72793320362428884
-    second: RA_Ground_Tiles_34
+      213: -6305202606738077533
+    second: RA_Graveyard_Animations01_34
   - first:
-      213: 1825163237435233023
-    second: RA_Ground_Tiles_35
+      213: -3991783153934118121
+    second: RA_Graveyard_Animations01_35
   - first:
-      213: -7380138013866075091
-    second: RA_Ground_Tiles_36
+      213: 794595778709924972
+    second: RA_Graveyard_Animations01_36
   - first:
-      213: -7702012778393385785
-    second: RA_Ground_Tiles_37
+      213: 5646004774329658292
+    second: RA_Graveyard_Animations01_37
   - first:
-      213: 5232593418783000777
-    second: RA_Ground_Tiles_38
+      213: -351221531192649751
+    second: RA_Graveyard_Animations01_38
   - first:
-      213: 7654799772159131192
-    second: RA_Ground_Tiles_39
+      213: 3167295504273931157
+    second: RA_Graveyard_Animations01_39
   - first:
-      213: -7380924451967003239
-    second: RA_Ground_Tiles_40
+      213: -3746408462510107035
+    second: RA_Graveyard_Animations01_40
   - first:
-      213: 4243187345090503493
-    second: RA_Ground_Tiles_41
+      213: -2891818869110484862
+    second: RA_Graveyard_Animations01_41
   - first:
-      213: -5759746045634587659
-    second: RA_Ground_Tiles_42
+      213: -6945298919509226445
+    second: RA_Graveyard_Animations01_42
   - first:
-      213: -4403672258441467844
-    second: RA_Ground_Tiles_43
+      213: -7724007561591737419
+    second: RA_Graveyard_Animations01_43
   - first:
-      213: 1194535239426448870
-    second: RA_Ground_Tiles_44
+      213: 2654313610926396126
+    second: RA_Graveyard_Animations01_44
   - first:
-      213: -7106158448094870945
-    second: RA_Ground_Tiles_45
+      213: -1874113514735368498
+    second: RA_Graveyard_Animations01_45
   - first:
-      213: -559580178801032989
-    second: RA_Ground_Tiles_46
+      213: 8773861504054999670
+    second: RA_Graveyard_Animations01_46
   - first:
-      213: 5205385072517447381
-    second: RA_Ground_Tiles_47
+      213: 505963298665361465
+    second: RA_Graveyard_Animations01_47
   - first:
-      213: -2637904823541922071
-    second: RA_Ground_Tiles_48
+      213: 3400334915081262512
+    second: RA_Graveyard_Animations01_48
   - first:
-      213: -1759820997941197011
-    second: RA_Ground_Tiles_49
+      213: -640395138565853751
+    second: RA_Graveyard_Animations01_49
   - first:
-      213: -5956686339964654712
-    second: RA_Ground_Tiles_50
+      213: -7510831537517840337
+    second: RA_Graveyard_Animations01_50
   - first:
-      213: 6689290861234394862
-    second: RA_Ground_Tiles_51
+      213: -7292986795142895273
+    second: RA_Graveyard_Animations01_51
   - first:
-      213: 7813584319405880270
-    second: RA_Ground_Tiles_52
+      213: -2370010687930929140
+    second: RA_Graveyard_Animations01_52
   - first:
-      213: 3996385784648136924
-    second: RA_Ground_Tiles_53
+      213: 4547746831683215078
+    second: RA_Graveyard_Animations01_53
   - first:
-      213: -6355694247721717686
-    second: RA_Ground_Tiles_54
+      213: -7755080981709865203
+    second: RA_Graveyard_Animations01_54
   - first:
-      213: -7756934988730610424
-    second: RA_Ground_Tiles_55
+      213: -1522730581590776452
+    second: RA_Graveyard_Animations01_55
   - first:
-      213: -521546323109591136
-    second: RA_Ground_Tiles_56
+      213: -1319578090112669664
+    second: RA_Graveyard_Animations01_56
   - first:
-      213: -3667894219029538889
-    second: RA_Ground_Tiles_57
+      213: -3040958786661277895
+    second: RA_Graveyard_Animations01_57
   - first:
-      213: -863529746320573785
-    second: RA_Ground_Tiles_58
+      213: -1128733683313012854
+    second: RA_Graveyard_Animations01_58
   - first:
-      213: -8251939440560546933
-    second: RA_Ground_Tiles_59
+      213: 7367900790767445455
+    second: RA_Graveyard_Animations01_59
   - first:
-      213: -322373845811876519
-    second: RA_Ground_Tiles_60
+      213: 6242775786270141659
+    second: RA_Graveyard_Animations01_60
   - first:
-      213: -2974981690978188739
-    second: RA_Ground_Tiles_61
+      213: -5012956316781530397
+    second: RA_Graveyard_Animations01_61
   - first:
-      213: 4274747691743028764
-    second: RA_Ground_Tiles_62
+      213: 8871739539292179534
+    second: RA_Graveyard_Animations01_62
   - first:
-      213: 8744424267361882156
-    second: RA_Ground_Tiles_63
+      213: -929758492464492734
+    second: RA_Graveyard_Animations01_63
   - first:
-      213: 7661067632341041524
-    second: RA_Ground_Tiles_64
+      213: 1429887031449888182
+    second: RA_Graveyard_Animations01_64
   - first:
-      213: -4398710224655796185
-    second: RA_Ground_Tiles_65
+      213: 3277136351653473994
+    second: RA_Graveyard_Animations01_65
   - first:
-      213: -6404104256413598201
-    second: RA_Ground_Tiles_66
+      213: -630687797406057374
+    second: RA_Graveyard_Animations01_66
   - first:
-      213: 4033249809379399513
-    second: RA_Ground_Tiles_67
+      213: -3166757774839423050
+    second: RA_Graveyard_Animations01_67
   - first:
-      213: 911913125460696006
-    second: RA_Ground_Tiles_68
+      213: -876342282198544963
+    second: RA_Graveyard_Animations01_68
   - first:
-      213: 7902083982928159194
-    second: RA_Ground_Tiles_69
+      213: -8001428785323712527
+    second: RA_Graveyard_Animations01_69
   - first:
-      213: 3781582254236879671
-    second: RA_Ground_Tiles_70
+      213: 7744719820845736634
+    second: RA_Graveyard_Animations01_70
   - first:
-      213: -3707747322334092859
-    second: RA_Ground_Tiles_71
+      213: 2659409683304345481
+    second: RA_Graveyard_Animations01_71
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -339,1585 +339,1585 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RA_Ground_Tiles_0
+      name: RA_Graveyard_Animations01_0
       rect:
         serializedVersion: 2
-        x: 15
-        y: 207
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9bde8b83fb8416f70800000000000000
-      internalID: 9178697501685378489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_1
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 207
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c47e2b66bd3a6e000800000000000000
-      internalID: 64919407359616844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_2
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 207
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7bac74ce1a564adb0800000000000000
-      internalID: -4781585158232356169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_3
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 207
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 386ff06043ef8df30800000000000000
-      internalID: 4600706518752425603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_4
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 207
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d54e3520bd19c0fd0800000000000000
-      internalID: -2374362533708176291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_5
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 207
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 32c2fea012ed0b6b0800000000000000
-      internalID: -5282478129406858205
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_6
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 166
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9aed34f7ddb8bfc20800000000000000
-      internalID: 3241338140262391465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_7
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 166
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2bfc53d3411abc4f0800000000000000
-      internalID: -807374599884517454
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_8
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 166
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e5bb80160db560380800000000000000
-      internalID: -9005409454341440674
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_9
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 166
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c3af87791d226c0b0800000000000000
-      internalID: -5708837194060727748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_10
-      rect:
-        serializedVersion: 2
-        x: 278
-        y: 166
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c6eac1567e4bc220800000000000000
-      internalID: 2507183887647172295
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_11
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 166
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88649b4608483bab0800000000000000
-      internalID: -4993501874843203960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_12
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 143
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c6efd82284d08a60800000000000000
-      internalID: 7674367420535924423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_13
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 151
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2b72cdad890e5a490800000000000000
-      internalID: -7735529837827446862
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_14
-      rect:
-        serializedVersion: 2
-        x: 47
-        y: 150
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c1232f38a353b5b0800000000000000
-      internalID: -5353843549934509632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_15
-      rect:
-        serializedVersion: 2
-        x: 55
-        y: 143
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 929c9cb41601f4ef0800000000000000
-      internalID: -121860654846326487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_16
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 143
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6e85d2e4896c5c150800000000000000
-      internalID: 5892334044933085414
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_17
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 151
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1bc54c655247d9bf0800000000000000
-      internalID: -315968695127745359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_18
-      rect:
-        serializedVersion: 2
-        x: 111
-        y: 150
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3841e27e6fe8ea6e0800000000000000
-      internalID: -1824363607946816381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_19
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 143
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 65734d7878fa6b0c0800000000000000
-      internalID: -4560264576031770794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_20
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 143
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0889b68bb20b90a60800000000000000
-      internalID: 7640831944634898560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_21
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 151
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6d7d01060c47010d0800000000000000
-      internalID: -3454132544598911018
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_22
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 150
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 320e4f7e3e30f36a0800000000000000
-      internalID: -6467446262496698333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_23
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 143
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1c2a5188ab120b300800000000000000
-      internalID: 265749463045612225
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_24
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 143
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7554d118274281d10800000000000000
-      internalID: 2096465700752016727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_25
-      rect:
-        serializedVersion: 2
-        x: 215
-        y: 150
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 89a043be5d3edce50800000000000000
-      internalID: 6831366717704506008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_26
-      rect:
-        serializedVersion: 2
-        x: 239
-        y: 151
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f89118c626474000800000000000000
-      internalID: 20061855725754613
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_27
-      rect:
-        serializedVersion: 2
-        x: 246
-        y: 143
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f74e8dc9cc112f90800000000000000
-      internalID: -6980266294384900104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_28
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 143
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bdca8073050502f10800000000000000
-      internalID: 2242880919881428187
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_29
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 150
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f5b5d3cc3f0c6f130800000000000000
-      internalID: 3600277105465449311
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_30
-      rect:
-        serializedVersion: 2
-        x: 303
-        y: 151
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ba3c4038ab2d92960800000000000000
-      internalID: 7577819546531447723
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_31
-      rect:
-        serializedVersion: 2
-        x: 310
-        y: 143
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 556d65462bf3cffb0800000000000000
-      internalID: -4612741882914089387
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_32
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 143
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c529b9d0d67160c10800000000000000
-      internalID: 2019327240069419612
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_33
-      rect:
-        serializedVersion: 2
-        x: 343
-        y: 150
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f461a19349bfae7c0800000000000000
-      internalID: -4041141101579856305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_34
-      rect:
-        serializedVersion: 2
-        x: 367
-        y: 151
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4d94932a32d920100800000000000000
-      internalID: 72793320362428884
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_35
-      rect:
-        serializedVersion: 2
-        x: 374
-        y: 143
-        width: 11
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ff2dd685b48445910800000000000000
-      internalID: 1825163237435233023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_36
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 79
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d2cd72af39b749990800000000000000
-      internalID: -7380138013866075091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_37
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 79
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c4c7506f24fc1590800000000000000
-      internalID: -7702012778393385785
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_38
-      rect:
-        serializedVersion: 2
-        x: 143
-        y: 79
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c88b9cadf7ed9840800000000000000
-      internalID: 5232593418783000777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_39
-      rect:
-        serializedVersion: 2
-        x: 207
-        y: 79
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 83e394ef5df4b3a60800000000000000
-      internalID: 7654799772159131192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_40
-      rect:
-        serializedVersion: 2
-        x: 271
-        y: 79
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 99513861150b19990800000000000000
-      internalID: -7380924451967003239
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_41
-      rect:
-        serializedVersion: 2
-        x: 335
-        y: 79
-        width: 50
-        height: 50
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5436d83b864d2ea30800000000000000
-      internalID: 4243187345090503493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_42
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 38
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5f35d79ec754110b0800000000000000
-      internalID: -5759746045634587659
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_43
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 38
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c38aa50a96303e2c0800000000000000
-      internalID: -4403672258441467844
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_44
-      rect:
-        serializedVersion: 2
-        x: 150
-        y: 38
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6ed13b9a877d39010800000000000000
-      internalID: 1194535239426448870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_45
-      rect:
-        serializedVersion: 2
-        x: 214
-        y: 38
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f520aaf9a8ad16d90800000000000000
-      internalID: -7106158448094870945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_46
-      rect:
-        serializedVersion: 2
-        x: 278
-        y: 38
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e0073bcac8fb38f0800000000000000
-      internalID: -559580178801032989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_47
-      rect:
-        serializedVersion: 2
-        x: 342
-        y: 36
+        x: 5
+        y: 341
         width: 38
         height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 8, y: 9, z: 12, w: 10}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5def586e42e3d3840800000000000000
-      internalID: 5205385072517447381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: RA_Ground_Tiles_48
-      rect:
-        serializedVersion: 2
-        x: 15
-        y: 15
-        width: 11
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e68e790a87446bd0800000000000000
-      internalID: -2637904823541922071
+      spriteID: 83b5571c28e37f950800000000000000
+      internalID: 6482718919935482680
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_49
+      name: RA_Graveyard_Animations01_1
       rect:
         serializedVersion: 2
-        x: 22
-        y: 22
-        width: 11
-        height: 11
+        x: 53
+        y: 341
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d270175502cd397e0800000000000000
-      internalID: -1759820997941197011
+      spriteID: 1ccf619eef71b59b0800000000000000
+      internalID: -5090448570212483903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_50
+      name: RA_Graveyard_Animations01_2
       rect:
         serializedVersion: 2
-        x: 47
-        y: 22
-        width: 11
-        height: 11
+        x: 101
+        y: 341
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88b2cfb6559955da0800000000000000
-      internalID: -5956686339964654712
+      spriteID: 60fe866286d1216d0800000000000000
+      internalID: -3021320066853966074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_51
+      name: RA_Graveyard_Animations01_3
       rect:
         serializedVersion: 2
-        x: 54
-        y: 15
-        width: 11
-        height: 11
+        x: 155
+        y: 341
+        width: 26
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee6942fc89225dc50800000000000000
-      internalID: 6689290861234394862
+      spriteID: b4d9679a42aef9770800000000000000
+      internalID: 8619865654993263947
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_52
+      name: RA_Graveyard_Animations01_4
       rect:
         serializedVersion: 2
-        x: 79
-        y: 15
-        width: 11
-        height: 11
+        x: 203
+        y: 341
+        width: 26
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ec3ffb45a8d6f6c60800000000000000
-      internalID: 7813584319405880270
+      spriteID: 20c69dd471d6bcb30800000000000000
+      internalID: 4308657415367781378
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_53
+      name: RA_Graveyard_Animations01_5
       rect:
         serializedVersion: 2
-        x: 86
-        y: 22
-        width: 11
-        height: 11
+        x: 251
+        y: 341
+        width: 26
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd87f5782b3067730800000000000000
-      internalID: 3996385784648136924
+      spriteID: d4f4fce84e0e39a60800000000000000
+      internalID: 7679729061849943885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_54
+      name: RA_Graveyard_Animations01_6
       rect:
         serializedVersion: 2
-        x: 111
-        y: 22
-        width: 11
-        height: 11
+        x: 293
+        y: 341
+        width: 38
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a40bd8f61c90cc7a0800000000000000
-      internalID: -6355694247721717686
+      spriteID: ebdcedd886a694610800000000000000
+      internalID: 1605931739423624638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_55
+      name: RA_Graveyard_Animations01_7
       rect:
         serializedVersion: 2
-        x: 118
-        y: 15
-        width: 11
-        height: 11
+        x: 341
+        y: 341
+        width: 38
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80dc9eac9b4d95490800000000000000
-      internalID: -7756934988730610424
+      spriteID: 9e4e75fb8fd9309a0800000000000000
+      internalID: -6267992564681939735
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_56
+      name: RA_Graveyard_Animations01_8
       rect:
         serializedVersion: 2
-        x: 143
-        y: 15
-        width: 11
-        height: 11
+        x: 389
+        y: 341
+        width: 38
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a74425e16813c8f0800000000000000
-      internalID: -521546323109591136
+      spriteID: 4514013f672e6cdc0800000000000000
+      internalID: -3618956250033667756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_57
+      name: RA_Graveyard_Animations01_9
       rect:
         serializedVersion: 2
-        x: 150
-        y: 22
-        width: 11
-        height: 11
+        x: 5
+        y: 293
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b7190124a5091dc0800000000000000
-      internalID: -3667894219029538889
+      spriteID: 8c63a0effbe3da530800000000000000
+      internalID: 3867816649302881992
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_58
+      name: RA_Graveyard_Animations01_10
       rect:
         serializedVersion: 2
-        x: 175
-        y: 22
-        width: 11
-        height: 11
+        x: 53
+        y: 293
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7aa349955402404f0800000000000000
-      internalID: -863529746320573785
+      spriteID: 04c8062bf50f21580800000000000000
+      internalID: -8857753223279113152
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_59
+      name: RA_Graveyard_Animations01_11
       rect:
         serializedVersion: 2
-        x: 182
-        y: 15
-        width: 11
-        height: 11
+        x: 101
+        y: 293
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b8b5a59acc83b7d80800000000000000
-      internalID: -8251939440560546933
+      spriteID: ead5269aef2fd0890800000000000000
+      internalID: -7490063429669855826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_60
+      name: RA_Graveyard_Animations01_12
       rect:
         serializedVersion: 2
-        x: 207
-        y: 15
-        width: 11
-        height: 11
+        x: 155
+        y: 293
+        width: 26
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 95da18bf1b2b68bf0800000000000000
-      internalID: -322373845811876519
+      spriteID: 3acf9047889b81320800000000000000
+      internalID: 2528975186482035875
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_61
+      name: RA_Graveyard_Animations01_13
       rect:
         serializedVersion: 2
-        x: 214
-        y: 22
-        width: 11
-        height: 11
+        x: 203
+        y: 293
+        width: 26
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d3244f70aedb6b6d0800000000000000
-      internalID: -2974981690978188739
+      spriteID: d16d9b948c2125350800000000000000
+      internalID: 6003881904677967389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_62
+      name: RA_Graveyard_Animations01_14
       rect:
         serializedVersion: 2
-        x: 239
-        y: 22
-        width: 11
-        height: 11
+        x: 251
+        y: 293
+        width: 26
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c16a3c68064f25b30800000000000000
-      internalID: 4274747691743028764
+      spriteID: 3b6e30519ae1c8450800000000000000
+      internalID: 6092278107476321971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_63
+      name: RA_Graveyard_Animations01_15
       rect:
         serializedVersion: 2
-        x: 246
-        y: 15
-        width: 11
-        height: 11
+        x: 293
+        y: 293
+        width: 38
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c20196d8a8f6a5970800000000000000
-      internalID: 8744424267361882156
+      spriteID: 2466e3a6e4453b860800000000000000
+      internalID: 7544466496542369346
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_64
+      name: RA_Graveyard_Animations01_16
       rect:
         serializedVersion: 2
-        x: 271
-        y: 15
-        width: 11
-        height: 11
+        x: 341
+        y: 293
+        width: 38
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4714ee9eb64915a60800000000000000
-      internalID: 7661067632341041524
+      spriteID: bbc2861cc0f86bba0800000000000000
+      internalID: -6073509762515325765
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_65
+      name: RA_Graveyard_Animations01_17
       rect:
         serializedVersion: 2
-        x: 278
-        y: 22
-        width: 11
-        height: 11
+        x: 389
+        y: 293
+        width: 38
+        height: 44
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 72833852b54a4f2c0800000000000000
-      internalID: -4398710224655796185
+      spriteID: 64d3d3c6481eba190800000000000000
+      internalID: -7950012758324593338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_66
+      name: RA_Graveyard_Animations01_18
       rect:
         serializedVersion: 2
-        x: 303
-        y: 22
-        width: 11
-        height: 11
+        x: 5
+        y: 245
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70e76e3fb1d0027a0800000000000000
-      internalID: -6404104256413598201
+      spriteID: 963219fdd7686aee0800000000000000
+      internalID: -1250163971368869015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_67
+      name: RA_Graveyard_Animations01_19
       rect:
         serializedVersion: 2
-        x: 310
-        y: 15
-        width: 11
-        height: 11
+        x: 53
+        y: 245
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9579872255bf8f730800000000000000
-      internalID: 4033249809379399513
+      spriteID: 775adaac94ba48c80800000000000000
+      internalID: -8321337878052493961
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_68
+      name: RA_Graveyard_Animations01_20
       rect:
         serializedVersion: 2
-        x: 335
-        y: 15
-        width: 11
-        height: 11
+        x: 101
+        y: 245
+        width: 38
+        height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6cbd915f724c7ac00800000000000000
-      internalID: 911913125460696006
+      spriteID: 1779d93ae44e07630800000000000000
+      internalID: 3922886301843298161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_69
+      name: RA_Graveyard_Animations01_21
       rect:
         serializedVersion: 2
-        x: 342
-        y: 22
-        width: 11
-        height: 11
+        x: 155
+        y: 245
+        width: 26
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ad1acb3f387d9ad60800000000000000
-      internalID: 7902083982928159194
+      spriteID: 36f0bca8240b22710800000000000000
+      internalID: 1667088611923398499
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_70
+      name: RA_Graveyard_Animations01_22
       rect:
         serializedVersion: 2
-        x: 367
-        y: 22
-        width: 11
-        height: 11
+        x: 203
+        y: 245
+        width: 26
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73bc5b84601ea7430800000000000000
-      internalID: 3781582254236879671
+      spriteID: cbc94192b3961fc70800000000000000
+      internalID: 9003092832903535804
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RA_Ground_Tiles_71
+      name: RA_Graveyard_Animations01_23
       rect:
         serializedVersion: 2
-        x: 374
-        y: 15
-        width: 11
-        height: 11
+        x: 251
+        y: 245
+        width: 26
+        height: 41
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5c1ee5f647f6b8cc0800000000000000
-      internalID: -3707747322334092859
+      spriteID: 37cd1c27584f3c900800000000000000
+      internalID: 703674820793064563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_24
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 245
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c8e4eeefb6ea2f30800000000000000
+      internalID: 4551704085432428739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_25
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 245
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf24567711551b20800000000000000
+      internalID: 3104476679353151418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_26
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 245
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 621b6a79eef5eabe0800000000000000
+      internalID: -1464127350497693402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_27
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0077fe3d33e588440800000000000000
+      internalID: 4938300568103778048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_28
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e06e2f4817128bc40800000000000000
+      internalID: 5528205314042816014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_29
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 197
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 094f5b32d5ec22500800000000000000
+      internalID: 370085018824209552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_30
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 197
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4f05515193c0f7c0800000000000000
+      internalID: -4039513836849131702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_31
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 197
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dbd94aadbc506f50800000000000000
+      internalID: 6872595001042918360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_32
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 197
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6ec004013c3c7f0800000000000000
+      internalID: -593416251321293138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_33
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 197
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4cda5edda31d20d0800000000000000
+      internalID: -3446076502387794868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_34
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 197
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a88284b2ab6f78a0800000000000000
+      internalID: -6305202606738077533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_35
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 197
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7135e51fe565a98c0800000000000000
+      internalID: -3991783153934118121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_36
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6ca70a96a8f60b00800000000000000
+      internalID: 794595778709924972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_37
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bb241ead63aa5e40800000000000000
+      internalID: 5646004774329658292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_38
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 149
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e71bc3d0e5302bf0800000000000000
+      internalID: -351221531192649751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_39
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 149
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59b70f6ea7e74fb20800000000000000
+      internalID: 3167295504273931157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_40
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 149
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56651984a55120cc0800000000000000
+      internalID: -3746408462510107035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_41
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 149
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 280d5ef5f023ed7d0800000000000000
+      internalID: -2891818869110484862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_42
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 149
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33c8fb33e675d9f90800000000000000
+      internalID: -6945298919509226445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_43
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 149
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b3b4e8db00dec490800000000000000
+      internalID: -7724007561591737419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_44
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 149
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed290cd7a2406d420800000000000000
+      internalID: 2654313610926396126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_45
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec6807510bfcdf5e0800000000000000
+      internalID: -1874113514735368498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_46
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a3ca15d8403c970800000000000000
+      internalID: 8773861504054999670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_47
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 101
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930755e70fa850700800000000000000
+      internalID: 505963298665361465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_48
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 101
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b5d6cae69a603f20800000000000000
+      internalID: 3400334915081262512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_49
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 101
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd25e1b30cdc17f0800000000000000
+      internalID: -640395138565853751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_50
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 101
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28b27eb28a24c790800000000000000
+      internalID: -7510831537517840337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_51
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 101
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 759a4e3562b1aca90800000000000000
+      internalID: -7292986795142895273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_52
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 101
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c007fff06d70c1fd0800000000000000
+      internalID: -2370010687930929140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_53
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 101
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eed2eef5a7dc1f30800000000000000
+      internalID: 4547746831683215078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_54
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0fbbc07fea606490800000000000000
+      internalID: -7755080981709865203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_55
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7568a39a9c2edae0800000000000000
+      internalID: -1522730581590776452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_56
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 53
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 028227de7baefade0800000000000000
+      internalID: -1319578090112669664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_57
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 53
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f937068185cc5d0800000000000000
+      internalID: -3040958786661277895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_58
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 53
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f0c1002bee550f0800000000000000
+      internalID: -1128733683313012854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_59
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 53
+        width: 26
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5630e7bba004660800000000000000
+      internalID: 7367900790767445455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_60
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 53
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdcaa01808bc2a650800000000000000
+      internalID: 6242775786270141659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_61
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 53
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2bfa72ac66e6ab0800000000000000
+      internalID: -5012956316781530397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_62
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 53
+        width: 38
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4c4c434b10ce1b70800000000000000
+      internalID: 8871739539292179534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_63
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24f40c1c395d813f0800000000000000
+      internalID: -929758492464492734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_64
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b52282edaaf7d310800000000000000
+      internalID: 1429887031449888182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_65
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 5
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace23d8162aba7d20800000000000000
+      internalID: 3277136351653473994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_66
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 5
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c307f2ac85f37f0800000000000000
+      internalID: -630687797406057374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_67
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 5
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf5dfcf49a6d04d0800000000000000
+      internalID: -3166757774839423050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_68
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 5
+        width: 26
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd86ef565b96d3f0800000000000000
+      internalID: -876342282198544963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_69
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 5
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffd133c9e635f090800000000000000
+      internalID: -8001428785323712527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_70
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 5
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab2ef6ec4a5ca7b60800000000000000
+      internalID: 7744719820845736634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Animations01_71
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 5
+        width: 38
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98fe69d440f18e420800000000000000
+      internalID: 2659409683304345481
       vertices: []
       indices: 
       edges: []
@@ -1926,7 +1926,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 8a2cabb60782a624ba2ca6d4c20725c4
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -1936,78 +1936,78 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RA_Ground_Tiles_0: 9178697501685378489
-      RA_Ground_Tiles_1: 64919407359616844
-      RA_Ground_Tiles_10: 2507183887647172295
-      RA_Ground_Tiles_11: -4993501874843203960
-      RA_Ground_Tiles_12: 7674367420535924423
-      RA_Ground_Tiles_13: -7735529837827446862
-      RA_Ground_Tiles_14: -5353843549934509632
-      RA_Ground_Tiles_15: -121860654846326487
-      RA_Ground_Tiles_16: 5892334044933085414
-      RA_Ground_Tiles_17: -315968695127745359
-      RA_Ground_Tiles_18: -1824363607946816381
-      RA_Ground_Tiles_19: -4560264576031770794
-      RA_Ground_Tiles_2: -4781585158232356169
-      RA_Ground_Tiles_20: 7640831944634898560
-      RA_Ground_Tiles_21: -3454132544598911018
-      RA_Ground_Tiles_22: -6467446262496698333
-      RA_Ground_Tiles_23: 265749463045612225
-      RA_Ground_Tiles_24: 2096465700752016727
-      RA_Ground_Tiles_25: 6831366717704506008
-      RA_Ground_Tiles_26: 20061855725754613
-      RA_Ground_Tiles_27: -6980266294384900104
-      RA_Ground_Tiles_28: 2242880919881428187
-      RA_Ground_Tiles_29: 3600277105465449311
-      RA_Ground_Tiles_3: 4600706518752425603
-      RA_Ground_Tiles_30: 7577819546531447723
-      RA_Ground_Tiles_31: -4612741882914089387
-      RA_Ground_Tiles_32: 2019327240069419612
-      RA_Ground_Tiles_33: -4041141101579856305
-      RA_Ground_Tiles_34: 72793320362428884
-      RA_Ground_Tiles_35: 1825163237435233023
-      RA_Ground_Tiles_36: -7380138013866075091
-      RA_Ground_Tiles_37: -7702012778393385785
-      RA_Ground_Tiles_38: 5232593418783000777
-      RA_Ground_Tiles_39: 7654799772159131192
-      RA_Ground_Tiles_4: -2374362533708176291
-      RA_Ground_Tiles_40: -7380924451967003239
-      RA_Ground_Tiles_41: 4243187345090503493
-      RA_Ground_Tiles_42: -5759746045634587659
-      RA_Ground_Tiles_43: -4403672258441467844
-      RA_Ground_Tiles_44: 1194535239426448870
-      RA_Ground_Tiles_45: -7106158448094870945
-      RA_Ground_Tiles_46: -559580178801032989
-      RA_Ground_Tiles_47: 5205385072517447381
-      RA_Ground_Tiles_48: -2637904823541922071
-      RA_Ground_Tiles_49: -1759820997941197011
-      RA_Ground_Tiles_5: -5282478129406858205
-      RA_Ground_Tiles_50: -5956686339964654712
-      RA_Ground_Tiles_51: 6689290861234394862
-      RA_Ground_Tiles_52: 7813584319405880270
-      RA_Ground_Tiles_53: 3996385784648136924
-      RA_Ground_Tiles_54: -6355694247721717686
-      RA_Ground_Tiles_55: -7756934988730610424
-      RA_Ground_Tiles_56: -521546323109591136
-      RA_Ground_Tiles_57: -3667894219029538889
-      RA_Ground_Tiles_58: -863529746320573785
-      RA_Ground_Tiles_59: -8251939440560546933
-      RA_Ground_Tiles_6: 3241338140262391465
-      RA_Ground_Tiles_60: -322373845811876519
-      RA_Ground_Tiles_61: -2974981690978188739
-      RA_Ground_Tiles_62: 4274747691743028764
-      RA_Ground_Tiles_63: 8744424267361882156
-      RA_Ground_Tiles_64: 7661067632341041524
-      RA_Ground_Tiles_65: -4398710224655796185
-      RA_Ground_Tiles_66: -6404104256413598201
-      RA_Ground_Tiles_67: 4033249809379399513
-      RA_Ground_Tiles_68: 911913125460696006
-      RA_Ground_Tiles_69: 7902083982928159194
-      RA_Ground_Tiles_7: -807374599884517454
-      RA_Ground_Tiles_70: 3781582254236879671
-      RA_Ground_Tiles_71: -3707747322334092859
-      RA_Ground_Tiles_8: -9005409454341440674
-      RA_Ground_Tiles_9: -5708837194060727748
+      RA_Graveyard_Animations01_0: 6482718919935482680
+      RA_Graveyard_Animations01_1: -5090448570212483903
+      RA_Graveyard_Animations01_10: -8857753223279113152
+      RA_Graveyard_Animations01_11: -7490063429669855826
+      RA_Graveyard_Animations01_12: 2528975186482035875
+      RA_Graveyard_Animations01_13: 6003881904677967389
+      RA_Graveyard_Animations01_14: 6092278107476321971
+      RA_Graveyard_Animations01_15: 7544466496542369346
+      RA_Graveyard_Animations01_16: -6073509762515325765
+      RA_Graveyard_Animations01_17: -7950012758324593338
+      RA_Graveyard_Animations01_18: -1250163971368869015
+      RA_Graveyard_Animations01_19: -8321337878052493961
+      RA_Graveyard_Animations01_2: -3021320066853966074
+      RA_Graveyard_Animations01_20: 3922886301843298161
+      RA_Graveyard_Animations01_21: 1667088611923398499
+      RA_Graveyard_Animations01_22: 9003092832903535804
+      RA_Graveyard_Animations01_23: 703674820793064563
+      RA_Graveyard_Animations01_24: 4551704085432428739
+      RA_Graveyard_Animations01_25: 3104476679353151418
+      RA_Graveyard_Animations01_26: -1464127350497693402
+      RA_Graveyard_Animations01_27: 4938300568103778048
+      RA_Graveyard_Animations01_28: 5528205314042816014
+      RA_Graveyard_Animations01_29: 370085018824209552
+      RA_Graveyard_Animations01_3: 8619865654993263947
+      RA_Graveyard_Animations01_30: -4039513836849131702
+      RA_Graveyard_Animations01_31: 6872595001042918360
+      RA_Graveyard_Animations01_32: -593416251321293138
+      RA_Graveyard_Animations01_33: -3446076502387794868
+      RA_Graveyard_Animations01_34: -6305202606738077533
+      RA_Graveyard_Animations01_35: -3991783153934118121
+      RA_Graveyard_Animations01_36: 794595778709924972
+      RA_Graveyard_Animations01_37: 5646004774329658292
+      RA_Graveyard_Animations01_38: -351221531192649751
+      RA_Graveyard_Animations01_39: 3167295504273931157
+      RA_Graveyard_Animations01_4: 4308657415367781378
+      RA_Graveyard_Animations01_40: -3746408462510107035
+      RA_Graveyard_Animations01_41: -2891818869110484862
+      RA_Graveyard_Animations01_42: -6945298919509226445
+      RA_Graveyard_Animations01_43: -7724007561591737419
+      RA_Graveyard_Animations01_44: 2654313610926396126
+      RA_Graveyard_Animations01_45: -1874113514735368498
+      RA_Graveyard_Animations01_46: 8773861504054999670
+      RA_Graveyard_Animations01_47: 505963298665361465
+      RA_Graveyard_Animations01_48: 3400334915081262512
+      RA_Graveyard_Animations01_49: -640395138565853751
+      RA_Graveyard_Animations01_5: 7679729061849943885
+      RA_Graveyard_Animations01_50: -7510831537517840337
+      RA_Graveyard_Animations01_51: -7292986795142895273
+      RA_Graveyard_Animations01_52: -2370010687930929140
+      RA_Graveyard_Animations01_53: 4547746831683215078
+      RA_Graveyard_Animations01_54: -7755080981709865203
+      RA_Graveyard_Animations01_55: -1522730581590776452
+      RA_Graveyard_Animations01_56: -1319578090112669664
+      RA_Graveyard_Animations01_57: -3040958786661277895
+      RA_Graveyard_Animations01_58: -1128733683313012854
+      RA_Graveyard_Animations01_59: 7367900790767445455
+      RA_Graveyard_Animations01_6: 1605931739423624638
+      RA_Graveyard_Animations01_60: 6242775786270141659
+      RA_Graveyard_Animations01_61: -5012956316781530397
+      RA_Graveyard_Animations01_62: 8871739539292179534
+      RA_Graveyard_Animations01_63: -929758492464492734
+      RA_Graveyard_Animations01_64: 1429887031449888182
+      RA_Graveyard_Animations01_65: 3277136351653473994
+      RA_Graveyard_Animations01_66: -630687797406057374
+      RA_Graveyard_Animations01_67: -3166757774839423050
+      RA_Graveyard_Animations01_68: -876342282198544963
+      RA_Graveyard_Animations01_69: -8001428785323712527
+      RA_Graveyard_Animations01_7: -6267992564681939735
+      RA_Graveyard_Animations01_70: 7744719820845736634
+      RA_Graveyard_Animations01_71: 2659409683304345481
+      RA_Graveyard_Animations01_8: -3618956250033667756
+      RA_Graveyard_Animations01_9: 3867816649302881992
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

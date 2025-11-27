@@ -1,0 +1,2873 @@
+fileFormatVersion: 2
+guid: 6be3ba82151a20f46ae55db0e958efd5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8019085243180639162
+    second: RA_Graveyard_Unity_0
+  - first:
+      213: -6055807083093147231
+    second: RA_Graveyard_Unity_1
+  - first:
+      213: -7257277204225622105
+    second: RA_Graveyard_Unity_2
+  - first:
+      213: 849942455576861356
+    second: RA_Graveyard_Unity_3
+  - first:
+      213: 3109629665709815769
+    second: RA_Graveyard_Unity_4
+  - first:
+      213: -3177557598857601320
+    second: RA_Graveyard_Unity_5
+  - first:
+      213: -4649411870381820309
+    second: RA_Graveyard_Unity_6
+  - first:
+      213: -2173837218856178246
+    second: RA_Graveyard_Unity_7
+  - first:
+      213: 2161673128905148544
+    second: RA_Graveyard_Unity_8
+  - first:
+      213: 2161910790642846434
+    second: RA_Graveyard_Unity_9
+  - first:
+      213: 6987854789029345747
+    second: RA_Graveyard_Unity_10
+  - first:
+      213: -3259333639524537514
+    second: RA_Graveyard_Unity_11
+  - first:
+      213: -8106392546282831154
+    second: RA_Graveyard_Unity_12
+  - first:
+      213: 5057569269220712269
+    second: RA_Graveyard_Unity_13
+  - first:
+      213: -3995065995622645218
+    second: RA_Graveyard_Unity_14
+  - first:
+      213: -1871935667300342909
+    second: RA_Graveyard_Unity_15
+  - first:
+      213: -2417341354859802926
+    second: RA_Graveyard_Unity_16
+  - first:
+      213: -1892708134548085707
+    second: RA_Graveyard_Unity_17
+  - first:
+      213: 751097135778260117
+    second: RA_Graveyard_Unity_18
+  - first:
+      213: 3489257401743345222
+    second: RA_Graveyard_Unity_19
+  - first:
+      213: 285846332965556940
+    second: RA_Graveyard_Unity_20
+  - first:
+      213: -5866537008825358289
+    second: RA_Graveyard_Unity_21
+  - first:
+      213: -2933083953806703311
+    second: RA_Graveyard_Unity_22
+  - first:
+      213: 5384619654325143896
+    second: RA_Graveyard_Unity_23
+  - first:
+      213: -912349467320961235
+    second: RA_Graveyard_Unity_24
+  - first:
+      213: 2837367447355384868
+    second: RA_Graveyard_Unity_25
+  - first:
+      213: 602614528832791461
+    second: RA_Graveyard_Unity_26
+  - first:
+      213: 4458484435749695351
+    second: RA_Graveyard_Unity_27
+  - first:
+      213: -6025431077214609081
+    second: RA_Graveyard_Unity_28
+  - first:
+      213: 1210174147908107456
+    second: RA_Graveyard_Unity_29
+  - first:
+      213: 7887677223974828361
+    second: RA_Graveyard_Unity_30
+  - first:
+      213: 991264455810783934
+    second: RA_Graveyard_Unity_31
+  - first:
+      213: -2381518738028258480
+    second: RA_Graveyard_Unity_32
+  - first:
+      213: 651027452568442625
+    second: RA_Graveyard_Unity_33
+  - first:
+      213: 8455805515556601208
+    second: RA_Graveyard_Unity_34
+  - first:
+      213: -1616706119192277456
+    second: RA_Graveyard_Unity_35
+  - first:
+      213: 8613194790653957699
+    second: RA_Graveyard_Unity_36
+  - first:
+      213: 5073514328836730198
+    second: RA_Graveyard_Unity_37
+  - first:
+      213: 612932458904454649
+    second: RA_Graveyard_Unity_38
+  - first:
+      213: -553443187769378164
+    second: RA_Graveyard_Unity_39
+  - first:
+      213: -2738975218329704229
+    second: RA_Graveyard_Unity_40
+  - first:
+      213: -7521949030893334612
+    second: RA_Graveyard_Unity_41
+  - first:
+      213: -3071749155072670579
+    second: RA_Graveyard_Unity_42
+  - first:
+      213: 2412298856252023609
+    second: RA_Graveyard_Unity_43
+  - first:
+      213: 6008271780243862087
+    second: RA_Graveyard_Unity_44
+  - first:
+      213: -1042403196256820423
+    second: RA_Graveyard_Unity_45
+  - first:
+      213: -1261498211573489959
+    second: RA_Graveyard_Unity_46
+  - first:
+      213: -6229290579010898356
+    second: RA_Graveyard_Unity_47
+  - first:
+      213: 7753378204778978684
+    second: RA_Graveyard_Unity_48
+  - first:
+      213: -7664988744385246461
+    second: RA_Graveyard_Unity_49
+  - first:
+      213: -3904382103959989341
+    second: RA_Graveyard_Unity_50
+  - first:
+      213: -364504864627503278
+    second: RA_Graveyard_Unity_51
+  - first:
+      213: -4985783291174095833
+    second: RA_Graveyard_Unity_52
+  - first:
+      213: -2412537846140827180
+    second: RA_Graveyard_Unity_53
+  - first:
+      213: -8331979978767552951
+    second: RA_Graveyard_Unity_54
+  - first:
+      213: -8926772328042740083
+    second: RA_Graveyard_Unity_55
+  - first:
+      213: -6113780885760151675
+    second: RA_Graveyard_Unity_56
+  - first:
+      213: -7716948805982091222
+    second: RA_Graveyard_Unity_57
+  - first:
+      213: -690646402396017260
+    second: RA_Graveyard_Unity_58
+  - first:
+      213: 431160778239542172
+    second: RA_Graveyard_Unity_59
+  - first:
+      213: -1987103854652963437
+    second: RA_Graveyard_Unity_60
+  - first:
+      213: 5015574249603314670
+    second: RA_Graveyard_Unity_61
+  - first:
+      213: 8356808255812502709
+    second: RA_Graveyard_Unity_62
+  - first:
+      213: 950098216410036200
+    second: RA_Graveyard_Unity_63
+  - first:
+      213: 234117116719633385
+    second: RA_Graveyard_Unity_64
+  - first:
+      213: 2312169728200601516
+    second: RA_Graveyard_Unity_65
+  - first:
+      213: 8929742549013980286
+    second: RA_Graveyard_Unity_66
+  - first:
+      213: 2991791436895191198
+    second: RA_Graveyard_Unity_67
+  - first:
+      213: 6177737594678887726
+    second: RA_Graveyard_Unity_68
+  - first:
+      213: -8988877185932531865
+    second: RA_Graveyard_Unity_69
+  - first:
+      213: 8432100514686670652
+    second: RA_Graveyard_Unity_70
+  - first:
+      213: -2513565961575336052
+    second: RA_Graveyard_Unity_71
+  - first:
+      213: 3257589589523948252
+    second: RA_Graveyard_Unity_72
+  - first:
+      213: 759133091939797462
+    second: RA_Graveyard_Unity_73
+  - first:
+      213: 7116388271051506676
+    second: RA_Graveyard_Unity_74
+  - first:
+      213: -5807801247449372563
+    second: RA_Graveyard_Unity_75
+  - first:
+      213: -5704562315229792540
+    second: RA_Graveyard_Unity_76
+  - first:
+      213: -1314524989497851897
+    second: RA_Graveyard_Unity_77
+  - first:
+      213: 7920883732479169072
+    second: RA_Graveyard_Unity_78
+  - first:
+      213: -5588339085341329099
+    second: RA_Graveyard_Unity_79
+  - first:
+      213: -2628262403630076227
+    second: RA_Graveyard_Unity_80
+  - first:
+      213: 3353461273407240951
+    second: RA_Graveyard_Unity_81
+  - first:
+      213: -4467160211286798961
+    second: RA_Graveyard_Unity_82
+  - first:
+      213: -5518941395380260770
+    second: RA_Graveyard_Unity_83
+  - first:
+      213: 5627382728798757893
+    second: RA_Graveyard_Unity_84
+  - first:
+      213: -6636301554110408100
+    second: RA_Graveyard_Unity_85
+  - first:
+      213: 3371630607624917550
+    second: RA_Graveyard_Unity_86
+  - first:
+      213: 1204614454642670576
+    second: RA_Graveyard_Unity_87
+  - first:
+      213: -8393469601699927565
+    second: RA_Graveyard_Unity_88
+  - first:
+      213: 6004733326414851947
+    second: RA_Graveyard_Unity_89
+  - first:
+      213: 8134980729510710517
+    second: RA_Graveyard_Unity_90
+  - first:
+      213: 6091140419340124900
+    second: RA_Graveyard_Unity_91
+  - first:
+      213: -5790058247920651517
+    second: RA_Graveyard_Unity_92
+  - first:
+      213: -8123082302788180897
+    second: RA_Graveyard_Unity_93
+  - first:
+      213: -1428800861769108489
+    second: RA_Graveyard_Unity_94
+  - first:
+      213: 5956243996035467424
+    second: RA_Graveyard_Unity_95
+  - first:
+      213: 5364441064130221089
+    second: RA_Graveyard_Unity_96
+  - first:
+      213: 362052617821029834
+    second: RA_Graveyard_Unity_97
+  - first:
+      213: -3534899204277498253
+    second: RA_Graveyard_Unity_98
+  - first:
+      213: -3071586951894963979
+    second: RA_Graveyard_Unity_99
+  - first:
+      213: 3398353458791722872
+    second: RA_Graveyard_Unity_100
+  - first:
+      213: -6390716807391885842
+    second: RA_Graveyard_Unity_101
+  - first:
+      213: 6129951119726280366
+    second: RA_Graveyard_Unity_102
+  - first:
+      213: -4042278944800197463
+    second: RA_Graveyard_Unity_103
+  - first:
+      213: -1017230270788663808
+    second: RA_Graveyard_Unity_104
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 353
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64c14a0557c76b090800000000000000
+      internalID: -8019085243180639162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_1
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 225
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a140fffa8375fba0800000000000000
+      internalID: -6055807083093147231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_2
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 225
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7af779d55d8f84b90800000000000000
+      internalID: -7257277204225622105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_3
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 225
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caa9e20092a9bcb00800000000000000
+      internalID: 849942455576861356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_4
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 225
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d776a794bf972b20800000000000000
+      internalID: 3109629665709815769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_5
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 225
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dedfb2033c07e3d0800000000000000
+      internalID: -3177557598857601320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 225
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b66386b9988f97fb0800000000000000
+      internalID: -4649411870381820309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_7
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 177
+        width: 58
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abded82219af4d1e0800000000000000
+      internalID: -2173837218856178246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_8
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 225
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08806e8f14ecffd10800000000000000
+      internalID: 2161673128905148544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_9
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 225
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eac958e866a00e10800000000000000
+      internalID: 2161910790642846434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_10
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 225
+        width: 82
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d93b1a48e8d9f060800000000000000
+      internalID: 6987854789029345747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_11
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 193
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ba8a3d25584c2d0800000000000000
+      internalID: -3259333639524537514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_12
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 193
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec200fcbdee408f80800000000000000
+      internalID: -8106392546282831154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_13
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 193
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4f15d64478103640800000000000000
+      internalID: 5057569269220712269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_14
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 193
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e128bacc4acae88c0800000000000000
+      internalID: -3995065995622645218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_15
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 193
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 383ed24bd6c8506e0800000000000000
+      internalID: -1871935667300342909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_16
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 193
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2de48ba68d0e37ed0800000000000000
+      internalID: -2417341354859802926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_17
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 193
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 534e4c8caffbbb5e0800000000000000
+      internalID: -1892708134548085707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_18
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 193
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59460e19dde6c6a00800000000000000
+      internalID: 751097135778260117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_19
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 191
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64680d8be155c6030800000000000000
+      internalID: 3489257401743345222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_20
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 193
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc292c0b9b787f300800000000000000
+      internalID: 285846332965556940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_21
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 193
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2828473cafd59ea0800000000000000
+      internalID: -5866537008825358289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_22
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 129
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13504f42fa79b47d0800000000000000
+      internalID: -2933083953806703311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_23
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 159
+        width: 162
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85903a2fb030aba40800000000000000
+      internalID: 5384619654325143896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_24
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 177
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2731594efea653f0800000000000000
+      internalID: -912349467320961235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_25
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 161
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424efdc09aa506720800000000000000
+      internalID: 2837367447355384868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_26
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 161
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a3619f98baec5800800000000000000
+      internalID: 602614528832791461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_27
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 161
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77fe775e8f7bfdd30800000000000000
+      internalID: 4458484435749695351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_28
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 161
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74126000c5e516ca0800000000000000
+      internalID: -6025431077214609081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_29
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 161
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc7c6ac9f66bc010800000000000000
+      internalID: 1210174147908107456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_30
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 168
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94975fdf4a8a67d60800000000000000
+      internalID: 7887677223974828361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_31
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 160
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eba921745cda1cd00800000000000000
+      internalID: 991264455810783934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_32
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 161
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05b93e9535523fed0800000000000000
+      internalID: -2381518738028258480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_33
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 161
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1079e51d40ae80900800000000000000
+      internalID: 651027452568442625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_34
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 161
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87d3a8cc05e095570800000000000000
+      internalID: 8455805515556601208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_35
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 168
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e085ba95e4099e0800000000000000
+      internalID: -1616706119192277456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_36
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 160
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3469c260707388770800000000000000
+      internalID: 8613194790653957699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_37
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 168
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65dea25c66eb86640800000000000000
+      internalID: 5073514328836730198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_38
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 160
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f58e4ce2d2918800800000000000000
+      internalID: 612932458904454649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_39
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 127
+        width: 226
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8a75ad5a56c158f0800000000000000
+      internalID: -553443187769378164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_40
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 129
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd82cd6fc843df9d0800000000000000
+      internalID: -2738975218329704229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_41
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 152
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: caf420b953bac9790800000000000000
+      internalID: -7521949030893334612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_42
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 144
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8489c41b64fe55d0800000000000000
+      internalID: -3071749155072670579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_43
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 144
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933abf267053a7120800000000000000
+      internalID: 2412298856252023609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_44
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 145
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7427077d95ba16350800000000000000
+      internalID: 6008271780243862087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_45
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 145
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933616ed0d3a881f0800000000000000
+      internalID: -1042403196256820423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_46
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 145
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9de1f5e6f024e7ee0800000000000000
+      internalID: -1261498211573489959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_47
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 136
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c463e5bf83d1d89a0800000000000000
+      internalID: -6229290579010898356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_48
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 128
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7d5b19e568899b60800000000000000
+      internalID: 7753378204778978684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_49
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 128
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30bcc8b095d70a590800000000000000
+      internalID: -7664988744385246461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_50
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 129
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a3921aa929d0d9c0800000000000000
+      internalID: -3904382103959989341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_51
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 132
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25fc9f0c1c401faf0800000000000000
+      internalID: -364504864627503278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_52
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 129
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7247d723380fecab0800000000000000
+      internalID: -4985783291174095833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_53
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 97
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d907917c91f48ed0800000000000000
+      internalID: -2412537846140827180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_54
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 97
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94ea4e1aa5cde5c80800000000000000
+      internalID: -8331979978767552951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_55
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 97
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86c93c1ddbbd1480800000000000000
+      internalID: -8926772328042740083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_56
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 97
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58f61b53dac772ba0800000000000000
+      internalID: -6113780885760151675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_57
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 97
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a28009572f3e7e490800000000000000
+      internalID: -7716948805982091222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_58
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 97
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49da8c791c45a66f0800000000000000
+      internalID: -690646402396017260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_59
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 49
+        width: 58
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c938c04817acbf500800000000000000
+      internalID: 431160778239542172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_60
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 97
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395c99382936c64e0800000000000000
+      internalID: -1987103854652963437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_61
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 97
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee3b334d436ea9540800000000000000
+      internalID: 5015574249603314670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_62
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 97
+        width: 82
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b481c715d859f370800000000000000
+      internalID: 8356808255812502709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_63
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 65
+        width: 48
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e73ad24b4d6f2d00800000000000000
+      internalID: 950098216410036200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_64
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 65
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e399e9f640cf3300800000000000000
+      internalID: 234117116719633385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_65
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 65
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cafeecd0e1a761020800000000000000
+      internalID: 2312169728200601516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_66
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 65
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e746ba95981dceb70800000000000000
+      internalID: 8929742549013980286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_67
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 65
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90813ee57af48920800000000000000
+      internalID: 2991791436895191198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_68
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 65
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e25496e7c9bbbb550800000000000000
+      internalID: 6177737594678887726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_69
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 65
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 767e0e213d7114380800000000000000
+      internalID: -8988877185932531865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_70
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 65
+        width: 22
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3799403eb6d40570800000000000000
+      internalID: 8432100514686670652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_71
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 63
+        width: 10
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c87f9cc43150e1dd0800000000000000
+      internalID: -2513565961575336052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_72
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 65
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2e593e878453d20800000000000000
+      internalID: 3257589589523948252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_73
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 65
+        width: 42
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9c05a668bf88a00800000000000000
+      internalID: 759133091939797462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_74
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 1
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f308c3ad6d72c260800000000000000
+      internalID: 7116388271051506676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_75
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 31
+        width: 162
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d68a5b7598b866fa0800000000000000
+      internalID: -5807801247449372563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_76
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 49
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e6f5a16cc255d0b0800000000000000
+      internalID: -5704562315229792540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_77
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 33
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7004b989c7ed1cde0800000000000000
+      internalID: -1314524989497851897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_78
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 33
+        width: 14
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 032579db9c1aced60800000000000000
+      internalID: 7920883732479169072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_79
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 33
+        width: 10
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5397ccdc53b3272b0800000000000000
+      internalID: -5588339085341329099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_80
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 33
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbe6d1fd449868bd0800000000000000
+      internalID: -2628262403630076227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_81
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 33
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fab771c243e98e20800000000000000
+      internalID: 3353461273407240951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_82
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 40
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8dcd73b4757102c0800000000000000
+      internalID: -4467160211286798961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_83
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 32
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e503920aa08c863b0800000000000000
+      internalID: -5518941395380260770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_84
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 33
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504e735d6ca781e40800000000000000
+      internalID: 5627382728798757893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_85
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 33
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5a50eca5ee17e3a0800000000000000
+      internalID: -6636301554110408100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_86
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 33
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2251598c207ace20800000000000000
+      internalID: 3371630607624917550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_87
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fbf644d676a7b010800000000000000
+      internalID: 1204614454642670576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_88
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f9e2a52ed7648b80800000000000000
+      internalID: -8393469601699927565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_89
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 40
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6f28eb5529155350800000000000000
+      internalID: 6004733326414851947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_90
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 32
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc422d5fd145e070800000000000000
+      internalID: 8134980729510710517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_91
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 226
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e2cacb60f3188450800000000000000
+      internalID: 6091140419340124900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_92
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 1
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3037ed753b495afa0800000000000000
+      internalID: -5790058247920651517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_93
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 24
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f546c0dfea3054f80800000000000000
+      internalID: -8123082302788180897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_94
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f3fa73bf21eb2ce0800000000000000
+      internalID: -1428800861769108489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_95
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 16
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a84f3b5b54d8a250800000000000000
+      internalID: 5956243996035467424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_96
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 17
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 124100ec9b2527a40800000000000000
+      internalID: 5364441064130221089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_97
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 17
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5093b00f4460500800000000000000
+      internalID: 362052617821029834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_98
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 17
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e8a3407e381fec0800000000000000
+      internalID: -3534899204277498253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_99
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 8
+        width: 13
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f86393f0f78f55d0800000000000000
+      internalID: -3071586951894963979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_100
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 0
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f208c2770692f20800000000000000
+      internalID: 3398353458791722872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_101
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee5c9435cec9f47a0800000000000000
+      internalID: -6390716807391885842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_102
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 1
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaefac5c016f11550800000000000000
+      internalID: 6129951119726280366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_103
+      rect:
+        serializedVersion: 2
+        x: 536
+        y: 4
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4b42477b0f6e7c0800000000000000
+      internalID: -4042278944800197463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Graveyard_Unity_104
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 1
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0060ede457212e1f0800000000000000
+      internalID: -1017230270788663808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Graveyard_Unity_0: -8019085243180639162
+      RA_Graveyard_Unity_1: -6055807083093147231
+      RA_Graveyard_Unity_10: 6987854789029345747
+      RA_Graveyard_Unity_100: 3398353458791722872
+      RA_Graveyard_Unity_101: -6390716807391885842
+      RA_Graveyard_Unity_102: 6129951119726280366
+      RA_Graveyard_Unity_103: -4042278944800197463
+      RA_Graveyard_Unity_104: -1017230270788663808
+      RA_Graveyard_Unity_11: -3259333639524537514
+      RA_Graveyard_Unity_12: -8106392546282831154
+      RA_Graveyard_Unity_13: 5057569269220712269
+      RA_Graveyard_Unity_14: -3995065995622645218
+      RA_Graveyard_Unity_15: -1871935667300342909
+      RA_Graveyard_Unity_16: -2417341354859802926
+      RA_Graveyard_Unity_17: -1892708134548085707
+      RA_Graveyard_Unity_18: 751097135778260117
+      RA_Graveyard_Unity_19: 3489257401743345222
+      RA_Graveyard_Unity_2: -7257277204225622105
+      RA_Graveyard_Unity_20: 285846332965556940
+      RA_Graveyard_Unity_21: -5866537008825358289
+      RA_Graveyard_Unity_22: -2933083953806703311
+      RA_Graveyard_Unity_23: 5384619654325143896
+      RA_Graveyard_Unity_24: -912349467320961235
+      RA_Graveyard_Unity_25: 2837367447355384868
+      RA_Graveyard_Unity_26: 602614528832791461
+      RA_Graveyard_Unity_27: 4458484435749695351
+      RA_Graveyard_Unity_28: -6025431077214609081
+      RA_Graveyard_Unity_29: 1210174147908107456
+      RA_Graveyard_Unity_3: 849942455576861356
+      RA_Graveyard_Unity_30: 7887677223974828361
+      RA_Graveyard_Unity_31: 991264455810783934
+      RA_Graveyard_Unity_32: -2381518738028258480
+      RA_Graveyard_Unity_33: 651027452568442625
+      RA_Graveyard_Unity_34: 8455805515556601208
+      RA_Graveyard_Unity_35: -1616706119192277456
+      RA_Graveyard_Unity_36: 8613194790653957699
+      RA_Graveyard_Unity_37: 5073514328836730198
+      RA_Graveyard_Unity_38: 612932458904454649
+      RA_Graveyard_Unity_39: -553443187769378164
+      RA_Graveyard_Unity_4: 3109629665709815769
+      RA_Graveyard_Unity_40: -2738975218329704229
+      RA_Graveyard_Unity_41: -7521949030893334612
+      RA_Graveyard_Unity_42: -3071749155072670579
+      RA_Graveyard_Unity_43: 2412298856252023609
+      RA_Graveyard_Unity_44: 6008271780243862087
+      RA_Graveyard_Unity_45: -1042403196256820423
+      RA_Graveyard_Unity_46: -1261498211573489959
+      RA_Graveyard_Unity_47: -6229290579010898356
+      RA_Graveyard_Unity_48: 7753378204778978684
+      RA_Graveyard_Unity_49: -7664988744385246461
+      RA_Graveyard_Unity_5: -3177557598857601320
+      RA_Graveyard_Unity_50: -3904382103959989341
+      RA_Graveyard_Unity_51: -364504864627503278
+      RA_Graveyard_Unity_52: -4985783291174095833
+      RA_Graveyard_Unity_53: -2412537846140827180
+      RA_Graveyard_Unity_54: -8331979978767552951
+      RA_Graveyard_Unity_55: -8926772328042740083
+      RA_Graveyard_Unity_56: -6113780885760151675
+      RA_Graveyard_Unity_57: -7716948805982091222
+      RA_Graveyard_Unity_58: -690646402396017260
+      RA_Graveyard_Unity_59: 431160778239542172
+      RA_Graveyard_Unity_6: -4649411870381820309
+      RA_Graveyard_Unity_60: -1987103854652963437
+      RA_Graveyard_Unity_61: 5015574249603314670
+      RA_Graveyard_Unity_62: 8356808255812502709
+      RA_Graveyard_Unity_63: 950098216410036200
+      RA_Graveyard_Unity_64: 234117116719633385
+      RA_Graveyard_Unity_65: 2312169728200601516
+      RA_Graveyard_Unity_66: 8929742549013980286
+      RA_Graveyard_Unity_67: 2991791436895191198
+      RA_Graveyard_Unity_68: 6177737594678887726
+      RA_Graveyard_Unity_69: -8988877185932531865
+      RA_Graveyard_Unity_7: -2173837218856178246
+      RA_Graveyard_Unity_70: 8432100514686670652
+      RA_Graveyard_Unity_71: -2513565961575336052
+      RA_Graveyard_Unity_72: 3257589589523948252
+      RA_Graveyard_Unity_73: 759133091939797462
+      RA_Graveyard_Unity_74: 7116388271051506676
+      RA_Graveyard_Unity_75: -5807801247449372563
+      RA_Graveyard_Unity_76: -5704562315229792540
+      RA_Graveyard_Unity_77: -1314524989497851897
+      RA_Graveyard_Unity_78: 7920883732479169072
+      RA_Graveyard_Unity_79: -5588339085341329099
+      RA_Graveyard_Unity_8: 2161673128905148544
+      RA_Graveyard_Unity_80: -2628262403630076227
+      RA_Graveyard_Unity_81: 3353461273407240951
+      RA_Graveyard_Unity_82: -4467160211286798961
+      RA_Graveyard_Unity_83: -5518941395380260770
+      RA_Graveyard_Unity_84: 5627382728798757893
+      RA_Graveyard_Unity_85: -6636301554110408100
+      RA_Graveyard_Unity_86: 3371630607624917550
+      RA_Graveyard_Unity_87: 1204614454642670576
+      RA_Graveyard_Unity_88: -8393469601699927565
+      RA_Graveyard_Unity_89: 6004733326414851947
+      RA_Graveyard_Unity_9: 2161910790642846434
+      RA_Graveyard_Unity_90: 8134980729510710517
+      RA_Graveyard_Unity_91: 6091140419340124900
+      RA_Graveyard_Unity_92: -5790058247920651517
+      RA_Graveyard_Unity_93: -8123082302788180897
+      RA_Graveyard_Unity_94: -1428800861769108489
+      RA_Graveyard_Unity_95: 5956243996035467424
+      RA_Graveyard_Unity_96: 5364441064130221089
+      RA_Graveyard_Unity_97: 362052617821029834
+      RA_Graveyard_Unity_98: -3534899204277498253
+      RA_Graveyard_Unity_99: -3071586951894963979
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
