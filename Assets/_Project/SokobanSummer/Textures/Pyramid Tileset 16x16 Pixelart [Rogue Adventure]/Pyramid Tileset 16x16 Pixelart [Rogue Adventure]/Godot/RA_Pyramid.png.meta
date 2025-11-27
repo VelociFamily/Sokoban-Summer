@@ -1,0 +1,3965 @@
+fileFormatVersion: 2
+guid: 445dc0e05a78086459fae0da1761d398
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1654494931133858052
+    second: RA_Pyramid_0
+  - first:
+      213: -4725089186335109338
+    second: RA_Pyramid_1
+  - first:
+      213: 4831750615331552936
+    second: RA_Pyramid_2
+  - first:
+      213: -7043475178959484665
+    second: RA_Pyramid_3
+  - first:
+      213: 8882009799342240861
+    second: RA_Pyramid_4
+  - first:
+      213: 8135853253020447620
+    second: RA_Pyramid_5
+  - first:
+      213: 1521024139718584873
+    second: RA_Pyramid_6
+  - first:
+      213: 7689923915579090647
+    second: RA_Pyramid_7
+  - first:
+      213: -9180864983121084062
+    second: RA_Pyramid_8
+  - first:
+      213: -8020904169476208344
+    second: RA_Pyramid_9
+  - first:
+      213: 4507782310518365487
+    second: RA_Pyramid_10
+  - first:
+      213: 4207287422102808715
+    second: RA_Pyramid_11
+  - first:
+      213: 135443367190136213
+    second: RA_Pyramid_12
+  - first:
+      213: -1400521977386333445
+    second: RA_Pyramid_13
+  - first:
+      213: 3920199407129350207
+    second: RA_Pyramid_14
+  - first:
+      213: -777681980981804159
+    second: RA_Pyramid_15
+  - first:
+      213: -8514468040039592023
+    second: RA_Pyramid_16
+  - first:
+      213: 8310726904524117829
+    second: RA_Pyramid_17
+  - first:
+      213: -3462300056563462208
+    second: RA_Pyramid_18
+  - first:
+      213: 7769197875807586886
+    second: RA_Pyramid_19
+  - first:
+      213: -2293675147832513825
+    second: RA_Pyramid_20
+  - first:
+      213: 4529745257630044471
+    second: RA_Pyramid_21
+  - first:
+      213: 7855999969164278802
+    second: RA_Pyramid_22
+  - first:
+      213: -448540903143390889
+    second: RA_Pyramid_23
+  - first:
+      213: 6104622822485139194
+    second: RA_Pyramid_24
+  - first:
+      213: 2311145796866620651
+    second: RA_Pyramid_25
+  - first:
+      213: -1252345639560423142
+    second: RA_Pyramid_26
+  - first:
+      213: -6721397625754240652
+    second: RA_Pyramid_27
+  - first:
+      213: -4310481620495886319
+    second: RA_Pyramid_28
+  - first:
+      213: 6589577761018670617
+    second: RA_Pyramid_29
+  - first:
+      213: 3843787908548226789
+    second: RA_Pyramid_30
+  - first:
+      213: -2118048456229400673
+    second: RA_Pyramid_31
+  - first:
+      213: -8015902173865851394
+    second: RA_Pyramid_32
+  - first:
+      213: 8341621979280902779
+    second: RA_Pyramid_33
+  - first:
+      213: 8959692464109655953
+    second: RA_Pyramid_34
+  - first:
+      213: -2304580346809916845
+    second: RA_Pyramid_35
+  - first:
+      213: -1718165824666397376
+    second: RA_Pyramid_36
+  - first:
+      213: -7689968150436310977
+    second: RA_Pyramid_37
+  - first:
+      213: 7070999828107501969
+    second: RA_Pyramid_38
+  - first:
+      213: -5162106789992456642
+    second: RA_Pyramid_39
+  - first:
+      213: -4275972920647004052
+    second: RA_Pyramid_40
+  - first:
+      213: -3255229314615057677
+    second: RA_Pyramid_41
+  - first:
+      213: -328865199402537146
+    second: RA_Pyramid_42
+  - first:
+      213: -4052826996582094835
+    second: RA_Pyramid_43
+  - first:
+      213: 5974253493488918907
+    second: RA_Pyramid_44
+  - first:
+      213: -1980576463935597299
+    second: RA_Pyramid_45
+  - first:
+      213: -351299496387635069
+    second: RA_Pyramid_46
+  - first:
+      213: 2026515628695440591
+    second: RA_Pyramid_47
+  - first:
+      213: -4865614794814314399
+    second: RA_Pyramid_48
+  - first:
+      213: -5683305825922998697
+    second: RA_Pyramid_49
+  - first:
+      213: 6819510397578629571
+    second: RA_Pyramid_50
+  - first:
+      213: 1170428047941788642
+    second: RA_Pyramid_51
+  - first:
+      213: 3138188722172790036
+    second: RA_Pyramid_52
+  - first:
+      213: -6863843302815847495
+    second: RA_Pyramid_53
+  - first:
+      213: 3456483704388323406
+    second: RA_Pyramid_54
+  - first:
+      213: -6310227747574588397
+    second: RA_Pyramid_55
+  - first:
+      213: -8374417715343100503
+    second: RA_Pyramid_56
+  - first:
+      213: -8289641869675480896
+    second: RA_Pyramid_57
+  - first:
+      213: -7546179276477758796
+    second: RA_Pyramid_58
+  - first:
+      213: -7375733549521898972
+    second: RA_Pyramid_59
+  - first:
+      213: -6047453917944994509
+    second: RA_Pyramid_60
+  - first:
+      213: 4561068440148615276
+    second: RA_Pyramid_61
+  - first:
+      213: 4706153341142758877
+    second: RA_Pyramid_62
+  - first:
+      213: -4638734096097954664
+    second: RA_Pyramid_63
+  - first:
+      213: -9124603502360919768
+    second: RA_Pyramid_64
+  - first:
+      213: -7203649317645686977
+    second: RA_Pyramid_65
+  - first:
+      213: -4026959226756314658
+    second: RA_Pyramid_66
+  - first:
+      213: -1114480213183025855
+    second: RA_Pyramid_67
+  - first:
+      213: 5255493852875432384
+    second: RA_Pyramid_68
+  - first:
+      213: 6481705187617854192
+    second: RA_Pyramid_69
+  - first:
+      213: -2076758234081039958
+    second: RA_Pyramid_70
+  - first:
+      213: -7774594633572812889
+    second: RA_Pyramid_71
+  - first:
+      213: -6520857464049909222
+    second: RA_Pyramid_72
+  - first:
+      213: 8441061400378361978
+    second: RA_Pyramid_73
+  - first:
+      213: -734154620632904920
+    second: RA_Pyramid_74
+  - first:
+      213: -4150702632484986936
+    second: RA_Pyramid_75
+  - first:
+      213: -1989292373677704589
+    second: RA_Pyramid_76
+  - first:
+      213: -2866139689712623526
+    second: RA_Pyramid_77
+  - first:
+      213: -4857813759680617227
+    second: RA_Pyramid_78
+  - first:
+      213: -955009344782841517
+    second: RA_Pyramid_79
+  - first:
+      213: 9110446390285898455
+    second: RA_Pyramid_80
+  - first:
+      213: -8949556529643269925
+    second: RA_Pyramid_81
+  - first:
+      213: 2157085503542653191
+    second: RA_Pyramid_82
+  - first:
+      213: 5206793653796284909
+    second: RA_Pyramid_83
+  - first:
+      213: 8988072303992569996
+    second: RA_Pyramid_84
+  - first:
+      213: -2480199715324048265
+    second: RA_Pyramid_85
+  - first:
+      213: 5473306077308424708
+    second: RA_Pyramid_86
+  - first:
+      213: 4239957300117608851
+    second: RA_Pyramid_87
+  - first:
+      213: 8811889643560497244
+    second: RA_Pyramid_88
+  - first:
+      213: 1069774655351189833
+    second: RA_Pyramid_89
+  - first:
+      213: -8747260371840718801
+    second: RA_Pyramid_90
+  - first:
+      213: -6759816120299760805
+    second: RA_Pyramid_91
+  - first:
+      213: -6337168969127343227
+    second: RA_Pyramid_92
+  - first:
+      213: -5388912549937731509
+    second: RA_Pyramid_93
+  - first:
+      213: -8100103949576236207
+    second: RA_Pyramid_94
+  - first:
+      213: -9203739940504456432
+    second: RA_Pyramid_95
+  - first:
+      213: 5161989254172837511
+    second: RA_Pyramid_96
+  - first:
+      213: -103323638605604947
+    second: RA_Pyramid_97
+  - first:
+      213: -1725161748680513442
+    second: RA_Pyramid_98
+  - first:
+      213: -120899845950966961
+    second: RA_Pyramid_99
+  - first:
+      213: -7664179505233992163
+    second: RA_Pyramid_100
+  - first:
+      213: 5482815568930229490
+    second: RA_Pyramid_101
+  - first:
+      213: -3129861538938353442
+    second: RA_Pyramid_102
+  - first:
+      213: 293853123187418703
+    second: RA_Pyramid_103
+  - first:
+      213: -4174928013505763755
+    second: RA_Pyramid_104
+  - first:
+      213: -7863256498568200691
+    second: RA_Pyramid_105
+  - first:
+      213: 6015610312535413183
+    second: RA_Pyramid_106
+  - first:
+      213: 8705853176088081651
+    second: RA_Pyramid_107
+  - first:
+      213: 3893189587202428044
+    second: RA_Pyramid_108
+  - first:
+      213: -647794389701856254
+    second: RA_Pyramid_109
+  - first:
+      213: -1375094782986160382
+    second: RA_Pyramid_110
+  - first:
+      213: -7820801290271665491
+    second: RA_Pyramid_111
+  - first:
+      213: 8563958999934530470
+    second: RA_Pyramid_112
+  - first:
+      213: 6144214378982707031
+    second: RA_Pyramid_113
+  - first:
+      213: -6153120017837696469
+    second: RA_Pyramid_114
+  - first:
+      213: 657009431800544837
+    second: RA_Pyramid_115
+  - first:
+      213: -3781762262474417142
+    second: RA_Pyramid_116
+  - first:
+      213: -7088510002545377348
+    second: RA_Pyramid_117
+  - first:
+      213: 609015514546995814
+    second: RA_Pyramid_118
+  - first:
+      213: -2976112224256645719
+    second: RA_Pyramid_119
+  - first:
+      213: -4797968387135071528
+    second: RA_Pyramid_120
+  - first:
+      213: -6108554069433416907
+    second: RA_Pyramid_121
+  - first:
+      213: -4986552057337106579
+    second: RA_Pyramid_122
+  - first:
+      213: -477537962023901632
+    second: RA_Pyramid_123
+  - first:
+      213: 4618099415971580352
+    second: RA_Pyramid_124
+  - first:
+      213: 4741934716272876101
+    second: RA_Pyramid_125
+  - first:
+      213: -8137349088445446102
+    second: RA_Pyramid_126
+  - first:
+      213: 9155371159445337400
+    second: RA_Pyramid_127
+  - first:
+      213: -4970947767679055236
+    second: RA_Pyramid_128
+  - first:
+      213: 3322452554699047619
+    second: RA_Pyramid_129
+  - first:
+      213: -8746484291824576234
+    second: RA_Pyramid_130
+  - first:
+      213: -4731020187067712180
+    second: RA_Pyramid_131
+  - first:
+      213: -6002304514382433726
+    second: RA_Pyramid_132
+  - first:
+      213: -8286489158708317867
+    second: RA_Pyramid_133
+  - first:
+      213: -56679225605668192
+    second: RA_Pyramid_134
+  - first:
+      213: -7521410452192115057
+    second: RA_Pyramid_135
+  - first:
+      213: -6078329192088547515
+    second: RA_Pyramid_136
+  - first:
+      213: 1633704550006721147
+    second: RA_Pyramid_137
+  - first:
+      213: 2847957554718883559
+    second: RA_Pyramid_138
+  - first:
+      213: 2671026990780643685
+    second: RA_Pyramid_139
+  - first:
+      213: 1119611578887473155
+    second: RA_Pyramid_140
+  - first:
+      213: 2040773998715522129
+    second: RA_Pyramid_141
+  - first:
+      213: 2376616371997237488
+    second: RA_Pyramid_142
+  - first:
+      213: 1385410986865474100
+    second: RA_Pyramid_143
+  - first:
+      213: -5123363751011908341
+    second: RA_Pyramid_144
+  - first:
+      213: 3326496976527582953
+    second: RA_Pyramid_145
+  - first:
+      213: 2751514756979469170
+    second: RA_Pyramid_146
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Pyramid_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 719
+        width: 177
+        height: 305
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4010becbf52f5f610800000000000000
+      internalID: 1654494931133858052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_1
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 977
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62fc47c6b6c1d6eb0800000000000000
+      internalID: -4725089186335109338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1009
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aebc1eb593dd0340800000000000000
+      internalID: 4831750615331552936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_3
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 993
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 709c6d584ac804e90800000000000000
+      internalID: -7043475178959484665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_4
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 992
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5435558adc334b70800000000000000
+      internalID: 8882009799342240861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_5
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 993
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4837df29d6b58e070800000000000000
+      internalID: 8135853253020447620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_6
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 943
+        width: 30
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a68b67563cb1510800000000000000
+      internalID: 1521024139718584873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_7
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 993
+        width: 82
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d66fd9ee0918ba60800000000000000
+      internalID: 7689923915579090647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_8
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 993
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 261ce3ea0f3079080800000000000000
+      internalID: -9180864983121084062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_9
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 993
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 829cbe8872600b090800000000000000
+      internalID: -8020904169476208344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_10
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 993
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2d9c3fc02cde8e30800000000000000
+      internalID: 4507782310518365487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_11
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 991
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8828668e99436a30800000000000000
+      internalID: 4207287422102808715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_12
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 961
+        width: 66
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5950d8c560131e100800000000000000
+      internalID: 135443367190136213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_13
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 929
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa82cd8ea8509ce0800000000000000
+      internalID: -1400521977386333445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_14
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 961
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3054a63798576630800000000000000
+      internalID: 3920199407129350207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_15
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 961
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1838b5fcb5e1535f0800000000000000
+      internalID: -777681980981804159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_16
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 945
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9af060edd6886d980800000000000000
+      internalID: -8514468040039592023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_17
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 961
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54711796612a55370800000000000000
+      internalID: 8310726904524117829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_18
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 961
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf48be417073ffc0800000000000000
+      internalID: -3462300056563462208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_19
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 961
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64a0b391e4cb1db60800000000000000
+      internalID: 7769197875807586886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_20
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 961
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fda2d4ffa9a3b20e0800000000000000
+      internalID: -2293675147832513825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_21
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 961
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7319c0cef43ecde30800000000000000
+      internalID: 4529745257630044471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_22
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 943
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21c348d595e160d60800000000000000
+      internalID: 7855999969164278802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_23
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 929
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 751c7e0dc6676c9f0800000000000000
+      internalID: -448540903143390889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_24
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 929
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afe18f50d1af7b450800000000000000
+      internalID: 6104622822485139194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_25
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 928
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bec3f567bd6d21020800000000000000
+      internalID: 2311145796866620651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_26
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 944
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a19ddf9a646ce9ee0800000000000000
+      internalID: -1252345639560423142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_27
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 928
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 479b3ca887cc8b2a0800000000000000
+      internalID: -6721397625754240652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_28
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 928
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1181e77ddc71e24c0800000000000000
+      internalID: -4310481620495886319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_29
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 928
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91ee4518f02e27b50800000000000000
+      internalID: 6589577761018670617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 928
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee65f0dcb0e75530800000000000000
+      internalID: 3843787908548226789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_31
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 928
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fc165a62e2b92e0800000000000000
+      internalID: -2118048456229400673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_32
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 767
+        width: 78
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5c174617bc1c090800000000000000
+      internalID: -8015902173865851394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_33
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 929
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a01ad8ef463c370800000000000000
+      internalID: 8341621979280902779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_34
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 929
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197100c53d8375c70800000000000000
+      internalID: 8959692464109655953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_35
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 897
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3526c00826c7400e0800000000000000
+      internalID: -2304580346809916845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_36
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 897
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0451b832949d728e0800000000000000
+      internalID: -1718165824666397376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_37
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 912
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f301d2bd5beb74590800000000000000
+      internalID: -7689968150436310977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_38
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 897
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 191223141ec312260800000000000000
+      internalID: 7070999828107501969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_39
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 896
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3e1ed979338c58b0800000000000000
+      internalID: -5162106789992456642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_40
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 896
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6055a3a841b8a4c0800000000000000
+      internalID: -4275972920647004052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_41
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 896
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f26eef6f2a13d2d0800000000000000
+      internalID: -3255229314615057677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_42
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 896
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64faf92f7d2af6bf0800000000000000
+      internalID: -328865199402537146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_43
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 896
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d086c94c15771c7c0800000000000000
+      internalID: -4052826996582094835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_44
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 897
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b712b8d36efc8e250800000000000000
+      internalID: 5974253493488918907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_45
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 865
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d059e9813349384e0800000000000000
+      internalID: -1980576463935597299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_46
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 865
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3889a0428feef1bf0800000000000000
+      internalID: -351299496387635069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_47
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 865
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc4b243a31af1c10800000000000000
+      internalID: 2026515628695440591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_48
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 865
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 168253d8f1dd97cb0800000000000000
+      internalID: -4865614794814314399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_49
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 865
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e93f77677d021b0800000000000000
+      internalID: -5683305825922998697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_50
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 865
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c1d1c54394c3ae50800000000000000
+      internalID: 6819510397578629571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_51
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 865
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e369b0cb123e3010800000000000000
+      internalID: 1170428047941788642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_52
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 865
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4150f3714061d8b20800000000000000
+      internalID: 3138188722172790036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_53
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 817
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bba7bdd1eabeb0a0800000000000000
+      internalID: -6863843302815847495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_54
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 817
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e480efbad95e7ff20800000000000000
+      internalID: 3456483704388323406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_55
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 833
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31cd00eeb419d68a0800000000000000
+      internalID: -6310227747574588397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_56
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 833
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a57c3c157718cb80800000000000000
+      internalID: -8374417715343100503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_57
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 833
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8b9c2d3a645fc80800000000000000
+      internalID: -8289641869675480896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_58
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 833
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b2012eede5964790800000000000000
+      internalID: -7546179276477758796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_59
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 833
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 422f0de3a6124a990800000000000000
+      internalID: -7375733549521898972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_60
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 639
+        width: 46
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3352851d3b0231ca0800000000000000
+      internalID: -6047453917944994509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_61
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 687
+        width: 53
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60ad4ba49b2c4f30800000000000000
+      internalID: 4561068440148615276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_62
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 769
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5f45d878d9f4140800000000000000
+      internalID: 4706153341142758877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_63
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 769
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 894b69aaae7ef9fb0800000000000000
+      internalID: -4638734096097954664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_64
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 769
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8210e757575ee5180800000000000000
+      internalID: -9124603502360919768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_65
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 769
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f376e37bc1f770c90800000000000000
+      internalID: -7203649317645686977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_66
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 769
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed945344bed5d18c0800000000000000
+      internalID: -4026959226756314658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_67
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 737
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d2600a6229880f0800000000000000
+      internalID: -1114480213183025855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_68
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 737
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1a3eb70d34fe840800000000000000
+      internalID: 5255493852875432384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_69
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 737
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f2d4cec684a3f950800000000000000
+      internalID: 6481705187617854192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_70
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 431
+        width: 242
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa96b35a36fdd23e0800000000000000
+      internalID: -2076758234081039958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_71
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 723
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a7fb315f571b1490800000000000000
+      internalID: -7774594633572812889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_72
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 721
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a12c9587fa24185a0800000000000000
+      internalID: -6520857464049909222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_73
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 721
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7840d8fe9ca42570800000000000000
+      internalID: 8441061400378361978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_74
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 721
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82bc6f22342cfc5f0800000000000000
+      internalID: -734154620632904920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_75
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 655
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cf147672fdb566c0800000000000000
+      internalID: -4150702632484986936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_76
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 655
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37afb88302d9464e0800000000000000
+      internalID: -1989292373677704589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_77
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 689
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50e70e332d6938d0800000000000000
+      internalID: -2866139689712623526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_78
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 511
+        width: 81
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f46b359f14959cb0800000000000000
+      internalID: -4857813759680617227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_79
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 177
+        height: 306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3594a0f8f002fb2f0800000000000000
+      internalID: -955009344782841517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_80
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 465
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d21b3609bece6e70800000000000000
+      internalID: 9110446390285898455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_81
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 497
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0d559c0c9ccc380800000000000000
+      internalID: -8949556529643269925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_82
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 481
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701fdc436d18fed10800000000000000
+      internalID: 2157085503542653191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_83
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 479
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de92949cd3f324840800000000000000
+      internalID: 5206793653796284909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_84
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 480
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c80010fb32c0cbc70800000000000000
+      internalID: 8988072303992569996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_85
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 481
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77cc514ef7f849dd0800000000000000
+      internalID: -2480199715324048265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_86
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 417
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40294f4e0e615fb40800000000000000
+      internalID: 5473306077308424708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_87
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 449
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 399955043ba57da30800000000000000
+      internalID: 4239957300117608851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_88
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 449
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50fd5481fe1a4a70800000000000000
+      internalID: 8811889643560497244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_89
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 433
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9417ce1916a98de00800000000000000
+      internalID: 1069774655351189833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_90
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 449
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f28259a690d7b9680800000000000000
+      internalID: -8747260371840718801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_91
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 431
+        width: 8
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b53d29abd0f4032a0800000000000000
+      internalID: -6759816120299760805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_92
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 417
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58b4989f56add08a0800000000000000
+      internalID: -6337168969127343227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_93
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 417
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b482157669cb635b0800000000000000
+      internalID: -5388912549937731509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_94
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 417
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15315c1cf56a69f80800000000000000
+      internalID: -8100103949576236207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_95
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 416
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0133821a94fb54080800000000000000
+      internalID: -9203739940504456432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_96
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 416
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7860b5590e113a740800000000000000
+      internalID: 5161989254172837511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_97
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 416
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da71308b2bbe09ef0800000000000000
+      internalID: -103323638605604947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_98
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 416
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e586ec5a78efe08e0800000000000000
+      internalID: -1725161748680513442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_99
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 416
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4371bc0b3a725ef0800000000000000
+      internalID: -120899845950966961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_100
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 416
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16e2b7b85d53a590800000000000000
+      internalID: -7664179505233992163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_101
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 255
+        width: 78
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fc4113f5bfd61c40800000000000000
+      internalID: 5482815568930229490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_102
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 417
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed80c67538f7094d0800000000000000
+      internalID: -3129861538938353442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_103
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 385
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f46a9bfcbd9f31400800000000000000
+      internalID: 293853123187418703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_104
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 385
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5566928671daf06c0800000000000000
+      internalID: -4174928013505763755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_105
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 400
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0e7f0930e910e290800000000000000
+      internalID: -7863256498568200691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_106
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 385
+        width: 23
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb199d905bdbb7350800000000000000
+      internalID: 6015610312535413183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_107
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 384
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4bf6b865761d870800000000000000
+      internalID: 8705853176088081651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_108
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c43747d43670630800000000000000
+      internalID: 3893189587202428044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_109
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 384
+        width: 32
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204745a4f629207f0800000000000000
+      internalID: -647794389701856254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_110
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 384
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 207fd97949eaaece0800000000000000
+      internalID: -1375094782986160382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_111
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 384
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da2d072b9aee67390800000000000000
+      internalID: -7820801290271665491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_112
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 385
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a37b1e265b49d670800000000000000
+      internalID: 8563958999934530470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_113
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 353
+        width: 18
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f8c1b9c62a44550800000000000000
+      internalID: 6144214378982707031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_114
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 353
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2a5074c1f9bb9aa0800000000000000
+      internalID: -6153120017837696469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_115
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 353
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e7d84e89a2e1900800000000000000
+      internalID: 657009431800544837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_116
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 353
+        width: 24
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0c1c38424b748bc0800000000000000
+      internalID: -3781762262474417142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_117
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 353
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbfba7f85bd80ad90800000000000000
+      internalID: -7088510002545377348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_118
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 353
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662864f3268a37800800000000000000
+      internalID: 609015514546995814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_119
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 353
+        width: 23
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a52c7d33b9b2b6d0800000000000000
+      internalID: -2976112224256645719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_120
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 353
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8da92413c213a6db0800000000000000
+      internalID: -4797968387135071528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_121
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 305
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5338728307e0a3ba0800000000000000
+      internalID: -6108554069433416907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_122
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 305
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6fad60e2553ccab0800000000000000
+      internalID: -4986552057337106579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_123
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 321
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0462dcee0c17f59f0800000000000000
+      internalID: -477537962023901632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_124
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 321
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9cc6a73f8c61040800000000000000
+      internalID: 4618099415971580352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_125
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 321
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a9987208cbec140800000000000000
+      internalID: 4741934716272876101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_126
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 321
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a284cd91e14521f80800000000000000
+      internalID: -8137349088445446102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_127
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 321
+        width: 23
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8357891ff896e0f70800000000000000
+      internalID: 9155371159445337400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_128
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 127
+        width: 46
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a087ea755a30bb0800000000000000
+      internalID: -4970947767679055236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_129
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 175
+        width: 53
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c20de1def8bb1e20800000000000000
+      internalID: 3322452554699047619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_130
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 257
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6191340a0ee3e9680800000000000000
+      internalID: -8746484291824576234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_131
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 257
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4d70a4b43a085eb0800000000000000
+      internalID: -4731020187067712180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_132
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 257
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 242f28288d783bca0800000000000000
+      internalID: -6002304514382433726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_133
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 257
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 551b01c830a700d80800000000000000
+      internalID: -8286489158708317867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_134
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 257
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a241ab6b82a63ff0800000000000000
+      internalID: -56679225605668192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_135
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 225
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f86cd2b3b059e9790800000000000000
+      internalID: -7521410452192115057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_136
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 225
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54fccadddcf65aba0800000000000000
+      internalID: -6078329192088547515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_137
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 225
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7a071be1a51ca610800000000000000
+      internalID: 1633704550006721147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_138
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 0
+        width: 242
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eeb8609e4af58720800000000000000
+      internalID: 2847957554718883559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_139
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 211
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 569f5fa75e4611520800000000000000
+      internalID: 2671026990780643685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_140
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 209
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308800e8cc8a98f00800000000000000
+      internalID: 1119611578887473155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_141
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 209
+        width: 16
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15cca4ca329425c10800000000000000
+      internalID: 2040773998715522129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_142
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 209
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f0e54c9fff6bf020800000000000000
+      internalID: 2376616371997237488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_143
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 143
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a3a0cc3f7f93310800000000000000
+      internalID: 1385410986865474100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_144
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 143
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0582dd20d726e8b0800000000000000
+      internalID: -5123363751011908341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_145
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 177
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e6665820671a2e20800000000000000
+      internalID: 3326496976527582953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Pyramid_146
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 81
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ba104e7185f2620800000000000000
+      internalID: 2751514756979469170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Pyramid_0: 1654494931133858052
+      RA_Pyramid_1: -4725089186335109338
+      RA_Pyramid_10: 4507782310518365487
+      RA_Pyramid_100: -7664179505233992163
+      RA_Pyramid_101: 5482815568930229490
+      RA_Pyramid_102: -3129861538938353442
+      RA_Pyramid_103: 293853123187418703
+      RA_Pyramid_104: -4174928013505763755
+      RA_Pyramid_105: -7863256498568200691
+      RA_Pyramid_106: 6015610312535413183
+      RA_Pyramid_107: 8705853176088081651
+      RA_Pyramid_108: 3893189587202428044
+      RA_Pyramid_109: -647794389701856254
+      RA_Pyramid_11: 4207287422102808715
+      RA_Pyramid_110: -1375094782986160382
+      RA_Pyramid_111: -7820801290271665491
+      RA_Pyramid_112: 8563958999934530470
+      RA_Pyramid_113: 6144214378982707031
+      RA_Pyramid_114: -6153120017837696469
+      RA_Pyramid_115: 657009431800544837
+      RA_Pyramid_116: -3781762262474417142
+      RA_Pyramid_117: -7088510002545377348
+      RA_Pyramid_118: 609015514546995814
+      RA_Pyramid_119: -2976112224256645719
+      RA_Pyramid_12: 135443367190136213
+      RA_Pyramid_120: -4797968387135071528
+      RA_Pyramid_121: -6108554069433416907
+      RA_Pyramid_122: -4986552057337106579
+      RA_Pyramid_123: -477537962023901632
+      RA_Pyramid_124: 4618099415971580352
+      RA_Pyramid_125: 4741934716272876101
+      RA_Pyramid_126: -8137349088445446102
+      RA_Pyramid_127: 9155371159445337400
+      RA_Pyramid_128: -4970947767679055236
+      RA_Pyramid_129: 3322452554699047619
+      RA_Pyramid_13: -1400521977386333445
+      RA_Pyramid_130: -8746484291824576234
+      RA_Pyramid_131: -4731020187067712180
+      RA_Pyramid_132: -6002304514382433726
+      RA_Pyramid_133: -8286489158708317867
+      RA_Pyramid_134: -56679225605668192
+      RA_Pyramid_135: -7521410452192115057
+      RA_Pyramid_136: -6078329192088547515
+      RA_Pyramid_137: 1633704550006721147
+      RA_Pyramid_138: 2847957554718883559
+      RA_Pyramid_139: 2671026990780643685
+      RA_Pyramid_14: 3920199407129350207
+      RA_Pyramid_140: 1119611578887473155
+      RA_Pyramid_141: 2040773998715522129
+      RA_Pyramid_142: 2376616371997237488
+      RA_Pyramid_143: 1385410986865474100
+      RA_Pyramid_144: -5123363751011908341
+      RA_Pyramid_145: 3326496976527582953
+      RA_Pyramid_146: 2751514756979469170
+      RA_Pyramid_15: -777681980981804159
+      RA_Pyramid_16: -8514468040039592023
+      RA_Pyramid_17: 8310726904524117829
+      RA_Pyramid_18: -3462300056563462208
+      RA_Pyramid_19: 7769197875807586886
+      RA_Pyramid_2: 4831750615331552936
+      RA_Pyramid_20: -2293675147832513825
+      RA_Pyramid_21: 4529745257630044471
+      RA_Pyramid_22: 7855999969164278802
+      RA_Pyramid_23: -448540903143390889
+      RA_Pyramid_24: 6104622822485139194
+      RA_Pyramid_25: 2311145796866620651
+      RA_Pyramid_26: -1252345639560423142
+      RA_Pyramid_27: -6721397625754240652
+      RA_Pyramid_28: -4310481620495886319
+      RA_Pyramid_29: 6589577761018670617
+      RA_Pyramid_3: -7043475178959484665
+      RA_Pyramid_30: 3843787908548226789
+      RA_Pyramid_31: -2118048456229400673
+      RA_Pyramid_32: -8015902173865851394
+      RA_Pyramid_33: 8341621979280902779
+      RA_Pyramid_34: 8959692464109655953
+      RA_Pyramid_35: -2304580346809916845
+      RA_Pyramid_36: -1718165824666397376
+      RA_Pyramid_37: -7689968150436310977
+      RA_Pyramid_38: 7070999828107501969
+      RA_Pyramid_39: -5162106789992456642
+      RA_Pyramid_4: 8882009799342240861
+      RA_Pyramid_40: -4275972920647004052
+      RA_Pyramid_41: -3255229314615057677
+      RA_Pyramid_42: -328865199402537146
+      RA_Pyramid_43: -4052826996582094835
+      RA_Pyramid_44: 5974253493488918907
+      RA_Pyramid_45: -1980576463935597299
+      RA_Pyramid_46: -351299496387635069
+      RA_Pyramid_47: 2026515628695440591
+      RA_Pyramid_48: -4865614794814314399
+      RA_Pyramid_49: -5683305825922998697
+      RA_Pyramid_5: 8135853253020447620
+      RA_Pyramid_50: 6819510397578629571
+      RA_Pyramid_51: 1170428047941788642
+      RA_Pyramid_52: 3138188722172790036
+      RA_Pyramid_53: -6863843302815847495
+      RA_Pyramid_54: 3456483704388323406
+      RA_Pyramid_55: -6310227747574588397
+      RA_Pyramid_56: -8374417715343100503
+      RA_Pyramid_57: -8289641869675480896
+      RA_Pyramid_58: -7546179276477758796
+      RA_Pyramid_59: -7375733549521898972
+      RA_Pyramid_6: 1521024139718584873
+      RA_Pyramid_60: -6047453917944994509
+      RA_Pyramid_61: 4561068440148615276
+      RA_Pyramid_62: 4706153341142758877
+      RA_Pyramid_63: -4638734096097954664
+      RA_Pyramid_64: -9124603502360919768
+      RA_Pyramid_65: -7203649317645686977
+      RA_Pyramid_66: -4026959226756314658
+      RA_Pyramid_67: -1114480213183025855
+      RA_Pyramid_68: 5255493852875432384
+      RA_Pyramid_69: 6481705187617854192
+      RA_Pyramid_7: 7689923915579090647
+      RA_Pyramid_70: -2076758234081039958
+      RA_Pyramid_71: -7774594633572812889
+      RA_Pyramid_72: -6520857464049909222
+      RA_Pyramid_73: 8441061400378361978
+      RA_Pyramid_74: -734154620632904920
+      RA_Pyramid_75: -4150702632484986936
+      RA_Pyramid_76: -1989292373677704589
+      RA_Pyramid_77: -2866139689712623526
+      RA_Pyramid_78: -4857813759680617227
+      RA_Pyramid_79: -955009344782841517
+      RA_Pyramid_8: -9180864983121084062
+      RA_Pyramid_80: 9110446390285898455
+      RA_Pyramid_81: -8949556529643269925
+      RA_Pyramid_82: 2157085503542653191
+      RA_Pyramid_83: 5206793653796284909
+      RA_Pyramid_84: 8988072303992569996
+      RA_Pyramid_85: -2480199715324048265
+      RA_Pyramid_86: 5473306077308424708
+      RA_Pyramid_87: 4239957300117608851
+      RA_Pyramid_88: 8811889643560497244
+      RA_Pyramid_89: 1069774655351189833
+      RA_Pyramid_9: -8020904169476208344
+      RA_Pyramid_90: -8747260371840718801
+      RA_Pyramid_91: -6759816120299760805
+      RA_Pyramid_92: -6337168969127343227
+      RA_Pyramid_93: -5388912549937731509
+      RA_Pyramid_94: -8100103949576236207
+      RA_Pyramid_95: -9203739940504456432
+      RA_Pyramid_96: 5161989254172837511
+      RA_Pyramid_97: -103323638605604947
+      RA_Pyramid_98: -1725161748680513442
+      RA_Pyramid_99: -120899845950966961
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
