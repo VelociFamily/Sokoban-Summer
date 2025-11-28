@@ -1,0 +1,1443 @@
+fileFormatVersion: 2
+guid: 41a6b4a1c44ec0e49b342799b9c389ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5336422829016283004
+    second: RA_Beast_Animations01_0
+  - first:
+      213: 7118085646962584086
+    second: RA_Beast_Animations01_1
+  - first:
+      213: -1607522848133067209
+    second: RA_Beast_Animations01_2
+  - first:
+      213: -7283233177134938755
+    second: RA_Beast_Animations01_3
+  - first:
+      213: -2524494491992108172
+    second: RA_Beast_Animations01_4
+  - first:
+      213: 3196073001190084376
+    second: RA_Beast_Animations01_5
+  - first:
+      213: -1805021904275871264
+    second: RA_Beast_Animations01_6
+  - first:
+      213: 4064996733431439527
+    second: RA_Beast_Animations01_7
+  - first:
+      213: -7737015427114514184
+    second: RA_Beast_Animations01_8
+  - first:
+      213: 2563562362217358457
+    second: RA_Beast_Animations01_9
+  - first:
+      213: -5157440276927208185
+    second: RA_Beast_Animations01_10
+  - first:
+      213: 69534974841304775
+    second: RA_Beast_Animations01_11
+  - first:
+      213: -8110088095340188346
+    second: RA_Beast_Animations01_12
+  - first:
+      213: -5308545269631781128
+    second: RA_Beast_Animations01_13
+  - first:
+      213: -6531843829955496653
+    second: RA_Beast_Animations01_14
+  - first:
+      213: -8028800389083838946
+    second: RA_Beast_Animations01_15
+  - first:
+      213: -8655799701340473210
+    second: RA_Beast_Animations01_16
+  - first:
+      213: 7487065373373655607
+    second: RA_Beast_Animations01_17
+  - first:
+      213: -2377292698027573289
+    second: RA_Beast_Animations01_18
+  - first:
+      213: 7623673466854361036
+    second: RA_Beast_Animations01_19
+  - first:
+      213: -9210344206354264854
+    second: RA_Beast_Animations01_20
+  - first:
+      213: -8136637864215834797
+    second: RA_Beast_Animations01_21
+  - first:
+      213: -1240984361978066334
+    second: RA_Beast_Animations01_22
+  - first:
+      213: 5260885289111270967
+    second: RA_Beast_Animations01_23
+  - first:
+      213: -2214935838159001342
+    second: RA_Beast_Animations01_24
+  - first:
+      213: 1264418441023907921
+    second: RA_Beast_Animations01_25
+  - first:
+      213: 4132138919839459325
+    second: RA_Beast_Animations01_26
+  - first:
+      213: -4964401710780701139
+    second: RA_Beast_Animations01_27
+  - first:
+      213: -2879084455010250928
+    second: RA_Beast_Animations01_28
+  - first:
+      213: -3578749210111679711
+    second: RA_Beast_Animations01_29
+  - first:
+      213: 6755634352553666173
+    second: RA_Beast_Animations01_30
+  - first:
+      213: -3811714472128810426
+    second: RA_Beast_Animations01_31
+  - first:
+      213: -1687200157685097236
+    second: RA_Beast_Animations01_32
+  - first:
+      213: 7787313383814685520
+    second: RA_Beast_Animations01_33
+  - first:
+      213: -1633956412389123123
+    second: RA_Beast_Animations01_34
+  - first:
+      213: 5603681070210810584
+    second: RA_Beast_Animations01_35
+  - first:
+      213: 1749925707379276963
+    second: RA_Beast_Animations01_36
+  - first:
+      213: 1625061138419682574
+    second: RA_Beast_Animations01_37
+  - first:
+      213: 1348415946155728130
+    second: RA_Beast_Animations01_38
+  - first:
+      213: 3608114366765088063
+    second: RA_Beast_Animations01_39
+  - first:
+      213: -6789193983365852748
+    second: RA_Beast_Animations01_40
+  - first:
+      213: 2341415921159251529
+    second: RA_Beast_Animations01_41
+  - first:
+      213: 3736340761578784623
+    second: RA_Beast_Animations01_42
+  - first:
+      213: -3602675950913963773
+    second: RA_Beast_Animations01_43
+  - first:
+      213: -4345628318288508101
+    second: RA_Beast_Animations01_44
+  - first:
+      213: 1066183936820786802
+    second: RA_Beast_Animations01_45
+  - first:
+      213: -394774287794283803
+    second: RA_Beast_Animations01_46
+  - first:
+      213: 5285509073829288171
+    second: RA_Beast_Animations01_47
+  - first:
+      213: -7952244100608550013
+    second: RA_Beast_Animations01_48
+  - first:
+      213: 738455329482203335
+    second: RA_Beast_Animations01_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 338
+        width: 49
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c77fcc61a48ce0a40800000000000000
+      internalID: 5336422829016283004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 347
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61ae204ce2588c260800000000000000
+      internalID: 7118085646962584086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_2
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 0
+        width: 38
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73e44b49c7ee0b9e0800000000000000
+      internalID: -1607522848133067209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_3
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75488c7302ccea90800000000000000
+      internalID: -7283233177134938755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_4
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 242
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 473516782a137fcd0800000000000000
+      internalID: -2524494491992108172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_5
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81fc628067bba5c20800000000000000
+      internalID: 3196073001190084376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_6
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e966d7342643f6e0800000000000000
+      internalID: -1805021904275871264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_7
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 335
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0ed45edf4c96830800000000000000
+      internalID: 4064996733431439527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 290
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f84f15267990a490800000000000000
+      internalID: -7737015427114514184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_9
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 299
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974e687d26a939320800000000000000
+      internalID: 2563562362217358457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_10
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7052677b4671d68b0800000000000000
+      internalID: -5157440276927208185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_11
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c6b1e2f0b907f000800000000000000
+      internalID: 69534974841304775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_12
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64daf1ca8dd237f80800000000000000
+      internalID: -8110088095340188346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_13
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 287
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f6748104324456b0800000000000000
+      internalID: -5308545269631781128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 242
+        width: 49
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 335fc23d4aa3a55a0800000000000000
+      internalID: -6531843829955496653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_15
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 251
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e16c324a598f39090800000000000000
+      internalID: -8028800389083838946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_16
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6883ba2380c60e780800000000000000
+      internalID: -8655799701340473210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_17
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73a6016f94667e760800000000000000
+      internalID: 7487065373373655607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_18
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dfbfe6f2e8220fd0800000000000000
+      internalID: -2377292698027573289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_19
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 239
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc7cc6b40aabcc960800000000000000
+      internalID: 7623673466854361036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 194
+        width: 49
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aec4d292eb84e2080800000000000000
+      internalID: -9210344206354264854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_21
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 203
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f0c65e8fad41f80800000000000000
+      internalID: -8136637864215834797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_22
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26a8b7c3c4327cee0800000000000000
+      internalID: -1240984361978066334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_23
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7363e8d0c4b620940800000000000000
+      internalID: 5260885289111270967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_24
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20920462797f241e0800000000000000
+      internalID: -2214935838159001342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_25
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 191
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158eea87fdd1c8110800000000000000
+      internalID: 1264418441023907921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 146
+        width: 49
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7e89f547e485930800000000000000
+      internalID: 4132138919839459325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_27
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 155
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d26239252f6ea1bb0800000000000000
+      internalID: -4964401710780701139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_28
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05fc3c431ff6b08d0800000000000000
+      internalID: -2879084455010250928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_29
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123651fed8ab55ec0800000000000000
+      internalID: -3578749210111679711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_30
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d76236896a5d0cd50800000000000000
+      internalID: 6755634352553666173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_31
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 143
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 642fb8702e11a1bc0800000000000000
+      internalID: -3811714472128810426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 98
+        width: 49
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cec5230556cd598e0800000000000000
+      internalID: -1687200157685097236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_33
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 107
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0536bec7348121c60800000000000000
+      internalID: 7787313383814685520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_34
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb131dcc450359e0800000000000000
+      internalID: -1633956412389123123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_35
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d20f786e3644cd40800000000000000
+      internalID: 5603681070210810584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_36
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ac7aabc82cf84810800000000000000
+      internalID: 1749925707379276963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_37
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 95
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d0cc5de706d8610800000000000000
+      internalID: 1625061138419682574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 50
+        width: 49
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d9518a82986b210800000000000000
+      internalID: 1348415946155728130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_39
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 59
+        width: 32
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d340466e8921230800000000000000
+      internalID: 3608114366765088063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_40
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b15246fa00f7c1a0800000000000000
+      internalID: -6789193983365852748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_41
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946242cff516e7020800000000000000
+      internalID: 2341415921159251529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_42
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6747bd60262ad330800000000000000
+      internalID: 3736340761578784623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_43
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 47
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3093ee87f49b00ec0800000000000000
+      internalID: -3602675950913963773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 49
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b0982911a31b3c0800000000000000
+      internalID: -4345628318288508101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_45
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 11
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2763e6344a8dbce00800000000000000
+      internalID: 1066183936820786802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_46
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ea509970ea758af0800000000000000
+      internalID: -394774287794283803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_47
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be8d2b2bf76e95940800000000000000
+      internalID: 5285509073829288171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_48
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b18009f14f3a190800000000000000
+      internalID: -7952244100608550013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Beast_Animations01_49
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 0
+        width: 38
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0e74ca5358f3a00800000000000000
+      internalID: 738455329482203335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      RA_Beast_Animations01_0: 5336422829016283004
+      RA_Beast_Animations01_1: 7118085646962584086
+      RA_Beast_Animations01_10: -5157440276927208185
+      RA_Beast_Animations01_11: 69534974841304775
+      RA_Beast_Animations01_12: -8110088095340188346
+      RA_Beast_Animations01_13: -5308545269631781128
+      RA_Beast_Animations01_14: -6531843829955496653
+      RA_Beast_Animations01_15: -8028800389083838946
+      RA_Beast_Animations01_16: -8655799701340473210
+      RA_Beast_Animations01_17: 7487065373373655607
+      RA_Beast_Animations01_18: -2377292698027573289
+      RA_Beast_Animations01_19: 7623673466854361036
+      RA_Beast_Animations01_2: -1607522848133067209
+      RA_Beast_Animations01_20: -9210344206354264854
+      RA_Beast_Animations01_21: -8136637864215834797
+      RA_Beast_Animations01_22: -1240984361978066334
+      RA_Beast_Animations01_23: 5260885289111270967
+      RA_Beast_Animations01_24: -2214935838159001342
+      RA_Beast_Animations01_25: 1264418441023907921
+      RA_Beast_Animations01_26: 4132138919839459325
+      RA_Beast_Animations01_27: -4964401710780701139
+      RA_Beast_Animations01_28: -2879084455010250928
+      RA_Beast_Animations01_29: -3578749210111679711
+      RA_Beast_Animations01_3: -7283233177134938755
+      RA_Beast_Animations01_30: 6755634352553666173
+      RA_Beast_Animations01_31: -3811714472128810426
+      RA_Beast_Animations01_32: -1687200157685097236
+      RA_Beast_Animations01_33: 7787313383814685520
+      RA_Beast_Animations01_34: -1633956412389123123
+      RA_Beast_Animations01_35: 5603681070210810584
+      RA_Beast_Animations01_36: 1749925707379276963
+      RA_Beast_Animations01_37: 1625061138419682574
+      RA_Beast_Animations01_38: 1348415946155728130
+      RA_Beast_Animations01_39: 3608114366765088063
+      RA_Beast_Animations01_4: -2524494491992108172
+      RA_Beast_Animations01_40: -6789193983365852748
+      RA_Beast_Animations01_41: 2341415921159251529
+      RA_Beast_Animations01_42: 3736340761578784623
+      RA_Beast_Animations01_43: -3602675950913963773
+      RA_Beast_Animations01_44: -4345628318288508101
+      RA_Beast_Animations01_45: 1066183936820786802
+      RA_Beast_Animations01_46: -394774287794283803
+      RA_Beast_Animations01_47: 5285509073829288171
+      RA_Beast_Animations01_48: -7952244100608550013
+      RA_Beast_Animations01_49: 738455329482203335
+      RA_Beast_Animations01_5: 3196073001190084376
+      RA_Beast_Animations01_6: -1805021904275871264
+      RA_Beast_Animations01_7: 4064996733431439527
+      RA_Beast_Animations01_8: -7737015427114514184
+      RA_Beast_Animations01_9: 2563562362217358457
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
