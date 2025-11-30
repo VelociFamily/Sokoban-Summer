@@ -182,10 +182,14 @@ namespace UI
             buttonPool.ReturnAllToPool();
             dataProvider.ClearButtonRegistrations();
 
-            var levelManager = ServiceLocator.Get<LevelManager>();
+            if (!ServiceLocator.TryGet<LevelManager>(out var levelManager))
+            {
+                levelManager = FindFirstObjectByType<LevelManager>();
+            }
+
             if (levelManager == null)
             {
-                Debug.LogError("[DynamicLevelSelector] LevelManager instance not found!");
+                Debug.LogError("[DynamicLevelSelector] LevelManager instance not found in ServiceLocator or Scene! Cannot populate levels.");
                 return;
             }
 
