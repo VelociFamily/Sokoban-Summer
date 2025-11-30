@@ -23,10 +23,14 @@ namespace UI
         {
             orderedLevelSequence.Clear();
 
-            var levelManager = ServiceLocator.Get<LevelManager>();
+            if (!ServiceLocator.TryGet<LevelManager>(out var levelManager))
+            {
+                levelManager = Object.FindFirstObjectByType<LevelManager>();
+            }
+
             if (levelManager == null)
             {
-                Debug.LogWarning("[LevelDataProvider] LevelManager not available");
+                Debug.LogWarning("[LevelDataProvider] LevelManager not available in ServiceLocator or Scene");
                 return;
             }
 
@@ -54,7 +58,11 @@ namespace UI
         /// </summary>
         public int GetDefaultSelectionIndex()
         {
-            var levelManager = ServiceLocator.Get<LevelManager>();
+            if (!ServiceLocator.TryGet<LevelManager>(out var levelManager))
+            {
+                levelManager = Object.FindFirstObjectByType<LevelManager>();
+            }
+
             if (orderedLevelSequence.Count == 0 || levelManager == null)
                 return -1;
 
