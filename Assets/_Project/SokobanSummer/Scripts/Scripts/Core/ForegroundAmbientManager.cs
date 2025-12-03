@@ -116,7 +116,19 @@ namespace Core
             if (!scene.IsValid() || !scene.isLoaded)
                 return;
 
-            if (SceneInfo.IsGameplayScene(scene))
+            // Check if ANY loaded scene is a gameplay scene
+            bool isGameplayActive = false;
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var loadedScene = SceneManager.GetSceneAt(i);
+                if (loadedScene.isLoaded && SceneInfo.IsGameplayScene(loadedScene))
+                {
+                    isGameplayActive = true;
+                    break;
+                }
+            }
+
+            if (isGameplayActive)
             {
                 EnableEffects();
             }

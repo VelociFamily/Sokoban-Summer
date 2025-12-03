@@ -276,8 +276,25 @@ namespace Core
                 // Keep our persistent EventSystem, destroy others
                 if (es != eventSystem && es != null)
                 {
-                    Debug.Log($"[PersistentUIManager]: Removing duplicate EventSystem from '{es.gameObject.name}'");
-                    Destroy(es.gameObject);
+                    // Check if this EventSystem is attached to the GameInitializer
+                    // If so, we must NOT destroy the GameObject, only the component
+                    if (es.GetComponent<GameInitializer>() != null)
+                    {
+                        Debug.Log($"[PersistentUIManager]: Found duplicate EventSystem on GameInitializer '{es.gameObject.name}' - destroying component only to preserve initializer");
+                        Destroy(es);
+                        
+                        // Also destroy the InputSystemUIInputModule if present
+                        var inputModule = es.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+                        if (inputModule != null)
+                        {
+                            Destroy(inputModule);
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log($"[PersistentUIManager]: Removing duplicate EventSystem from '{es.gameObject.name}'");
+                        Destroy(es.gameObject);
+                    }
                 }
             }
         }

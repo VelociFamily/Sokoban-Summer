@@ -35,14 +35,18 @@ namespace Gameplay
 
         private void OnEnable()
         {
-            var inputService = ServiceLocator.Get<InputService>();
-            inputService?.EnableUIInput();
+            if (ServiceLocator.TryGet<InputService>(out var inputService))
+            {
+                inputService.EnableUIInput();
+            }
         }
 
         private void OnDisable()
         {
-            var inputService = ServiceLocator.Get<InputService>();
-            inputService?.DisableUIInput();
+            if (ServiceLocator.TryGet<InputService>(out var inputService))
+            {
+                inputService.DisableUIInput();
+            }
         }
 
         private void OnDestroy()

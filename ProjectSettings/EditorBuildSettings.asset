@@ -41,6 +41,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/SokobanSummer/Scenes/Levels/Level Five.unity
     guid: a8ef9a05edf2c254092afb3401d516c7
+  - enabled: 1
+    path: Assets/_Project/SokobanSummer/Scenes/Levels/Level Six.unity
+    guid: c3f62592f26a0a342a2efeb8120a54d3
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: aacdd2bcc28714340b75466dc0011f48,
       type: 2}

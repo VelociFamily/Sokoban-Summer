@@ -113,7 +113,22 @@ namespace UI
         /// <summary>
         /// Show level selection panel
         /// </summary>
-        public void ShowLevelSelection() => ShowPanel("Level Selection Menu");
+        public void ShowLevelSelection()
+        {
+            ShowPanel("Level Selection Menu");
+            
+            // Ensure DynamicLevelSelector is initialized if it hasn't been already
+            // This handles cases where the panel was hidden/inactive and Start() hasn't run or needs a refresh
+            if (panelLookup.TryGetValue("Level Selection Menu", out var panel) && panel.canvasGroup != null)
+            {
+                var selector = panel.canvasGroup.GetComponentInChildren<DynamicLevelSelector>(true);
+                if (selector != null)
+                {
+                    // Force a refresh if needed, or ensure it's active
+                    if (!selector.gameObject.activeSelf) selector.gameObject.SetActive(true);
+                }
+            }
+        }
 
         /// <summary>
         /// Show credits panel

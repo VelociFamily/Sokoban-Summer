@@ -42,6 +42,16 @@ namespace Core
         private bool levelsScanned = false;
 
         /// <summary>
+        /// Event fired when LevelManager has finished scanning and is ready for use.
+        /// </summary>
+        public static event System.Action OnReady;
+
+        /// <summary>
+        /// Check if LevelManager has finished scanning levels.
+        /// </summary>
+        public bool IsReady => levelsScanned;
+
+        /// <summary>
         /// Information about a discovered level
         /// </summary>
         [System.Serializable]
@@ -127,6 +137,9 @@ namespace Core
                     Debug.Log($"[LevelManager] Found level: {level.displayName} ({level.scenePath})");
                 }
             }
+
+            // Notify listeners that we are ready
+            OnReady?.Invoke();
         }
 
         /// <summary>
