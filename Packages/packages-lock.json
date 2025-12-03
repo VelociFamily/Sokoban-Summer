@@ -17,7 +17,7 @@
       "dependencies": {
         "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "2126745713d08f1a52b6297e527799c99e5aa1f0"
+      "hash": "84f7b855e85e64c4b282f825dff85a9dad1bca9a"
     },
     "com.github-glitchenzo.nugetforunity": {
       "version": "https://github.com/GlitchEnzo/NuGetForUnity.git?path=/src/NuGetForUnity",
