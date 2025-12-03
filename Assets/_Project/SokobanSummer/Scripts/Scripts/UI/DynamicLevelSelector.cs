@@ -114,7 +114,36 @@ namespace UI
             AutoBindPaginationButtonsIfMissing();
             EnsureOrConfigureLayoutGroup();
             HookPaginationButtons();
-            PopulateLevelButtons();
+            
+            // Use event-driven initialization
+            InitializeLevelPopulation();
+        }
+
+        private void InitializeLevelPopulation()
+        {
+            // Try to find existing LevelManager
+            LevelManager levelManager = null;
+            if (ServiceLocator.TryGet<LevelManager>(out var lm))
+            {
+                levelManager = lm;
+            }
+            else
+            {
+                levelManager = FindFirstObjectByType<LevelManager>(FindObjectsInactive.Include);
+            }
+
+            if (levelManager != null && levelManager.IsReady)
+            {
+                // Already ready, populate immediately
+                PopulateLevelButtons();
+            }
+            else
+            {
+                // Wait for ready event
+                Debug.Log("[DynamicLevelSelector] Waiting for LevelManager.OnReady...");
+                LevelManager.OnReady -= PopulateLevelButtons; // Prevent duplicate subscription
+                LevelManager.OnReady += PopulateLevelButtons;
+            }
         }
 
         private void OnValidate()
@@ -185,6 +214,13 @@ namespace UI
             if (!ServiceLocator.TryGet<LevelManager>(out var levelManager))
             {
                 levelManager = FindFirstObjectByType<LevelManager>();
+            }
+
+            // Retry finding LevelManager if it's null (sometimes initialization order matters)
+            if (levelManager == null)
+            {
+                // Try one more time with FindObjectOfType including inactive
+                levelManager = FindFirstObjectByType<LevelManager>(FindObjectsInactive.Include);
             }
 
             if (levelManager == null)
@@ -782,6 +818,7 @@ namespace UI
         {
             // Clean up pooled objects
             buttonPool?.DestroyAll();
+            LevelManager.OnReady -= PopulateLevelButtons;
         }
 
 #if UNITY_EDITOR

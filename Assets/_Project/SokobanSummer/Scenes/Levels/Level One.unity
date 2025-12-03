@@ -4135,7 +4135,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1002741263}
   - component: {fileID: 1002741262}
-  - component: {fileID: 1002741264}
   m_Layer: 0
   m_Name: TX Tileset Grass 0
   m_TagString: Untagged
@@ -4216,28 +4215,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2077297739}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1002741264
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1002741261}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4d5330ee922472546a64b12d080761a6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!198 &1032030743 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 9157105887693468085, guid: c4f829cb7dd4b864caf8832ec5b1ee55,
@@ -4991,6 +4968,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -9463,6 +9441,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6386510922213482366, guid: db402e356e3e1594d9f61bd898734fa5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7892666778380424366, guid: db402e356e3e1594d9f61bd898734fa5,
         type: 3}
       propertyPath: m_IsActive
       value: 0

@@ -595,6 +595,24 @@ namespace Core
             {
                 backgroundClone.SetActive(shouldShow);
             }
+
+            // Ensure background is rendered behind everything else
+            if (shouldShow)
+            {
+                var canvas = backgroundClone.GetComponent<Canvas>();
+                if (canvas != null)
+                {
+                    // Force background sorting layer and order
+                    if (canvas.sortingLayerName != "Background")
+                    {
+                        canvas.sortingLayerName = "Background";
+                    }
+                    if (canvas.sortingOrder != -1000)
+                    {
+                        canvas.sortingOrder = -1000;
+                    }
+                }
+            }
         }
 
         private void OnDestroy()
