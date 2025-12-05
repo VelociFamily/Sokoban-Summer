@@ -200,20 +200,30 @@ namespace UI
                 return;
             }
 
+            // Prevent double clicks
+            if (_clicked) return;
+            _clicked = true;
+
             Debug.Log($"[DynamicLevelButton] Loading level: {levelInfo.displayName}");
 
-                // Prevent double clicks
-                if (_clicked) return;
-                _clicked = true;
+            if (clickSfx)
+            {
+                var audioService = ServiceLocator.Get<ModernAudioService>();
+                audioService?.PlaySFX(clickSfx);
+            }
 
-                if (clickSfx)
-                {
-                    var audioService = ServiceLocator.Get<ModernAudioService>();
-                    audioService?.PlaySFX(clickSfx);
-                }
+            // Delegate to LevelManager so loading respects additive/persistence rules.
+            levelManager?.LoadLevel(levelInfo);
+            
+            // Reset the clicked flag after a delay to allow re-clicking if level load fails or is cancelled
+            StartCoroutine(ResetClickedFlagAfterDelay(2f));
+        }
 
-                // Delegate to LevelManager so loading respects additive/persistence rules.
-                levelManager?.LoadLevel(levelInfo);
+        private System.Collections.IEnumerator ResetClickedFlagAfterDelay(float delaySeconds)
+        {
+            yield return new WaitForSecondsRealtime(delaySeconds);
+            _clicked = false;
+            Debug.Log("[DynamicLevelButton] Click flag reset - button ready for next click");
         }
 
         /// <summary>

@@ -24,9 +24,9 @@ namespace UI
         private InputSystem_Actions inputActions;
         private Camera mainCamera;
 
-        // Track the menu scene name or index
-        private const int menuSceneBuildIndex = 1;
-        private string menuSceneName;
+        // Track the persistent UI scene name
+        private const string persistentUISceneName = "PersistentUI";
+        private string gameplaySceneName;
 
         private bool isPaused = false;
 
@@ -75,9 +75,8 @@ namespace UI
             // Ensure the "game" scene is always loaded
             if (!SceneManager.GetSceneByName("game").isLoaded) SceneManager.LoadSceneAsync("game", LoadSceneMode.Additive);
 
-            // Get menu scene name from build index
-            menuSceneName = SceneUtility.GetScenePathByBuildIndex(menuSceneBuildIndex);
-            if (!string.IsNullOrEmpty(menuSceneName)) menuSceneName = System.IO.Path.GetFileNameWithoutExtension(menuSceneName);
+            // Store the current gameplay scene name for later unloading
+            gameplaySceneName = SceneManager.GetActiveScene().name;
         }
 
         private void OnDisable()
@@ -142,13 +141,16 @@ namespace UI
                     SceneManager.UnloadSceneAsync(loadedScene);
             }
 
-            var asyncOp = SceneManager.LoadSceneAsync(menuSceneBuildIndex, LoadSceneMode.Additive);
-            asyncOp.completed += (op) => 
-            { 
-                // Handle potential EventSystem and AudioListener duplication after menu load
-                HandleEventSystemDuplication();
-                HandleAudioListenerDuplication();
-            };
+            // Navigate to PersistentUI to show the main menu
+            if (menuNavigator != null)
+            {
+                menuNavigator.ShowMainMenu();
+                Debug.Log("[PauseButton]: Navigated to Main Menu via MenuNavigator");
+            }
+            else
+            {
+                Debug.LogWarning("[PauseButton]: MenuNavigator not available - cannot show main menu panel");
+            }
         }
 
         /// <summary>
@@ -208,41 +210,47 @@ namespace UI
         }
 
         /// <summary>
-        /// Sets pause menu visibility using CanvasGroup if available, otherwise falls back to SetActive
+        /// Sets pause menu visibility using MenuNavigator (Persistent UI only)
         /// </summary>
         private void SetPauseMenuVisibility(bool visible, bool instant = false)
         {
-            // Prefer MenuNavigator if available (Persistent UI)
-            if (menuNavigator != null)
+            // MenuNavigator is required for pause menu management
+            if (menuNavigator == null)
             {
-                if (visible)
+                Debug.LogError("[PauseButton]: MenuNavigator not found in PersistentUI scene - cannot show/hide pause menu!");
+                return;
+            }
+
+            // Allow a couple of common panel name variants to avoid typos/mismatches
+            string targetPanelName = null;
+            var candidates = new[] { pausePanelName, "Pause Panel", "Pause" };
+            foreach (var candidate in candidates)
+            {
+                if (string.IsNullOrWhiteSpace(candidate)) continue;
+                if (menuNavigator.GetPanel(candidate) != null)
                 {
-                    menuNavigator.ShowPanel(pausePanelName, instant);
+                    targetPanelName = candidate;
+                    break;
+                }
+            }
+
+            if (visible)
+            {
+                if (targetPanelName != null)
+                {
+                    menuNavigator.ShowPanel(targetPanelName, instant);
+                    Debug.Log($"[PauseButton]: Showing pause panel via MenuNavigator (panel='{targetPanelName}')");
                 }
                 else
                 {
-                    // Hide all panels on resume to ensure no UI persists over gameplay
-                    menuNavigator.HideAllPanels(instant);
+                    Debug.LogError($"[PauseButton]: Pause panel not found in MenuNavigator. Register a panel named '{pausePanelName}' (or 'Pause Panel') in PersistentUI.");
                 }
             }
-            // Fallback to CanvasGroup or SetActive when MenuNavigator isn't present
-            else if (pauseMenuCanvasGroup != null)
+            else
             {
-                // Use CanvasGroup for smooth transitions
-                pauseMenuCanvasGroup.alpha = visible ? 1f : 0f;
-                pauseMenuCanvasGroup.interactable = visible;
-                pauseMenuCanvasGroup.blocksRaycasts = visible;
-
-                // Ensure parent GameObject is active for CanvasGroup to work
-                if (pauseMenu != null && !pauseMenu.activeSelf)
-                {
-                    pauseMenu.SetActive(true);
-                }
-            }
-            else if (pauseMenu != null)
-            {
-                // Fallback to SetActive if no CanvasGroup
-                pauseMenu.SetActive(visible);
+                // Hide all panels on resume to ensure no UI persists over gameplay
+                menuNavigator.HideAllPanels(instant);
+                Debug.Log("[PauseButton]: Hiding all panels via MenuNavigator");
             }
         }
     }
