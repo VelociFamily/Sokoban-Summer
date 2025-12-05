@@ -108,6 +108,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 7892666778380424366}
   pauseMenuCanvasGroup: {fileID: 0}
   blocker: {fileID: 0}
+  pausePanelName: Pause
   volume: {fileID: 0}
 --- !u!61 &601036675436173503
 BoxCollider2D:
@@ -260,6 +261,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -342,6 +344,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 7892666778380424366}
   pauseMenuCanvasGroup: {fileID: 6553220287329519946}
   blocker: {fileID: 1087338167439105163, guid: 1b7d83a15065f714f9982c24d806c8bc, type: 3}
+  pausePanelName: Pause
   volume: {fileID: 8102048397111994184}
 --- !u!1 &2904366253249898242
 GameObject:
@@ -446,6 +449,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -584,6 +588,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -858,6 +863,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 7892666778380424366}
   pauseMenuCanvasGroup: {fileID: 0}
   blocker: {fileID: 0}
+  pausePanelName: Pause
   volume: {fileID: 0}
 --- !u!61 &4817027769471303989
 BoxCollider2D:
@@ -974,7 +980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2961896356080805684
 RectTransform:
   m_ObjectHideFlags: 0

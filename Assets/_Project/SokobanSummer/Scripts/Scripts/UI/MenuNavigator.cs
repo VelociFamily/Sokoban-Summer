@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 namespace UI
 {
@@ -54,13 +55,40 @@ namespace UI
             }
 
             Debug.Log($"[MenuNavigator]: Initialized with {panelLookup.Count} menu panels");
+            
+            // Subscribe to scene events to hide menus when gameplay starts
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+
+        private void OnDestroy()
+        {
+            // Unsubscribe from scene events
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
+
+        private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            // When a gameplay scene is loaded, hide all menu panels
+            if (Core.SceneInfo.IsGameplayScene(scene))
+            {
+                Debug.Log($"[MenuNavigator]: Gameplay scene '{scene.name}' loaded - hiding all menu panels");
+                HideAllPanels(instant: true);
+            }
         }
 
         private void Start()
         {
-            // Show default panel
-            Debug.Log($"[MenuNavigator]: Showing default panel '{defaultPanelName}' on Start");
-            ShowPanel(defaultPanelName, instant: true);
+            // Show default panel only if we're not in a gameplay scene
+            var activeScene = SceneManager.GetActiveScene();
+            if (!Core.SceneInfo.IsGameplayScene(activeScene))
+            {
+                Debug.Log($"[MenuNavigator]: Showing default panel '{defaultPanelName}' on Start");
+                ShowPanel(defaultPanelName, instant: true);
+            }
+            else
+            {
+                Debug.Log($"[MenuNavigator]: Active scene is gameplay - skipping default panel display");
+            }
         }
 
         /// <summary>
@@ -144,6 +172,11 @@ namespace UI
         /// Show accessories manager panel
         /// </summary>
         public void ShowAccessoriesManager() => ShowPanel("Accessories manager");
+
+        /// <summary>
+        /// Show pause panel
+        /// </summary>
+        public void ShowPause() => ShowPanel("Pause");
 
         /// <summary>
         /// Go back to main menu (common back button action)

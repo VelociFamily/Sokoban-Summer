@@ -9390,6 +9390,16 @@ PrefabInstance:
       propertyPath: blocker
       value: 
       objectReference: {fileID: 1190364100}
+    - target: {fileID: 513462273337265652, guid: db402e356e3e1594d9f61bd898734fa5,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 513462273337265652, guid: db402e356e3e1594d9f61bd898734fa5,
+        type: 3}
+      propertyPath: pauseMenuCanvasGroup
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3007740627958848874, guid: db402e356e3e1594d9f61bd898734fa5,
         type: 3}
       propertyPath: m_LocalPosition.x
