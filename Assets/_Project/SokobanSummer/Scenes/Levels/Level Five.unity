@@ -466,7 +466,9 @@ PrefabInstance:
       value: Pause Components
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6386510922213482366, guid: db402e356e3e1594d9f61bd898734fa5, type: 3}
+    - {fileID: 7892666778380424366, guid: db402e356e3e1594d9f61bd898734fa5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db402e356e3e1594d9f61bd898734fa5, type: 3}
@@ -2626,6 +2628,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -4089,6 +4092,7 @@ GameObject:
   - component: {fileID: 2006651867}
   - component: {fileID: 2006651866}
   - component: {fileID: 2006651869}
+  - component: {fileID: 2006651870}
   m_Layer: 0
   m_Name: Game Manager1
   m_TagString: Untagged
@@ -4136,6 +4140,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartOnClick: 1
+--- !u!114 &2006651870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006651865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55a66e4af657584c9813438e96aa9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SokobanSummer.UI::UI.PauseButton
+  pauseMenu: {fileID: 0}
+  pauseMenuCanvasGroup: {fileID: 0}
+  blocker: {fileID: 150545678}
+  pausePanelName: Pause
+  volume: {fileID: 0}
 --- !u!1 &2009505045
 GameObject:
   m_ObjectHideFlags: 0
