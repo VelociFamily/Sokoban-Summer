@@ -66,6 +66,7 @@ namespace Core
 
         private float timer;
         private bool timerRunning = true;
+        private bool isExternallyPaused = false;
         private float lastTimerUpdate = 0f;
         private const float TIMER_UPDATE_INTERVAL = 0.1f; // Update timer 10 times per second
 
@@ -84,30 +85,32 @@ namespace Core
 
         private void Update()
         {
-            // Timer logic
-            if (timerRunning)
+            if (!timerRunning || isExternallyPaused)
             {
-                timer += Time.deltaTime;
+                return;
+            }
 
-                // Only update timer event periodically to reduce overhead
-                if (timer - lastTimerUpdate >= TIMER_UPDATE_INTERVAL)
-                {
-                    lastTimerUpdate = timer;
-                    OnTimerChanged?.Invoke(this, new TimerChangedEventArgs(timer));
-                    timerChangedEvent?.Raise(timer);
-                }
+            timer += Time.deltaTime;
 
-                // Stop timer if levelCompleteCanvas is active
-                if (levelCompleteCanvas != null && levelCompleteCanvas.activeSelf)
-                {
-                    timerRunning = false;
-                    // Final timer update
-                    OnTimerChanged?.Invoke(this, new TimerChangedEventArgs(timer));
-                    timerChangedEvent?.Raise(timer);
-                    // Notify level completion
-                    OnLevelCompleted?.Invoke(this, EventArgs.Empty);
-                    Debug.Log($"[MoveCounter]: Level completed - Moves: {moveCount}, Time: {timer:F2}s");
-                }
+            // Only update timer event periodically to reduce overhead
+            if (timer - lastTimerUpdate >= TIMER_UPDATE_INTERVAL)
+            {
+                lastTimerUpdate = timer;
+                OnTimerChanged?.Invoke(this, new TimerChangedEventArgs(timer));
+                timerChangedEvent?.Raise(timer);
+            }
+
+            // Stop timer if levelCompleteCanvas is active
+            if (levelCompleteCanvas != null && levelCompleteCanvas.activeSelf)
+            {
+                timerRunning = false;
+                isExternallyPaused = false;
+                // Final timer update
+                OnTimerChanged?.Invoke(this, new TimerChangedEventArgs(timer));
+                timerChangedEvent?.Raise(timer);
+                // Notify level completion
+                OnLevelCompleted?.Invoke(this, EventArgs.Empty);
+                Debug.Log($"[MoveCounter]: Level completed - Moves: {moveCount}, Time: {timer:F2}s");
             }
         }
 
@@ -124,6 +127,7 @@ namespace Core
             timer = 0f;
             lastTimerUpdate = 0f;
             timerRunning = true;
+            isExternallyPaused = false;
         
             Debug.Log("[MoveCounter]: Game counters reset for new attempt");
         
@@ -135,6 +139,20 @@ namespace Core
             movesChangedEvent?.Raise(moveCount);
             timerChangedEvent?.Raise(timer);
         }
+
+        public void PauseTimer()
+        {
+            if (!timerRunning) return;
+            isExternallyPaused = true;
+        }
+
+        public void ResumeTimer()
+        {
+            if (!timerRunning) return;
+            if (levelCompleteCanvas != null && levelCompleteCanvas.activeSelf) return;
+            isExternallyPaused = false;
+        }
+
         public float GetElapsedTime()
         {
             return timer;

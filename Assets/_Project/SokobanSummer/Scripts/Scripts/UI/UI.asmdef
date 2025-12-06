@@ -3,6 +3,7 @@
     "rootNamespace": "UI",
     "references": [
         "SokobanSummer.Core",
+        "SokobanSummer.Gameplay",
         "SokobanSummer.Input",
         "UnityEngine.UI",
         "Unity.TextMeshPro",

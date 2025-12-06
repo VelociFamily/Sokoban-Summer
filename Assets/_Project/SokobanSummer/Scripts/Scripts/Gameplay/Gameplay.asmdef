@@ -4,7 +4,6 @@
     "references": [
         "SokobanSummer.Core",
         "SokobanSummer.Input",
-        "SokobanSummer.UI",
         "UnityEngine.UI",
         "Unity.TextMeshPro",
         "Unity.InputSystem"

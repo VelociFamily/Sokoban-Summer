@@ -1,4 +1,5 @@
 using Core;
+using Gameplay;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -22,6 +23,10 @@ namespace UI
         private DepthOfField depthOfField; // Reference to the Depth of Field effect
 
         private InputSystem_Actions inputActions;
+        private InputService inputService;
+        private MoveCounter moveCounter;
+        private bool ownsInputActions;
+
         private Camera mainCamera;
 
         // Track the persistent UI scene name
@@ -33,10 +38,9 @@ namespace UI
         private void Start()
         {
             Time.timeScale = 1f;
-            inputActions = new InputSystem_Actions();
-            inputActions.UI.EscapeStart.performed += OnPausePerformed;
-            inputActions.UI.Click.performed += OnClickPerformed;
-            inputActions.UI.Enable();
+
+            InitializeServices();
+            SetupInputActions();
 
             // Find MenuNavigator in the persistent UI (if configured)
             menuNavigator = FindFirstObjectByType<MenuNavigator>();
@@ -84,7 +88,40 @@ namespace UI
             if (inputActions == null) return;
             inputActions.UI.EscapeStart.performed -= OnPausePerformed;
             inputActions.UI.Click.performed -= OnClickPerformed;
-            inputActions.UI.Disable();
+
+            if (ownsInputActions)
+            {
+                inputActions.UI.Disable();
+            }
+        }
+
+        private void InitializeServices()
+        {
+            if (ServiceLocator.TryGet(out InputService service))
+            {
+                inputService = service;
+            }
+
+            ServiceLocator.TryGet(out moveCounter);
+        }
+
+        private void SetupInputActions()
+        {
+            if (inputService != null && inputService.InputActions != null)
+            {
+                inputActions = inputService.InputActions;
+                ownsInputActions = false;
+                inputService.EnableUIInput();
+            }
+            else
+            {
+                inputActions = new InputSystem_Actions();
+                ownsInputActions = true;
+                inputActions.UI.Enable();
+            }
+
+            inputActions.UI.EscapeStart.performed += OnPausePerformed;
+            inputActions.UI.Click.performed += OnClickPerformed;
         }
 
         private void OnDestroy()
@@ -92,8 +129,12 @@ namespace UI
             if (inputActions == null) return;
             inputActions.UI.EscapeStart.performed -= OnPausePerformed;
             inputActions.UI.Click.performed -= OnClickPerformed;
-            inputActions.UI.Disable();
-            inputActions?.Dispose();
+
+            if (ownsInputActions)
+            {
+                inputActions.UI.Disable();
+                inputActions.Dispose();
+            }
         }
 
         private void OnPausePerformed(InputAction.CallbackContext context)
@@ -193,8 +234,39 @@ namespace UI
 
         public void PauseGame()
         {
+            // Disable player input first to prevent new moves
+            inputService?.DisablePlayerInput();
+            
+            // Wait for any ongoing movement to complete before pausing
+            StartCoroutine(PauseAfterMovementComplete());
+        }
+
+        private System.Collections.IEnumerator PauseAfterMovementComplete()
+        {
+            // Wait until all players have finished their current movement
+            var players = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
+            bool stillMoving;
+            do
+            {
+                stillMoving = false;
+                foreach (var player in players)
+                {
+                    if (player.GetMoveDirection() != Vector2.zero)
+                    {
+                        stillMoving = true;
+                        break;
+                    }
+                }
+                if (stillMoving)
+                {
+                    yield return null;
+                }
+            } while (stillMoving);
+
+            // Now that movement is complete, pause everything
             SetPauseMenuVisibility(true);
             Time.timeScale = 0f;
+            moveCounter?.PauseTimer();
             isPaused = true;
 
             if (depthOfField != null) depthOfField.active = true;
@@ -204,6 +276,8 @@ namespace UI
         {
             SetPauseMenuVisibility(false);
             Time.timeScale = 1f;
+            moveCounter?.ResumeTimer();
+            inputService?.EnablePlayerInput();
             isPaused = false;
 
             if (depthOfField != null) depthOfField.active = false;
