@@ -1,6 +1,7 @@
 using Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Gameplay
 {
@@ -10,6 +11,10 @@ namespace Gameplay
         // Removed: public AudioSource audioSource; - now using centralized AudioService
         public AudioClip portalSound;
         public ParticleSystem portalEffect;
+
+        [Header("Canvas Display (Optional)")]
+        [Tooltip("Canvas to show when level is completed (e.g., Level Complete screen). Leave empty if not needed.")]
+        public Canvas completionCanvas;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
@@ -44,6 +49,13 @@ namespace Gameplay
                 else
                 {
                     Debug.LogWarning("[PortalTrigger]: Player reference not assigned - cannot disable player");
+                }
+
+                // Show completion canvas if assigned
+                if (completionCanvas != null)
+                {
+                    completionCanvas.gameObject.SetActive(true);
+                    Debug.Log("[PortalTrigger]: Completion canvas activated");
                 }
 
                 // Notify LevelManager of completion to unlock progression

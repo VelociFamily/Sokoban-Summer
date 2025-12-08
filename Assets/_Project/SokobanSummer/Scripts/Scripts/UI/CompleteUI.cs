@@ -7,10 +7,12 @@ namespace UI
     public class CompleteUI : MonoBehaviour
     {
         private AchievementManager achievementManager;
+        private MenuNavigator menuNavigator;
 
         private void Awake()
         {
             achievementManager = ServiceLocator.Get<AchievementManager>();
+            menuNavigator = ServiceLocator.Get<MenuNavigator>();
         }
 
         public void LoadNextScene()
@@ -98,8 +100,8 @@ namespace UI
 
         public void LoadMenu()
         {
-            ServiceLocator.Get<LevelManager>().LoadMainMenu();
-            // Example usage: achievementManager?.UnlockTutorial();
+            // Show Main Menu panel via MenuNavigator instead of loading scene
+            menuNavigator?.ShowMainMenu();
         }
     }
 }
