@@ -1607,8 +1607,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseButton, Assembly-CSharp
+      - m_Target: {fileID: 1253959252}
+        m_TargetAssemblyTypeName: UI.PauseButton, SokobanSummer.UI
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:

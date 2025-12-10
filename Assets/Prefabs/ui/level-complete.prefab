@@ -523,9 +523,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UI.MenuNavigator, SokobanSummer.UI
-        m_MethodName: ShowMainMenu
+      - m_Target: {fileID: 1483018616487970340}
+        m_TargetAssemblyTypeName: UI.CompleteUI, SokobanSummer.UI
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -11,8 +11,17 @@ namespace UI
 
         private void Awake()
         {
-            achievementManager = ServiceLocator.Get<AchievementManager>();
-            menuNavigator = ServiceLocator.Get<MenuNavigator>();
+            // Resolve services defensively: these may not be registered in the locator
+            ServiceLocator.TryGet(out achievementManager);
+
+            if (!ServiceLocator.TryGet(out menuNavigator))
+            {
+                menuNavigator = FindFirstObjectByType<MenuNavigator>();
+                if (menuNavigator == null)
+                {
+                    Debug.LogWarning("[CompleteUI]: MenuNavigator not found in ServiceLocator or scene");
+                }
+            }
         }
 
         public void LoadNextScene()
@@ -100,8 +109,69 @@ namespace UI
 
         public void LoadMenu()
         {
+            Time.timeScale = 1f;
+
+            // Unload any loaded gameplay scenes (tutorial or game levels)
+            for (var i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var loadedScene = SceneManager.GetSceneAt(i);
+                if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded) 
+                    SceneManager.UnloadSceneAsync(loadedScene);
+            }
+
+            // If the persistent UI was hidden for gameplay, ensure it is visible again
+            if (PersistentUIManager.Exists)
+            {
+                PersistentUIManager.Show(animated: false);
+            }
+
             // Show Main Menu panel via MenuNavigator instead of loading scene
-            menuNavigator?.ShowMainMenu();
+            if (menuNavigator == null)
+            {
+                ServiceLocator.TryGet(out menuNavigator);
+                if (menuNavigator == null)
+                {
+                    menuNavigator = FindFirstObjectByType<MenuNavigator>();
+                }
+            }
+
+            if (menuNavigator != null)
+            {
+                Debug.Log("[CompleteUI]: Requesting Main Menu show (instant)");
+                menuNavigator.ShowPanel("Main Menu", true);
+
+                // Safety: force canvas settings in case the panel was left hidden by previous scene transitions
+                var panel = menuNavigator.GetPanel("Main Menu");
+                if (panel?.canvasGroup != null)
+                {
+                    panel.canvasGroup.gameObject.SetActive(true);
+                    panel.canvasGroup.alpha = 1f;
+                    panel.canvasGroup.interactable = true;
+                    panel.canvasGroup.blocksRaycasts = true;
+                }
+                else
+                {
+                    // Fallback: find a CanvasGroup named "Main Menu" in the scene and force it visible
+                    var mainMenuGo = GameObject.Find("Main Menu");
+                    var cg = mainMenuGo != null ? mainMenuGo.GetComponent<CanvasGroup>() : null;
+                    if (cg != null)
+                    {
+                        cg.gameObject.SetActive(true);
+                        cg.alpha = 1f;
+                        cg.interactable = true;
+                        cg.blocksRaycasts = true;
+                        Debug.Log("[CompleteUI]: Forced Main Menu CanvasGroup visible via fallback search");
+                    }
+                    else
+                    {
+                        Debug.LogWarning("[CompleteUI]: Could not find Main Menu CanvasGroup to show");
+                    }
+                }
+            }
+            else
+            {
+                Debug.LogWarning("[CompleteUI]: MenuNavigator not found - cannot show main menu");
+            }
         }
     }
 }

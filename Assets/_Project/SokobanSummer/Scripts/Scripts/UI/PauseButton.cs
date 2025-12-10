@@ -236,34 +236,10 @@ namespace UI
         {
             // Disable player input first to prevent new moves
             inputService?.DisablePlayerInput();
+            // Make sure the pause menu object is active so the panel can render
+            if (pauseMenu != null && !pauseMenu.activeSelf) pauseMenu.SetActive(true);
             
-            // Wait for any ongoing movement to complete before pausing
-            StartCoroutine(PauseAfterMovementComplete());
-        }
-
-        private System.Collections.IEnumerator PauseAfterMovementComplete()
-        {
-            // Wait until all players have finished their current movement
-            var players = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
-            bool stillMoving;
-            do
-            {
-                stillMoving = false;
-                foreach (var player in players)
-                {
-                    if (player.GetMoveDirection() != Vector2.zero)
-                    {
-                        stillMoving = true;
-                        break;
-                    }
-                }
-                if (stillMoving)
-                {
-                    yield return null;
-                }
-            } while (stillMoving);
-
-            // Now that movement is complete, pause everything
+            // Show pause menu immediately so it's interactive
             SetPauseMenuVisibility(true);
             Time.timeScale = 0f;
             moveCounter?.PauseTimer();
@@ -281,6 +257,9 @@ namespace UI
             isPaused = false;
 
             if (depthOfField != null) depthOfField.active = false;
+
+            // Pause menu stays active; MenuNavigator already disables raycasts/interactability when hidden.
+            // Keeping it active avoids requiring a second press after returning to gameplay.
         }
 
         /// <summary>

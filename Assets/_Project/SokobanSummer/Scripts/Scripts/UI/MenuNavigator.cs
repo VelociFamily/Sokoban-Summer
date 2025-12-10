@@ -102,15 +102,20 @@ namespace UI
                 return;
             }
 
-            // If already showing this panel, do nothing
+            // If already showing this panel, check if it's actually visible
             if (currentPanel == panel)
             {
-                Debug.Log($"[MenuNavigator]: Panel '{panelName}' is already showing");
-                return;
+                // Check if fully visible and active
+                if (panel.canvasGroup.alpha > 0.99f && panel.canvasGroup.interactable && panel.canvasGroup.gameObject.activeSelf)
+                {
+                    Debug.Log($"[MenuNavigator]: Panel '{panelName}' is already showing and visible");
+                    return;
+                }
+                Debug.Log($"[MenuNavigator]: Panel '{panelName}' is current but not fully visible (alpha={panel.canvasGroup.alpha}) - forcing show");
             }
 
-            // Hide current panel and show new panel
-            if (currentPanel != null)
+            // Hide current panel if it's different from the new one
+            if (currentPanel != null && currentPanel != panel)
             {
                 Debug.Log($"[MenuNavigator]: Hiding panel '{currentPanel.panelName}'");
                 SetPanelVisibility(currentPanel, false, instant);
@@ -119,13 +124,29 @@ namespace UI
             SetPanelVisibility(panel, true, instant);
             currentPanel = panel;
 
-            // Set first selected button for input navigation
+            // Set first selected button for input navigation with a small delay to ensure UI is ready
             if (panel.firstSelectedButton != null && EventSystem.current != null)
             {
-                EventSystem.current.SetSelectedGameObject(panel.firstSelectedButton);
+                StartCoroutine(SelectButtonNextFrame(panel.firstSelectedButton));
             }
 
             Debug.Log($"[MenuNavigator]: Switched to panel '{panelName}'");
+        }
+
+        /// <summary>
+        /// Defers button selection to the next frame to ensure UI is fully ready
+        /// </summary>
+        private IEnumerator SelectButtonNextFrame(GameObject button)
+        {
+            yield return null; // Wait one frame for UI to settle
+            
+            if (EventSystem.current != null && button != null)
+            {
+                EventSystem.current.SetSelectedGameObject(null); // Clear first
+                yield return null;
+                EventSystem.current.SetSelectedGameObject(button);
+                Debug.Log($"[MenuNavigator]: Selected button '{button.name}' for navigation");
+            }
         }
 
         /// <summary>
@@ -253,7 +274,8 @@ namespace UI
 
             while (elapsed < transitionDuration)
             {
-                elapsed += Time.deltaTime;
+                // Use unscaled time so fades still complete when the game is paused
+                elapsed += Time.unscaledDeltaTime;
                 float t = elapsed / transitionDuration;
                 canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
                 yield return null;
@@ -271,6 +293,13 @@ namespace UI
                 // canvasGroup.gameObject.SetActive(false); 
                 
                 Debug.Log($"[MenuNavigator]: Interaction disabled after hide");
+            }
+            else
+            {
+                // Re-confirm interactivity at the end of show fade for safety
+                canvasGroup.interactable = true;
+                canvasGroup.blocksRaycasts = true;
+                Debug.Log($"[MenuNavigator]: Confirming interactivity for fully visible panel");
             }
 
             // Remove from active transitions
