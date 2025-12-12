@@ -1940,6 +1940,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Complete
       objectReference: {fileID: 0}
+    - target: {fileID: 2229702057743216131, guid: 1b7d83a15065f714f9982c24d806c8bc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2229702057743216131, guid: 1b7d83a15065f714f9982c24d806c8bc,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadNextScene
+      objectReference: {fileID: 0}
     - target: {fileID: 5343617366753424022, guid: 1b7d83a15065f714f9982c24d806c8bc,
         type: 3}
       propertyPath: m_Pivot.x
