@@ -68,21 +68,46 @@ namespace UI
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            // When a gameplay scene is loaded, hide all menu panels
+            // When a gameplay scene is loaded additively and becomes active, hide all menu panels
+            // For single scene loading, this happens immediately
+            // For additive loading, only hide if the gameplay scene is or becomes active
             if (Core.SceneInfo.IsGameplayScene(scene))
             {
-                Debug.Log($"[MenuNavigator]: Gameplay scene '{scene.name}' loaded - hiding all menu panels");
-                HideAllPanels(instant: true);
+                // If loaded scene is now active, hide immediately
+                if (SceneManager.GetActiveScene() == scene)
+                {
+                    Debug.Log($"[MenuNavigator]: Gameplay scene '{scene.name}' is active - hiding all menu panels");
+                    HideAllPanels(instant: true);
+                }
+                else if (mode == LoadSceneMode.Single)
+                {
+                    // Single mode always makes the scene active eventually
+                    Debug.Log($"[MenuNavigator]: Gameplay scene '{scene.name}' loaded in Single mode - hiding all menu panels");
+                    HideAllPanels(instant: true);
+                }
+                else
+                {
+                    Debug.Log($"[MenuNavigator]: Gameplay scene '{scene.name}' loaded additively but not active yet - will check on active scene change");
+                }
             }
         }
 
         private void Start()
         {
+            // Defer showing default panel to ensure scene state is settled
+            StartCoroutine(ShowDefaultPanelWhenReady());
+        }
+
+        private IEnumerator ShowDefaultPanelWhenReady()
+        {
+            // Wait a frame for scene loading to settle
+            yield return null;
+            
             // Show default panel only if we're not in a gameplay scene
             var activeScene = SceneManager.GetActiveScene();
             if (!Core.SceneInfo.IsGameplayScene(activeScene))
             {
-                Debug.Log($"[MenuNavigator]: Showing default panel '{defaultPanelName}' on Start");
+                Debug.Log($"[MenuNavigator]: Showing default panel '{defaultPanelName}' after scene settled");
                 ShowPanel(defaultPanelName, instant: true);
             }
             else
@@ -98,8 +123,14 @@ namespace UI
         {
             if (!panelLookup.TryGetValue(panelName, out var panel))
             {
-                Debug.LogError($"[MenuNavigator]: Panel '{panelName}' not found!");
-                return;
+                // Try case-insensitive lookup as fallback
+                panel = menuPanels.Find(p => p.panelName.Equals(panelName, System.StringComparison.OrdinalIgnoreCase));
+                if (panel == null)
+                {
+                    Debug.LogError($"[MenuNavigator]: Panel '{panelName}' not found! Available panels: {string.Join(", ", panelLookup.Keys)}");
+                    return;
+                }
+                Debug.LogWarning($"[MenuNavigator]: Found panel using case-insensitive match for '{panelName}'. Please use exact name.");
             }
 
             // If already showing this panel, check if it's actually visible
@@ -140,12 +171,25 @@ namespace UI
         {
             yield return null; // Wait one frame for UI to settle
             
-            if (EventSystem.current != null && button != null)
+            if (button == null)
             {
-                EventSystem.current.SetSelectedGameObject(null); // Clear first
+                Debug.LogWarning("[MenuNavigator]: Button reference became null before selection");
+                yield break;
+            }
+            
+            var eventSystem = EventSystem.current;
+            if (eventSystem != null)
+            {
+                eventSystem.SetSelectedGameObject(null); // Clear first
                 yield return null;
-                EventSystem.current.SetSelectedGameObject(button);
-                Debug.Log($"[MenuNavigator]: Selected button '{button.name}' for navigation");
+                
+                // Re-check EventSystem after frame wait
+                eventSystem = EventSystem.current;
+                if (eventSystem != null && button != null)
+                {
+                    eventSystem.SetSelectedGameObject(button);
+                    Debug.Log($"[MenuNavigator]: Selected button '{button.name}' for navigation");
+                }
             }
         }
 
@@ -192,7 +236,7 @@ namespace UI
         /// <summary>
         /// Show accessories manager panel
         /// </summary>
-        public void ShowAccessoriesManager() => ShowPanel("Accessories manager");
+        public void ShowAccessoriesManager() => ShowPanel("Accessories Manager");
 
         /// <summary>
         /// Show pause panel
@@ -222,13 +266,18 @@ namespace UI
                 panel.canvasGroup.interactable = visible;
                 panel.canvasGroup.blocksRaycasts = visible;
                 
-                // Ensure active state matches visibility
+                // Consistently manage GameObject active state
                 if (visible && !panel.canvasGroup.gameObject.activeSelf)
                 {
                     panel.canvasGroup.gameObject.SetActive(true);
                 }
+                else if (!visible && panel.canvasGroup.gameObject.activeSelf)
+                {
+                    // Deactivate hidden panels to save resources
+                    panel.canvasGroup.gameObject.SetActive(false);
+                }
                 
-                Debug.Log($"[MenuNavigator]: Instant visibility applied to '{panel.panelName}' alpha={panel.canvasGroup.alpha} interactable={panel.canvasGroup.interactable}");
+                Debug.Log($"[MenuNavigator]: Instant visibility applied to '{panel.panelName}' alpha={panel.canvasGroup.alpha} interactable={panel.canvasGroup.interactable} active={panel.canvasGroup.gameObject.activeSelf}");
             }
             else
             {
@@ -289,10 +338,11 @@ namespace UI
                 canvasGroup.interactable = false;
                 canvasGroup.blocksRaycasts = false;
                 
-                // Optionally disable the GameObject to save performance, but be careful if other scripts need it active
-                // canvasGroup.gameObject.SetActive(false); 
+                // Deactivate hidden panels to save performance
+                // Safe because this only happens after fade completes
+                canvasGroup.gameObject.SetActive(false);
                 
-                Debug.Log($"[MenuNavigator]: Interaction disabled after hide");
+                Debug.Log($"[MenuNavigator]: Panel hidden and deactivated");
             }
             else
             {

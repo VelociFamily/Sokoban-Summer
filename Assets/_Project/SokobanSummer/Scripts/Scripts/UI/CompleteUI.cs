@@ -27,24 +27,36 @@ namespace UI
         public void LoadNextScene()
         {
             var currentScene = SceneManager.GetActiveScene();
-            var currentSceneIndex = currentScene.buildIndex;
-            var nextSceneIndex = currentSceneIndex + 1;
 
             try
             {
                 // Call achievement unlock logic based on current level completion
                 UnlockNextLevel(currentScene);
 
-                var levelManager = ServiceLocator.Get<LevelManager>();
-                var nextLevel = levelManager.GetLevelByBuildIndex(nextSceneIndex);
+                if (!ServiceLocator.TryGet<LevelManager>(out var levelManager))
+                {
+                    Debug.LogError("[CompleteUI]: LevelManager not found in ServiceLocator");
+                    return;
+                }
+
+                // Use LevelManager's GetNextLevel for proper progression logic
+                var currentLevel = levelManager.GetLevelByBuildIndex(currentScene.buildIndex);
+                if (currentLevel == null)
+                {
+                    Debug.LogWarning($"[CompleteUI]: Current level with build index {currentScene.buildIndex} not found in LevelManager");
+                    return;
+                }
+
+                var nextLevel = levelManager.GetNextLevel(currentLevel);
                 if (nextLevel != null)
                 {
-                    // Delegate to LevelManager additive loader
+                    Debug.Log($"[CompleteUI]: Loading next level: {nextLevel.displayName}");
                     levelManager.LoadLevel(nextLevel);
                 }
                 else
                 {
-                    Debug.LogWarning($"[CompleteUI]: Next level with index {nextSceneIndex} not found in LevelManager");
+                    Debug.Log($"[CompleteUI]: No next level after {currentLevel.displayName} - returning to main menu");
+                    LoadMenu();
                 }
             }
             catch (System.Exception e)
@@ -67,7 +79,7 @@ namespace UI
 
             var sceneInfo = SceneInfo.FindSceneInfoInScene(completedScene);
 
-            // Use SceneInfo if available, otherwise fallback to build index
+            // Use SceneInfo exclusively - all scenes should have SceneInfo per architecture guidelines
             if (sceneInfo != null)
             {
                 switch (sceneInfo.sceneType)
@@ -91,19 +103,8 @@ namespace UI
             }
             else
             {
-                // Fallback to build index logic for scenes without SceneInfo
-                switch (completedScene.buildIndex)
-                {
-                    case 2: // Tutorial level (build index 2)
-                        Debug.Log("[CompleteUI]: Tutorial completed - unlocking Confuse and Speed power-ups");
-                        achievementManager.UnlockConfuseAndSpeed();
-                        break;
-
-                    case 6: // Level Two (build index 6)
-                        Debug.Log("[CompleteUI]: Level Two completed - unlocking next achievement");
-                        achievementManager.UnlockLevelTwo();
-                        break;
-                }
+                // Warn if SceneInfo is missing - all scenes should have it
+                Debug.LogWarning($"[CompleteUI]: Scene '{completedScene.name}' is missing SceneInfo component. Add SceneInfo to all level scenes per architecture guidelines.");
             }
         }
 
@@ -111,12 +112,24 @@ namespace UI
         {
             Time.timeScale = 1f;
 
-            // Unload any loaded gameplay scenes (tutorial or game levels)
-            for (var i = 0; i < SceneManager.sceneCount; i++)
+            // Delegate to LevelManager to properly unload gameplay scenes and load main menu
+            if (ServiceLocator.TryGet<LevelManager>(out var levelManager))
             {
-                var loadedScene = SceneManager.GetSceneAt(i);
-                if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded) 
-                    SceneManager.UnloadSceneAsync(loadedScene);
+                Debug.Log("[CompleteUI]: Using LevelManager to load main menu");
+                levelManager.LoadMainMenu();
+            }
+            else
+            {
+                // Fallback: manually unload gameplay scenes if LevelManager isn't available
+                Debug.LogWarning("[CompleteUI]: LevelManager not found, using fallback scene unload logic");
+                for (var i = 0; i < SceneManager.sceneCount; i++)
+                {
+                    var loadedScene = SceneManager.GetSceneAt(i);
+                    if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded)
+                    {
+                        SceneManager.UnloadSceneAsync(loadedScene);
+                    }
+                }
             }
 
             // If the persistent UI was hidden for gameplay, ensure it is visible again
@@ -125,7 +138,7 @@ namespace UI
                 PersistentUIManager.Show(animated: false);
             }
 
-            // Show Main Menu panel via MenuNavigator instead of loading scene
+            // Show Main Menu panel via MenuNavigator
             if (menuNavigator == null)
             {
                 ServiceLocator.TryGet(out menuNavigator);
@@ -137,40 +150,8 @@ namespace UI
 
             if (menuNavigator != null)
             {
-                Debug.Log("[CompleteUI]: Requesting Main Menu show (instant)");
-                menuNavigator.ShowPanel("Main Menu", true);
-
-                // Safety: force canvas settings in case the panel was left hidden by previous scene transitions
-                var panel = menuNavigator.GetPanel("Main Menu");
-                if (panel?.canvasGroup != null)
-                {
-                    panel.canvasGroup.gameObject.SetActive(true);
-                    panel.canvasGroup.alpha = 1f;
-                    panel.canvasGroup.interactable = true;
-                    panel.canvasGroup.blocksRaycasts = true;
-                }
-                else
-                {
-                    // Fallback: find a CanvasGroup named "Main Menu" in the scene and force it visible
-                    var mainMenuGo = GameObject.Find("Main Menu");
-                    var cg = mainMenuGo != null ? mainMenuGo.GetComponent<CanvasGroup>() : null;
-                    if (cg != null)
-                    {
-                        cg.gameObject.SetActive(true);
-                        cg.alpha = 1f;
-                        cg.interactable = true;
-                        cg.blocksRaycasts = true;
-                        Debug.Log("[CompleteUI]: Forced Main Menu CanvasGroup visible via fallback search");
-                    }
-                    else
-                    {
-                        Debug.LogWarning("[CompleteUI]: Could not find Main Menu CanvasGroup to show");
-                    }
-                }
-            }
-            else
-            {
-                Debug.LogWarning("[CompleteUI]: MenuNavigator not found - cannot show main menu");
+                Debug.Log("[CompleteUI]: Requesting Main Menu show via MenuNavigator");
+                menuNavigator.ShowPanel("Main Menu", instant: true);
             }
         }
     }
