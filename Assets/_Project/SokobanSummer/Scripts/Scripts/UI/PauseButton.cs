@@ -27,6 +27,10 @@ namespace UI
         private MoveCounter moveCounter;
         private bool ownsInputActions;
 
+        // Cache both UI and Player map pause bindings so Start/Escape works even if one map is disabled
+        private InputAction pauseActionUI;
+        private InputAction pauseActionPlayer;
+
         private Camera mainCamera;
 
         // Track the persistent UI scene name
@@ -86,7 +90,8 @@ namespace UI
         private void OnDisable()
         {
             if (inputActions == null) return;
-            inputActions.UI.EscapeStart.performed -= OnPausePerformed;
+            if (pauseActionUI != null) pauseActionUI.performed -= OnPausePerformed;
+            if (pauseActionPlayer != null) pauseActionPlayer.performed -= OnPausePerformed;
             inputActions.UI.Click.performed -= OnClickPerformed;
 
             if (ownsInputActions)
@@ -111,6 +116,7 @@ namespace UI
             {
                 inputActions = inputService.InputActions;
                 ownsInputActions = false;
+                // Ensure UI map is enabled; other systems may disable it on scene load
                 inputService.EnableUIInput();
             }
             else
@@ -120,14 +126,23 @@ namespace UI
                 inputActions.UI.Enable();
             }
 
-            inputActions.UI.EscapeStart.performed += OnPausePerformed;
+            // Listen on both UI and Player maps so Start/Escape always pauses even if one map is disabled
+            pauseActionUI = inputActions.UI.EscapeStart;
+            pauseActionPlayer = inputActions.Player.EscapeStart;
+
+            // UI map may be disabled by other scripts after this Start; guard by enabling here as well
+            if (!inputActions.UI.enabled) inputActions.UI.Enable();
+
+            pauseActionUI.performed += OnPausePerformed;
+            pauseActionPlayer.performed += OnPausePerformed;
             inputActions.UI.Click.performed += OnClickPerformed;
         }
 
         private void OnDestroy()
         {
             if (inputActions == null) return;
-            inputActions.UI.EscapeStart.performed -= OnPausePerformed;
+            if (pauseActionUI != null) pauseActionUI.performed -= OnPausePerformed;
+            if (pauseActionPlayer != null) pauseActionPlayer.performed -= OnPausePerformed;
             inputActions.UI.Click.performed -= OnClickPerformed;
 
             if (ownsInputActions)

@@ -15,11 +15,8 @@ namespace Core
     public UnityEngine.Object UnifiedAudioManagerPrefab; // Use UnityEngine.Object for prefab references
 
         [Header("Persistent UI")]
-        [Tooltip("Name of the persistent UI scene to load (optional - if not set, uses legacy MenuPersistence)")]
+        [Tooltip("Name of the persistent UI scene to load")]
         public string PersistentUISceneName = "PersistentUI";
-
-        [Tooltip("Load persistent UI scene instead of using legacy MenuPersistence")]
-        public bool UsePersistentUIScene = false;
 
         [Header("Other Systems")]
         public LevelLogger LevelLogger;
@@ -115,19 +112,10 @@ namespace Core
                 // Step 4b: Prepare ambient foreground effects (if configured)
                 await InitializeForegroundEffectsAsync();
 
-                // Step 5: Load UI scene - either persistent (modern) or main menu (legacy)
-                Debug.Log($"[GameInitializer]: About to load UI scene - UsePersistentUIScene={UsePersistentUIScene}");
-                if (UsePersistentUIScene)
-                {
-                    Debug.Log($"[GameInitializer]: Attempting to load PersistentUI scene '{PersistentUISceneName}'");
-                    await LoadPersistentUISceneAsync();
-                    Debug.Log($"[GameInitializer]: PersistentUI scene load completed");
-                }
-                else
-                {
-                    Debug.Log("[GameInitializer]: Loading Main Menu (legacy mode)");
-                    await LoadMainMenuAsync();
-                }
+                // Step 5: Load persistent UI scene
+                Debug.Log($"[GameInitializer]: Attempting to load PersistentUI scene '{PersistentUISceneName}'");
+                await LoadPersistentUISceneAsync();
+                Debug.Log($"[GameInitializer]: PersistentUI scene load completed");
 
                 // Step 5b: Now that a camera/UI scene likely created an AudioListener, initialize audio
                 Debug.Log("[GameInitializer]: About to initialize audio system");
@@ -499,16 +487,6 @@ namespace Core
                 await Task.Delay((int)((SplashHoldDuration + SplashFadeDuration) * 1000f));
                 Debug.Log("[GameInitializer]: No splash controller available; continuing without splash.");
             }
-        }
-
-        /// <summary>
-        /// Load main menu scene asynchronously
-        /// </summary>
-        private static async Task LoadMainMenuAsync()
-        {
-            Debug.Log("[GameInitializer]: Loading Main Menu scene...");
-            await SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
-            Debug.Log("[GameInitializer]: Main Menu scene loaded");
         }
 
         /// <summary>
