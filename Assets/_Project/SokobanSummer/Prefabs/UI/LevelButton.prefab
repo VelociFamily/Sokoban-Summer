@@ -145,6 +145,11 @@ MonoBehaviour:
   lockOverlay: {fileID: 4008168812050368032}
   lockOverlayImage: {fileID: 4695001398166427846}
   completionBadge: {fileID: 0}
+  selectionTarget: {fileID: 2355454831879610347}
+  normalColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 0.55, g: 0.85, b: 1, a: 1}
+  selectionFade: 0.08
+  bringSelectionTargetToFront: 1
   lockIconSizeRatio: 0.45
   clickSfx: {fileID: 0}
   levelInfo:
@@ -488,6 +493,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -699,6 +705,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

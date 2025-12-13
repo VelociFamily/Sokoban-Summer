@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using TMPro;
 using Core;
 
@@ -10,7 +11,7 @@ namespace UI
     /// Simple level button component for the Dynamic Level Management System
     /// Replaces the complex SceneButton for cleaner level loading
     /// </summary>
-    public class DynamicLevelButton : MonoBehaviour
+    public class DynamicLevelButton : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
     {
         [Header("UI Components")]
         [Tooltip("Main button component")]
@@ -37,6 +38,17 @@ namespace UI
         [Tooltip("GameObject with completion badge (star/check, shown when level completed)")]
         public GameObject completionBadge;
 
+        [Header("Selection Visuals")]
+        [Tooltip("Background graphic that tints on selection; falls back to Button target graphic")]
+        public Image selectionTarget;
+        [Tooltip("Color when not selected/hovered")]
+        public Color normalColor = Color.white;
+        [Tooltip("Color when selected or hovered")]
+        public Color selectedColor = new Color(0.55f, 0.85f, 1f, 1f);
+        [Tooltip("Fade time for selection tint")] public float selectionFade = 0.08f;
+        [Tooltip("Move the selection graphic just behind text/content while keeping it above the base sprite")]
+        public bool bringSelectionTargetToFront = false;
+
     [Header("Lock Icon Sizing")]
     [Tooltip("Ratio of lock icon size relative to button height (0-1).")]
     [Range(0.1f, 1f)] public float lockIconSizeRatio = 0.45f;
@@ -48,17 +60,32 @@ namespace UI
         [Header("Level Data")]
         public LevelManager.LevelInfo levelInfo;
 
-    // Prevent double-activation while scenes are loading
-    private bool _clicked = false;
-    private Sprite _assignedLockSprite;
+        // Prevent double-activation while scenes are loading
+        private bool _clicked = false;
+        private Sprite _assignedLockSprite;
+        private bool _isSelected;
+        private bool _isHovered;
 
         private void Awake()
         {
             if (button == null)
                 button = GetComponent<Button>();
 
+            EnsureSelectionTarget();
+            ConfigureButtonTransitionForCustomTint();
+            BringSelectionTargetToFront();
+
             if (button != null)
                 button.onClick.AddListener(LoadLevel);
+        }
+
+        private void OnEnable()
+        {
+            if (selectionTarget != null)
+            {
+                selectionTarget.color = normalColor;
+            }
+            ApplySelectionVisual(false);
         }
 
         /// <summary>
@@ -82,6 +109,7 @@ namespace UI
 
             EnsureLockOverlayImage();
             ApplyAssignedLockSprite();
+            ApplySelectionVisual(false);
 
             // Update lock state and completion badge
             UpdateLockState();
@@ -224,6 +252,78 @@ namespace UI
             yield return new WaitForSecondsRealtime(delaySeconds);
             _clicked = false;
             Debug.Log("[DynamicLevelButton] Click flag reset - button ready for next click");
+        }
+
+        public void OnSelect(BaseEventData eventData)
+        {
+            _isSelected = true;
+            ApplySelectionVisual(true);
+        }
+
+        public void OnDeselect(BaseEventData eventData)
+        {
+            _isSelected = false;
+            ApplySelectionVisual(false);
+        }
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            _isHovered = true;
+            ApplySelectionVisual(true);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            _isHovered = false;
+            ApplySelectionVisual(_isSelected);
+        }
+
+        private void ApplySelectionVisual(bool highlight)
+        {
+            EnsureSelectionTarget();
+            var target = selectionTarget != null ? selectionTarget : button != null ? button.targetGraphic as Image : GetComponent<Image>();
+            if (target == null)
+                return;
+
+            var desired = highlight || _isHovered || _isSelected ? selectedColor : normalColor;
+            target.CrossFadeColor(desired, selectionFade, true, true);
+        }
+
+        private void EnsureSelectionTarget()
+        {
+            if (selectionTarget != null)
+                return;
+
+            if (button != null && button.targetGraphic is Image image)
+            {
+                selectionTarget = image;
+            }
+            else
+            {
+                selectionTarget = GetComponent<Image>();
+            }
+        }
+
+        private void BringSelectionTargetToFront()
+        {
+            if (!bringSelectionTargetToFront || selectionTarget == null)
+                return;
+
+            var rt = selectionTarget.transform as RectTransform;
+            if (rt != null)
+            {
+                // Keep the tint behind text/content so labels stay visible.
+                rt.SetAsFirstSibling();
+            }
+        }
+
+        private void ConfigureButtonTransitionForCustomTint()
+        {
+            if (button == null)
+                return;
+
+            // Avoid Unity's built-in color tint overriding our manual tint; keep other states neutral.
+            button.transition = Selectable.Transition.None;
         }
 
         /// <summary>

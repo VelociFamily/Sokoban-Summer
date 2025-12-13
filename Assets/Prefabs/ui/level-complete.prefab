@@ -241,7 +241,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1483018616487970340}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: CompleteUI, Assembly-CSharp
         m_MethodName: LoadNextScene
         m_Mode: 1
