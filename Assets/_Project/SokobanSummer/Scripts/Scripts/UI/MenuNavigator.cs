@@ -1,8 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using Core;
 
 namespace UI
 {
@@ -34,6 +37,7 @@ namespace UI
         private MenuPanel currentPanel;
         private Dictionary<string, MenuPanel> panelLookup;
         private Dictionary<CanvasGroup, Coroutine> activeTransitions = new Dictionary<CanvasGroup, Coroutine>();
+        private InputService inputService;
 
         private void Awake()
         {
@@ -60,10 +64,38 @@ namespace UI
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
 
+        private void OnEnable()
+        {
+            if (ServiceLocator.TryGet(out inputService))
+            {
+                inputService.OnUICancel += HandleUICancel;
+                inputService.EnableUIInput();
+            }
+            else
+            {
+                Debug.LogWarning("[MenuNavigator]: InputService not available - UI cancel to main menu will be disabled");
+            }
+        }
+
         private void OnDestroy()
         {
             // Unsubscribe from scene events
             SceneManager.sceneLoaded -= OnSceneLoaded;
+
+            if (inputService != null)
+            {
+                inputService.OnUICancel -= HandleUICancel;
+                inputService = null;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (inputService != null)
+            {
+                inputService.OnUICancel -= HandleUICancel;
+                inputService = null;
+            }
         }
 
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -395,6 +427,25 @@ namespace UI
                 }
             }
             currentPanel = null;
+        }
+
+        private void HandleUICancel(InputAction.CallbackContext context)
+        {
+            if (currentPanel == null)
+            {
+                return;
+            }
+
+            var panelName = currentPanel.panelName;
+
+            // Ignore cancel when already on main menu or pause panel (pause menu handles its own input)
+            if (string.Equals(panelName, "Main Menu", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(panelName, "Pause", StringComparison.OrdinalIgnoreCase))
+            {
+                return;
+            }
+
+            ShowMainMenu();
         }
     }
 }
