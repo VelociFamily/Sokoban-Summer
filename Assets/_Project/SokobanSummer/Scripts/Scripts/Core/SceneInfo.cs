@@ -28,9 +28,9 @@ namespace Core
         /// </summary>
         public static SceneInfo GetActiveSceneInfo()
         {
-            // Look for SceneInfo in the active scene
-            var sceneInfo = FindFirstObjectByType<SceneInfo>();
-            return sceneInfo;
+            // Look for SceneInfo in the active scene only to avoid reading additive helper scenes (e.g. PersistentUI)
+            var activeScene = SceneManager.GetActiveScene();
+            return FindSceneInfoInScene(activeScene);
         }
     
         /// <summary>
@@ -65,14 +65,14 @@ namespace Core
         /// </summary>
         public static bool ShouldShowBackground()
         {
-            var sceneInfo = GetActiveSceneInfo();
+            var activeScene = SceneManager.GetActiveScene();
+            var sceneInfo = FindSceneInfoInScene(activeScene);
             if (sceneInfo != null)
             {
                 return sceneInfo.showBackground;
             }
-        
-            // Fallback to old build index logic if no SceneInfo found
-            var activeScene = SceneManager.GetActiveScene();
+
+            // Fallback to old build index logic if no SceneInfo found in the active scene
             return activeScene.buildIndex is 0 or 1; // Game or Main Menu scenes
         }
     
