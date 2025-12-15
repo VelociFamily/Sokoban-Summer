@@ -41,8 +41,10 @@ namespace Core
             // Singleton pattern
             if (_instance != null && _instance != this)
             {
-                Debug.LogWarning($"[PersistentUIManager]: Duplicate instance detected on '{gameObject.name}' - destroying");
-                Destroy(gameObject);
+                // Keep the first instance alive; disable this duplicate component but leave its GameObject intact to avoid
+                // deleting other UI elements that may be on the same object.
+                Debug.LogWarning($"[PersistentUIManager]: Duplicate instance detected on '{gameObject.name}' - disabling this component and keeping the original");
+                enabled = false;
                 return;
             }
 
@@ -271,29 +273,29 @@ namespace Core
 
             Debug.LogWarning($"[PersistentUIManager]: Found {allEventSystems.Length} EventSystems - removing duplicates");
 
+            // If we don't have a reference, try to find one on this object
+            if (eventSystem == null) eventSystem = GetComponent<EventSystem>();
+
+            // If still null, pick the first one found as the "keeper" to avoid destroying all of them
+            if (eventSystem == null && allEventSystems.Length > 0)
+            {
+                eventSystem = allEventSystems[0];
+                Debug.Log($"[PersistentUIManager]: No EventSystem assigned, adopting '{eventSystem.gameObject.name}' as the persistent one");
+            }
+
             foreach (var es in allEventSystems)
             {
                 // Keep our persistent EventSystem, destroy others
                 if (es != eventSystem && es != null)
                 {
-                    // Check if this EventSystem is attached to the GameInitializer
-                    // If so, we must NOT destroy the GameObject, only the component
-                    if (es.GetComponent<GameInitializer>() != null)
+                    Debug.Log($"[PersistentUIManager]: Removing duplicate EventSystem component from '{es.gameObject.name}'");
+                    Destroy(es);
+                    
+                    // Also destroy the InputSystemUIInputModule if present
+                    var inputModule = es.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+                    if (inputModule != null)
                     {
-                        Debug.Log($"[PersistentUIManager]: Found duplicate EventSystem on GameInitializer '{es.gameObject.name}' - destroying component only to preserve initializer");
-                        Destroy(es);
-                        
-                        // Also destroy the InputSystemUIInputModule if present
-                        var inputModule = es.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
-                        if (inputModule != null)
-                        {
-                            Destroy(inputModule);
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log($"[PersistentUIManager]: Removing duplicate EventSystem from '{es.gameObject.name}'");
-                        Destroy(es.gameObject);
+                        Destroy(inputModule);
                     }
                 }
             }
@@ -309,6 +311,16 @@ namespace Core
             if (allListeners.Length <= 1) return;
 
             Debug.LogWarning($"[PersistentUIManager]: Found {allListeners.Length} AudioListeners - disabling duplicates");
+
+            // If we don't have a reference, try to find one on this object
+            if (audioListener == null) audioListener = GetComponent<AudioListener>();
+
+            // If still null, pick the first one found as the "keeper"
+            if (audioListener == null && allListeners.Length > 0)
+            {
+                audioListener = allListeners[0];
+                Debug.Log($"[PersistentUIManager]: No AudioListener assigned, adopting '{audioListener.gameObject.name}' as the persistent one");
+            }
 
             foreach (var listener in allListeners)
             {
