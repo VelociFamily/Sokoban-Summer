@@ -235,6 +235,8 @@ namespace UI
         /// </summary>
         public void ShowSettings() => ShowPanel("Settings");
 
+        public void ShowLevelComplete() => ShowPanel("Level Complete");
+
         /// <summary>
         /// Show level selection panel
         /// </summary>
