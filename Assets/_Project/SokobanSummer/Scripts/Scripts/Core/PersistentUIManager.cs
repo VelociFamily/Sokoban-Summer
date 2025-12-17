@@ -85,16 +85,9 @@ namespace Core
                 return;
             }
 
-            // Only update visibility for gameplay scenes - let MenuNavigator handle menu panels
-            if (SceneInfo.IsGameplayScene(scene))
-            {
-                Debug.Log($"[PersistentUIManager]: Updating UI visibility for gameplay scene '{scene.name}'");
-                UpdateUIVisibility(scene);
-            }
-            else
-            {
-                Debug.Log($"[PersistentUIManager]: Scene '{scene.name}' is not a gameplay scene - MenuNavigator will handle panel visibility");
-            }
+            // Always update visibility so returning to menus after pausing/gameplay restores the correct state
+            Debug.Log($"[PersistentUIManager]: Updating UI visibility for scene '{scene.name}'");
+            UpdateUIVisibility(scene);
         }
 
         private void OnSceneUnloaded(Scene scene)
