@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -22,6 +23,13 @@ namespace Core
 
         [Tooltip("Path to the tutorials folder relative to Assets/Scenes/")]
         public string tutorialsFolder = "Tutorials";
+
+        [Header("Scenes")]
+        [Tooltip("Name of the main menu scene to load additively")] 
+        public string mainMenuSceneName = "PersistentUI";
+
+        [Tooltip("Name of the persistent UI scene that should stay loaded across gameplay scenes")]
+        public string persistentUISceneName = "PersistentUI";
 
         [Header("Event Channels")]
         [Tooltip("Event raised when a level is loaded (passes level name)")]
@@ -387,16 +395,23 @@ namespace Core
             }
 
             // Unload Main Menu if loaded (detect by name or path)
-            var mainMenuScene = SceneManager.GetSceneByName("Main Menu");
+            var mainMenuScene = SceneManager.GetSceneByName(mainMenuSceneName);
             if (!mainMenuScene.IsValid())
             {
-                mainMenuScene = SceneManager.GetSceneByPath("Assets/Scenes/Main Menu.unity");
+                mainMenuScene = SceneManager.GetSceneByPath($"Assets/Scenes/{mainMenuSceneName}.unity");
             }
             if (mainMenuScene.IsValid() && mainMenuScene.isLoaded)
             {
-                var unload = SceneManager.UnloadSceneAsync(mainMenuScene);
-                while (unload != null && !unload.isDone) yield return null;
-                Debug.Log("[LevelManager] Unloaded Main Menu scene after level load");
+                if (ShouldKeepSceneLoaded(mainMenuScene))
+                {
+                    Debug.Log("[LevelManager] Keeping persistent UI scene loaded while entering level");
+                }
+                else
+                {
+                    var unload = SceneManager.UnloadSceneAsync(mainMenuScene);
+                    while (unload != null && !unload.isDone) yield return null;
+                    Debug.Log("[LevelManager] Unloaded Main Menu scene after level load");
+                }
             }
 
             // Unload any other loaded level/tutorial scenes (avoid accumulating multiple level scenes)
@@ -406,6 +421,7 @@ namespace Core
                 if (!scn.isLoaded) continue;
                 if (scn.buildIndex == 0) continue; // keep base Game scene
                 if (scn.buildIndex == levelInfo.buildIndex) continue; // keep current level
+                if (ShouldKeepSceneLoaded(scn)) continue; // keep persistent UI alive
 
                 // Heuristic: unload if it's under Tutorials or Levels folder
                 if (scn.path.Contains("/Scenes/Tutorials/") || scn.path.Contains("/Scenes/Levels/"))
@@ -431,24 +447,43 @@ namespace Core
 
         private IEnumerator LoadMainMenuRoutine()
         {
-            var load = SceneManager.LoadSceneAsync("Main Menu", LoadSceneMode.Additive);
-            while (!load.isDone) yield return null;
+            var menuScene = SceneManager.GetSceneByName(mainMenuSceneName);
+            AsyncOperation load = null;
 
-            var menuScene = SceneManager.GetSceneByName("Main Menu");
+            // Only load the menu scene if it's not already present
+            if (!menuScene.IsValid() || !menuScene.isLoaded)
+            {
+                load = SceneManager.LoadSceneAsync(mainMenuSceneName, LoadSceneMode.Additive);
+                if (load == null)
+                {
+                    Debug.LogError($"[LevelManager] Failed to load main menu scene '{mainMenuSceneName}'. Is it added to Build Settings?");
+                    yield break;
+                }
+
+                while (!load.isDone) yield return null;
+                menuScene = SceneManager.GetSceneByName(mainMenuSceneName);
+            }
+
             if (menuScene.IsValid())
             {
                 SceneManager.SetActiveScene(menuScene);
             }
 
-            // Unload any level scenes
+            // Unload any gameplay/tutorial level scenes (robust: use SceneInfo instead of path heuristics)
             for (int i = 0; i < SceneManager.sceneCount; i++)
             {
                 var scn = SceneManager.GetSceneAt(i);
                 if (!scn.isLoaded) continue;
                 if (scn.buildIndex == 0) continue; // keep base Game scene
-                if (scn.name == "Main Menu") continue; // keep menu
+                if (scn.name == mainMenuSceneName) continue; // keep menu
+                if (ShouldKeepSceneLoaded(scn)) continue; // keep persistent UI alive
 
-                if (scn.path.Contains("/Scenes/Tutorials/") || scn.path.Contains("/Scenes/Levels/"))
+                // Prefer SceneInfo classification; fall back to path check
+                bool isGameplay = Core.SceneInfo.IsGameplayScene(scn)
+                                  || scn.path.Contains("/Scenes/Tutorials/")
+                                  || scn.path.Contains("/Scenes/Levels/");
+
+                if (isGameplay)
                 {
                     var u = SceneManager.UnloadSceneAsync(scn);
                     while (u != null && !u.isDone) yield return null;
@@ -456,6 +491,25 @@ namespace Core
             }
 
             yield return Resources.UnloadUnusedAssets();
+
+            // Ensure persistent UI and background are visible after returning to the menu
+            if (Core.PersistentUIManager.Exists)
+            {
+                Core.PersistentUIManager.Show(animated: false);
+            }
+        }
+
+        /// <summary>
+        /// Determines if a scene should remain loaded (e.g., persistent UI scene)
+        /// </summary>
+        private bool ShouldKeepSceneLoaded(Scene scene)
+        {
+            if (!scene.IsValid()) return false;
+            if (!PersistentUIManager.Exists) return false;
+            if (string.IsNullOrEmpty(persistentUISceneName)) return false;
+
+            return string.Equals(scene.name, persistentUISceneName, StringComparison.OrdinalIgnoreCase)
+                   || (!string.IsNullOrEmpty(scene.path) && scene.path.IndexOf($"/{persistentUISceneName}.unity", StringComparison.OrdinalIgnoreCase) >= 0);
         }
 
         /// <summary>

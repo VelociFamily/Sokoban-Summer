@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace UI
 {
@@ -22,6 +24,12 @@ namespace UI
         private InputService inputService;
         private MoveCounter moveCounter;
         private bool ownsInputActions;
+
+        // UI cancel (Escape/B) also toggles pause in gameplay
+        private InputAction cancelActionUI;
+
+        // Prevent double-toggles in the same frame (UI + Player maps both fire)
+        private int lastPauseToggleFrame = -1;
 
         // Cache both UI and Player map pause bindings so Start/Escape works even if one map is disabled
         private InputAction pauseActionUI;
@@ -56,6 +64,7 @@ namespace UI
             if (inputActions == null) return;
             if (pauseActionUI != null) pauseActionUI.performed -= OnPausePerformed;
             if (pauseActionPlayer != null) pauseActionPlayer.performed -= OnPausePerformed;
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
 
             if (ownsInputActions)
             {
@@ -93,11 +102,15 @@ namespace UI
             pauseActionUI = inputActions.UI.EscapeStart;
             pauseActionPlayer = inputActions.Player.EscapeStart;
 
+            // Also listen to UI Cancel (Escape/B) so keyboard escape pauses reliably
+            cancelActionUI = inputActions.UI.Cancel;
+
             // UI map may be disabled by other scripts after this Start; guard by enabling here as well
             if (!inputActions.UI.enabled) inputActions.UI.Enable();
 
             pauseActionUI.performed += OnPausePerformed;
             pauseActionPlayer.performed += OnPausePerformed;
+            if (cancelActionUI != null) cancelActionUI.performed += OnPausePerformed;
         }
 
         private void OnDestroy()
@@ -105,6 +118,7 @@ namespace UI
             if (inputActions == null) return;
             if (pauseActionUI != null) pauseActionUI.performed -= OnPausePerformed;
             if (pauseActionPlayer != null) pauseActionPlayer.performed -= OnPausePerformed;
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
 
             if (ownsInputActions)
             {
@@ -115,6 +129,10 @@ namespace UI
 
         private void OnPausePerformed(InputAction.CallbackContext context)
         {
+            // Ignore duplicate performed events within the same frame (both UI & Player maps fire)
+            if (lastPauseToggleFrame == Time.frameCount) return;
+            lastPauseToggleFrame = Time.frameCount;
+
             // Ignore pause input when not in a gameplay scene (prevents main menu from opening while paused)
             var activeScene = SceneManager.GetActiveScene();
             if (!SceneInfo.IsGameplayScene(activeScene))
@@ -134,16 +152,79 @@ namespace UI
                 PauseGame();
         }
 
-        public void LoadMenu()
+        public async void LoadMenu()
         {
             Time.timeScale = 1f;
 
-            // Unload any loaded gameplay scenes (tutorial or game levels)
+            // Hide pause panel immediately to prevent overlap
+            if (gameplayUIController != null)
+            {
+                gameplayUIController.HidePausePanel(instant: true);
+            }
+
+            // Ensure input is in UI mode during menu navigation
+            inputService?.DisablePlayerInput();
+            inputService?.EnableUIInput();
+
+            // Turn off pause blur effect when leaving gameplay
+            if (depthOfField != null) depthOfField.active = false;
+
+            // Preferred path: let LevelManager handle scene transitions
+            if (ServiceLocator.TryGet<LevelManager>(out var levelManager))
+            {
+                levelManager.LoadMainMenu();
+                if (PersistentUIManager.Exists)
+                {
+                    PersistentUIManager.Show(animated: true);
+                }
+
+                var menuNavigatorLM = FindFirstObjectByType<MenuNavigator>();
+                if (menuNavigatorLM != null)
+                {
+                    menuNavigatorLM.ShowPanel("Main Menu", instant: true);
+                }
+                Debug.Log("[PauseButton]: Delegated menu load to LevelManager.LoadMainMenu()");
+                return;
+            }
+
+            // Unload any loaded gameplay scenes (tutorial or game levels) and await completion
+            var unloadOps = new List<AsyncOperation>();
             for (var i = 0; i < SceneManager.sceneCount; i++)
             {
                 var loadedScene = SceneManager.GetSceneAt(i);
-                if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded) 
-                    SceneManager.UnloadSceneAsync(loadedScene);
+                if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded)
+                {
+                    var op = SceneManager.UnloadSceneAsync(loadedScene);
+                    if (op != null)
+                    {
+                        unloadOps.Add(op);
+                    }
+                }
+            }
+
+            // Await all unload operations to finish before showing menu/background
+            foreach (var op in unloadOps)
+            {
+                while (!op.isDone)
+                {
+                    await Task.Yield();
+                }
+            }
+
+            // After unloading gameplay, ensure a non-gameplay scene is active (Game/PersistentUI/MainMenu)
+            Scene? target = null;
+            for (var i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var s = SceneManager.GetSceneAt(i);
+                if (s.isLoaded && !SceneInfo.IsGameplayScene(s))
+                {
+                    target = s;
+                    break;
+                }
+            }
+            if (target.HasValue)
+            {
+                SceneManager.SetActiveScene(target.Value);
             }
 
             // Show main menu via MenuNavigator
@@ -156,6 +237,12 @@ namespace UI
             else
             {
                 Debug.LogWarning("[PauseButton]: MenuNavigator not available - cannot show main menu panel");
+            }
+
+            // Ensure persistent UI (and background, if managed there) is visible
+            if (PersistentUIManager.Exists)
+            {
+                PersistentUIManager.Show(animated: true);
             }
         }
 

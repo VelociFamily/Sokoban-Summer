@@ -131,9 +131,7 @@ namespace UI
         {
             if (gameplayCanvasGroup == null) return;
 
-            gameplayCanvasGroup.alpha = 1f;
-            gameplayCanvasGroup.interactable = true;
-            gameplayCanvasGroup.blocksRaycasts = true;
+            EnsureGameplayCanvasVisible();
 
             // Show game stats panel immediately
             if (gameStatsPanel != null)
@@ -175,6 +173,8 @@ namespace UI
                 Debug.LogWarning("[GameplayUIController]: Pause panel not assigned");
                 return;
             }
+
+            EnsureGameplayCanvasVisible();
             EnsureCenteredInCanvas(pausePanel.GetComponent<RectTransform>());
             SetPanelVisible(pausePanel, pausePanelCanvasGroup, true, instant);
             isPaused = true;
@@ -203,6 +203,8 @@ namespace UI
                 Debug.LogWarning("[GameplayUIController]: Level complete panel not assigned");
                 return;
             }
+
+            EnsureGameplayCanvasVisible();
             EnsureCenteredInCanvas(levelCompletePanel.GetComponent<RectTransform>());
             SetPanelVisible(levelCompletePanel, levelCompletePanelCanvasGroup, true, instant);
             Debug.Log("[GameplayUIController]: Level complete panel shown");
@@ -219,6 +221,7 @@ namespace UI
                 return;
             }
 
+            EnsureGameplayCanvasVisible();
             SetPanelVisible(gameStatsPanel, gameStatsPanelCanvasGroup, true, instant);
             Debug.Log("[GameplayUIController]: Game stats panel shown");
         }
@@ -232,6 +235,8 @@ namespace UI
 
             if (visible)
             {
+                canvasGroup.interactable = true;
+                canvasGroup.blocksRaycasts = true;
                 panel.SetActive(true);
                 if (instant)
                 {
@@ -244,6 +249,8 @@ namespace UI
             }
             else
             {
+                canvasGroup.interactable = false;
+                canvasGroup.blocksRaycasts = false;
                 if (instant)
                 {
                     canvasGroup.alpha = 0f;
@@ -311,5 +318,17 @@ namespace UI
         /// Check if paused
         /// </summary>
         public bool IsPaused() => isPaused;
+
+        /// <summary>
+        /// Make sure gameplay canvas is visible and interactive (used when external callers show a panel).
+        /// </summary>
+        private void EnsureGameplayCanvasVisible()
+        {
+            if (gameplayCanvasGroup == null) return;
+
+            gameplayCanvasGroup.alpha = 1f;
+            gameplayCanvasGroup.interactable = true;
+            gameplayCanvasGroup.blocksRaycasts = true;
+        }
     }
 }

@@ -1,5 +1,7 @@
 using Core;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
 namespace UI
@@ -7,12 +9,14 @@ namespace UI
     public class CompleteUI : MonoBehaviour
     {
         private AchievementManager achievementManager;
+        private InputService inputService;
         private MenuNavigator menuNavigator;
 
         private void Awake()
         {
             // Resolve services defensively: these may not be registered in the locator
             ServiceLocator.TryGet(out achievementManager);
+            ServiceLocator.TryGet(out inputService);
 
             if (!ServiceLocator.TryGet(out menuNavigator))
             {
@@ -108,9 +112,13 @@ namespace UI
             }
         }
 
-        public void LoadMenu()
+        public async void LoadMenu()
         {
             Time.timeScale = 1f;
+
+            // Ensure input is in UI mode during menu navigation
+            inputService?.DisablePlayerInput();
+            inputService?.EnableUIInput();
 
             // Delegate to LevelManager to properly unload gameplay scenes and load main menu
             if (ServiceLocator.TryGet<LevelManager>(out var levelManager))
@@ -122,13 +130,19 @@ namespace UI
             {
                 // Fallback: manually unload gameplay scenes if LevelManager isn't available
                 Debug.LogWarning("[CompleteUI]: LevelManager not found, using fallback scene unload logic");
+                var unloadOps = new List<AsyncOperation>();
                 for (var i = 0; i < SceneManager.sceneCount; i++)
                 {
                     var loadedScene = SceneManager.GetSceneAt(i);
                     if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded)
                     {
-                        SceneManager.UnloadSceneAsync(loadedScene);
+                        var op = SceneManager.UnloadSceneAsync(loadedScene);
+                        if (op != null) unloadOps.Add(op);
                     }
+                }
+                foreach (var op in unloadOps)
+                {
+                    while (!op.isDone) { await Task.Yield(); }
                 }
             }
 
@@ -136,6 +150,18 @@ namespace UI
             if (PersistentUIManager.Exists)
             {
                 PersistentUIManager.Show(animated: false);
+            }
+
+            // After unloading gameplay, ensure a non-gameplay scene is active
+            Scene? target = null;
+            for (var i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var s = SceneManager.GetSceneAt(i);
+                if (s.isLoaded && !SceneInfo.IsGameplayScene(s)) { target = s; break; }
+            }
+            if (target.HasValue)
+            {
+                SceneManager.SetActiveScene(target.Value);
             }
 
             // Show Main Menu panel via MenuNavigator
