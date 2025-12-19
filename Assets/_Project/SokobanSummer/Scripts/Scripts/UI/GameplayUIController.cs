@@ -21,16 +21,20 @@ namespace UI
         private CanvasGroup levelCompletePanelCanvasGroup;
         private CanvasGroup gameStatsPanelCanvasGroup;
 
+        private bool initialized;
+
         private bool isPaused = false;
 
         private void OnEnable()
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
+            SceneManager.activeSceneChanged += OnActiveSceneChanged;
         }
 
         private void OnDisable()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            SceneManager.activeSceneChanged -= OnActiveSceneChanged;
         }
 
         private void Start()
@@ -89,6 +93,7 @@ namespace UI
             }
 
             Debug.Log($"[GameplayUIController]: Initialized UI panels - Pause: {pausePanel != null}, LevelComplete: {levelCompletePanel != null}, GameStats: {gameStatsPanel != null}");
+            initialized = true;
         }
 
 
@@ -112,6 +117,8 @@ namespace UI
         /// </summary>
         private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
+            if (!initialized) InitializeUI();
+
             if (SceneInfo.IsGameplayScene(scene))
             {
                 ShowGameplayUI();
@@ -121,6 +128,25 @@ namespace UI
             {
                 HideAllGameplayPanels(instant: true);
                 Debug.Log($"[GameplayUIController]: Non-gameplay scene loaded '{scene.name}' - hiding gameplay UI");
+            }
+        }
+
+        /// <summary>
+        /// Ensure gameplay UI hides when the active scene switches to a non-gameplay scene (e.g., returning to menu).
+        /// </summary>
+        private void OnActiveSceneChanged(Scene oldScene, Scene newScene)
+        {
+            if (!initialized) InitializeUI();
+
+            if (SceneInfo.IsGameplayScene(newScene))
+            {
+                ShowGameplayUI();
+                Debug.Log($"[GameplayUIController]: Active scene changed to gameplay '{newScene.name}' - showing gameplay UI");
+            }
+            else
+            {
+                HideAllGameplayPanels(instant: true);
+                Debug.Log($"[GameplayUIController]: Active scene changed to non-gameplay '{newScene.name}' - hiding gameplay UI");
             }
         }
 
@@ -191,6 +217,22 @@ namespace UI
             SetPanelVisible(pausePanel, pausePanelCanvasGroup, false, instant);
             isPaused = false;
             Debug.Log("[GameplayUIController]: Pause panel hidden");
+        }
+
+        /// <summary>
+        /// Deactivate pause panel GameObject
+        /// </summary>
+        public void DestroyPausePanel()
+        {
+            if (pausePanel == null)
+            {
+                Debug.LogWarning("[GameplayUIController]: Pause panel is null, cannot deactivate");
+                return;
+            }
+
+            pausePanel.SetActive(false);
+            isPaused = false;
+            Debug.Log("[GameplayUIController]: Pause panel deactivated and isPaused set to false");
         }
 
         /// <summary>

@@ -156,10 +156,18 @@ namespace UI
         {
             Time.timeScale = 1f;
 
-            // Hide pause panel immediately to prevent overlap
+            // Hide and deactivate pause panel to fully clean up
             if (gameplayUIController != null)
             {
+                Debug.Log("[PauseButton]: Hiding pause panel...");
                 gameplayUIController.HidePausePanel(instant: true);
+                Debug.Log("[PauseButton]: Deactivating pause panel...");
+                gameplayUIController.DestroyPausePanel();
+                Debug.Log("[PauseButton]: Pause panel deactivated");
+            }
+            else
+            {
+                Debug.LogWarning("[PauseButton]: GameplayUIController is null, cannot hide pause panel");
             }
 
             // Ensure input is in UI mode during menu navigation
