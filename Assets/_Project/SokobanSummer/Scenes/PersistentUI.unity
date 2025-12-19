@@ -5951,6 +5951,10 @@ MonoBehaviour:
   - {fileID: 1717938632}
   - {fileID: 1646885950}
   - {fileID: 1999999997}
+  gameplayOnlyUIGroups:
+  - {fileID: 1253959251}
+  - {fileID: 1389309848}
+  - {fileID: 1430779123}
   eventSystem: {fileID: 1343950203}
   audioListener: {fileID: 1759424517}
   showInMainMenu: 1

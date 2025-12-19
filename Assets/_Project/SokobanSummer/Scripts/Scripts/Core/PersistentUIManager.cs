@@ -13,8 +13,11 @@ namespace Core
     public class PersistentUIManager : MonoBehaviour
     {
         [Header("UI Management")]
-        [Tooltip("CanvasGroups for UI elements that should persist across scenes")]
+        [Tooltip("CanvasGroups for UI elements that should persist across scenes (menus, etc)")]
         [SerializeField] private List<CanvasGroup> persistentUIGroups = new List<CanvasGroup>();
+
+        [Tooltip("CanvasGroups that should ONLY show during gameplay (like move/timer stats)")]
+        [SerializeField] private List<CanvasGroup> gameplayOnlyUIGroups = new List<CanvasGroup>();
 
         [Header("System Components")]
         [Tooltip("The EventSystem for this persistent UI (should be the only one)")]
@@ -28,7 +31,7 @@ namespace Core
         [SerializeField] private bool showInMainMenu = true;
 
         [Tooltip("Show UI in gameplay scenes")]
-        [SerializeField] private bool showInGameplay = false;
+        [SerializeField] private bool showInGameplay = true;
 
         [Tooltip("Fade duration when showing/hiding UI (seconds)")]
         [SerializeField] private float fadeDuration = 0.3f;
@@ -51,12 +54,21 @@ namespace Core
             _instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // Initialize UI as visible by default (will be hidden when gameplay scenes load)
+            // Initialize menu UI as visible by default
             foreach (var canvasGroup in persistentUIGroups)
             {
                 if (canvasGroup != null)
                 {
                     SetCanvasGroupVisibility(canvasGroup, true);
+                }
+            }
+
+            // Initialize gameplay-only UI as hidden by default
+            foreach (var canvasGroup in gameplayOnlyUIGroups)
+            {
+                if (canvasGroup != null)
+                {
+                    SetCanvasGroupVisibility(canvasGroup, false);
                 }
             }
 
@@ -101,36 +113,31 @@ namespace Core
         /// </summary>
         private void UpdateUIVisibility(Scene scene)
         {
-            bool shouldShow = false;
+            bool isGameplay = SceneInfo.IsGameplayScene(scene);
+            bool isMainMenu = SceneInfo.IsMainMenuScene(scene);
+            bool isGameInit = scene.name == "Game" || scene.name == "game";
 
-            // Always show in the Game initialization scene
-            if (scene.name == "Game" || scene.name == "game")
+            Debug.Log($"[PersistentUIManager]: UpdateUIVisibility('{scene.name}') - IsGameplay={isGameplay}, IsMainMenu={isMainMenu}, IsGameInit={isGameInit}");
+
+            // Menu UI: show in menus and game init, hide in gameplay
+            bool showMenuUI = (isMainMenu && showInMainMenu) || isGameInit;
+            // Gameplay UI: show only in gameplay scenes
+            bool showGameplayUI = isGameplay && showInGameplay;
+
+            Debug.Log($"[PersistentUIManager]: MenuUI should be {(showMenuUI ? "visible" : "hidden")}, GameplayUI should be {(showGameplayUI ? "visible" : "hidden")}");
+
+            // Update menu UI visibility
+            foreach (var canvasGroup in persistentUIGroups)
             {
-                shouldShow = true;
-                Debug.Log($"[PersistentUIManager]: Game initialization scene detected - keeping UI visible");
-            }
-            else if (SceneInfo.IsMainMenuScene(scene))
-            {
-                Debug.Log($"[PersistentUIManager]: MainMenu scene detected - showInMainMenu setting is '{showInMainMenu}'");
-                shouldShow = showInMainMenu;
-            }
-            else if (SceneInfo.IsGameplayScene(scene))
-            {
-                Debug.Log($"[PersistentUIManager]: Gameplay scene detected - showInGameplay setting is '{showInGameplay}'");
-                shouldShow = showInGameplay;
+                if (canvasGroup == null) continue;
+                SetCanvasGroupVisibility(canvasGroup, showMenuUI);
             }
 
-            Debug.Log($"[PersistentUIManager]: Scene '{scene.name}' loaded - UI should be {(shouldShow ? "visible" : "hidden")}");
-
-            if (shouldShow)
+            // Update gameplay-only UI visibility
+            foreach (var canvasGroup in gameplayOnlyUIGroups)
             {
-                Debug.Log($"[PersistentUIManager]: Calling ShowUI() for scene '{scene.name}'");
-                ShowUI();
-            }
-            else
-            {
-                Debug.Log($"[PersistentUIManager]: Calling HideUI() for scene '{scene.name}'");
-                HideUI();
+                if (canvasGroup == null) continue;
+                SetCanvasGroupVisibility(canvasGroup, showGameplayUI);
             }
         }
 
