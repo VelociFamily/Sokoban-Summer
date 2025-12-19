@@ -30,10 +30,22 @@ namespace UI
 
         // Prevent double-toggles in the same frame (UI + Player maps both fire)
         private int lastPauseToggleFrame = -1;
+        // Prevent rapid re-trigger across frames (UI and Player maps may fire on consecutive frames)
+        private float lastPauseToggleTime = -1f;
+        // Short lockout after a toggle to ignore any straggling performed events (different actions/devices)
+        private float pauseToggleLockUntil = -1f;
+
+        // Lightweight diagnostics to see which action/control is firing (helps identify misrouted input)
+        private const bool LogPauseInput = false; // set true for on-device debugging
 
         // Cache both UI and Player map pause bindings so Start/Escape works even if one map is disabled
         private InputAction pauseActionUI;
         private InputAction pauseActionPlayer;
+
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += HandleSceneLoaded;
+        }
 
         private void Start()
         {
@@ -61,6 +73,8 @@ namespace UI
 
         private void OnDisable()
         {
+            SceneManager.sceneLoaded -= HandleSceneLoaded;
+
             if (inputActions == null) return;
             if (pauseActionUI != null) pauseActionUI.performed -= OnPausePerformed;
             if (pauseActionPlayer != null) pauseActionPlayer.performed -= OnPausePerformed;
@@ -102,7 +116,7 @@ namespace UI
             pauseActionUI = inputActions.UI.EscapeStart;
             pauseActionPlayer = inputActions.Player.EscapeStart;
 
-            // Also listen to UI Cancel (Escape/B) so keyboard escape pauses reliably
+            // Also keep reference to UI Cancel (Escape/B) for closing the pause menu only
             cancelActionUI = inputActions.UI.Cancel;
 
             // UI map may be disabled by other scripts after this Start; guard by enabling here as well
@@ -110,11 +124,14 @@ namespace UI
 
             pauseActionUI.performed += OnPausePerformed;
             pauseActionPlayer.performed += OnPausePerformed;
-            if (cancelActionUI != null) cancelActionUI.performed += OnPausePerformed;
+            // Do NOT subscribe Cancel here to avoid double-toggle (ESC maps to both EscapeStart and Cancel).
+            // We'll subscribe Cancel when the game is paused to allow closing via ESC/B.
         }
 
         private void OnDestroy()
         {
+            SceneManager.sceneLoaded -= HandleSceneLoaded;
+
             if (inputActions == null) return;
             if (pauseActionUI != null) pauseActionUI.performed -= OnPausePerformed;
             if (pauseActionPlayer != null) pauseActionPlayer.performed -= OnPausePerformed;
@@ -133,6 +150,26 @@ namespace UI
             if (lastPauseToggleFrame == Time.frameCount) return;
             lastPauseToggleFrame = Time.frameCount;
 
+            // Debounce across frames: ignore if another pause/resume just happened moments ago
+            const float debounceSeconds = 0.5f; // unscaled time, since we pause Time.timeScale
+            if (lastPauseToggleTime >= 0f && (Time.unscaledTime - lastPauseToggleTime) < debounceSeconds)
+            {
+                return;
+            }
+
+            // Extra lockout window to catch straggling performed events from other bindings/devices
+            if (Time.unscaledTime < pauseToggleLockUntil)
+            {
+                return;
+            }
+
+            if (LogPauseInput)
+            {
+                var actionName = context.action?.name ?? "<null-action>";
+                var controlPath = context.control?.path ?? "<null-control>";
+                Debug.Log($"[PauseButton]: OnPausePerformed action={actionName} control={controlPath} isPaused={gameplayUIController?.IsPaused()} dt={Time.unscaledTime - lastPauseToggleTime:0.###}");
+            }
+
             // Ignore pause input when not in a gameplay scene (prevents main menu from opening while paused)
             var activeScene = SceneManager.GetActiveScene();
             if (!SceneInfo.IsGameplayScene(activeScene))
@@ -150,6 +187,10 @@ namespace UI
                 ResumeGame();
             else
                 PauseGame();
+
+            // Record time of this toggle so a second input source in the next frame doesn't immediately invert it
+            lastPauseToggleTime = Time.unscaledTime;
+            pauseToggleLockUntil = Time.unscaledTime + 0.35f;
         }
 
         public async void LoadMenu()
@@ -169,6 +210,9 @@ namespace UI
             {
                 Debug.LogWarning("[PauseButton]: GameplayUIController is null, cannot hide pause panel");
             }
+
+            // Ensure cancel is not double-subscribed after leaving gameplay via pause
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
 
             // Ensure input is in UI mode during menu navigation
             inputService?.DisablePlayerInput();
@@ -272,12 +316,15 @@ namespace UI
             // Disable player input first to prevent new moves
             inputService?.DisablePlayerInput();
             
-            // Show pause menu immediately so it's interactive
-            gameplayUIController.ShowPausePanel(instant: false);
+            // Show pause menu via immediate path to avoid SetActive/fade races
+            gameplayUIController.ShowPausePanelImmediate();
             Time.timeScale = 0f;
             moveCounter?.PauseTimer();
 
             if (depthOfField != null) depthOfField.active = true;
+
+            // Subscribe Cancel while paused so ESC/B reliably closes the menu, but doesn't reopen immediately
+            if (cancelActionUI != null) cancelActionUI.performed += OnPausePerformed;
 
             Debug.Log("[PauseButton]: Game paused");
         }
@@ -286,14 +333,36 @@ namespace UI
         {
             if (gameplayUIController == null) return;
 
-            gameplayUIController.HidePausePanel(instant: false);
+            gameplayUIController.HidePausePanelImmediate();
             Time.timeScale = 1f;
             moveCounter?.ResumeTimer();
             inputService?.EnablePlayerInput();
 
             if (depthOfField != null) depthOfField.active = false;
 
+            // Unsubscribe Cancel to prevent a second input source immediately re-toggling pause
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
+
             Debug.Log("[PauseButton]: Game resumed");
+        }
+
+        private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (!SceneInfo.IsGameplayScene(scene)) return;
+
+            // Reset pause state when entering a new gameplay scene after menus
+            lastPauseToggleFrame = -1;
+            lastPauseToggleTime = -1f;
+            pauseToggleLockUntil = -1f;
+
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
+
+            gameplayUIController?.HidePausePanel(instant: true);
+            if (depthOfField != null) depthOfField.active = false;
+
+            Time.timeScale = 1f;
+            moveCounter?.ResumeTimer();
+            inputService?.EnablePlayerInput();
         }
     }
 }

@@ -63,14 +63,7 @@ namespace Core
                 }
             }
 
-            // Initialize gameplay-only UI as hidden by default
-            foreach (var canvasGroup in gameplayOnlyUIGroups)
-            {
-                if (canvasGroup != null)
-                {
-                    SetCanvasGroupVisibility(canvasGroup, false);
-                }
-            }
+            // DO NOT initialize gameplayOnlyUIGroups - GameplayUIController has exclusive control
 
             // Subscribe to scene events
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -121,10 +114,8 @@ namespace Core
 
             // Menu UI: show in menus and game init, hide in gameplay
             bool showMenuUI = (isMainMenu && showInMainMenu) || isGameInit;
-            // Gameplay UI: show only in gameplay scenes
-            bool showGameplayUI = isGameplay && showInGameplay;
 
-            Debug.Log($"[PersistentUIManager]: MenuUI should be {(showMenuUI ? "visible" : "hidden")}, GameplayUI should be {(showGameplayUI ? "visible" : "hidden")}");
+            Debug.Log($"[PersistentUIManager]: MenuUI should be {(showMenuUI ? "visible" : "hidden")}");
 
             // Update menu UI visibility
             foreach (var canvasGroup in persistentUIGroups)
@@ -133,12 +124,7 @@ namespace Core
                 SetCanvasGroupVisibility(canvasGroup, showMenuUI);
             }
 
-            // Update gameplay-only UI visibility
-            foreach (var canvasGroup in gameplayOnlyUIGroups)
-            {
-                if (canvasGroup == null) continue;
-                SetCanvasGroupVisibility(canvasGroup, showGameplayUI);
-            }
+            // DO NOT manage gameplayOnlyUIGroups here - GameplayUIController has sole authority over gameplay canvas and its children
         }
 
         /// <summary>

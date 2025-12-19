@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -16,10 +18,14 @@ namespace UI
         [SerializeField] private GameObject pausePanel;
         [SerializeField] private GameObject levelCompletePanel;
         [SerializeField] private GameObject gameStatsPanel; // Contains Moves, Timer, Achievements
+        [SerializeField] private Selectable firstSelectedButton;
 
         private CanvasGroup pausePanelCanvasGroup;
         private CanvasGroup levelCompletePanelCanvasGroup;
         private CanvasGroup gameStatsPanelCanvasGroup;
+
+        // Track running fades so a previous hide/show can't override a new state after scene changes
+        private readonly Dictionary<CanvasGroup, Coroutine> activeFades = new();
 
         private bool initialized;
 
@@ -40,6 +46,13 @@ namespace UI
         private void Start()
         {
             InitializeUI();
+            // Start with gameplay canvas hidden - will be shown when a gameplay scene loads
+            if (gameplayCanvasGroup != null)
+            {
+                gameplayCanvasGroup.alpha = 0f;
+                gameplayCanvasGroup.interactable = false;
+                gameplayCanvasGroup.blocksRaycasts = false;
+            }
             HideAllGameplayPanels(instant: true);
             Debug.Log("[GameplayUIController]: Initialized and hidden all gameplay panels");
         }
@@ -119,6 +132,9 @@ namespace UI
         {
             if (!initialized) InitializeUI();
 
+            // Only react to actual level scenes, not the PersistentUI scene itself
+            if (scene.name == "PersistentUI" || scene.name == "Game") return;
+
             if (SceneInfo.IsGameplayScene(scene))
             {
                 ShowGameplayUI();
@@ -159,6 +175,10 @@ namespace UI
 
             EnsureGameplayCanvasVisible();
 
+            // Clear any leftover panels (pause or level complete) when entering a new gameplay scene
+            SetPanelVisible(pausePanel, pausePanelCanvasGroup, false, instant: true);
+            SetPanelVisible(levelCompletePanel, levelCompletePanelCanvasGroup, false, instant: true);
+
             // Show game stats panel immediately
             if (gameStatsPanel != null)
             {
@@ -167,6 +187,7 @@ namespace UI
             }
 
             isPaused = false;
+            ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Gameplay UI shown");
         }
 
@@ -202,8 +223,29 @@ namespace UI
 
             EnsureGameplayCanvasVisible();
             EnsureCenteredInCanvas(pausePanel.GetComponent<RectTransform>());
+            
+            // Ensure panel is enabled before fading - critical after DestroyPausePanel sets it inactive
+            if (!pausePanel.activeSelf)
+            {
+                pausePanel.SetActive(true);
+            }
+            
+            // Reset alpha to ensure visibility even if a previous fade left it at 0
+            if (pausePanelCanvasGroup != null && pausePanelCanvasGroup.alpha < 0.1f)
+            {
+                pausePanelCanvasGroup.alpha = instant ? 1f : 0.1f; // Start fade from small value if animating
+            }
+            
             SetPanelVisible(pausePanel, pausePanelCanvasGroup, true, instant);
+
+            // Keep game stats visible while pause overlay is shown
+            if (gameStatsPanel != null)
+            {
+                SetPanelVisible(gameStatsPanel, gameStatsPanelCanvasGroup, true, instant: true);
+            }
+
             isPaused = true;
+            ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Pause panel shown");
         }
 
@@ -217,6 +259,61 @@ namespace UI
             SetPanelVisible(pausePanel, pausePanelCanvasGroup, false, instant);
             isPaused = false;
             Debug.Log("[GameplayUIController]: Pause panel hidden");
+        }
+
+        // Immediate, non-animated show to avoid flicker and inactive state races
+        public void ShowPausePanelImmediate()
+        {
+            if (pausePanel == null || pausePanelCanvasGroup == null) return;
+
+            // Cancel any running fade on the pause panel
+            if (activeFades.TryGetValue(pausePanelCanvasGroup, out var running))
+            {
+                if (running != null) StopCoroutine(running);
+                activeFades.Remove(pausePanelCanvasGroup);
+            }
+
+            EnsureGameplayCanvasVisible();
+            EnsureCenteredInCanvas(pausePanel.GetComponent<RectTransform>());
+
+            // Ensure active and fully visible immediately
+            pausePanel.SetActive(true);
+            pausePanelCanvasGroup.alpha = 1f;
+            pausePanelCanvasGroup.interactable = true;
+            pausePanelCanvasGroup.blocksRaycasts = true;
+
+            // Keep stats visible alongside the pause overlay
+            if (gameStatsPanel != null && gameStatsPanelCanvasGroup != null)
+            {
+                gameStatsPanel.SetActive(true);
+                gameStatsPanelCanvasGroup.alpha = 1f;
+                gameStatsPanelCanvasGroup.interactable = true;
+                gameStatsPanelCanvasGroup.blocksRaycasts = true;
+            }
+
+            isPaused = true;
+            ApplyFirstSelectedIfAvailable();
+            Debug.Log("[GameplayUIController]: Pause panel shown (immediate)");
+        }
+
+        // Immediate, non-animated hide for symmetry and stability
+        public void HidePausePanelImmediate()
+        {
+            if (pausePanel == null || pausePanelCanvasGroup == null) return;
+
+            if (activeFades.TryGetValue(pausePanelCanvasGroup, out var running))
+            {
+                if (running != null) StopCoroutine(running);
+                activeFades.Remove(pausePanelCanvasGroup);
+            }
+
+            pausePanelCanvasGroup.interactable = false;
+            pausePanelCanvasGroup.blocksRaycasts = false;
+            pausePanelCanvasGroup.alpha = 0f;
+            pausePanel.SetActive(false);
+
+            isPaused = false;
+            Debug.Log("[GameplayUIController]: Pause panel hidden (immediate)");
         }
 
         /// <summary>
@@ -249,6 +346,14 @@ namespace UI
             EnsureGameplayCanvasVisible();
             EnsureCenteredInCanvas(levelCompletePanel.GetComponent<RectTransform>());
             SetPanelVisible(levelCompletePanel, levelCompletePanelCanvasGroup, true, instant);
+
+            // Keep game stats visible while level complete overlay is shown
+            if (gameStatsPanel != null)
+            {
+                SetPanelVisible(gameStatsPanel, gameStatsPanelCanvasGroup, true, instant: true);
+            }
+
+            ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Level complete panel shown");
         }
 
@@ -265,6 +370,7 @@ namespace UI
 
             EnsureGameplayCanvasVisible();
             SetPanelVisible(gameStatsPanel, gameStatsPanelCanvasGroup, true, instant);
+            ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Game stats panel shown");
         }
 
@@ -274,6 +380,13 @@ namespace UI
         private void SetPanelVisible(GameObject panel, CanvasGroup canvasGroup, bool visible, bool instant = false)
         {
             if (panel == null || canvasGroup == null) return;
+
+            // Cancel any previous fade on this canvas to avoid stale fades hiding newly shown UI
+            if (activeFades.TryGetValue(canvasGroup, out var running))
+            {
+                if (running != null) StopCoroutine(running);
+                activeFades.Remove(canvasGroup);
+            }
 
             if (visible)
             {
@@ -286,7 +399,7 @@ namespace UI
                 }
                 else
                 {
-                    StartCoroutine(FadePanel(canvasGroup, 1f, 0.3f));
+                    activeFades[canvasGroup] = StartCoroutine(FadePanel(canvasGroup, 1f, 0.3f));
                 }
             }
             else
@@ -300,7 +413,7 @@ namespace UI
                 }
                 else
                 {
-                    StartCoroutine(FadePanelAndDeactivate(canvasGroup, panel, 0f, 0.3f));
+                    activeFades[canvasGroup] = StartCoroutine(FadePanelAndDeactivate(canvasGroup, panel, 0f, 0.3f));
                 }
             }
         }
@@ -371,6 +484,19 @@ namespace UI
             gameplayCanvasGroup.alpha = 1f;
             gameplayCanvasGroup.interactable = true;
             gameplayCanvasGroup.blocksRaycasts = true;
+        }
+
+        private void ApplyFirstSelectedIfAvailable()
+        {
+            var es = EventSystem.current;
+            if (es == null) return;
+            if (firstSelectedButton == null) return;
+
+            var go = firstSelectedButton.gameObject;
+            if (!go.activeInHierarchy) return;
+            if (!firstSelectedButton.interactable) return;
+
+            es.SetSelectedGameObject(go);
         }
     }
 }

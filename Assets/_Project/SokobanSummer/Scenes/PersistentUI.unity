@@ -6027,6 +6027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1389309852}
   - component: {fileID: 1389309848}
+  - component: {fileID: 1389309853}
   m_Layer: 5
   m_Name: Level Complete
   m_TagString: levelcomplete
@@ -6069,6 +6070,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1389309853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1389309847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4268b0e82b4f8bb4286f626a9851d763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Cainos.Pixel_Art_Top_Down___Basic.Script.MenuFirstSelect
+  firstButton: {fileID: 1204679186}
 --- !u!1 &1413220408
 GameObject:
   m_ObjectHideFlags: 0
@@ -9132,6 +9146,7 @@ MonoBehaviour:
   pausePanel: {fileID: 1253959249}
   levelCompletePanel: {fileID: 1389309847}
   gameStatsPanel: {fileID: 1430779122}
+  firstSelectedButton: {fileID: 1603892752}
 --- !u!225 &1999999997
 CanvasGroup:
   m_ObjectHideFlags: 0
