@@ -79,7 +79,7 @@ namespace Gameplay
             var level = levelManager?.GetLevelByBuildIndex(currentScene.buildIndex);
             if (level != null)
             {
-                levelManager.LoadLevel(level);
+                levelManager.ReloadActiveLevel();
             }
             else
             {

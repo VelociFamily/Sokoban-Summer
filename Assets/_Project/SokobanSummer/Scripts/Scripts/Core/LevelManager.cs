@@ -370,6 +370,47 @@ namespace Core
             StartCoroutine(LoadLevelAdditiveRoutine(levelInfo));
         }
 
+        /// <summary>
+        /// Reload the currently active gameplay level by unloading it, then loading it fresh.
+        /// Keeps the base Game scene and persistent UI.
+        /// </summary>
+        public void ReloadActiveLevel()
+        {
+            var active = SceneManager.GetActiveScene();
+            var level = GetLevelByBuildIndex(active.buildIndex);
+            if (level == null)
+            {
+                Debug.LogWarning("[LevelManager] ReloadActiveLevel: active scene not a tracked level, falling back to LoadScene");
+                SceneManager.LoadScene(active.name);
+                return;
+            }
+
+            StartCoroutine(ReloadLevelRoutine(level, active));
+        }
+
+        private IEnumerator ReloadLevelRoutine(LevelInfo level, Scene currentScene)
+        {
+            Debug.Log($"[LevelManager] Reloading level: {level.displayName}");
+
+            // Ensure the base Game scene stays active while we unload/reload the level
+            var baseScene = SceneManager.GetSceneByBuildIndex(0);
+            if (baseScene.IsValid() && baseScene.isLoaded)
+            {
+                SceneManager.SetActiveScene(baseScene);
+            }
+
+            var unload = SceneManager.UnloadSceneAsync(currentScene);
+            if (unload != null)
+            {
+                while (!unload.isDone) yield return null;
+            }
+
+            yield return Resources.UnloadUnusedAssets();
+
+            // Reuse the existing additive load pipeline (handles main menu unload and cleanup)
+            yield return LoadLevelAdditiveRoutine(level);
+        }
+
         private IEnumerator LoadLevelAdditiveRoutine(LevelInfo levelInfo)
         {
             // Prevent duplicate loads
