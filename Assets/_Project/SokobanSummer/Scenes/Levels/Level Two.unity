@@ -524,6 +524,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 60262721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &100598975
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 473539406881576056, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_Name
+      value: Portal one
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 697384385913030699, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528249978290997877, guid: 86b94d064ac4a5f46bdea5f18816f405,
+        type: 3}
+      propertyPath: linkedPortal
+      value: 
+      objectReference: {fileID: 1142878883}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86b94d064ac4a5f46bdea5f18816f405, type: 3}
+--- !u!114 &100598976 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4528249978290997877, guid: 86b94d064ac4a5f46bdea5f18816f405,
+    type: 3}
+  m_PrefabInstance: {fileID: 100598975}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de68de9239f51e49a3bf9d9a17670a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SokobanSummer.Gameplay::Gameplay.PortalBlock
 --- !u!1 &123662387
 GameObject:
   m_ObjectHideFlags: 0
@@ -6014,6 +6099,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 60262721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1142878882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866103997376046680, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8090341752167980175, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: linkedPortal
+      value: 
+      objectReference: {fileID: 100598976}
+    - target: {fileID: 8688614046066631221, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+        type: 3}
+      propertyPath: m_Name
+      value: Portal two
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a468ef5c2aafade48a4910fd05ecb4d8, type: 3}
+--- !u!114 &1142878883 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8090341752167980175, guid: a468ef5c2aafade48a4910fd05ecb4d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1142878882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de68de9239f51e49a3bf9d9a17670a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: SokobanSummer.Gameplay::Gameplay.PortalBlock
 --- !u!1 &1173290539
 GameObject:
   m_ObjectHideFlags: 0
@@ -11676,10 +11846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55a66e4af657584c9813438e96aa9bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: SokobanSummer.UI::UI.PauseButton
-  pauseMenu: {fileID: 0}
-  pauseMenuCanvasGroup: {fileID: 0}
-  blocker: {fileID: 0}
-  pausePanelName: Pause
   volume: {fileID: 0}
 --- !u!1 &2009505045
 GameObject:
@@ -12317,3 +12483,5 @@ SceneRoots:
   - {fileID: 1182635427}
   - {fileID: 1510543947}
   - {fileID: 1924221334}
+  - {fileID: 100598975}
+  - {fileID: 1142878882}
