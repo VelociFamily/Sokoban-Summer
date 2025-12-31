@@ -1732,7 +1732,7 @@ TextureImporter:
         width: 14
         height: 18
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1741,6 +1741,28 @@ TextureImporter:
       bones: []
       spriteID: 710af698f0cb85b45af3c89ce35cc59f
       internalID: 1873915523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RA_Atlantis_01_66
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 32
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 5, y: 10, z: 5, w: 10}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9223f6667e2be7149af8767b6cf81f58
+      internalID: 1924429377
       vertices: []
       indices: 
       edges: []
@@ -1826,6 +1848,7 @@ TextureImporter:
       RA_Atlantis_01_63: -453335189
       RA_Atlantis_01_64: -208152794
       RA_Atlantis_01_65: 1873915523
+      RA_Atlantis_01_66: 1924429377
       RA_Atlantis_01_7: 8308908298349684336
       RA_Atlantis_01_8: 5261874806456439926
       RA_Atlantis_01_9: 5876290301061264909
