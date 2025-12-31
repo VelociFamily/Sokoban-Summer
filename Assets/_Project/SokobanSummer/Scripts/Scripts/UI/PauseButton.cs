@@ -1,22 +1,20 @@
 using Core;
-using Gameplay;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
-using UI;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace UI
 {
+    /// <summary>
+    /// Handles pause/resume functionality for gameplay scenes with input and UI management.
+    /// </summary>
     public class PauseButton : MonoBehaviour
     {
-        public GameObject pauseMenu;
-        public CanvasGroup pauseMenuCanvasGroup; // Optional: use CanvasGroup for fade instead of SetActive
-        public GameObject blocker; // This object blocks pause menu when active
-        [Tooltip("Name of the pause panel managed by MenuNavigator")] public string pausePanelName = "Pause";
-        private MenuNavigator menuNavigator;
+        private GameplayUIController gameplayUIController;
 
         // --- NEW VARIABLES FOR BLUR ---
         public Volume volume; // Reference to the Volume component
@@ -27,17 +25,27 @@ namespace UI
         private MoveCounter moveCounter;
         private bool ownsInputActions;
 
+        // UI cancel (Escape/B) also toggles pause in gameplay
+        private InputAction cancelActionUI;
+
+        // Prevent double-toggles in the same frame (UI + Player maps both fire)
+        private int lastPauseToggleFrame = -1;
+        // Prevent rapid re-trigger across frames (UI and Player maps may fire on consecutive frames)
+        private float lastPauseToggleTime = -1f;
+        // Short lockout after a toggle to ignore any straggling performed events (different actions/devices)
+        private float pauseToggleLockUntil = -1f;
+
+        // Lightweight diagnostics to see which action/control is firing (helps identify misrouted input)
+        private const bool LogPauseInput = false; // set true for on-device debugging
+
         // Cache both UI and Player map pause bindings so Start/Escape works even if one map is disabled
         private InputAction pauseActionUI;
         private InputAction pauseActionPlayer;
 
-        private Camera mainCamera;
-
-        // Track the persistent UI scene name
-        private const string persistentUISceneName = "PersistentUI";
-        private string gameplaySceneName;
-
-        private bool isPaused = false;
+        private void OnEnable()
+        {
+            SceneManager.sceneLoaded += HandleSceneLoaded;
+        }
 
         private void Start()
         {
@@ -46,29 +54,11 @@ namespace UI
             InitializeServices();
             SetupInputActions();
 
-            // Find MenuNavigator in the persistent UI (if configured)
-            menuNavigator = FindFirstObjectByType<MenuNavigator>();
-
-            // Auto-discover CanvasGroup if not assigned
-            if (pauseMenuCanvasGroup == null && pauseMenu != null)
+            // Find GameplayUIController in the persistent UI
+            gameplayUIController = FindFirstObjectByType<GameplayUIController>();
+            if (gameplayUIController == null)
             {
-                pauseMenuCanvasGroup = pauseMenu.GetComponent<CanvasGroup>();
-                if (pauseMenuCanvasGroup == null)
-                {
-                    Debug.Log("[PauseButton]: No CanvasGroup found on pause menu - adding one for smooth transitions");
-                    pauseMenuCanvasGroup = pauseMenu.AddComponent<CanvasGroup>();
-                }
-            }
-
-            // Initialize pause menu as hidden (MenuNavigator path preferred)
-            SetPauseMenuVisibility(false, instant: true);
-
-            // Get main camera for mouse position conversion
-            mainCamera = Camera.main;
-            if (mainCamera == null)
-            {
-                mainCamera = FindFirstObjectByType<Camera>();
-                Debug.LogWarning("[PauseButton]: Main camera not tagged - using first available camera as fallback");
+                Debug.LogError("[PauseButton]: GameplayUIController not found in scene - pause functionality will not work!");
             }
 
             // --- NEW CODE: Using the modern, recommended method ---
@@ -79,20 +69,16 @@ namespace UI
             else
                 Debug.LogWarning(
                     "[PauseButton]: Depth of Field effect not found on volume profile or no Volume object found in scene");
-
-            // Ensure the "game" scene is always loaded
-            if (!SceneManager.GetSceneByName("game").isLoaded) SceneManager.LoadSceneAsync("game", LoadSceneMode.Additive);
-
-            // Store the current gameplay scene name for later unloading
-            gameplaySceneName = SceneManager.GetActiveScene().name;
         }
 
         private void OnDisable()
         {
+            SceneManager.sceneLoaded -= HandleSceneLoaded;
+
             if (inputActions == null) return;
             if (pauseActionUI != null) pauseActionUI.performed -= OnPausePerformed;
             if (pauseActionPlayer != null) pauseActionPlayer.performed -= OnPausePerformed;
-            inputActions.UI.Click.performed -= OnClickPerformed;
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
 
             if (ownsInputActions)
             {
@@ -130,20 +116,26 @@ namespace UI
             pauseActionUI = inputActions.UI.EscapeStart;
             pauseActionPlayer = inputActions.Player.EscapeStart;
 
+            // Also keep reference to UI Cancel (Escape/B) for closing the pause menu only
+            cancelActionUI = inputActions.UI.Cancel;
+
             // UI map may be disabled by other scripts after this Start; guard by enabling here as well
             if (!inputActions.UI.enabled) inputActions.UI.Enable();
 
             pauseActionUI.performed += OnPausePerformed;
             pauseActionPlayer.performed += OnPausePerformed;
-            inputActions.UI.Click.performed += OnClickPerformed;
+            // Do NOT subscribe Cancel here to avoid double-toggle (ESC maps to both EscapeStart and Cancel).
+            // We'll subscribe Cancel when the game is paused to allow closing via ESC/B.
         }
 
         private void OnDestroy()
         {
+            SceneManager.sceneLoaded -= HandleSceneLoaded;
+
             if (inputActions == null) return;
             if (pauseActionUI != null) pauseActionUI.performed -= OnPausePerformed;
             if (pauseActionPlayer != null) pauseActionPlayer.performed -= OnPausePerformed;
-            inputActions.UI.Click.performed -= OnClickPerformed;
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
 
             if (ownsInputActions)
             {
@@ -154,50 +146,141 @@ namespace UI
 
         private void OnPausePerformed(InputAction.CallbackContext context)
         {
-            if (blocker != null && blocker.activeInHierarchy) return;
+            // Ignore duplicate performed events within the same frame (both UI & Player maps fire)
+            if (lastPauseToggleFrame == Time.frameCount) return;
+            lastPauseToggleFrame = Time.frameCount;
+
+            // Debounce across frames: ignore if another pause/resume just happened moments ago
+            const float debounceSeconds = 0.5f; // unscaled time, since we pause Time.timeScale
+            if (lastPauseToggleTime >= 0f && (Time.unscaledTime - lastPauseToggleTime) < debounceSeconds)
+            {
+                return;
+            }
+
+            // Extra lockout window to catch straggling performed events from other bindings/devices
+            if (Time.unscaledTime < pauseToggleLockUntil)
+            {
+                return;
+            }
+
+            if (LogPauseInput)
+            {
+                var actionName = context.action?.name ?? "<null-action>";
+                var controlPath = context.control?.path ?? "<null-control>";
+                Debug.Log($"[PauseButton]: OnPausePerformed action={actionName} control={controlPath} isPaused={gameplayUIController?.IsPaused()} dt={Time.unscaledTime - lastPauseToggleTime:0.###}");
+            }
+
+            // Ignore pause input when not in a gameplay scene (prevents main menu from opening while paused)
+            var activeScene = SceneManager.GetActiveScene();
+            if (!SceneInfo.IsGameplayScene(activeScene))
+            {
+                return;
+            }
 
             // Check if a GameObject with the tag "levelcomplete" is active
             var levelCompleteObject = GameObject.FindWithTag("levelcomplete");
             if (levelCompleteObject != null && levelCompleteObject.activeSelf) return;
 
-            if (isPaused)
+            if (gameplayUIController == null) return;
+
+            if (gameplayUIController.IsPaused())
                 ResumeGame();
             else
                 PauseGame();
+
+            // Record time of this toggle so a second input source in the next frame doesn't immediately invert it
+            lastPauseToggleTime = Time.unscaledTime;
+            pauseToggleLockUntil = Time.unscaledTime + 0.35f;
         }
 
-        private void OnClickPerformed(InputAction.CallbackContext context)
-        {
-            if (mainCamera == null) return;
-            if (blocker != null && blocker.activeInHierarchy) return;
-
-            // Check if a GameObject with the tag "levelcomplete" is active
-            var levelCompleteObject = GameObject.FindWithTag("levelcomplete");
-            if (levelCompleteObject != null && levelCompleteObject.activeSelf) return;
-
-            // Get mouse position and check if this pause button was clicked
-            var mousePosition = inputActions.UI.Point.ReadValue<Vector2>();
-            Vector2 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition);
-            var hit = Physics2D.Raycast(worldPosition, Vector2.zero);
-
-            if (hit.collider == null || hit.collider.gameObject != gameObject) return;
-            Debug.Log("[PauseButton]: Game paused via mouse click");
-            PauseGame();
-        }
-
-        public void LoadMenu()
+        public async void LoadMenu()
         {
             Time.timeScale = 1f;
 
-            // Unload any loaded gameplay scenes (tutorial or game levels)
+            // Hide and deactivate pause panel to fully clean up
+            if (gameplayUIController != null)
+            {
+                Debug.Log("[PauseButton]: Hiding pause panel...");
+                gameplayUIController.HidePausePanel(instant: true);
+                Debug.Log("[PauseButton]: Deactivating pause panel...");
+                gameplayUIController.DestroyPausePanel();
+                Debug.Log("[PauseButton]: Pause panel deactivated");
+            }
+            else
+            {
+                Debug.LogWarning("[PauseButton]: GameplayUIController is null, cannot hide pause panel");
+            }
+
+            // Ensure cancel is not double-subscribed after leaving gameplay via pause
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
+
+            // Ensure input is in UI mode during menu navigation
+            inputService?.DisablePlayerInput();
+            inputService?.EnableUIInput();
+
+            // Turn off pause blur effect when leaving gameplay
+            if (depthOfField != null) depthOfField.active = false;
+
+            // Preferred path: let LevelManager handle scene transitions
+            if (ServiceLocator.TryGet<LevelManager>(out var levelManager))
+            {
+                levelManager.LoadMainMenu();
+                if (PersistentUIManager.Exists)
+                {
+                    PersistentUIManager.Show(animated: true);
+                }
+
+                var menuNavigatorLM = FindFirstObjectByType<MenuNavigator>();
+                if (menuNavigatorLM != null)
+                {
+                    menuNavigatorLM.ShowPanel("Main Menu", instant: true);
+                }
+                Debug.Log("[PauseButton]: Delegated menu load to LevelManager.LoadMainMenu()");
+                return;
+            }
+
+            // Unload any loaded gameplay scenes (tutorial or game levels) and await completion
+            var unloadOps = new List<AsyncOperation>();
             for (var i = 0; i < SceneManager.sceneCount; i++)
             {
                 var loadedScene = SceneManager.GetSceneAt(i);
-                if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded) 
-                    SceneManager.UnloadSceneAsync(loadedScene);
+                if (SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded)
+                {
+                    var op = SceneManager.UnloadSceneAsync(loadedScene);
+                    if (op != null)
+                    {
+                        unloadOps.Add(op);
+                    }
+                }
             }
 
-            // Navigate to PersistentUI to show the main menu
+            // Await all unload operations to finish before showing menu/background
+            foreach (var op in unloadOps)
+            {
+                while (!op.isDone)
+                {
+                    await Task.Yield();
+                }
+            }
+
+            // After unloading gameplay, ensure a non-gameplay scene is active (Game/PersistentUI/MainMenu)
+            Scene? target = null;
+            for (var i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var s = SceneManager.GetSceneAt(i);
+                if (s.isLoaded && !SceneInfo.IsGameplayScene(s))
+                {
+                    target = s;
+                    break;
+                }
+            }
+            if (target.HasValue)
+            {
+                SceneManager.SetActiveScene(target.Value);
+            }
+
+            // Show main menu via MenuNavigator
+            var menuNavigator = FindFirstObjectByType<MenuNavigator>();
             if (menuNavigator != null)
             {
                 menuNavigator.ShowMainMenu();
@@ -207,119 +290,79 @@ namespace UI
             {
                 Debug.LogWarning("[PauseButton]: MenuNavigator not available - cannot show main menu panel");
             }
-        }
 
-        /// <summary>
-        /// Handles EventSystem duplication when returning to main menu from pause screen.
-        /// Ensures only one EventSystem exists to prevent input conflicts.
-        /// </summary>
-        private static void HandleEventSystemDuplication()
-        {
-            var eventSystems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
-
-            if (eventSystems.Length <= 1) return;
-            Debug.LogWarning($"[PauseButton]: Detected {eventSystems.Length} EventSystems after menu load - removing duplicates");
-            
-            // Keep the first EventSystem and destroy the rest
-            for (var i = 1; i < eventSystems.Length; i++)
+            // Ensure persistent UI (and background, if managed there) is visible
+            if (PersistentUIManager.Exists)
             {
-                Debug.Log($"[PauseButton]: Removing duplicate EventSystem from '{eventSystems[i].gameObject.name}'");
-                Destroy(eventSystems[i].gameObject);
-            }
-        }
-
-        /// <summary>
-        /// Handles AudioListener duplication when returning to main menu from pause screen.
-        /// Ensures only one AudioListener exists to prevent audio conflicts.
-        /// </summary>
-        private static void HandleAudioListenerDuplication()
-        {
-            var audioListeners = FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
-
-            if (audioListeners.Length <= 1) return;
-            Debug.LogWarning($"[PauseButton]: Detected {audioListeners.Length} AudioListeners after menu load - disabling duplicates");
-            
-            // Keep the first AudioListener and disable the rest (don't destroy the camera, just disable the AudioListener component)
-            for (var i = 1; i < audioListeners.Length; i++)
-            {
-                Debug.Log($"[PauseButton]: Disabling duplicate AudioListener on '{audioListeners[i].gameObject.name}'");
-                audioListeners[i].enabled = false;
+                PersistentUIManager.Show(animated: true);
             }
         }
 
         public void PauseGame()
         {
+            if (gameplayUIController == null)
+            {
+                Debug.LogError("[PauseButton]: GameplayUIController not found - cannot pause");
+                return;
+            }
+
+            // Ensure legacy menu panels stay hidden when pausing from gameplay
+            var menuNavigator = FindFirstObjectByType<MenuNavigator>();
+            if (menuNavigator != null)
+            {
+                menuNavigator.HideAllPanels(instant: true);
+            }
+
             // Disable player input first to prevent new moves
             inputService?.DisablePlayerInput();
-            // Make sure the pause menu object is active so the panel can render
-            if (pauseMenu != null && !pauseMenu.activeSelf) pauseMenu.SetActive(true);
             
-            // Show pause menu immediately so it's interactive
-            SetPauseMenuVisibility(true);
+            // Show pause menu via immediate path to avoid SetActive/fade races
+            gameplayUIController.ShowPausePanelImmediate();
             Time.timeScale = 0f;
             moveCounter?.PauseTimer();
-            isPaused = true;
 
             if (depthOfField != null) depthOfField.active = true;
+
+            // Subscribe Cancel while paused so ESC/B reliably closes the menu, but doesn't reopen immediately
+            if (cancelActionUI != null) cancelActionUI.performed += OnPausePerformed;
+
+            Debug.Log("[PauseButton]: Game paused");
         }
 
         public void ResumeGame()
         {
-            SetPauseMenuVisibility(false);
+            if (gameplayUIController == null) return;
+
+            gameplayUIController.HidePausePanelImmediate();
             Time.timeScale = 1f;
             moveCounter?.ResumeTimer();
             inputService?.EnablePlayerInput();
-            isPaused = false;
 
             if (depthOfField != null) depthOfField.active = false;
 
-            // Pause menu stays active; MenuNavigator already disables raycasts/interactability when hidden.
-            // Keeping it active avoids requiring a second press after returning to gameplay.
+            // Unsubscribe Cancel to prevent a second input source immediately re-toggling pause
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
+
+            Debug.Log("[PauseButton]: Game resumed");
         }
 
-        /// <summary>
-        /// Sets pause menu visibility using MenuNavigator (Persistent UI only)
-        /// </summary>
-        private void SetPauseMenuVisibility(bool visible, bool instant = false)
+        private void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-            // MenuNavigator is required for pause menu management
-            if (menuNavigator == null)
-            {
-                Debug.LogError("[PauseButton]: MenuNavigator not found in PersistentUI scene - cannot show/hide pause menu!");
-                return;
-            }
+            if (!SceneInfo.IsGameplayScene(scene)) return;
 
-            // Allow a couple of common panel name variants to avoid typos/mismatches
-            string targetPanelName = null;
-            var candidates = new[] { pausePanelName, "Pause Panel", "Pause" };
-            foreach (var candidate in candidates)
-            {
-                if (string.IsNullOrWhiteSpace(candidate)) continue;
-                if (menuNavigator.GetPanel(candidate) != null)
-                {
-                    targetPanelName = candidate;
-                    break;
-                }
-            }
+            // Reset pause state when entering a new gameplay scene after menus
+            lastPauseToggleFrame = -1;
+            lastPauseToggleTime = -1f;
+            pauseToggleLockUntil = -1f;
 
-            if (visible)
-            {
-                if (targetPanelName != null)
-                {
-                    menuNavigator.ShowPanel(targetPanelName, instant);
-                    Debug.Log($"[PauseButton]: Showing pause panel via MenuNavigator (panel='{targetPanelName}')");
-                }
-                else
-                {
-                    Debug.LogError($"[PauseButton]: Pause panel not found in MenuNavigator. Register a panel named '{pausePanelName}' (or 'Pause Panel') in PersistentUI.");
-                }
-            }
-            else
-            {
-                // Hide all panels on resume to ensure no UI persists over gameplay
-                menuNavigator.HideAllPanels(instant);
-                Debug.Log("[PauseButton]: Hiding all panels via MenuNavigator");
-            }
+            if (cancelActionUI != null) cancelActionUI.performed -= OnPausePerformed;
+
+            gameplayUIController?.HidePausePanel(instant: true);
+            if (depthOfField != null) depthOfField.active = false;
+
+            Time.timeScale = 1f;
+            moveCounter?.ResumeTimer();
+            inputService?.EnablePlayerInput();
         }
     }
 }

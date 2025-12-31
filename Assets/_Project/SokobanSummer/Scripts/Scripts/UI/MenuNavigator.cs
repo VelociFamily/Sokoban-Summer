@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 using Core;
 
 namespace UI
@@ -226,9 +227,96 @@ namespace UI
         }
 
         /// <summary>
-        /// Show main menu panel
+        /// Show main menu and ensure gameplay scenes are unloaded.
+        /// Safe to call even if no gameplay scenes are loaded.
         /// </summary>
-        public void ShowMainMenu() => ShowPanel("Main Menu");
+        public void ShowMainMenu() => LoadMenu();
+
+        /// <summary>
+        /// Unload any gameplay level scenes, restore persistent UI/background, and show Main Menu.
+        /// Mirrors the logic used by PauseButton/CompleteUI for consistency.
+        /// </summary>
+        public async void LoadMenu()
+        {
+            // Make sure time scale is normal when returning to menu
+            Time.timeScale = 1f;
+
+            // Ensure input is in UI mode during menu navigation
+            if (inputService == null)
+            {
+                ServiceLocator.TryGet(out inputService);
+            }
+            inputService?.DisablePlayerInput();
+            inputService?.EnableUIInput();
+
+            // Preferred path: let LevelManager handle scene transitions if available
+            if (ServiceLocator.TryGet<LevelManager>(out var levelManager))
+            {
+                Debug.Log("[MenuNavigator]: Delegating to LevelManager.LoadMainMenu()");
+                levelManager.LoadMainMenu();
+
+                // Ensure persistent UI is visible (and its background logic can kick in)
+                if (Core.PersistentUIManager.Exists)
+                {
+                    Core.PersistentUIManager.Show(animated: true);
+                }
+
+                // Show the menu panel instantly to avoid a flash of hidden UI
+                ShowPanel("Main Menu", instant: true);
+                return;
+            }
+
+            // Fallback: manually unload all gameplay scenes
+            var unloadOps = new List<AsyncOperation>();
+            for (var i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var loadedScene = SceneManager.GetSceneAt(i);
+                if (Core.SceneInfo.IsGameplayScene(loadedScene) && loadedScene.isLoaded)
+                {
+                    var op = SceneManager.UnloadSceneAsync(loadedScene);
+                    if (op != null)
+                    {
+                        unloadOps.Add(op);
+                        Debug.Log($"[MenuNavigator]: Unloading gameplay scene '{loadedScene.name}'");
+                    }
+                }
+            }
+
+            // Await unloads to complete before switching active scene/UI
+            foreach (var op in unloadOps)
+            {
+                while (!op.isDone)
+                {
+                    await Task.Yield();
+                }
+            }
+
+            // After unloading gameplay, set a non-gameplay scene active so background shows
+            Scene? target = null;
+            for (var i = 0; i < SceneManager.sceneCount; i++)
+            {
+                var s = SceneManager.GetSceneAt(i);
+                if (s.isLoaded && !Core.SceneInfo.IsGameplayScene(s))
+                {
+                    target = s;
+                    break;
+                }
+            }
+            if (target.HasValue)
+            {
+                SceneManager.SetActiveScene(target.Value);
+                Debug.Log($"[MenuNavigator]: Active scene set to '{target.Value.name}'");
+            }
+
+            // Ensure persistent UI (and its background management) is visible
+            if (Core.PersistentUIManager.Exists)
+            {
+                Core.PersistentUIManager.Show(animated: true);
+            }
+
+            // Finally, show the main menu panel
+            ShowPanel("Main Menu", instant: true);
+        }
 
         /// <summary>
         /// Show settings panel
@@ -433,6 +521,12 @@ namespace UI
 
         private void HandleUICancel(InputAction.CallbackContext context)
         {
+            // Ignore cancel in gameplay scenes; pause logic handles Escape/Start there
+            if (Core.SceneInfo.IsGameplayScene(SceneManager.GetActiveScene()))
+            {
+                return;
+            }
+
             if (currentPanel == null)
             {
                 return;

@@ -31,6 +31,9 @@ namespace Gameplay
         public readonly float teleportSpeed = 20f;
 
         public LayerMask wallLayer;
+        
+        // Track last attempted direction even when blocked by walls
+        private Vector2 _lastAttemptedDirection = Vector2.zero;
 
         [Header("Event Channels")]
         [Tooltip("Optional ScriptableObject event raised when power-ups are consumed")]
@@ -129,6 +132,10 @@ namespace Gameplay
 
         private bool TryMove(Vector2 dir)
         {
+            // Track the attempted direction BEFORE checking walls
+            // This way we capture it even if movement is blocked
+            _lastAttemptedDirection = dir;
+            
             if (IsTouchingWall(dir))
                 return false;
 
@@ -266,6 +273,11 @@ namespace Gameplay
         public Vector2 GetMoveDirection()
         {
             return moveDirection;
+        }
+
+        public Vector2 GetLastAttemptedDirection()
+        {
+            return _lastAttemptedDirection;
         }
 
         public PlayerStateMachine GetStateMachine()

@@ -132,8 +132,10 @@ namespace Core
             }
         
             // Fallback to build index logic (levels 1-6)
-            bool fallback = scene.buildIndex is >= 1 and <= 6;
-            Debug.Log($"[SceneInfo]: IsGameplayScene('{scene.name}') -> No SceneInfo component; fallback buildIndex={scene.buildIndex}, result={fallback}");
+            // More permissive fallback: treat any non-menu scene (buildIndex >= 2) or name containing "level"/"tutorial" as gameplay
+            var lowerName = scene.name.ToLowerInvariant();
+            bool fallback = scene.buildIndex >= 2 || lowerName.Contains("level") || lowerName.Contains("tutorial");
+            Debug.Log($"[SceneInfo]: IsGameplayScene('{scene.name}') -> No SceneInfo component; fallback buildIndex={scene.buildIndex}, nameMatch={lowerName.Contains("level") || lowerName.Contains("tutorial")}, result={fallback}");
             return fallback;
         }
 

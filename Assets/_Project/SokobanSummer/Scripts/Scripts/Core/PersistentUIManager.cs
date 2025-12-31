@@ -13,8 +13,11 @@ namespace Core
     public class PersistentUIManager : MonoBehaviour
     {
         [Header("UI Management")]
-        [Tooltip("CanvasGroups for UI elements that should persist across scenes")]
+        [Tooltip("CanvasGroups for UI elements that should persist across scenes (menus, etc)")]
         [SerializeField] private List<CanvasGroup> persistentUIGroups = new List<CanvasGroup>();
+
+        [Tooltip("CanvasGroups that should ONLY show during gameplay (like move/timer stats)")]
+        [SerializeField] private List<CanvasGroup> gameplayOnlyUIGroups = new List<CanvasGroup>();
 
         [Header("System Components")]
         [Tooltip("The EventSystem for this persistent UI (should be the only one)")]
@@ -28,7 +31,7 @@ namespace Core
         [SerializeField] private bool showInMainMenu = true;
 
         [Tooltip("Show UI in gameplay scenes")]
-        [SerializeField] private bool showInGameplay = false;
+        [SerializeField] private bool showInGameplay = true;
 
         [Tooltip("Fade duration when showing/hiding UI (seconds)")]
         [SerializeField] private float fadeDuration = 0.3f;
@@ -41,15 +44,17 @@ namespace Core
             // Singleton pattern
             if (_instance != null && _instance != this)
             {
-                Debug.LogWarning($"[PersistentUIManager]: Duplicate instance detected on '{gameObject.name}' - destroying");
-                Destroy(gameObject);
+                // Keep the first instance alive; disable this duplicate component but leave its GameObject intact to avoid
+                // deleting other UI elements that may be on the same object.
+                Debug.LogWarning($"[PersistentUIManager]: Duplicate instance detected on '{gameObject.name}' - disabling this component and keeping the original");
+                enabled = false;
                 return;
             }
 
             _instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // Initialize UI as visible by default (will be hidden when gameplay scenes load)
+            // Initialize menu UI as visible by default
             foreach (var canvasGroup in persistentUIGroups)
             {
                 if (canvasGroup != null)
@@ -57,6 +62,8 @@ namespace Core
                     SetCanvasGroupVisibility(canvasGroup, true);
                 }
             }
+
+            // DO NOT initialize gameplayOnlyUIGroups - GameplayUIController has exclusive control
 
             // Subscribe to scene events
             SceneManager.sceneLoaded += OnSceneLoaded;
@@ -83,16 +90,9 @@ namespace Core
                 return;
             }
 
-            // Only update visibility for gameplay scenes - let MenuNavigator handle menu panels
-            if (SceneInfo.IsGameplayScene(scene))
-            {
-                Debug.Log($"[PersistentUIManager]: Updating UI visibility for gameplay scene '{scene.name}'");
-                UpdateUIVisibility(scene);
-            }
-            else
-            {
-                Debug.Log($"[PersistentUIManager]: Scene '{scene.name}' is not a gameplay scene - MenuNavigator will handle panel visibility");
-            }
+            // Always update visibility so returning to menus after pausing/gameplay restores the correct state
+            Debug.Log($"[PersistentUIManager]: Updating UI visibility for scene '{scene.name}'");
+            UpdateUIVisibility(scene);
         }
 
         private void OnSceneUnloaded(Scene scene)
@@ -106,37 +106,25 @@ namespace Core
         /// </summary>
         private void UpdateUIVisibility(Scene scene)
         {
-            bool shouldShow = false;
+            bool isGameplay = SceneInfo.IsGameplayScene(scene);
+            bool isMainMenu = SceneInfo.IsMainMenuScene(scene);
+            bool isGameInit = scene.name == "Game" || scene.name == "game";
 
-            // Always show in the Game initialization scene
-            if (scene.name == "Game" || scene.name == "game")
+            Debug.Log($"[PersistentUIManager]: UpdateUIVisibility('{scene.name}') - IsGameplay={isGameplay}, IsMainMenu={isMainMenu}, IsGameInit={isGameInit}");
+
+            // Menu UI: show in menus and game init, hide in gameplay
+            bool showMenuUI = (isMainMenu && showInMainMenu) || isGameInit;
+
+            Debug.Log($"[PersistentUIManager]: MenuUI should be {(showMenuUI ? "visible" : "hidden")}");
+
+            // Update menu UI visibility
+            foreach (var canvasGroup in persistentUIGroups)
             {
-                shouldShow = true;
-                Debug.Log($"[PersistentUIManager]: Game initialization scene detected - keeping UI visible");
-            }
-            else if (SceneInfo.IsMainMenuScene(scene))
-            {
-                Debug.Log($"[PersistentUIManager]: MainMenu scene detected - showInMainMenu setting is '{showInMainMenu}'");
-                shouldShow = showInMainMenu;
-            }
-            else if (SceneInfo.IsGameplayScene(scene))
-            {
-                Debug.Log($"[PersistentUIManager]: Gameplay scene detected - showInGameplay setting is '{showInGameplay}'");
-                shouldShow = showInGameplay;
+                if (canvasGroup == null) continue;
+                SetCanvasGroupVisibility(canvasGroup, showMenuUI);
             }
 
-            Debug.Log($"[PersistentUIManager]: Scene '{scene.name}' loaded - UI should be {(shouldShow ? "visible" : "hidden")}");
-
-            if (shouldShow)
-            {
-                Debug.Log($"[PersistentUIManager]: Calling ShowUI() for scene '{scene.name}'");
-                ShowUI();
-            }
-            else
-            {
-                Debug.Log($"[PersistentUIManager]: Calling HideUI() for scene '{scene.name}'");
-                HideUI();
-            }
+            // DO NOT manage gameplayOnlyUIGroups here - GameplayUIController has sole authority over gameplay canvas and its children
         }
 
         /// <summary>
@@ -271,29 +259,29 @@ namespace Core
 
             Debug.LogWarning($"[PersistentUIManager]: Found {allEventSystems.Length} EventSystems - removing duplicates");
 
+            // If we don't have a reference, try to find one on this object
+            if (eventSystem == null) eventSystem = GetComponent<EventSystem>();
+
+            // If still null, pick the first one found as the "keeper" to avoid destroying all of them
+            if (eventSystem == null && allEventSystems.Length > 0)
+            {
+                eventSystem = allEventSystems[0];
+                Debug.Log($"[PersistentUIManager]: No EventSystem assigned, adopting '{eventSystem.gameObject.name}' as the persistent one");
+            }
+
             foreach (var es in allEventSystems)
             {
                 // Keep our persistent EventSystem, destroy others
                 if (es != eventSystem && es != null)
                 {
-                    // Check if this EventSystem is attached to the GameInitializer
-                    // If so, we must NOT destroy the GameObject, only the component
-                    if (es.GetComponent<GameInitializer>() != null)
+                    Debug.Log($"[PersistentUIManager]: Removing duplicate EventSystem component from '{es.gameObject.name}'");
+                    Destroy(es);
+                    
+                    // Also destroy the InputSystemUIInputModule if present
+                    var inputModule = es.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+                    if (inputModule != null)
                     {
-                        Debug.Log($"[PersistentUIManager]: Found duplicate EventSystem on GameInitializer '{es.gameObject.name}' - destroying component only to preserve initializer");
-                        Destroy(es);
-                        
-                        // Also destroy the InputSystemUIInputModule if present
-                        var inputModule = es.GetComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
-                        if (inputModule != null)
-                        {
-                            Destroy(inputModule);
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log($"[PersistentUIManager]: Removing duplicate EventSystem from '{es.gameObject.name}'");
-                        Destroy(es.gameObject);
+                        Destroy(inputModule);
                     }
                 }
             }
@@ -309,6 +297,16 @@ namespace Core
             if (allListeners.Length <= 1) return;
 
             Debug.LogWarning($"[PersistentUIManager]: Found {allListeners.Length} AudioListeners - disabling duplicates");
+
+            // If we don't have a reference, try to find one on this object
+            if (audioListener == null) audioListener = GetComponent<AudioListener>();
+
+            // If still null, pick the first one found as the "keeper"
+            if (audioListener == null && allListeners.Length > 0)
+            {
+                audioListener = allListeners[0];
+                Debug.Log($"[PersistentUIManager]: No AudioListener assigned, adopting '{audioListener.gameObject.name}' as the persistent one");
+            }
 
             foreach (var listener in allListeners)
             {

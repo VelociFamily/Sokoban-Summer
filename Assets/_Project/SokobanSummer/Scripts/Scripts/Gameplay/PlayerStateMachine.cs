@@ -87,5 +87,15 @@ namespace Gameplay
         {
             _currentState?.Tick();
         }
+
+        /// <summary>
+        /// Get a specific state by type.
+        /// Used to access state-specific methods (e.g., TeleportingState.StartTeleport).
+        /// </summary>
+        public IPlayerState GetState(PlayerStateType type)
+        {
+            _states.TryGetValue(type, out var state);
+            return state;
+        }
     }
 }
