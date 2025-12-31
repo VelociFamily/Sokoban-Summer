@@ -14,6 +14,7 @@ namespace UI
 
         private bool isPaused = false;
         private GameplayUIController gameplayUIController;
+        private PauseButton pauseButton;
 
         private void Awake()
         {
@@ -28,13 +29,18 @@ namespace UI
             {
                 Debug.LogWarning("[PauseResumeButton]: GameplayUIController not found. Pause panel won't show.");
             }
+
+            // Find PauseButton (handles keyboard/controller input)
+            pauseButton = FindFirstObjectByType<PauseButton>();
+            if (pauseButton == null)
+            {
+                Debug.LogWarning("[PauseResumeButton]: PauseButton not found. Keyboard/controller pause won't work.");
+            }
         }
 
         private void OnEnable()
         {
             UpdateButtonText();
-            // Ensure button is visible when enabled
-            gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -57,27 +63,32 @@ namespace UI
         /// </summary>
         private void Pause()
         {
-            isPaused = true;
-            Time.timeScale = 0f;
-
-            // Pause timer if available
-            var moveCounter = ServiceLocator.TryGet<MoveCounter>(out var mc) ? mc : null;
-            if (moveCounter != null)
+            // Delegate to PauseButton to ensure keyboard/controller input is properly configured
+            if (pauseButton != null)
             {
-                moveCounter.PauseTimer();
+                pauseButton.PauseGame();
+            }
+            else
+            {
+                // Fallback if PauseButton not found
+                isPaused = true;
+                Time.timeScale = 0f;
+
+                var moveCounter = ServiceLocator.TryGet<MoveCounter>(out var mc) ? mc : null;
+                if (moveCounter != null)
+                {
+                    moveCounter.PauseTimer();
+                }
+
+                if (gameplayUIController != null)
+                {
+                    gameplayUIController.ShowPausePanel(instant: false);
+                }
+
+                UpdateButtonText();
             }
 
-            // Show pause panel
-            if (gameplayUIController != null)
-            {
-                gameplayUIController.ShowPausePanel(instant: false);
-            }
-
-            // Hide this button while pause panel is shown
-            gameObject.SetActive(false);
-
-            UpdateButtonText();
-            Debug.Log("[PauseResumeButton]: Game paused, pause panel shown, button hidden");
+            Debug.Log("[PauseResumeButton]: Game paused via touchscreen button");
         }
 
         /// <summary>
@@ -85,27 +96,32 @@ namespace UI
         /// </summary>
         public void Resume()
         {
-            isPaused = false;
-            Time.timeScale = 1f;
-
-            // Resume timer if available
-            var moveCounter = ServiceLocator.TryGet<MoveCounter>(out var mc) ? mc : null;
-            if (moveCounter != null)
+            // Delegate to PauseButton to ensure keyboard/controller input is properly configured
+            if (pauseButton != null)
             {
-                moveCounter.ResumeTimer();
+                pauseButton.ResumeGame();
+            }
+            else
+            {
+                // Fallback if PauseButton not found
+                isPaused = false;
+                Time.timeScale = 1f;
+
+                var moveCounter = ServiceLocator.TryGet<MoveCounter>(out var mc) ? mc : null;
+                if (moveCounter != null)
+                {
+                    moveCounter.ResumeTimer();
+                }
+
+                if (gameplayUIController != null)
+                {
+                    gameplayUIController.HidePausePanel(instant: false);
+                }
+
+                UpdateButtonText();
             }
 
-            // Hide pause panel
-            if (gameplayUIController != null)
-            {
-                gameplayUIController.HidePausePanel(instant: false);
-            }
-
-            // Show this button again
-            gameObject.SetActive(true);
-
-            UpdateButtonText();
-            Debug.Log("[PauseResumeButton]: Game resumed, pause panel hidden, button shown");
+            Debug.Log("[PauseResumeButton]: Game resumed via touchscreen button");
         }
 
         /// <summary>
@@ -117,6 +133,15 @@ namespace UI
             {
                 pauseText.text = isPaused ? "Resume" : "Pause";
             }
+        }
+
+        /// <summary>
+        /// Update internal pause state and button text (called by GameplayUIController)
+        /// </summary>
+        public void UpdatePauseState(bool paused)
+        {
+            isPaused = paused;
+            UpdateButtonText();
         }
     }
 }

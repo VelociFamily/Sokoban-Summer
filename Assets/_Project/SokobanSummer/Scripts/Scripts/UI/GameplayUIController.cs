@@ -18,11 +18,13 @@ namespace UI
         [SerializeField] private GameObject pausePanel;
         [SerializeField] private GameObject levelCompletePanel;
         [SerializeField] private GameObject gameStatsPanel; // Contains Moves, Timer, Achievements
+        [SerializeField] private GameObject pauseButton; // Touchscreen pause button
         [SerializeField] private Selectable firstSelectedButton;
 
         private CanvasGroup pausePanelCanvasGroup;
         private CanvasGroup levelCompletePanelCanvasGroup;
         private CanvasGroup gameStatsPanelCanvasGroup;
+        private PauseResumeButton pauseResumeButton; // Component on pauseButton
 
         // Track running fades so a previous hide/show can't override a new state after scene changes
         private readonly Dictionary<CanvasGroup, Coroutine> activeFades = new();
@@ -82,6 +84,22 @@ namespace UI
 
             if (gameStatsPanel == null)
                 gameStatsPanel = FindPanelByName("Game Stats");
+
+            // Find pause button if not assigned (look for PauseResumeButton component)
+            if (pauseButton == null)
+            {
+                var pauseResumeButton = GetComponentInChildren<PauseResumeButton>(true);
+                if (pauseResumeButton != null)
+                {
+                    pauseButton = pauseResumeButton.gameObject;
+                }
+            }
+
+            // Cache PauseResumeButton component
+            if (pauseButton != null)
+            {
+                pauseResumeButton = pauseButton.GetComponent<PauseResumeButton>();
+            }
 
             // Cache CanvasGroups
             if (pausePanel != null)
@@ -186,6 +204,12 @@ namespace UI
                 SetPanelVisible(gameStatsPanel, gameStatsPanelCanvasGroup, true, instant: true);
             }
 
+            // Show pause button when entering gameplay
+            if (pauseButton != null)
+            {
+                pauseButton.SetActive(true);
+            }
+
             isPaused = false;
             ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Gameplay UI shown");
@@ -244,6 +268,18 @@ namespace UI
                 SetPanelVisible(gameStatsPanel, gameStatsPanelCanvasGroup, true, instant: true);
             }
 
+            // Hide pause button when pause panel is visible
+            if (pauseButton != null)
+            {
+                pauseButton.SetActive(false);
+            }
+
+            // Update pause button state
+            if (pauseResumeButton != null)
+            {
+                pauseResumeButton.UpdatePauseState(true);
+            }
+
             isPaused = true;
             ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Pause panel shown");
@@ -257,6 +293,19 @@ namespace UI
             if (pausePanel == null) return;
 
             SetPanelVisible(pausePanel, pausePanelCanvasGroup, false, instant);
+            
+            // Show pause button when pause panel is hidden
+            if (pauseButton != null)
+            {
+                pauseButton.SetActive(true);
+            }
+
+            // Update pause button state
+            if (pauseResumeButton != null)
+            {
+                pauseResumeButton.UpdatePauseState(false);
+            }
+            
             isPaused = false;
             Debug.Log("[GameplayUIController]: Pause panel hidden");
         }
@@ -291,6 +340,18 @@ namespace UI
                 gameStatsPanelCanvasGroup.blocksRaycasts = true;
             }
 
+            // Hide pause button when pause panel is visible
+            if (pauseButton != null)
+            {
+                pauseButton.SetActive(false);
+            }
+
+            // Update pause button state
+            if (pauseResumeButton != null)
+            {
+                pauseResumeButton.UpdatePauseState(true);
+            }
+
             isPaused = true;
             ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Pause panel shown (immediate)");
@@ -311,6 +372,18 @@ namespace UI
             pausePanelCanvasGroup.blocksRaycasts = false;
             pausePanelCanvasGroup.alpha = 0f;
             pausePanel.SetActive(false);
+
+            // Show pause button when pause panel is hidden
+            if (pauseButton != null)
+            {
+                pauseButton.SetActive(true);
+            }
+
+            // Update pause button state
+            if (pauseResumeButton != null)
+            {
+                pauseResumeButton.UpdatePauseState(false);
+            }
 
             isPaused = false;
             Debug.Log("[GameplayUIController]: Pause panel hidden (immediate)");

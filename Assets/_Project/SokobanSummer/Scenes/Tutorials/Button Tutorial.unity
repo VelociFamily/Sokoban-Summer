@@ -1256,6 +1256,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 513462273337265652, guid: db402e356e3e1594d9f61bd898734fa5,
         type: 3}
+      propertyPath: volume
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 513462273337265652, guid: db402e356e3e1594d9f61bd898734fa5,
+        type: 3}
       propertyPath: blocker
       value: 
       objectReference: {fileID: 0}
@@ -1333,6 +1338,8 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 6386510922213482366, guid: db402e356e3e1594d9f61bd898734fa5, type: 3}
     - {fileID: 7892666778380424366, guid: db402e356e3e1594d9f61bd898734fa5, type: 3}
+    - {fileID: 6235205001705257395, guid: db402e356e3e1594d9f61bd898734fa5, type: 3}
+    - {fileID: 25628999926738967, guid: db402e356e3e1594d9f61bd898734fa5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db402e356e3e1594d9f61bd898734fa5, type: 3}
