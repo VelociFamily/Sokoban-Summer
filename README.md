@@ -2,6 +2,11 @@
 
 Sokoban Summer is a cozy, Unity-made puzzle game inspired by classic Sokoban mechanics: guide a character through handcrafted levels, push movable blocks to reach targets, and solve increasingly clever spatial puzzles. The project includes player controls (with optional teleport and confusion powerups), move and time tracking for speedrun-style challenges, multiple tutorial scenes, and clean UI feedback for moves and completion. Designed for desktop platforms, the game combines simple, tactile controls with thoughtful level design — perfect for players who enjoy deliberate, brain-teasing puzzles.
 
+## Quick Links for Repository Admins
+- **[How to delete protected branches](./documents/ADMIN_GUIDE.md#deleting-protected-branches)** - Admin bypass configuration
+- **[Branch protection settings](./documents/ADMIN_GUIDE.md#branch-protection-and-admin-bypass)** - Step-by-step setup guide
+- **[Troubleshooting admin permissions](./documents/ADMIN_GUIDE.md#troubleshooting)** - Common issues and solutions
+
 # Repository Guidelines
 
 Quick checklist
@@ -12,10 +17,15 @@ Why these files exist
 
 Project documentation is organized into focused guides:
 
-- **[LEVEL_BUTTON_VISUAL_POLISH_GUIDE.md](./LEVEL_BUTTON_VISUAL_POLISH_GUIDE.md)** - Complete guide for designing and implementing polished level selection UI, including grid/vertical layout decisions, font/background cohesion, and sprite import settings
-- **[LEVEL_BUTTON_SETUP_GUIDE.md](./LEVEL_BUTTON_SETUP_GUIDE.md)** - Technical setup instructions for level button prefabs with DynamicLevelButton component
-- **[DYNAMIC_LEVEL_SYSTEM_GUIDE.md](./DYNAMIC_LEVEL_SYSTEM_GUIDE.md)** - Architecture and implementation guide for the dynamic level management system
-- **[PERSISTENCE_GUIDE.md](./PERSISTENCE_GUIDE.md)** - How the game saves and loads player progress across sessions
+### Game Development Guides
+- **[LEVEL_BUTTON_VISUAL_POLISH_GUIDE.md](./documents/LEVEL_BUTTON_VISUAL_POLISH_GUIDE.md)** - Complete guide for designing and implementing polished level selection UI, including grid/vertical layout decisions, font/background cohesion, and sprite import settings
+- **[LEVEL_BUTTON_SETUP_GUIDE.md](./documents/LEVEL_BUTTON_SETUP_GUIDE.md)** - Technical setup instructions for level button prefabs with DynamicLevelButton component
+- **[DYNAMIC_LEVEL_SYSTEM_GUIDE.md](./documents/DYNAMIC_LEVEL_SYSTEM_GUIDE.md)** - Architecture and implementation guide for the dynamic level management system
+- **[PERSISTENCE_GUIDE.md](./documents/PERSISTENCE_GUIDE.md)** - How the game saves and loads player progress across sessions
+
+### Repository Administration
+- **[ADMIN_GUIDE.md](./documents/ADMIN_GUIDE.md)** - Repository administration guide covering branch protection, admin permissions, and branch deletion procedures
+- **[CONTRIBUTING.md](./documents/CONTRIBUTING.md)** - Contribution guidelines for developers
 
 Recommended Git LFS usage
 1. Install Git LFS: `git lfs install`
