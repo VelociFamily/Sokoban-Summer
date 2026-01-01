@@ -93,23 +93,23 @@ namespace UI
                 if (foundPauseResumeButton != null)
                 {
                     pauseButton = foundPauseResumeButton.gameObject;
+            // Find pause button / PauseResumeButton if not assigned (look for PauseResumeButton component)
+            if (pauseButton == null || pauseResumeButton == null)
+            {
+                pauseResumeButton = GetComponentInChildren<PauseResumeButton>(true);
+                if (pauseResumeButton != null)
+                {
+                    pauseButton = pauseResumeButton.gameObject;
                 }
             }
 
-            // Cache PauseResumeButton component
-            if (pauseButton != null)
-            {
-                pauseResumeButton = pauseButton.GetComponent<PauseResumeButton>();
-            }
-
-            // Find InputDeviceController to coordinate pause button visibility
-            inputDeviceController = FindFirstObjectByType<InputDeviceController>();
-            if (inputDeviceController == null)
-            {
-                Debug.LogWarning("[GameplayUIController]: InputDeviceController not found - input device-based visibility won't be coordinated");
-            }
-
             // Cache CanvasGroups
+            if (pausePanel != null)
+            {
+                pausePanelCanvasGroup = pausePanel.GetComponent<CanvasGroup>();
+                if (pausePanelCanvasGroup == null)
+                    pausePanelCanvasGroup = pausePanel.AddComponent<CanvasGroup>();
+            }
             if (pausePanel != null)
             {
                 pausePanelCanvasGroup = pausePanel.GetComponent<CanvasGroup>();
