@@ -23,6 +23,7 @@
   <Project Path="Unity.RenderPipelines.Universal.Editor.csproj" />
   <Project Path="Unity.PerformanceTesting.Editor.csproj" />
   <Project Path="UnityEngine.TestRunner.csproj" />
+  <Project Path="glTFast.Editor.csproj" />
   <Project Path="Unity.AppUI.Redux.csproj" />
   <Project Path="Unity.AI.Assistant.UI.Editor.csproj" />
   <Project Path="Unity.2D.Tilemap.Editor.csproj" />
@@ -31,6 +32,7 @@
   <Project Path="Unity.InferenceEngine.Editor.Visualizer.csproj" />
   <Project Path="Unity.AI.Material.csproj" />
   <Project Path="Unity.VisualScripting.Flow.Editor.csproj" />
+  <Project Path="glTFast.csproj" />
   <Project Path="Unity.2D.SpriteShape.Editor.csproj" />
   <Project Path="Unity.VisualStudio.Editor.csproj" />
   <Project Path="Unity.InputSystem.csproj" />
@@ -60,6 +62,7 @@
   <Project Path="Unity.AI.Image.csproj" />
   <Project Path="Unity.TextMeshPro.csproj" />
   <Project Path="Unity.2D.Enhancers.Editor.csproj" />
+  <Project Path="glTFast.Export.csproj" />
   <Project Path="Unity.TextMeshPro.Editor.csproj" />
   <Project Path="Unity.AppUI.Navigation.Editor.csproj" />
   <Project Path="PsdPlugin.csproj" />
@@ -77,6 +80,7 @@
   <Project Path="Unity.AI.Generators.Sdk.csproj" />
   <Project Path="SokobanSummer.Core.csproj" />
   <Project Path="UnityEditor.UI.csproj" />
+  <Project Path="glTFast.Newtonsoft.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.2D.Editor.Overrides.csproj" />
   <Project Path="Unity.2D.Sprite.Editor.csproj" />
   <Project Path="SokobanSummer.UI.csproj" />
@@ -85,6 +89,7 @@
   <Project Path="Unity.AppUI.MVVM.csproj" />
   <Project Path="SokobanSummer.Editor.csproj" />
   <Project Path="Unity.Multiplayer.Center.Common.csproj" />
+  <Project Path="glTFast.Documentation.Examples.csproj" />
   <Project Path="Unity.AI.Generators.UI.csproj" />
   <Project Path="SokobanSummer.Gameplay.csproj" />
   <Project Path="Unity.AI.Assistant.Agent.Dynamic.Extension.Editor.csproj" />
@@ -143,7 +148,9 @@
   <Project Path="Unity.RenderPipelines.Core.Editor.Shared.csproj" />
   <Project Path="Unity.AI.Toolkit.Chat.csproj" />
   <Project Path="Unity.InferenceEngine.ONNX.Editor.csproj" />
+  <Project Path="glTFast.dots.csproj" />
   <Project Path="Unity.VisualScripting.DocCodeExamples.csproj" />
+  <Project Path="glTFast.Animation.csproj" />
   <Project Path="Unity.InferenceEngine.iOSBLAS.csproj" />
   <Project Path="Unity.PlasticSCM.Editor.Entities.csproj" />
   <Project Path="Unity.Rendering.LightTransport.Editor.csproj" />
