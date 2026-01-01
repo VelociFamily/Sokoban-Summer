@@ -9290,7 +9290,6 @@ MonoBehaviour:
   pausePanel: {fileID: 1253959249}
   levelCompletePanel: {fileID: 1389309847}
   gameStatsPanel: {fileID: 1430779122}
-  pauseButton: {fileID: 0}
   firstSelectedButton: {fileID: 1603892752}
 --- !u!225 &1999999997
 CanvasGroup:
