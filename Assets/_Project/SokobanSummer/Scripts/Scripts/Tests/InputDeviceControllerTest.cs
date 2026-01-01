@@ -136,13 +136,13 @@ namespace Tests
 
                 // Setup event tracking
                 deviceChangeEventCount = 0;
-                InputSystem.onActionChange += TrackActionChange;
+                InputSystem.onDeviceChange += TrackDeviceChange;
 
                 // Enable the controller (subscribes to events)
                 inputDeviceController.enabled = true;
                 await Task.Yield();
 
-                // Simulate an action change
+                // Simulate a device change
                 // Note: We can't easily simulate actual input system events,
                 // but we can verify subscription through component lifecycle
                 Debug.Log("✓ InputDeviceController enabled and subscribed to events");
@@ -160,7 +160,7 @@ namespace Tests
                 Debug.Log("✓ InputDeviceController re-enabled (testing multiple subscription cycles)");
 
                 // Cleanup
-                InputSystem.onActionChange -= TrackActionChange;
+                InputSystem.onDeviceChange -= TrackDeviceChange;
                 CleanupTestEnvironment();
 
                 Debug.Log($"✓ Event subscription/unsubscription test completed (tracked {deviceChangeEventCount} events)");
@@ -168,7 +168,7 @@ namespace Tests
             catch (System.Exception e)
             {
                 Debug.LogError($"✗ Event subscription test failed: {e.Message}");
-                InputSystem.onActionChange -= TrackActionChange;
+                InputSystem.onDeviceChange -= TrackDeviceChange;
             }
         }
 
@@ -315,7 +315,7 @@ namespace Tests
             Debug.Log("✓ Test environment cleaned up");
         }
 
-        private void TrackActionChange(object obj, InputActionChange change)
+        private void TrackDeviceChange(InputDevice device, InputDeviceChange change)
         {
             deviceChangeEventCount++;
         }
