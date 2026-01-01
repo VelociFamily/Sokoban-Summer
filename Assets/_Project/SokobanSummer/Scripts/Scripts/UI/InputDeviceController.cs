@@ -20,7 +20,7 @@ namespace UI
         private void OnEnable()
         {
             // Subscribe to device change events
-            InputSystem.onActionChange += OnActionChange;
+            InputSystem.onDeviceChange += OnDeviceChange;
             
             // Initial check
             UpdatePauseButtonVisibility();
@@ -29,7 +29,7 @@ namespace UI
         private void OnDisable()
         {
             // Unsubscribe from device change events
-            InputSystem.onActionChange -= OnActionChange;
+            InputSystem.onDeviceChange -= OnDeviceChange;
         }
 
         private void Start()
@@ -45,11 +45,13 @@ namespace UI
             UpdatePauseButtonVisibility();
         }
 
-        private void OnActionChange(object obj, InputActionChange change)
+        private void OnDeviceChange(InputDevice device, InputDeviceChange change)
         {
-            // Update visibility when actions change (including device switches)
-            if (change == InputActionChange.ActionPerformed ||
-                change == InputActionChange.ActionStarted)
+            // Update visibility when devices are added or removed
+            if (change == InputDeviceChange.Added ||
+                change == InputDeviceChange.Removed ||
+                change == InputDeviceChange.Reconnected ||
+                change == InputDeviceChange.Disconnected)
             {
                 UpdatePauseButtonVisibility();
             }
