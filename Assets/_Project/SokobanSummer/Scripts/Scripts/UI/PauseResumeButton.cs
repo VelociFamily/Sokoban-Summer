@@ -142,8 +142,22 @@ namespace UI
         }
 
         /// <summary>
-        /// Update internal pause state and button text (called by GameplayUIController)
+        /// Synchronizes this button's internal pause state and label with the global pause state.
         /// </summary>
+        /// <remarks>
+        /// This method exists so that <see cref="GameplayUIController" /> can keep the touchscreen
+        /// pause/resume button in sync when the game is paused or resumed via other inputs
+        /// (for example, keyboard/controller through <see cref="PauseButton" />) instead of
+        /// directly through <see cref="TogglePause" /> or <see cref="Resume" />.
+        ///
+        /// Call this after any pause state change that bypasses this component's direct control,
+        /// passing in the authoritative global pause value managed by <see cref="GameplayUIController" />.
+        /// The provided <paramref name="paused" /> value becomes the source of truth for this component's
+        /// <c>isPaused</c> field and determines whether the button shows "Pause" or "Resume".
+        /// </remarks>
+        /// <param name="paused">
+        /// The current global pause state as determined by <see cref="GameplayUIController" />.
+        /// </param>
         public void UpdatePauseState(bool paused)
         {
             isPaused = paused;
