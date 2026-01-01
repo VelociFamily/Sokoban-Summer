@@ -295,13 +295,15 @@ namespace UI
                 pauseResumeButton.UpdatePauseState(true);
             }
 
+            // Set pause state before notifying InputDeviceController
+            isPaused = true;
+
             // Notify InputDeviceController that pause state changed
             if (inputDeviceController != null)
             {
                 inputDeviceController.OnPauseStateChanged();
             }
 
-            isPaused = true;
             ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Pause panel shown");
         }
@@ -372,13 +374,15 @@ namespace UI
                 pauseResumeButton.UpdatePauseState(true);
             }
 
+            // Set pause state before notifying InputDeviceController
+            isPaused = true;
+
             // Notify InputDeviceController that pause state changed
             if (inputDeviceController != null)
             {
                 inputDeviceController.OnPauseStateChanged();
             }
 
-            isPaused = true;
             ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Pause panel shown (immediate)");
         }
