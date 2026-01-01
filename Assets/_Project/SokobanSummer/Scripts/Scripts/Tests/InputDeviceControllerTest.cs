@@ -16,6 +16,10 @@ namespace Tests
         [Header("Test Configuration")]
         public bool runTestOnStart = true;
 
+        // Test delay constants to avoid magic numbers and improve maintainability
+        private const int SHORT_DELAY_MS = 50;
+        private const int MEDIUM_DELAY_MS = 100;
+
         private GameObject testPauseButton;
         private InputDeviceController inputDeviceController;
         private GameplayUIController gameplayUIController;
@@ -181,7 +185,7 @@ namespace Tests
                 gameplayUIController = gameplayUIObject.AddComponent<GameplayUIController>();
 
                 // Give components time to find each other
-                await Task.Delay(100);
+                await Task.Delay(MEDIUM_DELAY_MS);
 
                 // Simulate pause state
                 Debug.Log("Simulating pause state...");
@@ -266,7 +270,12 @@ namespace Tests
             var controllerObject = new GameObject("TestInputDeviceController");
             inputDeviceController = controllerObject.AddComponent<InputDeviceController>();
 
-            // Use reflection to set the private pauseButton field
+            // Note: Using reflection to set the private pauseButton field for testing purposes.
+            // Alternative approaches considered:
+            // 1. Making field [SerializeField] public - would expose internal implementation
+            // 2. Using [InternalsVisibleTo] - requires modifying production assembly definition
+            // 3. Adding test-only public setter - clutters production API
+            // Reflection is the least invasive approach for this scenario
             var pauseButtonField = typeof(InputDeviceController).GetField("pauseButton", 
                 System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
             
@@ -322,15 +331,15 @@ namespace Tests
             {
                 Debug.Log($"Cycle {i + 1}: Hiding button");
                 testPauseButton.SetActive(false);
-                await Task.Delay(100);
+                await Task.Delay(MEDIUM_DELAY_MS);
 
                 Debug.Log($"Cycle {i + 1}: Showing button");
                 testPauseButton.SetActive(true);
-                await Task.Delay(100);
+                await Task.Delay(MEDIUM_DELAY_MS);
 
                 Debug.Log($"Cycle {i + 1}: Force updating visibility");
                 inputDeviceController.ForceUpdate();
-                await Task.Delay(100);
+                await Task.Delay(MEDIUM_DELAY_MS);
             }
 
             CleanupTestEnvironment();
@@ -353,7 +362,7 @@ namespace Tests
             {
                 Debug.Log($"Simulating device change {i + 1}...");
                 inputDeviceController.ForceUpdate();
-                await Task.Delay(50);
+                await Task.Delay(SHORT_DELAY_MS);
             }
 
             bool finalState = testPauseButton.activeSelf;
