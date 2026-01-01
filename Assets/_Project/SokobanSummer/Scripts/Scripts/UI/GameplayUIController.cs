@@ -88,10 +88,10 @@ namespace UI
             // Find pause button if not assigned (look for PauseResumeButton component)
             if (pauseButton == null)
             {
-                var pauseResumeButton = GetComponentInChildren<PauseResumeButton>(true);
-                if (pauseResumeButton != null)
+                var foundPauseResumeButton = GetComponentInChildren<PauseResumeButton>(true);
+                if (foundPauseResumeButton != null)
                 {
-                    pauseButton = pauseResumeButton.gameObject;
+                    pauseButton = foundPauseResumeButton.gameObject;
                 }
             }
 
