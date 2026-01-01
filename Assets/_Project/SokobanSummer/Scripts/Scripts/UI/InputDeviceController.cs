@@ -88,23 +88,8 @@ namespace UI
 
         private bool IsTouchscreenActive()
         {
-            // Check if touchscreen device exists and is active
-            var touchscreen = Touchscreen.current;
-            if (touchscreen != null)
-            {
-                return true;
-            }
-
-            // Alternative: Check all input devices
-            foreach (var device in InputSystem.devices)
-            {
-                if (device is Touchscreen)
-                {
-                    return true;
-                }
-            }
-
-            return false;
+            // Touchscreen.current is non-null when a touchscreen device is present.
+            return Touchscreen.current != null;
         }
 
         // Public method to manually force an update (can be called from other scripts if needed)
