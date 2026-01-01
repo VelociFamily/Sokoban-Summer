@@ -40,6 +40,9 @@ namespace UI
 
         private void OnEnable()
         {
+            // Note: Visibility (SetActive state) of this button is managed by InputDeviceController
+            // and/or GameplayUIController depending on input device. Do not call gameObject.SetActive(true)
+            // here to avoid conflicting with those controllers; we only refresh the label.
             UpdateButtonText();
         }
 
