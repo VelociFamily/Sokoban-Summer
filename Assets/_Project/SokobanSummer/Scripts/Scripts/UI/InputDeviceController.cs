@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace SokobanSummer.UI
+namespace UI
 {
     /// <summary>
     /// Controls UI elements based on the current input device type.
