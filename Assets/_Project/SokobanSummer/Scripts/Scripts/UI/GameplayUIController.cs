@@ -25,6 +25,7 @@ namespace UI
         private CanvasGroup levelCompletePanelCanvasGroup;
         private CanvasGroup gameStatsPanelCanvasGroup;
         private PauseResumeButton pauseResumeButton; // Component on pauseButton
+        private InputDeviceController inputDeviceController; // Manages button visibility based on input device
 
         // Track running fades so a previous hide/show can't override a new state after scene changes
         private readonly Dictionary<CanvasGroup, Coroutine> activeFades = new();
@@ -99,6 +100,13 @@ namespace UI
             if (pauseButton != null)
             {
                 pauseResumeButton = pauseButton.GetComponent<PauseResumeButton>();
+            }
+
+            // Find InputDeviceController to coordinate pause button visibility
+            inputDeviceController = FindFirstObjectByType<InputDeviceController>();
+            if (inputDeviceController == null)
+            {
+                Debug.LogWarning("[GameplayUIController]: InputDeviceController not found - input device-based visibility won't be coordinated");
             }
 
             // Cache CanvasGroups
@@ -231,6 +239,13 @@ namespace UI
             SetPanelVisible(gameStatsPanel, gameStatsPanelCanvasGroup, false, instant);
 
             isPaused = false;
+
+            // Notify InputDeviceController that pause state changed
+            if (inputDeviceController != null)
+            {
+                inputDeviceController.OnPauseStateChanged();
+            }
+
             Debug.Log("[GameplayUIController]: All gameplay panels hidden");
         }
 
@@ -280,6 +295,12 @@ namespace UI
                 pauseResumeButton.UpdatePauseState(true);
             }
 
+            // Notify InputDeviceController that pause state changed
+            if (inputDeviceController != null)
+            {
+                inputDeviceController.OnPauseStateChanged();
+            }
+
             isPaused = true;
             ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Pause panel shown");
@@ -306,6 +327,12 @@ namespace UI
                 pauseResumeButton.UpdatePauseState(false);
             }
             
+            // Notify InputDeviceController that pause state changed
+            if (inputDeviceController != null)
+            {
+                inputDeviceController.OnPauseStateChanged();
+            }
+
             isPaused = false;
             Debug.Log("[GameplayUIController]: Pause panel hidden");
         }
@@ -352,6 +379,12 @@ namespace UI
                 pauseResumeButton.UpdatePauseState(true);
             }
 
+            // Notify InputDeviceController that pause state changed
+            if (inputDeviceController != null)
+            {
+                inputDeviceController.OnPauseStateChanged();
+            }
+
             isPaused = true;
             ApplyFirstSelectedIfAvailable();
             Debug.Log("[GameplayUIController]: Pause panel shown (immediate)");
@@ -385,6 +418,12 @@ namespace UI
                 pauseResumeButton.UpdatePauseState(false);
             }
 
+            // Notify InputDeviceController that pause state changed
+            if (inputDeviceController != null)
+            {
+                inputDeviceController.OnPauseStateChanged();
+            }
+
             isPaused = false;
             Debug.Log("[GameplayUIController]: Pause panel hidden (immediate)");
         }
@@ -402,6 +441,13 @@ namespace UI
 
             pausePanel.SetActive(false);
             isPaused = false;
+
+            // Notify InputDeviceController that pause state changed
+            if (inputDeviceController != null)
+            {
+                inputDeviceController.OnPauseStateChanged();
+            }
+
             Debug.Log("[GameplayUIController]: Pause panel deactivated and isPaused set to false");
         }
 
