@@ -110,12 +110,6 @@ namespace UI
                 if (pausePanelCanvasGroup == null)
                     pausePanelCanvasGroup = pausePanel.AddComponent<CanvasGroup>();
             }
-            if (pausePanel != null)
-            {
-                pausePanelCanvasGroup = pausePanel.GetComponent<CanvasGroup>();
-                if (pausePanelCanvasGroup == null)
-                    pausePanelCanvasGroup = pausePanel.AddComponent<CanvasGroup>();
-            }
 
             if (levelCompletePanel != null)
             {
