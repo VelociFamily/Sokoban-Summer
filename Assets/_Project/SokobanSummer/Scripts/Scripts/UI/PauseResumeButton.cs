@@ -40,9 +40,12 @@ namespace UI
 
         private void OnEnable()
         {
-            // Note: Visibility (SetActive state) of this button is managed by InputDeviceController
-            // and/or GameplayUIController depending on input device. Do not call gameObject.SetActive(true)
-            // here to avoid conflicting with those controllers; we only refresh the label.
+            // Ensure the pause button is visible when this component is enabled in a resumed state.
+            // This is important for touchscreen users after the pause panel has hidden the button.
+            if (!isPaused)
+            {
+                gameObject.SetActive(true);
+            }
             UpdateButtonText();
         }
 
